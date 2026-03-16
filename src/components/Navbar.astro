@@ -1,0 +1,354 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+
+const { transparent = false } = Astro.props;
+---
+
+<nav
+  class={`navbar ${transparent ? "navbar--transparent" : "navbar--solid"}`}
+  id="navbar"
+>
+  <div class="navbar__content container">
+    <div class="navbar__brand">
+      <a href="/" class="navbar__logo">
+        <Image
+          src={logo}
+          alt="Cuaderno Digital Logo"
+          height={48}
+          quality="max"
+        />
+      </a>
+    </div>
+
+    <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="navbar__menu" id="navMenu">
+      <li class="navbar__item navbar__item--has-dropdown">
+        <a href="/herramientas"
+          >Herramientas
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            ><path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </a>
+        <ul class="navbar__dropdown">
+          <li>
+            <a href="/herramientas/agricultores"
+              >Cuaderno de Campo para Agricultores</a
+            >
+          </li>
+          <li>
+            <a href="/herramientas/tecnicos"
+              >Cuaderno de Explotación para Técnicos</a
+            >
+          </li>
+          <li>
+            <a href="/herramientas/prescripcion">Prescripción Fitosanitaria</a>
+          </li>
+          <li>
+            <a href="/herramientas/asesoramiento"
+              >Asesoramiento a Explotaciones</a
+            >
+          </li>
+          <li>
+            <a href="/herramientas/estiercoles"
+              >Gestión Logística de Estiércoles</a
+            >
+          </li>
+          <li>
+            <a href="/herramientas/trazabilidad"
+              >Trazabilidad GPS DARP Deyecciones Ganaderas</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="navbar__item navbar__item--has-dropdown">
+        <a href="/sinergias"
+          >Sinergias
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            ><path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </a>
+        <ul class="navbar__dropdown">
+          <li><a href="/sinergias/consejo">Convenio Consejo Agrícolas</a></li>
+          <li>
+            <a href="/sinergias/ipmwise">Control de malas hierbas IPMwise</a>
+          </li>
+          <li>
+            <a href="/sinergias/fieldbee">Fieldbee autoguiado para tractores</a>
+          </li>
+        </ul>
+      </li>
+      <li class="navbar__item navbar__item--has-dropdown">
+        <a href="/ayudas"
+          >Ayudas
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            ><path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </a>
+        <ul class="navbar__dropdown">
+          <li><a href="/ayudas/soporte">Ayudas al Usuario</a></li>
+          <li><a href="/ayudas/digitalizacion">Ayudas Digitalización</a></li>
+          <li><a href="/ayudas/kit-digital">Kit Digital</a></li>
+        </ul>
+      </li>
+      <li class="navbar__item"><a href="/eventos">Eventos</a></li>
+      <li class="navbar__item"><a href="/noticias">Noticias</a></li>
+      <li class="navbar__item"><a href="/contacto">Contacto</a></li>
+      <li class="navbar__item btn-item">
+        <a href="#" class="btn btn--turquoise btn--sm">Acceder</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("navToggle");
+    const menu = document.getElementById("navMenu");
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("navbar__menu--open");
+        toggle.classList.toggle("navbar__toggle--active");
+      });
+    }
+
+    const nav = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 40) {
+        nav?.classList.add("navbar--scrolled");
+      } else {
+        nav?.classList.remove("navbar--scrolled");
+      }
+    });
+  });
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 24px 0;
+    transition: all 0.3s ease;
+  }
+
+  .navbar--transparent {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .navbar--solid {
+    background: var(--color-white);
+    padding: 12px 0;
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .navbar--solid .navbar__item > a {
+    color: var(--color-gray-700);
+  }
+
+  .navbar--solid .navbar__logo img {
+    height: 36px;
+  }
+
+  .navbar--scrolled {
+    background: var(--color-white);
+    padding: 12px 0;
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .navbar--scrolled .navbar__item > a {
+    color: var(--color-gray-700);
+  }
+
+  .navbar--scrolled .navbar__logo img {
+    height: 36px;
+  }
+
+  .navbar__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar__logo img {
+    height: 48px;
+    width: auto;
+    transition: height 0.3s ease;
+  }
+
+  .navbar--scrolled .navbar__logo img {
+    height: 36px;
+  }
+
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .navbar__item {
+    position: relative;
+  }
+
+  .navbar__item > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-white);
+    transition: var(--transition);
+  }
+
+  .navbar--scrolled .navbar__item > a {
+    color: var(--color-gray-700);
+  }
+
+  .navbar__item > a:hover {
+    color: var(--color-white);
+    opacity: 0.8;
+  }
+
+  .navbar--scrolled .navbar__item > a:hover {
+    color: var(--color-turquoise);
+    opacity: 1;
+  }
+
+  .navbar__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 280px;
+    background: var(--color-white);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--color-gray-100);
+    margin-top: 0;
+  }
+
+  .navbar__item--has-dropdown:hover .navbar__dropdown {
+    display: block;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .navbar__dropdown li a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: var(--color-gray-700);
+    border-radius: 8px;
+  }
+
+  .navbar__dropdown li a:hover {
+    background: var(--color-gray-50);
+    color: var(--color-turquoise);
+  }
+
+  .btn--sm {
+    padding: 8px 24px;
+    font-size: 0.9rem;
+  }
+
+  .navbar__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navbar__toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-white);
+    transition: var(--transition);
+  }
+
+  .navbar--scrolled .navbar__toggle span {
+    background: var(--color-gray-700);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .navbar {
+      background: var(--color-white);
+      padding: 12px 0;
+    }
+    .navbar__toggle {
+      display: flex;
+    }
+    .navbar__item > a {
+      color: var(--color-gray-700);
+    }
+    .navbar__toggle span {
+      background: var(--color-gray-700);
+    }
+
+    .navbar__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: var(--color-white);
+      padding: 24px;
+      box-shadow: var(--shadow-xl);
+      border-top: 1px solid var(--color-gray-100);
+    }
+
+    .navbar__menu--open {
+      display: flex;
+    }
+
+    .navbar__dropdown {
+      position: static;
+      box-shadow: none;
+      border: none;
+      background: var(--color-gray-50);
+      margin-top: 10px;
+      display: block;
+    }
+  }
+</style>

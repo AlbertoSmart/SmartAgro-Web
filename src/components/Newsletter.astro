@@ -1,0 +1,142 @@
+---
+---
+
+<section class="newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter__content">
+      <div class="newsletter__text">
+        <h2 class="section-title" style="color: var(--color-blue-dark);">
+          Suscríbete a nuestro boletín
+        </h2>
+        <p class="newsletter__desc">
+          Recibe en tu correo electrónico las últimas novedades sobre tecnología
+          de sensores IA, alertas de presión de plagas en tiempo real y
+          actualizaciones de nuestro ecosistema digital para la protección de tu
+          cultivo.
+        </p>
+      </div>
+      <form class="newsletter__form" action="#" method="POST">
+        <div class="newsletter__fields">
+          <div class="newsletter__field">
+            <label for="nl-name" class="newsletter__label">Nombre</label>
+            <input
+              type="text"
+              id="nl-name"
+              name="name"
+              placeholder="Tu nombre"
+              class="newsletter__input"
+              required
+            />
+          </div>
+          <div class="newsletter__field">
+            <label for="nl-email" class="newsletter__label"
+              >Correo electrónico</label
+            >
+            <input
+              type="email"
+              id="nl-email"
+              name="email"
+              placeholder="tu@email.com"
+              class="newsletter__input"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn--black newsletter__btn"
+          >SUSCRIBIRSE</button
+        >
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .newsletter {
+    background: var(--color-white);
+    padding: 80px 0;
+  }
+
+  .newsletter__content {
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 48px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .newsletter__text {
+    flex: 1;
+  }
+
+  .newsletter__desc {
+    font-size: 0.95rem;
+    color: var(--color-gray-500);
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+
+  .newsletter__form {
+    flex: 1;
+    background: var(--color-turquoise);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  .newsletter__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .newsletter__label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 6px;
+  }
+
+  .newsletter__input {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 0.92rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-gray-700);
+    outline: none;
+    transition: var(--transition);
+  }
+
+  .newsletter__input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  }
+
+  .newsletter__input::placeholder {
+    color: var(--color-gray-400);
+  }
+
+  .newsletter__btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter__content {
+      flex-direction: column;
+      padding: 32px;
+      gap: 32px;
+    }
+
+    .newsletter__form {
+      padding: 24px;
+    }
+  }
+</style>

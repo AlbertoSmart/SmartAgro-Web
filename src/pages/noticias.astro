@@ -1,0 +1,201 @@
+---
+import TestPage from "../layouts/TestPage.astro";
+---
+
+<TestPage
+  title="Noticias – Cuaderno de Campo Digital"
+  heading="Actualidad y Tecnología Agraria"
+  description="Mantente al día con las últimas novedades de nuestro ecosistema: actualizaciones de la plataforma, nuevos modelos de IA y avances en agricultura de precisión."
+  variant="news"
+>
+  <div class="news-container">
+    <div class="news-grid">
+      <article class="news-post glass">
+        <div class="news-post__image" style="background: #086d69;">
+          <span class="news-tag">Lanzamiento</span>
+        </div>
+        <div class="news-post__content">
+          <time datetime="2026-03-15">15 MAR 2026</time>
+          <h3>YOLOv11: Nueva Era en Detección de Plagas</h3>
+          <p>
+            Hemos integrado los últimos modelos de visión artificial para
+            mejorar la tasa de detección en un 20% bajo condiciones de baja
+            visibilidad.
+          </p>
+          <a href="#" class="read-more">Leer más →</a>
+        </div>
+      </article>
+
+      <article class="news-post glass">
+        <div class="news-post__image" style="background: #1e3a8a;">
+          <span class="news-tag">Software</span>
+        </div>
+        <div class="news-post__content">
+          <time datetime="2026-03-10">10 MAR 2026</time>
+          <h3>Sincronización Automática con SIEX</h3>
+          <p>
+            La nueva actualización permite enviar los registros del cuaderno de
+            campo directamente a la administración con un solo clic.
+          </p>
+          <a href="#" class="read-more">Leer más →</a>
+        </div>
+      </article>
+
+      <article class="news-post glass">
+        <div class="news-post__image" style="background: #064e3b;">
+          <span class="news-tag">Comunidad</span>
+        </div>
+        <div class="news-post__content">
+          <time datetime="2026-03-05">05 MAR 2026</time>
+          <h3>Éxito en la Campaña de Olivar 2025</h3>
+          <p>
+            Más de 500 agricultores han reducido sus costes de tratamiento en un
+            15% gracias a nuestras alertas de monitoreo IA.
+          </p>
+          <a href="#" class="read-more">Leer más →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="newsletter-highlight glass">
+      <div class="newsletter-highlight__text">
+        <h3>Suscríbete a la Actualidad Agraria</h3>
+        <p>
+          Recibe mensualmente un resumen de novedades tecnológicas y ayudas para
+          tu explotación.
+        </p>
+      </div>
+      <form class="newsletter-mini-form">
+        <input type="email" placeholder="tu@email.com" required />
+        <button type="submit" class="cta-btn">Suscribirse</button>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    .news-container {
+      margin-top: -60px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .news-post {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--color-gray-100);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-post:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-post__image {
+      height: 200px;
+      position: relative;
+    }
+
+    .news-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--color-dark);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .news-post__content {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .news-post__content time {
+      font-size: 0.85rem;
+      color: var(--color-gray-400);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .news-post__content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      color: var(--color-gray-900);
+      line-height: 1.4;
+    }
+
+    .news-post__content p {
+      font-size: 0.95rem;
+      color: var(--color-gray-600);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .read-more {
+      margin-top: auto;
+      font-weight: 700;
+      color: var(--color-turquoise-dark);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .newsletter-highlight {
+      background: var(--color-dark);
+      color: white;
+      padding: 60px;
+      border-radius: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .newsletter-highlight h3 {
+      font-size: 1.75rem;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .newsletter-highlight p {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .newsletter-mini-form {
+      display: flex;
+      gap: 12px;
+    }
+
+    .newsletter-mini-form input {
+      flex: 1;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .newsletter-highlight {
+        grid-template-columns: 1fr;
+        padding: 40px;
+      }
+    }
+  </style>
+</TestPage>

@@ -1,0 +1,156 @@
+---
+const sensors = [
+    {
+        name: "Sensor Tierra 8 en 1",
+        specs: "NPK, PH, EC, Temp, Hum, Salinidad",
+        icon: "🌱",
+        category: "Suelo",
+    },
+    {
+        name: "Sensor de Hoja",
+        specs: "Temperatura y Humectación",
+        icon: "🍃",
+        category: "Follaje",
+    },
+    {
+        name: "Estación Meteorológica",
+        specs: "Viento, Lluvia, UV, Presión",
+        icon: "🌦️",
+        category: "Clima",
+    },
+    {
+        name: "Dendrómetro de Fruto",
+        specs: "Crecimiento de precisión",
+        icon: "🍎",
+        category: "Producción",
+    },
+    {
+        name: "Sensor CO2 Tierra",
+        specs: "Respiración del suelo",
+        icon: "💨",
+        category: "Suelo",
+    },
+    {
+        name: "Dendrómetro de Tronco",
+        specs: "Estrés hídrico radial",
+        icon: "🌳",
+        category: "Estructural",
+    },
+    {
+        name: "Sensor Tubular 8 capas",
+        specs: "Temperatura/Humedad perfil vertical",
+        icon: "🧪",
+        category: "Suelo",
+    },
+    {
+        name: "Sensor pH / EC",
+        specs: "Control de solución nutritiva",
+        icon: "💧",
+        category: "Riego",
+    },
+];
+---
+
+<section class="sensor-catalog section-padding" id="sensores">
+    <div class="container">
+        <div class="sensor-catalog__header text-center">
+            <span class="sensor-catalog__pretitle text-gradient"
+                >Ecosistema Hardware</span
+            >
+            <h2 class="section-title">Sensores para cada rincón de tu finca</h2>
+            <p class="section-subtitle">
+                Una gama completa de dispositivos de alta precisión diseñados
+                para digitalizar y optimizar cada parámetro crítico de tu
+                explotación.
+            </p>
+        </div>
+
+        <div class="sensor-catalog__grid">
+            {
+                sensors.map((sensor) => (
+                    <div class="sensor-card glass">
+                        <div class="sensor-card__badge">{sensor.category}</div>
+                        <div class="sensor-card__icon">{sensor.icon}</div>
+                        <h3 class="sensor-card__name">{sensor.name}</h3>
+                        <p class="sensor-card__specs">{sensor.specs}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .sensor-catalog {
+        background: var(--color-dark);
+        color: var(--color-white);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sensor-catalog__header {
+        margin-bottom: 60px;
+    }
+
+    .sensor-catalog__header .section-title {
+        color: var(--color-white);
+    }
+
+    .sensor-catalog__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .sensor-card {
+        padding: 32px;
+        border-radius: var(--border-radius-md);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: var(--transition);
+        position: relative;
+        text-align: center;
+    }
+
+    .sensor-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+        border-color: var(--color-turquoise);
+    }
+
+    .sensor-card__badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        background: rgba(15, 181, 174, 0.2);
+        color: var(--color-turquoise);
+        border-radius: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .sensor-card__icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .sensor-card__name {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        color: var(--color-white);
+    }
+
+    .sensor-card__specs {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+        .sensor-catalog__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

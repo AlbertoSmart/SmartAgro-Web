@@ -1,0 +1,237 @@
+/* ===== Cuaderno Digital Design System ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- Custom Properties --- */
+:root {
+  /* Nuanced HSL Palette */
+  --color-turquoise-hsl: 178, 84%, 38%;
+  --color-turquoise: hsl(var(--color-turquoise-hsl));
+  --color-turquoise-light: hsl(178, 84%, 48%);
+  --color-turquoise-dark: hsl(178, 84%, 28%);
+
+  --color-blue-hsl: 226, 47%, 33%;
+  --color-blue: hsl(var(--color-blue-hsl));
+  --color-blue-dark: hsl(226, 47%, 20%);
+
+  --color-green-hsl: 145, 63%, 42%;
+  --color-green: hsl(var(--color-green-hsl));
+
+  --color-red-hsl: 6, 78%, 57%;
+  --color-red: hsl(var(--color-red-hsl));
+  --color-red-dark: hsl(6, 78%, 47%);
+
+  --color-dark-hsl: 240, 30%, 15%;
+  --color-dark: hsl(var(--color-dark-hsl));
+
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-500: #6b7280;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+
+  /* Typography - using Outfit for headers, Inter for body */
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Inter', -apple-system, sans-serif;
+
+  --container-width: 1280px;
+  --header-height: 80px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+
+  /* Modern Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Base Grain Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-gray-900);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-turquoise);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* --- Utility Classes --- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mesh-gradient {
+  background-color: var(--color-turquoise);
+}
+
+.text-gradient {
+  color: var(--color-turquoise);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-gray-500);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--green {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+.btn--turquoise {
+  background: var(--color-turquoise);
+  color: var(--color-white);
+}
+
+.btn--red {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+/* --- Card --- */
+.card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid var(--color-gray-100);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+  border-color: var(--color-turquoise-light);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 48px 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}

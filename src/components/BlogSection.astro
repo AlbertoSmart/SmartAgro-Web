@@ -1,0 +1,168 @@
+---
+const blogPosts = [
+  {
+    image: "/images/blog-siex.png",
+    category: "SIEX",
+    title: "Plazos y obligaciones del SIEX para explotaciones agrícolas",
+    excerpt:
+      "Analizamos los plazos clave y las obligaciones que establece el Sistema de Información de Explotaciones para los agricultores y técnicos agrícolas.",
+  },
+  {
+    image: "/images/blog-calendar.png",
+    category: "Normativa",
+    title: "Entrada en vigor de la nueva normativa del Cuaderno de Explotación",
+    excerpt:
+      "Todo lo que necesitas saber sobre la entrada en vigor del Real Decreto que regula el Cuaderno Digital de Explotación Agrícola y sus implicaciones.",
+  },
+  {
+    image: "/images/blog-documento.png",
+    category: "Documento Técnico",
+    title: "Guía de implementación del Cuaderno Digital de Explotación",
+    excerpt:
+      "Documento técnico con las pautas y recomendaciones para la correcta implementación del cuaderno digital en tu explotación agrícola.",
+  },
+];
+---
+
+<section class="blog section-padding" id="blog">
+  <div class="container">
+    <div class="blog__header">
+      <h2 class="section-title">Nuestras últimas publicaciones</h2>
+      <p class="section-subtitle">
+        Mantente al día con las últimas novedades del sector agrario, normativas
+        y actualizaciones de nuestro Ecosistema Digital Agrario.
+      </p>
+    </div>
+
+    <div class="blog__grid">
+      {
+        blogPosts.map((post) => (
+          <article class="blog-card card">
+            <div class="blog-card__image">
+              <img src={post.image} alt={post.title} loading="lazy" />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__category">{post.category}</span>
+              <h3 class="blog-card__title">{post.title}</h3>
+              <p class="blog-card__excerpt">{post.excerpt}</p>
+              <a href="#" class="blog-card__link">
+                Leer más
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .blog {
+    background: var(--color-gray-50);
+  }
+
+  .blog__header {
+    margin-bottom: 48px;
+  }
+
+  .blog__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .blog-card {
+    border: 1px solid var(--color-gray-200);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card__image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .blog-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .blog-card:hover .blog-card__image img {
+    transform: scale(1.05);
+  }
+
+  .blog-card__body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card__category {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-turquoise);
+    background: rgba(15, 181, 174, 0.08);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    align-self: flex-start;
+  }
+
+  .blog-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-blue-dark);
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .blog-card__excerpt {
+    font-size: 0.88rem;
+    color: var(--color-gray-500);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+
+  .blog-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-turquoise);
+    transition: var(--transition);
+  }
+
+  .blog-card__link:hover {
+    gap: 10px;
+  }
+
+  @media (max-width: 1024px) {
+    .blog__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

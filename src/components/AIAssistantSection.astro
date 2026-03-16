@@ -1,0 +1,259 @@
+---
+---
+
+<section class="ai-assistant section-padding" id="asistente">
+    <div class="container">
+        <div class="ai-assistant__panel glass-dark">
+            <div class="ai-assistant__content">
+                <div class="ai-badge">
+                    <span class="pulse"></span>
+                    Asistente Agrario IA
+                </div>
+                <h2 class="ai-assistant__title">
+                    Tu experto agrario personal, 24/7
+                </h2>
+                <p class="ai-assistant__description">
+                    Nuestro asistente de Inteligencia Artificial no solo
+                    responde preguntas; conoce tu finca. Monitorea parcelas en
+                    tiempo real, responde consultas sobre plagas, clima y
+                    optimización de cultivos, y te ayuda a interpretar datos
+                    complejos de forma sencilla.
+                </p>
+
+                <ul class="ai-features">
+                    <li>
+                        <strong>Consultas Complejas:</strong> Resuelve dudas técnicas
+                        sobre fertilización y riego.
+                    </li>
+                    <li>
+                        <strong>Monitoreo Activo:</strong> Pregunta "¿Cómo va la
+                        humedad en el Sector 3?" y obtén datos al instante.
+                    </li>
+                    <li>
+                        <strong>Predicción de Riesgos:</strong> Recibe consejos proactivos
+                        basados en el histórico de tu finca.
+                    </li>
+                </ul>
+
+                <div class="ai-assistant__cta">
+                    <a href="#" class="btn btn--white"
+                        >Probar Asistente Virtual</a
+                    >
+                </div>
+            </div>
+
+            <div class="ai-assistant__chat">
+                <div class="chat-window glass">
+                    <div class="chat-header">
+                        <div class="status-dot"></div>
+                        <span>Asistente Agrario</span>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-msg bot">
+                            ¿En qué puedo ayudarte hoy con tu finca?
+                        </div>
+                        <div class="chat-msg user">
+                            ¿Cuál es el nivel de NPK en la parcela Norte?
+                        </div>
+                        <div class="chat-msg bot">
+                            El nivel de Nitrógeno es óptimo (45mg/kg), pero el
+                            Fósforo ha bajado un 15%. Te recomiendo revisar el
+                            sector de riego 2.
+                        </div>
+                        <div class="chat-msg bot typing">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .ai-assistant {
+        background: var(--color-white);
+    }
+
+    .ai-assistant__panel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        padding: 80px;
+        border-radius: var(--border-radius-lg);
+        background: var(--color-dark);
+        color: var(--color-white);
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ai-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .pulse {
+        width: 8px;
+        height: 8px;
+        background: var(--color-turquoise);
+        border-radius: 50%;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(15, 181, 174, 0.7);
+        }
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(15, 181, 174, 0);
+        }
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(15, 181, 174, 0);
+        }
+    }
+
+    .ai-assistant__title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--color-white);
+    }
+
+    .ai-assistant__description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 32px;
+    }
+
+    .ai-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 40px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .ai-features li {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+        position: relative;
+        padding-left: 24px;
+    }
+
+    .ai-features li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--color-turquoise);
+    }
+
+    .ai-features strong {
+        color: var(--color-white);
+    }
+
+    /* Chat Window Mockup */
+    .chat-window {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .chat-header {
+        padding: 16px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        background: #4ade80;
+        border-radius: 50%;
+    }
+
+    .chat-body {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: 320px;
+    }
+
+    .chat-msg {
+        max-width: 80%;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .chat-msg.bot {
+        align-self: flex-start;
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom-left-radius: 2px;
+    }
+
+    .chat-msg.user {
+        align-self: flex-end;
+        background: var(--color-turquoise);
+        color: white;
+        border-bottom-right-radius: 2px;
+    }
+
+    .typing span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        margin-right: 4px;
+        animation: typing 1s infinite ease-in-out;
+    }
+
+    .typing span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .typing span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-4px);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .ai-assistant__panel {
+            grid-template-columns: 1fr;
+            padding: 40px;
+            gap: 40px;
+        }
+        .ai-assistant__title {
+            font-size: 2rem;
+        }
+    }
+</style>

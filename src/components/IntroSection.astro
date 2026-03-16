@@ -1,0 +1,123 @@
+---
+---
+
+<section class="intro section-padding" id="intro">
+  <div class="container">
+    <div class="intro__grid">
+      <div class="intro__left">
+        <span class="intro__label">Digitalización de Precisión</span>
+        <h2 class="section-title">Maximiza el Rendimiento de tu Finca</h2>
+        <p class="intro__text">
+          Digitalizamos cada dato de tu explotación para transformar la gestión
+          agrícola. Nuestra tecnología te permite **ahorrar en riego, abonos y
+          fertilizantes**, optimizando recursos para mejorar drásticamente la
+          calidad y cantidad de tus cosechas.
+        </p>
+      </div>
+      <div class="intro__right">
+        <div class="intro__card glass">
+          <h3 class="intro__subtitle">Detección Avanzada</h3>
+          <p class="intro__subtext">
+            Combinamos visión artificial y sensores de última generación para
+            identificar y alertar sobre la presencia de plagas antes de que se
+            conviertan en un problema.
+          </p>
+          <div class="intro__list">
+            <div class="intro__list-item">
+              <span class="intro__list-icon">✓</span>
+              <span>Conteo Automático y Alerteo IA</span>
+            </div>
+            <div class="intro__list-item">
+              <span class="intro__list-icon">✓</span>
+              <span>Monitoreo de Cultivos en Tiempo Real</span>
+            </div>
+            <div class="intro__list-item">
+              <span class="intro__list-icon">✓</span>
+              <span>Alertas Tempranas en Tiempo Real</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro {
+    background: var(--color-white);
+    position: relative;
+    z-index: 10;
+  }
+
+  .intro__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .intro__label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .intro__text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-gray-600);
+  }
+
+  .intro__card {
+    padding: 48px;
+    border-radius: var(--border-radius-lg);
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+  }
+
+  .intro__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-gray-900);
+  }
+
+  .intro__subtext {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin-bottom: 32px;
+  }
+
+  .intro__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .intro__list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    font-size: 0.95rem;
+  }
+
+  .intro__list-icon {
+    color: var(--color-turquoise);
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 1024px) {
+    .intro__grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    .intro__card {
+      padding: 32px;
+    }
+  }
+</style>

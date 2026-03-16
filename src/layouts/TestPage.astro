@@ -1,0 +1,294 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  heading: string;
+  description?: string;
+  variant?:
+    | "tools"
+    | "news"
+    | "contact"
+    | "idi"
+    | "ayudas"
+    | "sinergias"
+    | "legal"
+    | "eventos";
+}
+
+const {
+  title,
+  heading,
+  description = "",
+  variant = "legal",
+} = Astro.props;
+---
+
+<Layout title={`${title}`}>
+  <Navbar transparent={true} />
+  <main>
+    <section class={`page-hero page-hero--${variant}`}>
+      <div class="page-hero__bg">
+        <svg
+          class="page-hero__doodle"
+          viewBox="0 0 600 300"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Drone -->
+          <g
+            transform="translate(480, 40)"
+            stroke="rgba(255,255,255,0.25)"
+            stroke-width="2"
+          >
+            <rect x="4" y="8" width="20" height="10" rx="2"></rect><line
+              x1="4"
+              y1="13"
+              x2="-10"
+              y2="6"></line><line x1="24" y1="13" x2="38" y2="6"></line><circle
+              cx="-10"
+              cy="4"
+              r="5"></circle><circle cx="38" cy="4" r="5"></circle>
+          </g>
+          <!-- Satellite -->
+          <g
+            transform="translate(520, 180)"
+            stroke="rgba(255,255,255,0.2)"
+            stroke-width="1.5"
+          >
+            <rect x="8" y="6" width="14" height="12" rx="1"></rect><rect
+              x="-8"
+              y="0"
+              width="10"
+              height="12"
+              rx="1"></rect><rect x="30" y="0" width="10" height="12" rx="1"
+            ></rect><line x1="8" y1="12" x2="-2" y2="5"></line><line
+              x1="22"
+              y1="12"
+              x2="32"
+              y2="5"></line>
+          </g>
+          <!-- Leaf -->
+          <g
+            transform="translate(50, 220)"
+            stroke="rgba(255,255,255,0.2)"
+            stroke-width="1.5"
+            fill="none"
+          >
+            <path d="M20 30 Q5 20 10 5 Q20 0 30 10 Q35 25 20 30Z"></path><path
+              d="M20 30 Q18 18 25 8"></path>
+          </g>
+        </svg>
+      </div>
+      <div class="page-hero__content container">
+        <h1>{heading}</h1>
+        {description && <p class="page-hero__desc">{description}</p>}
+      </div>
+    </section>
+    <section class="page-body">
+      <div class="container">
+        <slot />
+      </div>
+    </section>
+  </main>
+  <Newsletter />
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    position: relative;
+    padding: 180px 0 100px;
+    color: white;
+    overflow: hidden;
+    background: var(--color-turquoise-dark);
+  }
+
+  .page-hero--tools {
+    background: #086d69;
+  }
+
+  .page-hero--news {
+    background: #1e293b;
+  }
+
+  .page-hero--contact {
+    background: #065f46;
+  }
+
+  .page-hero--idi {
+    background: #0f172a;
+  }
+
+  .page-hero--ayudas {
+    background: #92400e;
+  }
+
+  .page-hero--sinergias {
+    background: #3730a3;
+  }
+
+  .page-hero--eventos {
+    background: #9f1239;
+  }
+
+  .page-hero--legal {
+    background: var(--color-gray-800);
+  }
+
+  .page-hero__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .page-hero__doodle {
+    position: absolute;
+    right: -40px;
+    top: -30px;
+    width: 600px;
+    height: 300px;
+    opacity: 0.7;
+  }
+
+  .page-hero__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-hero__content h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .page-hero__desc {
+    font-size: 1.1rem;
+    opacity: 0.88;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .page-body {
+    padding: 60px 0 80px;
+  }
+
+  .page-body :global(h2) {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+    margin-top: 48px;
+  }
+
+  .page-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .page-body :global(p) {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-gray-600);
+    margin-bottom: 16px;
+    max-width: 800px;
+  }
+
+  .page-body :global(.cards-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin: 32px 0;
+  }
+
+  .page-body :global(.feature-card) {
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .page-body :global(.feature-card:hover) {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-body :global(.feature-card__icon) {
+    width: 52px;
+    height: 52px;
+    background: var(--color-turquoise);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: white;
+  }
+
+  .page-body :global(.feature-card h3) {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+  }
+
+  .page-body :global(.feature-card p) {
+    font-size: 0.92rem;
+    color: var(--color-gray-500);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .page-body :global(.highlight-box) {
+    background: var(--color-turquoise-dark);
+    border-radius: 16px;
+    padding: 40px 36px;
+    color: white;
+    margin: 40px 0;
+  }
+
+  .page-body :global(.highlight-box h3) {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: white;
+  }
+
+  .page-body :global(.highlight-box p) {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin-bottom: 0;
+  }
+
+  .page-body :global(.cta-btn) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-green);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    transition: background 0.2s ease;
+  }
+
+  .page-body :global(.cta-btn:hover) {
+    background: var(--color-green-dark);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero__content h1 {
+      font-size: 2rem;
+    }
+    .page-body {
+      padding: 40px 0 60px;
+    }
+  }
+</style>

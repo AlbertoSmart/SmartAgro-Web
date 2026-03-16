@@ -1,0 +1,121 @@
+---
+import TestPage from "../layouts/TestPage.astro";
+---
+
+<TestPage
+  title="I+D+i – Cuaderno de Campo Digital"
+  heading="Innovación Tecnológica Aplicada"
+  description="Lideramos la investigación en inteligencia artificial y sensores de campo para ofrecer soluciones de vanguardia en la agricultura 4.0."
+  variant="idi"
+>
+  <div class="tech-portfolio">
+    <div class="portfolio-item glass">
+      <div class="portfolio-item__badge">En Desarrollo</div>
+      <h3>Detección Temprana con YOLOv11</h3>
+      <p>
+        Implementamos los últimos modelos de visión artificial para la
+        identificación en tiempo real de la mosca del olivo y otras plagas.
+        Nuestros algoritmos procesan imágenes capturadas directamente en el
+        campo por sensores autónomos.
+      </p>
+      <div class="tech-stack">
+        <span>Python</span><span>PyTorch</span><span>YOLOv11</span><span
+          >OpenCV</span
+        >
+      </div>
+    </div>
+
+    <div class="portfolio-item glass">
+      <div class="portfolio-item__badge">Producción</div>
+      <h3>Infraestructura Cloud en AWS</h3>
+      <p>
+        Toda nuestra red de sensores está conectada a una infraestructura
+        robusta y escalable en Amazon Web Services, garantizando la
+        disponibilidad de los datos y la seguridad de la información procesada
+        por nuestra IA.
+      </p>
+      <div class="tech-stack">
+        <span>AWS Lambda</span><span>S3</span><span>DynamoDB</span><span
+          >MQTT</span
+        >
+      </div>
+    </div>
+
+    <div class="portfolio-item glass">
+      <div class="portfolio-item__badge">I+D</div>
+      <h3>Integración Roboflow</h3>
+      <p>
+        Colaboramos con plataformas líderes como Roboflow para el etiquetado y
+        entrenamiento masivo de datasets especializados en plagas mediterráneas,
+        logrando precisiones superiores al 95%.
+      </p>
+      <div class="tech-stack">
+        <span>Active Learning</span><span>Dataset Augmentation</span><span
+          >Edge Deployment</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .tech-portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      margin-top: -60px;
+    }
+
+    .portfolio-item {
+      background: #1e293b;
+      color: white;
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .portfolio-item__badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: var(--color-turquoise);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .portfolio-item h3 {
+      font-size: 1.5rem;
+      color: white;
+      margin: 0;
+    }
+
+    .portfolio-item p {
+      color: #94a3b8 !important;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-stack span {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+    }
+  </style>
+</TestPage>

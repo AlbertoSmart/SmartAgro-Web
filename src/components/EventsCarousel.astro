@@ -1,0 +1,295 @@
+---
+const events = [
+  {
+    date: "20",
+    month: "MAR",
+    year: "2026",
+    title: "Planes de Abonado",
+    description:
+      "Seminario online sobre la gestión integral de planes de abonado en explotaciones agrícolas. Se abordarán los requisitos normativos del cuaderno de explotación, el cálculo de necesidades nutritivas y la integración con herramientas digitales.",
+    time: "10:00 – 12:00 h",
+    location: "Online – Videoconferencia",
+    type: "Seminario",
+  },
+  {
+    title: "Prescripción Fitosanitaria",
+    description:
+      "Curso práctico sobre el módulo de prescripción fitosanitaria. Se cubrirá el registro de tratamientos, la gestión de productos autorizados y el cumplimiento de la normativa vigente en materia fitosanitaria.",
+    time: "10:00 – 13:00 h",
+    location: "Online – Videoconferencia",
+    type: "Curso",
+  },
+];
+---
+
+<section class="events section-padding" id="eventos">
+  <div class="container">
+    <div class="events__header text-center">
+      <h2 class="section-title">Próximos Seminarios, Cursos y Eventos</h2>
+    </div>
+
+    <div class="events__carousel" id="eventsCarousel">
+      <button
+        class="events__arrow events__arrow--left"
+        id="eventsPrev"
+        aria-label="Anterior"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          ><path d="m15 18-6-6 6-6"></path>
+        </svg>
+      </button>
+
+      <div class="events__track">
+        {
+          events.map((ev) => (
+            <article class="event-card card">
+              <div class="event-card__date">
+                <span class="event-card__day">{ev.date}</span>
+                <span class="event-card__month">{ev.month}</span>
+                <span class="event-card__year">{ev.year}</span>
+              </div>
+              <div class="event-card__body">
+                <span class="event-card__type">{ev.type}</span>
+                <h3 class="event-card__title">{ev.title}</h3>
+                <p class="event-card__desc">{ev.description}</p>
+                <div class="event-card__meta">
+                  <span class="event-card__meta-item">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                    {ev.time}
+                  </span>
+                  <span class="event-card__meta-item">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    {ev.location}
+                  </span>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <button
+        class="events__arrow events__arrow--right"
+        id="eventsNext"
+        aria-label="Siguiente"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          ><path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".events__track");
+    const prev = document.getElementById("eventsPrev");
+    const next = document.getElementById("eventsNext");
+    if (!track || !prev || !next) return;
+
+    let pos = 0;
+    const cards = track.querySelectorAll(".event-card");
+    const maxPos = Math.max(0, cards.length - 2);
+
+    function update() {
+      const card = cards[0] as HTMLElement;
+      if (!card) return;
+      const gap = 28;
+      const shift = (card.offsetWidth + gap) * pos;
+      (track as HTMLElement).style.transform = `translateX(-${shift}px)`;
+    }
+
+    prev.addEventListener("click", () => {
+      if (pos > 0) {
+        pos--;
+        update();
+      }
+    });
+    next.addEventListener("click", () => {
+      if (pos < maxPos) {
+        pos++;
+        update();
+      }
+    });
+  });
+</script>
+
+<style>
+  .events {
+    background: var(--color-white);
+  }
+
+  .events__header {
+    margin-bottom: 48px;
+  }
+
+  .events__carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .events__track {
+    display: flex;
+    gap: 28px;
+    overflow: hidden;
+    flex: 1;
+    transition: transform 0.4s ease;
+  }
+
+  .events__arrow {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gray-300);
+    background: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    color: var(--color-gray-500);
+  }
+
+  .events__arrow:hover {
+    border-color: var(--color-turquoise);
+    color: var(--color-turquoise);
+    background: rgba(15, 181, 174, 0.05);
+  }
+
+  .event-card {
+    display: flex;
+    min-width: calc(50% - 14px);
+    border: 1px solid var(--color-gray-200);
+    flex-shrink: 0;
+  }
+
+  .event-card__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px;
+    background: var(--color-turquoise);
+    color: var(--color-white);
+    min-width: 90px;
+    border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  }
+
+  .event-card__day {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .event-card__month {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  .event-card__year {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+
+  .event-card__body {
+    padding: 24px;
+    flex: 1;
+  }
+
+  .event-card__type {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-turquoise);
+    background: rgba(15, 181, 174, 0.08);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+
+  .event-card__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-blue-dark);
+    margin-bottom: 10px;
+  }
+
+  .event-card__desc {
+    font-size: 0.88rem;
+    color: var(--color-gray-500);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .event-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .event-card__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: var(--color-gray-400);
+  }
+
+  @media (max-width: 768px) {
+    .event-card {
+      min-width: 100%;
+      flex-direction: column;
+    }
+    .event-card__date {
+      flex-direction: row;
+      gap: 8px;
+      min-width: auto;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      padding: 16px;
+    }
+    .event-card__day {
+      font-size: 1.5rem;
+    }
+  }
+</style>

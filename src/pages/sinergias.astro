@@ -1,0 +1,135 @@
+---
+import TestPage from "../layouts/TestPage.astro";
+---
+
+<TestPage
+  title="Sinergias – Cuaderno de Campo Digital"
+  heading="Alianzas de Valor Añadido"
+  description="Colaboramos con las principales entidades y centros tecnológicos para integrar la mejor tecnología en tu explotación."
+  variant="sinergias"
+>
+  <div class="synergies-showcase">
+    <div class="partners-grid">
+      <div class="partner-card glass">
+        <div class="partner-card__visual" style="background: #e2e8f0;">
+          <span class="partner-logo-placeholder">Consejo Agrícolas</span>
+        </div>
+        <div class="partner-card__content">
+          <h3>Soporte Institucional</h3>
+          <p>
+            Convenio oficial para el despliegue de redes de monitoreo en
+            cooperativas de toda España.
+          </p>
+        </div>
+      </div>
+
+      <div class="partner-card glass">
+        <div class="partner-card__visual" style="background: #d1fae5;">
+          <span class="partner-logo-placeholder">IPMwise</span>
+        </div>
+        <div class="partner-card__content">
+          <h3>Control de Malas Hierbas</h3>
+          <p>
+            Integración algorítmica para la prescripción inteligente basada en
+            detección por visión artificial.
+          </p>
+        </div>
+      </div>
+
+      <div class="partner-card glass">
+        <div class="partner-card__visual" style="background: #fee2e2;">
+          <span class="partner-logo-placeholder">Fieldbee</span>
+        </div>
+        <div class="partner-card__content">
+          <h3>Guiado de Precisión</h3>
+          <p>
+            Nuestra IA alimenta sistemas de autoguiado para optimizar pasadas y
+            reducir solapes de tratamiento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="partnership-cta glass">
+      <h3>¿Quieres formar parte de nuestro ecosistema?</h3>
+      <p>
+        Buscamos partners tecnológicos y centros de investigación para seguir
+        innovando en la agricultura digital.
+      </p>
+      <a href="/contacto" class="cta-btn">Contactar para Alianzas</a>
+    </div>
+  </div>
+
+  <style>
+    .synergies-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      margin-top: -60px;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .partner-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--color-gray-100);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .partner-card__visual {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--color-gray-400);
+      font-size: 1.25rem;
+      border-bottom: 1px solid var(--color-gray-100);
+    }
+
+    .partner-card__content {
+      padding: 32px;
+    }
+
+    .partner-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: var(--color-gray-900);
+    }
+
+    .partner-card p {
+      font-size: 0.95rem;
+      color: var(--color-gray-600);
+      line-height: 1.6;
+    }
+
+    .partnership-cta {
+      background: var(--color-turquoise-dark);
+      color: white;
+      padding: 60px;
+      border-radius: 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .partnership-cta h3 {
+      font-size: 1.75rem;
+      color: white;
+    }
+
+    .partnership-cta p {
+      color: rgba(255, 255, 255, 0.8) !important;
+      max-width: 600px;
+    }
+  </style>
+</TestPage>

@@ -1,0 +1,413 @@
+---
+---
+
+<section class="hero hero--solid" id="hero">
+  <div class="hero__content container">
+    <div class="hero__main">
+      <div class="hero__badges">
+        <div class="hero__badge glass">
+          <span>Tecnología IA de Vanguardia</span>
+        </div>
+        <div class="hero__badge hero__badge--siex glass">
+          <span class="pulse"></span>
+          <span>SIEX Homologado</span>
+        </div>
+      </div>
+      <h1 class="hero__title">
+        Digitalización y Monitoreo Agrario
+      </h1>
+      <p class="hero__text">
+        Detectamos y combatimos plagas mediante sensores inteligentes equipados
+        con IA. Cumple con la normativa oficial gracias a nuestra **integración
+        directa con SIEX** y protege tu cultivo con datos precisos.
+      </p>
+      <div class="hero__actions">
+        <a href="/eventos" class="btn btn--turquoise">
+          Próximos Seminarios y Eventos
+        </a>
+        <a href="/ayudas/kit-digital" class="btn btn--white">
+          Descubre el Kit Digital
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            ><path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__orbiter-path hero__orbiter-path--1">
+        <div class="hero__orbiter-node glass">
+          <div class="hero__orbiter-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path d="m13 17 5-5-5-5M6 17l5-5-5-5"></path>
+            </svg>
+          </div>
+          <div class="hero__orbiter-text">
+            <span class="hero__orbiter-label">Sensores IA</span>
+            <span class="hero__orbiter-value">Detección</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__orbiter-path hero__orbiter-path--2">
+        <div class="hero__orbiter-node glass">
+          <div class="hero__orbiter-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 8v4l3 3"></path>
+            </svg>
+          </div>
+          <div class="hero__orbiter-text">
+            <span class="hero__orbiter-label">Alertas 24/7</span>
+            <span class="hero__orbiter-value">Tiempo Real</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__illustration">
+        <svg
+          class="hero__globe"
+          viewBox="0 0 400 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="200"
+            cy="200"
+            r="140"
+            stroke="rgba(255,255,255,0.2)"
+            stroke-width="1"></circle>
+          <circle
+            cx="200"
+            cy="200"
+            r="100"
+            stroke="rgba(255,255,255,0.15)"
+            stroke-width="1"></circle>
+          <circle
+            cx="200"
+            cy="200"
+            r="60"
+            stroke="rgba(255,255,255,0.1)"
+            stroke-width="1"></circle>
+          <path
+            d="M100 200 C 100 100, 300 100, 300 200"
+            stroke="rgba(255,255,255,0.3)"
+            stroke-width="1.5"
+            stroke-dasharray="10 5"></path>
+          <path
+            d="M100 200 C 100 300, 300 300, 300 200"
+            stroke="rgba(255,255,255,0.3)"
+            stroke-width="1.5"
+            stroke-dasharray="10 5"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 100px;
+    overflow: hidden;
+    color: var(--color-white);
+    background: var(--color-turquoise-dark);
+  }
+
+  .hero__content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .hero__badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero__badge--siex {
+    background: rgba(15, 181, 174, 0.2);
+    border-color: rgba(15, 181, 174, 0.4);
+    color: var(--color-turquoise-light);
+  }
+
+  .hero__badge--siex .pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--color-turquoise-light);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .hero__badge--siex .pulse::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  .hero__title {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    color: var(--color-white);
+  }
+
+  .hero__title-alt {
+    display: block;
+    font-weight: 300;
+    opacity: 0.85;
+    letter-spacing: -0.01em;
+  }
+
+  .hero__text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 580px;
+    margin-bottom: 48px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn--white {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn--white:hover {
+    background: var(--color-white);
+    color: var(--color-turquoise-dark);
+    border-color: var(--color-white);
+  }
+
+  .hero__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__illustration {
+    width: 100%;
+    max-width: 500px;
+    opacity: 0.6;
+  }
+
+  .hero__orbiter-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    z-index: 5;
+    animation: orbit-path 30s linear infinite;
+  }
+
+  .hero__orbiter-path--1 {
+    animation-duration: 40s;
+  }
+
+  .hero__orbiter-path--2 {
+    animation-duration: 50s;
+    animation-direction: reverse;
+  }
+
+  .hero__orbiter-node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--color-white);
+    padding: 15px;
+    animation: orbit-counter 30s linear infinite;
+  }
+
+  .hero__orbiter-path--1 .hero__orbiter-node {
+    top: -125px; /* Radius 60 + 65px (half height) */
+    left: -65px;
+    animation-duration: 40s;
+  }
+
+  .hero__orbiter-path--2 .hero__orbiter-node {
+    top: 75px; /* Radius 140 - 65px (half height) = center at Y=140 */
+    left: -65px;
+    animation-duration: 50s;
+    animation-direction: reverse;
+  }
+
+  .hero__orbiter-icon {
+    margin-bottom: 8px;
+    color: var(--color-turquoise-light);
+  }
+
+  .hero__orbiter-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero__orbiter-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+  }
+
+  .hero__orbiter-value {
+    font-weight: 800;
+    font-size: 0.85rem;
+    line-height: 1.1;
+  }
+
+  @keyframes orbit-path {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbit-counter {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .hero__content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 120px;
+    }
+    .hero__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero__text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero__actions {
+      justify-content: center;
+    }
+    .hero__orbiter-path {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      animation: none !important;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+    }
+    .hero__orbiter-node {
+      position: relative;
+      top: auto !important;
+      left: auto !important;
+      transform: none !important;
+      animation: none !important;
+      margin: 0 auto;
+    }
+    .hero__visual {
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 40px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 120px 0 60px;
+    }
+    .hero__title {
+      font-size: 2.75rem;
+    }
+    .hero__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .hero__actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

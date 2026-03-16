@@ -1,0 +1,153 @@
+---
+const features = [
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2"><circle cx="24" cy="24" r="16"/><path d="M24 8v16M24 24l8 8M24 24l-8 8"/><circle cx="24" cy="24" r="4" fill="white"/></svg>`,
+    title: "Ecosistema de Sensores",
+    text: "Desde pH y NPK hasta dendrómetros y estaciones meteorológicas. Una red completa para digitalizar cada parámetro de tu finca.",
+  },
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2"><path d="M4 12h40M4 24h40M4 36h40M12 4v40M24 4v40M36 4v40"/></svg>`,
+    title: "Gestión GIS Avanzada",
+    text: "Digitaliza tu parcela: sectores de riego, líneas, arquetas y pozos. Gestiona perímetros y activos sobre un mapa interactivo inteligente.",
+  },
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2"><path d="M24 8l16 28H8L24 8z"/><circle cx="24" cy="26" r="4"/><path d="M24 18v4"/></svg>`,
+    title: "Asistente IA Agrario",
+    text: "Nuestra IA responde preguntas complejas sobre tus cultivos, monitorea parcelas y te asiste en la toma de decisiones 24/7.",
+  },
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2"><rect x="8" y="8" width="32" height="32" rx="4"/><path d="M16 16h16M16 24h16M16 32h8"/></svg>`,
+    title: "Optimización de Recursos",
+    text: "Reduce costos en riego, abonos y fertilizantes. Datos precisos que se traducen en un ahorro directo y una mayor rentabilidad.",
+  },
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2"><path d="M24 4L4 18v22h16V28h8v12h16V18L24 4z"/><circle cx="24" cy="20" r="4"/></svg>`,
+    title: "Alertas y Control Remoto",
+    text: "Sistema de alarmas configurables según perímetros y umbrales. Gestiona tu finca virtualmente desde cualquier dispositivo.",
+  },
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2"><rect x="8" y="8" width="32" height="32" rx="4"/><path d="M16 16h16M16 24h16M16 32h8"/></svg>`,
+    title: "Homologación SIEX Oficial",
+    text: "Registro digital **homologado por SIEX**. Genera informes automáticos, firma electrónica y cumple con toda la normativa agraria vigente.",
+  },
+];
+---
+
+<section class="features section-padding" id="features">
+  <div class="container">
+    <div class="features__header text-center">
+      <span class="features__pretitle">Nuestras Soluciones</span>
+      <h2 class="section-title">Tecnología Inteligente para el Campo</h2>
+      <p class="section-subtitle">
+        Diseñamos herramientas que simplifican el día a día de agricultores y
+        técnicos, integrando datos y procesos en un ecosistema único.
+      </p>
+    </div>
+
+    <div class="features__grid">
+      {
+        features.map((f, index) => (
+          <article class="feature-card card">
+            <div class="feature-card__icon-wrapper">
+              <div class="feature-card__icon glass">
+                <Fragment set:html={f.icon} />
+              </div>
+            </div>
+            <div class="feature-card__content">
+              <h3 class="feature-card__title">{f.title}</h3>
+              <p class="feature-card__text">{f.text}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    background: var(--color-gray-50);
+    position: relative;
+  }
+
+  .features__header {
+    margin-bottom: 80px;
+  }
+
+  .features__pretitle {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
+
+  .feature-card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card__icon-wrapper {
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+
+  .feature-card__icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--color-turquoise);
+    color: var(--color-white);
+    box-shadow: 0 10px 20px -5px rgba(15, 181, 174, 0.4);
+  }
+
+  .feature-card__icon :global(svg) {
+    width: 32px;
+    height: 32px;
+    stroke: white;
+  }
+
+  .feature-card__title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--color-gray-900);
+  }
+
+  .feature-card__text {
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1024px) {
+    .feature-card {
+      flex: 1 1 calc(50% - 32px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .feature-card {
+      flex: 1 1 100%;
+      padding: 30px;
+    }
+    .section-title {
+      font-size: 2.25rem;
+    }
+  }
+</style>
