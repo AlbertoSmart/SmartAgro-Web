@@ -4,43 +4,159 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Trazabilidad GPS DARP – Cuaderno de Campo Digital"
-    heading="Trazabilidad GPS Avanzada"
-    description="Integración de dispositivos GPS para el seguimiento preciso de deyecciones ganaderas según requerimientos DARP."
+    heading="Trazabilidad GPS y Control de Flotas"
+    description="Certifica cada viaje y aplicación. Integración telemática avanzada para cumplir con los estándares DARP y mejorar la eficiencia logística."
     variant="tools"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Control Telemático Total</h2>
-            <p>
-                Cumple con la normativa DARP de forma automática. Nuestros
-                sistemas GPS se integran directamente con la plataforma para
-                reportar recorridos, tiempos y lugares de aplicación sin
-                intervención manual.
-            </p>
+        <!-- Hero Section -->
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Tecnología Telemática al Servicio del Ganadero</h2>
+                <p>
+                    La trazabilidad GPS ya no es solo una obligación, es una herramienta de gestión. Nuestro sistema captura automáticamente los datos de ruta, tiempos de espera y puntos de descarga, transformándolos en informes listos para la administración y para la toma de decisiones empresariales.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/servicios/mapa_trazabilidad_gps_agro_1773663997321.png" alt="Pantalla de seguimiento GPS de flota" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Envío de Datos a la Administración</h3>
-                <p>
-                    Sincronización directa con los servidores oficiales para el
-                    reporte de trazabilidad.
-                </p>
+        <!-- Technical Specs Section -->
+        <section class="tech-specs">
+            <h2>Capacidades del Sistema</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-header">
+                        <span class="spec-icon">🛰️</span>
+                        <h3>Multi-Dispositivo</h3>
+                    </div>
+                    <p>Compatible con los principales terminales GPS del mercado y con nuestra propia App móvil de trazabilidad.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-header">
+                        <span class="spec-icon">📶</span>
+                        <h3>Conexión Ininterrumpida</h3>
+                    </div>
+                    <p>Almacenamiento offline de datos en zonas sin cobertura y sincronización automática al recuperar la señal.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-header">
+                        <span class="spec-icon">📂</span>
+                        <h3>Exportación DARP</h3>
+                    </div>
+                    <p>Generación automática de los ficheros XML y CSV requeridos por la administración catalana.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Histórico de Recorridos</h3>
-                <p>
-                    Visualiza en el mapa todos los viajes y aplicaciones
-                    realizadas por tu flota.
-                </p>
+        </section>
+
+        <!-- Use Cases / Real Benefits -->
+        <section class="use-cases glass-dark">
+            <h2 class="text-white">¿Por qué elegir nuestra Trazabilidad?</h2>
+            <div class="cases-flex">
+                <div class="case-item">
+                    <h4>Justificación de Ayudas</h4>
+                    <p>Datos irrefutables para el cobro de subvenciones ligadas al Decreto de Nitratos.</p>
+                </div>
+                <div class="case-item">
+                    <h4>Optimización de Rutas</h4>
+                    <p>Análisis de tiempos de transporte para reducir el consumo de combustible y desgaste de flota.</p>
+                </div>
+                <div class="case-item">
+                    <h4>Alertas en Tiempo Real</h4>
+                    <p>Notificaciones inmediatas si un vehículo entra en una zona protegida o vulnerable.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Geofencing</h3>
-                <p>
-                    Alertas automáticas si un camión entra o sale de zonas
-                    restringidas o protegidas.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Necesitas equipar tu flota?</h3>
+            <p>Disponemos de equipos GPS homologados y listos para instalar. Te ayudamos en todo el proceso de alta en el sistema DARP.</p>
+            <a href="/contacto" class="cta-btn">Solicitar Información de Equipos</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .tech-specs {
+        margin: 80px 0;
+    }
+
+    .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .spec-card {
+        padding: 30px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        border: 1px solid var(--color-gray-100);
+    }
+
+    .spec-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .spec-icon {
+        font-size: 1.5rem;
+    }
+
+    .use-cases {
+        padding: 60px 40px;
+        border-radius: 24px;
+        margin: 60px 0;
+    }
+
+    .text-white { color: white !important; }
+
+    .cases-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .case-item {
+        flex: 1;
+        min-width: 250px;
+        background: rgba(255,255,255,0.05);
+        padding: 25px;
+        border-radius: 16px;
+    }
+
+    .case-item h4 {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .case-item p {
+        color: rgba(255,255,255,0.7) !important;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>

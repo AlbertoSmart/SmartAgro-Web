@@ -4,42 +4,140 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Gestión Logística de Estiércoles – Cuaderno de Campo Digital"
-    heading="Logística de Estiércoles y Purines"
-    description="Trazabilidad completa desde el origen hasta la aplicación. Cumplimiento estricto con la normativa DARP y trazabilidad GPS."
+    heading="Logística Inteligente de Estiércoles y Purines"
+    description="Control integral de deyecciones ganaderas. Trazabilidad total desde la granja hasta la parcela receptoras, cumpliendo con el Decreto de Nitratos."
     variant="tools"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Economía Circular Garantizada</h2>
-            <p>
-                Gestionamos la logística de deyecciones ganaderas asegurando que
-                cada movimiento sea registrado y geolocalizado, cumpliendo con
-                las más estrictas normativas medioambientales.
-            </p>
+        <!-- Hero Section -->
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Economía Circular y Cumplimiento Legal</h2>
+                <p>
+                    La gestión de estiércoles es uno de los mayores retos legales y medioambientales de la ganadería actual. Nuestra plataforma automatiza el cumplimiento del Decreto de Nitratos, registrando cada aplicación y asegurando que los niveles de nitrógeno se mantienen dentro de los límites legales por hectárea.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/servicios/camion_cisterna_moderno_campo_1773663980438.png" alt="Camión aplicador de purines con GPS" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Trazabilidad GPS</h3>
-                <p>
-                    Seguimiento en tiempo real de los transportes de purines y
-                    estiércoles.
-                </p>
+        <!-- Compliance & Logistics Section -->
+        <section class="compliance-details">
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Registro de Aplicaciones</h3>
+                    <p>Documentación automática de la fecha, dosis, tipo de estiércol y parcela de destino. Imprescindible para el Cuaderno de Explotación.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Plan de Deyección</h3>
+                    <p>Cálculo automático del nitrógeno aportado basado en la analítica del purín y las necesidades del cultivo receptor.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Cartas de Porte Digitales</h3>
+                    <p>Generación de documentos de transporte obligatorios en formato digital, accesibles para el transportista desde el móvil.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Documentación DARP</h3>
-                <p>
-                    Generación automática de cartas de porte y documentos
-                    oficiales requeridos.
-                </p>
+        </section>
+
+        <!-- GPS Integration highlighted -->
+        <section class="gps-spotlight glass">
+            <div class="spotlight-content">
+                <h2>Trazabilidad GPS DARP Integrada</h2>
+                <p>Cumplimos con los requerimientos técnicos del DARP para el transporte de deyecciones. El sistema recibe automáticamente los datos de posición y caudal de las cisternas, eliminando la anotación manual.</p>
+                <ul class="check-list">
+                    <li>Validación de rutas ante inspecciones.</li>
+                    <li>Control de velocidades y paradas.</li>
+                    <li>Geolocalización exacta de la descarga.</li>
+                </ul>
+                <a href="/herramientas/trazabilidad" class="link-btn">Saber más sobre Trazabilidad GPS →</a>
             </div>
-            <div class="feature-card">
-                <h3>Balance de Nutrientes</h3>
-                <p>
-                    Cálculo del aporte de nitrógeno orgánico al suelo para
-                    evitar sobre-fertilización.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Te preocupa el Decreto de Nitratos?</h3>
+            <p>Tranquilidad total para tu granja y tus tierras. Gestionamos la complejidad para que tú te centres en producir.</p>
+            <a href="/contacto" class="cta-btn">Solicitar Asesoramiento Técnico</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin: 60px 0;
+    }
+
+    .detail-box {
+        padding: 30px;
+        background: var(--color-gray-50);
+        border-radius: 20px;
+        border-left: 4px solid var(--color-green);
+    }
+
+    .detail-box h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        color: var(--color-dark);
+    }
+
+    .gps-spotlight {
+        padding: 60px 40px;
+        border-radius: 24px;
+        margin: 60px 0;
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+    }
+
+    .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+    }
+
+    .check-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .check-list li::before {
+        content: "✓";
+        color: var(--color-green);
+        font-weight: 800;
+    }
+
+    .link-btn {
+        display: inline-block;
+        color: var(--color-turquoise);
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .link-btn:hover {
+        border-bottom-color: var(--color-turquoise);
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>
