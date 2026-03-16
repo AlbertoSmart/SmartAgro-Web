@@ -1,8 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import Newsletter from "../components/Newsletter.astro";
-import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -27,8 +24,7 @@ const {
 } = Astro.props;
 ---
 
-<Layout title={`${title}`}>
-  <Navbar transparent={true} />
+<Layout title={`${title}`} transparent={true} showNewsletter={true}>
   <main>
     <section class={`page-hero page-hero--${variant}`}>
       <div class="page-hero__bg">
@@ -94,8 +90,6 @@ const {
       </div>
     </section>
   </main>
-  <Newsletter />
-  <Footer />
 </Layout>
 
 <style>

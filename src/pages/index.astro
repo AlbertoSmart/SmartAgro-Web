@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import IntroSection from "../components/IntroSection.astro";
 import SensorCatalog from "../components/SensorCatalog.astro";
@@ -11,12 +10,9 @@ import TechniciansBanner from "../components/TechniciansBanner.astro";
 import TechCards from "../components/TechCards.astro";
 import EventsCarousel from "../components/EventsCarousel.astro";
 import BlogSection from "../components/BlogSection.astro";
-import Newsletter from "../components/Newsletter.astro";
-import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Ecosistema Digital Agrario – Digitalización y Monitoreo">
-  <Navbar transparent={true} />
+<Layout title="Ecosistema Digital Agrario – Digitalización y Monitoreo" transparent={true}>
   <main>
     <Hero />
     <IntroSection />
@@ -28,7 +24,5 @@ import Footer from "../components/Footer.astro";
     <TechCards />
     <EventsCarousel />
     <BlogSection />
-    <Newsletter />
   </main>
-  <Footer />
 </Layout>
