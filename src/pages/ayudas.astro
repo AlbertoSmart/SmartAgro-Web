@@ -4,170 +4,215 @@ import TestPage from "../layouts/TestPage.astro";
 
 <TestPage
   title="Centro de Soporte – Cuaderno de Campo Digital"
-  heading="Centro de Soporte y Ayuda"
-  description="Encuentra tutoriales, guías técnicas y soporte especializado para maximizar el rendimiento de tu explotación agrícola."
+  heading="Impulso y Soporte Técnico"
+  description="Accede a recursos oficiales, guías de digitalización y soporte especializado para tu explotación."
   variant="ayudas"
 >
-  <div class="support-hub">
+  <div class="subpage-content">
+    <section class="support-intro">
+      <div class="intro-grid">
+        <div class="feature-detail glass">
+          <h2>Digitalizamos tu Futuro</h2>
+          <p>
+            No solo te ofrecemos una herramienta, te acompañamos en todo el proceso de transformación digital. Desde la solicitud de ayudas como el Kit Digital hasta la resolución de dudas técnicas complejas sobre la normativa SIEX.
+          </p>
+        </div>
+        <div class="intro-image">
+          <img src="/images/ayudas/kit_digital.png" alt="Soporte y gestión digital" class="sol-img" />
+        </div>
+      </div>
+    </section>
+
     <div class="support-categories">
       <div class="category-block glass">
-        <h3>Primeros Pasos</h3>
-        <ul class="support-links">
-          <li><a href="#">Cómo instalar los sensores de campo</a></li>
-          <li><a href="#">Configuración inicial de la plataforma</a></li>
-          <li><a href="#">Vinculación de parcelas REA</a></li>
-        </ul>
+        <div class="cat-icon">📋</div>
+        <h3>Kit Digital</h3>
+        <p>Como agentes digitalizadores homologados, te ayudamos a canjear tu bono en soluciones de agricultura inteligente.</p>
+        <a href="/ayudas/kit-digital" class="partner-link">Ver Soluciones Kit Digital →</a>
       </div>
 
       <div class="category-block glass">
-        <h3>Gestión Digital</h3>
-        <ul class="support-links">
-          <li><a href="#">Generación del cuaderno CUE</a></li>
-          <li><a href="#">Firma electrónica de documentos</a></li>
-          <li><a href="#">Validación de productos fitosanitarios</a></li>
-        </ul>
+        <div class="cat-icon">💶</div>
+        <h3>Subvenciones</h3>
+        <p>Información sobre fondos europeos, PERTE y ayudas autonómicas para la modernización de maquinaria.</p>
+        <a href="/ayudas/digitalizacion" class="partner-link">Explorar Ayudas →</a>
       </div>
 
       <div class="category-block glass">
-        <h3>Tecnología e IA</h3>
-        <ul class="support-links">
-          <li><a href="#">Entrenamiento con Roboflow</a></li>
-          <li><a href="#">Alertas de plagas YOLO en tiempo real</a></li>
-          <li><a href="#">Mantenimiento de cámaras inteligentes</a></li>
-        </ul>
+        <div class="cat-icon">🛠️</div>
+        <h3>Centro de Ayuda</h3>
+        <p>Tutoriales interactivos, guías de uso de sensores y asistencia técnica personalizada de agrónomos.</p>
+        <a href="/ayudas/soporte" class="partner-link">Acceder a Soporte →</a>
       </div>
     </div>
 
     <div class="video-tutorials glass">
-      <div class="video-header">
-        <h2>Tutoriales en Vídeo</h2>
-        <p>Aprende visualmente con nuestras guías rápidas.</p>
-      </div>
+      <h2>Formación Directa</h2>
+      <p>Aprende a usar la plataforma en menos de lo que tardas en revisar tu finca.</p>
       <div class="video-grid">
-        <div class="video-miniature">
-          <div class="play-icon">▶</div>
-          <span>Instalación en 5 minutos</span>
+        <div class="video-item">
+          <div class="video-thumb" style="background-image: url('/images/ayudas/kit_digital.png')">
+            <div class="play-btn">▶</div>
+          </div>
+          <span>Introducción a la plataforma</span>
         </div>
-        <div class="video-miniature">
-          <div class="play-icon">▶</div>
-          <span>Uso de la App Móvil</span>
+        <div class="video-item">
+          <div class="video-thumb" style="background-image: url('/images/comunidad/evento_ia.png')">
+            <div class="play-btn">▶</div>
+          </div>
+          <span>Configuración de sensores IoT</span>
         </div>
-        <div class="video-miniature">
-          <div class="play-icon">▶</div>
-          <span>Reporte SIEX paso a paso</span>
+        <div class="video-item">
+          <div class="video-thumb" style="background-image: url('/images/sinergias/fieldbee_autoguiado.png')">
+            <div class="play-btn">▶</div>
+          </div>
+          <span>Gestión de Cuaderno SIEX</span>
         </div>
       </div>
     </div>
   </div>
-
-  <style>
-    .support-hub {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-      margin-top: -60px;
-    }
-
-    .support-categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-
-    .category-block {
-      background: white;
-      padding: 40px;
-      border-radius: 24px;
-      border: 1px solid var(--color-gray-100);
-    }
-
-    .category-block h3 {
-      font-size: 1.25rem;
-      margin-bottom: 24px;
-      color: var(--color-gray-900);
-      position: relative;
-      padding-bottom: 12px;
-    }
-
-    .category-block h3::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--color-turquoise);
-      border-radius: 2px;
-    }
-
-    .support-links {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .support-links a {
-      color: var(--color-gray-600);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-      display: block;
-    }
-
-    .support-links a:hover {
-      color: var(--color-turquoise-dark);
-      transform: translateX(4px);
-    }
-
-    .video-tutorials {
-      background: #f8fafc;
-      padding: 60px;
-      border-radius: 32px;
-      border: 1px solid var(--color-gray-200);
-    }
-
-    .video-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-    }
-
-    .video-miniature {
-      aspect-ratio: 16/9;
-      background: #cbd5e1;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      gap: 12px;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .video-miniature:hover {
-      background: var(--color-gray-800);
-    }
-
-    .play-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--color-turquoise);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
-  </style>
 </TestPage>
+
+<style>
+  .support-intro {
+    margin-bottom: 80px;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .intro-image {
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sol-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .support-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .category-block {
+    background: white;
+    padding: 40px;
+    border-radius: 28px;
+    border: 1px solid var(--color-gray-100);
+    transition: all 0.3s ease;
+  }
+
+  .category-block:hover {
+    border-color: var(--color-turquoise);
+    transform: translateY(-5px);
+  }
+
+  .cat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .category-block h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--color-gray-900);
+  }
+
+  .category-block p {
+    font-size: 0.95rem;
+    color: var(--color-gray-600);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .partner-link {
+    font-weight: 700;
+    color: var(--color-turquoise-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .video-tutorials {
+    background: var(--color-gray-900);
+    color: white;
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+  }
+
+  .video-tutorials h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .video-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .video-thumb {
+    aspect-ratio: 16/9;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+  }
+
+  .video-thumb:hover::after {
+    background: rgba(0,0,0,0.5);
+  }
+
+  .play-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--color-turquoise);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 2;
+    transition: transform 0.3s ease;
+  }
+
+  .video-thumb:hover .play-btn {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 900px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

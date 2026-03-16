@@ -4,43 +4,70 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Ayudas a la Digitalización – Cuaderno de Campo Digital"
-    heading="Subvenciones y Ayudas"
-    description="Te ayudamos a gestionar y tramitar las subvenciones disponibles para la modernización tecnológica de tu explotación."
+    heading="Financia tu Transformación"
+    description="Te ayudamos a navegar por el ecosistema de subvenciones europeas y nacionales para la agricultura 4.0."
     variant="ayudas"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Financia tu Cambio</h2>
-            <p>
-                Existen múltiples líneas de ayuda europeas y nacionales
-                destinadas a la agricultura 4.0. Nosotros te informamos y
-                facilitamos la documentación técnica necesaria para
-                solicitarlas.
-            </p>
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Más allá del Kit Digital</h2>
+                <p>
+                    Además del Kit Digital, existen líneas específicas de modernización como el PERTE Agroalimentario o las ayudas del Programa de Desarrollo Rural (PDR) gestionadas por las comunidades autónomas. Nuestra plataforma cumple con los requisitos técnicos exigidos en estas convocatorias, facilitando la obtención de la subvención.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/ayudas/kit_digital.png" alt="Ayudas gubernamentales y europeas agricultura" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Fondos Europeos</h3>
-                <p>
-                    Información actualizada sobre el PERTE Agroalimentario y
-                    otros fondos de recuperación.
-                </p>
+        <section class="deep-info">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Fondos Next Generation</h3>
+                    <p>
+                        Información actualizada sobre convocatorias centradas en la resiliencia y sostenibilidad del sector agrario tras la crisis.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Eficiencia Energética</h3>
+                    <p>
+                        Líneas específicas para la instalación de sensores que reduzcan el consumo de agua y energía en sistemas de riego.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Justificación Técnica</h3>
+                    <p>
+                        Generamos informes automáticos detallando las mejoras logradas en la explotación, vitales para el cobro final de la ayuda.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Ayudas Autonómicas</h3>
-                <p>
-                    Gestión específica de las líneas de modernización de
-                    maquinaria y digitalización por comunidad.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3>Asesoramiento en Trámites</h3>
-                <p>
-                    Te conectamos con gestorías especializadas en subvenciones
-                    agrarias para asegurar el éxito.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Planeas una inversión tecnológica?</h3>
+            <p>No dejes pasar la oportunidad de financiar hasta el 80% de tu equipamiento. Consulta las subvenciones vigentes en tu zona.</p>
+            <a href="/contacto" class="cta-btn">Consultar Calendario de Ayudas</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>

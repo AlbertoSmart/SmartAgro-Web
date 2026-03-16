@@ -80,11 +80,17 @@ import TestPage from "../layouts/TestPage.astro";
         </div>
         <div class="form-group">
           <label for="topic">Interés</label>
-          <select id="topic">
-            <option>Información General</option>
-            <option>Soporte Técnico SIEX</option>
-            <option>Instalación de Sensores</option>
-            <option>Presupuesto Personalizado</option>
+          <select id="topic" name="topic">
+            <option value="" disabled selected>Selecciona un motivo...</option>
+            <option value="siex">Cuaderno de Campo Digital (SIEX/REA)</option>
+            <option value="fieldbee">Autoguiado RTK FieldBee</option>
+            <option value="ipmwise">Control de Malas Hierbas IPMwise</option>
+            <option value="kit-digital">Kit Digital / Subvenciones</option>
+            <option value="iot">Sensores IoT y Cámaras IA</option>
+            <option value="prescripcion">Prescripción Digital Variable</option>
+            <option value="trazabilidad">Trazabilidad GPS Logística</option>
+            <option value="cooperativas">Red de Monitoreo (Cooperativas)</option>
+            <option value="otro">Consulta General</option>
           </select>
         </div>
         <div class="form-group">

@@ -4,42 +4,70 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Kit Digital – Cuaderno de Campo Digital"
-    heading="Kit Digital para Agricultura"
-    description="Aprovecha tu bono digital para implementar el Cuaderno de Campo Digital y sensores inteligentes sin coste directo."
+    heading="Kit Digital: Impulso a la Agricultura 4.0"
+    description="Implementa soluciones de inteligencia artificial e IoT en tu explotación con subvención del 100% como Agente Digitalizador Homologado."
     variant="ayudas"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Digitalización Coste Cero</h2>
-            <p>
-                Como agentes digitalizadores adheridos, te ofrecemos soluciones
-                completas que encajan perfectamente en los bonos del Kit
-                Digital, cubriendo software, sensores y gestión de procesos.
-            </p>
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Cero Coste, Máxima Tecnología</h2>
+                <p>
+                    Como agentes digitalizadores oficiales, gestionamos tu bono del Kit Digital para que no tengas que preocuparte por la burocracia. Implementamos nuestra plataforma, sensores avanzados y redes de monitoreo cubriendo el coste íntegro mediante las categorías de 'Business Intelligence' y 'Gestión de Procesos'.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/ayudas/kit_digital.png" alt="Agente Digitalizador Homologado - Kit Digital" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Bono Digital</h3>
-                <p>
-                    Soluciones adaptadas a los tramos de 2.000€, 6.000€ y
-                    12.000€ según tu número de empleados.
-                </p>
+        <section class="deep-info">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Tramitación Ágil</h3>
+                    <p>
+                        Nos encargamos de toda la justificación técnica requerida por Red.es, facilitando el proceso tanto para autónomos como para pymes agrícolas.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Ayudas según Segmento</h3>
+                    <p>
+                        Subvenciones de hasta 12.000€ según el tamaño de tu empresa, escalables para cubrir todas tus necesidades de digitalización.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Mantenimiento Incluido</h3>
+                    <p>
+                        El bono digital no solo cubre el software, sino también el acompañamiento experto para que los datos realmente mejoren tu rentabilidad.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Gestión Integral</h3>
-                <p>
-                    Nos encargamos de toda la justificación técnica requerida
-                    por Red.es.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3>Solución 'Business Intelligence'</h3>
-                <p>
-                    Aprovecha la categoría de BI para integrar nuestras
-                    analíticas predictivas de IA.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Aún no has solicitado tu bono?</h3>
+            <p>El plazo está abierto y las convocatorias son limitadas. Déjanos tus datos y te guiaremos paso a paso en la solicitud oficial.</p>
+            <a href="/contacto" class="cta-btn">Gestionar mi Kit Digital ahora</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>

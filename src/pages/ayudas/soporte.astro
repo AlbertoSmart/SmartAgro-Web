@@ -3,43 +3,71 @@ import TestPage from "../../layouts/TestPage.astro";
 ---
 
 <TestPage
-    title="Ayudas al Usuario – Cuaderno de Campo Digital"
-    heading="Centro de Soporte al Usuario"
-    description="Resolución de dudas, manuales técnicos y asistencia personalizada para que nunca dejes de avanzar."
+    title="Soporte Técnico – Cuaderno de Campo Digital"
+    heading="Soporte Experto a tu Lado"
+    description="Resolución de dudas, manuales técnicos y acompañamiento profesional para liderar la digitalización de tu finca."
     variant="ayudas"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Estamos a tu lado</h2>
-            <p>
-                Nuestro equipo de soporte técnico no solo resuelve incidencias;
-                te acompaña en la digitalización de tu explotación, asegurando
-                que saques el máximo provecho de cada sensor.
-            </p>
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>No Estás Solo en el Cambio</h2>
+                <p>
+                    Nuestro equipo de soporte no es solo un servicio de asistencia; está compuesto por ingenieros agrónomos y expertos en IT que entienden los retos reales del campo. Te ayudamos desde la configuración del primer sensor hasta la validación administrativa de tu cuaderno ante la administración.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/comunidad/evento_ia.png" alt="Soporte técnico y formación en campo" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Centro de Ayuda 24/7</h3>
-                <p>
-                    Accede a nuestra base de conocimientos con tutoriales en
-                    vídeo y guías paso a paso.
-                </p>
+        <section class="support-channels">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Chat en Vivo 24/7</h3>
+                    <p>
+                        Comunicación directa con nuestros técnicos para resolver incidencias de hardware o fallos de sincronización en tiempo real.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Base de Conocimientos</h3>
+                    <p>
+                        Acceso a cientos de artículos técnicos, vídeos interactivos y manuales descargables sobre cada sensor y funcionalidad.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Actualización Normativa</h3>
+                    <p>
+                        Te informamos de cada cambio en el BOE que afecte al Cuaderno de Campo Digital para que siempre estés en cumplimiento.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Chat de Soporte Técnico</h3>
-                <p>
-                    Asistencia inmediata por parte de nuestros ingenieros
-                    agrónomos y expertos en IT.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3>Webinars Semanales</h3>
-                <p>
-                    Sesiones en directo para aprender nuevas funcionalidades y
-                    resolver dudas en grupo.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Prefieres una llamada directa?</h3>
+            <p>Nuestros técnicos están disponibles de Lunes a Viernes de 8:00 a 19:00 para asesorarte de forma personalizada.</p>
+            <a href="tel:644476471" class="cta-btn">Llamar a Soporte Técnico</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>
