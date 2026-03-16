@@ -4,42 +4,70 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Fieldbee Autoguiado – Cuaderno de Campo Digital"
-    heading="Fieldbee: Navegación de Precisión"
-    description="Control total sobre la trayectoria de tu maquinaria. Evita solapes, ahorra combustible y automatiza el guiado con Fieldbee."
+    heading="Fieldbee: Navegación de Alta Precisión"
+    description="Optimiza cada pasada de tu tractor con tecnología RTK centimétrica. Integración telemática total para una agricultura de precisión real."
     variant="sinergias"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Precisión Centimétrica</h2>
-            <p>
-                La integración con los sistemas RTK de Fieldbee permite que los
-                datos de nuestro cuaderno de campo se traduzcan en rutas exactas
-                para el tractor, maximizando la eficiencia operativa.
-            </p>
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Precisión Centimétrica sin Esfuerzo</h2>
+                <p>
+                    La integración del sistema de autoguiado Fieldbee con nuestra plataforma permite una bidireccionalidad de datos inédita. Envía tus lindes y mapas de prescripción directamente al terminal del tractor y recibe de vuelta el registro exacto de la labor realizada para tu cuaderno digital.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/sinergias/fieldbee_autoguiado.png" alt="Tractor con sistema de autoguiado Fieldbee" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Autoguiado Robusto</h3>
-                <p>
-                    Sistemas de navegación adaptables a cualquier tractor,
-                    independientemente de su antigüedad.
-                </p>
+        <section class="benefits-deep">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Autoguiado RTK</h3>
+                    <p>
+                        Precisión de 2.5 cm entre pasadas. Di adiós a los solapes y a las zonas sin tratar, optimizando el uso de semillas, fertilizantes y combustible.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Compatibilidad Universal</h3>
+                    <p>
+                        Diseñado para instalarse en cualquier modelo de tractor. Convierte tu maquinaria clásica en una unidad de precisión de última generación.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Registro Telemático</h3>
+                    <p>
+                        Las pasadas se graban automáticamente. Al terminar la jornada, los datos se sincronizan con tu Cuaderno de Campo sin intervención manual.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Reducción de Solapes</h3>
-                <p>
-                    Minimiza las zonas de doble aplicación, protegiendo el
-                    cultivo y ahorrando producto.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3>Mapas de Cobertura</h3>
-                <p>
-                    Registro automático de las pasadas realizadas y
-                    sincronización con el cuaderno digital.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Quieres ver Fieldbee en acción?</h3>
+            <p>Disponemos de unidades de demostración y kits de instalación rápida. Consulta nuestras condiciones especiales para usuarios de la plataforma.</p>
+            <a href="/contacto" class="cta-btn">Solicitar Demo Fieldbee</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>

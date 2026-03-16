@@ -4,43 +4,70 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Convenio Consejo Agrícolas – Cuaderno de Campo Digital"
-    heading="Convenio con Consejos Agrícolas"
-    description="Alianza oficial para la tecnificación de cooperativas y el despliegue de redes de monitoreo inteligente."
+    heading="Unión Estratégica Institucional"
+    description="Colaboración oficial para el despliegue de redes tecnológicas y apoyo administrativo a cooperativas agrarias."
     variant="sinergias"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Impulso Institucional</h2>
-            <p>
-                Colaboramos estrechamente con los Consejos Agrícolas para
-                asegurar que la innovación llegue a cada rincón del campo. Este
-                convenio facilita el acceso a tecnología punta para miles de
-                agricultores federados.
-            </p>
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Tecnología para Todos</h2>
+                <p>
+                    A través de nuestro convenio con los Consejos Agrícolas, facilitamos que incluso las explotaciones más pequeñas tengan acceso a herramientas de nivel SIEX. Centralizamos la monitorización climática y de plagas para dar servicio a comarcas enteras, democratizando la agricultura de precisión.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/sinergias/consejo_red_monitoreo.png" alt="Colaboración técnica con organizaciones agrícolas" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Redes de Monitoreo</h3>
-                <p>
-                    Despliegue coordinado de estaciones meteorológicas y cámaras
-                    de plagas en zonas estratégicas.
-                </p>
+        <section class="institutional-value">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Redes de Monitoreo Comarcal</h3>
+                    <p>
+                        Instalación coordinada de estaciones agroclimáticas y trampas digitales para ofrecer datos generales a todos los federados.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Apoyo en Tramitación SIEX</h3>
+                    <p>
+                        Canal directo para resolver dudas normativas y asegurar que los cuadernos digitales de la cooperativa cumplen con los estándares oficiales.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>I+D Colaborativo</h3>
+                    <p>
+                        Participación conjunta en proyectos de innovación financiados por fondos europeos para el desarrollo del mundo rural.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Formación Especializada</h3>
-                <p>
-                    Programas de capacitación técnica para los asesores de las
-                    cooperativas agrarias.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3>Precios Preferenciales</h3>
-                <p>
-                    Ventajas económicas exclusivas para los miembros de las
-                    entidades bajo convenio.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Representas a una cooperativa o Consejo?</h3>
+            <p>Descubre cómo nuestro programa de partners institucionales puede beneficiar a tus socios y elevar la tecnificación de tu zona.</p>
+            <a href="/contacto" class="cta-btn">Solicitar Dossier Institucional</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>

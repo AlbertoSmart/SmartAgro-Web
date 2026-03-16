@@ -4,43 +4,70 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Control de Malas Hierbas IPMwise – Cuaderno de Campo Digital"
-    heading="Integración IPMwise"
-    description="Sincronización de detecciones IA con el motor de decisiones IPMwise para un control de malas hierbas preciso y eficiente."
+    heading="IPMwise: Inteligencia Botánica"
+    description="Detección automática de malezas y prescripción selectiva. Un algoritmo experto para optimizar tus tratamientos herbicidas."
     variant="sinergias"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Detección + Acción</h2>
-            <p>
-                Combinamos nuestra capacidad de identificación de especies por
-                visión artificial con el conocimiento experto de IPMwise. El
-                resultado es una prescripción automatizada que optimiza el uso
-                de herbicidas.
-            </p>
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>El Fin del Tratamiento a Manta</h2>
+                <p>
+                    IPMwise procesa las capturas de nuestras cámaras IoT y drones para identificar el umbral de daño económico de cada especie de mala hierba. En lugar de tratar toda la parcela, generamos mapas de aplicación variable que actúan solo donde la productividad está realmente en riesgo.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/sinergias/ipmwise_deteccion.png" alt="Detección de malezas por IA - IPMwise" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Identificación Botánica</h3>
-                <p>
-                    Modelos YOLO entrenados específicamente para reconocer malas
-                    hierbas en etapas tempranas.
-                </p>
+        <section class="tech-deep">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Identificación Específica</h3>
+                    <p>
+                        Reconocimiento de más de 150 especies de malas hierbas en estadios tempranos (cotiledón), permitiendo el uso de dosis reducidas.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Algoritmo de Decisión</h3>
+                    <p>
+                        Basado en años de investigación agronómica, IPMwise recomienda el producto y la dosis exacta según el estado fenológico y el clima.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>Sostenibilidad SIEX</h3>
+                    <p>
+                        Cada aplicación selectiva queda registrada, justificando ante la administración la reducción del impacto ambiental de tu explotación.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Algoritmos de Tratamiento</h3>
-                <p>
-                    Conexión API con IPMwise para recibir recomendaciones
-                    basadas en el umbral de daño real.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3>Ahorro de Insumos</h3>
-                <p>
-                    Reducción demostrada de hasta un 30% en el consumo de
-                    herbicidas mediante aplicación selectiva.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Quieres reducir tu factura de fitosanitarios?</h3>
+            <p>Nuestros usuarios han logrado reducciones de hasta un 40% en herbicidas de post-emergencia. Solicita un diagnóstico gratuito de tu finca.</p>
+            <a href="/contacto" class="cta-btn">Solicitar Estudio de Eficiencia</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .intro-hero-grid { grid-template-columns: 1fr; }
+    }
+</style>

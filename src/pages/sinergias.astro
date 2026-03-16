@@ -3,133 +3,234 @@ import TestPage from "../layouts/TestPage.astro";
 ---
 
 <TestPage
-  title="Sinergias – Cuaderno de Campo Digital"
-  heading="Alianzas de Valor Añadido"
-  description="Colaboramos con las principales entidades y centros tecnológicos para integrar la mejor tecnología en tu explotación."
+  title="Sinergias Tecnológicas – Cuaderno de Campo Digital"
+  heading="Un Ecosistema de Innovación Abierta"
+  description="Multiplicamos el valor de nuestra plataforma integrando las mejores soluciones del mercado y el respaldo de instituciones líderes sectoriales."
   variant="sinergias"
 >
-  <div class="synergies-showcase">
-    <div class="partners-grid">
+  <div class="subpage-content">
+    <section class="synergies-intro">
+      <div class="intro-grid">
+        <div class="feature-detail glass">
+          <h2>Conectividad que Transforma el Campo</h2>
+          <p>
+            En un entorno digital fragmentado, nuestra misión es actuar como el centro neurálgico de tu explotación. No solo capturamos datos, sino que nos conectamos con hardware de precisión y algoritmos expertos para ofrecerte una solución 360º que optimiza desde el combustible hasta el último gramo de insumo.
+          </p>
+        </div>
+        <div class="intro-image">
+          <img src="/images/sinergias/consejo_red_monitoreo.png" alt="Centro de control y monitoreo agrario" class="sol-img" />
+        </div>
+      </div>
+    </section>
+
+    <div class="partners-grid container-wide">
       <div class="partner-card glass">
-        <div class="partner-card__visual" style="background: #e2e8f0;">
-          <span class="partner-logo-placeholder">Consejo Agrícolas</span>
+        <div class="partner-card__image">
+          <img src="/images/sinergias/fieldbee_autoguiado.png" alt="Autoguiado de precisión Fieldbee" />
         </div>
         <div class="partner-card__content">
-          <h3>Soporte Institucional</h3>
+          <div class="partner-card__tag">Pionero en Autoguiado</div>
+          <h3>Fieldbee: Guiado RTK</h3>
           <p>
-            Convenio oficial para el despliegue de redes de monitoreo en
-            cooperativas de toda España.
+            Integración directa de rutas telemáticas. Sincroniza tus labores registradas en el cuaderno con la navegación centimétrica de tu tractor.
           </p>
+          <ul class="check-list">
+              <li>Precisión de 2.5cm</li>
+              <li>Ahorro de combustible garantizado</li>
+              <li>Instalación plug & play</li>
+          </ul>
+          <a href="/sinergias/fieldbee" class="partner-link">Explorar Integración →</a>
         </div>
       </div>
 
       <div class="partner-card glass">
-        <div class="partner-card__visual" style="background: #d1fae5;">
-          <span class="partner-logo-placeholder">IPMwise</span>
+        <div class="partner-card__image">
+          <img src="/images/sinergias/ipmwise_deteccion.png" alt="Control inteligente de malas hierbas" />
         </div>
         <div class="partner-card__content">
-          <h3>Control de Malas Hierbas</h3>
+          <div class="partner-card__tag">IA Botánica</div>
+          <h3>IPMwise: Control Inteligente</h3>
           <p>
-            Integración algorítmica para la prescripción inteligente basada en
-            detección por visión artificial.
+            Detección por visión artificial de malas hierbas y prescripción inmediata basada en algoritmos de umbral económico de daño.
           </p>
+          <ul class="check-list">
+              <li>Reducción 30% en herbicidas</li>
+              <li>Identificación temprana</li>
+              <li>Prescripciones automáticas</li>
+          </ul>
+          <a href="/sinergias/ipmwise" class="partner-link">Ver Alianza Técnica →</a>
         </div>
       </div>
 
       <div class="partner-card glass">
-        <div class="partner-card__visual" style="background: #fee2e2;">
-          <span class="partner-logo-placeholder">Fieldbee</span>
+        <div class="partner-card__image">
+          <img src="/images/sinergias/consejo_red_monitoreo.png" alt="Colaboración institucional consejos agrícolas" />
         </div>
         <div class="partner-card__content">
-          <h3>Guiado de Precisión</h3>
+          <div class="partner-card__tag">Soporte Oficial</div>
+          <h3>Consejo Agrícolas: Red SIEX</h3>
           <p>
-            Nuestra IA alimenta sistemas de autoguiado para optimizar pasadas y
-            reducir solapes de tratamiento.
+            Convenio nacional para la digitalización de cooperativas. Garantizamos que cada agricultor federado cuente con tecnología homologada.
           </p>
+          <ul class="check-list">
+              <li>Formación continua</li>
+              <li>Despliegue de estaciones</li>
+              <li>Validación administrativa</li>
+          </ul>
+          <a href="/sinergias/consejo" class="partner-link">Saber más sobre el Convenio →</a>
         </div>
       </div>
     </div>
 
     <div class="partnership-cta glass">
-      <h3>¿Quieres formar parte de nuestro ecosistema?</h3>
+      <h3>¿Eres desarrollador de hardware o software agrario?</h3>
       <p>
-        Buscamos partners tecnológicos y centros de investigación para seguir
-        innovando en la agricultura digital.
+        Buscamos ampliar nuestra red de APIs para conectar con nuevos sensores, maquinaria y algoritmos. Únete al ecosistema líder en digitalización agraria.
       </p>
-      <a href="/contacto" class="cta-btn">Contactar para Alianzas</a>
+      <div class="cta-actions">
+          <a href="/contacto" class="cta-btn">Solicitar Acceso API</a>
+          <a href="/contacto" class="link-btn text-white">Convertirse en Partner Distribuidores</a>
+      </div>
     </div>
   </div>
-
-  <style>
-    .synergies-showcase {
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-      margin-top: -60px;
-    }
-
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-
-    .partner-card {
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid var(--color-gray-100);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .partner-card__visual {
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: var(--color-gray-400);
-      font-size: 1.25rem;
-      border-bottom: 1px solid var(--color-gray-100);
-    }
-
-    .partner-card__content {
-      padding: 32px;
-    }
-
-    .partner-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      color: var(--color-gray-900);
-    }
-
-    .partner-card p {
-      font-size: 0.95rem;
-      color: var(--color-gray-600);
-      line-height: 1.6;
-    }
-
-    .partnership-cta {
-      background: var(--color-turquoise-dark);
-      color: white;
-      padding: 60px;
-      border-radius: 32px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .partnership-cta h3 {
-      font-size: 1.75rem;
-      color: white;
-    }
-
-    .partnership-cta p {
-      color: rgba(255, 255, 255, 0.8) !important;
-      max-width: 600px;
-    }
-  </style>
 </TestPage>
+
+<style>
+  .synergies-intro {
+    margin-bottom: 80px;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .intro-image {
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sol-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .partner-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-100);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .partner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-2xl);
+    border-color: var(--color-turquoise);
+  }
+
+  .partner-card__image {
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .partner-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .partner-card:hover .partner-card__image img {
+    transform: scale(1.1);
+  }
+
+  .partner-card__content {
+    padding: 32px;
+  }
+
+  .partner-card__tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--color-turquoise-light);
+    color: var(--color-turquoise-dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 50px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .partner-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--color-gray-900);
+  }
+
+  .partner-card p {
+    font-size: 0.95rem;
+    color: var(--color-gray-600);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .check-list li {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .check-list li::before {
+    content: "✓";
+    color: var(--color-turquoise);
+    font-weight: 900;
+  }
+
+  .partner-link {
+    font-weight: 700;
+    color: var(--color-turquoise-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .partnership-cta {
+    background: var(--color-gray-900);
+    color: white;
+    padding: 80px 40px;
+    border-radius: 40px;
+    text-align: center;
+  }
+
+  .cta-actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+  }
+
+  @media (max-width: 900px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
