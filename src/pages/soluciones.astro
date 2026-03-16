@@ -9,37 +9,181 @@ import TestPage from "../layouts/TestPage.astro";
   variant="tools"
 >
   <div class="subpage-content">
-    <div class="feature-detail glass">
-      <h2>Tecnología al Servicio del Productor</h2>
-      <p>
-        Nuestra plataforma está diseñada para acompañarte en cada paso, desde la recolección automática de datos con sensores hasta la gestión administrativa y el cumplimiento legal.
-      </p>
+    <section class="solutions-intro">
+      <div class="intro-grid">
+        <div class="feature-detail glass">
+          <h2>Impulsando la Transformación del Sector</h2>
+          <p>
+            En el entorno agrario actual, la digitalización ya no es una opción, es una necesidad para la rentabilidad y el cumplimiento normativo. Nuestras soluciones están diseñadas para eliminar la carga administrativa y maximizar la eficiencia en el campo.
+          </p>
+        </div>
+        <div class="intro-image">
+          <img src="/images/soluciones/sensor_campo_inteligente_1773663669374.png" alt="Sensor inteligente en campo" class="sol-img" />
+        </div>
+      </div>
+    </section>
+
+    <div class="value-proposition grid-3">
+      <div class="value-item">
+        <div class="value-item__icon">📊</div>
+        <h3>Toma de Decisiones</h3>
+        <p>Datos reales para decidir cuándo regar, abonar o cosechar con precisión quirúrgica.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-item__icon">⚖️</div>
+        <h3>Seguridad Legal</h3>
+        <p>Garantizamos que todos tus registros cumplen al 100% con la normativa SIEX vigente.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-item__icon">🌱</div>
+        <h3>Sostenibilidad</h3>
+        <p>Optimiza el uso de recursos y reduce el impacto ambiental de tu explotación.</p>
+      </div>
     </div>
 
-    <div class="cards-grid">
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+    <div class="profile-selector">
+      <h2 class="text-center">Selecciona tu perfil para comenzar</h2>
+      <div class="cards-grid">
+        <div class="feature-card feature-card--premium">
+          <div class="feature-card__badge">Más popular</div>
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+          </div>
+          <h3>Soy Agricultor</h3>
+          <p>
+            Controla tu cosecha desde el móvil. Gestiona stock, registra labores y visualiza alarmas de tus sensores en una sola app.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Cuaderno de campo móvil</li>
+            <li>✓ Alertas de riego y heladas</li>
+            <li>✓ Trazabilidad automática</li>
+          </ul>
+          <a href="/soluciones/agricultores" class="cta-btn">Ver Herramientas</a>
         </div>
-        <h3>Soy Agricultor</h3>
-        <p>
-          Optimiza tu producción, ahorra en insumos y cumple con la normativa SIEX
-          de la forma más sencilla.
-        </p>
-        <a href="/soluciones/agricultores" class="cta-btn">Ver Soluciones</a>
-      </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <div class="feature-card feature-card--premium">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <h3>Soy Técnico o Asesor</h3>
+          <p>
+            Escala tu servicio de asesoría. Supervisa múltiples fincas, valida tratamientos y genera informes oficiales en segundos.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Gestión multiexplotación</li>
+            <li>✓ Validación SIEX en lote</li>
+            <li>✓ Reportes exportables</li>
+          </ul>
+          <a href="/soluciones/tecnicos" class="cta-btn">Explorar Panel</a>
         </div>
-        <h3>Soy Técnico o Asesor</h3>
-        <p>
-          Gestiona múltiples explotaciones, valida tratamientos y asegura el
-          cumplimiento legal para tus clientes.
-        </p>
-        <a href="/soluciones/tecnicos" class="cta-btn">Ver Soluciones</a>
       </div>
     </div>
   </div>
 </TestPage>
+
+<style>
+  .solutions-intro {
+    margin-bottom: 60px;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .intro-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sol-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .intro-image:hover .sol-img {
+    transform: scale(1.05);
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .value-item {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .value-item__icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .value-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+  }
+
+  .value-item p {
+    font-size: 0.95rem;
+    color: var(--color-gray-600);
+  }
+
+  .profile-selector {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-gray-200);
+  }
+
+  .profile-selector h2 {
+    margin-bottom: 40px;
+  }
+
+  .feature-card--premium {
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card--premium:hover {
+    border-color: var(--color-turquoise);
+  }
+
+  .feature-card__badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--color-green);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .feature-list {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
+
+  .feature-list li {
+    font-size: 0.9rem;
+    color: var(--color-gray-600);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>

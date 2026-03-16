@@ -4,43 +4,189 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <TestPage
     title="Cuaderno de Explotación para Técnicos – Cuaderno de Campo Digital"
-    heading="Cuaderno de Explotación para Técnicos"
+    heading="Panel de Control para Técnicos y Asesores"
     description="Control total sobre múltiples explotaciones. Supervisión avanzada, validación de registros y reportes automáticos para ingenieros y asesores."
     variant="tools"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Supervisión Multinivel</h2>
-            <p>
-                Nuestra plataforma permite a los técnicos agrónomos gestionar
-                cientos de fincas desde un panel centralizado, validando los
-                cuadernos de sus clientes y garantizando la precisión técnica de
-                cada registro.
-            </p>
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Gestión Profesional Multinivel</h2>
+                <p>
+                    Sabemos que tu tiempo es oro. Por eso, hemos creado un panel centralizado para técnicos agrónomos que permite gestionar cientos de cuadernos de campo con la misma facilidad que si fuera uno solo. Minimiza errores, maximiza tu rentabilidad.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/soluciones/tecnico_agronomo_oficina_1773663652563.png" alt="Ingeniero agrónomo gestionando fincas" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Firma Digital</h3>
-                <p>
-                    Valida y firma cuadernos de campo de forma legal y segura en
-                    formato digital.
-                </p>
+        <!-- Section: Professional Features -->
+        <section class="tech-features">
+            <div class="tech-grid">
+                <div class="tech-item glass">
+                    <div class="tech-item__icon">🏘️</div>
+                    <h3>Visión Multi-Finca</h3>
+                    <p>Accede a todas las explotaciones de tus clientes desde una única pantalla. Filtra por estado de cumplimiento o por zona geográfica.</p>
+                </div>
+                <div class="tech-item glass">
+                    <div class="tech-item__icon">⚡</div>
+                    <h3>Validación en Lote</h3>
+                    <p>No revises registro a registro. Nuestro algoritmo valida masivamente que todas las aplicaciones cumplen con el registro Vademécum MAPA.</p>
+                </div>
+                <div class="tech-item glass">
+                    <div class="tech-item__icon">✍️</div>
+                    <h3>Firma Certificada</h3>
+                    <p>Firma digitalmente los cuadernos de explotación para su presentación oficial sin necesidad de reuniones presenciales.</p>
+                </div>
+                <div class="tech-item glass">
+                    <div class="tech-item__icon">📊</div>
+                    <h3>Reports de Valor</h3>
+                    <p>Genera informes de costes y rendimientos comparados para ofrecer a tus clientes un asesoramiento de nivel superior.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Validación SIEX</h3>
-                <p>
-                    Sistema de pre-validación para asegurar que los datos
-                    cumplen con los requisitos de la administración.
-                </p>
+        </section>
+
+        <!-- Section: Specific Services -->
+        <section class="advisor-services">
+            <h2>Profesionaliza tu Asesoría Agraria</h2>
+            <div class="service-row">
+                <div class="service-content">
+                    <h3>Integración SIEX Directa</h3>
+                    <p>Nuestra plataforma está preparada para la comunicación bidireccional con el sistema oficial de la administración, reduciendo a cero la carga de datos manual para el técnico.</p>
+                    <ul class="check-list">
+                        <li>Sincronización automática de REA</li>
+                        <li>Gestión de CUE (Cuaderno de Explotación)</li>
+                        <li>Validación de planes de abonado</li>
+                    </ul>
+                </div>
+                <!-- Mini demo box placeholder -->
+                <div class="service-demo glass">
+                    <div class="demo-header">Vista de Técnico</div>
+                    <div class="demo-body">
+                        <div class="demo-line">Explotación A: <span class="status green">Validada</span></div>
+                        <div class="demo-line">Explotación B: <span class="status yellow">1 Error</span></div>
+                        <div class="demo-line">Explotación C: <span class="status green">Validada</span></div>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Análisis de Datos</h3>
-                <p>
-                    Histogramas y reportes comparativos de rendimiento y uso de
-                    insumos entre explotaciones.
-                </p>
-            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>¿Eres una Cooperativa o Despacho Técnico?</h3>
+            <p>Pregunta por nuestros planes de marca blanca y acceso multi-usuario para equipos de ingenieros.</p>
+            <a href="/contacto" class="cta-btn">Consultar Planes de Equipo</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .tech-features {
+        margin: 50px 0 80px;
+    }
+
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+    }
+
+    .tech-item {
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .tech-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .tech-item__icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .tech-item h3 {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+        color: var(--color-dark);
+    }
+
+    .advisor-services {
+        padding: 60px 0;
+        border-top: 1px solid var(--color-gray-100);
+    }
+
+    .service-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .check-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .check-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.95rem;
+    }
+
+    .check-list li::before {
+        content: "✓";
+        color: var(--color-green);
+        font-weight: 800;
+    }
+
+    .service-demo {
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid var(--color-gray-200);
+        font-family: monospace;
+    }
+
+    .demo-header {
+        font-size: 0.8rem;
+        color: var(--color-gray-500);
+        border-bottom: 1px solid var(--color-gray-200);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .status {
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+    }
+
+    .status.green { background: #dcfce7; color: #166534; }
+    .status.yellow { background: #fef9c3; color: #854d0e; }
+
+    @media (max-width: 768px) {
+        .service-row { grid-template-columns: 1fr; gap: 30px; }
+    }
+</style>

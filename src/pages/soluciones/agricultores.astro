@@ -9,47 +9,191 @@ import TestPage from "../../layouts/TestPage.astro";
     variant="tools"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Gestión Integral de la Explotación</h2>
-            <p>
-                Diseñado específicamente para las necesidades del agricultor moderno, nuestro cuaderno digital simplifica la recopilación de datos en campo, permitiéndote centrarte en lo que realmente importa: tu cosecha.
-            </p>
+        <!-- New Detailed Intro -->
+        <div class="intro-hero-grid">
+            <div class="feature-detail glass">
+                <h2>Gestión Inteligente de la Explotación</h2>
+                <p>
+                    Diseñado específicamente para las necesidades del agricultor moderno, nuestro cuaderno digital simplifica la recopilación de datos en campo. No se trata solo de cumplir con la ley, sino de tener el control total de lo que ocurre en cada metro cuadrado de tu finca.
+                </p>
+            </div>
+            <div class="image-showcase">
+                <img src="/images/soluciones/agricultor_tablet_campo_1773663636207.png" alt="Agricultora usando tablet en campo" class="rounded-img shadow-xl" />
+            </div>
         </div>
 
-        <div class="cards-grid">
-            <div class="feature-card">
-                <div class="feature-card__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <!-- Section: Your Day to Day -->
+        <section class="daily-flow">
+            <h2>Tu día a día con Cuaderno Digital</h2>
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <div class="flow-step__number">1</div>
+                    <h3>Toma de Datos Rápida</h3>
+                    <p>Desde el tractor o a pie de campo, registra siembras y cosechas en segundos con nuestra interfaz adaptada a manos trabajadoras.</p>
                 </div>
-                <h3>Registro de Actividades</h3>
-                <p>
-                    Anota siembras, labores y cosechas de forma rápida desde tu móvil, incluso sin conexión.
-                </p>
+                <div class="flow-step">
+                    <div class="flow-step__number">2</div>
+                    <h3>Monitorización IA</h3>
+                    <p>Nuestros sensores inteligentes detectan plagas y carencias de agua antes de que sean visibles al ojo, enviándote una alerta al móvil.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step__number">3</div>
+                    <h3>Validación Instantánea</h3>
+                    <p>El sistema verifica que los productos fitosanitarios aplicados están autorizados para ese cultivo, evitando errores fatales.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step__number">4</div>
+                    <h3>Reporte SIEX</h3>
+                    <p>Al final del mes, pulsa un botón y exporta toda tu actividad lista para ser presentada ante la administración oficial.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-card__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+        </section>
+
+        <!-- Section: Tangible Benefits -->
+        <section class="benefits-section glass-dark">
+            <h2 class="text-white">Beneficios Reales para tu Bolsillo</h2>
+            <div class="cards-grid">
+                <div class="beneficio-card">
+                    <span class="icon">💧</span>
+                    <h3>Ahorro de Agua</h3>
+                    <p>Aplica riego solo cuando la planta lo necesita, optimizando hasta un 30% el consumo hídrico.</p>
                 </div>
-                <h3>Control de Insumos</h3>
-                <p>
-                    Gestión de stock de fertilizantes y fitosanitarios con trazabilidad completa de aplicaciones.
-                </p>
+                <div class="beneficio-card">
+                    <span class="icon">💊</span>
+                    <h3>Menos Insumos</h3>
+                    <p>Precisión en las dosis de fertilizante que reduce costes y mejora la salud del suelo.</p>
+                </div>
+                <div class="beneficio-card">
+                    <span class="icon">🕊️</span>
+                    <h3>Paz Mental</h3>
+                    <p>Olvídate del papeleo de última hora. Ten toda tu documentación siempre lista para una inspección.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-card__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </section>
+
+        <!-- Feature List Re-styled -->
+        <div class="tools-overview">
+            <h2 class="text-center">Herramientas Incluidas</h2>
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h3>Stock Inteligente</h3>
+                    <p>Inventario actualizado de productos con avisos de caducidad y stock mínimo.</p>
                 </div>
-                <h3>Cumplimiento SIEX</h3>
-                <p>
-                    Exportación directa de datos al sistema oficial para garantizar que siempre estás al día con la normativa.
-                </p>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <h3>Trazabilidad</h3>
+                    <p>Histórico completo desde la semilla hasta la carga del camión, accesible en un clic.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3>Mapas Satélite</h3>
+                    <p>Visualización NDVI para detectar manchas de vigor y problemas de crecimiento antes de ir a la parcela.</p>
+                </div>
             </div>
         </div>
 
         <div class="highlight-box">
-            <h3>¿Listo para digitalizar tu finca?</h3>
-            <p>Únete a los cientos de agricultores que ya optimizan sus recursos con nuestra plataforma.</p>
-            <a href="/contacto" class="cta-btn">Solicitar Demo Gratuita</a>
+            <h3>¿Hablamos sobre tu finca?</h3>
+            <p>Cada explotación es un mundo. Cuéntanos tu caso y te enseñaremos cómo adaptamos nuestra tecnología a tus cultivos.</p>
+            <a href="/contacto" class="cta-btn">Agendar Consultoría Gratuita</a>
         </div>
     </div>
 </TestPage>
+
+<style>
+    .daily-flow {
+        padding: 40px 0 80px;
+    }
+
+    .intro-hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .rounded-img {
+        border-radius: 24px;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .flow-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .flow-step {
+        position: relative;
+        padding: 30px;
+        background: var(--color-gray-50);
+        border-radius: 20px;
+        text-align: left;
+    }
+
+    .flow-step__number {
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background: var(--color-turquoise);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .flow-step h3 {
+        margin-top: 10px;
+        font-size: 1.15rem;
+        margin-bottom: 12px;
+    }
+
+    .benefits-section {
+        padding: 60px 40px;
+        border-radius: 24px;
+        margin: 60px 0;
+    }
+
+    .text-white { color: white !important; }
+
+    .beneficio-card {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .beneficio-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .beneficio-card h3 {
+        color: white;
+        margin-bottom: 8px;
+    }
+
+    .beneficio-card p {
+        color: rgba(255,255,255,0.8) !important;
+        font-size: 0.9rem;
+    }
+
+    .tools-overview {
+        padding: 40px 0;
+    }
+</style>
