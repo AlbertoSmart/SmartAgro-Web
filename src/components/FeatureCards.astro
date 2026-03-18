@@ -66,14 +66,23 @@ const features = [
 
 <style>
   .features {
-    background: var(--color-gray-50);
+    background: #0B1A14 !important;
     position: relative;
+    color: white;
   }
-
+ 
   .features__header {
     margin-bottom: 80px;
   }
-
+ 
+  .features__header .section-title {
+    color: white !important;
+  }
+ 
+  .features__header .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+  }
+ 
   .features__pretitle {
     display: block;
     text-transform: uppercase;
@@ -81,30 +90,39 @@ const features = [
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     margin-bottom: 12px;
+    color: var(--color-turquoise);
   }
-
+ 
   .features__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
   }
-
+ 
   .feature-card {
     padding: 40px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    background: var(--color-white);
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     position: relative;
     overflow: hidden;
+    transition: var(--transition);
   }
-
+ 
+  .feature-card:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+ 
   .feature-card__icon-wrapper {
     position: relative;
     width: 64px;
     height: 64px;
   }
-
+ 
   .feature-card__icon {
     width: 64px;
     height: 64px;
@@ -116,22 +134,22 @@ const features = [
     color: var(--color-white);
     box-shadow: 0 10px 20px -5px rgba(15, 181, 174, 0.4);
   }
-
+ 
   .feature-card__icon :global(svg) {
     width: 32px;
     height: 32px;
     stroke: white;
   }
-
+ 
   .feature-card__title {
     font-size: 1.5rem;
     margin-bottom: 12px;
-    color: var(--color-gray-900);
+    color: white !important;
   }
-
+ 
   .feature-card__text {
     font-size: 1rem;
-    color: var(--color-gray-500);
+    color: rgba(255, 255, 255, 0.65);
     line-height: 1.7;
   }
 

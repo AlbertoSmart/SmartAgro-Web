@@ -47,7 +47,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
         </a>
         <ul class="navbar__dropdown">
           <li>
-            <a href="/guia-sensores" class={isActive("/guia-sensores") ? "active-sub" : ""}>Ecosistema de Sensores</a>
+            <a href="/#sensores">Ecosistema de Sensores</a>
           </li>
           <li>
             <a href="/#gestion">Gestión Virtual & GIS</a>
@@ -194,7 +194,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     left: 0;
     width: 100%;
     height: 90px !important;
-    background: #0F1F1A !important;
+    background: #0B1A14 !important;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -261,11 +261,16 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
   }
 
   /* Active/Hover States */
-  .navbar__item > a:hover,
+  .navbar__item > a:hover {
+    color: #1AFFFF !important;
+    text-decoration: none !important;
+  }
+
   .navbar__item.active > a {
     color: #1AFFFF !important;
     text-decoration: none !important;
-    border: none !important;
+    border-bottom: 2px solid #1AFFFF !important;
+    padding-bottom: 6px;
   }
 
   .navbar__dropdown {

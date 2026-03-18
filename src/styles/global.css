@@ -4,10 +4,10 @@
 /* --- Custom Properties --- */
 :root {
   /* Nuanced HSL Palette */
-  --color-turquoise-hsl: 178, 84%, 38%;
-  --color-turquoise: hsl(var(--color-turquoise-hsl));
-  --color-turquoise-light: hsl(178, 84%, 48%);
-  --color-turquoise-dark: hsl(178, 84%, 28%);
+  --color-turquoise-hsl: 168, 73%, 42%;
+  --color-turquoise: #1DB99A;
+  --color-turquoise-light: #2ECC71;
+  --color-turquoise-dark: #14806A;
 
   /* Natural Charcoal & Slate */
   --color-charcoal: #1A1A1A;
@@ -26,12 +26,12 @@
   --color-red: hsl(var(--color-red-hsl));
   --color-red-dark: hsl(6, 78%, 47%);
 
-  --color-dark-hsl: 240, 30%, 15%;
-  --color-dark: hsl(var(--color-dark-hsl));
+  --color-dark-hsl: 154, 41%, 7%;
+  --color-dark: #0B1A14;
 
   --color-white: #ffffff;
-  --color-gray-50: #f8fafc;
-  --color-gray-100: #f1f5f9;
+  --color-gray-50: #F4F7F6;
+  --color-gray-100: #eef2f0;
   --color-gray-200: #e2e8f0;
   --color-gray-500: #64748b;
   --color-gray-700: #475569;
@@ -200,7 +200,7 @@ ol {
 
 .btn--turquoise {
   background: var(--color-turquoise);
-  color: var(--color-white);
+  color: #000000;
 }
 
 .btn--red {
