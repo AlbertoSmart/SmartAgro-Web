@@ -9,6 +9,12 @@
   --color-turquoise-light: hsl(178, 84%, 48%);
   --color-turquoise-dark: hsl(178, 84%, 28%);
 
+  /* Natural Charcoal & Slate */
+  --color-charcoal: #1A1A1A;
+  --color-slate-900: #0F172A;
+  --color-slate-800: #1E293B;
+  --color-slate-700: #334155;
+
   --color-blue-hsl: 226, 47%, 33%;
   --color-blue: hsl(var(--color-blue-hsl));
   --color-blue-dark: hsl(226, 47%, 20%);
@@ -24,18 +30,18 @@
   --color-dark: hsl(var(--color-dark-hsl));
 
   --color-white: #ffffff;
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-500: #6b7280;
-  --color-gray-700: #374151;
-  --color-gray-900: #111827;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-500: #64748b;
+  --color-gray-700: #475569;
+  --color-gray-900: var(--color-charcoal);
 
   /* Typography - using Outfit for headers, Inter for body */
   --font-body: 'Inter', -apple-system, sans-serif;
   --font-display: 'Outfit', 'Inter', -apple-system, sans-serif;
 
-  --container-width: 1280px;
+  --container-width: 1200px;
   --header-height: 80px;
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
@@ -67,8 +73,8 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-gray-700);
+  line-height: 1.7; /* Increased for better letters */
+  color: var(--color-slate-700);
   background-color: var(--color-white);
   overflow-x: hidden;
   position: relative;
@@ -95,8 +101,9 @@ h4,
 .font-display {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-gray-900);
+  line-height: 1.25;
+  color: var(--color-slate-900);
+  letter-spacing: -0.01em;
 }
 
 a {

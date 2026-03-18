@@ -1,0 +1,364 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Memoria Técnica: Monitorización Climática y Microclima">
+  <main class="landing-expert">
+    <!-- PROFESSIONAL SOLID HERO -->
+    <section class="expert-hero-solid">
+      <div class="container">
+        <span class="pre-title">ESTUDIO TÉCNICO AVANZADO</span>
+        <h1>Meteorología Precisa <br/>El Balance Hídrico Definitivo</h1>
+        <p>Monitorización atmosférica IoT para el cálculo de Evapotranspiración (ETp) y gestión de inventario hídrico.</p>
+      </div>
+    </section>
+
+    <!-- 1. ANÁLISIS DEL PROBLEMA -->
+    <section class="content-block">
+      <div class="container narrow">
+        <div class="section-label">01. EL PROBLEMA</div>
+        <h2>La incertidumbre climática: El coste de no conocer su microclima</h2>
+        <p>
+          En la agricultura moderna, depender de estaciones meteorológicas públicas situadas a varios kilómetros de su finca es un error estratégico. 
+          La orografía, la vegetación cercana y la altitud generan **microclimas específicos** donde las variables de temperatura, humedad y radiación pueden diferir significativamente de las redes estatales.
+        </p>
+
+        <!-- IMAGE MOSAIC 1 -->
+        <div class="image-mosaic">
+          <img src="/images/sensores/EstacionMeteorologica.png" alt="Estación Meteorológica" />
+        </div>
+
+        <p>
+          No parametrizar la **Evapotranspiración (ET)** real de su parcela le obliga a regar según "sensaciones", lo que a menudo resulta en un déficit hídrico en momentos críticos de calor extremo o un exceso de riego que dispara el gasto energético. 
+          Además, la falta de control sobre los **niveles de depósitos y balsas** genera riesgos operativos de rotura de stock hídrico, comprometiendo la seguridad de su sistema de riego automatizado.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. SOLUCIÓN TÉCNICA -->
+    <section class="content-block grey-bg">
+      <div class="container narrow">
+        <div class="section-label">02. LA SOLUCIÓN</div>
+        <h2>Modelado de Balance Hídrico - Penman-Monteith IoT</h2>
+        <p>
+          Nuestras estaciones meteorológicas IoT no solo recolectan datos; ejecutan modelos matemáticos avanzados. 
+          Al integrar lecturas de velocidad del viento, radiación solar neta, temperatura y humedad relativa, calculamos la **ETp (Evapotranspiración de referencia)** siguiendo el estándar FAO-56 Penman-Monteith.
+        </p>
+
+        <!-- IMAGE MOSAIC 2 -->
+        <div class="image-mosaic">
+          <img src="/images/sensores/SensorNivelAgua.png" alt="Sensor Nivel Agua" />
+        </div>
+
+        <p>
+          Este dato es el "gasto" de su banco hídrico. Al restarlo de las aportaciones del suelo, obtenemos el **Balance Hídrico Real**, permitiendo reponer exactamente lo que el sistema suelo-planta-atmósfera ha perdido. 
+          Complementamos esto con sensores de **nivel hidrostático** de alta precisión para balsas y pozos, asegurando un control total del inventario de agua de la finca.
+        </p>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h3>Piranómetro Integrado</h3>
+            <p>Medición de radiación solar para el cálculo de demanda hídrica.</p>
+          </div>
+          <div class="tech-item">
+            <h3>Integrales Térmicas (GDD)</h3>
+            <p>Cálculo automático de grados-día para fenología.</p>
+          </div>
+          <div class="tech-item">
+            <h3>Conectividad LoRaWAN</h3>
+            <p>Datos en tiempo real sin cables ni dependencias de Wi-Fi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ROI -->
+    <section class="content-block">
+      <div class="container">
+        <div class="roi-box">
+          <div class="section-label">03. RETORNO DE INVERSIÓN (ROI)</div>
+          <h2>Optimización de Recursos y Logística</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="value">-20%</span>
+              <span class="label">Coste Energético</span>
+              <p>Reducción de bombeos innecesarios mediante ajuste por ETp.</p>
+            </div>
+            <div class="stat-card">
+              <span class="value">Precisión</span>
+              <span class="label">Previsión de Cosecha</span>
+              <p>Uso de integrales térmicas para organizar logística de personal.</p>
+            </div>
+            <div class="stat-card">
+              <span class="value">Seguridad</span>
+              <span class="label">Control Hidrostático</span>
+              <p>Prevención de daños en bombas por entrada de aire o niveles bajos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. INTERPRETACIÓN DE DATOS -->
+    <section class="content-block grey-bg">
+      <div class="container narrow">
+        <div class="section-label">04. INTELIGENCIA DE DATOS</div>
+        <h2>Anticipándose al Clima - Horas-Frío y Alertas</h2>
+        <p>
+          Su estación meteorológica se convierte en un sistema de alerta temprana. Desde su smartphone podrá visualizar:
+        </p>
+        <ul class="benefit-list">
+          <li><strong>Acumulación de Horas-Frío:</strong> Clave para determinar la salida de latencia en frutales.</li>
+          <li><strong>Alertas de Helada:</strong> Notificaciones inmediatas basadas en temperatura de bulbo húmedo.</li>
+          <li><strong>Riesgo de Plagas:</strong> Algoritmos que cruzan humedad foliar y temperatura para predecir brotes criptogámicos.</li>
+        </ul>
+        <p>
+          Esta "inteligencia climática" le permite pasar de una agricultura reactiva a una **agricultura proactiva**, 
+          tomando decisiones de protección de cultivo o fertilización en el momento de máxima eficacia técnica.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. GUÍA DE INSTALACIÓN -->
+    <section class="content-block">
+      <div class="container narrow">
+        <div class="section-label">05. IMPLEMENTACIÓN</div>
+        <h2>Configuración Estándar para Calidad de Datos</h2>
+        <ol class="step-list">
+          <li><strong>Ubicación sobre Suelo Natural:</strong> Instalación sobre cubierta vegetal para evitar el calor radiado por hormigón o asfalto.</li>
+          <li><strong>Nivelación del Piranómetro:</strong> Asegurar que el sensor de radiación esté perfectamente horizontal para evitar errores en el balance hídrico.</li>
+          <li><strong>Altura Normativa:</strong> Sensores de temp/hum a 2 metros de altura para seguir estándares meteorológicos internacionales.</li>
+          <li><strong>Orientación del Anemómetro:</strong> Alineación con el Norte geográfico para una correcta lectura de la dirección del viento dominante.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>¿Quiere dominar el microclima de su parcela?</h2>
+        <p>Hablemos sobre cómo instalar una red meteorológica inteligente en su explotación.</p>
+        <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .landing-expert {
+    background: #FFFFFF;
+    color: var(--color-charcoal);
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container.narrow {
+    max-width: 800px;
+  }
+
+  /* NEW SOLID HERO */
+  .expert-hero-solid {
+    padding: 160px 0 120px;
+    background: #0F1F1A !important;
+    color: #FFFFFF !important;
+    text-align: center;
+  }
+
+  .pre-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: rgba(255,255,255,0.7);
+    display: block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .expert-hero-solid h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 30px;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+  }
+
+  .expert-hero-solid p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* IMAGE MOSAICS */
+  .image-mosaic {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 60px 0;
+  }
+
+  .image-mosaic img {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: var(--color-gray-50);
+    border-radius: 20px;
+    border: 1px solid var(--color-gray-100);
+    padding: 32px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* BLOCKS */
+  .content-block {
+    padding: 140px 0;
+  }
+
+  .grey-bg { background: var(--color-gray-50); }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--color-slate-700);
+    opacity: 0.6;
+    margin-bottom: 32px;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--color-slate-900);
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    margin-bottom: 32px;
+    color: var(--color-slate-700);
+  }
+
+  /* TECH GRID */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    margin-top: 80px;
+  }
+
+  .tech-item h3 {
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+    color: var(--color-slate-900);
+    letter-spacing: -0.01em;
+  }
+
+  .tech-item p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* ROI BOX */
+  .roi-box {
+    background: #FFFFFF;
+    padding: 100px 80px;
+    border-radius: 40px;
+    color: var(--color-charcoal);
+    border: 1px solid var(--color-gray-100);
+    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.05);
+  }
+
+  .roi-box h2 { color: var(--color-slate-900); }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 64px;
+    margin-top: 80px;
+  }
+
+  .stat-card .value {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--color-slate-900);
+    display: block;
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .stat-card .label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: block;
+    color: var(--color-slate-800);
+  }
+
+  .stat-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* LISTS */
+  .benefit-list, .step-list {
+    margin: 64px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .benefit-list li, .step-list li {
+    font-size: 1.15rem;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--color-gray-100);
+    color: var(--color-slate-700);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 180px 0;
+    text-align: center;
+    background: #FFF;
+    border-top: 1px solid var(--color-gray-100);
+  }
+
+  .btn-giant {
+    display: inline-block;
+    background: var(--color-turquoise);
+    color: #FFF;
+    padding: 24px 56px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 25px -5px rgba(15, 181, 174, 0.3);
+  }
+
+  .btn-giant:hover {
+    transform: translateY(-3px);
+    background: var(--color-turquoise-dark);
+    box-shadow: 0 20px 40px -10px rgba(15, 181, 174, 0.4);
+  }
+
+  @media (max-width: 900px) {
+    .roi-box { padding: 60px 40px; }
+    h2 { font-size: 2.1rem; }
+    .expert-hero-solid h1 { font-size: 2.5rem; }
+    .content-block { padding: 100px 0; }
+  }
+</style>

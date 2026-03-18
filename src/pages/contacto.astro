@@ -1,269 +1,454 @@
 ---
-import TestPage from "../layouts/TestPage.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<TestPage
-  title="Contacto – Cuaderno de Campo Digital"
-  heading="Estamos a tu disposición"
-  description="¿Tienes alguna duda sobre la digitalización de tu finca o la integración con SIEX? Nuestro equipo de soporte y atención al cliente te ayudará en lo que necesites."
-  variant="contact"
-  layoutType="minimalist"
->
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="contact-card glass">
-        <div class="contact-card__icon">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            ><path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
-            ></path>
-          </svg>
-        </div>
-        <h3>Atención Telefónica</h3>
-        <p>Llámanos para soporte urgente o consultas comerciales.</p>
-        <a href="tel:644476471" class="contact-link">644 47 64 71</a>
+<Layout title="Contacto – Consultoría y Soporte Técnico SmartTrap">
+  <main class="contact-editorial">
+    <!-- SOLID BRAND HERO -->
+    <section class="expert-hero-solid">
+      <div class="container">
+        <span class="pre-title">CANAL DE ATENCIÓN PROFESIONAL</span>
+        <h1>Hablemos de su <br/>Próximo Salto Tecnológico</h1>
+        <p>Expertos en agronomía digital a su disposición para transformar datos en rentabilidad real.</p>
       </div>
+    </section>
 
-      <div class="contact-card glass">
-        <div class="contact-card__icon">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            ><rect x="2" y="4" width="20" height="16" rx="2"></rect><path
-              d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-          </svg>
-        </div>
-        <h3>Correo Electrónico</h3>
-        <p>Escríbenos y te responderemos en menos de 24 horas.</p>
-        <a href="mailto:alejandro@smartfenix.es" class="contact-link"
-          >alejandro@smartfenix.es</a
-        >
-      </div>
+    <div class="container main-content">
+      <div class="editorial-grid">
+        <!-- COLUMN LEFT: CONTACT INFO -->
+        <aside class="info-sidebar">
+          <div class="section-label">DATOS DE CONTACTO</div>
+          
+          <div class="contact-method">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="method-details">
+              <h3>Departamento Comercial</h3>
+              <a href="tel:644476471" class="method-link">644 47 64 71</a>
+              <p>Atención directa de Lunes a Viernes.</p>
+            </div>
+          </div>
 
-      <div class="contact-card glass">
-        <div class="contact-card__icon">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            ><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-            ></path><circle cx="12" cy="10" r="3"></circle>
-          </svg>
-        </div>
-        <h3>Sede Central</h3>
-        <p>Visita nuestras oficinas en Granada.</p>
-        <address class="contact-address">Granada, España</address>
+          <div class="contact-method">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </div>
+            <div class="method-details">
+              <h3>Consultas Técnicas</h3>
+              <a href="mailto:alejandro@smartfenix.es" class="method-link">alejandro@smartfenix.es</a>
+              <p>Respuesta técnica en menos de 24h.</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="method-details">
+              <h3>Sede Central</h3>
+              <address class="method-link">C. Donantes de sangre, nº 4, local 4, 14120 Fuente Palmera, Córdoba</address>
+              <div class="map-container">
+                <iframe 
+                  src="https://maps.google.com/maps?q=C.%20Donantes%20de%20sangre,%20n%C2%BA%204,%20local%204,%2014120%20Fuente%20Palmera,%20C%C3%B3rdoba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" 
+                  height="200" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <p>Centro de operaciones técnicas y logística.</p>
+            </div>
+          </div>
+
+          <div class="support-brief">
+            <p>¿Necesita soporte técnico inmediato? Acceda a nuestra plataforma de ayuda exclusiva para clientes.</p>
+            <a href="/ayudas/soporte" class="text-link">Ir a Soporte al Usuario →</a>
+          </div>
+        </aside>
+
+        <!-- COLUMN RIGHT: AUDIT FORM -->
+        <section class="form-wrapper">
+          <div class="form-card">
+            <div class="section-label">01. INICIAR AUDITORÍA</div>
+            <h2>Solicitud de Información Técnica</h2>
+            <p class="form-intro">Describa sus necesidades y un ingeniero asignado a su zona revisará su caso personalmente.</p>
+
+            <form class="editorial-form">
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="name">Nombre y Apellidos</label>
+                  <input type="text" id="name" name="name" placeholder="Su nombre completo" required />
+                </div>
+                <div class="input-group">
+                  <label for="email">Email Corporativo</label>
+                  <input type="email" id="email" name="email" placeholder="email@finca.com" required />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="topic">Área de Interés Principal</label>
+                <select id="topic" name="topic" required>
+                  <option value="" disabled selected>Seleccione un área...</option>
+                  <option value="siex">Cuaderno de Campo Digital (SIEX/REA)</option>
+                  <option value="suelo">Sensores de Suelo y Raíz</option>
+                  <option value="planta">Fisiología de Planta (Hoja y Fruto)</option>
+                  <option value="clima">Monitorización Meteorológica</option>
+                  <option value="kit-digital">Kit Digital / Subvenciones</option>
+                  <option value="fieldbee">Autoguiado RTK y Maquinaria</option>
+                  <option value="prescripcion">Prescripción Digital Variable</option>
+                  <option value="estiercoles">Gestión de Estiércoles</option>
+                  <option value="trazabilidad">Trazabilidad GPS DARP</option>
+                  <option value="asesoramiento">Asesoramiento Estratégico</option>
+                  <option value="cooperativas">Soluciones para Cooperativas</option>
+                  <option value="soporte">Soporte Técnico / Incidencia</option>
+                  <option value="otro">Consulta General / Otro</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="message">Mensaje / Contexto del Proyecto</label>
+                <textarea id="message" name="message" rows="5" placeholder="¿En qué fase de digitalización se encuentra su explotación?"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-submit">Enviar Solicitud de Información</button>
+                <p class="disclaimer">Al enviar, confirma que ha leído y acepta nuestra Política de Privacidad.</p>
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
     </div>
 
-    <div class="contact-form-container glass">
-      <form class="contact-form">
-        <div class="form-group">
-          <label for="name">Nombre Completo</label>
-          <input type="text" id="name" placeholder="Tu nombre..." required />
+    <!-- FAQ MINI-SECTION -->
+    <section class="faq-strip grey-bg">
+      <div class="container">
+        <div class="faq-grid-v3">
+          <div class="faq-v3-item">
+            <h4>¿Tienen delegaciones físicas?</h4>
+            <p>Nuestra base está en Granada, pero operamos de forma digital y presencial en toda España y Portugal.</p>
+          </div>
+          <div class="faq-v3-item">
+            <h4>¿Atienden a pequeños agricultores?</h4>
+            <p>Nuestras soluciones escalan desde fincas familiares hasta grandes cooperativas agroindustriales.</p>
+          </div>
+          <div class="faq-v3-item">
+            <h4>¿Cuál es el coste de la auditoría?</h4>
+            <p>La primera toma de contacto y el análisis de viabilidad técnica son completamente gratuitos.</p>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="tu@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="topic">Interés</label>
-          <select id="topic" name="topic">
-            <option value="" disabled selected>Selecciona un motivo...</option>
-            <option value="siex">Cuaderno de Campo Digital (SIEX/REA)</option>
-            <option value="fieldbee">Autoguiado RTK FieldBee</option>
-            <option value="ipmwise">Control de Malas Hierbas IPMwise</option>
-            <option value="kit-digital">Kit Digital / Subvenciones</option>
-            <option value="iot">Sensores IoT y Cámaras IA</option>
-            <option value="prescripcion">Prescripción Digital Variable</option>
-            <option value="trazabilidad">Trazabilidad GPS Logística</option>
-            <option value="cooperativas">Red de Monitoreo (Cooperativas)</option>
-            <option value="otro">Consulta General</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea
-            id="message"
-            rows="5"
-            placeholder="¿En qué podemos ayudarte?"></textarea>
-        </div>
-        <button type="submit" class="cta-btn">Enviar Mensaje</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- FAQ Section for Contact -->
-  <section class="faq-section-contact">
-    <h2 class="text-center">Preguntas Frecuentes antes de Contactar</h2>
-    <div class="faq-grid-contact">
-      <div class="faq-item">
-        <h3>¿Cuánto tardáis en responder?</h3>
-        <p>Nuestro compromiso es responder a todas las consultas enviadas por formulario en un plazo máximo de 24 horas laborables.</p>
       </div>
-      <div class="faq-item">
-        <h3>¿Ofrecéis demos personalizadas?</h3>
-        <p>Sí. Puedes solicitar una videollamada donde uno de nuestros expertos te mostrará la plataforma adaptada a tus cultivos específicos.</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Dónde se encuentran vuestras oficinas?</h3>
-        <p>Nuestra sede central está en Granada, pero damos servicio y soporte técnico presencial en toda la península ibérica.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
+</Layout>
 
-  <style>
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 40px;
-      margin-top: 40px; /* Space from the minimalist Hero */
-      position: relative;
-      z-index: 10;
-    }
+<style is:global>
+  .contact-editorial {
+    background: #FFFFFF;
+    color: var(--color-charcoal);
+  }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+  .contact-editorial .container {
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
-    .contact-card {
-      background: white;
-      padding: 32px;
-      border-radius: 20px;
-      border: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+  /* BRAND HERO CROSS-PAGE */
+  .expert-hero-solid {
+    padding: 160px 0 120px;
+    background: #0F1F1A !important;
+    color: #FFFFFF !important;
+    text-align: center;
+  }
 
-    .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-color: var(--color-turquoise);
-    }
+  .expert-hero-solid .pre-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: rgba(255,255,255,0.7) !important;
+    display: block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
 
-    .contact-card__icon {
-      width: 48px;
-      height: 48px;
-      background: var(--color-turquoise-light);
-      color: var(--color-turquoise-dark);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
+  .expert-hero-solid h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Unified max size 4rem */
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 30px;
+    letter-spacing: -0.03em;
+    color: #FFFFFF !important;
+  }
 
-    .contact-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      color: var(--color-gray-900);
-    }
+  .expert-hero-solid p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 400;
+    line-height: 1.6;
+  }
 
-    .contact-card p {
-      font-size: 0.95rem;
-      color: var(--color-gray-500);
-      margin-bottom: 16px;
-    }
+  /* EDITORIAL GRID SYSTEM */
+  .contact-editorial .main-content {
+    margin-top: -60px;
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 20;
+  }
 
-    .contact-link {
-      font-weight: 700;
-      color: var(--color-turquoise-dark);
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
+  .editorial-grid {
+    display: grid !important;
+    grid-template-columns: 360px 1fr !important;
+    gap: 100px !important;
+    align-items: start;
+  }
 
-    .contact-form-container {
-      background: white;
-      padding: 48px;
-      border-radius: 24px;
-      border: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-    }
+  /* SIDEBAR INFO */
+  .info-sidebar {
+    padding-top: 40px;
+  }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+  .contact-editorial .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--color-slate-700);
+    opacity: 0.6;
+    margin-bottom: 40px;
+    display: block;
+    text-transform: uppercase;
+  }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+  .contact-method {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
 
-    .form-group label {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--color-gray-700);
-    }
+  .method-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--color-turquoise);
+    margin-top: 4px;
+  }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid var(--color-gray-200);
-      background: var(--color-gray-50);
-      font-family: inherit;
-      transition: all 0.2s ease;
-    }
+  .method-details h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    color: var(--color-slate-900);
+  }
 
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--color-turquoise);
-      background: white;
-      box-shadow: 0 0 0 4px rgba(15, 181, 174, 0.1);
-    }
+  .method-link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+  }
 
-    @media (max-width: 1024px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-        margin-top: 20px;
-      }
-    }
+  .method-details p {
+    font-size: 0.95rem;
+    color: var(--color-gray-500);
+    line-height: 1.5;
+  }
 
-    .faq-section-contact {
-      margin-top: 100px;
-      padding-top: 80px;
-      border-top: 1px solid var(--color-gray-100);
-    }
+  .support-brief {
+    margin-top: 60px;
+    padding: 32px;
+    background: var(--color-gray-50);
+    border-radius: 20px;
+    border: 1px solid var(--color-gray-100);
+  }
 
-    .faq-grid-contact {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
-    }
+  .support-brief p {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    color: var(--color-slate-700);
+    line-height: 1.6;
+  }
 
-    .faq-grid-contact h3 {
-      font-size: 1.15rem;
-      margin-bottom: 12px;
-      color: var(--color-gray-900);
-      font-weight: 700;
-    }
+  .text-link {
+    font-weight: 700;
+    color: var(--color-turquoise);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+  }
 
-    .faq-grid-contact p {
-      font-size: 0.95rem;
-      color: var(--color-gray-500);
-      line-height: 1.6;
+  .text-link:hover {
+    opacity: 0.8;
+  }
+
+  .map-container {
+    margin: 20px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-100);
+    box-shadow: var(--shadow-md);
+    filter: grayscale(0.2);
+    transition: filter 0.3s ease;
+  }
+
+  .map-container:hover {
+    filter: grayscale(0);
+  }
+
+  /* FORM CARD DESIGN */
+  .form-card {
+    background: #FFFFFF !important;
+    padding: 70px !important;
+    border-radius: 32px !important;
+    border: 1px solid var(--color-gray-100) !important;
+    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .form-card h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    color: var(--color-slate-900) !important;
+  }
+
+  .form-intro {
+    font-size: 1.15rem;
+    color: var(--color-slate-700);
+    margin-bottom: 50px;
+    line-height: 1.7;
+  }
+
+  /* EDITORIAL FORM FIELDS */
+  .editorial-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .form-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-slate-800) !important;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 18px 22px !important;
+    border: 1px solid var(--color-gray-200) !important;
+    border-radius: 14px !important;
+    background: var(--color-white) !important;
+    font-size: 1.05rem !important;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: var(--color-slate-900) !important;
+  }
+
+  .input-group input::placeholder,
+  .input-group textarea::placeholder {
+    color: var(--color-gray-500) !important;
+    opacity: 0.6;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus,
+  .input-group textarea:focus {
+    outline: none;
+    border-color: var(--color-turquoise) !important;
+    box-shadow: 0 0 0 4px rgba(15, 181, 174, 0.1) !important;
+  }
+
+  .btn-submit {
+    display: block;
+    width: 100%;
+    padding: 22px;
+    background: var(--color-turquoise) !important;
+    color: #FFFFFF !important;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 25px -5px rgba(15, 181, 174, 0.3);
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -10px rgba(15, 181, 174, 0.4);
+    background: var(--color-turquoise-dark) !important;
+  }
+
+  .disclaimer {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    text-align: center;
+    margin-top: 24px;
+    line-height: 1.5;
+  }
+
+  /* FAQ STRIP */
+  .faq-strip {
+    padding: 100px 0;
+    border-top: 1px solid var(--color-gray-100);
+    background: var(--color-gray-50);
+  }
+
+  .faq-grid-v3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+  }
+
+  .faq-v3-item h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--color-slate-900);
+  }
+
+  .faq-v3-item p {
+    font-size: 1rem;
+    color: var(--color-slate-700);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1100px) {
+    .editorial-grid {
+      grid-template-columns: 1fr !important;
+      gap: 80px;
     }
-  </style>
-</TestPage>
+    .info-sidebar { order: 2; }
+    .form-wrapper { order: 1; }
+    .form-card { padding: 40px !important; }
+  }
+
+  @media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr !important; gap: 24px !important; }
+    .expert-hero-solid h1 { font-size: 2.4rem !important; }
+    .form-card h2 { font-size: 2rem !important; }
+  }
+</style>

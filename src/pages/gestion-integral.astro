@@ -1,18 +1,8 @@
 ---
-import TestPage from "../layouts/TestPage.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<TestPage
-  title="Gestión Integral de la Finca y Cuaderno de Campo Digital"
-  heading="Manual de Operaciones: Gestión de Finca y Cuaderno Digital"
-  description="Especificaciones técnicas para el control centralizado de explotaciones, cumplimiento normativo SIEX/PAC y monitorización de activos críticos."
-  variant="sinergias"
-  layoutType="mosaic"
-  mosaicImages={[
-    "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/5928373/pexels-photo-5928373.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  ]}
->
+<Layout title="Gestión Integral de la Finca y Cuaderno de Campo Digital">
   <div class="manual-container">
     <div class="subpage-content dashboard-layout">
       <!-- Navegación Lateral (Anclas) -->
@@ -186,7 +176,7 @@ import TestPage from "../layouts/TestPage.astro";
       </main>
     </div>
   </div>
-</TestPage>
+</Layout>
 
 <style is:global>
   /* FORZADO ABSOLUTO DE FONDO BLANCO Y TEXTO OSCURO */

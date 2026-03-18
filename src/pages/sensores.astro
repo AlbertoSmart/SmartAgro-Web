@@ -1,5 +1,5 @@
 ---
-import TestPage from "../layouts/TestPage.astro";
+import Layout from "../layouts/Layout.astro";
 
 const { searchParams } = Astro.url;
 const category = searchParams.get("category");
@@ -8,206 +8,270 @@ const category = searchParams.get("category");
 const showFamily = (fam) => !category || category.toLowerCase() === fam.toLowerCase();
 ---
 
-<TestPage
-  title="Ecosistema de Sensores Inteligentes IoT"
-  heading="Hub de Sensores: Inteligencia de Campo en Tiempo Real"
-  description="Arquitectura de hardware avanzada para la monitorización fisiológica, edáfica y climática de explotaciones agrícolas de alta precisión."
-  variant="tools"
-  layoutType="mosaic"
-  mosaicImages={[
-    "https://images.pexels.com/photos/5928373/pexels-photo-5928373.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/4207909/pexels-photo-4207909.jpeg?auto=compress&cs=tinysrgb&w=1200"
-  ]}
->
-  <div class="sensors-hub-container">
-    <!-- FAMILIA 1: SUELO Y RAÍZ -->
-    <section id="section-suelo" class="sensor-family" style={showFamily("suelo") ? "" : "display: none;"}>
-      <div class="family-header">
-        <span class="family-badge">01</span>
-        <h2>Suelo y Raíz: El Corazón de la Producción</h2>
-        <p>Monitorización de la dinámica del agua, la nutrición mineral y el comportamiento radicular en el perfil edáfico.</p>
-      </div>
-      
-      <div class="sensor-grid">
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorTemperaturaHumedadSuelo.png" alt="Sensor Suelo Temp/Hum" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor Suelo Temp/Hum</h3>
-            <p>Detección precisa por tecnología FDR de la humedad volumétrica y temperatura en el lecho de siembra.</p>
-            <a href="/sensores/suelo-humedad-temp" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-        
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorphTemperaturaSuelo.png" alt="Sensor pH Suelo" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor pH Suelo</h3>
-            <p>Monitorización continua del potencial de hidrógeno para optimizar la disponibilidad de nutrientes minerales.</p>
-            <a href="/sensores/suelo-ph" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorDePhAltaPrecision.png" alt="Sensor pH Alta Precisión" />
-          </div>
-          <div class="sensor-content">
-            <h3>pH Alta Precisión</h3>
-            <p>Control electroquímico avanzado para mediciones críticas en suelos altamente salinos o sustratos.</p>
-            <a href="/sensores/suelo-ph-precision" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorCO2.png" alt="Sensor CO2 Tierra" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor CO2 Tierra</h3>
-            <p>Análisis de la respiración radicular y la actividad microbiana para evaluar el estado del suelo.</p>
-            <a href="/sensores/suelo-co2" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorOxigenoSuelo.png" alt="Sensor Oxígeno Suelo" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor Oxígeno Suelo</h3>
-            <p>Medición de la tasa de difusión de oxígeno para prevenir asfixia radicular en suelos pesados.</p>
-            <a href="/sensores/suelo-oxigeno" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorSuelo8en1.png" alt="Sensor 8 en 1" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor Tierra 8 en 1</h3>
-            <p>Métrica total: N, P, K, pH, Conductividad Eléctrica, Humedad, Temperatura y Salinidad en un solo nodo.</p>
-            <a href="/sensores/suelo-8en1" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png" alt="Sensor Tubular" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor Tubular Multicapa</h3>
-            <p>Sonda multi-nivel para el análisis del perfil hídrico completo hasta 120cm de profundidad.</p>
-            <a href="/sensores/suelo-tubular" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
+<Layout title="Ecosistema de Sensores Inteligentes IoT">
+  <main class="contact-editorial no-margin">
+    <!-- SOLID BRAND HERO (Copied from Contacto for exact alignment) -->
+    <section class="expert-hero-solid">
+      <div class="container">
+        <span class="pre-title">HUB DE SENSORES INTELIGENTES</span>
+        <h1>Inteligencia de Campo en Tiempo Real</h1>
+        <p>Arquitectura de hardware avanzada para la monitorización fisiológica, edáfica y climática de explotaciones agrícolas de alta precisión.</p>
       </div>
     </section>
 
-    <!-- FAMILIA 2: FISIOLOGÍA DE PLANTA -->
-    <section id="section-planta" class="sensor-family" style={showFamily("planta") ? "" : "display: none;"}>
-      <div class="family-header">
-        <span class="family-badge">02</span>
-        <h2>Fisiología de Planta: Escuchando al Cultivo</h2>
-        <p>Sensores directos sobre el tejido vegetal para entender el estrés hídrico y el crecimiento en tiempo real.</p>
-      </div>
-      
-      <div class="sensor-grid">
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/DendometroTronco.png" alt="Dendrómetro Tronco" />
+    <div class="container main-content">
+      <div class="sensors-hub-container">
+        <!-- FAMILIA 1: SUELO Y RAÍZ -->
+        <section id="section-suelo" class="sensor-family" style={showFamily("suelo") ? "" : "display: none;"}>
+          <div class="family-header">
+            <span class="family-badge">01</span>
+            <h2>Suelo y Raíz: El Corazón de la Producción</h2>
+            <p>Monitorización de la dinámica del agua, la nutrición mineral y el comportamiento radicular en el perfil edáfico.</p>
           </div>
-          <div class="sensor-content">
-            <h3>Dendrómetro de Tronco</h3>
-            <p>Medición micrométrica de las variaciones del diámetro del tallo para detectar estrés hídrico inmediato.</p>
-            <a href="/sensores/planta-dendrometro-tronco" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-        
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/dendometroFruto2.png" alt="Dendrómetro Fruto" />
-          </div>
-          <div class="sensor-content">
-            <h3>Dendrómetro de Fruto</h3>
-            <p>Seguimiento continuo de la tasa de crecimiento del fruto para predecir el calibre final en recolección.</p>
-            <a href="/sensores/planta-dendrometro-fruto" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
+          
+          <div class="sensor-grid">
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorTemperaturaHumedadSuelo.png" alt="Sensor Suelo Temp/Hum" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor Suelo Temp/Hum</h3>
+                <p>Detección precisa por tecnología FDR de la humedad volumétrica y temperatura en el lecho de siembra.</p>
+                <a href="/sensores/suelo-humedad-temp" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+            
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorphTemperaturaSuelo.png" alt="Sensor pH Suelo" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor pH Suelo</h3>
+                <p>Monitorización continua del potencial de hidrógeno para optimizar la disponibilidad de nutrientes minerales.</p>
+                <a href="/sensores/suelo-ph" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
 
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Temperatura Hoja" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor Temp. Hoja</h3>
-            <p>Termometría infrarroja para medir la temperatura de la canopia y calcular el índice de estrés hídrico.</p>
-            <a href="/sensores/planta-temp-hoja" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorDePhAltaPrecision.png" alt="Sensor pH Alta Precisión" />
+              </div>
+              <div class="sensor-content">
+                <h3>pH Alta Precisión</h3>
+                <p>Control electroquímico avanzado para mediciones críticas en suelos altamente salinos o sustratos.</p>
+                <a href="/sensores/suelo-ph-precision" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
 
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Hoja Humectación" />
-          </div>
-          <div class="sensor-content">
-            <h3>Sensor Hoja (Humectación)</h3>
-            <p>Detección del tiempo de mojado foliar para la predicción de riesgos criptogámicos y modelos de plagas.</p>
-            <a href="/sensores/planta-hoja-humectacion" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorCO2.png" alt="Sensor CO2 Tierra" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor CO2 Tierra</h3>
+                <p>Análisis de la respiración radicular y la actividad microbiana para evaluar el estado del suelo.</p>
+                <a href="/sensores/suelo-co2" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
 
-    <!-- FAMILIA 3: CLIMA Y RIEGO -->
-    <section id="section-clima" class="sensor-family" style={showFamily("clima") ? "" : "display: none;"}>
-      <div class="family-header">
-        <span class="family-badge">03</span>
-        <h2>Clima y Riego: El Motor Externo</h2>
-        <p>Parametrización de las variables atmosféricas y control de recursos hídricos.</p>
-      </div>
-      
-      <div class="sensor-grid">
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/EstacionMeteorologica.png" alt="Estación Meteorológica" />
-          </div>
-          <div class="sensor-content">
-            <h3>Estación Meteorológica</h3>
-            <p>Nodo integrado con anemómetro, piranómetro, pluviométro y sensores de temperatura y humedad.</p>
-            <a href="/sensores/clima-estacion" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
-          </div>
-        </div>
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorOxigenoSuelo.png" alt="Sensor Oxígeno Suelo" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor Oxígeno Suelo</h3>
+                <p>Medición de la tasa de difusión de oxígeno para prevenir asfixia radicular en suelos pesados.</p>
+                <a href="/sensores/suelo-oxigeno" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
 
-        <div class="sensor-card">
-          <div class="sensor-img">
-            <img src="/images/sensores/SensorNivelAgua.png" alt="Sensor Nivel Agua" />
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorSuelo8en1.png" alt="Sensor 8 en 1" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor Tierra 8 en 1</h3>
+                <p>Métrica total: N, P, K, pH, Conductividad Eléctrica, Humedad, Temperatura y Salinidad en un solo nodo.</p>
+                <a href="/sensores/suelo-8en1" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png" alt="Sensor Tubular" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor Tubular Multicapa</h3>
+                <p>Sonda multi-nivel para el análisis del perfil hídrico completo hasta 120cm de profundidad.</p>
+                <a href="/sensores/suelo-tubular" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
           </div>
-          <div class="sensor-content">
-            <h3>Sensor Nivel de Agua</h3>
-            <p>Control hidrostático de depósitos, pozos y canales para la gestión eficiente del riego.</p>
-            <a href="/sensores/agua-nivel" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+        </section>
+
+        <!-- FAMILIA 2: FISIOLOGÍA DE PLANTA -->
+        <section id="section-planta" class="sensor-family" style={showFamily("planta") ? "" : "display: none;"}>
+          <div class="family-header">
+            <span class="family-badge">02</span>
+            <h2>Fisiología de Planta: Escuchando al Cultivo</h2>
+            <p>Sensores directos sobre el tejido vegetal para entender el estrés hídrico y el crecimiento en tiempo real.</p>
           </div>
-        </div>
+          
+          <div class="sensor-grid">
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/DendometroTronco.png" alt="Dendrómetro Tronco" />
+              </div>
+              <div class="sensor-content">
+                <h3>Dendrómetro de Tronco</h3>
+                <p>Medición micrométrica de las variaciones del diámetro del tallo para detectar estrés hídrico inmediato.</p>
+                <a href="/sensores/planta-dendrometro-tronco" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+            
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/dendometroFruto2.png" alt="Dendrómetro Fruto" />
+              </div>
+              <div class="sensor-content">
+                <h3>Dendrómetro de Fruto</h3>
+                <p>Seguimiento continuo de la tasa de crecimiento del fruto para predecir el calibre final en recolección.</p>
+                <a href="/sensores/planta-dendrometro-fruto" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Temperatura Hoja" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor Temp. Hoja</h3>
+                <p>Termometría infrarroja para medir la temperatura de la canopia y calcular el índice de estrés hídrico.</p>
+                <a href="/sensores/planta-temp-hoja" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Hoja Humectación" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor Hoja (Humectación)</h3>
+                <p>Detección del tiempo de mojado foliar para la predicción de riesgos criptogámicos y modelos de plagas.</p>
+                <a href="/sensores/planta-hoja-humectacion" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAMILIA 3: CLIMA Y RIEGO -->
+        <section id="section-clima" class="sensor-family" style={showFamily("clima") ? "" : "display: none;"}>
+          <div class="family-header">
+            <span class="family-badge">03</span>
+            <h2>Clima y Riego: El Motor Externo</h2>
+            <p>Parametrización de las variables atmosféricas y control de recursos hídricos.</p>
+          </div>
+          
+          <div class="sensor-grid">
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/EstacionMeteorologica.png" alt="Estación Meteorológica" />
+              </div>
+              <div class="sensor-content">
+                <h3>Estación Meteorológica</h3>
+                <p>Nodo integrado con anemómetro, piranómetro, pluviométro y sensores de temperatura y humedad.</p>
+                <a href="/sensores/clima-estacion" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+
+            <div class="sensor-card">
+              <div class="sensor-img">
+                <img src="/images/sensores/SensorNivelAgua.png" alt="Sensor Nivel Agua" />
+              </div>
+              <div class="sensor-content">
+                <h3>Sensor Nivel de Agua</h3>
+                <p>Control hidrostático de depósitos, pozos y canales para la gestión eficiente del riego.</p>
+                <a href="/sensores/agua-nivel" class="spec-btn">Ver Especificaciones Técnicas Completas</a>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-</TestPage>
+    </div>
+  </main>
+</Layout>
 
 <style is:global>
-  body { 
-    background-color: #FFFFFF !important; 
-    color: #000000; 
+  /* Base consistency styles from Contacto */
+  .contact-editorial {
+    background: #FFFFFF;
+    color: var(--color-charcoal);
+    box-sizing: border-box;
+  }
+
+  .contact-editorial.no-margin {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .contact-editorial .container {
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* BRAND HERO CROSS-PAGE - PURE DARK CONTINUITY */
+  .expert-hero-solid {
+    padding: 160px 0 120px;
+    background: #0F1F1A !important; /* "Esencia de Campo" Deep Forest Green */
+    color: #FFFFFF !important;
+    text-align: center;
+    margin-top: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .expert-hero-solid .pre-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: rgba(255,255,255,0.7) !important;
+    display: block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .expert-hero-solid h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 30px;
+    letter-spacing: -0.03em;
+    color: #FFFFFF !important;
+    margin-top: 0 !important;
+  }
+
+  .expert-hero-solid p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Adjust main container for overlap consistency if needed */
+  .contact-editorial .main-content {
+    margin-top: 0; 
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 20;
+    background: #FFFFFF;
   }
 </style>
 
 <style>
   .sensors-hub-container {
-    padding: 60px 0;
+    padding: 80px 0; /* Increased to ensure breathing room after hero */
   }
 
   .sensor-family {
@@ -222,7 +286,7 @@ const showFamily = (fam) => !category || category.toLowerCase() === fam.toLowerC
 
   .family-badge {
     font-size: 3rem;
-    font-weight: 950;
+    font-weight: 900;
     color: #000000;
     line-height: 1;
     display: block;
@@ -323,26 +387,9 @@ const showFamily = (fam) => !category || category.toLowerCase() === fam.toLowerC
     color: #000000;
   }
 
-  /* Special Layout for Climate */
-  .solo-card {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    min-height: 400px;
-  }
-
-  .wide-img {
-    height: 100% !important;
-  }
-
-  @media (max-width: 900px) {
-    .solo-card {
-      grid-template-columns: 1fr;
-    }
-  }
-
   @media (max-width: 600px) {
     .family-header h2 { font-size: 2rem; }
     .sensor-grid { grid-template-columns: 1fr; }
   }
 </style>
+

@@ -3,12 +3,18 @@ import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
 
 const { transparent = false } = Astro.props;
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+// Helper to check if a path is active
+const isActive = (path: string) => {
+  const target = path.replace(/\/$/, "") || "/";
+  return pathname === target;
+};
+
+const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 ---
 
-<nav
-  class={`navbar ${transparent ? "navbar--transparent" : "navbar--solid"}`}
-  id="navbar"
->
+<nav class="navbar" id="navbar">
   <div class="navbar__content container">
     <div class="navbar__brand">
       <a href="/" class="navbar__logo">
@@ -26,7 +32,7 @@ const { transparent = false } = Astro.props;
     </button>
 
     <ul class="navbar__menu" id="navMenu">
-      <li class="navbar__item navbar__item--has-dropdown">
+      <li class={`navbar__item navbar__item--has-dropdown ${isActive("/") ? "active" : ""}`}>
         <a href="/"
           >Tecnología
           <svg
@@ -41,7 +47,7 @@ const { transparent = false } = Astro.props;
         </a>
         <ul class="navbar__dropdown">
           <li>
-            <a href="/guia-sensores">Ecosistema de Sensores</a>
+            <a href="/guia-sensores" class={isActive("/guia-sensores") ? "active-sub" : ""}>Ecosistema de Sensores</a>
           </li>
           <li>
             <a href="/#gestion">Gestión Virtual & GIS</a>
@@ -52,7 +58,7 @@ const { transparent = false } = Astro.props;
         </ul>
       </li>
 
-      <li class="navbar__item navbar__item--has-dropdown">
+      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/soluciones") ? "active" : ""}`}>
         <a href="/soluciones"
           >Soluciones
           <svg
@@ -67,15 +73,15 @@ const { transparent = false } = Astro.props;
         </a>
         <ul class="navbar__dropdown">
           <li>
-            <a href="/soluciones/agricultores">Para Agricultores</a>
+            <a href="/soluciones/agricultores" class={isActive("/soluciones/agricultores") ? "active-sub" : ""}>Para Agricultores</a>
           </li>
           <li>
-            <a href="/soluciones/tecnicos">Para Técnicos & Asesores</a>
+            <a href="/soluciones/tecnicos" class={isActive("/soluciones/tecnicos") ? "active-sub" : ""}>Para Técnicos & Asesores</a>
           </li>
         </ul>
       </li>
 
-      <li class="navbar__item navbar__item--has-dropdown">
+      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/herramientas") ? "active" : ""}`}>
         <a href="/herramientas"
           >Servicios
           <svg
@@ -90,25 +96,25 @@ const { transparent = false } = Astro.props;
         </a>
         <ul class="navbar__dropdown">
           <li>
-            <a href="/herramientas/prescripcion">Prescripción Digital</a>
+            <a href="/herramientas/prescripcion" class={isActive("/herramientas/prescripcion") ? "active-sub" : ""}>Prescripción Digital</a>
           </li>
           <li>
-            <a href="/herramientas/estiercoles">Gestión de Estiércoles</a>
+            <a href="/herramientas/estiercoles" class={isActive("/herramientas/estiercoles") ? "active-sub" : ""}>Gestión de Estiércoles</a>
           </li>
           <li>
-            <a href="/herramientas/trazabilidad">Trazabilidad GPS DARP</a>
+            <a href="/herramientas/trazabilidad" class={isActive("/herramientas/trazabilidad") ? "active-sub" : ""}>Trazabilidad GPS DARP</a>
           </li>
           <li>
-              <a href="/herramientas/asesoramiento">Asesoramiento Estratégico</a>
+              <a href="/herramientas/asesoramiento" class={isActive("/herramientas/asesoramiento") ? "active-sub" : ""}>Asesoramiento Estratégico</a>
           </li>
         </ul>
       </li>
 
-      <li class="navbar__item">
+      <li class={`navbar__item ${isActive("/gestion-integral") ? "active" : ""}`}>
         <a href="/gestion-integral">Gestión Integral</a>
       </li>
 
-      <li class="navbar__item navbar__item--has-dropdown">
+      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/ayudas") ? "active" : ""}`}>
         <a href="/ayudas"
           >Ayudas
           <svg
@@ -122,23 +128,45 @@ const { transparent = false } = Astro.props;
           </svg>
         </a>
         <ul class="navbar__dropdown">
-          <li><a href="/ayudas/kit-digital">Kit Digital</a></li>
-          <li><a href="/ayudas/digitalizacion">Ayudas Digitalización</a></li>
-          <li><a href="/ayudas/soporte">Soporte al Usuario</a></li>
+          <li><a href="/ayudas/kit-digital" class={isActive("/ayudas/kit-digital") ? "active-sub" : ""}>Kit Digital</a></li>
+          <li><a href="/ayudas/digitalizacion" class={isActive("/ayudas/digitalizacion") ? "active-sub" : ""}>Ayudas Digitalización</a></li>
+          <li><a href="/ayudas/soporte" class={isActive("/ayudas/soporte") ? "active-sub" : ""}>Soporte al Usuario</a></li>
         </ul>
       </li>
 
-      <li class="navbar__item"><a href="/eventos">Comunidad</a></li>
-      <li class="navbar__item"><a href="/contacto">Contacto</a></li>
-      <li class="navbar__item">
-        <a href="/guia-sensores">Sensores</a>
+      <li class={`navbar__item ${isActive("/eventos") ? "active" : ""}`}><a href="/eventos">Comunidad</a></li>
+      <li class={`navbar__item ${isActive("/contacto") ? "active" : ""}`}><a href="/contacto">Contacto</a></li>
+      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/sensores") || isActive("/guia-sensores") ? "active" : ""}`}>
+        <a href="/guia-sensores"
+          >Sensores
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            ><path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </a>
+        <ul class="navbar__dropdown">
+          <li>
+            <a href="/sensores/suelo" class={isActive("/sensores/suelo") ? "active-sub" : ""}>Sensores de Suelo y Raíz</a>
+          </li>
+          <li>
+            <a href="/sensores/planta" class={isActive("/sensores/planta") ? "active-sub" : ""}>Fisiología de Planta (Hoja y Fruto)</a>
+          </li>
+          <li>
+            <a href="/sensores/clima" class={isActive("/sensores/clima") ? "active-sub" : ""}>Monitorización Meteorológica</a>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
 </nav>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const toggle = document.getElementById("navToggle");
     const menu = document.getElementById("navMenu");
     if (toggle && menu) {
@@ -165,60 +193,48 @@ const { transparent = false } = Astro.props;
     top: 0;
     left: 0;
     width: 100%;
+    height: 90px !important;
+    background: #0F1F1A !important;
     z-index: 1000;
-    padding: 24px 0;
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    transition: none !important;
+    box-sizing: border-box;
+    border: none !important;
+    border-bottom: none !important;
   }
 
-  .navbar--transparent {
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .navbar--solid {
-    background: var(--color-white);
-    padding: 12px 0;
-    box-shadow: var(--shadow-md);
-    border-bottom: 1px solid var(--color-gray-100);
-  }
-
-  .navbar--solid .navbar__item > a {
-    color: var(--color-gray-700);
-  }
-
-  .navbar--solid .navbar__logo img {
-    height: 36px;
+  /* RESETS AGRESIVOS PARA ELIMINAR CUALQUIER SUBRAYADO */
+  .navbar a, 
+  .navbar__item a,
+  .navbar__item.active a,
+  .navbar__menu a {
+    text-decoration: none !important;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
   .navbar--scrolled {
-    background: var(--color-white);
-    padding: 12px 0;
-    box-shadow: var(--shadow-md);
-    border-bottom: 1px solid var(--color-gray-100);
-  }
-
-  .navbar--scrolled .navbar__item > a {
-    color: var(--color-gray-700);
-  }
-
-  .navbar--scrolled .navbar__logo img {
-    height: 36px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   }
 
   .navbar__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar__brand {
+    display: flex;
+    align-items: center;
   }
 
   .navbar__logo img {
-    height: 48px;
+    height: 44px;
     width: auto;
-    transition: height 0.3s ease;
-  }
-
-  .navbar--scrolled .navbar__logo img {
-    height: 36px;
   }
 
   .navbar__menu {
@@ -238,22 +254,18 @@ const { transparent = false } = Astro.props;
     padding: 8px 16px;
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--color-white);
     transition: var(--transition);
+    color: #FFFFFF;
+    text-decoration: none !important;
+    border: none !important;
   }
 
-  .navbar--scrolled .navbar__item > a {
-    color: var(--color-gray-700);
-  }
-
-  .navbar__item > a:hover {
-    color: var(--color-white);
-    opacity: 0.8;
-  }
-
-  .navbar--scrolled .navbar__item > a:hover {
-    color: var(--color-turquoise);
-    opacity: 1;
+  /* Active/Hover States */
+  .navbar__item > a:hover,
+  .navbar__item.active > a {
+    color: #1AFFFF !important;
+    text-decoration: none !important;
+    border: none !important;
   }
 
   .navbar__dropdown {
@@ -281,16 +293,14 @@ const { transparent = false } = Astro.props;
     font-size: 0.9rem;
     color: var(--color-gray-700);
     border-radius: 8px;
+    text-decoration: none !important;
+    border: none !important;
   }
 
-  .navbar__dropdown li a:hover {
+  .navbar__dropdown li a:hover,
+  .navbar__dropdown li a.active-sub {
     background: var(--color-gray-50);
     color: var(--color-turquoise);
-  }
-
-  .btn--sm {
-    padding: 8px 24px;
-    font-size: 0.9rem;
   }
 
   .navbar__toggle {
@@ -303,43 +313,28 @@ const { transparent = false } = Astro.props;
   }
 
   .navbar__toggle span {
-    display: block;
-    width: 24px;
+    background: #FFFFFF;
+    width: 25px;
     height: 2px;
-    background: var(--color-white);
-    transition: var(--transition);
-  }
-
-  .navbar--scrolled .navbar__toggle span {
-    background: var(--color-gray-700);
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @media (max-width: 1024px) {
     .navbar {
-      background: var(--color-white);
+      background: var(--color-white) !important;
+      height: auto !important;
       padding: 12px 0;
     }
-    .navbar__toggle {
-      display: flex;
+    .navbar__toggle { display: flex; }
+    .navbar__item > a { 
+      color: var(--color-gray-700) !important;
+      text-decoration: none !important;
     }
-    .navbar__item > a {
-      color: var(--color-gray-700);
-    }
-    .navbar__toggle span {
-      background: var(--color-gray-700);
-    }
-
+    .navbar__toggle span { background: var(--color-gray-700); }
     .navbar__menu {
       display: none;
       position: absolute;
@@ -352,11 +347,7 @@ const { transparent = false } = Astro.props;
       box-shadow: var(--shadow-xl);
       border-top: 1px solid var(--color-gray-100);
     }
-
-    .navbar__menu--open {
-      display: flex;
-    }
-
+    .navbar__menu--open { display: flex; }
     .navbar__dropdown {
       position: static;
       box-shadow: none;
@@ -365,5 +356,27 @@ const { transparent = false } = Astro.props;
       margin-top: 10px;
       display: block;
     }
+  }
+</style>
+
+<style is:global>
+  /* FORZADO GLOBAL PARA EL MENÚ */
+  .navbar__item a, 
+  .navbar__item.active a,
+  .navbar__menu a,
+  .navbar__logo,
+  .navbar__logo img {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .navbar__item a::before,
+  .navbar__item a::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
   }
 </style>

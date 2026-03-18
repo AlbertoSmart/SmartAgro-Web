@@ -36,7 +36,7 @@ const showSuspended = layoutType === "suspended";
 const showMinimalist = layoutType === "minimalist";
 ---
 
-<Layout title={`${title}`} transparent={true} showNewsletter={true}>
+<Layout title={`${title}`} showNewsletter={true}>
   <main>
     <section class={`page-hero page-hero--${variant} page-hero--${layoutType}`}>
       <div class="container page-hero__container">
@@ -90,12 +90,12 @@ const showMinimalist = layoutType === "minimalist";
     position: relative;
     height: auto;
     min-height: 220px;
-    padding: 140px 0 30px; /* Minimalist vertical profile */
+    padding: 160px 0 60px; /* Standardized for stable navbar */
     color: #FFFFFF !important;
     overflow: hidden;
     display: flex;
-    align-items: center; /* Center horizontally/vertically if needed, but container will be at bottom */
-    background: var(--color-gray-900);
+    align-items: center; 
+    background: var(--color-slate-900);
     z-index: 1; 
     margin-top: 0;
   }
@@ -107,58 +107,60 @@ const showMinimalist = layoutType === "minimalist";
     margin-top: auto;
   }
 
-  /* Variant Colors */
-  .page-hero--solutions { background: #0c4a6e; }
-  .page-hero--tools { background: #134e4a; }
-  .page-hero--news { background: #1e293b; }
-  .page-hero--contact { background: #064e3b; }
-  .page-hero--ayudas { background: #7c2d12; }
-  .page-hero--eventos { background: #881337; }
+  /* Variant Colors - Standardized for Consistency with "Esencia de Campo" */
+  .page-hero--solutions { background: #0F1F1A !important; }
+  .page-hero--tools { background: #0F1F1A !important; } 
+  .page-hero--news { background: #0F1F1A !important; }
+  .page-hero--contact { background: #0F1F1A !important; }
+  .page-hero--ayudas { background: #0F1F1A !important; }
+  .page-hero--eventos { background: #0F1F1A !important; }
 
   /* Breadcrumbs */
   .hero-breadcrumbs {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 800;
-    opacity: 0.9; /* High contrast as requested */
-    margin-bottom: 20px;
-    color: #e2e8f0; /* Light gray for legibility */
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    opacity: 0.7; 
+    margin-bottom: 24px;
+    color: #FFFFFF; 
   }
 
   /* 01. Suspended Layout (Servicios) */
   .hero-suspended {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
     position: relative;
     padding: 40px 0;
   }
 
   .hero-suspended__content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
     color: #FFFFFF;
   }
 
   .hero-suspended__content p {
-    font-size: 1.25rem;
-    color: #f1f5f9;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
     max-width: 500px;
     line-height: 1.6;
+    font-weight: 400;
   }
 
   .hero-suspended__image {
     position: relative;
-    border-radius: var(--border-radius-lg);
+    border-radius: 40px;
     overflow: hidden;
-    box-shadow: var(--shadow-2xl);
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.4);
     transform: translateY(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 440px; /* Reduced to avoid overpowering the layout */
+    max-width: 480px; 
     margin-left: auto;
   }
 
@@ -166,26 +168,8 @@ const showMinimalist = layoutType === "minimalist";
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 16/10; /* More horizontal and elegant */
+    aspect-ratio: 16/10;
     object-fit: cover;
-  }
-
-  .data-blob {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .data-blob .label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    opacity: 0.5;
-  }
-
-  .data-blob .value {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-turquoise);
   }
 
   /* 02. Mosaic Layout (Soluciones) */
@@ -194,123 +178,51 @@ const showMinimalist = layoutType === "minimalist";
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 60px;
-  }
-
-  .hero-mosaic__content {
-    flex: 1;
-    max-width: 550px;
+    gap: 80px;
   }
 
   .hero-mosaic h1 {
-    font-size: 3.2rem;
-    font-weight: 950;
-    margin-bottom: 20px;
-    line-height: 0.95;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
     color: #FFFFFF;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
   }
 
   .hero-mosaic p {
-    font-size: 1.15rem;
-    opacity: 1; /* Maximum clarity */
+    font-size: 1.3rem;
     line-height: 1.6;
     max-width: 500px;
-    color: #f1f5f9; /* Near white */
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    color: rgba(255, 255, 255, 0.9);
   }
 
-  .hero-mosaic__images {
-    position: relative;
-    width: 320px;
-    height: 180px;
-  }
-
-  .m-img {
-    position: absolute;
-    border-radius: 12px;
-    background-size: cover;
-    background-position: center;
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .m-img--1 {
-    width: 200px;
-    height: 140px;
-    top: 0;
-    left: 0;
-    background-color: rgba(255,255,255,0.05);
-  }
-
-  .m-img--2 {
-    width: 180px;
-    height: 120px;
-    bottom: -20px;
-    right: 0;
-    background-color: rgba(0,0,0,0.2);
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .fallback-viz {
-    font-family: monospace;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    opacity: 0.15;
-    color: var(--color-turquoise);
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: 
-      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-
-  .fallback-viz::after {
-    content: "ARCHIVE_REAL_RESOURCES";
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-
-  /* 03. Minimalist Layout (Actualidad) */
+  /* 03. Minimalist Layout */
   .hero-minimalist {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 
   .text-weight-heavy {
-    font-size: 3.8rem;
-    font-weight: 900;
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 800;
     letter-spacing: -0.04em;
     margin: 0;
-    line-height: 0.95;
+    line-height: 1.1;
     color: #FFFFFF;
   }
 
-  .minimalist-underline {
-    width: 60px;
-    height: 2px; /* Elegant 2px line as requested */
-    background: var(--color-turquoise);
-    margin-top: 28px;
-  }
-
   .page-body {
-    padding: 60px 0 80px;
+    padding: 100px 0 140px;
+    background: #FFFFFF;
   }
 
   .page-body :global(h2) {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--color-dark);
-    margin-bottom: 16px;
-    margin-top: 48px;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--color-slate-900);
+    margin-bottom: 32px;
+    margin-top: 80px;
+    letter-spacing: -0.02em;
   }
 
   .page-body :global(h2:first-child) {
@@ -318,97 +230,89 @@ const showMinimalist = layoutType === "minimalist";
   }
 
   .page-body :global(p) {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.75;
-    color: var(--color-gray-600);
-    margin-bottom: 16px;
+    color: var(--color-slate-700);
+    margin-bottom: 24px;
     max-width: 800px;
   }
 
   .page-body :global(.cards-grid) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-    margin: 32px 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 60px 0;
   }
 
   .page-body :global(.feature-card) {
-    background: var(--color-white);
-    border-radius: 12px;
-    padding: 32px 28px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 48px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--color-gray-100);
+    transition: all 0.3s ease;
   }
 
   .page-body :global(.feature-card:hover) {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .page-body :global(.feature-card__icon) {
-    width: 52px;
-    height: 52px;
-    background: var(--color-turquoise);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
-    color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   }
 
   .page-body :global(.feature-card h3) {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--color-dark);
-    margin-bottom: 10px;
+    color: var(--color-slate-900);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
   }
 
   .page-body :global(.feature-card p) {
-    font-size: 0.92rem;
-    color: var(--color-gray-500);
+    font-size: 1.05rem;
+    color: var(--color-slate-600);
     line-height: 1.6;
     margin-bottom: 0;
   }
 
   .page-body :global(.highlight-box) {
-    background: var(--color-turquoise-dark);
-    border-radius: 16px;
-    padding: 40px 36px;
+    background: #0F1F1A !important;
+    border-radius: 32px;
+    padding: 80px 60px;
     color: white;
-    margin: 40px 0;
+    margin: 80px 0;
+    border: 1px solid rgba(255,255,255,0.1);
   }
 
   .page-body :global(.highlight-box h3) {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 12px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
     color: white;
   }
 
   .page-body :global(.highlight-box p) {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
     max-width: 700px;
-    margin-bottom: 0;
+    margin-bottom: 32px;
   }
 
   .page-body :global(.cta-btn) {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--color-green);
+    display: inline-block;
+    background: var(--color-turquoise);
     color: white;
-    padding: 14px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-top: 20px;
-    transition: background 0.2s ease;
+    padding: 20px 48px;
+    border-radius: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+    transition: all 0.3s ease;
   }
 
   .page-body :global(.cta-btn:hover) {
-    background: var(--color-green-dark);
+    background: var(--color-turquoise-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(15, 181, 174, 0.3);
   }
 
   @media (max-width: 768px) {
