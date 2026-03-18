@@ -5,7 +5,7 @@ const { searchParams } = Astro.url;
 const category = searchParams.get("category");
 
 // Helper to determine if a section should be visible
-const showFamily = (fam) => !category || category.toLowerCase() === fam.toLowerCase();
+const showFamily = (fam: string) => !category || category.toLowerCase() === fam.toLowerCase();
 ---
 
 <Layout title="Ecosistema de Sensores Inteligentes IoT">
@@ -223,7 +223,7 @@ const showFamily = (fam) => !category || category.toLowerCase() === fam.toLowerC
   /* BRAND HERO CROSS-PAGE - PURE DARK CONTINUITY */
   .expert-hero-solid {
     padding: 160px 0 120px;
-    background: #0F1F1A !important; /* "Esencia de Campo" Deep Forest Green */
+    background: #0B1A14 !important; /* "Esencia de Campo" Deep Forest Green */
     color: #FFFFFF !important;
     text-align: center;
     margin-top: 0 !important;
