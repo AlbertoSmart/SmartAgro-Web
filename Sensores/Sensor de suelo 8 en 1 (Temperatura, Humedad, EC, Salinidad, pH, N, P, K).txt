@@ -1,0 +1,503 @@
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Soil Temperature Moisture EC PH NPK Salinity 
+8 in  1  Product User Manual 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RD-SMTESNPKPH-O-01 
+ 
+ 
+ 
+ 
+ 
+
+ 
+www.hondetechco.com 
+ 
+1 Overview 
+The soil temperature part is composed of ST -1-PT1000 precision platinum resistor and high 
+precision sensor imported by Heraeus Company of Germany. The sensor part is composed of 
+power supply module, temperature sensing module, transmission module, temperature 
+compensation module and data processing module, etc., which thoroughly solves the measurement 
+error caused by platinum resistance due to its own characteristics. There are zero drift circuit and 
+temperature compensation circuit in the sensor, which has high adaptability to the use environment. 
+The part of soil moisture is based on the principle of frequency domain reflectance and high -
+frequency electronic technology, which is a high -precision and high-sensitivity sensor for measuring 
+soil moisture. By measuring the dielectric constant of soil, the real moisture content of various soils 
+can be directly and stably reflected, and the volume percentage of soil moisture can be measured. It 
+is the most popular soil moisture measurement method in the world at present. 
+The part of soil conductivity is converted into analog or digital signal of soil conductivity by stainless 
+steel probe through sensor. In the development process, the advanced technology of similar 
+instruments abroad is absorbed, and combined with the actual situation and application 
+requirements of our country, the conductivity value is converted into corresponding analog or digital 
+signal. After the conductivity sensor is embedded in soil, the conductivity of soluble salt ions in soil 
+solution can be directly measured. 
+In the part of soil nitrogen, phosphorus and potassium, the fertile degree of soil is judged by 
+detecting the content of nitrogen, phosphorus and potassium in the soil, which is convenient for 
+customers to evaluate the soil situation systematically. 
+ 
+2 Characteristic 
+1. The size of the sensor is small and compact. 
+2. High measurement accuracy, fast response speed and good interchangeability. 
+3. It has good sealing performance, can be directly buried in soil and is not corroded. 
+4. The influence of soil quality is small, and the application area is wide. 
+5. Accurate measurement, reliable performance, ensuring normal work and high data transmission 
+efficiency. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+www.hondetechco.com 
+ 
+3 Scope of application 
+It is suitable for water -saving agricultural irrigation, meteorological monitoring, environmental 
+monitoring, greenhouse, flowers and vegetables, grassland and pasture, soil rapid measurement, 
+plant culture, scientific experiments and other fields that need to measure soil temperature, humidity, 
+salinity, conductivity and soil nitrogen, phosphorus and potassium. 
+ 
+4 Product information 
+4.1 Technical Parameters 
+➢ Measurement parameters: Soil temperature, soil volume moisture, soil electrical conductivity 
+(EC value), Salinity, soil nitrogen/phosphorus/potassium, soil PH 
+➢ Unit of measurement: ℃; % (m3/m3); μ S/cm; Mg/kg (mg/L) 
+➢ Temperature range:-30 ~ 70 ℃ (0 ~ 50 ℃ or any other range can be customized) 
+➢ Water component range: 0 ~ 100% (30%, 50% and other measuring ranges can be selected or 
+customized for any measuring range) 
+➢ Conductivity ranges: 0 ~ 2000 μ S/cm, 0 ~ 20000 μ S/cm, default is 0-20000us/cm 
+➢ Salinity range: 0 ~ 2000 μ S/cm, 0 ~ 20000 μ S/cm, default is 0-20000us/cm 
+➢ Nitrogen/phosphorus/potassium range: 0 ~ 1999mg/kg (mg/L) 
+➢ Soil PH:3-9 
+➢ Measurement accuracy: 0.2 ℃; 2% (m3/m3) in the range of 0 ~ 50% (m3/m3); ± 2%; ± 3% 
+(mg/kg), ±0.5ph 
+➢ Resolution: 0.1 ℃; 0.1%; 1 μ S/cm; 1mg/kg (mg/L),0.1ph 
+➢ Output signal: RS485 (standard Modbus-RTU protocol, device default address: 01) 
+➢ Supply voltage: 7 ~ 24V DC 
+➢ Working range:-30 ℃ ~ 70 ℃ 
+➢ Stabilization time: 3 seconds after power-on 
+➢ Response time: < 1 second 
+ 
+4.2 Physical Parameters 
+➢ Probe length: 55mm, φ 3mm 
+➢ Probe material: 316L stainless steel 
+➢ Sealing material: ABS engineering plastics, epoxy resin, waterproof grade IP68 
+➢ Cable specification: 2 meters as standard (other cable lengths can be customized, up to 1200 
+meters) 
+ 
+ 
+ 
+ 
+www.hondetechco.com 
+ 
+5 Shape specification 
+ 
+ 
+ 
+6 Usage 
+Soil temperature and humidity + salt + EC +salinity+ nitrogen, phosphorus and potassium sensor 
+can be connected with various data collectors, data acquisition cards, remote data acquisition 
+modules and other equipment with differential input. The connection mode is as follows: 
+Wire Colour Definition 
+Red Positive power supply: 7-24VDC 
+Black Negative power supply 
+Yellow RS485 A 
+Green RS485 B 
+ 
+7 Measure method 
+Since the electrode directly measures the conductivity of the soluble salt ions in the soil, the soil 
+volumetric water content must be higher than about 20% when the soluble ions in the soil can 
+accurately reflect the conductivity of the soil. In the long-term observation, the measured value after 
+irrigation or rainfall is closer to the true level. If you are performing a quick test, you can water the 
+soil to be tested first, and perform the measurement after the water is fully penetrated. 
+If you are measuring on a hard surface, you should drill a hole first (the hole diameter should be 
+smaller than the probe diameter), then insert it into the soil and compact the soil before measuring; 
+the sensor should be protected from severe vibration and impact, let alone knocked with hard 
+objects. Because the sensor is a black package, the sensor will heat up sharply (up to 50℃) under 
+strong sunlight. In order to prevent excessive temperature from affecting the temperature 
+measurement of the sensor, please pay attention to shading and protection when using it in the field 
+or in the field. . 
+1. Soil Surface measure method 
+➢ Select a representative soil environment to clean up surface debris and vegetation 
+➢ Insert the sensor vertically and completely into the soil 
+
+ 
+www.hondetechco.com 
+ 
+➢ If there is a hard object, the measurement location should be replaced and re-measured 
+➢ For accurate data, it is recommended to measure multiple times and take the average 
+➢ To measure deep soil moisture, it is recommended to use our company's dedicated soil drill 
+2. Buried measure method 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+➢ Make a soil profile in the vertical direction, slightly deeper than the installation depth of the 
+bottommost sensor, between 20cm and 50cm in diameter 
+➢ Insert the sensor horizontally into the soil profile 
+➢ After the installation is completed, the excavated soil is backfilled in order, layered and 
+compacted, and horizontal installation is guaranteed. 
+➢ If you have the conditions, you can put the removed soil in a bag and number it to keep the soil 
+moisture unchanged, and backfill it in reverse order. 
+3. Three-tier installation 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+www.hondetechco.com 
+ 
+4. Six-tier installation 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+www.hondetechco.com 
+ 
+5. Measure Notes 
+(1). All steel needles must be inserted into the soil during measurement. 
+(2). Avoid direct sunlight on the sensor, which will cause excessive temperature. Field ambassador 
+use caution against lightning strikes. 
+(3). Do not bend the steel needle violently, do not pull the sensor lead wire with force, do not beat or 
+violently impact sensor. 
+(4). The protection grade of the sensor is IP68, which can soak the sensor in water. 
+(5). Due to the presence of radio frequency electromagnetic radiation in the air, it should not be left 
+in the air for a long time power-on state 
+ 
+8 Data conversion method 
+1. Standard Modbus-RTU protocol 
+Baud rate: 2400bit/s, 4800bit/s, 9600 bit/s can be set, the factory default is 9600bit/s 
+Check digit: none;  
+Data bit: 8; Stop bit: 1 
+2. Data frame format definition 
+Using Modbus-RTU communication protocol, the format is as follows: 
+Time for initial structure ≥ 4 bytes 
+Address code = 1 byte 
+Function code = 1 byte 
+Data area = N bytes 
+Error check = 16-bit CRC code 
+End structure ≥ 4 bytes of time 
+Address code: the address of the transmitter, which is unique in the communication network (factory 
+default 0x01). 
+Function code: the instruction function instruction issued by the host, this transmitter only uses the 
+function code 0x03 (read register data). 
+Data area: The data area is specific communication data, pay attention to the high byte of 16bits 
+data first! 
+CRC code: two-byte check code. 
+Host inquiry frame structure 
+Address 
+code 
+Function code Register start address Register length Check digit low Check digit high 
+1 byte 1 byte 2 bytes 2 bytes 1 byte 1 byte 
+Slave response frame structure 
+Address code Function code Effective bytes Data 1 area Data 2 area Data N area Check code 
+1 byte 1 byte 1 byte 2 bytes 2 bytes 2 bytes 2 bytes 
+ 
+ 
+www.hondetechco.com 
+ 
+3. Register address 
+Register address PLC or configuration 
+address Content Operation Definition description 
+0000 H 40001 (Decimal) Soil temperature Read only Real-time value of soil temperature 
+value (expand 10 times) 
+0001 H 40002 (Decimal) Soil moisture Read only Real-time value of soil moisture value 
+(expand 10 times) 
+0002 H 40003 (Decimal) Soil EC Read only Real-time value of soil EC value 
+0003 H 40004 (Decimal) Soil PH Read only Real-time value of soil ph value 
+(extend 100 times) 
+0004 H 40005 (Decimal) Soil N Read only Real-time value of soil N value 
+0005 H 40006 (Decimal) Soil P Read only Real-time value of soil P value 
+0006 H 40007 (Decimal) Soil K Read only Real-time value of soil K value 
+0007 H 40008 (Decimal) Soil salinity Read only Real-time value of soil salinity value 
+0030 H 40049 (Decimal) Device address Read and write 1~254 (factory default 1) 
+0031H 40050 (Decimal) Baud rate Read and write 
+Baud rate: 2400 
+Baud rate: 4800 
+Baud rate: 9600 
+Baud rate: 19200 
+0053 H 40084 (Decimal) Slop calibration Read and write Apply the above 8 parameters(expand 
+1000 times) 
+0054 H 40085 (Decimal) Offset calibration Read and write Apply the above 8 parameters 
+Before calibrating each parameter, please select the corresponding calibration channel first, and then calibrate. The specific 
+calibration channels are as follows: 
+Parameter Channel Instruction 
+Soil temperature 0000 FE 06 00 6F 00 00 AD D8 
+Soil moisture 0001 FE 06 00 6F 00 01 6C 18 
+Soil EC 0002 FE 06 00 6F 00 02 2C 19 
+Soil Salinity 0003 FE 06 00 6F 00 03 ED D9 
+Soil N 0004 FE 06 00 6F 00 04 AC 1B 
+Soil P 0005 FE 06 00 6F 00 05 6D DB 
+Soil K 0006 FE 06 00 6F 00 06 2D DA 
+Soil PH 0007 FE 06 00 6F 00 07 EC 1A 
+4. Address Modification 
+For example, the sensor with address 1 is changed to address 2, and the host → slave 
+Original 
+address 
+Function 
+code 
+Start 
+register 
+high 
+Start 
+register 
+low 
+High starting 
+address 
+Low starting 
+address 
+Low 
+CRC16 
+CRC16 
+High 
+0X01 0X06 0X00 0X30 0X00 0X02 0X08 0X04 
+If the sensor receives correctly, the data returns according to the original route. 
+Remarks: If you forget the original address of the sensor, you can use the broadcast address 0XFE 
+instead. When using 0XFE, the host can only connect with one slave, and the return address is still 
+the original address, which can be used as an address query method. 
+5. Query Data 
+Inquire the data of sensor (address 1) (soil temperature, soil moisture, soil conductivity, soil PH , 
+ 
+www.hondetechco.com 
+ 
+soil nitrogen, phosphorus, potassium, soil salinity) master → slave 
+Address Function 
+code 
+Start register 
+address high 
+Start register 
+address low 
+High register 
+length 
+Low register 
+length 
+Low 
+CRC16 
+CRC16 
+High 
+0X01 0X03 0X00 0X00 0X00 0X08 0X44 0X0C 
+If the sensor receives correctly, return the following data, slave → host 
+Address 0X01  
+Function code 0X03  
+Data length 0X10  
+Register 0 data high 0X00 
+Soil temperature: 24.3℃ 
+Register 0 data low 0XF3 
+Register 1 data high 0X03 
+Soil humidity: 100% 
+Register 1 data low 0XE8 
+Register 2 Data High 0X01 
+Soil EC: 466μ S/cm 
+Register 2 data low 0XD2 
+Register 3 Data High 0X02 
+Soil PH: 6.92ph 
+Register 3 Low Data 0XB4 
+Register 4 Data High 0X00 
+Soil nitrogen: 29mg/kg 
+Register 4 Low Data 0X1D 
+Register 5 Data High 0X00 
+Soil phosphorus: 39mg/kg 
+Register 5 Low Data 0X27 
+Register 6 Data High 0X00 
+Soil potassium: 98mg/kg 
+Register 6 Low Data 0X62 
+Register 7 Data High 0X01 
+Soil Salinity:473 mg/kg 
+Register 7 Low Data 0XD9 
+Low CRC16 0X55 
+CRC Code 
+High CRC16 0X91 
+6. Chang the baud rate  
+The default is 9600, if change into others, please send the following: 
+➢ Inquiry frame 
+Change 
+Baud rate 
+Address 
+code 
+Function code Register start 
+address 
+Change value Low check 
+bit 
+Check code 
+high 
+2400 0X01 0X06 0X00   0X31 0X24  0X00 0XC3 0X05 
+4800 0X01 0X06 0X00   0X31 0X48  0X00 0XEE 0X05 
+9600 0X01 0X06 0X00   0X31 0X96  0X00 0XB7 0XA5 
+19200 0X01 0X06 0X00   0X31 0X19  0X20 0XD2  0X45 
+If success, it will feedback the same with the sending instruction. 
+7. Make the calibration and the numerical offset of the soil PH  
+Method 1. Make the calibration of the soil PH solution of the 4.01, 6.86, 9.18 for the sensor address 
+01 
+1.1 Select parameter configuration channel 
+Send: FE 06 00 6F 00 07 EC 1A 
+ 
+www.hondetechco.com 
+ 
+Put the steel needle into 4.00 standard solution FE 06 00 55 00 00 8D D5 
+Send: FE 06 00 6D AA AA F2 C7 
+Put the steel needle into 6.86 standard solution FE 06 00 56 00 00 7D D5 
+Send: FE 06 00 6E AA AA 02 C7 
+Put the steel needle into 9.18 standard solution FE 06 00 57 00 00 2C 15 
+1.2 Restore parameters 
+Save parameter settings after calibration is completed 
+Send: FE 06 00 6D 01 C2 8C 19 
+Send: FE 06 00 6E 03 20 FD 30 
+Method 2. Make the numerical offset of the soil PH 
+2.1 Select the parameter configuration channel 
+FE 06 00 6F 00 07 EC 1A 
+For example, add 0.03 PH for the sensor address 01, please send the following instruction  
+FE 06 00 54 00 03 9C 14 
+If success, it will feedback. 
+Method 3. Make the calibration by the slop rate 
+3.1 Select the parameter configuration channel 
+FE 06 00 6F 00 07 EC 1A 
+For example, change the PH in 0.98 times for the sensor address 01, please send the following 
+instruction  
+FE 06 00 53 00 62 EC 3D 
+If success, it will feedback. 
+8. Make the calibration of the soil moisture  
+Method 1: Calibrate the soil moisture of sensor address 01 in air and water 
+1.1 Select parameter configuration channel 
+FE 06 00 6F 00 01 6C 18 
+1.2 The sensor needle is calibrated in air (the data after calibration is 0%) 
+FE 06 00 55 00 00 8D D5 
+1.3 The sensor steel needle is calibrated when submerged in water (the data after calibration is 
+100%) 
+     FE 06 00 57 00 00 2C 15 
+Method 2: Make the soil moisture sensor calibration by the offset 
+2.1 Select parameter configuration channel 
+FE 06 00 6F 00 01 6C 18 
+2.2 If you want to add 5.0% (50 DEC=0032 HEX) moisture for the sensor, please send the following 
+instruction 
+ 
+www.hondetechco.com 
+ 
+FE 06 00 54 00 32 5D C0 
+Method 3. Make the soil moisture sensor calibration by slope 
+3.1 Select parameter configuration channel 
+FE 06 00 6F 00 01 6C 18 
+3.2  If you want to change 1.1 times (1100 DEC=044C HEX) of the moisture for the sensor, please 
+send the following instruction 
+FE 06 00 53 04 4C 6E E1 
+9. Make the calibration of the soil temperature  
+Method 1: Calibrate Soil Temperature by offset for Sensor Address 01 
+1.1 If there is an error between the temperature measurement value and the actual value, the 
+adjustment method is as follows 
+1.1.1 Select parameter configuration channel 
+FE 06 00 6F 00 00 AD D8 
+For example, the sensor address 01 increases by 1° C, please send the following command 
+FE 06 00 54 00 0A 5C 12 
+If success, it will feedback. 
+For example, sensor address 01 decreases by 1° C, please send the following command 
+FE 06 00 54 FF F6 1D A3 
+If success, it will feedback. 
+Method 2: Make the calibration by the slop rate for sensor address 01 
+2.1 Select parameters configuration channel 
+FE 06 00 6F 00 00 AD D8 
+2.2 For example, the sensor address 01 increases by 1.1 times, please send the following 
+command 
+FE 06 00 53 04 4C 6E E1 
+If success, it will feedback:   
+10. Make the calibration of the soil EC 
+Method 1: Calibrate the soil EC by offset for sensor address 01 
+1.1 If there is an error between the measured EC and the actual value, the adjustment method is as 
+follows 
+1.1.1 Select parameter configuration channel 
+ FE 06 00 6F 00 02 2C 19 
+For example, the sensor address 01 increases by 10, please send the following command 
+  FE 06 00 54 00 0A 5C 12 
+If success, it will feedback. 
+For example, the sensor address 01 is reduced by 10, please send the following command 
+ 
+www.hondetechco.com 
+ 
+   FE 06 00 54 FF F6 1D A3 
+If success, it will feedback. 
+Method 2: Make the calibration by the slop rate for sensor address 01 
+2.1 Select parameters configuration channel 
+FE 06 00 6F 00 02 2C 19 
+2.2 For example, the sensor address 01 increases by 1.1 times, please send the following 
+command 
+FE 06 00 53 04 4C 6E E1 
+If success, it will feedback:   
+*All of the soil parameters can be calibration by the offset and the slope rate, f or the 
+other parameters, it is similar as above. 
+8 Matters needing attention in use 
+Please read this manual completely before using it. 
+Do not try to insert the probe into stones or hard clods, so as not to damage the probe. 
+When the sensor is removed from the soil, the cable cannot be pulled directly. 
+The sensor probe should be fully inserted into the soil/substrate to reduce the operation error and 
+improve the measurement accuracy. 
+9 Product warranty 
+The warranty period of this product is one year. From the date of delivery, within 6 months, due to 
+sensor quality problems (non -man-made damage) caused by the failure, the company is 
+responsible for free repair or replacement, beyond the warranty period only charge cost. 

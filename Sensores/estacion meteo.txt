@@ -1,0 +1,363 @@
+Description
+SenseCAP LoRaWAN S2120 Weather Station collects and uploads air temperature, humidity, wind speed/direction, Rainfall Intensity, light intensity, UV index, and barometric pressure data supported by worldwide LoRaWAN networks. The S2120 weather station is suitable for applications in gardens, agriculture, meteorology, urban environmental monitoring, and other scenarios. It also enables low maintenance cost for its ultra-low power consumption, reliable performance, built-in Bluetooth for OTA configuration and remote device management.
+
+
+
+Features
+
+8-in-1 Weather Station: Collect air temperature, humidity, wind speed/direction, Rainfall Intensity, light intensity, UV index, and barometric pressure data in one device and upload them via LoRaWAN
+Bluetooth Configuration in 1 min & Remote Management: Simple configuration with just a few clicks, supports remote monitoring and managing real-time & historical data via the SenseCAP Mate App (Download here: 1. iOS; 2. Google Play; 3. App Center) and SenseCAP Portal
+Ultra-low Power Consumption, Easily Replaceable Battery & Expandable Capacity: Powered by 0.5W solar panel and 3*standard 1.5V AA size dry batteries with up to 2 years service life (support external battery compartment with capacity for six batteries to double the service life)
+Reliable Performance: Suitable for outdoor harsh environments such as high UV exposure, heavy rain, dusty conditions, etc
+One-stop Deployment & Flexible Layout: Accessories include poles, mounting stand, etc. for quick installation and can be set up at almost any location
+ 
+
+Description
+
+Scan-and-Play Simplicity, Easy Configuration via Bluetooth in Just 1 min
+
+Built-in Bluetooth avoids time-consuming configuration works to bring no code experience to individuals with less or no technical background to quickly get started with weather detection.
+
+
+
+Powerful SenseCAP Mate App: data visualization and remote device management
+
+
+
+Compatibility with Multiple Networks and Platforms: easily integrates with existing worldwide  LoRaWAN networks
+
+
+
+How to Select Gateway:
+
+LoRaWAN network coverage is required when using sensors, there are two LoRaWAN network options.
+
+Option 1: Sensors work in areas covered by Helium Network (Check on Helium Explorer).
+
+Option 2: Sensors work in a standard LoRaWAN network, like The Things Network, Loriot, Chirpstack, etc (Check out the SenseCAP Gateway series).
+
+We highly recommend that you use our SenseCAP M2 Multi-Platform LoRaWAN Gateway, which is a standard LoRaWAN® gateway that supports connection to different network servers. With its affordable price of $99, its cost-effectiveness becomes a standout advantage, especially when building your private LoRaWAN network.
+
+
+
+
+Application
+
+Backyard and Garden: Measure air temperature and humidity, Rainfall Intensity, UV index, etc. in the backyard and garden to protect your family.
+Smart Agriculture： Enable farmers to obtain climate data and information in time, take scientific management measures into production, and improve agricultural production capacity and level.
+Meteorology: Support applications in the professional meteorological field, for example, timely reflect the changes of various abnormal meteorological conditions in the field of traffic and transportation to provide real-time scientific basis data for traffic management departments.
+Urban Weather: Provide real-time data for urban squares, parks, scenic spots, golf courses, and other urban areas.
+
+
+Field Deployment
+
+
+
+Photo Credits: Ted Urbaniak, Mapping Network, Nibiaa
+ 
+Note
+
+1. SenseCAP provides a GPS function customization service for the WM-LR1110 module. Please contact the mailbox:sensecap@seeed.cc.
+
+2. This is NOT the WXM weather station. If you would like to purchase the WXM weather station, please refer to: https://weatherxm.com/
+
+ 
+ 
+
+
+
+
+
+ 
+
+Specification
+
+Air Temperature
+
+Rainfall Intensity
+
+Range
+
+-40.0 ~ 80.0 ℃
+
+Range
+
+0 ~ 450 mm/h
+Accuracy
+
+±0.5℃ (0~80℃); ±0.6℃ (-40~0℃)
+
+ Accuracy	
+± 7% 
+
+Resolution
+
+0.1℃
+
+Resolution
+
+0.254 mm/h
+
+Air Humidity
+
+General Parameters
+
+Range
+
+1~99 %RH
+
+Product Model
+
+S2120
+
+Accuracy
+
+±3% (1~90%RH); ±4% (90~99%RH)
+
+Microcontroller
+
+WM-LR1110
+
+Resolution
+
+1%RH
+
+Support Protocol
+
+LoRaWAN v1.0.3 Class A
+
+Barometric Pressure
+
+Built-in Bluetooth
+
+App Tool to change parameters
+
+Range
+
+540 ~ 1100hPa
+
+LoRaWAN Channel Plan
+
+IN865/EU868/US915/AU915/ AS923/KR920/RU864 *
+
+Accuracy
+
+±5hPa(700~1100hPa);
+
+±8hPa (540 ~ 699hPa)
+
+GPS
+
+Need to customize
+
+Resolution
+
+ 1hPa
+
+LoRaWAN Max Transmitted Power
+
+21dBm
+
+Wind Speed
+
+LoRa Sensitivity
+
+-141dBm@SF12 BW=125KHz
+
+Range
+
+0~50.0m/s
+
+Communication Distance
+
+2 to10km (depending on gateway antenna and environments)
+
+Accuracy
+
+±0.5m/s(<5m/s ); ±10% (> 5m/s)
+
+Protection grade
+
+Suitable for outdoor scenes
+
+Resolution
+
+0.1 m/s
+
+Operating Temperature
+
+-20 to +60 °C (Alkaline battery)
+
+-40 to +60 °C (Lithium battery)
+
+Wind Direction
+
+Operating Humidity	
+0~99%RH
+
+Range
+
+0~360°
+
+Device Weight
+
+1.5kg
+
+Accuracy
+
+± 8°
+
+Certification
+
+CE / FCC / RoHS
+
+Resolution
+
+1°
+
+Power Supply
+
+Light Intensity
+
+Solar Panel
+
+ 
+
+0.5W (When there is sunlight, solar panels will be used first, otherwise batteries will be used)
+
+Range
+
+0 ~ 200000 lux
+
+Battery Type**
+
+AA size, 1.5V batteries (alkaline or non-rechargeable Lithium battery), batteries not included
+
+Accuracy
+
+± 5%
+
+Number of Battery
+
+Option1, built-in battery box: 3 * AA battery, batteries not included;
+
+Option2, external battery box: 6 *AA battery, batteries not included
+
+Resolution
+
+1lux	
+Battery Life
+
+2 years (Solar Panel + 6*AA Battery, 1h/uplink)
+
+UV Index
+
+External Battery Box
+
+Support 6 * AA 1.5V batteries（batteries not included）
+
+Cable: 2m
+
+IP Rating: IPX6
+
+Range
+
+0 ~ 16.0	
+* A device supports different frequencies and can be configured via the Bluetooth App.
+
+** The battery life varies from data upload interval and distance between gateways.
+
+*** We have updated the battery life table, which should provide you with a better estimate of the actual battery life of your device. We recommend that you refer to the updated table when making any judgment or decision related to the battery life of your device.
+
+ 
+
+Accuracy
+
+±10%
+Resolution
+
+0.1
+
+LoRaWAN Frequency
+
+Note: No Frequency limitation. Weather stations can be switched to other frequency plans at any time.
+
+S2120 is manufactured to support the universal frequency plan from 863MHz ~928MHz in one SKU. That is to say, it can support the frequency plans below:
+
+Frequency Plan
+
+Common Name
+
+Sub-band
+
+EU863-870
+
+EU868
+
+___
+
+US902-928
+
+US915
+
+Sub-band from 1 to 8
+
+AU915-928
+
+AU915
+
+Sub-band from 1 to 8
+
+AS923
+
+AS923
+
+AS923_1, AS923_2, AS923_3, AS923_4
+
+IN865-867
+
+IN865
+
+___
+
+KR920-923
+
+KR920
+
+___
+
+RU864-867
+
+RU864
+
+___
+
+The frequency plan setting is none by default and it will not transmit RF signal until it has been set by App via Bluetooth at the first power-up. And it can be changed to other frequency plans at any time.
+
+Partlist
+
+
+
+ 
+About SenseCAP
+
+Among the first launch of the Seeed industrial IoT (IIoT) product series, SenseCAP is focusing on wireless environmental sensing applications: smart agriculture, precision farming, and smart city, to name a few. It consists of hardware products (sensors, data loggers & gateways, etc.), software services (SenseCAP portal, mobile App, open dashboard), and an API for device & data management.
+
+Documents
+SenseCAP S2120 LoRaWAN Sensor Catalogue
+S2120 Weather Sensor User Guide
+SenseCAP Weather Sensor Catalogue
+Battery Life Prediction Table
+SenseCAP ONE Document Center
+Certification
+
+
+
+
+
+
+HSCODE	9031809090
+USHSCODE	9031808085
+UPC	
+EUHSCODE	9030900000
+COO	CHINA

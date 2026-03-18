@@ -1,0 +1,243 @@
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Leaf  temperature and humidity sensor  
+ 
+Introduce 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RD-LTH-O-01 
+ 
+ 
+
+ 
+www.hondetechco.com 
+ 
+ 
+ 
+1 Overview 
+The leaf temperature and humidity sensor is a composite sensor, which can accurately 
+measure leaf temperature and humidity at the same time. 
+The temperature sensor is composed of high -precision NTC thermistor and transmitter. The 
+transmitter has the functions of offset compensation and temperature calibration, which can 
+accurately measure the temperature in the whole measuring range. 
+The humidity sensor is based on the principle of dielectric constant measurement, and 
+simulates the leaf features by imitating the shape of blades. It can accurately measure the 
+amount of water or ice by changing the dielectric constant of leaf surface. The sensitivity is 
+good, and trace moisture or ice crystal residues on the leaf surface can be detected.  
+The leaf surface temperature and humidity sensor adopts waterproof design as a whole, 
+which has low power consumption and can be monitored continuously for a long time. It is 
+easy to install, and can be hung on the greenhouse or installed on the mast of the weather 
+station. 
+ 
+2 Characteristic 
+1. Imitating leaf surface characteristics, temperature and humidity measurement is fast and 
+accurate. 
+2. It has high precision temperature correction function and can output temperature signal 
+independently. 
+3. The humidity measurement is sensitive and can accurately detect the moisture or ice 
+crystal residue on the leaf surface. 
+4.  Analog voltage/current can be selected, and RS485 signal can be output. 
+5. It is encapsulated with ABS and epoxy resin, which is waterproof and moisture -proof and 
+has a longer service life. 
+ 
+3 Scope of application 
+This product can be widely used in environment, greenhouse, laboratory, breeding, 
+warehousing, construction, high -grade buildings, industrial plants and other environmental 
+temperature and humidity measurement of plant surface. 
+ 
+4 Product information 
+4.1 Technical Parameters 
+➢ Measurement parameters: leaf surface temperature and humidity 
+ 
+www.hondetechco.com 
+ 
+ 
+ 
+➢ Measuring range: -30 ~ 70 ℃ (0 ~ 50 ℃ or other arbitrary measuring range can be 
+customized); 0-100% RH 
+➢ Resolution: 0.1 ℃; 0.1% 
+➢ Measurement accuracy: 0.2 ℃ (@ 25 ℃); ±  5% RH 
+➢ Output signal:  
+A: Voltage signal (0 ~ 2V, 0 ~ 5V, 0 ~ 10V) 
+B: 4 ~ 20mA (current loop) 
+C: RS485 (standard Modbus-RTU protocol, device default address: 01) 
+➢ Power supply voltage: 5 ~ 24V (when the output signal is 0 ~ 2V and RS485)  
+12 ~ 24V (when the output signal is 0 ~ 5V, 0 ~ 10V and 4 ~ 20mA) 
+➢ Output impedance: 10K Ω (voltage output type) 
+➢ Response time: ≤ 2S 
+➢ Working range: temperature:-30 ~ 70 ℃; Humidity: 0 ~ 100% RH 
+➢ Annual humidity stability: ±  1% RH 
+➢ Humidity nonlinearity: ±  1% RH 
+4.2 Physical Parameters 
+Leaf size: 76mm*61mm 
+Shell material: ABS 
+Sealing material: Epoxy resin 
+Cable specification: 2 meters as standard (other cable lengths can be customized, up to 1200 
+meters) 
+4.3 Impedance Requirements for Current Signals 
+Supply voltage 9V 12V 20V 24V 
+Maximum impedance 125 Ω 250 Ω 500 Ω > 500 Ω 
+ 
+5 Shape specification 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+www.hondetechco.com 
+ 
+ 
+ 
+6 Usage 
+The leaf surface temperature and humidity sensor can be connected with various data 
+collectors, data acquisition cards, remote data acquisition modules and other equipment with 
+differential input. The wiring description is as follows: 
+1. For the RS485 output 
+Wire colour Definition 
+Red wire Positive power supply 
+Black Negative power supply 
+Yellow RS485A 
+Green RS485B 
+2. For the analog voltage and current output 
+Wire colour Definition 
+Red wire Positive power supply 
+Black Negative power supply 
+Green Humidity analog voltage and current output 
+Yellow Temperature analog voltage and current output 
+ 
+7 Data conversion method 
+7.1. Analog signal output 
+T: Temperature, unit: ℃; 
+H: Humidity in% RH; 
+V: Voltage value collected by collector, unit: V; 
+A: The current value collected by the collector, unit: mA; 
+ 
+Output signal 
+Leaf surface temperature conversion method 
+Conversion method of foliar 
+humidity 
+-30 ~ 70 ℃ 0 ~ 50 ℃ -20 ~ 80 ℃ 0-100% RH 
+0 ~ 2V DC T=50*V-30 T=25*V T=50*V-20 H=50*V 
+0 ~ 5V DC T=20*V-30 T=10*V T=20*V-20 H=20*V 
+0 ~ 10V DC T=10*V-30 T=5*V T=10*V-20 H=10*V 
+4 ~ 20mA T=6.25*A-55 T=3. 125*A-12. 5 T=6.25*A-45 H=6.25*A-25 
+ 
+ 
+ 
+ 
+www.hondetechco.com 
+ 
+ 
+ 
+7.2 RS485 Signal (Default Address 01): 
+Standard Modbus-RTU protocol, baud rate: 9600; Check bit: None; Data bits: 8; Stop bit: 1 
+1. Address Modification 
+For example, the sensor with address 1 is changed to address 2, and the host → slave 
+ 
+Original 
+address 
+Function 
+code 
+Start 
+register 
+high 
+Start 
+register 
+low 
+High starting 
+address 
+Low starting 
+address Low CRC16 CRC16 
+High 
+0X01 0X06 0X00 0X30 0X00 0X02 0X08 0X04 
+ 
+If the sensor receives correctly, the data returns according to the original route. 
+Remarks: If you forget the original address of the sensor, you can use the broadcast address 
+0XFE instead. When using 0XFE, the host can only connect with one slave, and the return 
+address is still the original address, which can be used as an address query method. 
+ 
+2. Query Data 
+Inquire the data (leaf surface temperature, humidity) of the sensor (address 1), host → slave  
+Address Function 
+code 
+Start register 
+address high 
+Start register 
+address low 
+High 
+register 
+length 
+Low 
+register 
+length 
+Low CRC16 CRC16 High 
+0X01 0X03 0X00 0X00 0X00 0X02 0XC4 0X0B 
+ 
+If the sensor receives correctly, return the following data, slave → host 
+ 
+Address Function 
+code 
+Data 
+length 
+Register 0 
+High data 
+Register 0 
+Low data 
+Register 1 
+data high 
+Register 1 
+data low 
+Low 
+CRC16 
+CRC16 
+High 
+0X01 0X03 0X04 0XFF 0XDD 0X01 0X00 0X5B 0X8D 
+   
+Leaf surface temperature:-
+3.5 ℃ 
+Negative temperature is 
+expressed by complement 
+code 
+Leaf humidity: 25.6% RH   
+ 
+8 Matters needing attention in use 
+1. When you receive the product, please check whether the package is in good condition, and 
+check whether the sensor model and specification are consistent with the product you 
+purchased. 
+2. The installation place should be far away from chemical corrosion environment.  
+3. Sensors and wires should be far away from high-voltage electricity and heat sources. 
+4. Avoid scratching of the instrument, maintain the integrity of the external protective film, and 
+prolong the service life of the instrument. 
+5. Rough treatment of the instrument will destroy the internal circuit board and precise 
+structure. 
+ 
+www.hondetechco.com 
+ 
+ 
+ 
+9 Product warranty 
+ 
+The warranty period of this product is one year. From the date of delivery, within 12 months, 
+due to sensor quality problems (non-man-made damage) caused by the failure, the company 
+is responsible for free repair or replacement, beyond the warranty period only charge cost.  

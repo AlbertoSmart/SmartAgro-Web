@@ -7,39 +7,52 @@ import TestPage from "../../layouts/TestPage.astro";
     heading="Soporte Experto a tu Lado"
     description="Resolución de dudas, manuales técnicos y acompañamiento profesional para liderar la digitalización de tu finca."
     variant="ayudas"
+    layoutType="suspended"
+    image="https://images.pexels.com/photos/5453837/pexels-photo-5453837.jpeg?auto=compress&cs=tinysrgb&w=1200"
 >
     <div class="subpage-content">
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
-                <h2>No Estás Solo en el Cambio</h2>
-                <p>
-                    Nuestro equipo de soporte no es solo un servicio de asistencia; está compuesto por ingenieros agrónomos y expertos en IT que entienden los retos reales del campo. Te ayudamos desde la configuración del primer sensor hasta la validación administrativa de tu cuaderno ante la administración.
-                </p>
-            </div>
-            <div class="image-showcase">
-                <img src="/images/comunidad/evento_ia.png" alt="Soporte técnico y formación en campo" class="rounded-img shadow-xl" />
-            </div>
-        </div>
 
         <section class="support-channels">
             <div class="cards-grid">
                 <div class="feature-card">
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/8867431/pexels-photo-8867431.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Chat Icon" />
+                    </div>
                     <h3>Chat en Vivo 24/7</h3>
-                    <p>
-                        Comunicación directa con nuestros técnicos para resolver incidencias de hardware o fallos de sincronización en tiempo real.
-                    </p>
+                    <p>Resolución inmediata con técnicos especializados en sistemas agrícolas del ecosistema SmartTrap.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Libro Icon" />
+                    </div>
                     <h3>Base de Conocimientos</h3>
-                    <p>
-                        Acceso a cientos de artículos técnicos, vídeos interactivos y manuales descargables sobre cada sensor y funcionalidad.
-                    </p>
+                    <p>Acceso a manuales interactivos y vídeos paso a paso para maximizar el uso de tu equipo.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Actualización Normativa</h3>
-                    <p>
-                        Te informamos de cada cambio en el BOE que afecte al Cuaderno de Campo Digital para que siempre estés en cumplimiento.
-                    </p>
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=200" alt="News Icon" />
+                    </div>
+                    <h3>Alertas Normativas</h3>
+                    <p>Te avisamos de cada actualización legal en el BOE que afecte a tus obligaciones digitales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section for Support -->
+        <section class="faq-section">
+            <h2 class="text-center">Dudas sobre Soporte</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿El soporte está incluido en la cuota?</h3>
+                    <p>Sí, todos nuestros planes incluyen soporte técnico multi-canal (Email y Chat). Los planes 'Premium' y para 'Cooperativas' incluyen además soporte telefónico directo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Me ayudáis con la primera carga de datos?</h3>
+                    <p>Absolutamente. Ofrecemos un servicio de 'Onboarding' donde migramos tus datos actuales de REA o Excel antiguo a nuestra plataforma para que empieces sin fricciones.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Dan formación presencial?</h3>
+                    <p>Organizamos jornadas técnicas periódicas en diferentes zonas de España y ofrecemos webinars semanales. Para grandes grupos, realizamos formaciones In-Situ.</p>
                 </div>
             </div>
         </section>
@@ -53,21 +66,33 @@ import TestPage from "../../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-    .intro-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 60px;
+    .subpage-content { padding-top: 40px; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+    .feature-card {
+        background: white;
+        padding: 40px;
+        border-radius: 30px;
+        text-align: center;
+        border: 1px solid #eee;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.03);
     }
+    .feature-card__img-icon {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #f8f8f8;
+    }
+    .feature-card__img-icon img { width: 100%; height: 100%; object-fit: cover; opacity: 0.95; }
+    .feature-card h3 { color: var(--color-gray-900); font-weight: 700; margin-bottom: 12px; }
+    .feature-card p { color: var(--color-gray-500); line-height: 1.6; }
 
-    .rounded-img {
-        border-radius: 24px;
-        width: 100%;
-        height: auto;
-    }
+    .faq-section { background: var(--color-gray-900); color: white; padding: 80px 40px; border-radius: 40px; margin: 60px 0; }
+    .faq-section h2 { margin-bottom: 40px; color: white; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .faq-item h3 { color: var(--color-turquoise); font-size: 1.1rem; margin-bottom: 10px; }
+    .faq-item p { color: rgba(255,255,255,0.7); }
 
-    @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 800px) { .faq-grid { grid-template-columns: 1fr; } }
 </style>

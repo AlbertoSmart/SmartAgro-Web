@@ -3,234 +3,333 @@ import TestPage from "../layouts/TestPage.astro";
 ---
 
 <TestPage
-  title="Sinergias Tecnológicas – Cuaderno de Campo Digital"
-  heading="Un Ecosistema de Innovación Abierta"
-  description="Multiplicamos el valor de nuestra plataforma integrando las mejores soluciones del mercado y el respaldo de instituciones líderes sectoriales."
+  title="Gestión Integral y Cuaderno de Campo – Ecosistema Digital Agrario"
+  heading="Gestión de Explotación 360º"
+  description="Control total de tu finca desde una única interfaz técnica: cumplimiento normativo SIEX, monitoreo GIS y gestión de activos en tiempo real."
   variant="sinergias"
+  layoutType="mosaic"
+  mosaicImages={[
+    "https://images.pexels.com/photos/5928373/pexels-photo-5928373.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/159213/hall-congress-architecture-building-159213.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  ]}
 >
-  <div class="subpage-content">
-    <section class="synergies-intro">
-      <div class="intro-grid">
-        <div class="feature-detail glass">
-          <h2>Conectividad que Transforma el Campo</h2>
-          <p>
-            En un entorno digital fragmentado, nuestra misión es actuar como el centro neurálgico de tu explotación. No solo capturamos datos, sino que nos conectamos con hardware de precisión y algoritmos expertos para ofrecerte una solución 360º que optimiza desde el combustible hasta el último gramo de insumo.
-          </p>
-        </div>
-        <div class="intro-image">
-          <img src="/images/sinergias/consejo_red_monitoreo.png" alt="Centro de control y monitoreo agrario" class="sol-img" />
-        </div>
-      </div>
-    </section>
+  <div class="subpage-content dashboard-layout">
+    <!-- Navegación Lateral (Anclas) -->
+    <aside class="side-nav">
+      <nav>
+        <ul>
+          <li><a href="#normativa">Normativa y SIEX</a></li>
+          <li><a href="#gis">Módulo GIS Virtual</a></li>
+          <li><a href="#infraestructura">Infraestructura IoT</a></li>
+          <li><a href="#administracion">Administración</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <div class="partners-grid container-wide">
-      <div class="partner-card glass">
-        <div class="partner-card__image">
-          <img src="/images/sinergias/fieldbee_autoguiado.png" alt="Autoguiado de precisión Fieldbee" />
+    <main class="dashboard-main">
+      <!-- BLOQUE 1: CUADERNO DE CAMPO DIGITAL -->
+      <section id="normativa" class="dashboard-section">
+        <div class="section-header">
+          <span class="badge">Legal & Trámites</span>
+          <h2>Cuaderno de Campo Digital (Normativa SIEX)</h2>
+          <p>Automatización del registro de operaciones agrícolas para el cumplimiento estricto del Real Decreto 1054/2022.</p>
         </div>
-        <div class="partner-card__content">
-          <div class="partner-card__tag">Pionero en Autoguiado</div>
-          <h3>Fieldbee: Guiado RTK</h3>
-          <p>
-            Integración directa de rutas telemáticas. Sincroniza tus labores registradas en el cuaderno con la navegación centimétrica de tu tractor.
-          </p>
-          <ul class="check-list">
-              <li>Precisión de 2.5cm</li>
-              <li>Ahorro de combustible garantizado</li>
-              <li>Instalación plug & play</li>
-          </ul>
-          <a href="/sinergias/fieldbee" class="partner-link">Explorar Integración →</a>
-        </div>
-      </div>
 
-      <div class="partner-card glass">
-        <div class="partner-card__image">
-          <img src="/images/sinergias/ipmwise_deteccion.png" alt="Control inteligente de malas hierbas" />
+        <div class="tech-grid">
+          <div class="tech-card dark">
+            <div class="tech-card__icon">⚖️</div>
+            <h3>Cumplimiento PAC/SIEX</h3>
+            <p>Sincronización directa con el Registro Autonómico de Explotaciones Agrícolas (REA) y volcado automático de datos al SIEX.</p>
+          </div>
+          <div class="tech-card dark">
+            <div class="tech-card__icon">🧪</div>
+            <h3>Registro de Fitosanitarios</h3>
+            <p>Gestión de recetas electrónicas, control de plazos de seguridad y validación automática de dosis máximas autorizadas.</p>
+          </div>
+          <div class="tech-card dark">
+            <div class="tech-card__icon">🌱</div>
+            <h3>Gestión de Fertilización</h3>
+            <p>Planes de abonado dinámicos ajustados a zonas vulnerables y cálculo automático de unidades de nitrógeno extraídas.</p>
+          </div>
         </div>
-        <div class="partner-card__content">
-          <div class="partner-card__tag">IA Botánica</div>
-          <h3>IPMwise: Control Inteligente</h3>
-          <p>
-            Detección por visión artificial de malas hierbas y prescripción inmediata basada en algoritmos de umbral económico de daño.
-          </p>
-          <ul class="check-list">
-              <li>Reducción 30% en herbicidas</li>
-              <li>Identificación temprana</li>
-              <li>Prescripciones automáticas</li>
-          </ul>
-          <a href="/sinergias/ipmwise" class="partner-link">Ver Alianza Técnica →</a>
-        </div>
-      </div>
 
-      <div class="partner-card glass">
-        <div class="partner-card__image">
-          <img src="/images/sinergias/consejo_red_monitoreo.png" alt="Colaboración institucional consejos agrícolas" />
+        <div class="data-accordion glass">
+          <details open>
+            <summary>Calendario de Obligaciones Legales</summary>
+            <div class="accordion-content">
+              <ul>
+                <li><strong>DAT (Documento de Acompañamiento):</strong> Generación digital instantánea para trazabilidad logística.</li>
+                <li><strong>Inscripción ROMA:</strong> Gestión de vida útil y revisiones de maquinaria agrícola obligatoria.</li>
+                <li><strong>Seguros Agrarios:</strong> Integración de pólizas y peritajes digitales georreferenciados.</li>
+              </ul>
+            </div>
+          </details>
         </div>
-        <div class="partner-card__content">
-          <div class="partner-card__tag">Soporte Oficial</div>
-          <h3>Consejo Agrícolas: Red SIEX</h3>
-          <p>
-            Convenio nacional para la digitalización de cooperativas. Garantizamos que cada agricultor federado cuente con tecnología homologada.
-          </p>
-          <ul class="check-list">
-              <li>Formación continua</li>
-              <li>Despliegue de estaciones</li>
-              <li>Validación administrativa</li>
-          </ul>
-          <a href="/sinergias/consejo" class="partner-link">Saber más sobre el Convenio →</a>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="partnership-cta glass">
-      <h3>¿Eres desarrollador de hardware o software agrario?</h3>
-      <p>
-        Buscamos ampliar nuestra red de APIs para conectar con nuevos sensores, maquinaria y algoritmos. Únete al ecosistema líder en digitalización agraria.
-      </p>
-      <div class="cta-actions">
-          <a href="/contacto" class="cta-btn">Solicitar Acceso API</a>
-          <a href="/contacto" class="link-btn text-white">Convertirse en Partner Distribuidores</a>
-      </div>
-    </div>
+      <!-- BLOQUE 2: GESTIÓN DE FINCA VIRTUAL (GIS) -->
+      <section id="gis" class="dashboard-section">
+        <div class="section-header">
+          <span class="badge">Interfaz Espacial</span>
+          <h2>Módulo Digital Twin (Mapa GIS)</h2>
+          <p>Visualización satelital avanzada con capas de información agronómica y seguridad perimetral.</p>
+        </div>
+
+        <div class="gis-container glass">
+          <div class="gis-image">
+            <img src="https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Interfaz GIS de Gestión Agraria" />
+            <div class="gis-overlay">
+              <div class="map-label" style="top: 20%; left: 30%;">Parcela 12-B: 85% Humedad</div>
+              <div class="map-label" style="top: 60%; left: 70%;">Cámaras: Activas</div>
+            </div>
+          </div>
+          <div class="gis-features">
+            <div class="gis-feature">
+              <h4>📍 Georreferenciación de Objetos</h4>
+              <p>Dibuja y edita perímetros, lindes y áreas de cultivo directamente sobre mapas de alta resolución.</p>
+            </div>
+            <div class="gis-feature">
+              <h4>🌳 Conteo por Visión Artificial</h4>
+              <p>Algoritmos de detección automática para contabilizar árboles, estimar volumen de copa e identificar claros de siembra.</p>
+            </div>
+            <div class="gis-feature">
+              <h4>🚨 Alarmas de Seguridad</h4>
+              <p>Configuración de vallas virtuales con avisos al móvil en caso de detección de presencia no autorizada en el mapa.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 3: INFRAESTRUCTURA Y SENSORES -->
+      <section id="infraestructura" class="dashboard-section">
+        <div class="section-header">
+          <span class="badge">Activos Físicos</span>
+          <h2>Mapeo de Infraestructura e Instalaciones</h2>
+          <p>Catalogación técnica de todos los recursos físicos monitorizados en tiempo real.</p>
+        </div>
+
+        <div class="infrastructure-grid">
+           <div class="infra-card">
+              <div class="infra-icon">💧</div>
+              <div class="infra-data">
+                <h4>Red de Riego</h4>
+                <span>Sectores, Tuberías, Electroválvulas</span>
+              </div>
+           </div>
+           <div class="infra-card">
+              <div class="infra-icon">🏗️</div>
+              <div class="infra-data">
+                <h4>Edificaciones</h4>
+                <span>Naves, Pozos, Depósitos, Arquetas</span>
+              </div>
+           </div>
+           <div class="infra-card">
+              <div class="infra-icon">📡</div>
+              <div class="infra-data">
+                <h4>Nodos IoT</h4>
+                <span>Sensores de suelo, Estaciones, Cámaras</span>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE ADICIONAL: ADMINISTRACIÓN -->
+      <section id="administracion" class="dashboard-section">
+        <div class="partnership-cta glass dark-tech">
+          <h3>Gestión Administrativa Avanzada</h3>
+          <p>Herramientas para la gestión de contratos de arrendamiento, trámites de herencias y liquidaciones de cooperativa de forma centralizada.</p>
+          <div class="cta-actions">
+            <a href="/contacto" class="cta-btn">Solicitar Demo Técnica</a>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 </TestPage>
 
+<style is:global>
+  body { background-color: #0c0e12 !important; color: #ffffff; }
+</style>
+
 <style>
-  .synergies-intro {
-    margin-bottom: 80px;
-  }
-
-  .intro-grid {
+  .dashboard-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    position: relative;
   }
 
-  .intro-image {
-    border-radius: 32px;
-    overflow: hidden;
-    box-shadow: var(--shadow-xl);
+  /* Side Nav */
+  .side-nav {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
   }
 
-  .sol-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-bottom: 80px;
-  }
-
-  .partner-card {
-    background: white;
-    border-radius: 28px;
-    overflow: hidden;
-    border: 1px solid var(--color-gray-100);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-
-  .partner-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-2xl);
-    border-color: var(--color-turquoise);
-  }
-
-  .partner-card__image {
-    height: 220px;
-    overflow: hidden;
-  }
-
-  .partner-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
-
-  .partner-card:hover .partner-card__image img {
-    transform: scale(1.1);
-  }
-
-  .partner-card__content {
-    padding: 32px;
-  }
-
-  .partner-card__tag {
-    display: inline-block;
-    padding: 4px 12px;
-    background: var(--color-turquoise-light);
-    color: var(--color-turquoise-dark);
-    font-size: 0.75rem;
-    font-weight: 800;
-    border-radius: 50px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-  }
-
-  .partner-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    color: var(--color-gray-900);
-  }
-
-  .partner-card p {
-    font-size: 0.95rem;
-    color: var(--color-gray-600);
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
-
-  .check-list {
+  .side-nav ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 24px;
+    border-left: 1px solid rgba(255,255,255,0.1);
   }
 
-  .check-list li {
-    font-size: 0.85rem;
-    color: var(--color-gray-500);
-    margin-bottom: 8px;
+  .side-nav li a {
+    display: block;
+    padding: 12px 20px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .side-nav li a:hover {
+    color: var(--color-turquoise);
+    padding-left: 25px;
+  }
+
+  /* Dashboard Core */
+  .dashboard-section {
+    margin-bottom: 100px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--color-turquoise);
+    color: #000;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.6);
+    max-width: 800px;
+  }
+
+  /* Tech Cards */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .tech-card.dark {
+    background: #1a1d23;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .tech-card h3 { color: white; margin-bottom: 12px; font-size: 1.2rem; }
+  .tech-card p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; }
+  .tech-card__icon { font-size: 2rem; margin-bottom: 20px; }
+
+  /* Accordion */
+  .data-accordion summary {
+    padding: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .data-accordion summary::after { content: "+"; color: var(--color-turquoise); }
+
+  .accordion-content {
+    padding: 30px;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .accordion-content ul { list-style: none; padding: 0; }
+  .accordion-content li { margin-bottom: 16px; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
+
+  /* GIS Section */
+  .gis-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    background: #1a1d23;
+    padding: 20px;
+    border-radius: 30px;
+  }
+
+  .gis-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+  }
+
+  .gis-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+
+  .gis-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+  }
+
+  .map-label {
+    position: absolute;
+    background: var(--color-turquoise);
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .gis-features { display: flex; flex-direction: column; gap: 24px; justify-content: center; padding: 20px; }
+  .gis-feature h4 { color: var(--color-turquoise); margin-bottom: 8px; }
+  .gis-feature p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+  /* Infra Grid */
+  .infrastructure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .infra-card {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
+    background: rgba(255,255,255,0.03);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
   }
 
-  .check-list li::before {
-    content: "✓";
-    color: var(--color-turquoise);
-    font-weight: 900;
-  }
+  .infra-icon { font-size: 1.8rem; }
+  .infra-data h4 { color: white; font-size: 1rem; margin-bottom: 4px; }
+  .infra-data span { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
 
-  .partner-link {
-    font-weight: 700;
-    color: var(--color-turquoise-dark);
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
+  /* CTA */
+  .dark-tech { background: linear-gradient(135deg, #1a1d23 0%, #0c0e12 100%); border: 1px solid var(--color-turquoise); text-align: left; padding: 60px; }
 
-  .partnership-cta {
-    background: var(--color-gray-900);
-    color: white;
-    padding: 80px 40px;
-    border-radius: 40px;
-    text-align: center;
-  }
-
-  .cta-actions {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-  }
-
-  @media (max-width: 900px) {
-    .intro-grid {
-      grid-template-columns: 1fr;
-    }
+  @media (max-width: 1100px) {
+    .dashboard-layout { grid-template-columns: 1fr; }
+    .side-nav { display: none; }
+    .gis-container { grid-template-columns: 1fr; }
+    .tech-grid, .infrastructure-grid { grid-template-columns: 1fr; }
   }
 </style>

@@ -1,0 +1,337 @@
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+ 
+ 
+ 
+Soil Temperature and Moisture 
+sensor 
+ 
+ 
+ 
+ 
+ 
+ 
+Type: RD-SMT-P-D 
+ 
+ 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+1. Product Introduce 
+The newer generation of soil moisture, temperature 2-in-one sensor is a soil sensor developed with a new 
+technical solution. It can measure soil moisture, temperature at the same time, and perform compensation 
+calculations between parameters.  
+This product can be used to measure the water content of saline-alkali land without being affected by the 
+salt content of the soil and accurately measure the water content of the soil. 
+Adhering to the company's consistent product quality, strong and durable. Imported epoxy resin, high-quality 
+stainless steel, more resistant to acid and alkali corrosion, steel needle isolation, never electrolysis. 
+It has multi-directional protection functions for power lines, ground lines, and signal lines to prevent damage 
+caused by reverse connection and wrong connection. 
+It added TVS, a transient protection diode, which has been protected against lightning. 
+2. Product Features 
+1. Easy measurement 
+Soil moisture and temperature testing are no longer limited to laboratories and professionals, and can 
+be measured by inserting into the soil. 
+2. Low measurement cost 
+Compared with traditional laboratory measurement, this product has low cost, fewer steps, no reagents 
+required, and unlimited testing times. 
+3. High precision 
+High accuracy, fast speed, can reach accuracy within 3-5%, increase stability. 
+4. Portable measurement 
+Convenient to carry, can be read by inserting the soil, can grasp the soil condition at any time, make the 
+soil fertility balanced, and reach the suitable growth environment of the plant. 
+3. Product application 
+It is suitable for water-saving agricultural irrigation, greenhouses, flowers and vegetables, grassland pastures,  
+soil measurement, plant cultivation, scientific experiments, underground oil transportation, gas pipelines and 
+other pipeline anti-corrosion monitoring. 
+ 
+ 
+ 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+4. Product Parameter 
+1. Technical Parameters 
+➢ Measurement parameters: soil moisture and temperature  
+➢ Measuring range 
+⚫ Temperature: -40° C~80° C 
+⚫ Moisture: 0~100% RH 
+➢ Measurement accuracy:  
+⚫ Temperature: ±0.5° C 
+⚫ Moisture: 0-50%, ±2%; 53%-100%, ±3% 
+➢ Resolution:  
+⚫ Temperature: 0.01℃ 
+⚫ Moisture: 0.01%RH 
+➢ Measuring principle 
+⚫ Temperature: RTD thermal element, plus nonlinear correction 
+⚫ Moisture: Frequency domain (FDR), plus temperature and conductivity correction 
+➢ Response time: ＜1s 
+➢ Measuring stable time: ＜1s 
+➢ Output signal: RS485 (standard Modbus-RTU protocol, default address: FE) 
+➢ Baud rate: 9600/4800/2400bps, default is 9600bps 
+➢ Supply voltage: 5-24VDC(2-5V DC can be custom made) 
+➢ Quiescent current: peak value <30mA, average <10mA 
+➢ Working temperature range: -40° C~80° C 
+2. Physical parameter 
+➢ Sealing material: ABS engineering plastic, epoxy resin, waterproof grade IP68 
+➢ Probe Material: Austenitic 316 stainless steel which Anti-rust, anti-electrolysis, salt and alkali 
+resistance, Suitable for all kinds of soil 
+➢ Measuring area: centered on the central probe, inside a cylinder with a diameter of 7cm and a 
+height of 10cm 
+➢ Cable length: standard 3.5 meters (5-core sheathed wire, UL2464-22AWG-5C), user can 
+customize the length 
+ 
+ 
+ 
+ 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+5. Product Size 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6. Connection method 
+The soil sensor can be connected to various data collectors, data acquisition cards, remote data 
+acquisition modules and other equipment carrying differential inputs. 
+1. RS485 connection 
+Wire colour Interface 
+Red Power positive  
+Black Power negative  
+Yellow RS485A 
+White RS485B 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+7. Measurement methods 
+1. Soil Surface measure method 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+➢ Select a representative soil environment to clean up surface debris and vegetation 
+➢ Insert the sensor vertically and completely into the soil 
+➢ If there is a hard object, the measurement location should be replaced and re-measured 
+➢ For accurate data, it is recommended to measure multiple times and take the average 
+➢ To measure deep soil moisture, it is recommended to use our company's dedicated soil drill 
+2. Buried measure method 
+ 
+ 
+ 
+ 
+ 
+➢ Make a soil profile in the vertical direction, slightly deeper than the installation depth of the 
+bottommost sensor, between 20cm and 50cm in diameter 
+➢ Insert the sensor horizontally into the soil profile 
+➢ After the installation is completed, the excavated soil is backfilled in order, layered and compacted, 
+and horizontal installation is guaranteed. 
+➢ If you have the conditions, you can put the removed soil in a bag and number it to keep the soil 
+moisture unchanged, and backfill it in reverse order. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+3. Three-tier installation 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5. Measure Notes 
+(1). All steel needles must be inserted into the soil during measurement. 
+(2). Avoid direct sunlight on the sensor, which will cause excessive temperature. Field ambassador 
+use caution against lightning strikes. 
+(3). Do not bend the steel needle violently, do not pull the sensor lead wire with force, do not beat 
+or violently impact sensor. 
+(4). The protection grade of the sensor is IP68, which can soak the sensor in water. 
+(5). Due to the presence of radio frequency electromagnetic radiation in the air, it should not be left 
+in the air for a long time power-on state 
+ 
+8. Data conversion method 
+1. Standard Modbus-RTU protocol 
+Baud rate: 9600bps can be set, factory default is 9600bps; Check digit: none;  
+Data bit: 8; Stop bit: 1 
+2. Brief description of MODBUS-RTU protocol 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+1. Function code: the content of the second byte sent by the host. Among them, the function code 03 
+and 04 are to read the register value; the function code 06 is to write a single register; the function code 
+16 is to write multiple registers; the function code 17 is to read the device ID. No response to other 
+function codes. 
+2. Acronym description:  
+TT: station address, address range 1-255 (factory default 254, 0xFE); 
+SS: start address, 2 bytes, high byte first;  
+NN: number of registers (NN≤11), 2 Byte, high byte first;  
+MM: number of bytes, 1 byte;  
+RR: register address, a group of 2 bytes, high byte first;  
+VV: register value, a group of 2 bytes, high byte Before;  
+CRC: CRC check code; 
+? ? :version number 
+1) 03, 04 function codes, read single (or multiple) registers (read up to 8 registers at a time) 
+Host sends: TT 03 SS SS NN NN CRC1 CRC2, 8 bytes, 
+Slave response: TT 03 MM VV VV. . . CRC1 CRC2, up to 21 bytes 
+2) 06 function code, write a single register 
+Host sending: TT 06 RR RR VV VV CRC1 CRC2, 8 bytes 
+Slave response: TT 06 RR RR VV VV CRC1 CRC2, 8 bytes 
+3) 16 (0X10) function code, write multiple registers 
+Host sending: TT 10 SS SS NN NN MM VV VV .. .. CRC1 CRC2, up to 9+16=25 bytes 
+Slave response: TT 10 SS SS NN NN CRC1 CRC2, 8 bytes 
+4) 17 (0X11) function code, read the device ID 
+Host sending: TT 11 CRC1 CRC2, 4 bytes 
+Slave response: TT 11 0B "SMET-3A-485??" CRC1 CRC2, 19 bytes 
+3. Communication protocol examples and explanations 
+1. For example, to get the value in the sensor address 01: 
+Host sends: 01 03 00 00 00 02 C4 0B 
+The meaning of the data: 
+01-station address 01; 
+03-function code;  
+0000-register start address;  
+0002-read 2 registers;  
+C40B-CRC check code 
+Sensor response: 01 03 04 0A D6 08 63 5F FA  
+The meaning of the data: 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+01-station address 01;  
+03-function code;  
+04-byte number, indicating that there are 4 bytes of data behind;  
+0AD6- converted to decimal is 2774, divided by 100 is equal to 27.74, representing 27.74% moisture; 
+0863- converted to decimal It is 2147, divided by 100 equals21.47, which means that the temperature is 
+21.47°C; 
+5FFA-CRC code 
+Note: The FE is the broadcast address (universal address), if you forget the present sensor address, 
+you can use the broadcast address FE to obtain the value: 
+FE 03 00 00 00 02 D0 04 to obtain sensor moisture, temperature data. 
+2. Example of setting address 
+For example, change the sensor address from 01 to 02, need send the following instruction: 
+Host send: 01 06 02 00 00 02 09 B3 
+The meaning of the data: 
+01-present sensor address 01;  
+06-function code; 
+0200-register address;  
+0002-set new address 02  
+09 B3-CRC check code. 
+If success, it will feedback: 01 06 02 00 00 02 09 B3  
+Note: If you forget the present sensor address value, you can check the sensor address by the following 
+instruction: 
+Host sends: FE 03 02 00 00 01 91 BD 
+If feedback: FE 03 02 00 01 6D 90 
+It mean the sensor address is 01. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com    info@hondetech.com 
+5. Sensor internal register address table: 
+Register 
+address： 
+Register 
+address 
+HEX： 
+Content Read and 
+write 
+Value range Function 
+code 
+Numerical meaning Note 
+00 00 Soil moisture  Read only  0-10000 3/4 0.00-100.00%  
+01 01 Soil temperature  Read only -4000-+8000 3/4 -40.00℃~80.00℃*  
+02 02 Reserve Read only 0 3/4   
+03 03 Reserve Read only 0 3/4   
+04 04 Original AD value 
+of moisture 
+Read only 0-65535 3/4 Original AD value of 
+moisture 
+ 
+05 05 Reserve Read only 0 3/4   
+06 06  Read only 0-65535 3/4 0-65535 Factory use 
+07 07  Read only 0-65535 3/4 0-65535 Factory use 
+37 0X26 Soil Moisture 
+Coefficient 
+Correction 
+Read and 
+write 
+-1000~2000 3/6/16 -1.000~+2.000 0 
+38 0X27 Soil moisture 
+addition and 
+subtraction 
+correction 
+Read and 
+write 
+-2000~2000 3/6/16 -20.00%~+20.00% 0 
+512 0X200 Sensor address Read and 
+write 
+1-255 3/6/16 MODBUS station 
+address, 
+ 
+513 0X201 Baud rate Read and 
+write 
+0-5 3/6/16 0-1200 
+1-2400 
+2-4800 
+3-9600，Default  
+4-19200 
+5-38400 
+ 
+514 0X202 Parity check Read and 
+write 
+0,1,2 3/6/16 0-no check, default 
+1- odd parity 
+2-even parity 
+ 
+515 0X203 Receive stop bit Read and 
+write 
+0,1 3/6/16 0-1 stop bit, default 
+1-2 stop bits 
+ 
+516 0X204 Send stop bit Read and 
+write 
+0,1 3/6/16 0-1 stop bit 
+1-2 stop bits, default 
+ 
+Note: Serial communication is a fixed 8-bit data bit 
+ 

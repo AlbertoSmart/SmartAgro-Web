@@ -5,22 +5,12 @@ import TestPage from "../../layouts/TestPage.astro";
 <TestPage
     title="Gestión Logística de Estiércoles – Cuaderno de Campo Digital"
     heading="Logística Inteligente de Estiércoles y Purines"
-    description="Control integral de deyecciones ganaderas. Trazabilidad total desde la granja hasta la parcela receptoras, cumpliendo con el Decreto de Nitratos."
+    description="Sincronización automática de todas tus tareas de campo con el SIEX. Ahorra tiempo y evita errores administrativos."
     variant="tools"
+    layoutType="suspended"
+    image="/images/herramientas/tractor_siex_real.png"
 >
     <div class="subpage-content">
-        <!-- Hero Section -->
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
-                <h2>Economía Circular y Cumplimiento Legal</h2>
-                <p>
-                    La gestión de estiércoles es uno de los mayores retos legales y medioambientales de la ganadería actual. Nuestra plataforma automatiza el cumplimiento del Decreto de Nitratos, registrando cada aplicación y asegurando que los niveles de nitrógeno se mantienen dentro de los límites legales por hectárea.
-                </p>
-            </div>
-            <div class="image-showcase">
-                <img src="/images/servicios/camion_cisterna_moderno_campo_1773663980438.png" alt="Camión aplicador de purines con GPS" class="rounded-img shadow-xl" />
-            </div>
-        </div>
 
         <!-- Compliance & Logistics Section -->
         <section class="compliance-details">
@@ -54,29 +44,34 @@ import TestPage from "../../layouts/TestPage.astro";
             </div>
         </section>
 
+        <!-- FAQ Section for Estiércoles -->
+        <section class="faq-section">
+            <h2 class="text-center">Dudas sobre Gestión de Deiecciones</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Cumple con el Decreto 153/2019 de Nitratos?</h3>
+                    <p>Totalmente. El sistema ha sido diseñado siguiendo las directrices técnicas del decreto, facilitando la generación de los libros de gestión de deyecciones ganaderas exigidos.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué pasa si mi cisterna no tiene GPS integrado?</h3>
+                    <p>Ofrecemos dispositivos GPS externos "Plug & Play" con sensor de caudal que se instalan en minutos en cualquier cuba, enviando los datos a nuestra plataforma en tiempo real.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Se puede integrar con la analítica de mi purín?</h3>
+                    <p>Sí. Puedes cargar los resultados de laboratorio y el sistema recalculará automáticamente las dosis de nitrógeno permitidas para cada parcela receptora.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="highlight-box">
-            <h3>¿Te preocupa el Decreto de Nitratos?</h3>
+            <h3>¿Te preocupa el cumplimiento del Decreto de Nitratos?</h3>
             <p>Tranquilidad total para tu granja y tus tierras. Gestionamos la complejidad para que tú te centres en producir.</p>
-            <a href="/contacto" class="cta-btn">Solicitar Asesoramiento Técnico</a>
+            <a href="/contacto" class="cta-btn">Solicitar Auditoría de Cumplimiento</a>
         </div>
     </div>
 </TestPage>
 
 <style>
-    .intro-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-
-    .rounded-img {
-        border-radius: 24px;
-        width: 100%;
-        height: auto;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
 
     .details-grid {
         display: grid;
@@ -137,7 +132,4 @@ import TestPage from "../../layouts/TestPage.astro";
         border-bottom-color: var(--color-turquoise);
     }
 
-    @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
-    }
 </style>

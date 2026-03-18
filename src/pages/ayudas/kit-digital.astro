@@ -5,41 +5,55 @@ import TestPage from "../../layouts/TestPage.astro";
 <TestPage
     title="Kit Digital – Cuaderno de Campo Digital"
     heading="Kit Digital: Impulso a la Agricultura 4.0"
-    description="Implementa soluciones de inteligencia artificial e IoT en tu explotación con subvención del 100% como Agente Digitalizador Homologado."
-    variant="ayudas"
+    description="Te acompañamos en el proceso de solicitud del Kit Digital. Aprovecha las subvenciones para digitalizar tu explotación sin coste."
+    variant="tools"
+    layoutType="suspended"
+    image="https://images.pexels.com/photos/159213/hall-congress-architecture-building-159213.jpeg?auto=compress&cs=tinysrgb&w=1200"
 >
     <div class="subpage-content">
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
-                <h2>Cero Coste, Máxima Tecnología</h2>
-                <p>
-                    Como agentes digitalizadores oficiales, gestionamos tu bono del Kit Digital para que no tengas que preocuparte por la burocracia. Implementamos nuestra plataforma, sensores avanzados y redes de monitoreo cubriendo el coste íntegro mediante las categorías de 'Business Intelligence' y 'Gestión de Procesos'.
-                </p>
-            </div>
-            <div class="image-showcase">
-                <img src="/images/ayudas/kit_digital.png" alt="Agente Digitalizador Homologado - Kit Digital" class="rounded-img shadow-xl" />
-            </div>
-        </div>
 
         <section class="deep-info">
+            <h2 class="text-center">Soluciones Subvencionables al 100%</h2>
             <div class="cards-grid">
                 <div class="feature-card">
-                    <h3>Tramitación Ágil</h3>
-                    <p>
-                        Nos encargamos de toda la justificación técnica requerida por Red.es, facilitando el proceso tanto para autónomos como para pymes agrícolas.
-                    </p>
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=200" alt="BI Icon" />
+                    </div>
+                    <h3>Business Intelligence</h3>
+                    <p>Sensorización avanzada y paneles de datos para que cada decisión de riego o abonado esté basada en evidencia científica.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Ayudas según Segmento</h3>
-                    <p>
-                        Subvenciones de hasta 12.000€ según el tamaño de tu empresa, escalables para cubrir todas tus necesidades de digitalización.
-                    </p>
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Gestión Icon" />
+                    </div>
+                    <h3>Gestión de Procesos</h3>
+                    <p>Digitalización íntegra del Cuaderno de Explotación y cumplimiento normativo SIEX automatizado.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Mantenimiento Incluido</h3>
-                    <p>
-                        El bono digital no solo cubre el software, sino también el acompañamiento experto para que los datos realmente mejoren tu rentabilidad.
-                    </p>
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Seguridad Icon" />
+                    </div>
+                    <h3>Ciberseguridad</h3>
+                    <p>Protección total de los datos estratégicos de tu explotación, garantizando privacidad y cumplimiento de la ley (LOPD).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section for Kit Digital -->
+        <section class="faq-section">
+            <h2 class="text-center">Dudas sobre el Kit Digital</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Quién puede solicitarlo?</h3>
+                    <p>Autónomos y pymes de cualquier sector, incluyendo el agrícola, con menos de 50 empleados. El importe de la ayuda varía según el segmento de la empresa.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Tengo que pagar algo por adelantado?</h3>
+                    <p>No. Como agentes digitalizadores, nosotros cobramos directamente de la ayuda de Red.es una vez justificado el trabajo. Tú solo debes abonar el IVA, que es compensable.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué pasa si ya tengo un software básico?</h3>
+                    <p>El Kit Digital permite la "sustitución" si la nueva solución supone una mejora funcional significativa, como pasar de un Excel a un sistema de IA y sensores integrados.</p>
                 </div>
             </div>
         </section>
@@ -53,21 +67,34 @@ import TestPage from "../../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-    .intro-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-
-    .rounded-img {
+    .deep-info { padding: 80px 0; }
+    .feature-card {
+        background: white;
+        padding: 40px;
         border-radius: 24px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card__img-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid var(--color-turquoise-light);
+    }
+    .feature-card__img-icon img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
-
-    @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
-    }
+    .feature-card h3 { color: var(--color-gray-900); margin-bottom: 16px; }
+    .feature-card p { color: var(--color-gray-600); font-size: 0.95rem; line-height: 1.6; }
+    
+    .faq-section { background: var(--color-gray-50); padding: 80px 40px; border-radius: 40px; margin: 40px 0; }
+    .faq-grid { margin-top: 40px; display: grid; gap: 30px; }
+    .faq-item h3 { color: var(--color-gray-800); font-size: 1.1rem; margin-bottom: 10px; }
+    .faq-item p { color: var(--color-gray-500); }
 </style>

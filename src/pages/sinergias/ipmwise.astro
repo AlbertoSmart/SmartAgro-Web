@@ -9,17 +9,17 @@ import TestPage from "../../layouts/TestPage.astro";
     variant="sinergias"
 >
     <div class="subpage-content">
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
+        <section class="feature-intro">
+            <div class="feature-intro__content">
                 <h2>El Fin del Tratamiento a Manta</h2>
                 <p>
                     IPMwise procesa las capturas de nuestras cámaras IoT y drones para identificar el umbral de daño económico de cada especie de mala hierba. En lugar de tratar toda la parcela, generamos mapas de aplicación variable que actúan solo donde la productividad está realmente en riesgo.
                 </p>
             </div>
-            <div class="image-showcase">
-                <img src="/images/sinergias/ipmwise_deteccion.png" alt="Detección de malezas por IA - IPMwise" class="rounded-img shadow-xl" />
+            <div class="feature-intro__image">
+                <img src="https://images.pexels.com/photos/2563345/pexels-photo-2563345.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Detección de malezas por IA en campo" />
             </div>
-        </div>
+        </section>
 
         <section class="tech-deep">
             <div class="cards-grid">
@@ -53,21 +53,40 @@ import TestPage from "../../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-    .intro-hero-grid {
+    .feature-intro {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
         align-items: center;
-        margin-bottom: 60px;
+        padding: 40px 0 80px;
     }
 
-    .rounded-img {
-        border-radius: 24px;
+    .feature-intro__content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 24px;
+        color: var(--color-gray-900);
+    }
+
+    .feature-intro__content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--color-gray-600);
+    }
+
+    .feature-intro__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feature-intro__image img {
         width: 100%;
         height: auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
-    @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+        .feature-intro { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
     }
 </style>

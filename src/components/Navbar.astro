@@ -27,7 +27,7 @@ const { transparent = false } = Astro.props;
 
     <ul class="navbar__menu" id="navMenu">
       <li class="navbar__item navbar__item--has-dropdown">
-        <a href="/#sensores"
+        <a href="/"
           >Tecnología
           <svg
             width="10"
@@ -41,7 +41,7 @@ const { transparent = false } = Astro.props;
         </a>
         <ul class="navbar__dropdown">
           <li>
-            <a href="/#sensores">Ecosistema de Sensores</a>
+            <a href="/guia-sensores">Ecosistema de Sensores</a>
           </li>
           <li>
             <a href="/#gestion">Gestión Virtual & GIS</a>
@@ -104,28 +104,8 @@ const { transparent = false } = Astro.props;
         </ul>
       </li>
 
-      <li class="navbar__item navbar__item--has-dropdown">
-        <a href="/sinergias"
-          >Sinergias
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </a>
-        <ul class="navbar__dropdown">
-          <li>
-            <a href="/sinergias/fieldbee">Autoguiado Fieldbee</a>
-          </li>
-          <li>
-            <a href="/sinergias/ipmwise">Control IPMwise</a>
-          </li>
-          <li><a href="/sinergias/consejo">Convenio Consejo Agrícolas</a></li>
-        </ul>
+      <li class="navbar__item">
+        <a href="/gestion-integral">Gestión Integral</a>
       </li>
 
       <li class="navbar__item navbar__item--has-dropdown">
@@ -150,8 +130,8 @@ const { transparent = false } = Astro.props;
 
       <li class="navbar__item"><a href="/eventos">Comunidad</a></li>
       <li class="navbar__item"><a href="/contacto">Contacto</a></li>
-      <li class="navbar__item btn-item">
-        <a href="/mi-area-digital" class="btn btn--turquoise btn--sm">Mi Área Digital</a>
+      <li class="navbar__item">
+        <a href="/guia-sensores">Sensores</a>
       </li>
     </ul>
   </div>

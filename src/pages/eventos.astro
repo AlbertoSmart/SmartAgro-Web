@@ -5,25 +5,18 @@ import TestPage from "../layouts/TestPage.astro";
 <TestPage
   title="Eventos – Cuaderno de Campo Digital"
   heading="Comunidad y Conocimiento"
-  description="Seminarios técnicos, días de campo y presentaciones de IA para los profesionales que lideran el cambio agrario."
-  variant="eventos"
+  description="Encuentros, formación y demostraciones en campo para la comunidad agraria."
+  variant="news"
+  layoutType="mosaic"
+  mosaicImages={[
+    "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  ]}
 >
   <div class="subpage-content">
-    <section class="events-hero">
-      <div class="intro-grid">
-        <div class="feature-detail glass">
-          <h2>Formación que se Toca</h2>
-          <p>
-            La teoría es importante, pero en el campo es donde se resuelven los retos. Organizamos jornadas prácticas en fincas reales para demostrar cómo la IA y los sensores IoT transforman la toma de decisiones diaria.
-          </p>
-        </div>
-        <div class="intro-image">
-          <img src="/images/comunidad/evento_ia.png" alt="Jornada técnica de campo con drones e IA" class="sol-img" />
-        </div>
-      </div>
-    </section>
 
     <div class="events-timeline">
+      <!-- ... existing event cards ... -->
       <div class="event-card glass">
         <div class="event-date-box">
           <span class="day">22</span>
@@ -34,8 +27,14 @@ import TestPage from "../layouts/TestPage.astro";
           <h3>Optimización de Nutrientes SIEX</h3>
           <p>Taller práctico online sobre la generación de planes de abonado bajo la nueva normativa de nitratos.</p>
           <div class="event-footer">
-            <span class="meta-item">🕒 10:00 - 12:00</span>
-            <span class="meta-item">📍 Zoom Pro</span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              10:00 - 12:00
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Zoom Pro
+            </span>
             <a href="/contacto" class="link-btn">Reservar Plaza</a>
           </div>
         </div>
@@ -51,8 +50,14 @@ import TestPage from "../layouts/TestPage.astro";
           <h3>Visión Artificial en Olivar</h3>
           <p>Demostración real de detección de plagas mediante cámaras inteligentes y modelos YOLOv11.</p>
           <div class="event-footer">
-            <span class="meta-item">🕒 09:30 - 14:00</span>
-            <span class="meta-item">📍 Jaén, España</span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              09:30 - 14:00
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Jaén, España
+            </span>
             <a href="/contacto" class="cta-btn">Solicitar Invitación</a>
           </div>
         </div>
@@ -68,57 +73,62 @@ import TestPage from "../layouts/TestPage.astro";
           <h3>IA y Resiliencia Climática</h3>
           <p>Encuentro profesional sobre el uso de gemelos digitales para la gestión del estrés hídrico.</p>
           <div class="event-footer">
-            <span class="meta-item">🕒 18:00</span>
-            <span class="meta-item">📍 Madrid, IFEMA</span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              18:00
+            </span>
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline; vertical-align:middle; margin-right:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Madrid, IFEMA
+            </span>
             <a href="/contacto" class="link-btn">Ver Detalles</a>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- FAQ Section for Events -->
+    <section class="faq-section-events">
+      <h2 class="text-center">Consultas sobre Eventos</h2>
+      <div class="faq-grid-events">
+        <div class="faq-item">
+          <h3>¿Los eventos son gratuitos?</h3>
+          <p>La mayoría de nuestros webinars y jornadas de campo son gratuitos para clientes y técnicos de la red. Algunos eventos en ferias internacionales pueden requerir entrada previa.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Se entregan certificados de asistencia?</h3>
+          <p>Sí, para los seminarios técnicos y webinars específicos emitimos certificados digitales que avalan la formación recibida en herramientas de agricultura 4.0.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cómo puedo proponer una jornada en mi zona?</h3>
+          <p>Estamos siempre abiertos a colaborar con cooperativas y asociaciones locales. Contáctanos y estudiaremos la posibilidad de organizar un evento en tu localidad.</p>
+        </div>
+      </div>
+    </section>
   </div>
 </TestPage>
 
 <style>
-  .events-hero {
-    margin-bottom: 80px;
-  }
-
-  .intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-  }
-
-  .intro-image {
-    border-radius: 32px;
-    overflow: hidden;
-    box-shadow: var(--shadow-xl);
-  }
-
-  .sol-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .events-timeline {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
+    padding-top: 60px; /* More space from the new Hero */
   }
 
   .event-card {
     display: flex;
     background: white;
-    border-radius: 32px;
+    border-radius: 24px;
     overflow: hidden;
-    border: 1px solid var(--color-gray-100);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .event-card:hover {
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
     border-color: var(--color-turquoise);
   }
 

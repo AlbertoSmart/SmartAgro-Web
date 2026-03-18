@@ -1,0 +1,287 @@
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+ 
+Tubular soil sensor 
+Product instruction manual  
+
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+ 
+Four layer tube moisture dimension chart 
+1. Scope of application 
+Tubular soil sensor is a newly developed product of our company . This 
+sensor adopts high -precision chip and advanced algorithm as well as IOT 
+technology, which can measure multi-depth soil parameters, RS485 output or 
+4G network uploaded to the data center. 
+The product can be widely used in real-time monitoring of soil temperature 
+and humidity in farmland, forest area, grassland and irrigation area. It can also 
+be used in water conservancy and land disaster industries to provide data 
+support for monitoring natural disasters such as landslides and debris flows. 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+2. Functional Features 
+➢ The product is designed to be flexible and can measure the 
+temperature and humidity of the soil at any depth between 10-80cm (generally 
+10cm layer). Default for 4 layer, 5 layer, 8 layer standard tube. Support 
+customization. 
+➢ It consists of sensing, collecting, transmitting and power supplying parts, 
+and is an integrated design for easy installation. 
+➢ With domestic version, international version of the data transmission 
+program, convenient for users outside the mainland. (Please inform the sales 
+staff in advance of the international version) 
+➢ The collector configuration software adopts WeChat applet to connect 
+with cell phone through Bluetooth, which can be used to manipulate the device 
+in any Android or Apple cell phone end equipped with WeChat APP, and realize 
+the deep interaction, configuration and remote sending between cell phone APP 
+and the device. (Some functions are currently open to users) 
+➢ Sensor built -in high -efficiency lithium battery, RTU with low -power 
+consumption design, fully charged state in the case of continuous rainy days 
+can work for more than 180 days. 
+➢ Adopt magnetic switch design, can be used with the magnet supplied 
+with the collector for switching control. Prevent the station in the field occurs 
+human error shutdown situation. 
+➢ Adopting cloud platform storage technology, the data sent each time 
+can be saved to the autonomous cloud platform or the third-party platform that 
+meets the Hydrological Monitoring Data Communication Statute SL651 -2014. 
+It supports MQTT service docking to the third -party platform, and supports 
+protocol customization. Default API interface docking. 
+➢ Other features: battery indicator, network location. 
+➢ Expandable elements: GPS positioning for more accurate positioning . 
+Expandable parameters such as temperature, humidity, air pressure, dew point 
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+temperature and body temperature. 
+➢ Expandable function: open the user’s secondary calibration function 
+(function of cubic term + quadratic term + primary term + constant), providing 
+more accurate data for professional researchers. Users can provide data, our 
+company to assist the coefficient calculation of the function. 
+3. Technical Parameters 
+Measured parameter: volumetric soil water content (soil moisture) 
+➢ Unit: % (m³/m³), or %Vol (volumetric water content) 
+➢ Humidity range: 0~100%Vol; Resolution:0.01%Vol 
+➢ Accuracy: ≤3% Vol within the valid range 
+➢ Measuring area: 90% of the influence is within the cylindrical measuring 
+carrier with a diameter of 10 cm around the sensor 
+➢ Precision drift: none 
+➢ Probability of linear dispersion deviation of the sensor: 1%. 
+Measured parameters: soil temperature 
+➢ Soil temperature range: -40~+60℃; Resolution:0.01℃. 
+➢ Accuracy: ±0.5℃  
+➢ Stabilization time: approx 1 second after power-on 
+➢ Response time: Response goes to steady state within 1 second 
+➢ Sensor operating voltage: sensor input 5-24V DC 
+➢ Sensor operating current: quiescent current 4mA, acquisition current 
+35mA 
+➢ Sensor waterproof level: IP68 
+➢ Working Temperature: -40℃~+80℃ 
+➢ RTU power consumption: standby 10μAh, transmission 100mAh. 
+➢ Transmission: default 4G output to own platform. Optional RS485 and 
+other outputs, optional third-party docking. 
+➢ Actual power supply capacity of solar panel: ≤0.6W 
+➢ RS485 output power supply: DC5-24V, current less than 25mA. 
+4. Device Communication Protocols and Wiring 
+➢ Hydrological Monitoring Data Communication Statute SL651 -2014; 
+TCP protocol; other third-party customized protocols, MQTT, API interfaces, etc. 
+➢ The RTU and the sensing part are connected by internal cables. The 
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+IoT card costs 3 years (one year for the international version). 
+➢ Solar panel Internal wiring of lithium batteries for power. 
+5. Selection of collection sites 
+The selection of representative plots for moisture monitoring should take 
+into account their geomorphology, soil, meteorological and hydrogeological 
+conditions, as well as the representativeness of species and plants. The scope 
+of collection can be based on the county level, and a few representative areas 
+can be selected at the county level (the reference basis for representativeness 
+can be based on the categories of landforms and the extent of the areas of 
+priority crops). 
+If you are located in a hilly area, you should set the testing point in a plot 
+with a small slope ratio drop and a large area, and you should not collect in the 
+bottom of a ditch or in a plot with a large slope. 
+Representative plots in plain areas should be collected on flat and non 
+waterlogging plots 
+Detailed collection plots should be more than 10 meters away from the edge 
+of representative plots, roadsides and in level plots, avoiding low -lying places 
+prone to waterlogging plots, and maintaining a distance of more than 20 meters 
+from ditches and flood channels to avoid the impact of seepage of water from 
+ditches on soil water content. 
+For the collection of plots within the hydrological station, it is strictly 
+forbidden to be in the middle of the vegetable field within the station to avoid 
+the impact of watering on the collection accuracy. It is recommended to choose 
+the collection point in a more open location, not close to houses or fences; 
+6. Sensor installation and data reporting 
+6.1 Installation Precautions 
+（1） Observe the data through the platform and confirm that the data is normal. 
+（2） Preparation of tools for installation (basin, water, shovel (or earth auger), 
+sieve with 2-4 mm aperture) 
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+（3） Holes shall be punched vertically downward; 
+（4） Drill holes to a suitable depth and note if there are more stones . There 
+are many stones and it is recommended to relocate;  
+（5） Backfill the mud and insert the sensor vertically. (very important and 
+fundamental to the accuracy of the response data);  
+（6） Verify that the sensor is mounted at a depth where the horizon is level 
+with the ground. 
+6.2 Sensor Installation 
+（1） Select a more level installation location and make a hole in the ground 
+directly with an earth auger: 
+（2） Remove the blue tube cap from the bottom of the tube test soil auger to 
+take out the handles, and screw the two handles into the ends of the pair of 
+wires in a clockwise direction; as shown below: 
+ 
+（3） Insert the pipe soil auger vertically along the center hole of the flange, 
+press down with appropriate force. At the same time, rotate both hands left and 
+right parallel to each other until it reaches the required depth (this process can 
+feel whether there are stones in the soil, and if there are too many stones, you 
+need to re -select the site), and in the process of punching, every maximum 
+depth of 10cm, you need to raise the soil auger to fling the soil out of the pipe 
+with force, and you can also use the extended screwdriver to take the hammer 
+(can not use the hammer to hit the pipe body, so as not to cause deformation 
+of the pipe body) to knock the lower part of the soil auger pipe body to vibrate 
+the soil out or from the bottom of the screwdriver to dig the soil until all the soil 
+
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+falls, with a ruler to measure the depth of the hole should be deeper than the 
+sensor's measurement of the depth of 7-8cm; the following figure: 
+ 
+（4） The soil removed from the perforations is sieved and made into a slurry; 
+as follows: 
+ 
+（5） Fill the drilled hole with slurry to a depth of at least 2/3 of the hole, as 
+shown below. 
+
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+ 
+（6） Simply insert the sensor into the backfilled mud ground hole with the 
+sensor labeled with the horizon line flush with the ground. Figure below: 
+ 
+6.3 Voice recognition of the collector 
+“Beep” for power on; 
+Two “beeps” means it is off; 
+7. System setup, data reporting, data queries 
+7.1 Equipment switching and configuration 
+（1） Scan the QR code with your cell phone to see the data, and use the 
+magnetic peg to power up the sensor (the default state of power on in China, 
+restart after brushing the magnetic, power on the data). 
+（2） If you need to configure, you can enter the small program after clicking 
+
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+on the “click to connect Bluetooth” 2 seconds after the interface will appear in 
+the lower part of the button, click on the button will prompt the “connection is 
+successful”, (this feature has the option to open, generally configured in 
+accordance with the user’s requirements before leaving the factory) 
+7.2 Data reporting 
+Each time the sensor is turned on, the RTU automatically reports a test 
+message to the receiving center. After the initial installation is completed, the 
+sensor can be turned on for about 1 minute to view the last reported data. 
+7.3 Platform operation and data query 
+You can log in to the platform to view real-time data, historical records, 
+data export and more. 
+8. Problem Determination and Solution 
+Description of the 
+problem 
+Solutions 
+1. No start-up beep 
+⚫ Go to a sunny spot to light the solar panel and charge the 
+sensor for at least one day; 
+⚫ After charging, it still can not be turned on.It can be 
+returned to the factory for inspection and repair. 
+2. Unable to collect 
+data 
+⚫ Whether the sensor has been inserted into the soil or is in 
+the measurement carrier; 
+⚫ If the cause cannot be determined, it can be returned to the 
+factory for inspection and repair. 
+3. Inability to report 
+data 
+(No communication) 
+⚫ Check whether the cell phone has a signal, if it is in the 
+state of no signal RTU can not report data; 
+⚫ It can be returned to the factory for service after ruling out 
+other causes; 
+⚫ No communication for RS485 version. Check that the 
+power supply and RS485 wiring, communication 
+parameters are configured correctly and communication 
+commands are sent correctly. 
+Note: This hardware and WeChat small program, PC may be updated at any time, if no 
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+special circumstances without notice! 
+Selection List: 
+HCS Series Catheterized Soil Senosr 
+Selection table 
+Serial number Name Model number Output Note 
+1 Conduit soil monitor HCS-4 RS485 5 Meter Cable 
+2 Conduit soil monitor HCS-5 RS485 5 Meter Cable 
+3 Conduit soil monitor HCS-8 RS485 5 Meter Cable 
+4 Conduit soil monitor HCS-4/G 4G 3-year flow 
+5 Conduit soil monitor HCS-5/G 4G 3-year flow 
+6 Conduit soil monitor HCS-8/G 4G 3-year flow 
+Note: Standard 10cm layer, customized protocols and customized layers are 
+available. 
+Modbus RTU communication protocol 
+MODBUS RTU communication protocol (for Catheterized Soil Moisture 
+Sensor. Protocol supports customization.) 
+Baud rate: 9600;  Data bits: 8;  Stop bits: 1;  Parity bit: none 
+CRC Notes: 
+In all the following descriptions, the two bytes of CRC16 in the MODBUS 
+RTU protocol, according to MODBUS regulations: the low byte comes first and 
+the high byte comes second. 
+1. Return error code provisions: 
+The sensor does not return the error code for the reception of error 
+commands (including CRC16 validation errors). The host computer can 
+consider that the instruction has failed when no return data is received 100ms 
+after the instruction is issued, and can resend the instruction. 
+2. Standard MODBUS Register Description 
+Special Note: The number or length of registers in MODBUS commands 
+are in two-byte 16-bit units (high byte first, low byte second), not single-byte 8-
+bit units. 
+The user should ensure that the range of the two parameters, address and 
+number of registers in the command is within the range specified by the system. 
+If they are out of range, the sensor output results will be unpredictable. The 
+user should ensure that the MODBUS commands comply with the requirements 
+of this manual in the design of the host computer software. 
+3. Internal registers: read with function code 03; write with function code 06. 
+HONDE TECHNOLOGY CO,LTD 
+http://www.hondetechco.com/ 
+Order Register 
+address Parameter description Note 
+ Ox0100 Device address, default ox01. fill out or in 
+(information on a form) 
+1 layer 
+ox0020 
+Soil volumetric water content 1 layer (10 cm 
+depth). 
+A hexadecimal number magnified 100 times, 
+e.g. 0x08D0 means 2256/100=22.56%Vol 
+read-only 
+ox0021 
+Soil temperature 1 layer, (10cm depth), 
+magnified 100 times hexadecimal number, e.g. 
+0x08D0 indicates 2256/100 = 22.56° C. 
+Negative numbers are expressed as 
+complements. 
+read-only 
+2 layer ox0022 Soil moisture content by volume2 read-only 
+ox0023 Soil temperature2 read-only 
+3 layer ox0024 Soil moisture content by volume3 read-only 
+ox0025 Soil temperature 3 read-only 
+4 layer ox0026 Soil moisture content by volume4 read-only 
+ox0027 Soil temperature 4 read-only 
+5 layer ox0028 Soil moisture content by volume 5 read-only 
+ox0029 Soil temperature 5 read-only 
+6 layer 
+ox002A Soil moisture content by volume6 read-only 
+ox002B Soil temperature 6 read-only 
+7 layer ox002C Soil moisture content by volume 7 read-only 
+ox002D Soil temperature 7 read-only 
+8 layer ox002E Soil moisture content by volume 8 read-only 
+ox002F Soil temperature 8 read-only 
+Note: Address data is represented in hexadecimal . For example: address 20 (decimal) 
+read/write value is 0x14. 

@@ -1,0 +1,354 @@
+---
+import TestPage from "../layouts/TestPage.astro";
+---
+
+<TestPage
+  title="Gestión Integral de la Finca y Cuaderno de Campo Digital"
+  heading="Manual de Operaciones: Gestión de Finca y Cuaderno Digital"
+  description="Especificaciones técnicas para el control centralizado de explotaciones, cumplimiento normativo SIEX/PAC y monitorización de activos críticos."
+  variant="sinergias"
+  layoutType="mosaic"
+  mosaicImages={[
+    "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/5928373/pexels-photo-5928373.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  ]}
+>
+  <div class="manual-container">
+    <div class="subpage-content dashboard-layout">
+      <!-- Navegación Lateral (Anclas) -->
+      <aside class="side-nav">
+        <nav>
+          <ul>
+            <li><a href="#normativa-siex">1. Normativa y SIEX</a></li>
+            <li><a href="#rea-sigpac">2. REA y SIGPAC</a></li>
+            <li><a href="#tramites-legales">3. Administración Legal</a></li>
+            <li><a href="#modulo-gis">4. Inteligencia GIS</a></li>
+            <li><a href="#infraestructura-activos">5. Mapeo de Activos</a></li>
+            <li><a href="#seguridad-perimetral">6. Seguridad Crítica</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="dashboard-main">
+        <!-- MÓDULO 1: NORMATIVA Y CUADERNO SIEX -->
+        <section id="normativa-siex" class="dashboard-section section-unified">
+          <div class="section-header">
+            <span class="badge-tech">MÓDULO TÉCNICO 01</span>
+            <h2 class="title-manual">Cumplimiento Normativo del Cuaderno Digital (SIEX)</h2>
+            <div class="content-block">
+              <p class="paragraph-manual-bold">
+                El Real Decreto 1054/2022 ha transformado la gestión agraria española al establecer la obligatoriedad del Sistema de Información de Explotaciones Agrarias (SIEX). Esta normativa no es un simple trámite administrativo, sino un cambio de paradigma hacia la transparencia y la trazabilidad total. Nuestra plataforma actúa como un puente tecnológico que garantiza que cada dato registrado cumpla con los estándares de interoperabilidad exigidos por el Ministerio de Agricultura, Pesca y Alimentación (MAPA).
+              </p>
+              <p class="paragraph-manual">
+                El núcleo del sistema es el Cuaderno de Explotación Agrícola Digital (CUE). A diferencia de los registros tradicionales en papel, el CUE exige una precisión quirúrgica en el reporte de actividades. El sistema automatiza el volcado de datos meteorológicos, dosis de aplicación y tiempos de trabajo, minimizando el riesgo de sanciones administrativas que pueden derivar en la pérdida parcial o total de los pagos por superficie o eco-regímenes.
+              </p>
+            </div>
+          </div>
+
+          <div class="manual-detail-box">
+             <h3 class="subtitle-manual">Registro de Tratamientos Fitosanitarios y Nutrición</h3>
+             <p class="paragraph-manual">
+               La gestión de fitosanitarios es el punto más sensible de la inspección técnica. Nuestra base de datos está permanentemente actualizada con el Registro Oficial de Productos Fitosanitarios (MAPA). Cada vez que se registra un tratamiento, el sistema exige y valida los siguientes parámetros críticos para asegurar el cumplimiento legal:
+             </p>
+             <ul class="manual-list">
+               <li><strong>Identificación Unívoca del Producto:</strong> Registro obligatorio del nombre comercial, el número de registro oficial y la materia activa que compone el producto. Esto previene el uso involuntario de productos cuya autorización ha caducado o no están permitidos para el cultivo específico registrado.</li>
+               <li><strong>Cálculo de Dosis y Calibración:</strong> Reporte de la dosis aplicada en litros o kilogramos por hectárea (L/ha, kg/ha). El software cruza esta información con la superficie declarada en el SIGPAC para evitar sobrepasos de los límites de toxicidad permitidos por la ley de sanidad vegetal.</li>
+               <li><strong>Plazos de Seguridad y Reentrada:</strong> El sistema bloquea automáticamente la fecha de recolección estimada si no se ha respetado el plazo de seguridad del producto aplicado. Asimismo, emite alertas de seguridad laboral indicando el tiempo mínimo de reentrada en la parcela para los operarios.</li>
+               <li><strong>Trazabilidad de Maquinaria (ROMA):</strong> Cada aplicación debe vincularse a un equipo inscrito en el Registro Oficial de Maquinaria Agrícola (ROMA), asegurando que los equipos han pasado las inspecciones técnicas obligatorias (ITEAF).</li>
+             </ul>
+          </div>
+        </section>
+
+        <!-- MÓDULO 2: REA Y SIGPAC -->
+        <section id="rea-sigpac" class="dashboard-section section-unified">
+          <div class="section-header">
+            <span class="badge-tech">MÓDULO TÉCNICO 02</span>
+            <h2 class="title-manual">REA y SIGPAC: La Base Matemática de la Explotación</h2>
+            <div class="content-block">
+              <p class="paragraph-manual-bold">
+                El Registro de Explotaciones Agrarias (REA) constituye el cimiento sobre el cual se construye toda la declaración de la PAC. Es fundamental entender que el REA no solo identifica al titular, sino que define la aptitud agrícola de cada parcela. La convergencia de regiones y la correcta asignación de derechos de ayuda dependen críticamente de que la información del REA esté en perfecta sintonía con las bases de datos catastrales y los sistemas de identificación de parcelas agrícolas (SIGPAC).
+              </p>
+              <p class="paragraph-manual">
+                Nuestra herramienta permite una Gestión Gráfica de Parcelas avanzada. Ya no basta con declarar un número de polígono y parcela; la administración exige ahora la delimitación precisa de las unidades de producción mediante geometría vectorial. El agricultor puede visualizar las capas SIGPAC actualizadas, verificar las incidencias de sus parcelas (como coeficientes de pastos o pendientes erosivas) y realizar alegaciones gráficas directamente desde la interfaz, asegurando que la superficie real cultivada coincide con el derecho de cobro.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- MÓDULO 3: ADMINISTRACIÓN LEGAL -->
+        <section id="tramites-legales" class="dashboard-section section-unified">
+          <div class="section-header">
+            <span class="badge-dark-manual">MÓDULO TÉCNICO 03</span>
+            <h2 class="title-manual">Administración Integral y Trámites de Explotación</h2>
+            <p class="paragraph-manual-bold">
+              La profesionalidad de una explotación agrícola hoy en día se mide tanto por su producción en campo como por la pulcritud de su administración documental. Un error en un contrato de arrendamiento o un DAT mal cumplimentado puede paralizar la logística u ocasionar problemas legales a largo plazo.
+            </p>
+          </div>
+
+          <div class="docs-manual-grid">
+             <div class="doc-item-card">
+                <h3 class="subtitle-manual">Catálogo de Trámites Obligatorios</h3>
+                <div class="premium-entry">
+                  <h4 class="tiny-title-manual">DAT (Documento de Acompañamiento al Transporte)</h4>
+                  <p class="paragraph-manual">Es el salvoconducto digital que garantiza el origen legal de la mercancía desde que sale de la finca. Nuestro sistema genera el DAT de forma instantánea, incluyendo la trazabilidad del lote y la identificación del transportista, cumpliendo con las regulaciones de seguridad alimentaria y prevención de robos en el campo.</p>
+                </div>
+                <div class="premium-entry">
+                  <h4 class="tiny-title-manual">ROPO (Registro de Productores y Operadores)</h4>
+                  <p class="paragraph-manual">Crucial para la compra y aplicación de fitosanitarios profesional. El software integra el validador de carnés ROPO, bloqueando cualquier registro de aplicación si la cualificación del operario ha expirado, evitando así responsabilidades legales graves para el titular de la explotación.</p>
+                </div>
+             </div>
+             <div class="doc-item-card">
+                <h3 class="subtitle-manual">Estructura de Propiedad y Seguros</h3>
+                <div class="premium-entry">
+                  <h4 class="tiny-title-manual">Gestión de Herencias y Sucesiones Agrarias</h4>
+                  <p class="paragraph-manual">La transmisión generacional es un momento crítico. Ofrecemos asesoramiento técnico para la división de parcelas respetando las unidades mínimas de cultivo y gestionando la transmisión de los derechos de la PAC ante la administración autonómica para que no se pierdan fondos en el proceso.</p>
+                </div>
+                <div class="premium-entry">
+                  <h4 class="tiny-title-manual">Seguros Agrarios Integrados</h4>
+                  <p class="paragraph-manual">Mediante el análisis de datos históricos de producción y riesgos climáticos (pedrisco, sequía), calculamos la póliza óptima. Al tener los datos de rendimiento en nuestra plataforma, la peritación en caso de siniestro es mucho más rápida y objetiva, defendiendo los intereses del agricultor frente a cualquier incidencia.</p>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        <!-- MÓDULO 4: INTELIGENCIA GIS -->
+        <section id="modulo-gis" class="dashboard-section section-unified">
+          <div class="section-header">
+            <span class="badge-tech">MÓDULO TÉCNICO 04</span>
+            <h2 class="title-manual">Visualizador GIS y Gemelo Digital Avanzado</h2>
+            <p class="paragraph-manual-bold">
+              El sistema de información geográfica (GIS) de nuestra plataforma no es solo visual; es una herramienta analítica activa. Mediante la superposición de capas de datos (Layers), transformamos un mapa satelital en un tablero de control para la agricultura de precisión.
+            </p>
+          </div>
+
+          <div class="gis-layout-manual">
+             <div class="gis-map-container">
+                <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mapa GIS Técnico" />
+                <div class="gis-marker-overlay">
+                  <div class="gis-marker" style="top: 10%; left: 15%;">SECTOR A: FLUJO NOMINAL 25m3/h</div>
+                  <div class="gis-marker" style="top: 60%; left: 45%;">SENSOR S-04: HUMEDAD 18%</div>
+                </div>
+             </div>
+             <div class="gis-info-manual">
+                <h3 class="subtitle-manual">Capacidades de Edición y Teledetección</h3>
+                <p class="paragraph-manual">
+                  La capacidad de 'dibujar' sobre el mapa permite una geolocalización exacta de infraestructuras invisibles. El agricultor puede trazar la trayectoria exacta de tuberías maestras y ramales de riego, ubicar pozos con sus coordenadas UTM y situar arquetas de control. Cada elemento dibujado tiene propiedades editables: diámetro de tubería, profundidad de soterramiento y fecha de última revisión.
+                </p>
+                <div class="gis-sub-box">
+                   <h4 class="tiny-title-manual">Resolución y Análisis NDVI</h4>
+                   <p class="paragraph-manual">Trabajamos con resoluciones satelitales que permiten un seguimiento semanal del vigor vegetativo (Índice NDVI). Esto permite detectar anomalías nutricionales o ataques de plagas de forma temprana en sectores específicos, permitiendo aplicaciones localizadas ("Variable Rate Application") que ahorran hasta un 40% en insumos al tratar solo la zona afectada.</p>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        <!-- MÓDULO 5: MAPEÓ DE ACTIVOS -->
+        <section id="infraestructura-activos" class="dashboard-section section-unified">
+          <div class="section-header">
+            <span class="badge-tech">MÓDULO TÉCNICO 05</span>
+            <h2 class="title-manual">Mapeo de Activos y Gestión Hídrica Crítica</h2>
+            <p class="paragraph-manual-bold">
+              El agua es el recurso más valioso y su gestión eficiente es la diferencia entre la rentabilidad y el fracaso. La monitorización hídrica en nuestra plataforma cubre desde la extracción en el pozo hasta la entrega en el emisor de riego.
+            </p>
+          </div>
+
+          <div class="infra-manual-grid">
+             <div class="infra-item-card">
+                <h3 class="subtitle-manual">Monitorización de Pozos y Niveles Freáticos</h3>
+                <p class="paragraph-manual">El control del nivel freático y el consumo energético de las bombas es fundamental. Registramos el caudal nominal de salida y los niveles estáticos y dinámicos del pozo. Mediante sensores de presión y caudalímetros ultrasónicos, el sistema detecta desviaciones que podrían indicar el agotamiento del pozo o un mal funcionamiento de la bomba, evitando averías catastróficas por trabajo en seco.</p>
+             </div>
+             <div class="infra-item-card">
+                <h3 class="subtitle-manual">Red de Riego e Infraestructura Hidráulica</h3>
+                <p class="paragraph-manual">Para evitar fugas, el sistema monitoriza arquetas y sectores de riego en tiempo real. Al conocer el caudal nominal esperado en cada sector, cualquier caída de presión o exceso de flujo activa una alarma inmediata al móvil, geolocalizando el tramo de tubería afectado. El mantenimiento preventivo de válvulas y filtros se programa automáticamente según los metros cúbicos de agua circulada, garantizando una vida útil prolongada de la instalación.</p>
+             </div>
+          </div>
+        </section>
+
+        <!-- MÓDULO 6: SEGURIDAD CRÍTICA -->
+        <section id="seguridad-perimetral" class="dashboard-section section-unified">
+          <div class="security-manual-box">
+             <h2 class="title-manual">Seguridad Perimetral y Geo-fencing</h2>
+             <div class="security-manual-grid">
+                <div class="security-manual-item">
+                   <h3 class="subtitle-manual">Vallas Virtuales Inteligentes</h3>
+                   <p class="paragraph-manual">El sistema permite la creación de Geofencing (vallas virtuales) sobre el mapa GIS. Al definir una zona de seguridad, cualquier dispositivo con GPS o entrada de sensor vinculada que traspase el límite fuera del horario laboral activa un protocolo de alerta de Nivel 1. Esto es especialmente útil para la maquinaria de alto valor y para la protección de naves de almacenamiento de insumos y producto terminado.</p>
+                </div>
+                <div class="security-manual-item">
+                   <h3 class="subtitle-manual">Integración Térmica y Edge Computing</h3>
+                   <p class="paragraph-manual">Nuestra red de seguridad integra cámaras térmicas capaces de detectar intrusos o fauna silvestre en oscuridad total. Mediante algoritmos de visión artificial procesados en local (Edge Computing), el sistema distingue entre un animal y una persona basándose en patrones de movimiento y firma térmica. Esto elimina las falsas alarmas provocadas por el viento o la fauna local, asegurando que el agricultor solo reciba notificaciones cuando la amenaza es real y verificada.</p>
+                </div>
+             </div>
+             <div class="security-manual-footer">
+                <a href="/contacto" class="btn-manual-cta">Solicitar Auditoría de Seguridad</a>
+             </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</TestPage>
+
+<style is:global>
+  /* FORZADO ABSOLUTO DE FONDO BLANCO Y TEXTO OSCURO */
+  body, .page-body, .page-body .container { 
+    background-color: #FFFFFF !important; 
+  }
+  
+  /* Asegurar que el slot hereda el fondo blanco */
+  .manual-container {
+    background-color: #FFFFFF !important;
+    min-height: 100vh;
+    width: 100%;
+    color: #000000 !important;
+  }
+</style>
+
+<style>
+  /* TIPOGRAFÍA Y COLORES MANUAL */
+  .title-manual { color: #000000 !important; font-size: 3.2rem; font-weight: 950; line-height: 1.1; margin-bottom: 30px; letter-spacing: -0.02em; }
+  .subtitle-manual { color: #111111 !important; font-size: 2rem; font-weight: 800; margin-bottom: 24px; }
+  .tiny-title-manual { color: #222222 !important; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
+  .paragraph-manual { color: #333333 !important; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px; }
+  .paragraph-manual-bold { color: #000000 !important; font-size: 1.25rem; line-height: 1.6; font-weight: 600; border-left: 5px solid var(--color-turquoise); padding-left: 30px; margin-bottom: 30px; }
+
+  .dashboard-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    padding: 80px 0;
+  }
+
+  /* SIDE NAV MANUAL */
+  .side-nav { position: sticky; top: 120px; height: fit-content; }
+  .side-nav ul { list-style: none; padding: 0; border-left: 2px solid #EEEEEE; }
+  .side-nav a { 
+    display: block; 
+    padding: 16px 30px; 
+    color: #666666; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+  .side-nav a:hover { color: var(--color-turquoise); background: #F8F9FA; padding-left: 40px; }
+
+  /* SECCIONES Y BLOQUES MANUAL */
+  .dashboard-section { margin-bottom: 140px; background: transparent; }
+  .section-unified { padding: 0; }
+  
+  .badge-tech {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--color-turquoise);
+    color: #000000;
+    font-weight: 900;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  .badge-dark-manual {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #000000;
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  /* BOXES Y CARDS MANUAL */
+  .manual-detail-box { 
+    background: #F8F9FA; 
+    padding: 40px; 
+    border-radius: 12px; 
+    border: 1px solid #E9ECEF; 
+  }
+  
+  .manual-list { list-style: none; padding: 0; margin-top: 30px; }
+  .manual-list li { margin-bottom: 24px; padding-left: 30px; position: relative; color: #444444; line-height: 1.6; }
+  .manual-list li::before { content: ""; position: absolute; left: 0; top: 12px; width: 14px; height: 2px; background: var(--color-turquoise); }
+  .manual-list strong { color: #000000; display: block; margin-bottom: 4px; }
+
+  .docs-manual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .doc-item-card { 
+    background: #FFFFFF;
+    padding: 45px; 
+    border-radius: 16px;
+    border: 1px solid #E9ECEF;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  }
+  
+  .premium-entry { border-top: 1px solid #F1F3F5; padding-top: 25px; margin-top: 25px; }
+  .premium-entry:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+  /* GIS MANUAL */
+  .gis-layout-manual { 
+    display: grid; 
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 60px; 
+    margin-top: 40px; 
+    align-items: center;
+  }
+  .gis-map-container { 
+    position: relative; 
+    height: 380px; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06); 
+    border: 1px solid #E9ECEF;
+  }
+  .gis-map-container img { width: 100%; height: 100%; object-fit: cover; }
+  .gis-marker { 
+    position: absolute; 
+    background: #000000; 
+    color: var(--color-turquoise); 
+    padding: 10px 18px; 
+    font-weight: 900; 
+    font-size: 0.75rem; 
+    border: 1px solid var(--color-turquoise);
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  .gis-sub-box { background: #F8F9FA; padding: 35px; border-radius: 16px; margin-top: 30px; border: 1px solid #E9ECEF; }
+
+  /* INFRA MANUAL */
+  .infra-manual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .infra-item-card { 
+    background: #FFFFFF; 
+    padding: 50px; 
+    border-radius: 16px; 
+    border: 1px solid #E9ECEF; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border-top: 6px solid var(--color-turquoise); 
+  }
+
+  /* SECURITY MANUAL */
+  .security-manual-box { background: #F8F9FA; padding: 70px; border-radius: 32px; border: 1px solid #E9ECEF; }
+  .security-manual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; }
+  .security-manual-footer { margin-top: 60px; text-align: center; }
+  
+  .btn-manual-cta { 
+    display: inline-block; 
+    padding: 20px 50px; 
+    background: var(--color-turquoise); 
+    color: #000000; 
+    font-weight: 900; 
+    text-decoration: none; 
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(15,181,174,0.2);
+  }
+  .btn-manual-cta:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(15,181,174,0.3); }
+
+  @media (max-width: 1200px) {
+    .dashboard-layout { grid-template-columns: 1fr; }
+    .side-nav { display: none; }
+    .docs-manual-grid, .gis-layout-manual, .infra-manual-grid, .security-manual-grid { grid-template-columns: 1fr; }
+  }
+</style>

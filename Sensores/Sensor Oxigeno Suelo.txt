@@ -1,0 +1,200 @@
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+ 
+ 
+Soil Oxygen Sensor introduction 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SOR-01 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+1.Product Introduce 
+The soil oxygen sensor is applying electrochemical principles suitable for the study of monitoring soil 
+oxygen content respiration and permeability, and the relationship between soil oxygen content and 
+osmosis and the activity of soil microorganisms. It has the advantages of reliable performance, long 
+service life and fast response speed. The soil oxygen sensor is a rugged and reliable oxygen 
+concentration measurement device. Its electronic components are completely encapsulated in epoxy 
+resin, and a filter at the front end prevents the soil particles from damaging the sensor, and can be easily 
+buried in the soil for measurement. The measured data can reflect the change of the oxygen content in 
+the soil in real time. 
+2. Product Features 
+1. Easy to install, can be used for long-term observation and monitoring of soil oxygen content, as well 
+as breathing and breathability 
+2. All-electronic package with Nylon shell. 
+3. Signal output is stable. 
+4. High measurement accuracy, reliable performance, to ensure normal work, fast response, high data 
+transmission efficiency. 
+3.Product Parameter 
+ 
+Measure parameters Value 
+Measure range 0-25%VOL 
+Average current ≤15mA 
+Response time ＜15s 
+Output RS485(Standard Modbus-RTU protocol) 
+Resolution 0.1%VOL 
+Accuracy ±2%FS 
+Power supply 7~24V 
+Working temperature -20~50℃ 
+Working humidity 15~80%( Non-condensing) 
+Temperature drift 0.2% FS/℃ 
+Repeatability ≤1% FS 
+ 
+ 
+ 
+ 
+ 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+4. Product size  
+ 
+ 
+ 
+ 
+5. Measurement methods 
+If you are measuring on a hard surface, you should drill a hole first (the hole diameter should be bigger 
+than the sensor probes), then insert it into the soil and compact the soil before measuring; the sensor 
+should be protected from severe vibration and impact, let alone knocked with hard objects. Because the 
+sensor is a black package, the sensor will heat up sharply (up to 50℃) under strong sunlight. In order to 
+prevent excessive temperature from affecting the temperature measurement of the sensor, please pay 
+attention to shading and protection when using it in the field or in the field.  
+Please note the soil oxygen sensor can be moisture-proof but cannot be water-proof, so need 
+burry in the soil at least 10-20cm deep(according to the site condition)  to avoid immersion of 
+the sensor probe in water. 
+1. Buried measure method 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+➢ Make a soil profile in the vertical direction, slightly deeper than the installation depth of the 
+bottommost sensor, between 20cm and 50cm in diameter 
+➢ Insert the sensor horizontally into the soil profile 
+➢ After the installation is completed, the excavated soil is backfilled in order, layered and compacted, 
+and horizontal installation is guaranteed. 
+➢ If you have the conditions, you can put the removed soil in a bag and number it to keep the soil 
+moisture unchanged, and backfill it in reverse order. 
+ 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+2. Multi-layers installation 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+6.Parsing protocol 
+1. Standard Modbus-RTU protocol 
+Baud rate: 9600bps can be set, factory default is 9600bps; Check digit: none;  
+Data bit: 8; Stop bit: 1 
+2. Read soil oxygen content at device address 0x01 
+➢ Inquiry frame 
+Address 
+code 
+Function code Register start address Register 
+length 
+CRC16 low CRC 16 high 
+0X01 0X03 0X00   0X00  0X00  0X01  0X84 0X0A 
+➢ Response frame  
+Address code Function code Data length Wind speed CRC16 low CRC 16 
+high 
+0X01 0X03 0X02 0x00 0XD1 0x78 0X18 
+Calculation instructions: 
+Soil oxygen content: The data is converted to decimal and then divided by 10 
+The above data indicates that the soil oxygen content is: 20.9% VOL 
+3. Change the soil oxygen sensor address from 01 to 02 
+➢ Inquiry frame 
+Address 
+code 
+Function code Reserve  New sensor 
+address 
+CRC16 low CRC 16 high 
+0X01 0X06 0X00   0X00  0X00  0X0 2 0X08 0X0B 
+➢ If success, it will feedback: 
+Address code Function code Data length New address CRC16 low CRC 16 
+high 
+0X01 0X06 0X02 0x00 0X02 0x39 0X49 
+ 
+Note: If you forget the original address of the sensor, you can use the broadcast address 0XFE instead. 
+When the broadcast address 0XFE is used, the master can only connect to one slave at the same time. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+7. Precautions 
+ 
+1. Please check whether the packaging is intact, and check whether the sensor model and specifications 
+are consistent with the products you have purchased; 
+2. Do not wire with power, and only after the wire is connected and checked for error, can the power be 
+turned on; 
+3. The user should not change the components and wires that have been welded before leaving the 
+factory when the product is in use; 
+4. The sensor is a precision device, please do not disassemble it by yourself when using it, let alone touch 
+the diaphragm, so as not to cause damage to the product; 
+5. Avoid sticky particles from entering the sensor, prevent moisture, so as not to affect the measurement 
+performance. 
+ 
+8. Product warranty period 
+ 
+The warranty period of this product is one year. Counting from the date of shipment, within twelve months, 
+the company is responsible for free repairs or replacements due to sensor quality problems (non -human 
+damage), and only the cost will be charged after the warranty period. 

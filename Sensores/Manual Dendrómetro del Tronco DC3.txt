@@ -1,0 +1,261 @@
+ 
+ 
+Dendrometer 
+ 
+ ECOMATIK GmbH 
+ Muenchner Str. 23 
+ D-85221 Dachau/Germany 
+ Tel.: +49  8131 260 738 
+ Fax: +49  8131 260 736 
+ e-mail: info@ecomatik.de 
+ website: www.ecomatik.de 
+ 
+ 
+ 
+ 
+Circumference Dendrometer (Type DC3) 
+For measuring changes in the circumference of plant stems  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+User Manual  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Version 2019 
+ 
+ 
+ 
+
+DC3 Dendrometer                                                                                           
+    
+1  
+ 
+1. Introduction 
+Thank you for purchasing an Ecomatik Dendrometer type DC3. This is a highly precise 
+sensor for the continuous measurements of changes in the circumference of plant stems, 
+under both indoor and outdoor conditions. 
+This manual is written to help you install and operate your DC3 Dendrometer without diffi-
+culty and for the most desirable results. Please read it carefully before installing the sen-
+sor, and refer back to it if you should have any difficulty with the sensor in the future. 
+The dendrometer is the sensor part of the measuring system. This means that the den-
+drometer must be installed onto the experimental tree, and connected to a data logger for 
+continuous data recording. The dendrometer is compatible with most data loggers. At 
+Ecomatik a low-cost, specially developed dendrometer data logger DL18 is also available. 
+ 
+2. Product Description  
+As shown blow, a standard version of the DC3 dendrometer consists of: 
+1 Sensor with 5 m cable. The cable length can be extended up to 100 m 
+1 m special wire for receiving the circumference changes. The wire length can be ex-
+tended to several meters.  
+1 special wire rope clamp to fix the stem embracing wire  
+1 bag of plastic slides for reducing the friction between the steel wire and the measured 
+plant stem. 
+2 m perforated rubber belt for fixing the sensor onto the tree. 
+ 
+DC3 Dendrometer 
+Please contact us should you miss anything of these items. 
+The standard cable length is 5 m. if you ordered cable extension, the cable length is the 
+ordered extension + 5 m. 
+To meet the requirements of different loggers, there are 2 different types of cables: cable 
+with plug and cable without plug. Cable with plug can only be connected to Dendrome-
+ter Logger DL18. Cable without plug can be connected to other loggers. 
+ 
+ 
+
+DC3 Dendrometer                                                                                           
+    
+2  
+ 
+3. Safety Information  
+The sensor is protected from water droplets, but it is not waterproof, therefore please do 
+not immerse the sensor in water, or install the sensor below a longer lasting snow cover. 
+For a high degree of measurement accuracy, it is very important to keep the original 
+shape of the wire cable. Please handle it with care and avoid any distortion (turning, bend-
+ing etc.) 
+Never pull the cable from the sensor and avoid any tension between the cable and sensor 
+during handling, set up and operation. 
+Pay attention to connections to data logger. Wrong connections will provide wrong read-
+ings. 
+ 
+4. Installation  
+4.1 Required tools 
+Screw driver, measuring tape, a pair of scissors. 
+4.2 Choosing the measuring tree 
+The data processing of the DC3 dendrometer is based on a tree with a trunk of a circular 
+cross-section. For this reason it is very important, to choose a smoothly circular tree for 
+measurement with DC3 dendrometer. 
+4.3 Mounting 
+4.3.1 Cut two rubber belts as long as the tree circumference.  
+4.3.2 Attach one end of each of the two perforated rubber belts to the fixation bolts at the 
+back-side bar of the dendrometer frame. 
+   4.3.3 Firmly fix the dendrometer at the stem, by tightly wrapping the rubber belts around the 
+stem/branch and locking them again by slipping the desired hole of each belt on the 
+corresponding bolt at the back-side bar (see picture 1).  
+4.3.4 Unroll the wire from the reel and untighten the wire rope clamp by turning the two 
+screws of the clamp (please do not disassemble the clamp completely). Thread a 
+certain number (dependent on the tree circumference) of the provided plastic slides 
+on the wire. Next insert the end of the wire through the sensor hole. Finally pass the 
+prepared wire around the tree trunk, and pass it through the rope clamp (picture 2).  
+ 
+    
+Picture 1                                             Picture 2 
+ 
+ 
+
+DC3 Dendrometer                                                                                           
+    
+3  
+ 
+Pull the wire such, that the sensor rod is pushed in by about 2-3 mm. When the in-
+stallation is taking place before frost period, the sensor rod should be pushed in by 7 
+mm. At frosts the stem diameter can shrink considerably. When reached the desired 
+rod position firmly tighten the clamp by fastening the two clamp screws. 
+4.3.5 Ensure that the wire lies flat around the stem, and move the plastic slides along the 
+wire so that the wire itself does not touch the bark. 
+4.3.6 Fix the cable onto the tree stem/branch so that the sensor is protected from any ac-
+cidental pull/ drag of the entire cable length. This can be done using a rope or cable 
+straps. In addition, there should be no tension between the sensor and cable. En-
+sure that no rain water can run along the cable into the sensor casing. 
+4.4 Collecting the Initial Data  
+For data processing, after the installation the following initial data should be collected: 
+c0: Circumference of tree at the height of dendrometer in mm. 
+ 
+5. Wiring and Logger Configuration 
+The dendrometer is compatible with most data loggers. In the following we describe the 
+connection with Dendrometer Logger (DL18), Campbell Logger (CR1000). Please contact 
+us if your logger is not described here. 
+Dendrometer Data Logger (DL18) 
+The DL18 is a battery powered, waterproof logger for connecting 4 dendrometers. It is a 
+very effective data logger for dendrometer measurement under outdoor conditions. For 
+details please see the user manual of the DL18.  
+Campbell Data Logger (CR1000) 
+The dendrometer can be measured both in single-ended voltage as well as differential 
+voltage mode. Differential voltage mode provides better accuracy. But single-ended mode 
+requires half as many channels as differential mode. One CR1000 can include 16 den-
+drometers in single-ended mode, but only 8 dendrometers in differential mode. 
+ 
+Single-ended Voltage Mode ( 2 dendrometers) 
+Connection 
+Cable Color Input Port 
+1st dendrometer Yellow 1H 
+Green Ground 
+Brown Vx1 
+White Ground 
+2nd dendrometer Yellow 1L 
+Green Ground 
+Brown Vx1 
+White Ground 
+Program Syntax 
+ExciteV (Vx1,2500,0) 
+VoltSe(SEVolt(),2,mV2500,1,True,0,_50Hz,Mult(),Offs()) 
+If Multiplier=10.16, Offset=0, the results are measured in microns. 
+DC3 Dendrometer                                                                                           
+    
+4  
+ 
+Differential Voltage Mode ( 2 dendrometers) 
+Connection 
+Cable Color Input Port 
+1st dendrometer Yellow 1H 
+Green 1L 
+Brown Vx1 
+White Ground 
+2nd dendrometer Yellow 2H 
+Green 2L 
+Brown Vx1 
+White Ground 
+Program Syntax 
+ExciteV (Vx1,2500,0) 
+VoltDiff(DiffVolt(),2,mV2500,1,True,0,_50Hz,Mult(),Offs()) 
+If Multiplier=10.16, Offset=0, the results are measured in microns. 
+ 
+An interval 0.5-hour for data collection can reveal the diurnal course of diameter changes 
+very well. 
+ 
+6. Data Calculation 
+For calculating the tree circumference Ci (Ri =Ci/π/2) the following parameters are neces-
+sary: 
+C0 : Circumference of tree at the height of dendrometer in mm at beginning of  
+       the measurement R0=C0/π/2 
+Vi : Data records of the dendrometer in mm. 
+V0 : the first valid record of the dendrometer in mm. 
+ 
+The tree circumference ci is given by:  
+               𝑪𝒊 = 𝟐 × (𝝅 × 𝑹𝟎 − 𝑹𝟎 × 𝒂𝒓𝒄𝒄𝒐𝒔(
+𝑹𝟎
+𝑹𝟎+𝟏𝟐𝟖−𝑽𝟎
+) +√(𝑹𝟎 + 𝟏𝟐𝟖 − 𝑽𝟎)𝟐 − 𝑹𝟎
+𝟐  
+        +𝑹𝒊−𝟏 × 𝒂𝒓𝒄𝒄𝒐𝒔( 𝑹𝒊−𝟏
+𝑹𝒊−𝟏 + 𝟏𝟐𝟖 − 𝑽𝒊
+) -√(𝑹𝒊−𝟏 + 𝟏𝟐𝟖 − 𝑽𝒊)𝟐 − 𝑹𝒊−𝟏
+𝟐) 
+ 
+arccos: Arccosine in rad. 
+ 
+A simple program in EXCEL for this formula is available. Please contact us for a copy. 
+ 
+7. Adjustment and maintenance  
+Ensure that no falling branches, fruits or snow land on the sensor. The sensor is protected 
+against water droplets but is not waterproof. 
+When the sensor is correctly installed, it will function under outdoor conditions without the 
+need for further maintenance.  
+ 
+DC3 Dendrometer                                                                                           
+    
+5  
+ 
+Depending on the growth rate of the tree, the sensor should be reset after some months 
+or years of measurements. When the output approaches 25 mm, the sensor needs to be 
+reset. 
+Relax the turnbuckle / screw slowly so that the sensor rod is pushed in by about 2-3 mm. 
+When the reset is taking place before frost period, the sensor rod should be pushed in by 
+8 mm. At frosts the stem diameter can shrink considerably. 
+ 
+8. Technical Specifications  
+Name of the Sensor  Circumference Dendrometer 3 
+Type DC3 
+Use area  For measuring circumference growth of fast-growing trees 
+Suitable for plant size  Diameter:  >5 cm  
+Advantages  Mechanical pressure on the tree is independent from the tree size, 
+thus good comparability of data between different tree sizes. 
+Range of the senor 25.4 mm, corresponding range for tree size: 
+   Tree diameter                   Range of mm 
+        (cm)                  Circumference    Diameter 
+         10                           50                     16,2 
+         50                           35                     11,3 
+        100                          28                       9,0 
+Resolution The resolution of the sensor itself is infinite. The resolution of read-
+ings is determined by connected data logger, e.g.  
+CR1000: 3.3 µm 
+Dendrometer logger (DL18): 0.5 µm 
+Accuracy Dendrometer dependent: 
+Max. ±1.97% of reading (stable offset) 
+ 
+Dependent on the connected data logger, e.g.:  
+CR1000:±(0.04% of reading+10 µm) 
+Dendrometer logger DL18: ±0.1% 
+Temperature coeffi-
+cient of the sensor  <0.2 µm /°C in the whole range 
+Temperature coeffi-
+cient of the wire cable <1.4 ×10-6/k 
+Linearity  <0,7% 
+Environment   Outdoor condition: -25 to 70C air temperature, 0 to 100% relative air 
+humidity   
+Weight of the sensor  37 g without cable 
+Power supply  Stabilized Vex of 0.5 – 10 VDC, power consumption practically zero 
+Material Stainless steel and Aluminium 
+Cable length 5 m, extendable up to 100 m  
+ 

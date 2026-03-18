@@ -1,0 +1,353 @@
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+                         
+                     
+Pneumatic Water Gauge Sensor 
+ 
+User Manual 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RD-RWG-01  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+1.Description 
+The pressure transmitter uses a high -performance pressure -sensitive chip that combines advanced 
+circuit processing and temperature compensation techniques to convert pressure into a linear current or 
+voltage signal. The product is small in size, easy to install, and is insulated by a stainless steel case. It is 
+suitable for measuring gases such as gas and liquid compatible with the material of the contact part. It 
+can be used to measure gauge pressure, negative pressure and absolute pressure. 
+2.Application 
+This product is widely used in water plants, oil refineries, sewage treatment plants, building materials, 
+light industry, machinery and other industrial fields to achieve the measurement of liquid, gas and steam 
+pressure. 
+3.Features 
+➢ Reverse polarity and current limit protection 
+➢ Laser resistance temperature compensation 
+➢ Programmable adjustment 
+➢ Anti-vibration, anti-shock, anti-radio frequency electromagnetic interference 
+➢ Strong overload and anti-interference ability, economical and practical 
+4.Main Technique 
+➢ Measuring range:0~10meters ( -0.1~0~60Mpa) 
+➢ Measuring accuracy:0.2% 
+➢ Output signal: RS485 
+➢ Overload capability: ＜1.5 times the range 
+➢ Temperature drift：0.03% FS/℃ 
+➢ Power supply：12-36VDC typical 24V 
+➢ Medium temperature：-20~75℃ 
+➢ Ambient temperature：-30~80℃ 
+➢ Measuring medium: gas or liquid that does not corrode stainless steel 
+ 
+ 
+ 
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+5.Electrical wiring diagram 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6.MODBUS Communication Protocol 
+1. Overview 
+This protocol complies with the MODBUS communication protocol and adopts the subset RTU method in 
+the MODBUS protocol. RS485 half-duplex working mode. 
+2. Serial data format 
+Serial port settings: no parity, 8 bits of data, 1 stop bit. 
+Example: 9600, N, 8, 1 Meaning: 9600bps, no parity, 8 data bits, 1 stop. 
+The serial port baud rate supported by this transmitter is: 
+1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200 
+Polynomial of CRC check: 0xA001. 
+The data in the data communication process is all processed according to the double-byte signed integer 
+data. If the data identifies the floating point number, the write needs to read the decimal point to 
+determine the size of the data. 
+3. Communication format 
+1. Read water level  
+First , Read output value 
+Address Function 
+code 
+Data start 
+address 
+(H) 
+Data start 
+address (L) 
+Number of 
+data (H) 
+Number of 
+data (L) 
+CRC16 
+(L) 
+CRC16 
+(H) 
+0X01 0X03 0X00 0X04 0X00 0X01 0XC5 0XCB 
+Data returned: 
+Address Function Code Data length Return data 
+High byte (H) 
+Return data 
+Low byte (L) 
+CRC16(L) CRC16(H) 
+0X01 0X03 0X02 0X00 0X0A 0X38 0X43 
+ 
+
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+Second need read decimal  
+Send instruction: 
+Address Function 
+code 
+Start 
+address (H) 
+Start 
+address (L) 
+Number of 
+data (H) 
+Number of 
+data (L) 
+CRC16 
+(L) 
+CRC16 
+(H) 
+0X01 0X03 0X00 0X03 0X00 0X01 0X74 0X0A 
+Return: 
+Address Function Code Data length Return data 
+High byte (H) 
+Return data 
+Low byte (L) 
+CRC16(L) CRC16(H) 
+0X01 0X03 0X02 0X00 0X03 0XF8 0X45 
+0003 means three decimal 
+So the water level is 000A(Hexadecimal)=10 (Decimal)/1000 =0.01 meter. 
+2. Modify the sensor address, modify the address from 01 to 02 
+A. Send read command format: 
+Original 
+address 
+Function 
+code 
+Data start 
+address (H) 
+Data start 
+address (L) 
+New 
+address (H) 
+New address  
+(L) 
+CRC16 
+low 
+CRC16 
+high 
+0X01 0X06 0X00 0X00 0X00 0X02 0X08 0X0B 
+If success, it will return : 01 06 00 00 00 02 08 0B 
+3. Error and abnormal command response return data format: 
+Address Function code Exception code CRC16 Low byte (L) CRC16 High byte (H) 
+0x01 
+0x80 + function 
+code  
+0x01：(Illegal function) 
+0x02：(Illegal data address) 
+0x03：(Illegal data) 
+  
+4. Function code and data address list 
+Register name Data type 
+Offset address 
+Register type Remarks 
+(Dec) (Hex) 
+Slave address 
+Unsigned 
+integer type 
+0 0x0000 Read/write Value range: (1 ~ 255) 
+Baud rate 
+Unsigned 
+integer type 
+1 0x0001 Read/write 
+Value range: (0 ~ 7) 
+0-1200; 1-2400 
+2-4800; 3-9600 
+4-19200; 5-38400 
+6-57600; 7-115200 
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+Unit 
+Unsigned 
+integer type 
+2 0x0002 Read-only 
+Value range: (0 ~ 8) 
+0-Mpa (℃); 1-Kpa 
+2-Pa; 3-Bar 
+4-mbar; 5-kg/cm2 
+6-Psi; 7-mh2o 
+8-mmh2O; 
+Decimal digits 
+Unsigned 
+integer type 
+3 0x0003 Read-only 
+Value range: (0 ~ 3) 
+0-# # # #; 1-# # #. # 
+2-# #. # #; 3-#. # # # 
+Measure output value 
+Signed integer 
+type 
+4 0x0004 Read-only 
+Value range: 
+(-1999 ~ 9999) 
+Range zero 
+Signed integer 
+type 
+5 0x0005 Read-only 
+Full range point 
+Signed integer 
+type 
+6 0x0006 Read-only 
+Floating point output 
+Single precision 
+floating point 
+type 
+7 0x0007 
+Read-only 
+Single precision floating 
+point number 8 0x0008 
+Instrument status 
+Unsigned 
+integer type 
+9 0x0009 Read-only 0: Pressure; 1: Temperature 
+Parity bit 
+Unsigned 
+integer type 
+10 0x000A 
+Read/write 
+verification 
+Value range: (0 ~ 2) 
+0: No check 
+1: Even check 
+2: Odd check 
+Data size end 
+Unsigned 
+integer type 
+11 0x000B 
+Read/write 
+verification 
+Value range: (0 ~ 1) (Note: 
+only valid for measured 
+output value, other registers 
+default to large-end mode) 
+0: Large -end mode (high 
+bytes first) 
+1: Small -end mode (low 
+bytes first) 
+Zero offset value 
+Signed integer 
+type 
+12 0x000C 
+Read/write 
+verification 
+Value range: 
+(-1999 ~ 9999) 
+Filter coefficient 
+Unsigned 
+integer type 
+13 0x000D 
+Read/write 
+verification 
+Value range: (0 ~ 4) 
+Gain coefficient 
+Signed integer 
+type 
+14 0x000E 
+Read/write 
+verification 
+Value range: 
+(-1999 ~ 9999) 
+User functions 
+Unsigned 
+integer type 
+15 0x000F Write only 
+0000H: Save user data 
+0055H: Zero clearing 
+2020H: Advanced User 
+Modification Enable 
+00AAH: Restore factory 
+settings 
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+5. Precautions 
+1. Communication related parameters, address, baud rate, check bit, after modification immediately 
+effective, switch value related parameters modified, need to send save instructions after effective. 
+2. When modifying the address, the address before modification is used to reply to the data, and the 
+transmitter address will be automatically modified after reply. 
+3. The Save and Restore Factory command returns the original value, indicating that the transmitter has 
+accepted the command from the host. 
+4. Attention should be paid when restoring factory data. The parameters saved by the factory may be 
+inconsistent with those saved by the user, so the address, baud rate and calibration data may be 
+inconsistent. Therefore, the transmitter must be searched again after restoring factory parameters. 
+5. This protocol stipulates that all data are communicated by shaping data. For example, the main 
+variable data is 6.000 MPa, three decimal places, and the read data is 6000. Then, the operation should 
+be done according to the position of the decimal point to get 6.000. For example, if the decimal point is 3, 
+it means 6000/10 (3), that is, 6000 divided by the third power of 10, and the data is 6.000. 
+6. Examples of commonly used commands: (example data are hexadecimal, sensor address is 1) 
+1. Read the main variable data: 
+A. Send instructions: 01 03 00 04 00 01 C5 CB 
+B. Returned data: 01 03 02 00 0A 38 43 (0x000A is the read value of the primary variable) 
+2. Read decimal places: 
+A. Send instructions: 01 03 00 03 00 01 74 0A 
+B. Returned data: 01 03 02 00 03 F8 45 (0x0003 is the decimal place) 
+So the read data needs to be converted from hex to decimal divided by 1000.  
+3. Read the transmitter address: 
+A. Send instructions: 01 03 00 00 00 01 84 0A 
+B. Return data: 01 03 02 00 01 79 84 (0x0001 is the read transmitter address) 
+4. Read the transmitter baud rate: 
+A. Send instructions: 01 03 00 01 00 01 D5 CA 
+B. Return data: 01 03 02 00 03 F8 45 (0x0003 is the baud rate of the read transmitter, and the baud rate 
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+is 9600 according to the data description list) 
+5. Modify the transmitter address: (The original address of the transmitter is 0x01, which is modified to 
+0x02) 
+A. Send instructions: 01 06 00 00 00 02 08 0B 
+B. Return data: 01 06 00 00 00 02 08 0B (0x0002 is the modified transmitter address) 
+6. Modify the baud rate of the transmitter: (The original baud rate of the transmitter is 9600, which is 
+modified to 4800) 
+A. Send instructions: 01 06 00 01 00 02 59 CB 
+B. Return data: 01 06 00 01 00 02 59 CB (0x0002 is the modified transmitter baud rate, and the baud rate 
+is 4800 according to the data description list) 
+Note: Save to user area command should be sent after modifying the command, otherwise, the 
+modified data will be lost because it is not saved after the transmitter is powered down. 
+The save to user area command is as follows: the save command code after the address is changed 
+from 1 to 2 
+A. Send instruction: 02 06 00 0F 00 00 B9 FA 
+B. Return data: 02 06 00 0F 00 00 B9 FA (0x0000 is the save function code, which means save to user 
+area) 
+7. Calibrated in air 
+The sensor is placed in the air and the liquid level is 0 by default, so place the sensor in the air and send 
+the following command to perform automatic calibration: 
+A. Send instruction: 01 06 00 0F 00 55 79 F6 
+If success, it will feedback: 01 06 00 0F 00 55 79 F6 
+8. Make the offset calibration  
+(1) Need send the following instruction to enter the offset calibration channel 
+01 06 00 0F 20 20 A1 D1 
+If success, it will feedback: 01 06 00 0F 20 20 A1 D1 
+(2) Then make the calibration, for example add 2mm, please send the following instruction 
+    HONDE TECHNOLOGY CO.,LTD 
+www.hondetechco.com 
+01 06 00 0C 00 02 C8 08  
+If success, it will feedback: 01 06 00 0C 00 02 C8 08 
+(3) For example, if minus 2 mm in the sensors of address 01, then send  
+01 06 00 0C FF FE 89 B9 
+If success, it will feedback: 01 06 00 0C FF FE 889 B9 

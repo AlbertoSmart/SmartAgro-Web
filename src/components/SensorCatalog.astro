@@ -1,65 +1,96 @@
 ---
 const sensors = [
     {
-        name: "Sensor pH / EC",
-        specs: "Control de precisión de la solución nutritiva y acidez.",
-        icon: "🧪",
-        category: "Riego",
+        name: "Sensor Suelo Temp/Hum",
+        specs: "Monitorización precisa de la temperatura y humedad radicular.",
+        image: "/images/sensores/SensorTemperaturaHumedadSuelo.png",
+        category: "Suelo",
+        href: "/sensores/suelo-humedad-temp"
     },
     {
-        name: "Sensor CO2 Tierra",
-        specs: "Monitoreo de la respiración del suelo y actividad microbiana.",
-        icon: "💨",
+        name: "Sensor pH de Suelo",
+        specs: "Control electroquímico del potencial de hidrógeno edáfico.",
+        image: "/images/sensores/SensorphTemperaturaSuelo.png",
         category: "Suelo",
+        href: "/sensores/suelo-ph"
+    },
+    {
+        name: "Sensor de pH Alta Precisión",
+        specs: "Medición ultra-precisa para aplicaciones críticas en suelo y agua.",
+        image: "/images/sensores/SensorDePhAltaPrecision.png",
+        category: "Suelo/Agua",
+        href: "/sensores/suelo-ph-precision"
+    },
+    {
+        name: "Sensor CO2 Suelo",
+        specs: "Monitoreo de la respiración del suelo y actividad microbiana.",
+        image: "/images/sensores/SensorCO2.png",
+        category: "Suelo",
+        href: "/sensores/suelo-co2"
+    },
+    {
+        name: "Sensor Oxígeno Suelo",
+        specs: "Medición de permeabilidad y salud radicular.",
+        image: "/images/sensores/SensorOxigenoSuelo.png",
+        category: "Suelo",
+        href: "/sensores/suelo-oxigeno"
+    },
+    {
+        name: "Sensor Suelo 8 en 1",
+        specs: "NPK, Fósforo, PH, EC, Temp, Hum, Salinidad.",
+        image: "/images/sensores/SensorSuelo8en1.png",
+        category: "Suelo",
+        href: "/sensores/suelo-8en1"
+    },
+    {
+        name: "Sensor Tubular Multicapa",
+        specs: "Perfil vertical de temperatura y humedad en múltiples profundidades.",
+        image: "/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png",
+        category: "Suelo",
+        href: "/sensores/suelo-tubular"
+    },
+    {
+        name: "Dendrómetro de Tronco",
+        specs: "Medición de variaciones micro-métricas del diámetro del tronco.",
+        image: "/images/sensores/DendometroTronco.png",
+        category: "Planta",
+        href: "/sensores/planta-dendrometro-tronco"
+    },
+    {
+        name: "Dendrómetro de Fruto",
+        specs: "Crecimiento del fruto en tiempo real para optimización de cosecha.",
+        image: "/images/sensores/dendometroFruto2.png",
+        category: "Planta",
+        href: "/sensores/planta-dendrometro-fruto"
+    },
+    {
+        name: "Sensor de Hoja Temp/Hum",
+        specs: "Monitorización de humectación foliar para prevención de plagas.",
+        image: "/images/sensores/SensorHojaChinosTemperaturayHumedad.png",
+        category: "Planta",
+        href: "/sensores/planta-hoja-humectacion"
     },
     {
         name: "Sensor Temperatura Hoja",
         specs: "Medición directa del estrés térmico en el follaje.",
-        icon: "🍃",
-        category: "Follaje",
-    },
-    {
-        name: "Sensor Tierra Temp/Hum",
-        specs: "Control básico de condiciones radiculares.",
-        icon: "🌡️",
-        category: "Suelo",
+        image: "/images/sensores/SensorHojaChinosTemperaturayHumedad.png", // Reuse image as specifically mentioned for Temp/Hum leaf
+        category: "Planta",
+        href: "/sensores/planta-temp-hoja"
     },
     {
         name: "Estación Meteorológica",
         specs: "Viento, lluvia, radiación UV y presión atmosférica.",
-        icon: "🌦️",
+        image: "/images/sensores/EstacionMeteorologica.png",
         category: "Clima",
+        href: "/sensores/clima-estacion"
     },
     {
-        name: "Dendrómetro de Tronco",
-        specs: "Medición de variaciones del diámetro del tronco.",
-        icon: "🌳",
-        category: "Estructural",
-    },
-    {
-        name: "Sensor Tubular 8 capas",
-        specs: "Perfil vertical de temperatura y humedad a 8 profundidades.",
-        icon: "📏",
-        category: "Suelo",
-    },
-    {
-        name: "Dendrómetro de Fruto",
-        specs: "Crecimiento del fruto en tiempo real (visión IA).",
-        icon: "🍎",
-        category: "Producción",
-    },
-    {
-        name: "Sensor de Hoja",
-        specs: "Temperatura y humectación para prevención de plagas.",
-        icon: "💧",
-        category: "Follaje",
-    },
-    {
-        name: "Sensor Tierra 8 en 1",
-        specs: "NPK, Fósforo, PH, EC, Temp, Hum, Salinidad.",
-        icon: "🌱",
-        category: "Suelo",
-    },
+        name: "Sensor Nivel de Agua",
+        specs: "Presión hidrostática para control de depósitos y canales.",
+        image: "/images/sensores/SensorNivelAgua.png",
+        category: "Riego",
+        href: "/sensores/agua-nivel"
+    }
 ];
 ---
 
@@ -80,12 +111,14 @@ const sensors = [
         <div class="sensor-catalog__grid">
             {
                 sensors.map((sensor) => (
-                    <div class="sensor-card glass">
+                    <a href={sensor.href} class="sensor-card glass">
                         <div class="sensor-card__badge">{sensor.category}</div>
-                        <div class="sensor-card__icon">{sensor.icon}</div>
+                        <div class="sensor-card__image">
+                            <img src={sensor.image} alt={sensor.name} loading="lazy" />
+                        </div>
                         <h3 class="sensor-card__name">{sensor.name}</h3>
                         <p class="sensor-card__specs">{sensor.specs}</p>
-                    </div>
+                    </a>
                 ))
             }
         </div>
@@ -122,6 +155,8 @@ const sensors = [
         transition: var(--transition);
         position: relative;
         text-align: center;
+        text-decoration: none;
+        display: block;
     }
 
     .sensor-card:hover {
@@ -141,11 +176,30 @@ const sensors = [
         border-radius: 20px;
         font-weight: 700;
         text-transform: uppercase;
+        z-index: 2;
     }
 
-    .sensor-card__icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
+    .sensor-card__image {
+        width: 100%;
+        height: 160px;
+        margin-bottom: 24px;
+        border-radius: var(--border-radius-sm);
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sensor-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .sensor-card:hover .sensor-card__image img {
+        transform: scale(1.1);
     }
 
     .sensor-card__name {

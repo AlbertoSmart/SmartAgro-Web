@@ -7,20 +7,9 @@ import TestPage from "../../layouts/TestPage.astro";
     heading="Trazabilidad GPS y Control de Flotas"
     description="Certifica cada viaje y aplicación. Integración telemática avanzada para cumplir con los estándares DARP y mejorar la eficiencia logística."
     variant="tools"
+    layoutType="suspended"
 >
     <div class="subpage-content">
-        <!-- Hero Section -->
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
-                <h2>Tecnología Telemática al Servicio del Ganadero</h2>
-                <p>
-                    La trazabilidad GPS ya no es solo una obligación, es una herramienta de gestión. Nuestro sistema captura automáticamente los datos de ruta, tiempos de espera y puntos de descarga, transformándolos en informes listos para la administración y para la toma de decisiones empresariales.
-                </p>
-            </div>
-            <div class="image-showcase">
-                <img src="/images/servicios/mapa_trazabilidad_gps_agro_1773663997321.png" alt="Pantalla de seguimiento GPS de flota" class="rounded-img shadow-xl" />
-            </div>
-        </div>
 
         <!-- Technical Specs Section -->
         <section class="tech-specs">
@@ -75,6 +64,25 @@ import TestPage from "../../layouts/TestPage.astro";
             </div>
         </section>
 
+        <!-- FAQ Section for Trazabilidad -->
+        <section class="faq-section">
+            <h2 class="text-center">Consultas sobre Trazabilidad GPS</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Es válido este sistema para la administración DARP?</h3>
+                    <p>Sí, nuestro sistema cumple con los requisitos técnicos de envío telemático de datos de posición y caudal exigidos por el DARP para el transporte de deyecciones ganaderas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué ocurre si el conductor se desvía de la ruta?</h3>
+                    <p>El sistema detecta desviaciones significativas y puede enviar alertas automáticas al responsable de flota, permitiendo justificar el motivo ante posibles inspecciones.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Los datos son privados y seguros?</h3>
+                    <p>Cumplimos estrictamente con la LOPD. Los datos de trazabilidad solo son accesibles por ti y por los técnicos que tú autorices, además del envío obligatorio a la administración si así lo solicitas.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="highlight-box">
             <h3>¿Necesitas equipar tu flota?</h3>
             <p>Disponemos de equipos GPS homologados y listos para instalar. Te ayudamos en todo el proceso de alta en el sistema DARP.</p>
@@ -84,20 +92,6 @@ import TestPage from "../../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-    .intro-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-
-    .rounded-img {
-        border-radius: 24px;
-        width: 100%;
-        height: auto;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
 
     .tech-specs {
         margin: 80px 0;
@@ -162,7 +156,4 @@ import TestPage from "../../layouts/TestPage.astro";
         font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
-    }
 </style>

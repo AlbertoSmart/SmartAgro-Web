@@ -3,24 +3,14 @@ import TestPage from "../../layouts/TestPage.astro";
 ---
 
 <TestPage
+    image="/images/herramientas/prescripcion_ultra_field.png"
     title="Prescripción Fitosanitaria – Cuaderno de Campo Digital"
     heading="Prescripción Digital de Alta Precisión"
     description="Optimiza tus tratamientos fitosanitarios con órdenes de aplicación inteligentes y validación automática del Vademécum MAPA."
     variant="tools"
+    layoutType="suspended"
 >
     <div class="subpage-content">
-        <!-- Intro Section with Image Placeholder Concept -->
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
-                <h2>Tratamientos Inteligentes y Legales</h2>
-                <p>
-                    Nuestra tecnología de prescripción digital no solo busca la eficiencia agrícola, sino también la seguridad jurídica total. Validamos cada dosis y producto contra el Vademécum oficial en tiempo real, garantizando que cada gramo aplicado está justificado y autorizado.
-                </p>
-            </div>
-            <div class="image-showcase">
-                <img src="/images/servicios/drone_agricultura_prescripcion_1773663966624.png" alt="Drone realizando mapas de prescripción" class="rounded-img shadow-xl" />
-            </div>
-        </div>
 
         <!-- Workflow Section -->
         <section class="workflow-section">
@@ -28,7 +18,7 @@ import TestPage from "../../layouts/TestPage.astro";
             <div class="flow-steps">
                 <div class="step-card">
                     <div class="step-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0fb5ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                     </div>
                     <div class="step-content">
                         <h3>Detección Temprana</h3>
@@ -37,7 +27,7 @@ import TestPage from "../../layouts/TestPage.astro";
                 </div>
                 <div class="step-card">
                     <div class="step-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 15h14.4"></path><path d="M16 10h2a2 2 0 0 1 2 2v1"></path><path d="M8 10H6a2 2 0 0 0-2 2v1"></path><path d="M20 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"></path><path d="M12 10a2 2 0 0 1 2 2v1H10v-1a2 2 0 0 1 2-2Z"></path><path d="M12 2v5"></path><path d="m15 5 2 2"></path><path d="m9 5-2 2"></path><path d="M2 10h20"></path></svg>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0fb5ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 15h14.4"></path><path d="M16 10h2a2 2 0 0 1 2 2v1"></path><path d="M8 10H6a2 2 0 0 0-2 2v1"></path><path d="M20 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"></path><path d="M12 10a2 2 0 0 1 2 2v1H10v-1a2 2 0 0 1 2-2Z"></path><path d="M12 2v5"></path><path d="m15 5 2 2"></path><path d="m9 5-2 2"></path><path d="M2 10h20"></path></svg>
                     </div>
                     <div class="step-content">
                         <h3>Validación Técnica</h3>
@@ -46,7 +36,7 @@ import TestPage from "../../layouts/TestPage.astro";
                 </div>
                 <div class="step-card">
                     <div class="step-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 11 3 3 7-7"></path><path d="M14 2 4 12V22H14L24 12Z"></path></svg>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0fb5ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 11 3 3 7-7"></path><path d="M14 2 4 12V22H14L24 12Z"></path></svg>
                     </div>
                     <div class="step-content">
                         <h3>Orden de Trabajo</h3>
@@ -78,6 +68,25 @@ import TestPage from "../../layouts/TestPage.astro";
             </div>
         </div>
 
+        <!-- FAQ Section for Prescription -->
+        <section class="faq-section">
+            <h2 class="text-center">Dudas sobre Prescripción</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Es compatible con mi maquinaria actual?</h3>
+                    <p>Nuestros mapas de prescripción se exportan en formatos estándar (Shapefile, ISO-XML) compatibles con la gran mayoría de terminales del mercado (John Deere, Topcon, Trimble, Fendt, etc.).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Quién firma las prescripciones?</h3>
+                    <p>Las órdenes de tratamiento pueden ser firmadas por tu asesor actual si utiliza nuestra plataforma, o por nuestro equipo de ingenieros agrónomos titulados.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo se envían los mapas al tractor?</h3>
+                    <p>Puedes hacerlo mediante un pendrive USB tradicional o, si tu máquina dispone de telemetría activo, enviarlo directamente desde nuestra plataforma al terminal de la máquina.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="highlight-box">
             <h3>¿Quieres ver cómo ahorras con Prescripción Variable?</h3>
             <p>Calculamos tu retorno de inversión basándonos en tus cultivos y hectáreas. Sin compromiso.</p>
@@ -87,20 +96,6 @@ import TestPage from "../../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-    .intro-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-
-    .rounded-img {
-        border-radius: 24px;
-        width: 100%;
-        height: auto;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
 
     .workflow-section {
         padding: 60px 0;
@@ -151,7 +146,6 @@ import TestPage from "../../layouts/TestPage.astro";
     }
 
     @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
         .step-card { flex-direction: column; text-align: center; }
     }
 </style>

@@ -9,17 +9,17 @@ import TestPage from "../../layouts/TestPage.astro";
     variant="sinergias"
 >
     <div class="subpage-content">
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
+        <section class="feature-intro">
+            <div class="feature-intro__content">
                 <h2>Tecnología para Todos</h2>
                 <p>
                     A través de nuestro convenio con los Consejos Agrícolas, facilitamos que incluso las explotaciones más pequeñas tengan acceso a herramientas de nivel SIEX. Centralizamos la monitorización climática y de plagas para dar servicio a comarcas enteras, democratizando la agricultura de precisión.
                 </p>
             </div>
-            <div class="image-showcase">
-                <img src="/images/sinergias/consejo_red_monitoreo.png" alt="Colaboración técnica con organizaciones agrícolas" class="rounded-img shadow-xl" />
+            <div class="feature-intro__image">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop" alt="Colaboración técnica con organizaciones agrícolas" class="rounded-img" />
             </div>
-        </div>
+        </section>
 
         <section class="institutional-value">
             <div class="cards-grid">
@@ -53,21 +53,33 @@ import TestPage from "../../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-    .intro-hero-grid {
+    .feature-intro {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
         align-items: center;
-        margin-bottom: 60px;
+        padding: 80px 0;
+    }
+
+    .feature-intro__content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 24px;
+        color: var(--color-gray-900);
+    }
+
+    .feature-intro__content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--color-gray-600);
     }
 
     .rounded-img {
-        border-radius: 24px;
+        border-radius: 32px;
         width: 100%;
-        height: auto;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
 
-    @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+        .feature-intro { grid-template-columns: 1fr; gap: 40px; }
     }
 </style>

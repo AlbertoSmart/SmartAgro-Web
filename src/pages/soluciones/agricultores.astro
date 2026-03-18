@@ -6,21 +6,11 @@ import TestPage from "../../layouts/TestPage.astro";
     title="Cuaderno de Campo para Agricultores – Ecosistema Digital Agrario"
     heading="Cuaderno de Campo para Agricultores"
     description="La herramienta definitiva para la gestión diaria de tu explotación. Digitaliza tus registros, controla tus insumos y cumple con la normativa SIEX de forma sencilla."
-    variant="tools"
+    variant="solutions"
+  layoutType="mosaic"
+  mosaicImages={["/images/soluciones/farmer_tablet_orchard.png", "/images/soluciones/agricultor_tech_fix.png"]}
 >
     <div class="subpage-content">
-        <!-- New Detailed Intro -->
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
-                <h2>Gestión Inteligente de la Explotación</h2>
-                <p>
-                    Diseñado específicamente para las necesidades del agricultor moderno, nuestro cuaderno digital simplifica la recopilación de datos en campo. No se trata solo de cumplir con la ley, sino de tener el control total de lo que ocurre en cada metro cuadrado de tu finca.
-                </p>
-            </div>
-            <div class="image-showcase">
-                <img src="/images/soluciones/agricultor_tablet_campo_1773663636207.png" alt="Agricultora usando tablet en campo" class="rounded-img shadow-xl" />
-            </div>
-        </div>
 
         <!-- Section: Your Day to Day -->
         <section class="daily-flow">
@@ -105,6 +95,25 @@ import TestPage from "../../layouts/TestPage.astro";
             </div>
         </div>
 
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="text-center">Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Es obligatorio el cuaderno digital en 2026?</h3>
+                    <p>Sí, la normativa europea y el SIEX exigen la digitalización de los registros de explotación. Nuestro sistema cumple al 100% con los requisitos legales actuales.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Necesito cobertura de internet en toda la finca?</h3>
+                    <p>No. Nuestra aplicación permite la toma de datos offline. Una vez que vuelvas a tener conexión (o llegues a casa), los datos se sincronizan automáticamente.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo se integran los sensores con el cuaderno?</h3>
+                    <p>Los sensores envían datos directamente a la nube. Nuestra IA procesa esta información y propone asientos automáticos en tu cuaderno, que tú solo tienes que validar.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="highlight-box">
             <h3>¿Hablamos sobre tu finca?</h3>
             <p>Cada explotación es un mundo. Cuéntanos tu caso y te enseñaremos cómo adaptamos nuestra tecnología a tus cultivos.</p>
@@ -115,15 +124,7 @@ import TestPage from "../../layouts/TestPage.astro";
 
 <style>
     .daily-flow {
-        padding: 40px 0 80px;
-    }
-
-    .intro-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 60px;
+        padding: 60px 0 100px; /* More breathing room */
     }
 
     .rounded-img {
@@ -142,10 +143,18 @@ import TestPage from "../../layouts/TestPage.astro";
 
     .flow-step {
         position: relative;
-        padding: 30px;
-        background: var(--color-gray-50);
+        padding: 40px 30px;
+        background: white;
         border-radius: 20px;
         text-align: left;
+        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        transition: transform 0.3s ease;
+    }
+
+    .flow-step:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-turquoise);
     }
 
     .flow-step__number {
@@ -179,14 +188,22 @@ import TestPage from "../../layouts/TestPage.astro";
     .text-white { color: white !important; }
 
     .beneficio-card {
-        padding: 20px;
+        padding: 30px 20px;
         text-align: center;
+        background: rgba(255,255,255,0.05);
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: background 0.3s ease;
+    }
+
+    .beneficio-card:hover {
+        background: rgba(255,255,255,0.08);
     }
 
     .beneficio-card .icon {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        display: block;
+        color: var(--color-turquoise);
+        margin-bottom: 20px;
+        display: inline-block;
     }
 
     .beneficio-card h3 {
@@ -201,5 +218,34 @@ import TestPage from "../../layouts/TestPage.astro";
 
     .tools-overview {
         padding: 40px 0;
+    }
+
+    .faq-section {
+        padding: 80px 0;
+        border-top: 1px solid var(--color-gray-100);
+    }
+
+    .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .faq-item h3 {
+        font-size: 1.1rem;
+        color: var(--color-dark);
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .faq-item p {
+        font-size: 0.95rem;
+        color: var(--color-gray-500);
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .flow-grid { grid-template-columns: 1fr; }
     }
 </style>

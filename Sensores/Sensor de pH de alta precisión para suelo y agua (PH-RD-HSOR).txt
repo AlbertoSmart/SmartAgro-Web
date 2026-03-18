@@ -1,0 +1,186 @@
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+High precision soil PH sensor
+Introduce
+Type NO.: PH-RD-HSOR
+HONDE TECHNOLOGY CO.,LTD
+
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+1. Product Introduce
+The PH-RD-HSOR sensor is a good solution to the traditional measurement of soil pH value,
+professional calibration instrument, avoid the cumbersome calibration, difficult integration, high
+power consumption, high price, difficult to carry, etc. It is an intelligent upgrade product of
+industrial acidity meter, which can be used for water quality, soil PH and so on. The pH value is
+continuously measured and controlled. The device is suitable for urban sewage treatment
+plants, soil PH value , chemical industry, printing and dyeing, papermaking, pharmaceutical,
+electroplating and environmental protection.
+2. Product Features
+1. Internally use axial capacitance filtering, 100M resistor to increase impedance and enhance
+stability
+2. High integration, small size, low power consumption and convenient carrying;
+3. Realize low cost, low price and high performance;
+4. High integration, long life, convenience and high reliability;
+5. Up to four isolation, can resist the complex interference situation on site, waterproof rating
+IP68
+6. The electrode uses high-quality low-noise cable, can make the signal output length of more
+than 20 meters
+7. One-piece, split, split BNC connector three shapes, suitable for a variety of installation
+environments
+3. Product application
+Applicable to water-saving agricultural irrigation, greenhouses, flowers and vegetables,
+grassland pastures, rapid water quality testing, plant cultivation, scientific experiments and
+other fields.
+4. Product Parameter
+1. Technical Parameters
+ Measuring range: pH: 0 ~ 14 pH
+ Accuracy: ±0.02pH; ±1mV
+ Resolution: 0.01pH; 1mV
+ Stability: ≤0.02pH/24 hours; ≤3mV/24 hours
+ Output signal:
+A: Voltage signal (0~2V, 0~2.5V, 0~5V, 0~10V, one of four)
+B: 4 to 20 mA (current loop)
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+C: RS485 (standard Modbus-RTU protocol, device default address: 01)
+ Supply voltage: 5 ~ 24V DC (when the output signal is 0 ~ 2V, 0 ~ 2.5V, RS485)
+ 12~24V DC (when the output signal is 0~5V, 0~10V, 4~20mA) (can be customized 3.3 ~
+5V DC)
+ Working environment: temperature 0 ~ 60 ° C;
+ Humidity ≤ 85% RH
+ Power consumption: ≤0.5W
+ Impedance requirements for current signals
+Supply voltage 9V 12V 20V 24V
+Maximum impedance 125Ω 250Ω 500Ω >500Ω
+5. Product size
+ PH host
+ Electrode
+PH electrode
+ Square stainless steel water storage tank
+
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+ Round stainless steel water storage tank
+6. Instructions
+
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+7. Line connection diagram
+
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+8. Data conversion method
+The PH sensor has good linear characteristics. The following is a typical calibration formula.
+V: voltage value collected by the collector, unit: V;
+A: Current value collected by the collector, unit: mA
+output signal pH conversion method
+0～2V DC PH＝7*V
+0～5V DC PH＝2.8*V
+0～10V DC PH＝1.4*V
+4～20mA PH＝0.875*A－3.5
+RS485 signal (default address 01):
+Standard Modbus-RTU protocol, baud rate: 9600; check digit: none; data bit: 8; stop bit: 1
+1. modify the address, for example: change the address of the transmitter with address 1 to 2,
+host → slave
+Original
+address
+Function
+code
+Reserved
+1
+Reserved
+2
+Reserved
+3
+new
+address
+CRC16
+low
+CRC16
+high
+0X01 0X06 0X00 0X30 0X00 0X02 0X08 0X04
+Remark: If you forget the original address of the sensor, you can use the broadcast address
+0XFE instead. When using 0XFE, the host can only be connected to one slave, and the return
+address is still the original address, which can be used as the address query method.
+2. Query data
+Query the data of the transmitter (address 1) (PH value), host → slave
+Address Function
+code
+Start
+register
+address
+high
+Start
+register
+address
+low
+Register
+length
+high
+Register
+length
+low
+CRC16
+low
+CRC16
+high
+0X01 0X03 0X00 0X00 0X00 0X01 0X84 0X0A
+If the transmitter receives correctly, return the following data, slave → host
+Address Function
+code
+Data
+lenght
+Register 0
+data high
+Register 0
+data low
+CRC16
+low
+CRC16
+high
+0X01 0X03 0X02 0X02 0XAE 0x38 0X98
+PH Value
+HONDE TECHNOLOGY CO.,LTD
+www.hondetechco.com
+Data representation method:
+Data representation: Convert data to decimal ÷100
+The above data indicates that the pH value is 6.86
+3. PH value offset calibration
+Data description Data length Register
+address
+Type of data Read and
+write type
+Note
+PH offset value 1 0X0054 Integer Read/Write Numerical
+accumulation,
+0X0000:
+Restore to
+the initial
+value
+For example add 0.1 to the sensors address 01 to the present value, send the following instruction
+Address Function
+code
+Register
+data high
+Register
+data low
+PH offset value CRC16
+low
+CRC16
+high
+0X03 0X06 0X00 0X54 00 0A 0x49 0XFF
+If success, feed back : 03 06 00 54 00 0A 49 FF.
+9. Precautions for use
+1. In order to ensure that the electrode is correctly measured on the pipeline, the data gap
+between the measuring cells should be avoided to cause data misalignment;
+2. Please check whether the packaging is intact, and check whether the product model is
+consistent with the selection;
+3. Do not electrify the wiring, the wiring is completed, and the power can be turned on after
+checking.
+4. Do not arbitrarily change the components or wires that have been soldered at the time of
+shipment;
+5. The sensor is a precision device, please do not disassemble it yourself, use sharp objects or
+corrosive liquid to touch the sensor surface to avoid damage to the product;

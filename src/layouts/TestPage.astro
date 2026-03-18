@@ -13,8 +13,11 @@ interface Props {
     | "ayudas"
     | "sinergias"
     | "legal"
-    | "mi-area"
+    | "solutions"
     | "eventos";
+  layoutType?: "suspended" | "mosaic" | "minimalist";
+  image?: string;
+  mosaicImages?: string[];
 }
 
 const {
@@ -22,69 +25,58 @@ const {
   heading,
   description = "",
   variant = "legal",
+  layoutType = "minimalist",
+  mosaicImages = [],
+  image,
 } = Astro.props;
+
+// Specific data/visuals for different layouts
+const showMosaic = layoutType === "mosaic";
+const showSuspended = layoutType === "suspended";
+const showMinimalist = layoutType === "minimalist";
 ---
 
 <Layout title={`${title}`} transparent={true} showNewsletter={true}>
   <main>
-    <section class={`page-hero page-hero--${variant}`}>
-      <div class="page-hero__bg">
-        <svg
-          class="page-hero__doodle"
-          viewBox="0 0 600 300"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <!-- Drone -->
-          <g
-            transform="translate(480, 40)"
-            stroke="rgba(255,255,255,0.25)"
-            stroke-width="2"
-          >
-            <rect x="4" y="8" width="20" height="10" rx="2"></rect><line
-              x1="4"
-              y1="13"
-              x2="-10"
-              y2="6"></line><line x1="24" y1="13" x2="38" y2="6"></line><circle
-              cx="-10"
-              cy="4"
-              r="5"></circle><circle cx="38" cy="4" r="5"></circle>
-          </g>
-          <!-- Satellite -->
-          <g
-            transform="translate(520, 180)"
-            stroke="rgba(255,255,255,0.2)"
-            stroke-width="1.5"
-          >
-            <rect x="8" y="6" width="14" height="12" rx="1"></rect><rect
-              x="-8"
-              y="0"
-              width="10"
-              height="12"
-              rx="1"></rect><rect x="30" y="0" width="10" height="12" rx="1"
-            ></rect><line x1="8" y1="12" x2="-2" y2="5"></line><line
-              x1="22"
-              y1="12"
-              x2="32"
-              y2="5"></line>
-          </g>
-          <!-- Leaf -->
-          <g
-            transform="translate(50, 220)"
-            stroke="rgba(255,255,255,0.2)"
-            stroke-width="1.5"
-            fill="none"
-          >
-            <path d="M20 30 Q5 20 10 5 Q20 0 30 10 Q35 25 20 30Z"></path><path
-              d="M20 30 Q18 18 25 8"></path>
-          </g>
-        </svg>
-      </div>
-      <div class="page-hero__content container">
-        <h1>{heading}</h1>
-        {description && <p class="page-hero__desc">{description}</p>}
+    <section class={`page-hero page-hero--${variant} page-hero--${layoutType}`}>
+      <div class="container page-hero__container">
+        {showSuspended && (
+          <div class="hero-suspended">
+            <div class="hero-suspended__content">
+              <h1>{heading}</h1>
+              <p>{description}</p>
+            </div>
+            {image && (
+              <div class="hero-suspended__image">
+                <img src={image} alt={heading} />
+              </div>
+            )}
+          </div>
+        )}
+
+        {showMosaic && (
+          <div class="hero-mosaic">
+            <div class="hero-mosaic__content">
+              <h1>{heading}</h1>
+              <p>{description}</p>
+            </div>
+            <div class="hero-mosaic__images">
+              <div class="m-img m-img--1" style={mosaicImages[0] ? `background-image: url(${mosaicImages[0]})` : 'background: rgba(15, 181, 174, 0.1); border: 1px dashed rgba(255,255,255,0.2);'}></div>
+              <div class="m-img m-img--2" style={mosaicImages[1] ? `background-image: url(${mosaicImages[1]})` : 'background: rgba(0,0,0,0.3); border: 1px dashed rgba(255,255,255,0.15);'}>
+                {!mosaicImages[1] && <div class="fallback-viz">01010110</div>}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showMinimalist && (
+          <div class="hero-minimalist">
+             <h1 class="text-weight-heavy">{heading}</h1>
+          </div>
+        )}
       </div>
     </section>
+    
     <section class="page-body">
       <div class="container">
         <slot />
@@ -96,80 +88,217 @@ const {
 <style>
   .page-hero {
     position: relative;
-    padding: 180px 0 100px;
-    color: white;
+    height: auto;
+    min-height: 220px;
+    padding: 140px 0 30px; /* Minimalist vertical profile */
+    color: #FFFFFF !important;
     overflow: hidden;
-    background: var(--color-turquoise-dark);
+    display: flex;
+    align-items: center; /* Center horizontally/vertically if needed, but container will be at bottom */
+    background: var(--color-gray-900);
+    z-index: 1; 
+    margin-top: 0;
   }
 
-  .page-hero--tools {
-    background: #086d69;
-  }
-
-  .page-hero--news {
-    background: #1e293b;
-  }
-
-  .page-hero--contact {
-    background: #065f46;
-  }
-
-  .page-hero--idi {
-    background: #0f172a;
-  }
-
-  .page-hero--ayudas {
-    background: #92400e;
-  }
-
-  .page-hero--sinergias {
-    background: #3730a3;
-  }
-
-  .page-hero--eventos {
-    background: #9f1239;
-  }
-
-  .page-hero--mi-area {
-    background: #0f172a;
-  }
-
-  .page-hero--legal {
-    background: var(--color-gray-800);
-  }
-
-  .page-hero__bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-
-  .page-hero__doodle {
-    position: absolute;
-    right: -40px;
-    top: -30px;
-    width: 600px;
-    height: 300px;
-    opacity: 0.7;
-  }
-
-  .page-hero__content {
+  .page-hero__container {
+    width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    margin-top: auto;
   }
 
-  .page-hero__content h1 {
-    font-size: 2.6rem;
+  /* Variant Colors */
+  .page-hero--solutions { background: #0c4a6e; }
+  .page-hero--tools { background: #134e4a; }
+  .page-hero--news { background: #1e293b; }
+  .page-hero--contact { background: #064e3b; }
+  .page-hero--ayudas { background: #7c2d12; }
+  .page-hero--eventos { background: #881337; }
+
+  /* Breadcrumbs */
+  .hero-breadcrumbs {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
     font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 14px;
+    opacity: 0.9; /* High contrast as requested */
+    margin-bottom: 20px;
+    color: #e2e8f0; /* Light gray for legibility */
   }
 
-  .page-hero__desc {
-    font-size: 1.1rem;
-    opacity: 0.88;
-    max-width: 600px;
+  /* 01. Suspended Layout (Servicios) */
+  .hero-suspended {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    padding: 40px 0;
+  }
+
+  .hero-suspended__content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+  }
+
+  .hero-suspended__content p {
+    font-size: 1.25rem;
+    color: #f1f5f9;
+    max-width: 500px;
     line-height: 1.6;
+  }
+
+  .hero-suspended__image {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl);
+    transform: translateY(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 440px; /* Reduced to avoid overpowering the layout */
+    margin-left: auto;
+  }
+
+  .hero-suspended__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/10; /* More horizontal and elegant */
+    object-fit: cover;
+  }
+
+  .data-blob {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .data-blob .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    opacity: 0.5;
+  }
+
+  .data-blob .value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-turquoise);
+  }
+
+  /* 02. Mosaic Layout (Soluciones) */
+  .hero-mosaic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+  }
+
+  .hero-mosaic__content {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .hero-mosaic h1 {
+    font-size: 3.2rem;
+    font-weight: 950;
+    margin-bottom: 20px;
+    line-height: 0.95;
+    color: #FFFFFF;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .hero-mosaic p {
+    font-size: 1.15rem;
+    opacity: 1; /* Maximum clarity */
+    line-height: 1.6;
+    max-width: 500px;
+    color: #f1f5f9; /* Near white */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .hero-mosaic__images {
+    position: relative;
+    width: 320px;
+    height: 180px;
+  }
+
+  .m-img {
+    position: absolute;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .m-img--1 {
+    width: 200px;
+    height: 140px;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.05);
+  }
+
+  .m-img--2 {
+    width: 180px;
+    height: 120px;
+    bottom: -20px;
+    right: 0;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .fallback-viz {
+    font-family: monospace;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.15;
+    color: var(--color-turquoise);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .fallback-viz::after {
+    content: "ARCHIVE_REAL_RESOURCES";
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  /* 03. Minimalist Layout (Actualidad) */
+  .hero-minimalist {
+    padding-bottom: 20px;
+  }
+
+  .text-weight-heavy {
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin: 0;
+    line-height: 0.95;
+    color: #FFFFFF;
+  }
+
+  .minimalist-underline {
+    width: 60px;
+    height: 2px; /* Elegant 2px line as requested */
+    background: var(--color-turquoise);
+    margin-top: 28px;
   }
 
   .page-body {

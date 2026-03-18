@@ -1,0 +1,334 @@
+ 
+ 
+Dendrometer 
+ 
+ ECOMATIK GmbH 
+ Muenchner Str. 23 
+ D-85221 Dachau/Germany 
+ Tel.: +49  8131 260 738 
+ Fax: +49  8131 260 736 
+ e-mail: info@ecomatik.de 
+ website: www.ecomatik.de 
+ 
+ 
+Fruit Dendrometer  
+(Type DF5) 
+For continuous measurements of diameter of  
+fruit and vegetables 
+ 
+ 
+User Manual  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Version 01/2023 
+ 
+ 
+
+Fruit Dendrometer – Type DF5                                                                             
+        
+ 
+ 
+ 
+1 
+ 
+1. Introduction 
+Thank you for purchasing an Ecomatik Dendrometer type DF5. This is a sensor for continuous 
+measurements of extra small fruit and vegetable diameter under both indoor and outdoor con-
+ditions. 
+This manual is written to help you install and operate your DF5 dendrometer with least difficul-
+ty and for most desirable results. Please read it carefully before installing the sensor, and refer 
+to it if you should have any difficulty with the sensor in the future. 
+The dendrometer is the sensor part of a measuring system. This means that the dendrometer 
+should be connected to a data logger for continuous data recording. The dendrometer is com-
+patible with the most types of data loggers and microcontrollers (i.a. Arduino). 
+ 
+2. Product Description  
+As shown below, the DF5 dendrometer consists of: 
+1x Sensor with quick-mount fruit gripper hook, 5 m cable 
+1x Piece re-usable UV-resistant rubber reusable to fix the sensor cable at the branch/stem for 
+strain relief (rubber cord may also be delivered as separate part of a bulk delivery. Then the 
+total length may be delivered in one piece on a roll and).  
+1x Piece re-usable string cord to hang sensor to release the instrumented fruit from additional 
+sensor weight.  
+2x Cable strips to fix string cord to fruit carrying branch (for correct installation of the strips 
+please refer to the below section “Installation”)  
+ 
+   
+  
+DF5 Fruit Dendrometer 
+The standard cable length is 5 m. if you ordered cable extension, the cable length is the or-
+dered extension + 5 m. 
+ 
+3. Safety Information 
+The sensor is protected from rain water, but it is not sealed. Please do not immerse the sensor 
+in water. Avoid any tension between the cable and sensor during handling and operation. 
+Pay attention to connections to data logger. Wrong connections will provide wrong readings. 
+Max. measurement range 11 mm until maintenance required, exceedance may cause 
+sensor damage! 
+Fruit Dendrometer – Type DF5                                                                             
+        
+ 
+ 
+ 
+2 
+ 
+4. Installation  
+Tools & accessories:  
+- light resistant rubber cord for strain relief of the sensor cable. 
+- string cord to hang sensor on fruit carrying branch to release the instrumented fruit from 
+additional sensor weight 
+- 2x cable strips to fix string cord to fruit carrying branch 
+- Additional tools required: scissors for cutting cords 
+a)  Select a representative fruit for instrumentation. 
+b)  Use the included rubber cord to strain relief the sensor by fixing the sensor cable on the fruit 
+carrying branch. Please leave enough cable between the fixation point on the branch and the 
+sensor. In the final installation position, the fruit sensor should be able to move freely with the 
+instrumented fruit, without tension on the cable. 
+c) Use the included string cord to hang the sensor at the fruit carrying branch and adjust the 
+positioning such that the sensor in its final installation position does not exert additional 
+weight to the instrumented fruit.  
+IMPORTANT:  
+- Please mind orientation of the sensor such that rod entrance, as well as wire outlet should 
+hence always be inclined downwards. 
+- Please do not tie the string cord directly to the branch to avoid strangulating the branch. To 
+fix the string cord to the branch you may either use the included cable strips, loosely fixed to 
+the branch, or the elastic rubber cord and tie the string cord to the fixed strips, or the rubber 
+cord respectively.  
+d)  Untighten the knurled-head nuts such that the fruit gripper hook can be moved. 
+e)  Open sensor clamping system and carefully insert the fruit between the fruit gripper hook 
+and the sensor piston.  
+f) Move the dendrometer body along the sliding rail, so that the sensor rod is pushed in by 
+about 3 to 4 mm and the fruit is firmly clamped between fruit gripper hook and sensor rod. 
+Then lock the gripper hook at the desired position by firmly tightening the two knurled-head 
+nuts.  
+g) Fix the cable onto the stem or on a ground stake for strain relief of the sensor cable between 
+instrumented plant and data logger. This can be done using a rope or cable straps. There 
+should be no tension between the sensor, fixation point at the fruit carrying branch and the 
+remaining sensor cable.  
+ 
+!! IMPORTANT !!  
+Fix the cable onto the tree stem/branch so that the sensor is protected from any a cci-
+dental pull/ drag of the entire cable length. This can be done using a  rope or cable 
+straps. In addition, there should be no tension between the sensor and cable.  
+Ensure that no rain water can run along the cable, or the sensor rod and enter the sen-
+sor casing. Rod entrance, as well as wire outlet should hence always be incl ined 
+downwards. 
+ 
+ 
+Fruit Dendrometer – Type DF5                                                                             
+        
+ 
+ 
+ 
+3 
+ 
+5. Wiring and Logger Configuration 
+The dendrometer is compatible with most data loggers and microcontrollers (i.a. Arduino). 
+This section provides required information for wiring the sensor in to a data logger and con-
+vert raw data from volts into micrometers. Please contact us if you require further information 
+or assistance.  
+Recommended is a logger measurement resolution of at least 12 bits and a switched (power 
+up < 100 msec), stable, regulated excitation voltage (Vex) output to supply the dendrometer 
+in the voltage range of 0.5 to 10VDC.  
+ 
+4-wire connection 
+(cable type: 4-wires + shield) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+An interval 0.5-hour for data collection can reveal the diurnal course of diameter changes very 
+well. 
+ 
+In the following we describe the connection with Dendrometer Logger (DL18), Campbell Log-
+ger (CR1000). Please contact us if your logger is not described here. 
+ 
+Dendrometer Data Logger (DL18) 
+The DL18 is a battery powered, waterproof logger for connecting 4 dendrometers. It is a very 
+effective data logger for dendrometer measurement under outdoor conditions. For details 
+please see the user manual of the DL18.  
+ 
+Campbell Data Logger (CR1000) 
+The dendrometer can be measured both in single-ended voltage as well as differential voltage 
+mode. Differential voltage mode provides better accuracy. But single-ended mode requires half 
+as many channels as differential mode. One CR1000 can include 16 dendrometers in single-
+ended mode, but only 8 dendrometers in differential mode. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Single-ended Voltage 
+Cable Color Input Port 
+Yellow H (Signal, Vout +) 
+Green GND 
+Brown Vex 
+White GND 
+Black GND 
+ 
+ Differential Voltage 
+Cable Color Input Port 
+Yellow H (Signal, Vout +) 
+Green L  (Signal, Vout -) 
+Brown Vex 
+White GND 
+Black GND 
+ 
+Fruit Dendrometer – Type DF5                                                                             
+        
+ 
+ 
+ 
+4 
+ 
+ 
+ 
+Single-ended Voltage Mode ( 2 dendrometers) 
+ Connection 
+Cable Color Input Port 
+1st dendrometer Yellow 1H 
+Green Ground 
+Brown Vx1 
+White Ground 
+2nd dendrometer Yellow 1L 
+Green Ground 
+Brown Vx1 
+White Ground 
+Program Syntax 
+ExciteV (Vx1,2500,0) 
+VoltSe(SEVolt(),2,mV2500,1,True,0,_50Hz,Mult(),Offs()) 
+If Multiplier=4.4, Offset=0, the results are measured in microns. 
+ 
+Differential Voltage Mode ( 2 dendrometers) 
+Connection 
+Cable Color Input Port 
+1st dendrometer Yellow 1H 
+Green 1L 
+Brown Vx1 
+White Ground 
+2nd dendrometer Yellow 2H 
+Green 2L 
+Brown Vx1 
+White Ground 
+Program Syntax 
+ExciteV (Vx1,2500,0) 
+VoltDiff(DiffVolt(),2,mV2500,1,True,0,_50Hz,Mult(),Offs()) 
+If Multiplier=4.4, Offset=0, the results are measured in microns. 
+An interval 0.5-hour for data collection can reveal the diurnal course of diameter changes very well. 
+ 
+ 
+Sensor measurement value conversion: 
+a) Converting raw voltage signal to current Sensor position, Xsensor  (mm):  
+ Xsensor (mm) = Vout (V)/Vrvs (V)  * 11 mm 
+ 
+b) Conversion of voltage output in mm fruit diameter:  
+o  If final fruit diameter within maintenance-free diameter range 1 from  0 to 11 mm:  
+Hook in start position at 0 distance between hook and sensor piston:  
+ Fruit diameter, Dfruit (mm) = Xsensor (mm) 
+ 
+ 
+Fruit Dendrometer – Type DF5                                                                             
+        
+ 
+ 
+ 
+5 
+ 
+ 
+o If final fruit diameter exceeds maintenance free diameter range of 11 mm, reposition-
+ing is required somewhat before reaching the end of the measurement range of 11 mm: 
+ Diameter range from 0 to 11 mm, Fruit diameter, Dfruit_1 (mm): 
+Dfruit= Xsensor_1 (mm)  
+ 
+ Diameter range from 11 to 30 mm: Fruit diameter. 
+In total repositioning may be required two to three times  to reach the maximum 
+possible fruit diameter of 30 mm, the DF5 can be used for.  
+For calculating absolute fruit size after repositioning the following formula applies: 
+Dfruit = Xsensor_current (mm) – Xsensor_ini (mm) + Dfruit_prev (mm) 
+ 
+Where Xsensor_current is the current sensor position at a certain time after repo-
+sitioning, Xsensor_ini is the first valid reading of sensor position after repositioning 
+(e.g. 3 mm sensor pressed in after repositioning) and Dfruit_prev (mm) is the last 
+valid value of Dfruit_1 from measurements in range 1 before repositioning. 
+ 
+EXAMPLE for fruit diameter calculation in diameter calculation after repositioning:  
+- Last valid value of the fruit diameter Dfruit_1 from range 1 before repositioning: 10 mm 
+- Initial first valid reading of sensor position Xsensor_ini (mm) after repositioning: 3 mm  
+  (sensor pressed in 3 mm after repositioning)  
+- New current reading Xsensor_current (mm)  after repositioning the sensor to range 2: 6 mm  
+ Current absolute fruit size after repositioning is  
+Dfruit = 6 mm – 3 mm + 10 mm = 13 mm 
+ 
+ 
+6. Adjustment and maintenance  
+The sensor is protected against water droplets but is not waterproof. 
+Depending on th e growth rate of t he fruit, the sensor should be reset after some time. When 
+the output approaches 11 mm, the sensor needs to be reset. 
+To do so, relax the knurled-head screws and move the sensor body slowly along the slide rail, 
+until the sensor rod is pushed out completely. Then slowly move the dendrometer body along 
+the sliding rail  in the opposite direction, until the sensor rod is pushed in again by about 2-3 
+mm and lock the dendrometer at the desired position by firmly tightening the two knurled-head 
+nuts.  
+When the se nsor is c orrectly insta lled, it will function un der outdoo r conditions without the 
+need for further maintenance.  
+ 
+ 
+ 
+ 
+ 
+ 
+Fruit Dendrometer – Type DF5                                                                             
+        
+ 
+ 
+ 
+6 
+ 
+7. Technical Specifications  
+Name of the Sensor  Hook-mount fruit dendrometer small  
+Type DF5 
+Use area  For measuring small fruits 
+Suitable for fruit size  Diameter 0-30 mm  
+Range of the senor 11 mm   
+Resolution The resolution of the sensor itself is infinite. The resolution of read-
+ings is determined by connected data logger, e.g.  
+CR1000: 1.5 µm 
+Dendrometer logger DL18: 0.2 µm 
+Accuracy Dendrometer dependent: 
+Max. ±4.5% of reading (stable offset) 
+ 
+Dependent on the connected data logger, e.g.:  
+CR1000:±(0.04% of reading+4.4 µm) 
+Dendrometer logger DL18: ±0.1% 
+Temperature coefficient 
+- Dendrometer 
+ 
+<0.2 µm / °C in the whole range 
+Linearity  <1% 
+Environment   Outdoor condition: -25 to 70C air temperature, 0 to 100% relative 
+air humidity   
+Weight of the sensor  15 g without cable 
+Power supply  Stabilized Vex of 0.5 – 10 VDC, power consumption practically 
+zero 
+Output signal (Vout) 0 to supplied Vex 
+Material Stainless steel and Aluminium 
+Cable length 5 m, extendable up to 100 m  
+ 
+ 

@@ -5,41 +5,55 @@ import TestPage from "../../layouts/TestPage.astro";
 <TestPage
     title="Ayudas a la Digitalización – Cuaderno de Campo Digital"
     heading="Financia tu Transformación"
-    description="Te ayudamos a navegar por el ecosistema de subvenciones europeas y nacionales para la agricultura 4.0."
+    description="Asesoramiento experto para la transformación digital de tu negocio agrícola. Estrategias personalizadas para maximizar tu rentabilidad."
     variant="ayudas"
+    layoutType="suspended"
+    image="https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=1200"
 >
     <div class="subpage-content">
-        <div class="intro-hero-grid">
-            <div class="feature-detail glass">
-                <h2>Más allá del Kit Digital</h2>
-                <p>
-                    Además del Kit Digital, existen líneas específicas de modernización como el PERTE Agroalimentario o las ayudas del Programa de Desarrollo Rural (PDR) gestionadas por las comunidades autónomas. Nuestra plataforma cumple con los requisitos técnicos exigidos en estas convocatorias, facilitando la obtención de la subvención.
-                </p>
-            </div>
-            <div class="image-showcase">
-                <img src="/images/ayudas/kit_digital.png" alt="Ayudas gubernamentales y europeas agricultura" class="rounded-img shadow-xl" />
-            </div>
-        </div>
 
         <section class="deep-info">
+            <h2 class="text-center">Más Allá del Kit Digital</h2>
             <div class="cards-grid">
                 <div class="feature-card">
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/6325984/pexels-photo-6325984.jpeg?auto=compress&cs=tinysrgb&w=200" alt="NextGen Icon" />
+                    </div>
                     <h3>Fondos Next Generation</h3>
-                    <p>
-                        Información actualizada sobre convocatorias centradas en la resiliencia y sostenibilidad del sector agrario tras la crisis.
-                    </p>
+                    <p>Gestión estratégica de convocatorias centradas en la resiliencia y modernización estructural del sector primario.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/414860/pexels-photo-414860.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Energía Icon" />
+                    </div>
                     <h3>Eficiencia Energética</h3>
-                    <p>
-                        Líneas específicas para la instalación de sensores que reduzcan el consumo de agua y energía en sistemas de riego.
-                    </p>
+                    <p>Subvenciones específicas para optimización hídrica, energía fotovoltaica y reducción de huella de carbono.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-card__img-icon">
+                        <img src="https://images.pexels.com/photos/7681092/pexels-photo-7681092.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Memoria Icon" />
+                    </div>
                     <h3>Justificación Técnica</h3>
-                    <p>
-                        Generamos informes automáticos detallando las mejoras logradas en la explotación, vitales para el cobro final de la ayuda.
-                    </p>
+                    <p>Nuestra plataforma genera automáticamente los informes requeridos para el cobro final, sin errores administrativos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section for Subsidies -->
+        <section class="faq-section">
+            <h2 class="text-center">Dudas sobre otras Ayudas</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Qué es el PERTE Agroalimentario?</h3>
+                    <p>Es un programa de ayudas destinado a la modernización y digitalización del sector agroalimentario, con especial foco en la trazabilidad y la seguridad alimentaria.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Son compatibles estas ayudas entre sí?</h3>
+                    <p>Depende de la convocatoria específica. Generalmente, el Kit Digital es compatible con otras ayudas PDR siempre que no cubran exactamente el mismo concepto de gasto.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo nos ayudáis en la solicitud?</h3>
+                    <p>Proporcionamos toda la documentación técnica, presupuestos desglosados y memorias de actuación que requieren los organismos públicos para aprobar tu proyecto.</p>
                 </div>
             </div>
         </section>
@@ -53,21 +67,29 @@ import TestPage from "../../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-    .intro-hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
-        align-items: center;
-        margin-bottom: 60px;
-    }
-
-    .rounded-img {
+    .deep-info { padding: 80px 0; }
+    .feature-card {
+        background: white;
+        padding: 40px;
         border-radius: 24px;
-        width: 100%;
-        height: auto;
+        border: 1px solid var(--color-gray-100);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        text-align: center;
+        transition: all 0.3s ease;
     }
+    .feature-card:hover { transform: translateY(-8px); border-color: var(--color-turquoise); }
+    .feature-card__img-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+    .feature-card__img-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .feature-card h3 { color: var(--color-gray-900); font-size: 1.2rem; }
+    .feature-card p { color: var(--color-gray-600); font-size: 0.9rem; line-height: 1.5; margin-top: 12px; }
 
-    @media (max-width: 768px) {
-        .intro-hero-grid { grid-template-columns: 1fr; }
-    }
+    .faq-section { background: white; padding: 60px; border-radius: 32px; border: 1px solid var(--color-gray-100); }
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+    .faq-item h3 { color: var(--color-turquoise-dark); margin-bottom: 12px; }
 </style>

@@ -7,6 +7,7 @@ import TestPage from "../layouts/TestPage.astro";
   heading="Estamos a tu disposición"
   description="¿Tienes alguna duda sobre la digitalización de tu finca o la integración con SIEX? Nuestro equipo de soporte y atención al cliente te ayudará en lo que necesites."
   variant="contact"
+  layoutType="minimalist"
 >
   <div class="contact-grid">
     <div class="contact-info">
@@ -105,12 +106,31 @@ import TestPage from "../layouts/TestPage.astro";
     </div>
   </div>
 
+  <!-- FAQ Section for Contact -->
+  <section class="faq-section-contact">
+    <h2 class="text-center">Preguntas Frecuentes antes de Contactar</h2>
+    <div class="faq-grid-contact">
+      <div class="faq-item">
+        <h3>¿Cuánto tardáis en responder?</h3>
+        <p>Nuestro compromiso es responder a todas las consultas enviadas por formulario en un plazo máximo de 24 horas laborables.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Ofrecéis demos personalizadas?</h3>
+        <p>Sí. Puedes solicitar una videollamada donde uno de nuestros expertos te mostrará la plataforma adaptada a tus cultivos específicos.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Dónde se encuentran vuestras oficinas?</h3>
+        <p>Nuestra sede central está en Granada, pero damos servicio y soporte técnico presencial en toda la península ibérica.</p>
+      </div>
+    </div>
+  </section>
+
   <style>
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
       gap: 40px;
-      margin-top: -80px;
+      margin-top: 40px; /* Space from the minimalist Hero */
       position: relative;
       z-index: 10;
     }
@@ -125,8 +145,15 @@ import TestPage from "../layouts/TestPage.astro";
       background: white;
       padding: 32px;
       border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-      border: 1px solid var(--color-gray-100);
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: var(--color-turquoise);
     }
 
     .contact-card__icon {
@@ -164,8 +191,8 @@ import TestPage from "../layouts/TestPage.astro";
       background: white;
       padding: 48px;
       border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--color-gray-100);
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
     }
 
     .contact-form {
@@ -211,6 +238,32 @@ import TestPage from "../layouts/TestPage.astro";
         grid-template-columns: 1fr;
         margin-top: 20px;
       }
+    }
+
+    .faq-section-contact {
+      margin-top: 100px;
+      padding-top: 80px;
+      border-top: 1px solid var(--color-gray-100);
+    }
+
+    .faq-grid-contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .faq-grid-contact h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: var(--color-gray-900);
+      font-weight: 700;
+    }
+
+    .faq-grid-contact p {
+      font-size: 0.95rem;
+      color: var(--color-gray-500);
+      line-height: 1.6;
     }
   </style>
 </TestPage>

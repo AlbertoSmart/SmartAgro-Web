@@ -1,0 +1,408 @@
+---
+import TestPage from "../../layouts/TestPage.astro";
+---
+
+<TestPage
+  title="Especificaciones Técnicas: Dendrómetro de Fruto"
+  heading="Dendrómetro de Fruto: Monitorización del Calibre y la Tasa de Expansión"
+  description="Manual técnico sobre el seguimiento continuo del crecimiento de frutos para la optimización del rendimiento y la calidad comercial."
+  variant="tools"
+  layoutType="minimalist"
+>
+  <div class="sensor-white-paper">
+    <aside class="paper-nav">
+      <ul>
+        <li><a href="#operacion">Principio de Operación</a></li>
+        <li><a href="#especificaciones">Especificaciones Técnicas</a></li>
+        <li><a href="#instalacion">Guía de Instalación</a></li>
+        <li><a href="#interpretacion">Interpretación de Datos</a></li>
+        <li><a href="#mantenimiento">Mantenimiento y Calibración</a></li>
+      </ul>
+    </aside>
+
+    <article class="paper-content">
+      <!-- BLOQUE 1: PRINCIPIO DE OPERACIÓN -->
+      <section id="operacion" class="paper-section">
+        <h2 class="paper-title">
+          1. Principio de Operación: Sensor de Desplazamiento Lineal
+        </h2>
+        <div class="main-image-placeholder">
+          <img
+            src="/images/sensores/dendometroFruto2.png"
+            alt="Dendrómetro Fruto Detalle"
+          />
+          <p class="caption">
+            Figura 2.2: Sensor de calibre por pinza elastómera para la medición
+            de expansión de frutos cítricos y frutales de hueso.
+          </p>
+        </div>
+
+        <p class="paper-paragraph">
+          El dendrómetro de frutos (Serie RD-G) es un sensor de alta precisión
+          diseñado para medir el crecimiento diario y acumulado del diámetro de
+          los frutos. Utiliza un transductor de desplazamiento lineal que
+          convierte el movimiento mecánico de las pinzas en una señal eléctrica
+          proporcional. Este dispositivo permite capturar no solo el crecimiento
+          neto, sino también las micro-variaciones diurnas (contracción y
+          expansión) que son indicadores directos del estatus hídrico de la
+          planta.
+        </p>
+        <p class="paper-paragraph">
+          La pinza del sensor está fabricada en materiales ligeros y
+          térmicamente estables para minimizar errores por dilatación. Su diseño
+          ergonómico asegura que el fruto no sufra daños en la piel ni se vea
+          limitado en su desarrollo natural. La señal se transmite mediante
+          protocolos industriales (RS485 Modbus), lo que garantiza la integridad
+          de los datos en distancias largas y facilita la integración con
+          sistemas de telemetría IoT para la monitorización en tiempo real desde
+          la nube.
+        </p>
+      </section>
+
+      <!-- BLOQUE: ESPECIFICACIONES TÉCNICAS -->
+      <section id="especificaciones" class="paper-section">
+        <h2 class="paper-title">2. Especificaciones Técnicas (RD-G-60/100)</h2>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <strong>Rango de Medida:</strong>
+            <span>0 - 60 mm / 0 - 100 mm</span>
+          </div>
+          <div class="spec-item">
+            <strong>Precisión:</strong>
+            <span>± 0.05 mm</span>
+          </div>
+          <div class="spec-item">
+            <strong>Resolución:</strong>
+            <span>0.01 mm (10 µm)</span>
+          </div>
+          <div class="spec-item">
+            <strong>Alimentación:</strong>
+            <span>DC 5V - 24V</span>
+          </div>
+          <div class="spec-item">
+            <strong>Salida de Señal:</strong>
+            <span>RS485 Modbus / 4-20mA</span>
+          </div>
+          <div class="spec-item">
+            <strong>Temperatura Trabajo:</strong>
+            <span>-20 ℃ ~ 80 ℃</span>
+          </div>
+          <div class="spec-item">
+            <strong>Protección:</strong>
+            <span>IP65 (Resistente a intemperie)</span>
+          </div>
+          <div class="spec-item">
+            <strong>Material:</strong>
+            <span>Acero Inox + Polímero estabilizado UV</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 2: GUÍA DE INSTALACIÓN -->
+      <section id="instalacion" class="paper-section">
+        <h2 class="paper-title">
+          3. Guía de Instalación: Selección y Sujeción
+        </h2>
+        <p class="paper-paragraph">
+          La precisión de los datos de calibre depende exclusivamente de una
+          correcta elección del fruto y de un montaje que evite desplazamientos
+          por el viento.
+        </p>
+
+        <div class="installation-steps">
+          <div class="step-card">
+            <h4>Punto de Medida</h4>
+            <p>
+              Seleccione frutos en buen estado fitosanitario y representativos
+              del tamaño medio del árbol. Limpie suavemente la superficie del
+              fruto de restos de polvo o cera para asegurar un contacto óptimo
+              de los terminales del sensor.
+            </p>
+          </div>
+          <div class="step-card">
+            <h4>Fijación de Rama</h4>
+            <p>
+              Utilice soportes rígidos o bridas elásticas para asegurar el
+              cuerpo del sensor a la rama principal. El fruto debe quedar
+              "libre" dentro de las pinzas, pero el sensor no debe oscilar de
+              forma independiente a la rama.
+            </p>
+          </div>
+          <div class="step-card">
+            <h4>Compensación de Tensión</h4>
+            <p>
+              Asegúrese de que el muelle de retorno del sensor ejerce una
+              presión firme pero no deformante. Un ajuste excesivo podría marcar
+              el fruto o provocar su caída prematura por estrés mecánico
+              inducido.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 3: INTERPRETACIÓN DE DATOS -->
+      <section id="interpretacion" class="paper-section">
+        <h2 class="paper-title">
+          4. Interpretación de Datos: Predicción de Cosecha
+        </h2>
+        <p class="paper-paragraph">
+          Los datos de calibre se procesan para identificar las fases de
+          crecimiento y el momento óptimo de recolección comercial.
+        </p>
+
+        <div class="data-tech-grid">
+          <div class="tech-box">
+            <h4>Fase de Expansión</h4>
+            <p>
+              Siguiendo la curva sigmoidea de crecimiento, el dendrómetro
+              detecta el inicio de la Fase III, donde el fruto acumula agua
+              rápidamente. Un aplanamiento de la curva en esta fase indica la
+              necesidad urgente de intensificar el riego.
+            </p>
+          </div>
+          <div class="tech-box">
+            <h4>Madurez Comercial</h4>
+            <p>
+              Cuando el crecimiento neto diario se vuelve asintótico (tiende a
+              cero), el fruto ha alcanzado su máximo tamaño físico. A partir de
+              aquí, el manejo debe centrarse en la acumulación de sólidos
+              disueltos (Brix).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 4: MANTENIMIENTO Y CALIBRACIÓN -->
+      <section id="mantenimiento" class="paper-section">
+        <h2 class="paper-title">5. Mantenimiento del Sensor de Calibre</h2>
+        <p class="paper-paragraph">
+          Al ser un sensor mecánico móvil, requiere una revisión periódica para
+          asegurar que el fruto sigue dentro del rango de medida.
+        </p>
+
+        <div class="maintenance-manual">
+          <div class="manual-item">
+            <h4>Reposicionamiento</h4>
+            <p>
+              A medida que el fruto crece y se acerca al límite superior del
+              sensor (p.ej. 60mm), debe recolocarse en un fruto más joven o
+              ajustar el punto de anclaje para evitar el bloqueo del cursor de
+              medida.
+            </p>
+          </div>
+          <div class="manual-item">
+            <h4>Limpieza del Eje Deslizante</h4>
+            <p>
+              El eje del transductor debe estar libre de resinas, melazas o
+              polvo adherido que pueda aumentar la fricción. Limpiar con un paño
+              húmedo y aplicar una mínima gota de lubricante seco de teflón si
+              es necesario.
+            </p>
+          </div>
+          <div class="manual-item">
+            <h4>Verificación de Zero</h4>
+            <p>
+              Tras la campaña, desmonte el sensor y verifique que vuelve a la
+              posición cero sin holguras. Compruebe la integridad del fuelle de
+              protección IP para evitar la entrada de humedad a la electrónica
+              interna.
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</TestPage>
+<style is:global>
+  body {
+    background-color: #ffffff !important;
+    color: #1a1a1a;
+  }
+</style>
+
+<style>
+  .sensor-white-paper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    padding: 60px 0;
+  }
+  .paper-nav {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+  }
+  .paper-nav ul {
+    list-style: none;
+    padding: 0;
+    border-left: 2px solid #eeeeee;
+  }
+  .paper-nav a {
+    display: block;
+    padding: 16px 30px;
+    color: #666666;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+  .paper-nav a:hover {
+    color: var(--color-turquoise);
+    background: #f9f9f9;
+    padding-left: 40px;
+  }
+  .paper-section {
+    margin-bottom: 120px;
+  }
+  .paper-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+    color: #000000;
+    letter-spacing: -0.02em;
+  }
+  .paper-paragraph {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333333;
+    margin-bottom: 30px;
+    text-align: justify;
+  }
+  .main-image-placeholder {
+    margin-bottom: 40px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+  }
+  .main-image-placeholder img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+  }
+  .caption {
+    padding: 15px 25px;
+    font-size: 0.9rem;
+    color: #777777;
+    font-style: italic;
+    border-top: 1px solid #eeeeee;
+  }
+  .installation-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  .step-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 4px solid var(--color-turquoise);
+  }
+  .step-card h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #000000;
+    text-transform: uppercase;
+  }
+  .step-card p {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+  }
+  .data-tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 50px 0;
+  }
+  .tech-box {
+    padding: 40px;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+  }
+  .tech-box h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  .tech-box p {
+    font-size: 1rem;
+    color: #444444;
+    line-height: 1.7;
+  }
+  .maintenance-manual {
+    background: #000000;
+    color: #ffffff;
+    padding: 60px;
+    border-radius: 16px;
+    margin-top: 50px;
+  }
+  .manual-item {
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+  }
+  .manual-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .manual-item h4 {
+    color: var(--color-turquoise);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .manual-item p {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .spec-item {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-turquoise);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .spec-item strong {
+    font-size: 0.85rem;
+    color: #666666;
+    text-transform: uppercase;
+  }
+
+  .spec-item span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  @media (max-width: 1024px) {
+    .sensor-white-paper {
+      grid-template-columns: 1fr;
+    }
+    .paper-nav {
+      display: none;
+    }
+    .installation-steps,
+    .data-tech-grid,
+    .specs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,389 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import SensorCarousel from "../components/SensorCarousel.astro";
+
+const soilSensors = [
+  { name: "Sensor Suelo Temp/Hum", specs: "Optimización inmediata del consumo hídrico y costes energéticos.", image: "/images/sensores/SensorTemperaturaHumedadSuelo.png", category: "Suelo", href: "/sensores/suelo-humedad-temp" },
+  { name: "Sensor pH de Suelo", specs: "Gestión eficiente de la nutrición vegetal y reducción de lixiviación.", image: "/images/sensores/SensorphTemperaturaSuelo.png", category: "Suelo", href: "/sensores/suelo-ph" },
+  { name: "Sensor Suelo 8 en 1", specs: "Sonda multiparamétrica versátil para analítica avanzada en tiempo real.", image: "/images/sensores/SensorSuelo8en1.png", category: "Suelo", href: "/sensores/suelo-8en1" },
+  { name: "Sensor Tubular Multicapa", specs: "Análisis de perfil hídrico para una gestión de riego de alta precisión.", image: "/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png", category: "Suelo", href: "/sensores/suelo-tubular" },
+  { name: "Sensor Oxígeno Suelo", specs: "Detección preventiva de hipoxia radicular y patógenos edáficos.", image: "/images/sensores/SensorOxigenoSuelo.png", category: "Suelo", href: "/sensores/suelo-oxigeno" }
+];
+
+const plantSensors = [
+  { name: "Dendrómetro de Tronco", specs: "Monitorización continua de la dinámica hídrica y detección de estrés.", image: "/images/sensores/DendometroTronco.png", category: "Planta", href: "/sensores/planta-dendrometro-tronco" },
+  { name: "Dendrómetro de Fruto", specs: "Optimización de la curva de crecimiento y determinación del punto de cosecha.", image: "/images/sensores/dendometroFruto2.png", category: "Planta", href: "/sensores/planta-dendrometro-fruto" },
+  { name: "Sensor de Hoja Temp/Hum", specs: "Análisis técnico de riesgos fitosanitarios por humectación foliar.", image: "/images/sensores/SensorHojaChinosTemperaturayHumedad.png", category: "Planta", href: "/sensores/planta-hoja-humectacion" },
+  { name: "Sensor Temperatura Hoja", specs: "Medición de estrés térmico mediante termometría infrarroja.", image: "/images/sensores/SensorHojaChinosTemperaturayHumedad.png", category: "Planta", href: "/sensores/planta-temp-hoja" }
+];
+
+const otherSensors = [
+  { name: "Estación Meteorológica", specs: "Nodo integrado LoRaWAN para parametrización atmosférica completa.", image: "/images/sensores/EstacionMeteorologica.png", category: "Clima", href: "/sensores/clima-estacion" },
+  { name: "Sensor Nivel de Agua", specs: "Control hidrostático de precisión para gestión de recursos hídricos.", image: "/images/sensores/SensorNivelAgua.png", category: "Riego", href: "/sensores/agua-nivel" }
+];
+---
+
+<Layout title="Guía Técnica de Sensorización: Auditoría Agronómica">
+  <main class="editorial-guide">
+    <!-- HERO SECTION -->
+    <section class="editorial-hero">
+      <div class="container">
+        <div class="breadcrumb-flat">TECNOLOGÍA / AUDITORÍA HARDWARE / RENTABILIDAD</div>
+        <h1>Análisis de Hardware y <br/>Retorno de Inversión Agronómico</h1>
+        <p class="summary-block">
+          Este documento técnico analiza las ventajas operativas y el impacto económico de la digitalización de precisión. 
+          Nuestra auditoría se centra en tres pilares fundamentales: dinámica edáfica, fisiología vegetal y parametrización climática.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 1: SOIL (ZIG-ZAG) -->
+    <section class="editorial-section white-section">
+      <div class="container">
+        <div class="zig-zag-row">
+          <div class="text-content">
+            <h2>Ecosistema Edáfico: Dinámica del Agua y Nutrición</h2>
+            <div class="copy-pills">
+              <p>
+                El suelo es un reactor biológico complejo cuya gestión determina hasta el 70% del éxito de una campaña agrícola. 
+                La monitorización de los estratos edáficos mediante tecnología de permitividad dieléctrica (**FDR**) representa 
+                la piedra angular de la agricultura de precisión moderna.
+              </p>
+              <p>
+                A diferencia de las mediciones manuales, los sensores de inserción continua capturan la dinámica del agua en el perfil, 
+                identificando con precisión quirúrgica el límite de **Capacidad de Campo** y el punto de marchitez permanente.
+              </p>
+              <p>
+                La rentabilidad se manifiesta en la optimización de los ciclos de riego y fertirrigación. Al observar el avance del agua, 
+                evitamos la lixiviación de nutrientes y maximizamos la eficiencia del uso de nitrógeno (**NUE**).
+              </p>
+              <p>
+                La integración de sensores de pH y **Conductividad Eléctrica (EC)** permite controlar la salinidad en el bulbo húmedo. 
+                Esto previene bloqueos químicos y asegura que los nutrientes estén en formas absorbibles.
+              </p>
+              <p>
+                Finalmente, la monitorización del oxígeno detecta precozmente la **Hipoxia Radicular**. 
+                Prevenir el estrés por anoxia reduce drásticamente las enfermedades de cuello y raíz.
+              </p>
+            </div>
+            
+            <ul class="tech-specs">
+              <li>Optimización inmediata del consumo hídrico y energía.</li>
+              <li>Aumento de la Eficiencia del Uso de Nutrientes (**NUE**).</li>
+              <li>Control activo de salinidad y pH en tiempo real.</li>
+              <li>Prevención de patógenos por exceso de humedad radicular.</li>
+            </ul>
+          </div>
+          <div class="media-content">
+            <div class="image-placeholder">
+              <span>Visualización Dinámica Edáfica (600x400)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-section">
+        <div class="container">
+          <SensorCarousel sensors={soilSensors} title="Hardware de Monitorización de Suelo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PLANT (ZIG-ZAG REVERSE) -->
+    <section class="editorial-section grey-section">
+      <div class="container">
+        <div class="zig-zag-row zig-zag-row--reverse">
+          <div class="text-content">
+            <h2>Fisiología Vegetal: Análisis Metabólico Directo</h2>
+            <div class="copy-pills">
+              <p>
+                Mientras los sensores de suelo miden el entorno, los sensores fisiológicos "escuchan" directamente a la planta. 
+                La planta actúa como el sensor biológico definitivo de su propio ecosistema productivo.
+              </p>
+              <p>
+                Los **Dendrómetros** de tronco y fruto miden variaciones micrométricas en el diámetro de los órganos. 
+                Estas variaciones permiten calcular el **MDS (Maximum Daily Shrinkage)** o contracción máxima diaria.
+              </p>
+              <p>
+                El **MDS** es el indicador más sensible del estrés hídrico, detectando la caída de presión en el xilema 
+                antes de que se produzca un cierre estomático visible o daños irreversibles.
+              </p>
+              <p>
+                En fruticultura, monitorizar la curva de expansión logarítmica es vital. Optimizar el tamaño final 
+                mediante gestión hídrica en fases críticas asegura la obtención de **Calibres Premium**.
+              </p>
+              <p>
+                La temperatura foliar (**CWSI**) y el tiempo de **Mojado Foliar** son esenciales para la sanidad vegetal. 
+                Conocer la humectación exacta permite aplicar tratamientos preventivos solo cuando el riesgo existe.
+              </p>
+            </div>
+            
+            <ul class="tech-specs">
+              <li>Indicador precoz de estrés hídrico mediante **MDS**.</li>
+              <li>Maximización de rendimientos y calibres comerciales.</li>
+              <li>Automatización de riego basada en demanda transpirativa.</li>
+              <li>Reducción de coste en insumos fitosanitarios.</li>
+            </ul>
+          </div>
+          <div class="media-content">
+            <div class="image-placeholder">
+              <span>Análisis Fisiológico y Dendrometría (600x400)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section">
+        <div class="container">
+          <SensorCarousel sensors={plantSensors} title="Hardware de Monitorización Fisiológica" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CLIMATE & OTHERS (ZIG-ZAG) -->
+    <section class="editorial-section white-section">
+      <div class="container">
+        <div class="zig-zag-row">
+          <div class="text-content">
+            <h2>Gestión Atmosférica y Control Hidrostático</h2>
+            <div class="copy-pills">
+              <p>
+                La atmósfera dicta la demanda hídrica mediante la **Evapotranspiración (ET)**. 
+                Sin monitorización climática precisa, la gestión del riego carece de un marco de referencia sólido.
+              </p>
+              <p>
+                Las estaciones IoT integran múltiples sensores para calcular automáticamente la **ETp (Penman-Monteith)**. 
+                Este dato es el valor negativo fundamental en el balance hídrico de la finca.
+              </p>
+              <p>
+                La meteorología local determina el cálculo de horas-frío e **Integrales Térmicas (GDD)**. 
+                Estas predicciones permiten organizar la logística de cosecha y personal con semanas de antelación.
+              </p>
+              <p>
+                La monitorización hidrostática asegura el control de recursos hídricos en depósitos y pozos. 
+                Evitar roturas de stock hídrico es crítico en periodos de máxima demanda evaporativa.
+              </p>
+              <p>
+                La arquitectura de bajo consumo y comunicación **LoRaWAN** garantiza que los datos lleguen desde puntos remotos 
+                sin necesidad de infraestructuras complejas o costosas.
+              </p>
+            </div>
+            
+            <ul class="tech-specs">
+              <li>Cálculo preciso de **ETp** para balance hídrico.</li>
+              <li>Predicción de estadios fenológicos y riesgos de plagas.</li>
+              <li>Control de inventario hídrico en depósitos y balsas.</li>
+              <li>Conectividad remota de alta eficiencia via **LoRaWAN**.</li>
+            </ul>
+          </div>
+          <div class="media-content">
+            <div class="image-placeholder">
+              <span>Estación Meteorológica e Hidrostática (600x400)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-section">
+          <div class="container">
+            <SensorCarousel sensors={otherSensors} title="Clima y Sistemas de Gestión de Recursos" />
+          </div>
+        </div>
+
+        <div class="navigation-btn-container">
+          <a href="/sensores" class="btn-catalog">Explorar Catálogo Completo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .editorial-guide {
+    background: #FFFFFF;
+    color: #000000;
+    padding-top: 80px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* HERO */
+  .editorial-hero {
+    padding: 160px 0 120px;
+    background: #FFFFFF;
+    text-align: center;
+  }
+
+  .breadcrumb-flat {
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: 0.15em;
+    color: #888888;
+  }
+
+  .editorial-hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    max-width: 1100px;
+    margin: 0 auto 48px;
+    letter-spacing: -0.05em;
+  }
+
+  .summary-block {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #444444;
+    font-weight: 400;
+  }
+
+  /* ZIG-ZAG GRID */
+  .editorial-section {
+    padding: 160px 0;
+    overflow: hidden;
+  }
+
+  .zig-zag-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 100px;
+    align-items: center;
+    margin-bottom: 120px;
+  }
+
+  .zig-zag-row--reverse {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .zig-zag-row--reverse .text-content {
+    grid-column: 2;
+  }
+
+  .zig-zag-row--reverse .media-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .text-content h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 32px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    position: relative;
+    padding-bottom: 24px;
+  }
+
+  .text-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--color-turquoise);
+  }
+
+  .copy-pills p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: #333333;
+    max-width: 600px;
+  }
+
+  .tech-specs {
+    margin-top: 40px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .tech-specs li {
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #F0F0F0;
+    color: #555555;
+    display: flex;
+    align-items: center;
+  }
+
+  .tech-specs li::before {
+    content: "→";
+    margin-right: 12px;
+    color: var(--color-turquoise);
+    font-weight: 900;
+  }
+
+  /* PLACEHOLDERS */
+  .image-placeholder {
+    width: 100%;
+    aspect-ratio: 6 / 4;
+    background: #F8F9FA;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #DDD;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-placeholder span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #AAA;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* CAROUSEL CONTAINER */
+  .carousel-section {
+    padding: 100px 0;
+    background: #FAFAFA;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+  }
+
+  /* BUTTONS */
+  .navigation-btn-container {
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .btn-catalog {
+    display: inline-block;
+    padding: 24px 56px;
+    background: #000000;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+
+  .btn-catalog:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 1100px) {
+    .editorial-hero h1 { font-size: 3.5rem; }
+    .zig-zag-row, .zig-zag-row--reverse { 
+      grid-template-columns: 1fr; 
+      gap: 60px;
+    }
+    .zig-zag-row--reverse .text-content { grid-column: 1; }
+    .zig-zag-row--reverse .media-content { grid-column: 1; grid-row: 2; }
+  }
+
+  @media (max-width: 768px) {
+    .editorial-hero h1 { font-size: 2.8rem; }
+    .editorial-section { padding: 80px 0; }
+  }
+</style>

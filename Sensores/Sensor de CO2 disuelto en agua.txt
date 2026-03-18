@@ -1,0 +1,397 @@
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+ 
+ 
+ 
+ 
+ 
+ 
+Water Dissolved CO2 sensor 
+Instruction 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RD-WDCO2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+ 
+1. Overview 
+ 
+RD-WDCO2 is a gas detection module based on NDIR infrared absorption principle, which is suitable for detecting 
+carbon dioxide concentration in aqueous solution. RD-WDCO2 adopts patented optical cavity, imported light source and 
+dual-channel detector, which realizes the reference compensation of dual optical paths in space. RD -WDCO2 has the 
+characteristics of good selectivity, no oxygen dependence and long life. 
+RD-WDCO2 adopts convection diffusion ventilation mode and protective cover, which not only accelerates the 
+convection diffusion speed of gas, but also protects the ventilation film. RD -WDCO2 unique waterproof structure, 
+removable, easy to clean the sensor outer sleeve. RD -WDCO2 can be used to measure the concentration of dissolved 
+CO2 in water, and can also be used to monitor the concentration of CO2 in high temperature and high humidity 
+environment. The output signal is optional, which can meet the requirements of different measurement environments and 
+various high-precision and high-stability measurements. 
+2. Features 
+ 
+1. High precision infrared carbon dioxide sensor 
+2. Unique waterproof structure, detachable 
+3. It is suitable for the concentration of CO2 gas in various liquids 
+4. Advanced circuit design, high measurement accuracy and stable performance 
+5. The shell is light and convenient for field installation 
+6. Rich interfaces, convenient for customers to choose 
+7. Provide zero calibration, sensitivity calibration and clean air calibration 
+3. Application 
+ 
+1. Aquaculture 
+2. Water quality monitoring 
+3. Environmental monitoring of agricultural greenhouses 
+4. Solution analysis 
+5. Environmental monitoring of biopharmaceuticals 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+4. Technical parameters 
+ 
+CO2 CO2 
+Sensor type: 
+Measurement 
+accuracy: 
+Measuring range: 
+Response time: 
+Calibration: 
+Infrared principle 
+± (20PPM +5% reading) 
+0 ~ 2000PPM 
+< 20s 
+Standard calibration 
+Output parameter 
+Signal output: 
+ 
+ 
+ 
+4 ~ 20mA 
+0.4 ~ 3VDC 
+UART 
+IIC 
+PWM 
+RS485 
+485 parameter 
+Signal type: 
+RS485 Type: 
+Connection: 
+Address: 
+Communication 
+protocol: 
+Data format: 
+Baud rate: 
+RS485 serial port output 
+Multipoint, half duplex 
+2-wire system, the maximum communication distance is 1200 
+meters, and the cable is directly connected 
+1-254, which is set by software. The broadcast address is 255, 
+and the default address is 32 
+MODBUS, 
+1 start bit, 8 data bits, no parity, 1 end bit 
+Default: 9600bit/s 
+Energy consumption Power supply: 
+ 
+5VDC ± 5% (RS485, 12V for 4-20mA output) 
+ 
+Wiring mode Terminal: 
+Cable specification: 
+None 
+24 ~ 18AWG (0.5 ~ 1.0 mm), stripping length 2 ~ 3cm 
+Environment Working 
+environment: 
+Temperature-20... + 60 ℃ 
+Humidity 0... 90% RH, no condensation 
+ Storage 
+environment: 
+Temperature-20... + 80 ℃ 
+Humidity 0-90% RH, no condensation 
+Protection level 
+Shell protection 
+level: 
+Fire rating: 
+Electromagnetic 
+compatibility: 
+IP68 Refer to IEC 529-598/GB 700-86/GB 4208 
+V-0 Reference UL94 
+Refer to GB/T 13926, EN 61000-6-2, EN 61000-6-3 
+Materials and Colors Shell: 
+Weight: 
+ABS (Black) 
+Approximately 100g 
+5. Overall dimensions 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Unit:mm 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+6. Installation method 
+ 
+Install according to site requirements 
+ 
+ 
+ 
+ 
+ 
+7. Electrical wiring 
+ 
+Cable is defined as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Installation Notes: 
+1. Perform the wiring according to the electrical wiring diagram. 
+2. After confirming that the wiring is correct, the customer installs it according to the site conditions. 
+3. After the installation is complete, please conduct a power-on test within the specified power supply range. 
+ 
+ 
+ 
+ 
+UART+IIC wiring definition: 
+1 Red wire 5V 
+2 Black wire GND 
+3 Green wire RXD 
+4 Yellow wire TXD 
+5 White wire SDA 
+6 Brown wire SCL 
+UART+485 output definition 
+1 Red wire 12V 
+2 Black wire GND 
+3 Green wire RXD 
+4 Yellow wire TXD 
+5 White wire 485A 
+6 Brown wire 485B 
+UART+4～20mA/DA output definition 
+1 Red wire 12V 
+2 Black wire GND& Negative current output & Uart GND 
+3 Green wire RXD 
+4 Yellow wire TXD 
+5 White wire -Positive current output 
+5 White wire 4-20mA (0.4-2V) 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+8. Sensor Communication Protocol 
+ 
+1. Basic communication parameters: baud rate 9600bps, 8-bit data bit, 1-bit stop bit, no parity bit 
+Sensor default address: 32 (20H) 
+2. Host Send Protocol Format 
+The protocol consists of packets in a fixed format. The size of the packet varies according to the content of the message. 
+ 
+Byte Content 
+1 Address of communication unit (sensor address) 
+2 Function code 
+3 First bit of data area 
+4 Second bit of data area 
+5 Third bit of data area 
+6 Fourth bit of data area 
+... Other data 
+N-1 Low CRC 
+N CRC high position 
+ 
+Address of communication unit: This refers to the address of the lower computer unit when the host communicates with 
+the lower computer. The second byte of the packet indicates whether the message is a read command or a write 
+command. 03 indicates that the message is a read command, and 06 indicates that the message is a write command. 
+CRC is used to verify the correctness of transmitted data. Data is transmitted sequentially from low bytes to high bytes. 
+Text is transmitted from left to right. After all data transmission, it will be finished by CRC checking low and high. 
+Device return protocol format 
+The protocol consists of packets in a fixed format. The size of the packet varies according to the content of the message. 
+Command type 
+(1) Read the sensor concentration value: For example, read the current 32 (20H) sensor data, 
+The host sends commands to the sensor: 
+20 03 00 00 00 01 82 BB 
+20: Current sensor address 
+03: Read the sensor concentration 
+00 00: Start register address 
+00 01: Number of registers 
+82: High CRC 
+BB: Low CRC 
+The basic principle of cyclic redundancy check code (CRC) is to splice R -bit check code after K-bit information code, and 
+the whole code length is N bits, so this code is also called (N, K) code. For a given (N, K) code, it can be proved that 
+there exists a polynomial G (x) with the highest power N -K=R. A check code of K bits of information can be generated 
+according to G (x), and G (x) is called the generation polynomial of this CRC code. The specific generation process of 
+the check code is as follows: assuming that the information to be sent is represented by polynomial C (X), shift C (X) to 
+the left by R bit (which can be expressed as C (X) * 2R), so that R bit will be vacated to the right of C (X), which is the 
+position of the check code. The remainder obtained by dividing C (x) * 2R by the generated polynomial G (x) is the check 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+code. 
+The device will return the following data: 
+20 03 02 01 AB 44 6C (hexadecimal) 
+20: Current sensor address 
+03: Read the sensor concentration 
+02: Data area length 
+01 AB: Displays sensor gas concentration in PPM 
+The above data are all hexadecimal numbers, so it is necessary to convert them into decimal numbers before calculating 
+the concentration value 
+For example: 
+The feedback data is 01 AB in hex, and the data in decimal number is 427, so the value is 427ppm 
+44: CRC High 
+6C: Low CRC 
+CRC check value reference is the same as above 
+Note: If you forget the sensor address, please send the FF 03 00 00 00 02 D1 D5, FF is the universal address. 
+(2) Set the sensor address: For example, change the sensor address No.32 (20H) to No.01 
+The host sends commands to the sensor: 
+20 06 00 00 00 01 4E BB (hexadecimal) 
+20: Current sensor address 
+06: Function code (set sensor address) 
+00 00 00 01: Data area (new sensor address 00 01 after modification, which is 01) 
+4E: CRC High 
+BB: CRC Low 
+CRC check value is the same as above 
+The device will return the following data: 
+20 06 00 00 00 01 4E BB (hexadecimal) 
+Consistent with input 
+After the address is changed, the new read data command only needs to modify the first address to the modified address 
+of the current address and carry out CRC check to obtain a new check bit: 
+01 03 00 00 00 02 C4 0B (hexadecimal) 
+The device will return the following data: 
+01 03 04 00 01 0B E8 AC 8D (hexadecimal) 
+* This command is the data display window under modbus poll command of serial port debugging assistant. Double -click 
+the address display table to set a new address by modifying value 
+Note: If you forget the present address and you want to change the sensor address into 01, please send the following: 
+FF 06 00 00 00 01 5D D4   
+If success, it will feedback: FF 06 00 00 00 01 5D D4 
+(3) Set the baud rate 
+The baud rate can be changed by HEX in RS485 port and the instruction as following  
+If change into the 4800, please send  
+2357383131303034354221 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+If change into the 9600, please send  
+2357383131303031354521 
+Note, above instruction is in HEX format and even change successfully, it will not give feedback 
+And please power off and power on when you changed the baud rate and then it can work. 
+And above instruction can suitable for any sensor address. 
+(4) Sensor calibration 
+A: Make the calibration in the air, place the sensor in an outdoor ventilation environment, stabilize for 10-20 minutes, and 
+then send the following calibration command in hex, the default is 420ppm. 
+2357353030343230353421 
+Please pay attention to that, there is no feedback for this instruction and read the data when sending the instruction to 
+check whether it is around 420ppm, if yes, then calibration success. 
+B: Make the calibration in the standard solution, for examp le, the standa rd solution is 1000ppm, stabilize for 10 -20 
+minutes, and then send the following calibration command in hex 
+23573230303031303030353421 
+Please pay attention to that, there is no feedback for this instruction and read the data when sending the instruction to 
+check whether it is around 1000ppm, if yes, then calibration success. 
+(6) UART protocol  
+Interface definition: 4-conductor 2.54-pitch socket 
+Baud rate: 9600bps, 8 data bits, 1 stop bit, no check digit; 
+The concentration is read and returned as base 16 data; 
+Zero calibration and SPAN calibration, command and data are ASCII, the number of data bytes per frame is not fixed, 
+0x20 Beginning, 0x20 end. 
+The sensor actively uploads the concentration value, and the data is output in ASCII code form in the following format: 
+For example, if the present value is 723PPM, the format as following  
+20 20 37 32 33 20 70 70 6D 0D 0A 
+(7) IIC protocol 
+The module operates in the slave mode of the IIC and can be connected to an external MCU with internal pull -up 
+resistors. The slave address of the module device is: 0x31 
+Slave address format: 
+BIT7 BIT6 BIT5 BIT4 BIT3 BIT2 BIT1 BIT0 
+0 1 1 0 0 0 1 R/W Bit 
+R/W Bit: Read = 1/Write = 0 
+The address of the module for a write operation is: 0x62 and the address for a read operation is: 0x63. 
+Host send timing: 
+1）Send start signal 
+2）Send address write (slave address + R/W Bit(0) = 0x62) and check answer 
+3）Send read command (ASCII 'R': 0x52)) and check for answer 
+4）Send stop signal 
+5）Send start signal 
+6) Send address read (slave address + R/W Bit(1) = 0x63) and check answer 
+7）Read 7 bytes from the module and send an answer 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com 
+ CO2 concentration Reservations Reservations Reservations Reservations 
+0x08 
+High 
+concentration 
+bytes 
+Low 
+concentration 
+bytes 
+0x00 0x00 0x00 0x00 
+ 
+9. Considerations 
+ 
+-In environments with EMC problems, shielded protective cables must be used. 
+-When the module is cold started, the warm-up time shall not be less than 2 minutes. 
+-The sensor should be calibrated periodically, not more than 3 months is recommended. 
+-Do not use the sensor for a long time in an environment with high dust density. 
+-Please pay attention to the wiring of positive and negative poles of power supply and signal output terminal, and do not 
+reverse connection. 
+-High concentrations of chemical contamination can cause damage to sensors. Therefore, products should be kept and 
+used away from chemical contamination sources. 
+-Please refer to the relevant national product installation standards for the installation process. 
+ 

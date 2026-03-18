@@ -1,0 +1,172 @@
+HONDE TECHNOLOGY CO,LTD 
+Honde Technology CO.,LTD 
+https://hondetec.en.alibaba.com/ 
+ 
+ 
+ 
+Soil Temperature and Humidity 
+Sensor 
+ 
+ 
+ 
+ 
+ 
+Raindao Science and Technology CO.,Limited 
+ 
+ 
+Type NO.: RD-SMS-03 
+ 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+Honde Technology CO.,LTD 
+https://hondetec.en.alibaba.com/ 
+ 
+1. Product introduction and principle 
+RD-SMS-03 soil temperature and humidity integrated sensor integrates soil moisture and soil temperature sensor, 
+which is convenient for measuring soil moisture and soil temperature. It has the advantages of convenient carrying, 
+sealing and high precision. It is soi l moisture and soil temperature. Ideal for measurement. Soil moisture is a soil 
+volumetric water content measuring instrument developed by the FDR principle. In addition to being directly used with 
+the control instrument, the device can also be connected to various data collectors, handheld terminals, and the like. 
+For scientific research or irrigation management, the sensor's stainless steel probe can be inserted into the soil surface 
+or soil profile to quickly measure soil temperature and humidity, by per manently burying the probe underground and 
+connecting to a data logger for long-term measurements. 
+Frequency Domain Reflectometry (FDR) is a method for measuring soil moisture content by measuring the frequency 
+change caused by the change of the dielectric  constant of the sensor in the soil and converting it into a voltage or 
+current relationship corresponding to the soil water content. It has the characteristics of high measurement accuracy, 
+fast, accurate, continuous fixed point measurement, no radioactivity and no disturbance to the soil. 
+It can be widely used in soil moisture monitoring, water saving irrigation, greenhouse control, precision agriculture, 
+road monitoring, hydrometeorology and other fields. 
+2. Product Features 
+1. Less thermal response time, reducing dynamic error; 
+2. Small diameter and unlimited length; 
+3. High measurement accuracy and good consistency; 
+4. Imported probe components, reliable and stable performance 
+3. Technical Parameters 
+Item Content 
+Output signal RS485 standard modbus protocol 
+Measuring range -20~80℃, 0~100%（（m3/m3）） 
+Response time ＜1s 
+Precision ± 1° C (25° C);  ± 2% (0 to 50% (m3/m3), 25° C 
+Working voltage DC12~24V 
+Working current 40ma（DC12V） 
+HONDE TECHNOLOGY CO,LTD 
+Honde Technology CO.,LTD 
+https://hondetec.en.alibaba.com/ 
+ 
+Power consumption DC12V <=0.6W 
+Measuring area 90% of the effect is in a cylinder 2.5 cm in diameter and 6 cm in length around the 
+central probe 
+Sealing material ABS (abrasive processing) 
+Size 130*40mm(Probe:60mm) 
+Cable length 3 meters 
+Cable pins 4 pins 
+Stabilization time about 10 seconds after power on 
+Protection level IP68 
+4. Dimensions 
+ 
+5. Wiring definition 
+Wire colour Interface 
+Red   Power positive  (12 -24VDC) 
+Black Power negative  
+Yellow (gray) color RS485A 
+Blue RS485B 
+6. Installation instructions 
+1. The steel needle of the sensor is completely inserted into the soil to be tested, and the sensor cannot be shaken 
+when inserted to prevent the sensor probe from being affected; 
+2. The sensor can be used for multi-layer observation to establish a soil moisture monitoring station; 
+3. When you feel that there is a hard object in the soil, please reselect the measured point to prevent damage to the 
+sensor probe. 
+4. Do not connect the probe into the hard clod to avoid damage to the probe; when measuring, the measured soil 
+
+HONDE TECHNOLOGY CO,LTD 
+Honde Technology CO.,LTD 
+https://hondetec.en.alibaba.com/ 
+ 
+density should be as uniform as possible; 
+5. When removing the sensor from the soil, do not pull the cable directly; after use, clean and dry the probe to keep 
+the probe clean. 
+6. Improper measurement points (>10% vol) may result if the measurement points are not selected properly. Barbaric 
+installation will cause damage to the stainless steel needle of the sensor, which will affect the measurement accuracy. 
+Attention must be paid to the following aspects during installation: 
+(1) abnormal holes or pores. If there are ho les or air holes in the sensing range of the sensor, measurement errors 
+will occur, especially when the sensor is inserted and removed, it is necessary to avoid repeated operation at the 
+same position;  
+(2) Mounting angle. Sensors can be installed in different applications in different applications, usually in two, horizontal 
+and vertical installations. The distribution of water in the soil medium is affected by many factors such as space and 
+time. The reasonable installation of the sensor must eliminate th ese effects to the greatest extent. In the vertical 
+installation, the sensor measures the average moisture of the sensing area of approximately 6 cm long; 
+ (3) the sampling point. The choice of sampling points must be carefully considered. In addition to  the two points 
+mentioned above, there are many other factors that affect the measurement accuracy of the sensor. It can be listed 
+as: soil density and composition change, crushed stone, plant roots, cockroach loosening effect, soil drainage state, 
+soil surface moisture Volatilize and so on. 
+7. Due to the different water sources, the water quality will change accordingly. The measured voltage output value 
+of the sensor placed in the simple water sample will fluctuate within a range. This measurement value c an only be 
+used as a reference value and cannot be used to judge the measurement accuracy of the sensor itself.  
+7. Communication protocol 
+1. Basic agreement 
+➢ Sensor default station number: 0x00FF 
+➢ Baud rate: 9600 
+➢ Data bits: 8 
+➢ Stop position: 1 
+➢ Check digit: none 
+➢ Flow control: none 
+ 
+ 
+ 
+HONDE TECHNOLOGY CO,LTD 
+Honde Technology CO.,LTD 
+https://hondetec.en.alibaba.com/ 
+ 
+2. Read station number: (fixed command) 
+Reply 
+Example: Read station number 
+Command: 00 03 00 01 00 01 D4 1B 
+Reply: 00 03 02 00 FF C5 C4 
+3. Write station number 
+Reply: 
+Example 
+Command: 00 10 00 01 00 01 02 00 33 EA 04 
+Reply: 00 10 00 01 00 01 51 D8 
+(4) Reading data (host computer) 
+Data reply 
+Example 
+Device address Function code Start register address Number of registers CRC check 
+00 03 0001 0001 CRCloCRChi 
+Device address Function code Data length Data CRC check 
+00 03 02 00XX 
+CRCloCRChi
+（XX=01-ff） 
+Device 
+address 
+Function 
+code 
+Start register 
+address 
+Number of 
+registers 
+Data length Data (new station 
+number) 
+CRC check 
+00 10 0001 0001 
+02 00XX CRCloCRChi
+（XX=0X01-
+0XFF） 
+Device address Function code Start register address Number of registers CRC check 
+00 10 0001 0001 CRCloCRChi 
+Device address Function code Start register address Number of registers CRC check 
+XX 03 0000 00XX CRCloCRChi 
+Device address Function code Data length Data CRC check 
+00 03 XX XXXXXXXX CRCloCRChi 
+HONDE TECHNOLOGY CO,LTD 
+Honde Technology CO.,LTD 
+https://hondetec.en.alibaba.com/ 
+ 
+Command: FF 03 00 00 00 02 D1 D5 
+Reply: FF 03 04 01 2C(Soil moisture) 11 94(Soil temperature) A1 61 
+Note: The number of command responses is in hexadecimal format. 
+04 (decimal 4) is the length of the sensor data. A1 61 is the CRC check value. 
+Two-factor data sequence: soil moisture, soil temperature. 
+soil moisture =（0x01*256+0x2C）/10 = 30 %VOL 
+soil temperature =（0x11*256+0x94）/100-20 = 25 ℃ 
+ 

@@ -1,0 +1,268 @@
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com       info@hondetech.com 
+ 
+Soil PH and temperature 2 in 1 
+sensor AgCl type Introduce 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Type: SPHA-RD-01 
+ 
+ 
+ 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com       info@hondetech.com 
+1. Product Introduce 
+The new soil PH sensor, based on the latest research results, is developed using solid AgCl reference 
+electrode and pure metal PH sensitive electrode. It has the characteristics of high measurement 
+accuracy and long-term stable signal, which can replace glass electrodes. In addition, the isolation 
+circuit design is suitable for burying in soil for long-term online measurement. 
+The PH sensor has temperature compensation inside, which can realize the pH value stabilization within 
+a certain temperature range. 
+It has multi-directional protection functions for power lines, ground lines, and signal lines to prevent 
+damage caused by reverse connection and wrong connection. 
+2. Product Features 
+1. Easy measurement 
+Soil PH testing is no longer limited to laboratories and professionals, and can be measured by inserting 
+into the soil. 
+2. Low measurement cost 
+Compared with traditional laboratory measurement, this product has low cost, fewer steps, no reagents 
+required, and unlimited testing times. 
+3. High precision 
+High accuracy, fast speed, can reach accuracy within 0.25, increase stability. 
+4. Portable measurement 
+Convenient to carry, can be read by inserting the soil, can grasp the soil condition at any time, make the 
+soil fertility balanced, and reach the suitable growth environment of the plant. 
+3. Product Parameter 
+1. Technical Parameters 
+※Working voltage: /L: 2～5V (Max 6V) 
+※Working voltage: 5～24V (Max 26.7V) 
+※Quiet current: measured peak value <50mA, average <2mA. 
+※Response time: 2～15 seconds (adaptive) 
+※Measurement stabilization time: 30 minutes to 24 hours 
+※Protection level: IP68 
+※Working temperature range: -10℃～70℃, 
+※Cable length: standard 3.5 meters (2464-5C) 
+2. Measurement parameter (PH) 
+※Measurement range: 3-10 
+※Output signal: RS-485/RS-232/UART, MODBUS-RTU protocol 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com       info@hondetech.com 
+※Measurement accuracy: <0.25  
+※Exchange accuracy: <0.25 
+※Re-test error: <0.2 
+※Temperature compensation range: 0-50℃ 
+3. Measurement parameter (temperature) 
+※Measuring range: -40℃～85℃ 
+※Output signal: RS-485/UART, MODBUS-RTU protocol 
+※Measurement accuracy: <±0.4℃ (10℃～40℃), <±0.6℃ (other) 
+※Interchangeability: <0.5℃ (-10℃～70℃) 
+※Re-test error: <0.1℃ 
+4. Product size  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4. Connection diagram   
+Wire colour Interface 
+Red Power positive  
+Black Power negative  
+Yellow RS485A 
+White RS485B 
+5. Measurement methods 
+1. Preparation before measurement 
+It should be placed in pure water for 24 hours to activate before being placed in the air for more than 7 
+days. If it is not activated, it should be pre-buried in the soil for at least 24 hours to ensure measurement 
+accuracy. 
+2. Quick measurement method 
+Select a place where the soil is relatively soft and moist, and pave the surface soil according to the 
+required measurement depth. It is best to wet the measurement point with distilled water, purified water 
+or rainwater to form a slurry, pick out the rocks, and then Insert the probe into the soil gently and slowly, 
+
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com       info@hondetech.com 
+remember not to use excessive force, make sure that the probe does not touch hard objects such as 
+rocks, and do not shake back and forth when inserting. After inserting, pile up the soil to cover the 
+sensor body and fix it, after stabilizing for a period of time, the PH can be measured. 
+3. Buried measurement method 
+Dig a pit of appropriate diameter vertically to the depth as required for measurement, then bury the 
+sensor at the bottom of the pit according to the rapid measurement method, and then fill and compact 
+the pit. After stabilizing for a period of time, you can perform continuous measurement and recording for 
+several days, months or even longer. 
+4. Precautions 
+1. The PH-sensitive electrode metal is very brittle and has low strength. Avoid force and impact. After 
+being buried in the soil for a long time (3 months to half a year), the electrodes need to be cleaned. They 
+can be lightly polished with high-grade sandpaper, or washed with 5% hydrochloric acid and soaked for 
+a few minutes. The metal turns silver as bright as new, and then rinsed with pure water. 
+2. The non-metallic probe of the reference electrode is relatively thin, and the strength is not high, so 
+force and impact should be avoided. 
+3. When the reference electrode is not in use, it should be kept moist. 
+4. Do not touch oily substances between the two electrodes to avoid oil film covering and blocking the 
+electrical circuit. 
+5. The sensor's protection grade is IP68, so the entire sensor can be soaked in water. 
+6. RS485 Communication protocol 
+1. Communication parameter setting 
+1.The RS-485 interface is a physical interface, and the communication line is generally bus type, and all 
+communication stations are connected to the 485 bus. The communication protocol adopts the 
+MODBUS-RTU protocol, which is a master-slave protocol. There is a master station and multiple slave 
+stations on a bus. The communication parameters between each station must be consistent, including 
+baud rate, data bits, and parity. Check mode and number of stop bits. The station address of each slave 
+station must be different, otherwise it will cause the slave station response conflict. 
+2. Brief description of MODBUS-RTU protocol 
+1. The function code is the description: the content of the second byte sent by the host, among which 
+the 03 and 04 function codes are to read the register value; the 06 function code is to write a single 
+register; the 16 function code is to write multiple registers; the 17 function code is to read Get the device 
+ID. No response to other function codes. 
+2. Acronym description: TT: module address, address range 1-255; SS: register start address, 2 bytes, 
+high byte first; NN: number of registers (NN≤8), 2 bytes, high byte First; MM: number of bytes, 1 byte; 
+RR: register address, a group of 2 bytes, high byte first; VV: register value, a group of 2 bytes, high byte 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com       info@hondetech.com 
+first; CRC: CRC Check code;? ? :version number 
+1) 03, 04 function codes, read single (or multiple) registers (read up to 8 registers at a time) 
+Host request: TT 03 SS SS NN NN CRC1 CRC2, 8 bytes, 
+Slave response: TT 03 MM VV VV. . . CRC1 CRC2, up to 21 bytes 
+2) 06 function code, write a single register 
+Host request: FF 06 RR RR VV VV CRC1 CRC2, 8 bytes 
+Slave response: FF 06 RR RR VV VV CRC1 CRC2, 8 bytes 
+3) 16 (0X10) function code, write multiple registers 
+Host request: FF 10 SS SS NN NN MM VV VV .. .. CRC1 CRC2, up to 9+16=25 bytes 
+Slave response: FF 10 SS SS NN NN CRC1 CRC2, 8 bytes 
+4) 17 (0X11) function code, read the device ID 
+Host request: TT 11 CRC1 CRC2, 4 bytes 
+Slave response: TT 11 0B “SMTS-II-485??” CRC1 CRC2, 19 bytes 
+3. For example: 
+To get the sensor PH value in the address 01: 
+Host sends: 01 03 00 00 00 03 05 CB 
+The meaning of the data: 
+01-sensor address 01;  
+03-function code;  
+0000-register starting address; 
+0003-read 3 registers 
+05 CB-CRC code 
+Sensor response: 01 03 06 02 B7 00 46 00 FE B4 D8 
+The meaning of the data: 
+01-station address 01;  
+03-function code;  
+06-byte number;  
+02B7- converted to decimal is 695, divided by 100 is equal to 6.95, indicating that the PH value is 6.95; 
+046- converted to decimal is 70, divided If 10 is equal to 7.0, the PH value is 7.0;  
+00FE- converted to decimal is 254, divided by 10 is equal to 25.4, which means the temperature is 
+25.4°C. 
+B4 D8-CRC check code 
+Note: The FE is the broadcast address (universal address), if you forget the present sensor address, 
+you can use the broadcast address FE to obtain the value: 
+FE 03 00 00 00 04 50 06 to obtain sensor PH value. 
+4. Example of setting address 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com       info@hondetech.com 
+For example, change the sensor address from 01 to 02, need send the following instruction: 
+Host send: 01 06 02 00 00 02 09 B3 
+The meaning of the data: 
+01-present sensor address 01;  
+06-function code; 
+0200-register address;  
+0002-set new address 02  
+09 B3-CRC check code. 
+If success, it will feedback: 01 06 02 00 00 02 09 B3  
+Note: If you forget the present sensor address value, you can check the sensor address by the following 
+instruction: 
+Host sends: FE 03 02 00 00 01 91 BD 
+If feedback: FE 03 02 00 01 6D 90 
+It mean the sensor address is 01. 
+ 
+3. Register address 
+Regist
+er 
+addres
+s: 
+Register 
+address 
+HEX: 
+Content Read& Write Value range Applicable 
+function code 
+Numerical meaning 
+00 00 High resolution PH 
+value 
+Read only 0~1400 3/4 0.00-14.00，Resolution 0.01 
+01 01 Low resolution PH 
+value 
+read only 0~140 3/4 0.0~14.0，Resolution 0.1 
+02 02 Temperature read only -400~800 3/4 -40.0℃~80.0℃ 
+03 03 PH electrode millivolt 
+value 
+read only -20000~+20000 3/4 0 ~ ±2000.0mV 
+04 04 Reserve read only 0 3/4  
+05 05 Reserve read only 0 3/4  
+06 06 High resolution PH 
+value 
+read only 100-1400 3/4 PH1.00~PH14.00  
+       
+10 0A User calibration Read & Write 0,4,6,9,15 3/4/6/16  
+       
+13 0D Low resolution PH 
+value 
+read only 10-140 3/4 PH1.0~PH14.0  
+       
+512 0X200 Sensor address Read & Write 1-255 3/4/6/16 Factory set to 254 
+513 0X201 Baud rate Read & Write 0-5 3/4/6/16 0-1200 
+1-2400 
+HONDE TECHNOLOGY CO,LTD 
+www.hondetechco.com       info@hondetech.com 
+2-4800 
+3-9600，default 
+4-19200 
+5-38400 
+514 0X202 Parity check Read & Write 0,1,2 3/4/6/16 0-no check, default 
+1- odd parity 
+2-even parity 
+515 0X203 Stop bit Read & Write 0,1 3/4/6/16 0-1 stop bit, default 
+1-2 stop bits 
+       
+523 0X20B Product serial number 
+1 
+read only 0-65535 3/4 Reserved 
+524 0X20C Product series number 
+2 
+read only 0-65535 3/4 Reserved 
+Note: Serial communication is a fixed 8-bit data bit. 
+4. Calibration instruction 
+This sensor supports user calibration, but it is limited to the calibration of three PH standard solutions of 
+4.00, 6.86, and 9.18, which are available on the market. Before calibration, clean the electrode and put it 
+in the PH standard solution. Observe that the signal is stable. The immersion time of the newly cleaned 
+electrode may take up to 24 hours to stabilize. When the signal is stable, the calibration can be 
+performed. When calibrating, write a calibration command to register 10, see the following table: 
+For example, for the sensor address of the 01, the calibration as following: 
+ 
+PH standard solution Value written to register 10 Write command data string Reading value after calibration 
+of register 10 
+4.00 4 01 06 00 0A 00 04 A8 0B 41 
+6.86 6 01 06 00 0A 00 06 29 CA 61 
+9.18 9 01 06 00 0A 00 09 69 CE 91 
+Restore factory value 15 01 06 00 0A 00 0E 28 0C 151 
+ 
