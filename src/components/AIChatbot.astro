@@ -316,8 +316,11 @@
 <script>
   let chatHistory: { role: string, text: string }[] = [];
   let isAiWorking = false;
+  let chatEventListenersBound = false;
 
   document.addEventListener('astro:page-load', () => {
+    if (chatEventListenersBound) return; // Evitar duplicar listeners si el componente persiste
+    chatEventListenersBound = true;
     const aiBubble = document.getElementById('aiBubble') as HTMLElement | null;
     const aiChatWindow = document.getElementById('aiChatWindow') as HTMLElement | null;
     const closeChat = document.getElementById('closeChat') as HTMLButtonElement | null;

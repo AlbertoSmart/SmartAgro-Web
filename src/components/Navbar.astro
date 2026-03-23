@@ -81,6 +81,32 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
         </ul>
       </li>
 
+      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/sensores") || isActive("/guia-sensores") ? "active" : ""}`}>
+        <a href="/guia-sensores"
+          >Sensores
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            ><path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </a>
+        <ul class="navbar__dropdown">
+          <li>
+            <a href="/sensores/suelo" class={isActive("/sensores/suelo") ? "active-sub" : ""}>Sensores de Suelo y Raíz</a>
+          </li>
+          <li>
+            <a href="/sensores/planta" class={isActive("/sensores/planta") ? "active-sub" : ""}>Fisiología de Planta (Hoja y Fruto)</a>
+          </li>
+          <li>
+            <a href="/sensores/clima" class={isActive("/sensores/clima") ? "active-sub" : ""}>Monitorización Meteorológica</a>
+          </li>
+        </ul>
+      </li>
+
       <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/herramientas") ? "active" : ""}`}>
         <a href="/herramientas"
           >Servicios
@@ -155,30 +181,10 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 
       <li class={`navbar__item ${isActive("/blog") ? "active" : ""}`}><a href="/blog">Blog</a></li>
       <li class={`navbar__item ${isActive("/contacto") ? "active" : ""}`}><a href="/contacto">Contacto</a></li>
-      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/sensores") || isActive("/guia-sensores") ? "active" : ""}`}>
-        <a href="/guia-sensores"
-          >Sensores
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
+      <li class="navbar__item navbar__item--access">
+        <a href="https://smartfenixagro.com/login?next=%2F" class="access-link">
+          Acceder a SmartAgro
         </a>
-        <ul class="navbar__dropdown">
-          <li>
-            <a href="/sensores/suelo" class={isActive("/sensores/suelo") ? "active-sub" : ""}>Sensores de Suelo y Raíz</a>
-          </li>
-          <li>
-            <a href="/sensores/planta" class={isActive("/sensores/planta") ? "active-sub" : ""}>Fisiología de Planta (Hoja y Fruto)</a>
-          </li>
-          <li>
-            <a href="/sensores/clima" class={isActive("/sensores/clima") ? "active-sub" : ""}>Monitorización Meteorológica</a>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>
@@ -260,6 +266,8 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0;
   }
 
   .navbar__item {
@@ -286,10 +294,8 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
   }
 
   .navbar__item.active > a {
-    color: #1AFFFF !important;
+    color: var(--color-turquoise) !important;
     text-decoration: none !important;
-    border-bottom: 2px solid #1AFFFF !important;
-    padding-bottom: 6px;
   }
 
   .navbar__dropdown {
@@ -380,6 +386,26 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       margin-top: 10px;
       display: block;
     }
+  }
+
+  /* ESTILO ÚNICO ACCEDER SMARTAGRO */
+  .access-link {
+    display: inline-block !important;
+    min-width: 175px !important;
+    white-space: nowrap !important;
+    color: var(--color-turquoise) !important;
+    position: relative;
+    font-weight: 700 !important;
+    padding: 8px 16px !important;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+    text-decoration-thickness: 2px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .access-link:hover {
+    text-underline-offset: 8px !important;
+    text-decoration-thickness: 3px !important;
   }
 </style>
 
