@@ -53,7 +53,7 @@ const features = [
                 <Fragment set:html={f.icon} />
               </div>
             </div>
-            <div class="feature-card__content">
+            <div class="feature-card__content" style="position: relative; z-index: 2;">
               <h3 class="feature-card__title">{f.title}</h3>
               <p class="feature-card__text">{f.text}</p>
             </div>
@@ -109,18 +109,41 @@ const features = [
     position: relative;
     overflow: hidden;
     transition: var(--transition);
+    border-radius: 24px;
   }
  
+  .feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Efecto de luz dinámico pegado al ratón */
+    background: radial-gradient(
+      800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+      rgba(29, 185, 154, 0.15),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
   .feature-card:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
   }
  
   .feature-card__icon-wrapper {
     position: relative;
     width: 64px;
     height: 64px;
+    z-index: 2;
   }
  
   .feature-card__icon {
@@ -169,3 +192,21 @@ const features = [
     }
   }
 </style>
+
+<script>
+  // Motor magnético para el resplandor de las tarjetas
+  document.addEventListener('astro:page-load', () => {
+    const cards = document.querySelectorAll('.feature-card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e: any) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+        (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  });
+</script>

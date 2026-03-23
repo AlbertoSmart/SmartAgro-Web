@@ -141,19 +141,29 @@ import TestPage from "../../layouts/TestPage.astro";
     .case-item {
         flex: 1;
         min-width: 250px;
+        background: rgba(255,255,255,0.03);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .case-item:hover {
         background: rgba(255,255,255,0.05);
-        padding: 25px;
-        border-radius: 16px;
+        border-color: rgba(29, 185, 154, 0.3);
+        transform: translateY(-5px);
     }
 
     .case-item h4 {
-        color: white;
-        margin-bottom: 10px;
+        color: var(--color-turquoise, #1DB99A);
+        margin-bottom: 15px;
+        font-size: 1.2rem;
     }
 
     .case-item p {
-        color: rgba(255,255,255,0.7) !important;
-        font-size: 0.9rem;
+        color: rgba(255,255,255,0.8) !important;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
 </style>

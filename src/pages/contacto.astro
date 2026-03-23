@@ -17,7 +17,6 @@ import Layout from "../layouts/Layout.astro";
       <div class="editorial-grid">
         <!-- COLUMN LEFT: CONTACT INFO -->
         <aside class="info-sidebar">
-          <div class="section-label">DATOS DE CONTACTO</div>
           
           <div class="contact-method">
             <div class="method-icon">
@@ -25,7 +24,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="method-details">
               <h3>Departamento Comercial</h3>
-              <a href="tel:644476471" class="method-link">644 47 64 71</a>
+              <a href="tel:+34621262286" class="method-link">+34 621 26 22 86</a>
               <p>Atención directa de Lunes a Viernes.</p>
             </div>
           </div>
@@ -36,7 +35,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="method-details">
               <h3>Consultas Técnicas</h3>
-              <a href="mailto:alejandro@smartfenix.es" class="method-link">alejandro@smartfenix.es</a>
+              <a href="mailto:ceo@smartfenix.es" class="method-link">ceo@smartfenix.es</a>
               <p>Respuesta técnica en menos de 24h.</p>
             </div>
           </div>
@@ -47,10 +46,10 @@ import Layout from "../layouts/Layout.astro";
             </div>
             <div class="method-details">
               <h3>Sede Central</h3>
-              <address class="method-link">C. Donantes de sangre, nº 4, local 4, 14120 Fuente Palmera, Córdoba</address>
+              <address class="method-link"><a href="https://maps.app.goo.gl/E5FxGmKk8Cm5Zo149" target="_blank" style="color: inherit; text-decoration: none;">C. Donantes de sangre, nº 4, local 4, 14120 Fuente Palmera, Córdoba</a></address>
               <div class="map-container">
                 <iframe 
-                  src="https://maps.google.com/maps?q=C.%20Donantes%20de%20sangre,%20n%C2%BA%204,%20local%204,%2014120%20Fuente%20Palmera,%20C%C3%B3rdoba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.4646700543663!2d-5.1065185!3d37.7126131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d3969a531f82f%3A0xe530d170fac8ca0!2sC.%20Donantes%20de%20Sangre%2C%204%2C%2014120%20Fuente%20Palmera%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2ses!4v1711191420126!5m2!1ses!2ses" 
                   width="100%" 
                   height="200" 
                   style="border:0;" 
@@ -64,8 +63,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <div class="support-brief">
-            <p>¿Necesita soporte técnico inmediato? Acceda a nuestra plataforma de ayuda exclusiva para clientes.</p>
-            <a href="/ayudas/soporte" class="text-link">Ir a Soporte al Usuario →</a>
+            <p>¿Necesita soporte técnico inmediato? Nuestro equipo está a su disposición para cualquier duda sobre el sistema.</p>
           </div>
         </aside>
 
@@ -76,7 +74,11 @@ import Layout from "../layouts/Layout.astro";
             <h2>Solicitud de Información Técnica</h2>
             <p class="form-intro">Describa sus necesidades y un ingeniero asignado a su zona revisará su caso personalmente.</p>
 
-            <form class="editorial-form">
+            <form 
+              action="https://formspree.io/f/ceo@smartfenix.es" 
+              method="POST"
+              class="editorial-form"
+            >
               <div class="form-row">
                 <div class="input-group">
                   <label for="name">Nombre y Apellidos</label>
@@ -194,7 +196,8 @@ import Layout from "../layouts/Layout.astro";
 
   /* EDITORIAL GRID SYSTEM */
   .contact-editorial .main-content {
-    margin-top: -60px;
+    margin-top: 0;
+    padding-top: 80px;
     padding-bottom: 120px;
     position: relative;
     z-index: 20;
@@ -209,7 +212,7 @@ import Layout from "../layouts/Layout.astro";
 
   /* SIDEBAR INFO */
   .info-sidebar {
-    padding-top: 40px;
+    padding-top: 0;
   }
 
   .contact-editorial .section-label {

@@ -2,46 +2,51 @@
 // AIChatbot.astro
 ---
 
-<div class="ai-chat-bubble" id="aiBubble">
-  <div class="ai-icon">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+<div class="ai-chat-wrapper" transition:persist="chatbot-ui">
+  <div class="ai-chat-bubble" id="aiBubble">
+    <div class="ai-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+    <span class="bubble-text">Experto PAC</span>
   </div>
-  <span class="bubble-text">Experto PAC</span>
-</div>
 
-<div class="ai-chat-window" id="aiChatWindow">
-  <div class="chat-header">
-    <div class="header-info">
-      <div class="status-dot"></div>
-      <div>
-        <h3>AgroAI Asistente SIEX</h3>
-        <span>Especialista en Normativa Europea</span>
+  <div class="ai-chat-window" id="aiChatWindow">
+    <div class="chat-header">
+      <div class="header-info">
+        <div class="header-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <div class="status-dot"></div>
+        </div>
+        <div>
+          <h3>AgroAI Asistente</h3>
+          <span>Experto en SIEX & PAC</span>
+        </div>
+      </div>
+      <button class="close-chat" id="closeChat">&times;</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="message incoming">
+        <p>¡Hola! Soy AgroAI, tu asistente experto. ¿En qué puedo ayudarte con la PAC 2024 o el SIEX?</p>
       </div>
     </div>
-    <button class="close-chat" id="closeChat">&times;</button>
-  </div>
 
-  <div class="chat-messages" id="chatMessages">
-    <div class="message incoming">
-      <p>¡Hola! Soy AgroAI, tu asistente experto. ¿En qué puedo ayudarte con la PAC 2024 o el SIEX?</p>
+    <div class="chat-suggestions">
+      <button class="suggest-btn" data-q="¿Qué es el SIEX?">¿Qué es el SIEX?</button>
+      <button class="suggest-btn" data-q="Ecorregímenes 2024">Ecorregímenes 2024</button>
+      <button class="suggest-btn" data-q="¿Es obligatorio el cuaderno?">¿Es obligatorio el cuaderno?</button>
     </div>
-  </div>
 
-  <div class="chat-suggestions">
-    <button class="suggest-btn" data-q="¿Qué es el SIEX?">¿Qué es el SIEX?</button>
-    <button class="suggest-btn" data-q="Ecorregímenes 2024">Ecorregímenes 2024</button>
-    <button class="suggest-btn" data-q="¿Es obligatorio el cuaderno?">¿Es obligatorio el cuaderno?</button>
-  </div>
-
-  <div class="chat-input-area">
-    <input type="text" placeholder="Escribe tu duda aquí..." id="chatInput" />
-    <button class="send-btn" id="sendBtn">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-    </button>
+    <div class="chat-input-area">
+      <input type="text" placeholder="Escribe tu duda aquí..." id="chatInput" />
+      <button class="send-btn" id="sendBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </div>
   </div>
 </div>
 
-<style>
+<style is:global>
   .ai-chat-bubble {
     position: fixed;
     bottom: 30px;
@@ -105,37 +110,59 @@
 
   .chat-header {
     padding: 24px;
-    background: #0B1A14;
+    background: linear-gradient(135deg, #0B1A14 0%, #17362B 100%);
     color: white;
     border-radius: 24px 24px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
   }
 
   .header-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+  }
+
+  .header-avatar {
+    width: 44px;
+    height: 44px;
+    background: rgba(29, 185, 154, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-turquoise);
+    position: relative;
+    border: 1px solid rgba(29, 185, 154, 0.3);
   }
 
   .status-dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background: #2ECC71;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+    border: 2px solid #0B1A14;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
   }
 
   .chat-header h3 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 800;
+    color: #ffffff !important;
+    letter-spacing: -0.01em;
   }
 
   .chat-header span {
     font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
   }
 
   .close-chat {
@@ -157,15 +184,15 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    overscroll-behavior: contain;
   }
 
   .message {
     max-width: 85%;
     padding: 16px 20px;
-    border-radius: 16px;
     font-size: 0.95rem;
     line-height: 1.6;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
   }
 
   .message-label {
@@ -180,7 +207,7 @@
     background: white;
     color: #1e293b;
     align-self: flex-start;
-    border-bottom-left-radius: 4px;
+    border-radius: 20px 20px 20px 4px;
     border: 1px solid #e2e8f0;
   }
 
@@ -189,14 +216,16 @@
   }
 
   .message.outgoing {
-    background: #0B1A14;
+    background: #1DB99A;
     color: white;
     align-self: flex-end;
-    border-bottom-right-radius: 4px;
+    font-weight: 600;
+    border-radius: 20px 20px 4px 20px;
+    box-shadow: 0 4px 15px rgba(29, 185, 154, 0.2);
   }
 
   .message.outgoing .message-label {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.8);
   }
 
   .chat-suggestions {
@@ -207,21 +236,23 @@
   }
 
   .suggest-btn {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 8px 14px;
-    border-radius: 12px;
+    background: rgba(29, 185, 154, 0.06);
+    border: 1px solid rgba(29, 185, 154, 0.2);
+    padding: 10px 16px;
+    border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #64748b;
+    color: #0f4d3f;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .suggest-btn:hover {
-    background: #1DB99A;
+    background: var(--color-turquoise);
     color: white;
-    border-color: #1DB99A;
+    border-color: var(--color-turquoise);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 185, 154, 0.25);
   }
 
   .chat-input-area {
@@ -234,33 +265,39 @@
   .chat-input-area input {
     flex-grow: 1;
     border: 1px solid #e2e8f0;
-    padding: 12px 16px;
-    border-radius: 12px;
+    background: #f8fafc;
+    padding: 14px 18px;
+    border-radius: 16px;
     outline: none;
-    transition: border-color 0.3s;
+    font-size: 0.95rem;
+    transition: all 0.3s;
   }
 
   .chat-input-area input:focus {
-    border-color: #1DB99A;
+    border-color: var(--color-turquoise);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(29, 185, 154, 0.15);
   }
 
   .send-btn {
-    background: #0B1A14;
+    background: var(--color-turquoise);
     color: white;
     border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(29, 185, 154, 0.3);
   }
 
   .send-btn:hover {
-    transform: scale(1.05);
-    background: #142d23;
+    transform: scale(1.08) rotate(-5deg);
+    background: #17a689;
+    box-shadow: 0 6px 20px rgba(29, 185, 154, 0.4);
   }
 
   @media (max-width: 500px) {
@@ -277,17 +314,17 @@
 </style>
 
 <script>
-  const aiBubble = document.getElementById('aiBubble') as HTMLElement | null;
-  const aiChatWindow = document.getElementById('aiChatWindow') as HTMLElement | null;
-  const closeChat = document.getElementById('closeChat') as HTMLButtonElement | null;
-  const chatInput = document.getElementById('chatInput') as HTMLInputElement | null;
-  const sendBtn = document.getElementById('sendBtn') as HTMLButtonElement | null;
-  const chatMessages = document.getElementById('chatMessages') as HTMLElement | null;
-  const suggestBtns = document.querySelectorAll('.suggest-btn');
-
-  // Maintain actual chat history to send to Gemini API
   let chatHistory: { role: string, text: string }[] = [];
   let isAiWorking = false;
+
+  document.addEventListener('astro:page-load', () => {
+    const aiBubble = document.getElementById('aiBubble') as HTMLElement | null;
+    const aiChatWindow = document.getElementById('aiChatWindow') as HTMLElement | null;
+    const closeChat = document.getElementById('closeChat') as HTMLButtonElement | null;
+    const chatInput = document.getElementById('chatInput') as HTMLInputElement | null;
+    const sendBtn = document.getElementById('sendBtn') as HTMLButtonElement | null;
+    const chatMessages = document.getElementById('chatMessages') as HTMLElement | null;
+    const suggestBtns = document.querySelectorAll('.suggest-btn');
 
   const toggleChat = () => {
     if (aiChatWindow) {
@@ -425,8 +462,9 @@
     });
   });
 
-  // Inject minimalist bounce animation into doc
-  const style = document.createElement('style');
-  style.innerHTML = `@keyframes bounce { to { transform: translateY(-4px); opacity: 0.5; } }`;
-  document.head.appendChild(style);
+    // Inject minimalist bounce animation into doc
+    const style = document.createElement('style');
+    style.innerHTML = `@keyframes bounce { to { transform: translateY(-4px); opacity: 0.5; } }`;
+    document.head.appendChild(style);
+  });
 </script>

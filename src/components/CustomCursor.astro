@@ -1,0 +1,148 @@
+---
+---
+
+<div id="custom-cursor" class="custom-cursor"></div>
+<div id="custom-cursor-follower" class="custom-cursor-follower"></div>
+
+<style is:global>
+  /* 
+    Ocultamos el cursor por defecto SÓLO en dispositivos con ratón (pointer: fine). 
+    En móviles o tablets, dejamos el comportamiento normal del sistema.
+  */
+  @media (pointer: fine) {
+    *, 
+    *::before, 
+    *::after {
+      cursor: none !important;
+    }
+  }
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-turquoise, #1DB99A);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate3d(-50%, -50%, 0);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    /* Evitar que se renderice en móviles */
+    display: none; 
+  }
+
+  .custom-cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(29, 185, 154, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999998;
+    transform: translate3d(-50%, -50%, 0);
+    transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s ease-out, border 0.3s ease-out;
+    display: none;
+  }
+
+  /* Estado al pasar por encima de botones o enlaces */
+  .custom-cursor-follower.cursor-hover {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(29, 185, 154, 0.08);
+    border: 1px solid rgba(29, 185, 154, 0.2);
+  }
+
+  .custom-cursor.cursor-hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 4px;
+    height: 4px;
+  }
+
+  @media (pointer: fine) {
+    .custom-cursor,
+    .custom-cursor-follower {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  let isMobile = false;
+
+  // Comprobar si es un dispositivo táctil
+  if (!window.matchMedia("(pointer: fine)").matches) {
+    isMobile = true;
+  }
+
+  const initCursor = () => {
+    if (isMobile) return;
+
+    const cursor = document.getElementById('custom-cursor');
+    const follower = document.getElementById('custom-cursor-follower');
+    
+    if (!cursor || !follower) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let followerX = window.innerWidth / 2;
+    let followerY = window.innerHeight / 2;
+
+    // Actualizar coordenadas reales del ratón
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      // Actualización inmediata para el punto central
+      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    });
+
+    // Función de inercia (Lerp) para el círculo exterior persiguiendo al punto
+    const render = () => {
+      // Fuerza que dictamina la velocidad a la que persigue (0.15 = 15% de diferencia por frame)
+      const speed = 0.15;
+      
+      followerX += (mouseX - followerX) * speed;
+      followerY += (mouseY - followerY) * speed;
+      
+      follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
+      
+      requestAnimationFrame(render);
+    };
+
+    render();
+
+    // Efecto de expansión al hacer hover sobre elementos clickables detectables dinámicamente
+    const addHoverEffects = () => {
+      const clickables = document.querySelectorAll('a, button, input, select, textarea, .ai-chat-bubble, [role="button"]');
+      
+      clickables.forEach((el) => {
+        // Evitamos añadir múltiples listeners si la función corre varias veces por Astro Page Load
+        if ((el as any)._cursorHoverAttached) return;
+        (el as any)._cursorHoverAttached = true;
+
+        el.addEventListener('mouseenter', () => {
+          cursor.classList.add('cursor-hover');
+          follower.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.classList.remove('cursor-hover');
+          follower.classList.remove('cursor-hover');
+        });
+      });
+    };
+
+    addHoverEffects();
+
+    // Exportar para que Astro pueda volver a escanear enlaces si recarga la vista
+    window.addEventListener('astro:page-load', () => {
+        addHoverEffects();
+    });
+  };
+
+  // Inicializar
+  initCursor();
+</script>
