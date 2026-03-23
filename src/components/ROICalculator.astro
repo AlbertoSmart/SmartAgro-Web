@@ -1,0 +1,353 @@
+---
+---
+
+<section class="roi-calculator premium-benefits-box">
+  <div class="calculator-header">
+    <span class="badge-roi">SIMULADOR DE AHORRO</span>
+    <h2>Calcula el Retorno de Inversión (ROI)</h2>
+    <p>Descubre cuánto puedes ahorrar en agua y abonos al año implementando nuestro Ecosistema Digital.</p>
+  </div>
+
+  <div class="calculator-grid">
+    <div class="calc-inputs">
+      <div class="input-group">
+        <label for="hectareas">Superficie de la Explotación (Hectáreas)</label>
+        <input type="number" id="hectareas" value="50" min="1" max="5000" />
+      </div>
+      
+      <div class="input-group">
+        <label for="cultivo">Tipo de Cultivo Principal</label>
+        <select id="cultivo">
+          <option value="olivar">Olivar / Almendro</option>
+          <option value="frutales">Frutales de Hueso/Pepita</option>
+          <option value="vinedo">Viñedo</option>
+          <option value="horticolas">Hortícolas Intensivo</option>
+          <option value="extensivo">Cereal / Extensivo</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="gastoAgua">Gasto Anual Estimado en Riego y Abono (€/ha)</label>
+        <div class="input-with-symbol">
+          <span class="symbol">€</span>
+          <input type="number" id="gastoAgua" value="800" min="100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-results">
+        <div class="result-card">
+            <h4>Ahorro Potencial Estimado</h4>
+            <div class="amount" id="ahorroTotal">0 <span>€/año</span></div>
+            <div class="result-details">
+                <div class="detail-row">
+                    <span>Ahorro en Agua (≈<span id="pctAgua">25</span>%)</span>
+                    <strong id="valAgua">0 €</strong>
+                </div>
+                <div class="detail-row">
+                    <span>Ahorro en Fertilizantes (≈15%)</span>
+                    <strong id="valFerti">0 €</strong>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-calc">
+            <p>Con este ahorro, el sistema se amortiza en menos de <strong>1 campaña</strong>.</p>
+            <a href="/contacto" class="btn-calc">Solicitar Presupuesto Exacto</a>
+        </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .roi-calculator {
+    padding: 60px;
+    border-radius: 32px;
+    margin: 80px 0;
+    color: white;
+    background: linear-gradient(145deg, #0B1A14 0%, #163127 100%);
+    border: 1px solid rgba(29, 185, 154, 0.3);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+  }
+
+  .calculator-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .badge-roi {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(29, 185, 154, 0.15);
+    color: var(--color-turquoise);
+    border: 1px solid rgba(29, 185, 154, 0.3);
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .calculator-header h2 {
+    font-size: 2.5rem;
+    font-weight: 850;
+    margin-bottom: 16px;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+
+  .calculator-header p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: stretch;
+  }
+
+  /* Inputs */
+  .calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .input-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .input-group input,
+  .input-group select {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    outline: none;
+    appearance: none;
+  }
+
+  .input-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+  }
+
+  .input-group select option {
+    background: #0B1A14;
+    color: white;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus {
+    border-color: var(--color-turquoise);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .input-with-symbol {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-with-symbol .symbol {
+    position: absolute;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .input-with-symbol input {
+    padding-left: 45px;
+  }
+
+  /* Results */
+  .calc-results {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .result-card {
+    background: rgba(29, 185, 154, 0.08);
+    border: 1px solid rgba(29, 185, 154, 0.2);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .result-card h4 {
+    font-size: 1.1rem;
+    color: var(--color-turquoise);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .result-card .amount {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    color: white;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+  }
+
+  .result-card .amount span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    margin-left: 4px;
+  }
+
+  .result-details {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .detail-row strong {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .cta-calc {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .cta-calc p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 20px;
+  }
+
+  .cta-calc strong {
+    color: var(--color-turquoise);
+  }
+
+  .btn-calc {
+    display: inline-block;
+    width: 100%;
+    padding: 16px;
+    background: var(--color-turquoise);
+    color: #000000;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-calc:hover {
+    background: #2ECC71;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 185, 154, 0.2);
+  }
+
+  @media (max-width: 900px) {
+    .calculator-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
+
+<script>
+  function initCalculator() {
+    const hectareasInput = document.getElementById('hectareas') as HTMLInputElement | null;
+    const cultivoSelect = document.getElementById('cultivo') as HTMLSelectElement | null;
+    const gastoInput = document.getElementById('gastoAgua') as HTMLInputElement | null;
+    
+    const ahorroTotalEl = document.getElementById('ahorroTotal');
+    const pctAguaEl = document.getElementById('pctAgua');
+    const valAguaEl = document.getElementById('valAgua');
+    const valFertiEl = document.getElementById('valFerti');
+
+    if (!hectareasInput || !cultivoSelect || !gastoInput || !ahorroTotalEl || !pctAguaEl || !valAguaEl || !valFertiEl) return;
+
+    function formatCurrency(num: number) {
+      return new Intl.NumberFormat('es-ES').format(Math.round(num));
+    }
+
+    function calculate() {
+      const ha = parseFloat(hectareasInput!.value) || 0;
+      const gastoHa = parseFloat(gastoInput!.value) || 0;
+      const cultivo = cultivoSelect!.value;
+
+      // Variables base
+      let pctAgua = 25; // 25% ahorro agua
+      let pctFerti = 15; // 15% ahorro ferti
+
+      // Ajustes por cultivo (simulación)
+      if (cultivo === 'horticolas') pctAgua = 30;
+      if (cultivo === 'vinedo') pctAgua = 35; // Riego deficitario controlado
+      if (cultivo === 'extensivo') {
+        pctAgua = 15;
+        pctFerti = 20;
+      }
+
+      pctAguaEl!.textContent = pctAgua.toString();
+
+      // Cálculo monetario: Asumimos que del gasto, un 60% es agua/energía y un 40% fertilizantes.
+      const gastoTotal = ha * gastoHa;
+      const gastoAgua = gastoTotal * 0.6;
+      const gastoFerti = gastoTotal * 0.4;
+
+      const ahorroAgua = gastoAgua * (pctAgua / 100);
+      const ahorroFerti = gastoFerti * (pctFerti / 100);
+      const ahorroTotal = ahorroAgua + ahorroFerti;
+
+      valAguaEl!.textContent = formatCurrency(ahorroAgua) + ' €';
+      valFertiEl!.textContent = formatCurrency(ahorroFerti) + ' €';
+      ahorroTotalEl!.innerHTML = formatCurrency(ahorroTotal) + ' <span>€/año</span>';
+    }
+
+    // Attach events
+    hectareasInput.addEventListener('input', calculate);
+    cultivoSelect.addEventListener('change', calculate);
+    gastoInput.addEventListener('input', calculate);
+
+    // Initial calculation
+    calculate();
+  }
+
+  // Correr al cargar la pagina en astro si es necesario
+  document.addEventListener("astro:page-load", initCalculator);
+  // O al menos al cargar estáticamente
+  initCalculator();
+</script>

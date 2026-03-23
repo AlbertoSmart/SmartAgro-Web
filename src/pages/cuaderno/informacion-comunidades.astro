@@ -1,0 +1,575 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const communities = [
+  {
+    id: "andalucia",
+    name: "Andalucía",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Andaluc%C3%ADa.svg",
+    content: [
+      "Es necesario recabar las autorizaciones de los titulares de la explotación a través del Anexo IV de la Orden de 27 de octubre de 2019, por la que se desarrollan los procedimientos de inscripción en el Registro de Explotaciones Agrarias y Forestales de Andalucía- Modelo de Autorización de la Junta de Andalucía.",
+      "Información sobre el procedimiento: Registro de explotaciones agrarias y forestales de Andalucía (REAFA).",
+      "Aquí puedes descargar el Anexo IV en formato PDF cumplimentable: Autorización para la presentación de la declaración a efectos de inscripción de explotaciones en el Registro de Explotaciones Agrarias y Forestales de Andalucía (REAFA) Y declaración anual gráfica de producciones agrícolas.",
+      "Se requiere una declaración responsable indicando que se dispone de la autorización escrita del agricultor para acceder y gestionar los datos de su explotación mediante el modelo recogido en el Anexo X o en su versión online en este enlace.",
+      "El Registro como Entidad Habilitada se realizará a través del Procedimiento de Habilitación en REAFA y ROMA/CEIA.",
+      "Aquí encontrarás el acceso al REAFA."
+    ],
+    links: [
+      { label: "Acceso al REAFA", url: "https://ws108.juntadeandalucia.es/IUWS/" },
+      { label: "Modelo de Autorización (Anexo IV)", url: "https://ws108.juntadeandalucia.es/IUWS/descargas/Anexo_IV.pdf" },
+      { label: "Procedimiento Habilitación REAFA/ROMA", url: "https://www.juntadeandalucia.es/servicios/sede/tramites/procedimientos/detalle/24857.html" }
+    ],
+    support: [
+      "Teléfono de asistencia 900 878 525, con horario de atención telefónica: De 8:00h a 15:00h en días laborables (siendo el horario de servicio garantizado de 9:30h a 14:00h).",
+      "Buzón de correo: consultareafa.capadr@juntadeandalucia.es.",
+      "Herramienta de gestión de incidencias y consultas REAFA."
+    ]
+  },
+  {
+    id: "aragon",
+    name: "Aragón",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/1/18/Flag_of_Aragon.svg",
+    content: [
+      "Información general sobre el Cuaderno Digital de Explotación Agrícola (CUE).",
+      "Información general sobre el Sistema de Información de Explotaciones Agrícolas, Ganaderas y de la Producción Agraria (SIEX).",
+      "Acceso al Procedimiento 9931.- Gestión del registro de entidades habilitadas para el acceso y cumplimentación del CUE y REA.",
+      "Videos de apoyo: Accesos y Autorizaciones de entidades habilitadas para REA y CUE del Gobierno de Aragón. Inscripción y/o actualización en el registro de explotaciones agrarias del Gobierno de Aragón."
+    ],
+    links: [
+      { label: "Acceso Interfaz Único (IUWS)", url: "https://sgapac.aragon.es/IUWS/" },
+      { label: "Portal Entidades Habilitadas", url: "https://www.aragon.es/-/registro-de-explotaciones-agrarias-y-cuaderno-de-explotacion" },
+      { label: "Trámite Gestión REA/CUE", url: "https://www.aragon.es/tramites/siex-cue-rea" }
+    ],
+    support: [
+      "Consultas o incidencias en la tramitación de la PAC.",
+      "Email: reacue@aragon.es"
+    ]
+  },
+  {
+    id: "asturias",
+    name: "Asturias",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_Asturias.svg",
+    content: [
+      "CUE Principado de Asturias.",
+      "Acceso Portal Entidades Habilitadas.",
+      "Alta Entidades Habilitadas o Gestoras de un CUE Comercial.",
+      "Registro autorizaciones a cuaderno comercial."
+    ],
+    links: [
+      { label: "Portal SGA Asturias", url: "https://sga.asturias.es" },
+      { label: "Alta de Entidades Habilitadas", url: "https://www.asturias.es/servicios" }
+    ],
+    support: [
+      "Consultas: dgganaderia@asturias.org"
+    ]
+  },
+  {
+    id: "baleares",
+    name: "Illes Balears",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Flag_of_the_Balearic_Islands.svg",
+    content: [
+      "CUE Illes Balears / Islas Baleares.",
+      "Acceso al procedimiento de Inscripción en los Registros Insulares Agrarios de las Islas Baleares.",
+      "Enlace al trámite registro y la autorización como entidad habilitada para la gestión del REA o cumplimentación del CUE.",
+      "Fons de Garantia Agrària i Pesquera de les Illes Balears (FOGAIBA)."
+    ],
+    links: [
+      { label: "Acceso IUWS FOGAIBA", url: "https://intranet.caib.es/IUWS" },
+      { label: "Registro Entidad Habilitada", url: "https://www.caib.es" }
+    ],
+    support: [
+      "Consultas: mgrimalt@fogaiba.caib.es"
+    ]
+  },
+  {
+    id: "canarias",
+    name: "Canarias",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Flag_of_the_Canary_Islands.svg",
+    content: [
+      "CUE Canarias por Sede Electrónica.",
+      "Alta Entidades Habilitadas o Gestoras de un CUE Comercial.",
+      "Registro autorizaciones a cuaderno comercial."
+    ],
+    links: [
+      { label: "Sede Electrónica IUWS", url: "https://www.gobiernodecanarias.org/IUWS" },
+      { label: "Portal SIEX Canarias", url: "https://www.gobiernodecanarias.org/agp/formacion/siex" }
+    ],
+    support: [
+      "Consultas: proregagr.agricultura@gobiernodecanarias.org"
+    ]
+  },
+  {
+    id: "cantabria",
+    name: "Cantabria",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/3/30/Flag_of_Cantabria.svg",
+    content: [
+      "Inscripción en el Registro de Explotaciones Agrícolas de la C.A. de Cantabria.",
+      "Registro Entidades Habilitadas o Gestoras de un CUE Comercial: https://sgapac.cantabria.es/SgaPec/"
+    ],
+    links: [
+      { label: "Acceso SGAPAC Cantabria", url: "https://sgapac.cantabria.es/IUWS" },
+      { label: "Portal Registros Agrarios", url: "https://www.cantabria.es" }
+    ],
+    support: [
+      "Consultas: sanidadvegetalcantabria@cantabria.es"
+    ]
+  },
+  {
+    id: "castilla-leon",
+    name: "Castilla y León",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/1/13/Flag_of_Castile_and_Le%C3%B3n.svg",
+    content: [
+      "Información general sobre el Registro de Explotaciones Agrarias de Castilla y León.",
+      "Información general sobre el Cuaderno Digital de Explotación Agrícola de Castilla y León.",
+      "Acceso a la Sede Electrónica del Registro de Explotaciones Agrarias de Castilla y León.",
+      "Modelo de autorización de una entidad por parte del titular de la explotación.",
+      "Registro como Entidad Habilitada para gestionar Cuadernos Digitales de Explotación. (Seleccionar la aplicación: Cuaderno digital de explotación agrícola CyL).",
+      "Instrucciones para la declaración de DGC en el Registro de Explotaciones Agrarias de Castilla y León."
+    ],
+    links: [
+      { label: "Acceso REACYL / IUWS", url: "https://servicios.jcyl.es/IUWS" },
+      { label: "Sede Electrónica Trámites", url: "https://www.tramitacastillayleon.jcyl.es" },
+      { label: "Acceso como Titular", url: "https://servicios.jcyl.es/IUWS" },
+      { label: "Acceso como Representante", url: "https://servicios.jcyl.es/IUWS" }
+    ],
+    support: [
+      "Puedes enviar tus consultas al siguiente email: cuecyl@jcyl.es"
+    ]
+  },
+  {
+    id: "castilla-mancha",
+    name: "Castilla-La Mancha",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_Castile-La_Mancha.svg",
+    content: [
+      "Información general sobre el Cuaderno de Explotaciones de Castilla-La Mancha.",
+      "Acceso de los agricultores al registro de explotaciones y cuaderno de campo de la SGA.",
+      "Cuaderno Digital y Registro de Explotaciones Agrícolas (REA-CUE).",
+      "Acceso Portal Entidades Habilitadas."
+    ],
+    links: [
+      { label: "Acceso SGA JCCM", url: "https://sga.castillalamancha.es/IUWS" },
+      { label: "Portal REA-CUE JCCM", url: "https://www.jccm.es/sede/tramite/REA" }
+    ],
+    support: [
+      "Para ponerse en contacto con la consejería por favor hágalo a través de este formulario."
+    ]
+  },
+  {
+    id: "cataluna",
+    name: "Cataluña",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg",
+    content: [
+      "CUE Catalunya / Cataluña.",
+      "Información general sobre el Cuaderno integrado de explotación QIE.",
+      "Inscripción en el QIE para Entidades Habilitadas y Asesores."
+    ],
+    links: [
+      { label: "Acceso API IUWS QIE", url: "https://qie.agricultura.gencat.cat/api/IUWS/" },
+      { label: "Portal Agricultura Gencat", url: "http://agricultura.gencat.cat/es/tramits/siex" }
+    ],
+    support: [
+      "Consultas: quaderndigital.accioclimatica@gencat.cat",
+      "Información General: informacio.agricultura@gencat.cat"
+    ]
+  },
+  {
+    id: "comunitat-valenciana",
+    name: "Comunidad Valenciana",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/d/df/Flag_of_the_Land_of_Valencia_%28official%29.svg",
+    content: [
+      "Acceso al trámite Solicitud de inscripción en el Registro de las Explotaciones Agrícolas de la Comunitat Valenciana (incluye REGEPA).",
+      "Declaración responsable de habilitación para la cumplimentación del Cuaderno Digital de Explotación Agrícola (CUE) y el acceso a los datos del Registro de Explotaciones Agrícolas de la Comunitat Valenciana (REA).",
+      "Registro autorizaciones a cuaderno comercial: https://sinapa.gva.es/SgaGpi"
+    ],
+    links: [
+      { label: "Acceso IUWS GVA", url: "https://sinapacli.gva.es/IUWS" },
+      { label: "SgaGpi Registro Autorizaciones", url: "https://sinapa.gva.es/SgaGpi" }
+    ],
+    support: [
+      "Consultas: cue@gva.es / siex@gva.es"
+    ]
+  },
+  {
+    id: "extremadura",
+    name: "Extremadura",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Extremadura%2C_Spain.svg",
+    content: [
+      "Acceso al trámite Solicitud de inscripción y actualización en el Registro de Explotaciones Agrarias.",
+      "Registro autorizaciones a cuaderno comercial: https://sga.juntaex.es/SgaCap",
+      "Guía Básica Solicitud de Condición Entidad Habilitada.",
+      "Acceso Portal Entidades Habilitadas."
+    ],
+    links: [
+      { label: "Portal SGA Extremadura", url: "https://sga.juntaex.es/IUWS/" },
+      { label: "SgaCap Registro Autorizaciones", url: "https://sga.juntaex.es/SgaCap" }
+    ],
+    support: [
+      "Consultas: siex@juntaex.es"
+    ]
+  },
+  {
+    id: "galicia",
+    name: "Galicia",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/6/64/Flag_of_Galicia.svg",
+    content: [
+      "Registro de explotaciones (REAGA).",
+      "Acceso al trámite: Inscripción en el registro de explotaciones agrarias de Galicia (REAGA).",
+      "Acceso a XEAGA – Gestión de explotaciones agrarias de Galicia.",
+      "Comunicación de Entidad Gestora que emplea un CUE Comercial: MR407C."
+    ],
+    links: [
+      { label: "Acceso IUWS XEAGA", url: "https://api.xeaga.xunta.gal/xeaga/IUWS" },
+      { label: "Portal XEAGA Galicia", url: "https://xeaga.xunta.gal" }
+    ],
+    support: [
+      "Consultas: soporte-xeaga@xunta.gal"
+    ]
+  },
+  {
+    id: "madrid",
+    name: "Comunidad de Madrid",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_the_Community_of_Madrid.svg",
+    content: [
+      "Información sobre el Registro de Explotaciones Agrícolas (REA).",
+      "Acceso Portal Entidades Habilitadas.",
+      "Para registrarse como Entidad Habilitada debe remitirse a la CA los siguientes documentos según modelos oficiales: Solicitud de autorización, Declaración de Confidencialidad, Acuerdo de Confidencialidad Personal, Cuadro Excel Usuarios."
+    ],
+    links: [
+      { label: "Gestión IUWS Madrid", url: "https://gestiona.comunidad.madrid/IUWS" },
+      { label: "Trámites Comunidad de Madrid", url: "https://www.comunidad.madrid" }
+    ],
+    support: [
+      "Consultas: incidencias_reacue@madrid.org"
+    ]
+  },
+  {
+    id: "murcia",
+    name: "Región de Murcia",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_Region_of_Murcia.svg",
+    content: [
+      "Acceso al trámite: Registro de Explotaciones Agrarias de la Comunidad Autónoma de la Región de Murcia.",
+      "Acceso Portal Entidades Colaboradoras.",
+      "Acceso al trámite para el alta como Entidad Habilitada: 5523 – Acreditación y Funcionamiento de las Entidades Colaboradoras.",
+      "Certificado Seguro de Responsabilidad Civil."
+    ],
+    links: [
+      { label: "Acceso IUWS CARM", url: "https://sede.carm.es/IUWS" },
+      { label: "Sede Electrónica Murcia", url: "https://www.carm.es" }
+    ],
+    support: [
+      "Consultas: cuaderno_digital_agri@carm.es"
+    ]
+  },
+  {
+    id: "navarra",
+    name: "Comunidad Foral de Navarra",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Flag_of_Navarre.svg",
+    content: [
+      "Regulación Registro Entidades Habilitadas: ORDEN FORAL 46/2023.",
+      "Acceso al trámite: Alta como entidad Colaboradora o entidad Habilitada.",
+      "Acceso al trámite: Registro de explotaciones agrarias de Navarra (REAN).",
+      "Acceso Portal Entidades Colaboradoras."
+    ],
+    links: [
+      { label: "Comunicación IUWS Navarra", url: "https://pac.navarra.es:8443/IUWS/comunicacion/" },
+      { label: "Portal Navarra.es", url: "https://www.navarra.es" }
+    ],
+    support: [
+      "Consultas: jvalence@navarra.es"
+    ]
+  },
+  {
+    id: "pais-vasco",
+    name: "Euskadi - País Vasco",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg",
+    content: [
+      "CUE Euskadi / País Vasco.",
+      "Información sobre el Cuaderno Digital de la Explotación Agrícola.",
+      "Tramitación Alta en el Registro de Entidades Habilitadas o Gestoras de Cuadernos Digitales.",
+      "Comunicaciones de Autorizaciones de titulares de explotaciones agrarias que usan cuadernos digitales."
+    ],
+    links: [
+      { label: "Información SIEX/CUE", url: "https://www.euskadi.eus/sites/graf/es/siex/" },
+      { label: "Acceso IUWS Euskadi", url: "https://www.euskadi.eus" }
+    ],
+    support: [
+      "Consultas: koadernodigitala@euskadi.eus"
+    ]
+  },
+  {
+    id: "la-rioja",
+    name: "La Rioja",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/d/db/Flag_of_La_Rioja_%28with_coat_of_arms%29.svg",
+    content: [
+      "Información sobre el Registro Autonómico de Explotaciones Agrícolas (REA).",
+      "Información sobre el CUE – Cuaderno Digital de Explotación Agrícola.",
+      "Consulta Previa: Decreto por el que se regula el Registro de Explotaciones Agrarias.",
+      "Trámite Alta Registro como Entidad Habilitada.",
+      "Descarga formulario a cumplimentar: Solicitud de alta.",
+      "Acceso Portal Entidades Habilitadas."
+    ],
+    links: [
+      { label: "Portal PAC IUWS La Rioja", url: "https://pac.larioja.org/IUWS/" },
+      { label: "Gestión CUE La Rioja", url: "https://www.larioja.org" }
+    ],
+    support: [
+      "Consultas: cue@larioja.org"
+    ]
+  }
+];
+---
+
+<Layout title="Directorio SIEX y CUE por Comunidad Autónoma">
+  <main class="cue-directory">
+    <!-- HERO SECTION -->
+    <section class="expert-hero-solid">
+      <div class="container">
+        <span class="pre-title">RECURSOS OFICIALES SIEX</span>
+        <h1>Directorio de CUE por Comunidad Autónoma</h1>
+        <p>
+          Recopilación exhaustiva de interfaces oficiales, modelos de autorización y canales de soporte técnico facilitados para el cumplimiento del SIEX nacional.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTENT WRAPPER -->
+    <section class="directory-list-section">
+      <div class="container-strict">
+        <div class="search-bar-wrap">
+          <input type="text" id="commSearch" placeholder="Busca tu Comunidad Autónoma..." />
+        </div>
+
+        <div class="communities-stack" id="commList">
+          {communities.map((comm) => (
+            <article class="editorial-row" data-name={comm.name.toLowerCase()}>
+              <div class="editorial-row__flag">
+                <div class="flag-container">
+                  <img src={comm.flag} alt={`Bandera de ${comm.name}`} />
+                </div>
+              </div>
+              <div class="editorial-row__content">
+                <h2 class="row-title">CUE {comm.name}</h2>
+                <div class="row-text">
+                  {comm.content.map((p) => (
+                    <p>{p}</p>
+                  ))}
+                </div>
+                
+                <div class="row-links">
+                  {comm.links.map((link) => (
+                    <a href={link.url} target="_blank" rel="noopener noreferrer" class="link-action">
+                      {link.label} →
+                    </a>
+                  ))}
+                </div>
+
+                {comm.support && (
+                  <div class="row-support">
+                    <h3>Atención al Usuario:</h3>
+                    <ul>
+                      {comm.support.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const search = document.getElementById("commSearch") as HTMLInputElement;
+    const entries = document.querySelectorAll(".editorial-row");
+
+    if (search) {
+      search.addEventListener("input", (e) => {
+        const query = (e.target as HTMLInputElement).value.toLowerCase();
+        entries.forEach((el) => {
+          const name = el.getAttribute("data-name") || "";
+          if (name.includes(query)) {
+            (el as HTMLElement).style.display = "grid";
+          } else {
+            (el as HTMLElement).style.display = "none";
+          }
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* GLOBAL CONTAINER FOR ALIGNMENT */
+  .container-strict {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      width: 100%;
+  }
+
+  .cue-directory {
+    background: #ffffff;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .expert-hero-solid {
+    padding: 180px 0 120px;
+    background: #0b1a14 !important;
+    color: white;
+    text-align: center;
+  }
+  .expert-hero-solid h1 { font-size: 3.5rem; font-weight: 800; color: white !important; margin-bottom: 20px; }
+  .expert-hero-solid .pre-title { font-size: 0.85rem; letter-spacing: 0.3em; color: var(--color-turquoise); font-weight: 700; margin-bottom: 20px; display: block; }
+  .expert-hero-solid p { font-size: 1.25rem; color: rgba(255,255,255,0.7); max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+  /* SEARCH */
+  .directory-list-section {
+      padding-bottom: 120px;
+  }
+  .search-bar-wrap {
+      max-width: 600px;
+      margin: -35px auto 80px;
+      position: relative;
+      z-index: 10;
+  }
+  .search-bar-wrap input {
+      width: 100%;
+      padding: 24px 32px;
+      border-radius: 50px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 10px 10px 40px rgba(0,0,0,0.05);
+      font-size: 1.1rem;
+      outline: none;
+      background: white;
+  }
+
+  /* ROWS */
+  .communities-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+  }
+
+  /* THIS IS THE CRITICAL ALIGNMENT RULE */
+  .editorial-row {
+      display: grid;
+      grid-template-columns: 320px 1fr; /* RIGID COLUMN WIDTH */
+      gap: 80px;
+      align-items: flex-start;
+      border-bottom: 1px solid #f1f3f5;
+      padding-bottom: 80px;
+      width: 100%;
+  }
+
+  .editorial-row__flag {
+      width: 320px; /* SAME AS GRID COLUMN */
+  }
+
+  .flag-container {
+      width: 100%;
+      aspect-ratio: 3 / 2; /* Force uniform shape */
+      background: #f8fafc;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .flag-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Don't distort the flag */
+      padding: 0; /* Align to the box edges */
+      display: block;
+  }
+
+  .editorial-row__content {
+      flex: 1;
+  }
+
+  .row-title {
+      font-size: 2.2rem;
+      font-weight: 850;
+      margin-bottom: 24px;
+      color: var(--color-turquoise-dark) !important;
+      letter-spacing: -0.02em;
+  }
+
+  .row-text p {
+      font-size: 1.1rem;
+      color: #334155;
+      line-height: 1.8;
+      margin-bottom: 15px;
+  }
+
+  .row-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 32px 0;
+  }
+
+  .link-action {
+      color: #2c3e7b;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: color 0.2s;
+  }
+  .link-action:hover {
+      color: var(--color-turquoise);
+      text-decoration: underline;
+  }
+
+  .row-support {
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #eef2f6;
+  }
+  .row-support h3 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+  }
+  .row-support ul { list-style: none; padding: 0; }
+  .row-support li {
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+  }
+  .row-support li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--color-turquoise);
+  }
+
+  @media (max-width: 991px) {
+      .container-strict { padding: 0 20px; }
+      .editorial-row {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+      }
+      .editorial-row__flag {
+          width: 260px;
+          margin: 0 auto;
+      }
+      .row-support { text-align: left; }
+  }
+</style>

@@ -1,0 +1,432 @@
+---
+// AIChatbot.astro
+---
+
+<div class="ai-chat-bubble" id="aiBubble">
+  <div class="ai-icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+  </div>
+  <span class="bubble-text">Experto PAC</span>
+</div>
+
+<div class="ai-chat-window" id="aiChatWindow">
+  <div class="chat-header">
+    <div class="header-info">
+      <div class="status-dot"></div>
+      <div>
+        <h3>AgroAI Asistente SIEX</h3>
+        <span>Especialista en Normativa Europea</span>
+      </div>
+    </div>
+    <button class="close-chat" id="closeChat">&times;</button>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="message incoming">
+      <p>¡Hola! Soy AgroAI, tu asistente experto. ¿En qué puedo ayudarte con la PAC 2024 o el SIEX?</p>
+    </div>
+  </div>
+
+  <div class="chat-suggestions">
+    <button class="suggest-btn" data-q="¿Qué es el SIEX?">¿Qué es el SIEX?</button>
+    <button class="suggest-btn" data-q="Ecorregímenes 2024">Ecorregímenes 2024</button>
+    <button class="suggest-btn" data-q="¿Es obligatorio el cuaderno?">¿Es obligatorio el cuaderno?</button>
+  </div>
+
+  <div class="chat-input-area">
+    <input type="text" placeholder="Escribe tu duda aquí..." id="chatInput" />
+    <button class="send-btn" id="sendBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .ai-chat-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0B1A14;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 15px rgba(29, 185, 154, 0.3);
+    border: 1px solid rgba(29, 185, 154, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .ai-chat-bubble:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #142d23;
+  }
+
+  .ai-icon {
+    color: var(--color-turquoise, #1DB99A);
+  }
+
+  .bubble-text {
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Chat Window */
+  .ai-chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 380px;
+    height: 520px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .ai-chat-window.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .chat-header {
+    padding: 24px;
+    background: #0B1A14;
+    color: white;
+    border-radius: 24px 24px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    background: #2ECC71;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+  }
+
+  .chat-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  .chat-header span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .close-chat:hover { opacity: 1; }
+
+  .chat-messages {
+    flex-grow: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .message {
+    max-width: 85%;
+    padding: 16px 20px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+
+  .message-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .message.incoming {
+    background: white;
+    color: #1e293b;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .message.incoming .message-label {
+    color: #1DB99A;
+  }
+
+  .message.outgoing {
+    background: #0B1A14;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+
+  .message.outgoing .message-label {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .chat-suggestions {
+    padding: 0 24px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .suggest-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .suggest-btn:hover {
+    background: #1DB99A;
+    color: white;
+    border-color: #1DB99A;
+  }
+
+  .chat-input-area {
+    padding: 20px 24px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    gap: 12px;
+  }
+
+  .chat-input-area input {
+    flex-grow: 1;
+    border: 1px solid #e2e8f0;
+    padding: 12px 16px;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .chat-input-area input:focus {
+    border-color: #1DB99A;
+  }
+
+  .send-btn {
+    background: #0B1A14;
+    color: white;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .send-btn:hover {
+    transform: scale(1.05);
+    background: #142d23;
+  }
+
+  @media (max-width: 500px) {
+    .ai-chat-window {
+      width: calc(100% - 40px);
+      right: 20px;
+      bottom: 90px;
+    }
+    .ai-chat-bubble {
+        bottom: 20px;
+        right: 20px;
+    }
+  }
+</style>
+
+<script>
+  const aiBubble = document.getElementById('aiBubble') as HTMLElement | null;
+  const aiChatWindow = document.getElementById('aiChatWindow') as HTMLElement | null;
+  const closeChat = document.getElementById('closeChat') as HTMLButtonElement | null;
+  const chatInput = document.getElementById('chatInput') as HTMLInputElement | null;
+  const sendBtn = document.getElementById('sendBtn') as HTMLButtonElement | null;
+  const chatMessages = document.getElementById('chatMessages') as HTMLElement | null;
+  const suggestBtns = document.querySelectorAll('.suggest-btn');
+
+  // Maintain actual chat history to send to Gemini API
+  let chatHistory: { role: string, text: string }[] = [];
+  let isAiWorking = false;
+
+  const toggleChat = () => {
+    if (aiChatWindow) {
+      aiChatWindow.classList.toggle('active');
+    }
+  };
+
+  aiBubble?.addEventListener('click', toggleChat);
+  closeChat?.addEventListener('click', toggleChat);
+
+  const appendMessageHTML = (text: string, type: string = 'incoming', isHTML: boolean = false) => {
+    if (!chatMessages) return null;
+    const msg = document.createElement('div');
+    msg.className = `message ${type}`;
+
+    // Añadir etiqueta de quién habla ("Tú" o "AgroAI")
+    const label = document.createElement('div');
+    label.className = 'message-label';
+    // No añadimos label a la burbuja de "cargando..."
+    if (!text.includes('animation: bounce')) {
+      label.textContent = type === 'incoming' ? 'AgroAI' : 'Tú';
+      msg.appendChild(label);
+    }
+
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    if (isHTML) {
+      content.innerHTML = text;
+    } else {
+      const p = document.createElement('p');
+      p.textContent = text;
+      content.appendChild(p);
+    }
+    msg.appendChild(content);
+    chatMessages.appendChild(msg);
+
+    // Sistema de scroll inteligente sin mover la pantalla del usuario
+    if (type === 'incoming' && !text.includes('animation: bounce')) {
+      setTimeout(() => {
+        // En lugar de scrollIntoView (que causa que la web entera baje), scrolleamos el contenedor
+        chatMessages.scrollTo({ 
+          top: msg.offsetTop - 30, 
+          behavior: 'smooth' 
+        });
+      }, 50);
+    } else {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    return msg;
+  };
+
+  const showLoading = () => {
+    return appendMessageHTML(`
+      <div style="display: flex; gap: 4px; padding: 4px 8px;">
+        <span style="width: 6px; height: 6px; background: #64748b; border-radius: 50%; display: inline-block; animation: bounce 1s infinite alternate;"></span>
+        <span style="width: 6px; height: 6px; background: #64748b; border-radius: 50%; display: inline-block; animation: bounce 1s infinite alternate; animation-delay: 0.2s"></span>
+        <span style="width: 6px; height: 6px; background: #64748b; border-radius: 50%; display: inline-block; animation: bounce 1s infinite alternate; animation-delay: 0.4s"></span>
+      </div>
+    `, 'incoming', true);
+  };
+
+  const attemptSend = async (text: string) => {
+    if (isAiWorking || !text.trim()) return;
+
+    // Remove buttons from view to keep history clean (optional)
+    const suggestionsContainer = document.querySelector('.chat-suggestions') as HTMLElement;
+    if (suggestionsContainer) {
+       suggestionsContainer.style.display = 'none';
+    }
+
+    // 1. Mostrar mensaje del usuario
+    appendMessageHTML(text, 'outgoing');
+    chatInput && (chatInput.value = '');
+    isAiWorking = true;
+    chatInput?.setAttribute('disabled', 'true');
+    sendBtn?.setAttribute('disabled', 'true');
+
+    // 2. Mostrar indicador de "Escribiendo..."
+    const loadingBubble = showLoading();
+
+    try {
+      // 3. Llamada al Backend (API) de Astro donde está Gemini
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: text, chatHistory })
+      });
+
+      // Añadimos el mensaje del usuario al historial que tenemos guardado
+      chatHistory.push({ role: 'user', text });
+
+      loadingBubble?.remove();
+
+      if (response.ok) {
+        const data = await response.json();
+        // Insertamos formateando line breaks
+        const formattedText = data.text.replace(/\n\n/g, '</p><p>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        appendMessageHTML(`<p>${formattedText}</p>`, 'incoming', true);
+        
+        // Añadir repuesta de la IA al historial
+        chatHistory.push({ role: 'model', text: data.text });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch(err) {
+      console.error("API error", err);
+      loadingBubble?.remove();
+      appendMessageHTML("Hubo un fallo temporal de red. Intenta preguntar más tarde mientras soluciono mis servidores.", 'incoming');
+    } finally {
+      isAiWorking = false;
+      chatInput?.removeAttribute('disabled');
+      sendBtn?.removeAttribute('disabled');
+      chatInput?.focus();
+    }
+  };
+
+  const handleSendBtnClick = () => {
+    if (chatInput) {
+      attemptSend(chatInput.value);
+    }
+  };
+
+  sendBtn?.addEventListener('click', handleSendBtnClick);
+  chatInput?.addEventListener('keypress', (e: KeyboardEvent) => {
+    if (e.key === 'Enter') handleSendBtnClick();
+  });
+
+  suggestBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const q = btn.getAttribute('data-q');
+      if (q) attemptSend(q);
+    });
+  });
+
+  // Inject minimalist bounce animation into doc
+  const style = document.createElement('style');
+  style.innerHTML = `@keyframes bounce { to { transform: translateY(-4px); opacity: 0.5; } }`;
+  document.head.appendChild(style);
+</script>

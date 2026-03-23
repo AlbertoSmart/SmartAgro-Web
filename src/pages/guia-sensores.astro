@@ -77,9 +77,7 @@ const otherSensors = [
             </ul>
           </div>
           <div class="media-content">
-            <div class="image-placeholder">
-              <span>Visualización Dinámica Edáfica (600x400)</span>
-            </div>
+            <img src="/images/sensores/field_sensor_hero.jpg" alt="Visualización Dinámica Edáfica" class="editorial-image" />
           </div>
         </div>
       </div>
@@ -128,9 +126,7 @@ const otherSensors = [
             </ul>
           </div>
           <div class="media-content">
-            <div class="image-placeholder">
-              <span>Análisis Fisiológico y Dendrometría (600x400)</span>
-            </div>
+            <img src="/images/sensores/plant_sensor_hero.jpg" alt="Análisis Fisiológico" class="editorial-image" />
           </div>
         </div>
       </div>
@@ -179,9 +175,7 @@ const otherSensors = [
             </ul>
           </div>
           <div class="media-content">
-            <div class="image-placeholder">
-              <span>Estación Meteorológica e Hidrostática (600x400)</span>
-            </div>
+            <img src="/images/sensores/weather_sensor_hero.jpg" alt="Estación Meteorológica e Hidrostática" class="editorial-image" />
           </div>
         </div>
 
@@ -205,6 +199,13 @@ const otherSensors = [
     color: #000000;
     padding-top: 80px;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
   }
 
   /* HERO */
@@ -248,8 +249,8 @@ const otherSensors = [
 
   .zig-zag-row {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 100px;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
     align-items: center;
     margin-bottom: 120px;
   }
@@ -317,7 +318,32 @@ const otherSensors = [
     font-weight: 900;
   }
 
-  /* PLACEHOLDERS */
+  /* EDITORIAL IMAGES */
+  .media-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .editorial-image {
+    width: 100%;
+    max-width: 600px; /* Constrain horizontal width */
+    height: 400px;    /* Fixed height for specific "sitio" */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #f8f9fa;
+  }
+
+  .editorial-image:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 50px 120px rgba(0,0,0,0.12);
+  }
+
+  /* PLACEHOLDERS (Removed since we have photos now) */
   .image-placeholder {
     width: 100%;
     aspect-ratio: 6 / 4;

@@ -1,5 +1,6 @@
 ---
 import TestPage from "../../layouts/TestPage.astro";
+import ROICalculator from "../../components/ROICalculator.astro";
 ---
 
 <TestPage
@@ -39,8 +40,11 @@ import TestPage from "../../layouts/TestPage.astro";
             </div>
         </section>
 
+        <!-- ROI Calculator -->
+        <ROICalculator />
+
         <!-- Section: Tangible Benefits -->
-        <section class="benefits-section glass-dark">
+        <section class="benefits-section premium-benefits-box">
             <h2 class="text-white">Beneficios Reales para tu Bolsillo</h2>
             <div class="cards-grid">
                 <div class="beneficio-card">
@@ -180,40 +184,72 @@ import TestPage from "../../layouts/TestPage.astro";
     }
 
     .benefits-section {
-        padding: 60px 40px;
-        border-radius: 24px;
-        margin: 60px 0;
+        padding: 80px 40px;
+        border-radius: 32px;
+        margin: 80px 0;
+        position: relative;
+        overflow: hidden;
     }
 
-    .text-white { color: white !important; }
+    .premium-benefits-box {
+        background: linear-gradient(145deg, #0B1A14 0%, #163127 100%);
+        border: 1px solid rgba(29, 185, 154, 0.3);
+        box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+    }
+
+    .text-white { 
+        color: white !important; 
+        font-weight: 850;
+        letter-spacing: -0.02em;
+        margin-bottom: 48px !important;
+        text-align: center;
+    }
 
     .beneficio-card {
-        padding: 30px 20px;
+        padding: 40px 30px;
         text-align: center;
-        background: rgba(255,255,255,0.05);
-        border-radius: 20px;
-        border: 1px solid rgba(255,255,255,0.1);
-        transition: background 0.3s ease;
+        background: rgba(255,255,255,0.04);
+        border-radius: 24px;
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
     }
 
     .beneficio-card:hover {
-        background: rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.07);
+        transform: translateY(-10px);
+        border-color: rgba(29, 185, 154, 0.5);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
     .beneficio-card .icon {
         color: var(--color-turquoise);
-        margin-bottom: 20px;
-        display: inline-block;
+        margin-bottom: 24px;
+        display: inline-flex;
+        padding: 15px;
+        background: rgba(29, 185, 154, 0.1);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .beneficio-card:hover .icon {
+        transform: scale(1.1) rotate(5deg);
+        background: rgba(29, 185, 154, 0.2);
+        box-shadow: 0 0 20px rgba(29, 185, 154, 0.3);
     }
 
     .beneficio-card h3 {
         color: white;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
+        font-size: 1.4rem;
+        font-weight: 750;
     }
 
     .beneficio-card p {
-        color: rgba(255,255,255,0.8) !important;
-        font-size: 0.9rem;
+        color: rgba(255,255,255,0.95) !important;
+        font-size: 1rem;
+        line-height: 1.6;
+        font-weight: 450;
     }
 
     .tools-overview {

@@ -2,9 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Gestión Integral de la Finca y Cuaderno de Campo Digital">
-  <div class="manual-container">
-    <div class="subpage-content dashboard-layout">
+<Layout title="Cuaderno Digital: Gestión Agraria Integral">
+  <main class="contact-editorial no-margin">
+    <!-- SOLID BRAND HERO -->
+    <section class="expert-hero-solid">
+      <div class="container">
+        <span class="pre-title">GESTIÓN DIGITAL AVANZADA</span>
+        <h1>Cuaderno de Campo Inteligente</h1>
+        <p>
+          Digitalización total de la explotación: desde el cumplimiento normativo SIEX hasta la inteligencia geográfica y seguridad perimetral.
+        </p>
+      </div>
+    </section>
+
+    <div class="container main-content">
+      <div class="subpage-content dashboard-layout">
       <!-- Navegación Lateral (Anclas) -->
       <aside class="side-nav">
         <nav>
@@ -176,56 +188,158 @@ import Layout from "../layouts/Layout.astro";
       </main>
     </div>
   </div>
+  </main>
 </Layout>
 
 <style is:global>
-  /* FORZADO ABSOLUTO DE FONDO BLANCO Y TEXTO OSCURO */
-  body, .page-body, .page-body .container { 
-    background-color: #FFFFFF !important; 
+  /* Base consistency styles from Contacto/Sensores */
+  .contact-editorial {
+    background: #ffffff;
+    color: var(--color-charcoal);
+    box-sizing: border-box;
   }
-  
-  /* Asegurar que el slot hereda el fondo blanco */
-  .manual-container {
-    background-color: #FFFFFF !important;
-    min-height: 100vh;
-    width: 100%;
-    color: #000000 !important;
+
+  .contact-editorial.no-margin {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .contact-editorial .container {
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* BRAND HERO CROSS-PAGE - PURE DARK CONTINUITY */
+  .expert-hero-solid {
+    padding: 160px 0 120px;
+    background: #0b1a14 !important; /* "Esencia de Campo" Deep Forest Green */
+    color: #ffffff !important;
+    text-align: center;
+    margin-top: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .expert-hero-solid .pre-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: rgba(255, 255, 255, 0.7) !important;
+    display: block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .expert-hero-solid h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 30px;
+    letter-spacing: -0.03em;
+    color: #ffffff !important;
+    margin-top: 0 !important;
+  }
+
+  .expert-hero-solid p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Adjust main container for overlap consistency */
+  .contact-editorial .main-content {
+    margin-top: 0;
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 20;
+    background: #ffffff;
   }
 </style>
 
 <style>
   /* TIPOGRAFÍA Y COLORES MANUAL */
-  .title-manual { color: #000000 !important; font-size: 3.2rem; font-weight: 950; line-height: 1.1; margin-bottom: 30px; letter-spacing: -0.02em; }
-  .subtitle-manual { color: #111111 !important; font-size: 2rem; font-weight: 800; margin-bottom: 24px; }
-  .tiny-title-manual { color: #222222 !important; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
-  .paragraph-manual { color: #333333 !important; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px; }
-  .paragraph-manual-bold { color: #000000 !important; font-size: 1.25rem; line-height: 1.6; font-weight: 600; border-left: 5px solid var(--color-turquoise); padding-left: 30px; margin-bottom: 30px; }
+  .title-manual {
+    color: #000000 !important;
+    font-size: 3.2rem;
+    font-weight: 950;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -0.02em;
+  }
+  .subtitle-manual {
+    color: #111111 !important;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+  }
+  .tiny-title-manual {
+    color: #222222 !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  .paragraph-manual {
+    color: #333333 !important;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .paragraph-manual-bold {
+    color: #000000 !important;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 600;
+    border-left: 5px solid var(--color-turquoise);
+    padding-left: 30px;
+    margin-bottom: 30px;
+  }
 
   .dashboard-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 80px;
-    padding: 80px 0;
+    padding: 100px 0; /* Increased for better breathing room */
   }
 
   /* SIDE NAV MANUAL */
-  .side-nav { position: sticky; top: 120px; height: fit-content; }
-  .side-nav ul { list-style: none; padding: 0; border-left: 2px solid #EEEEEE; }
-  .side-nav a { 
-    display: block; 
-    padding: 16px 30px; 
-    color: #666666; 
-    text-decoration: none; 
-    font-weight: 700; 
+  .side-nav {
+    position: sticky;
+    top: 140px;
+    height: fit-content;
+  }
+  .side-nav ul {
+    list-style: none;
+    padding: 0;
+    border-left: 2px solid #eeeeee;
+  }
+  .side-nav a {
+    display: block;
+    padding: 16px 30px;
+    color: #666666;
+    text-decoration: none;
+    font-weight: 700;
     font-size: 0.95rem;
     transition: all 0.3s;
   }
-  .side-nav a:hover { color: var(--color-turquoise); background: #F8F9FA; padding-left: 40px; }
+  .side-nav a:hover {
+    color: var(--color-turquoise);
+    background: #f8f9fa;
+    padding-left: 40px;
+  }
 
   /* SECCIONES Y BLOQUES MANUAL */
-  .dashboard-section { margin-bottom: 140px; background: transparent; }
-  .section-unified { padding: 0; }
-  
+  .dashboard-section {
+    margin-bottom: 140px;
+    background: transparent;
+  }
+  .section-unified {
+    padding: 0;
+  }
+
   .badge-tech {
     display: inline-block;
     padding: 8px 16px;
@@ -242,7 +356,7 @@ import Layout from "../layouts/Layout.astro";
     display: inline-block;
     padding: 8px 16px;
     background: #000000;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 900;
     font-size: 0.75rem;
     border-radius: 4px;
@@ -251,94 +365,167 @@ import Layout from "../layouts/Layout.astro";
   }
 
   /* BOXES Y CARDS MANUAL */
-  .manual-detail-box { 
-    background: #F8F9FA; 
-    padding: 40px; 
-    border-radius: 12px; 
-    border: 1px solid #E9ECEF; 
+  .manual-detail-box {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
   }
-  
-  .manual-list { list-style: none; padding: 0; margin-top: 30px; }
-  .manual-list li { margin-bottom: 24px; padding-left: 30px; position: relative; color: #444444; line-height: 1.6; }
-  .manual-list li::before { content: ""; position: absolute; left: 0; top: 12px; width: 14px; height: 2px; background: var(--color-turquoise); }
-  .manual-list strong { color: #000000; display: block; margin-bottom: 4px; }
 
-  .docs-manual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .doc-item-card { 
-    background: #FFFFFF;
-    padding: 45px; 
-    border-radius: 16px;
-    border: 1px solid #E9ECEF;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  .manual-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
   }
-  
-  .premium-entry { border-top: 1px solid #F1F3F5; padding-top: 25px; margin-top: 25px; }
-  .premium-entry:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+  .manual-list li {
+    margin-bottom: 24px;
+    padding-left: 30px;
+    position: relative;
+    color: #444444;
+    line-height: 1.6;
+  }
+  .manual-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 14px;
+    height: 2px;
+    background: var(--color-turquoise);
+  }
+  .manual-list strong {
+    color: #000000;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .docs-manual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .doc-item-card {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  .premium-entry {
+    border-top: 1px solid #f1f3f5;
+    padding-top: 25px;
+    margin-top: 25px;
+  }
+  .premium-entry:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
 
   /* GIS MANUAL */
-  .gis-layout-manual { 
-    display: grid; 
-    grid-template-columns: 1fr 1.2fr; 
-    gap: 60px; 
-    margin-top: 40px; 
+  .gis-layout-manual {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    margin-top: 40px;
     align-items: center;
   }
-  .gis-map-container { 
-    position: relative; 
-    height: 380px; 
-    border-radius: 12px; 
-    overflow: hidden; 
-    box-shadow: 0 12px 30px rgba(0,0,0,0.06); 
-    border: 1px solid #E9ECEF;
+  .gis-map-container {
+    position: relative;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e9ecef;
   }
-  .gis-map-container img { width: 100%; height: 100%; object-fit: cover; }
-  .gis-marker { 
-    position: absolute; 
-    background: #000000; 
-    color: var(--color-turquoise); 
-    padding: 10px 18px; 
-    font-weight: 900; 
-    font-size: 0.75rem; 
+  .gis-map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .gis-marker {
+    position: absolute;
+    background: #000000;
+    color: var(--color-turquoise);
+    padding: 10px 18px;
+    font-weight: 900;
+    font-size: 0.75rem;
     border: 1px solid var(--color-turquoise);
     border-radius: 6px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
-  .gis-sub-box { background: #F8F9FA; padding: 35px; border-radius: 16px; margin-top: 30px; border: 1px solid #E9ECEF; }
+  .gis-sub-box {
+    background: #f8f9fa;
+    padding: 35px;
+    border-radius: 16px;
+    margin-top: 30px;
+    border: 1px solid #e9ecef;
+  }
 
   /* INFRA MANUAL */
-  .infra-manual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .infra-item-card { 
-    background: #FFFFFF; 
-    padding: 50px; 
-    border-radius: 16px; 
-    border: 1px solid #E9ECEF; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    border-top: 6px solid var(--color-turquoise); 
+  .infra-manual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .infra-item-card {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border-top: 6px solid var(--color-turquoise);
   }
 
   /* SECURITY MANUAL */
-  .security-manual-box { background: #F8F9FA; padding: 70px; border-radius: 32px; border: 1px solid #E9ECEF; }
-  .security-manual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; }
-  .security-manual-footer { margin-top: 60px; text-align: center; }
-  
-  .btn-manual-cta { 
-    display: inline-block; 
-    padding: 20px 50px; 
-    background: var(--color-turquoise); 
-    color: #000000; 
-    font-weight: 900; 
-    text-decoration: none; 
+  .security-manual-box {
+    background: #f8f9fa;
+    padding: 70px;
+    border-radius: 32px;
+    border: 1px solid #e9ecef;
+  }
+  .security-manual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+  }
+  .security-manual-footer {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .btn-manual-cta {
+    display: inline-block;
+    padding: 20px 50px;
+    background: var(--color-turquoise);
+    color: #000000;
+    font-weight: 900;
+    text-decoration: none;
     border-radius: 8px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: all 0.3s;
-    box-shadow: 0 10px 25px rgba(15,181,174,0.2);
+    box-shadow: 0 10px 25px rgba(15, 181, 174, 0.2);
   }
-  .btn-manual-cta:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(15,181,174,0.3); }
+  .btn-manual-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(15, 181, 174, 0.3);
+  }
 
   @media (max-width: 1200px) {
-    .dashboard-layout { grid-template-columns: 1fr; }
-    .side-nav { display: none; }
-    .docs-manual-grid, .gis-layout-manual, .infra-manual-grid, .security-manual-grid { grid-template-columns: 1fr; }
+    .dashboard-layout {
+      grid-template-columns: 1fr;
+    }
+    .side-nav {
+      display: none;
+    }
+    .docs-manual-grid,
+    .gis-layout-manual,
+    .infra-manual-grid,
+    .security-manual-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -1,0 +1,425 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const bcamList = [
+  { id: "bcam1", title: "BCAM 1: Pastos permanentes", detail: "Mantenimiento de la proporción de pastos permanentes respecto a la superficie agraria a nivel nacional." },
+  { id: "bcam2", title: "BCAM 2: Protección de humedales y turberas", detail: "Protección de suelos ricos en carbono para evitar la liberación de CO2 a la atmósfera." },
+  { id: "bcam3", title: "BCAM 3: Prohibición de quema de rastrojos", detail: "Salvo por razones fitosanitarias justificadas. Objetivo: mantenimiento de la materia orgánica del suelo." },
+  { id: "bcam4", title: "BCAM 4: Franjas de protección en cauces", detail: "Creación de franjas de protección de 5 metros de ancho mínimo sin aplicación de fertilizantes ni fitosanitarios." },
+  { id: "bcam5", title: "BCAM 5: Gestión de la labranza", detail: "Reducción del riesgo de degradación y erosión del suelo teniendo en cuenta la pendiente (prohibición de labrar en la dirección de la pendiente >10%)." },
+  { id: "bcam6", title: "BCAM 6: Cobertura mínima de suelo", detail: "Mantenimiento de cobertura mínima en periodos sensibles para evitar suelos desnudos y erosión." },
+  { id: "bcam7", title: "BCAM 7: Rotación de cultivos", detail: "Rotación en tierras de cultivo (excepto cultivos bajo agua) para mejorar la biodiversidad y calidad del suelo." },
+  { id: "bcam8", title: "BCAM 8: Superficies no productivas", detail: "Porcentaje mínimo de superficie agrícola dedicada a elementos no productivos (barbechos, setos, etc.)." },
+  { id: "bcam9", title: "BCAM 9: Pastos sensibles en Red Natura 2000", detail: "Prohibición de roturar o labrar los pastos permanentes designados como sensibles desde el punto de vista medioambiental." },
+  { id: "bcam10", title: "BCAM 10: Fertilización y gestión de nutrientes", detail: "Uso de herramientas de sostenibilidad para la fertilización y registro de operaciones en el Cuaderno Digital." }
+];
+
+const ecoRegimenes = [
+  { id: "p3", title: "P3: Rotación de cultivos con especies mejorantes", detail: "Exige que al menos el 50% de la superficie de tierra de cultivo se rote cada año. Además, debe haber al menos un 10% de leguminosas (especies mejorantes) en la rotación total." },
+  { id: "p4", title: "P4: Siembra Directa", detail: "Prohibición total de labranza. Se debe mantener el rastrojo sobre el suelo para protegerlo de la erosión y mejorar la captura de carbono." },
+  { id: "p5", title: "P5: Cubiertas Vegetales (Vivas e Inertes)", detail: "Fundamental para cultivos leñosos. Exige mantener una cubierta vegetal (espontánea o sembrada) entre las hileras durante periodos críticos (mínimo 4 meses entre otoño e invierno) con prohibición de herbicidas en dicha franja." }
+];
+---
+
+<Layout title="Guía PAC 2023-2027: Ecorregímenes y BCAM">
+  <main class="pac-guide">
+    <!-- HERO SECTION -->
+    <header class="guide-hero">
+      <div class="container-guide">
+        <span class="guide-badge">INGENIERÍA AGRÓNOMA & CONSULTORÍA</span>
+        <h1>Guía Maestra de Ecorregímenes y Condicionalidad Reforzada (PAC 2023-2027)</h1>
+        <p>Documentación técnica para el cumplimiento del SIEX, gestión de ayudas directas y optimización de prácticas sostenibles en la explotación.</p>
+      </div>
+    </header>
+
+    <div class="guide-layout container-guide">
+      <!-- STICKY SIDEBAR INDEX -->
+      <aside class="guide-sidebar">
+        <nav class="sticky-index">
+          <h3>CONTENIDOS</h3>
+          <ul>
+            <li><a href="#modulo1">Condicionalidad (BCAM)</a></li>
+            <li><a href="#modulo2">Catálogo Ecorregímenes (EE)</a></li>
+            <li><a href="#p3">P3: Rotación</a></li>
+            <li><a href="#p4">P4: Siembra Directa</a></li>
+            <li><a href="#p5">P5: Cubiertas Vegetales</a></li>
+            <li><a href="#modulo3">Cuaderno Digital SIEX</a></li>
+            <li><a href="#fuentes">Fuentes Oficiales</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <article class="guide-content">
+        
+        <!-- INTRO TECNICA -->
+        <section class="content-block">
+          <img src="https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80" alt="Campo agrícola profesional de alta tecnología" class="featured-img" />
+        </section>
+
+        <!-- MODULO 01 -->
+        <section id="modulo1" class="content-block">
+          <h2 class="section-title">Módulo 01: La Condicionalidad Reforzada (BCAM)</h2>
+          <p>
+            La Condicionalidad Reforzada es el conjunto de requisitos básicos que todos los beneficiarios de ayudas PAC deben cumplir. Se estructura en 10 Buenas Condiciones Agrarias y Medioambientales (BCAM) vinculadas al clima, agua, suelo y biodiversidad.
+          </p>
+          
+          <div class="accordions-wrap">
+            {bcamList.map((bcam) => (
+              <details class="bcam-accordion">
+                <summary>
+                  <span>{bcam.title}</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <div class="accordion-content">
+                  <p>{bcam.detail}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+
+          <div class="official-cta">
+            <a href="https://www.fega.gob.es/es/ayudas-directas-y-desarrollo-rural/condicionalidad" target="_blank" class="link-highlight">
+              Consultar Guía Completa de Condicionalidad (FEGA) →
+            </a>
+          </div>
+        </section>
+
+        <!-- MODULO 02 -->
+        <section id="modulo2" class="content-block">
+          <h2 class="section-title">Módulo 02: Catálogo de Ecorregímenes (EE)</h2>
+          <p>Los Ecorregímenes son prácticas voluntarias remuneradas que van más allá de la condicionalidad básica. Representan el 23% del presupuesto de ayudas directas.</p>
+          
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ecorregimen</th>
+                  <th>Práctica Principal</th>
+                  <th>Objetivo Técnico</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>P3</td>
+                  <td>Rotación + Mejorantes</td>
+                  <td>Incremento Materia Orgánica</td>
+                </tr>
+                <tr>
+                  <td>P4</td>
+                  <td>Siembra Directa</td>
+                  <td>Captura Carbono Suelo</td>
+                </tr>
+                <tr>
+                  <td>P5</td>
+                  <td>Cubiertas Vegetales</td>
+                  <td>Control de Erosión en Pendientes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- DETALLE P3 -->
+          <div id="p3" class="sub-module">
+            <h3>P3: Rotación de cultivos con especies mejorantes</h3>
+            <div class="side-info">
+              <p>Esta práctica exige un diseño agronómico donde el <strong>50% de la superficie</strong> cambie de cultivo anualmente. Es imperativo incluir al menos un <strong>10% de leguminosas</strong> del total de hectáreas declaradas en este ecorregimen.</p>
+            </div>
+            <img src="https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cultivos rotativos" class="inline-img" />
+          </div>
+
+          <!-- DETALLE P4 -->
+          <div id="p4" class="sub-module">
+            <h3>P4: Siembra Directa</h3>
+            <p>Se define como la siembra de cultivos anuales directamente sobre los rastrojos del cultivo anterior, sin ninguna labor de roturación previa. El suelo debe permanecer cubierto mecánicamente el 100% del tiempo mediante rastrojos o cubiertas.</p>
+          </div>
+
+          <!-- DETALLE P5 -->
+          <div id="p5" class="sub-module">
+            <h3>P5: Cubiertas Vegetales (Vivas e Inertes)</h3>
+            <p>Especialmente crítico para cultivos leñosos (olivar, almendro, frutales). Se debe mantener una franja central de cubierta vegetal de al menos el 40% de la anchura libre entre hileras.</p>
+            <ul class="tech-specs">
+              <li><strong>Mínimo 4 meses:</strong> La cubierta debe estar viva entre el 1 de octubre y el 31 de marzo.</li>
+              <li><strong>Prohibición herbicide:</strong> Prohibido el uso de productos químicos sobre la franja de cubierta.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- MODULO 03 -->
+        <section id="modulo3" class="content-block">
+          <h2 class="section-title">Módulo 03: Cuaderno Digital (SIEX) como Evidencia</h2>
+          <p>
+            Con la entrada en vigor del SIEX, la administración ya no solo requiere datos tabulados. La verificación de las prácticas de ecorregímenes se apoya ahora en la <strong>Monitorización</strong> y las <strong>Fotos Georreferenciadas</strong>.
+          </p>
+          <div class="tech-alert">
+             <p><strong>REQUISITO SIEX:</strong> Todas las aplicaciones de fitosanitarios y fertilizantes deben quedar registradas en un plazo máximo de 30 días posteriores a la operación.</p>
+          </div>
+          <div class="official-cta">
+            <a href="https://www.mapa.gob.es/es/agricultura/temas/siex/" target="_blank" class="link-highlight">
+              Manual de Captura de Fotos del MAPA/FEGA →
+            </a>
+          </div>
+        </section>
+
+        <!-- FUENTES -->
+        <footer id="fuentes" class="doc-footer">
+          <h2 class="section-title">Fuentes y Documentación Oficial</h2>
+          <ul class="doc-links">
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2022-23057" target="_blank">Real Decreto 1048/2022 (Gestión de ayudas PAC)</a></li>
+            <li><a href="https://www.fega.gob.es/es/siex1" target="_blank">Portal SIEX del Ministerio de Agricultura</a></li>
+            <li><a href="https://www3.sede.fega.gob.es/bdcgabcse/inicio/inicioAplicacion.action" target="_blank">Calculadora de Ayudas PAC (Simulador FEGA)</a></li>
+          </ul>
+        </footer>
+
+      </article>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .pac-guide {
+    background: #f8faf9;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+  }
+
+  /* HERO */
+  .guide-hero {
+    background: #0b1a14;
+    color: white;
+    padding: 180px 0 120px;
+    text-align: center;
+  }
+  .container-guide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  .guide-badge {
+    color: #1DB99A;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 24px;
+  }
+  .guide-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 850;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: white !important;
+  }
+  .guide-hero p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.73);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* LAYOUT */
+  .guide-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 80px;
+    margin-top: 80px;
+    padding-bottom: 150px;
+  }
+
+  /* SIDEBAR */
+  .guide-sidebar {
+    position: relative;
+  }
+  .sticky-index {
+    position: sticky;
+    top: 140px;
+  }
+  .sticky-index h3 {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #94a3b8;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+  }
+  .sticky-index ul { list-style: none; padding: 0; }
+  .sticky-index li { margin-bottom: 16px; }
+  .sticky-index a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  .sticky-index a:hover { color: #1DB99A; }
+
+  /* CONTENT BLOCKS */
+  .content-block {
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+  .content-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 850;
+    margin-bottom: 30px;
+    color: #0f172a !important;
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 24px;
+  }
+
+  /* IMAGES */
+  .featured-img {
+    max-width: 800px;
+    width: 100%;
+    display: block;
+    margin: 0 auto 16px;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  }
+  .img-caption {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-style: italic;
+    text-align: center;
+  }
+  .inline-img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 32px 0;
+  }
+
+  /* ACCORDIONS */
+  .accordions-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 40px 0;
+  }
+  .bcam-accordion {
+    background: white;
+    border: 1px solid #eef2f1;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .bcam-accordion summary {
+    padding: 24px 32px;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .bcam-accordion summary svg { transition: transform 0.3s; }
+  .bcam-accordion[open] summary svg { transform: rotate(180deg); }
+  .bcam-accordion[open] { border-color: #1DB99A; box-shadow: 0 10px 30px rgba(29, 185, 154, 0.08); }
+  .accordion-content { padding: 0 32px 24px; color: #475569; }
+
+  /* LINKS */
+  .link-highlight {
+    color: #1DB99A;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+  }
+  .link-highlight:hover { border-bottom-color: #1DB99A; }
+
+  /* TABLE */
+  .table-wrap {
+      overflow-x: auto;
+      margin: 40px 0;
+      border-radius: 12px;
+      border: 1px solid #eef2f1;
+  }
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+  }
+  th { background: #f8fafc; text-align: left; padding: 20px 32px; font-size: 0.85rem; text-transform: uppercase; color: #64748b; }
+  td { padding: 20px 32px; border-top: 1px solid #f1f5f9; font-weight: 500; }
+
+  /* SUB-MODULES */
+  .sub-module {
+      margin-top: 60px;
+      padding: 40px;
+      background: rgba(29, 185, 154, 0.03);
+      border-radius: 20px;
+      border-left: 5px solid #1DB99A;
+  }
+  .sub-module h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; }
+  .tech-specs { list-style: none; padding: 0; margin-top: 24px; }
+  .tech-specs li { margin-bottom: 12px; padding-left: 24px; position: relative; }
+  .tech-specs li::before { content: "✓"; color: #1DB99A; position: absolute; left: 0; font-weight: 800; }
+
+  .tech-alert {
+      background: #0b1a14;
+      color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      margin: 40px 0;
+      border-left: 4px solid var(--color-turquoise);
+  }
+  .tech-alert p {
+      color: #ffffff;
+      margin: 0;
+  }
+  .tech-alert strong {
+      color: var(--color-turquoise);
+  }
+
+  /* DOC FOOTER */
+  .doc-footer {
+      border-top: 2px solid #eef2f1;
+      padding-top: 80px;
+  }
+  .doc-links { list-style: none; padding: 0; }
+  .doc-links li { margin-bottom: 20px; }
+  .doc-links a { color: #2563eb; font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+  .doc-links a:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .guide-layout { grid-template-columns: 1fr; gap: 40px; }
+    .guide-sidebar { display: none; }
+    .container-guide { padding: 0 24px; }
+    .section-title { font-size: 1.8rem; }
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.content-block').forEach(block => {
+      observer.observe(block);
+    });
+  });
+</script>

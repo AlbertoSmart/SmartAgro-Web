@@ -12,6 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^10.0.3",
+    "@google/generative-ai": "^0.24.1",
     "astro": "^6.0.5"
   }
 }

@@ -1,0 +1,377 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const categories = [
+  { id: 'normativa', name: 'Normativa SIEX y PAC' },
+  { id: 'tecnologia', name: 'Tecnología de Precisión' },
+  { id: 'gestion', name: 'Gestión de Explotación' }
+];
+
+const posts = [
+  {
+    id: "manual-inspecciones-siex-2026",
+    category: "normativa",
+    categoryName: "Normativa SIEX y PAC",
+    title: "Manual Defensivo ante Inspecciones SIEX 2026",
+    excerpt: "Requisitos del Real Decreto 1054/2022, uso de fotos georreferenciadas como prueba legal, y plazos de registro de fitosanitarios.",
+    image: "https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    date: "15 MAR 2024",
+    readTime: "12 min"
+  },
+  {
+    id: "la-fisica-del-suelo-npk",
+    category: "tecnologia",
+    categoryName: "Tecnología de Precisión",
+    title: "La Física del Suelo: Interpretando NPK y Conductividad Eléctrica",
+    excerpt: "Explicación de la tecnología FDR, calibración de sensores en diferentes texturas de suelo y optimización del fertirriego avanzado.",
+    image: "https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    date: "10 MAR 2024",
+    readTime: "15 min"
+  },
+  {
+    id: "ecorregimen-p5-cubiertas-vegetales",
+    category: "gestion",
+    categoryName: "Gestión de Explotación",
+    title: "Ecorrégimen P5: Cubiertas Vegetales sin competencia hídrica",
+    excerpt: "Cómo usar sensores de humedad para decidir el momento exacto del desbroce mecánico y cumplir con la normativa de biodiversidad.",
+    image: "https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    date: "05 MAR 2024",
+    readTime: "10 min"
+  }
+];
+---
+
+<Layout title="Blog Técnico Agronómico - Smart Fenix">
+  <main class="blog-container">
+    <header class="blog-hero">
+      <div class="container wide hero-centered">
+        <h1>Plataforma de Información y Normativa</h1>
+        <p>Documentación técnica, legislación y casos prácticos para la agricultura de precisión.</p>
+      </div>
+    </header>
+
+    <div class="container wide blog-main-layout">
+      <div class="blog-feed">
+        {categories.map(cat => (
+          <section id={cat.id} class="category-group">
+            <div class="category-header">
+              <h2>{cat.name}</h2>
+              <div class="category-line"></div>
+            </div>
+            <div class="posts-grid">
+              {posts.filter(p => p.category === cat.id).map(post => (
+                <article class="blog-card-clean">
+                  <div class="card-image">
+                    <img src={post.image} alt={post.title} />
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">{post.categoryName}</span>
+                    <h3 class="card-title">
+                      <a href={`/blog/${post.id}`}>{post.title}</a>
+                    </h3>
+                    <p class="card-excerpt">{post.excerpt}</p>
+                    <div class="card-footer">
+                        <span class="card-date">{post.date}</span>
+                        <a href={`/blog/${post.id}`} class="read-more">Ver artículo técnico</a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <aside class="blog-sidebar">
+        <div class="sidebar-widget">
+          <h3>Buscador Técnico</h3>
+          <div class="search-box">
+            <input type="text" placeholder="Buscar normativa o tecnología..." />
+            <button>Buscar</button>
+          </div>
+        </div>
+
+        <div class="sidebar-widget siex-status-widget">
+          <h3>Estado del SIEX <span class="pulse-green"></span></h3>
+          <div class="siex-info">
+            <p class="status-ok">Sistema Operativo</p>
+            <p class="siex-note">Próximo hito: Registro mensual de fitosanitarios. Plazo 30 días post-aplicación.</p>
+            <a href="https://www.fega.es" target="_blank" class="widget-link">Portal FEGA</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .blog-container {
+    background: #ffffff;
+    min-height: 100vh;
+    color: #000000;
+  }
+
+  .container.wide {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .blog-hero {
+    background: #0b1a14;
+    color: white;
+    padding: 180px 0 100px;
+  }
+
+  .hero-centered {
+    text-align: center;
+  }
+
+  .blog-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 850;
+    margin-bottom: 24px;
+    line-height: 1.15;
+    color: #ffffff;
+  }
+
+  .blog-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .blog-main-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 80px;
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+
+  .category-group {
+    margin-bottom: 100px;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .category-header h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #000000;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .category-line {
+    height: 1px;
+    background: #e0e0e0;
+    width: 100%;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 48px;
+  }
+
+  .blog-card-clean {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .blog-card-clean:hover {
+    border-color: var(--color-turquoise);
+  }
+
+  .card-image {
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .blog-card-clean:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .card-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-category {
+    font-size: 0.7rem;
+    color: var(--color-turquoise);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .card-title a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .card-title a:hover {
+    color: var(--color-turquoise);
+  }
+
+  .card-excerpt {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #f1f3f5;
+  }
+
+  .card-date {
+    font-size: 0.8rem;
+    color: #888888;
+    font-weight: 600;
+  }
+
+  .read-more {
+    font-size: 0.8rem;
+    color: var(--color-turquoise);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .sidebar-widget {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 32px;
+  }
+
+  .sidebar-widget h3 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .search-box {
+    display: flex;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .search-box input {
+    border: none;
+    background: transparent;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    font-size: 0.85rem;
+  }
+
+  .search-box button {
+    background: #0b1a14;
+    color: white;
+    border: none;
+    padding: 0 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .siex-status-widget {
+    border-left: 4px solid var(--color-turquoise);
+  }
+
+  .pulse-green {
+    width: 8px;
+    height: 8px;
+    background: #2b8a3e;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .status-ok {
+    color: #2b8a3e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .siex-note {
+    font-size: 0.8rem;
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .widget-link {
+    font-size: 0.8rem;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid #000000;
+  }
+
+  @media (max-width: 1100px) {
+    .blog-main-layout {
+      grid-template-columns: 1fr;
+    }
+    .blog-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container.wide {
+      padding: 0 24px;
+    }
+    .blog-sidebar {
+        grid-template-columns: 1fr;
+    }
+  }
+</style>

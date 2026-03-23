@@ -1,0 +1,391 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { id: 'manual-inspecciones-siex-2026' } },
+    { params: { id: 'la-fisica-del-suelo-npk' } },
+    { params: { id: 'ecorregimen-p5-cubiertas-vegetales' } },
+  ];
+}
+
+const { id } = Astro.params;
+
+const postsContent = {
+  'manual-inspecciones-siex-2026': {
+    title: "Manual Defensivo ante Inspecciones SIEX 2026",
+    category: "Normativa SIEX y PAC",
+    date: "15 MAR 2024",
+    author: "Dirección Técnica Agronómica",
+    image: "https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    content: `
+      <h2>Introducción: La Era de la Transparencia Digital</h2>
+      <p>El Real Decreto 1054/2022 ha marcado un punto de inflexión en la gestión de las explotaciones agrarias en España. La transición del cuaderno de campo tradicional en papel al Sistema de Información de Explotaciones Agrarias (SIEX) no es un mero cambio de formato; es un nuevo paradigma de control basado en la inmediatez y la veracidad del dato. Para el año 2026, la administración habrá perfeccionado sus algoritmos de detección cruzada, haciendo que el error administrativo sea el principal disparador de inspecciones presenciales.</p>
+
+      <h2>1. El Marco Legal: Real Decreto 1054/2022</h2>
+      <p>Este decreto establece la gobernanza del SIEX y el contenido mínimo del Cuaderno de Explotación Agrícola (CUE). La clave reside en la interoperabilidad de las bases de datos. El sistema cruza información del REA (Registro de Explotaciones), SIGPAC (Sistema de Identificación de Parcelas), y el Registro de Productos Fitosanitarios en tiempo real.</p>
+      
+      <div class="tech-card-white">
+        <h3>Requisitos Críticos del SIEX:</h3>
+        <ul>
+          <li><strong>Plazo de Registro:</strong> Los tratamientos fitosanitarios y la aplicación de fertilizantes deben quedar registrados en un plazo máximo de 30 días posteriores a la operación.</li>
+          <li><strong>Trazabilidad ROMA:</strong> Cualquier equipo de aplicación debe estar debidamente inscrito en el Registro Oficial de Maquinaria Agrícola.</li>
+          <li><strong>Evidencia Satelital:</strong> El sistema de monitorización de superficies (SMS) de la PAC detecta automáticamente el estado fenológico de los cultivos.</li>
+        </ul>
+      </div>
+
+      <h2>2. Fotos Georreferenciadas: La Prueba de Oro</h2>
+      <p>En caso de discrepancia entre lo que el satélite Sentinel detecta y lo que el agricultor declara, la Administración ya no solicita una visita inmediata. En su lugar, el técnico inspector requerirá el envío de Fotos Georreferenciadas a través de las apps oficiales de cada comunidad autónoma (basadas en el estándar del FEGA).</p>
+      
+      <p>Una foto válida debe contener metadatos inviolables: coordenadas UTM, fecha, hora y rumbo de la toma. Estas fotos sirven para demostrar la existencia de un cultivo, el cumplimiento de una práctica de ecorrégimen (como el rastrojo de siembra directa) o la realización de un desbroce mecánico en cubiertas vegetales.</p>
+
+      <h2>3. Protocolo Ante una Inspección Presencial</h2>
+      <p>Si el sistema de alertas del SIEX dispara una inspección presencial, el agricultor debe estar preparado. El inspector solicitará:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Documento / Evidencia</th>
+            <th>Estado Requerido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cuaderno CUE Digital</td>
+            <td>Sincronizado con SIEX (Últimos 30 días)</td>
+          </tr>
+          <tr>
+            <td>Albaranes de Abono</td>
+            <td>Coincidentes con las dosis reportadas en CUE</td>
+          </tr>
+          <tr>
+            <td>Recetas de Fitosanitarios</td>
+            <td>Emitidas por asesor ROPO habilitado</td>
+          </tr>
+          <tr>
+            <td>Contratos de Arrendamiento</td>
+            <td>Vigentes y registrados en el organismo oficial correspondiente</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Conclusión y Recomendaciones Técnicas</h2>
+      <p>La mejor defensa es una buena ofensiva digital. Sincronizar el SIEX semanalmente, validar cada dosis con herramientas de prescripción y disponer de una hemeroteca de fotos georreferenciadas de cada operación crítica es la única vía para garantizar la seguridad jurídica de la explotación en el nuevo marco reglamentario.</p>
+      
+      <p>Fuentes oficiales: Portal FEGA (www.fega.es) y Ministerio de Agricultura (www.mapa.gob.es).</p>
+    `
+  },
+  'la-fisica-del-suelo-npk': {
+    title: "La Física del Suelo: Interpretando NPK y Conductividad Eléctrica",
+    category: "Tecnología de Precisión",
+    date: "10 MAR 2024",
+    author: "Ingeniería Agronómica",
+    image: "https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    content: `
+      <h2>Introducción a la Dinámica de Nutrientes</h2>
+      <p>Entender la física del suelo es el primer paso para una fertilización eficiente. La variabilidad espacial en la textura del suelo determina no solo la capacidad de retención de agua, sino también la disponibilidad biológica de los macronutrientes esenciales: Nitrógeno (N), Fósforo (P) y Potasio (K).</p>
+
+      <h2>1. Tecnología FDR (Frequency Domain Reflectometry)</h2>
+      <p>Nuestros sensores de última generación utilizan tecnología FDR para medir la permitividad dieléctrica del suelo. A diferencia de los métodos gravimétricos tradicionales, el FDR permite monitorizar en tiempo real el contenido volumétrico de agua y la concentración de iones en la solución del suelo.</p>
+      
+      <p>La interpretación de la Conductividad Eléctrica (CE) es vital. Una CE elevada puede indicar un exceso de salinidad o una acumulación peligrosa de fertilizantes no asimilados, mientras que una CE baja en un momento crítico de crecimiento puede ser síntoma de lixiviación de nutrientes tras una lluvia intensa.</p>
+
+      <h2>2. Calibración por Textura de Suelo</h2>
+      <p>No todos los suelos emiten la misma señal ante el sensor. Como ingenieros, debemos ajustar las lecturas según la porosidad:</p>
+      <ul>
+        <li><strong>Suelos Arcillosos:</strong> Alta capacidad de intercambio catiónico (CIC). Los sensores deben calibrarse para detectar el agua ligada a las arcillas, que no siempre está disponible para la planta.</li>
+        <li><strong>Suelos Arenosos:</strong> Macroporosidad predominante. La dinámica de lavado de Nitratos es muy rápida; aquí el sensor de NPK nos avisa del momento exacto para realizar fertirrigación fraccionada.</li>
+      </ul>
+
+      <div class="table-container-white">
+        <h3>Tabla de Referencia: Umbrales Críticos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Parámetro</th>
+              <th>Rango Óptimo (Cereales)</th>
+              <th>Impacto en Rendimiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nitrógeno (N)</td>
+              <td>40-60 mg/kg</td>
+              <td>Crecimiento vegetativo y vigor</td>
+            </tr>
+            <tr>
+              <td>Fósforo (P)</td>
+              <td>25-35 mg/kg</td>
+              <td>Desarrollo radicular inicial</td>
+            </tr>
+            <tr>
+              <td>Conductividad (CE)</td>
+              <td>0.8 - 1.5 dS/m</td>
+              <td>Salinidad y estrés osmótico</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. Optimización del Fertirriego Avanzado</h2>
+      <p>La combinación del Gemelo Digital (GIS) con la lectura de los sensores permite crear Mapas de Aplicación de Tasa Variable (VRT). Al conocer exactamente la deficiencia de Potasio en una mancha específica de la parcela, el agricultor puede configurar su maquinaria para aplicar la dosis justa, ahorrando hasta un 30% en insumos.</p>
+
+      <h2>Conclusión Técnica</h2>
+      <p>La monitorización continua del NPK y la Conductividad no es un lujo, es una necesidad científica para la agricultura moderna. Los datos nos permiten pasar de una fertilización "por calendario" a una nutrición "justo a tiempo", alineada con las necesidades fisiológicas reales de la planta y los límites físicos del suelo.</p>
+    `
+  },
+  'ecorregimen-p5-cubiertas-vegetales': {
+    title: "Ecorrégimen P5: Cubiertas Vegetales sin competencia hídrica",
+    category: "Gestión de Explotación",
+    date: "05 MAR 2024",
+    author: "Especialista PAC",
+    image: "https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    content: `
+      <h2>La Práctica P5 de los Nuevos Ecorregímenes</h2>
+      <p>El establecimiento de cubiertas vegetales espontáneas o sembradas en cultivos leñosos es una de las prácticas más incentivadas en la PAC 2023-2027. El objetivo es frenar la erosión, aumentar la biodiversidad y fijar carbono. Sin embargo, el gran indicador técnico es la competencia hídrica.</p>
+
+      <h2>1. Gestión Basada en Datos (Sensores de Humedad)</h2>
+      <p>La normativa exige que la cubierta esté viva durante un periodo mínimo. Fuera de ese periodo, el agricultor puede realizar una labor de desbroce. El uso de sensores de humedad de suelo instalados a dos profundidades (30cm y 60cm) permite monitorizar el consumo real de la cubierta.</p>
+      
+      <p>Si el sensor a 30cm indica que la humedad está cayendo por debajo del Punto de Marchitez Permanente (PMP), mientras que el de 60cm se mantiene estable, podemos determinar el momento exacto para el desbroce mecánico sin comprometer el rendimiento del cultivo leñoso.</p>
+
+      <h2>2. Desbroce Mecánico: Requisitos Normativos</h2>
+      <p>Para cumplir con el Ecorrégimen P5, se prioriza el desbroce mecánico. El uso de herbicidas está restringido y su aplicación inadecuada conlleva penalizaciones en la ayuda total de la PAC.</p>
+      
+      <div class="tech-alert-white">
+        <strong>Nota Técnica:</strong> El Real Decreto establece que no se puede labrar el suelo para eliminar la cubierta. El sistema radicular debe permanecer en el suelo para evitar la compactación y mejorar la infiltración hídrica.
+      </div>
+
+      <h2>3. Análisis GIS y Evaluación Satelital</h2>
+      <p>El seguimiento por satélite (NDVI) permite evaluar la biomasa generada. Integrando esta información en el Cuaderno Digital, el agricultor dispone de una prueba irrefutable de que ha mantenido la cubierta según los requisitos exigidos, incluso si el inspector realiza una visita tras el desbroce.</p>
+
+      <h2>Conclusión: Rentabilidad vs Sostenibilidad</h2>
+      <p>Es posible cumplir con los objetivos ambientales de Europa sin comprometer la producción de cosecha. La clave está en la tecnología de monitorización: el dato nos dice cuándo la cubierta deja de ser un beneficio y pasa a ser un riesgo hídrico. Con un margen de error mínimo en la detección de humedad, el agricultor toma decisiones rentables.</p>
+    `
+  }
+};
+
+const post = postsContent[id as keyof typeof postsContent];
+---
+
+<Layout title={`${post.title} - Smart Fenix Blog Técnico`}>
+  <main class="article-page">
+    <header class="article-hero">
+      <div class="container article-container">
+        <nav class="breadcrumb">
+          <a href="/blog">Hemeroteca</a> / <span>{post.category}</span>
+        </nav>
+        <h1 class="article-title">{post.title}</h1>
+        <div class="article-meta">
+          <span>{post.author}</span>
+          <span class="dot">·</span>
+          <span>{post.date}</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-container article-layout">
+      <article class="article-content">
+        <div class="article-featured-image">
+            <img src={post.image} alt={post.title} />
+        </div>
+        
+        <div class="toc-box">
+          <h4>Índice de Contenido</h4>
+          <ul>
+            <li>Introducción y Análisis Legal</li>
+            <li>1. Marco Normativo y Técnico</li>
+            <li>2. Evidencias y Documentación</li>
+            <li>3. Recomendaciones Técnicas</li>
+            <li>Conclusiones Finales</li>
+          </ul>
+        </div>
+
+        <div class="content-body" set:html={post.content}>
+        </div>
+      </article>
+
+      <aside class="article-sidebar">
+        <div class="sidebar-widget minimalist-widget">
+          <h3>Estado del SIEX</h3>
+          <p class="status-ok">Sistema Operativo</p>
+          <p class="siex-note">Recuerde declarar las aplicaciones en el plazo de 30 días.</p>
+          <a href="https://www.mapa.gob.es" target="_blank" class="widget-link">Acceso Ministerio</a>
+        </div>
+
+        <div class="sidebar-widget related-links">
+           <h3>Artículos Relacionados</h3>
+           <ul>
+             <li><a href="/blog/la-fisica-del-suelo-npk">Física del Suelo</a></li>
+             <li><a href="/blog/manual-inspecciones-siex-2026">Manual SIEX 2026</a></li>
+           </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+</Layout>
+
+<style is:global>
+  .article-page {
+    background: #ffffff;
+    padding-bottom: 120px;
+    color: #000000;
+  }
+
+  .article-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .article-hero {
+    background: #0b1a14;
+    color: white;
+    padding: 160px 0 80px;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-turquoise);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .breadcrumb a { color: white; text-decoration: none; }
+
+  .article-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .article-meta {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 80px;
+    padding-top: 60px;
+  }
+
+  .article-featured-image {
+      margin-bottom: 48px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+  }
+
+  .article-featured-image img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+  }
+
+  .toc-box {
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 48px;
+    border: 1px solid #e0e0e0;
+  }
+
+  .toc-box h4 { margin-top: 0; font-weight: 800; margin-bottom: 16px; text-transform: uppercase; font-size: 0.9rem; }
+
+  .toc-box ul { list-style: square; padding-left: 20px; margin: 0; }
+
+  .toc-box li { margin-bottom: 8px; font-size: 0.95rem; color: #555; }
+
+  .content-body {
+    line-height: 1.75;
+    color: #000000;
+    font-size: 1.15rem;
+  }
+
+  .content-body h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 56px 0 24px;
+    color: #0b1a14;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 16px;
+  }
+
+  .content-body h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 40px 0 20px;
+    color: #000000;
+  }
+
+  .content-body p { margin-bottom: 24px; }
+
+  .content-body ul { margin-bottom: 32px; padding-left: 24px; }
+
+  .content-body li { margin-bottom: 12px; }
+
+  .tech-card-white, .tech-alert-white {
+      background: #f8f9fa;
+      padding: 32px;
+      border-radius: 8px;
+      margin: 48px 0;
+      border: 1px solid #e0e0e0;
+  }
+
+  .tech-alert-white {
+      border-left: 4px solid var(--color-turquoise);
+  }
+
+  .content-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 48px 0;
+    border: 1px solid #e0e0e0;
+  }
+
+  .content-body th {
+    background: #f8f9fa;
+    color: #000000;
+    text-align: left;
+    padding: 16px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .content-body td {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+    color: #444444;
+  }
+
+  .minimalist-widget h3 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+  }
+
+  .status-ok { color: #2b8a3e; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; }
+  .siex-note { font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 16px; }
+  .widget-link { font-size: 0.85rem; color: #000; font-weight: 700; text-decoration: none; border-bottom: 1px solid #000; }
+
+  .related-links ul { list-style: none; padding: 0; }
+  .related-links li { margin-bottom: 12px; }
+  .related-links a { color: #000; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+  .related-links a:hover { color: var(--color-turquoise); }
+
+  @media (max-width: 900px) {
+    .article-layout { grid-template-columns: 1fr; gap: 48px; }
+    .article-container { padding: 0 24px; }
+  }
+</style>

@@ -110,8 +110,27 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
         </ul>
       </li>
 
-      <li class={`navbar__item ${isActive("/gestion-integral") ? "active" : ""}`}>
-        <a href="/gestion-integral">Gestión Integral</a>
+      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/cuaderno") ? "active" : ""}`}>
+        <a href="/cuaderno"
+          >Cuaderno
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            ><path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </a>
+        <ul class="navbar__dropdown">
+          <li>
+            <a href="/cuaderno/guia-pac-ecorregimenes" class={isActive("/cuaderno/guia-pac-ecorregimenes") ? "active-sub" : ""}>Guía Ecorregímenes 2024</a>
+          </li>
+          <li>
+            <a href="/cuaderno/informacion-comunidades" class={isActive("/cuaderno/informacion-comunidades") ? "active-sub" : ""}>Directorio CUE/SIEX</a>
+          </li>
+        </ul>
       </li>
 
       <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/ayudas") ? "active" : ""}`}>
@@ -134,7 +153,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
         </ul>
       </li>
 
-      <li class={`navbar__item ${isActive("/eventos") ? "active" : ""}`}><a href="/eventos">Comunidad</a></li>
+      <li class={`navbar__item ${isActive("/blog") ? "active" : ""}`}><a href="/blog">Blog</a></li>
       <li class={`navbar__item ${isActive("/contacto") ? "active" : ""}`}><a href="/contacto">Contacto</a></li>
       <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/sensores") || isActive("/guia-sensores") ? "active" : ""}`}>
         <a href="/guia-sensores"
@@ -267,9 +286,9 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
   }
 
   .navbar__item.active > a {
-    color: var(--color-turquoise) !important;
+    color: #1AFFFF !important;
     text-decoration: none !important;
-    border-bottom: 2px solid var(--color-turquoise) !important;
+    border-bottom: 2px solid #1AFFFF !important;
     padding-bottom: 6px;
   }
 
