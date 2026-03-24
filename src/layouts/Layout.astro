@@ -43,6 +43,14 @@ const {
 
     <title>{title}</title>
     <ClientRouter />
+    <script is:inline>
+      // Redirección al inicio si se recarga la página del navegador
+      if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
+        if (window.location.pathname !== "/") {
+          window.location.href = "/";
+        }
+      }
+    </script>
   </head>
   <body>
     <Navbar transition:persist />

@@ -569,8 +569,8 @@ const LOCAL_KNOWLEDGE = [
   {
     isTechnical: true,
     keywords: ['cue', 'cuaderno de explotacion', 'andalucia', 'extremadura', 'castilla', 'aragon', 'murcia', 'comunidad', 'mi zona', 'mi region', 'españa', 'comunidades'],
-    response: 'Cumplimos con la normativa de todas las Comunidades Autónomas, incluida la gestión del **CUE (Cuaderno de Explotación)** bajo el estándar SIEX nacional. 📋 \n\nDa igual si estás en Andalucía, Extremadura o cualquier otra zona; nuestra plataforma adapta los trámites a lo que te pide tu consejería de agricultura. \n\n* [Ver trámites por Comunidad](/cuaderno)',
-    link: '/cuaderno'
+    response: 'Cumplimos con la normativa de todas las Comunidades Autónomas, incluida la gestión del **CUE (Cuaderno de Explotación)** bajo el estándar SIEX nacional. 📋 \n\nDa igual si estás en Andalucía, Extremadura o cualquier otra zona; nuestra plataforma adapta los trámites a lo que te pide tu consejería de agricultura. \n\n* [Ver trámites por Comunidad](/cuaderno/informacion-comunidades)',
+    link: '/cuaderno/informacion-comunidades'
   },
   // --- BLOQUE TRANSVERSAL: CONSEJOS DE RIEGO (El 'Cómo regar') ---
   {
@@ -595,39 +595,39 @@ const LOCAL_KNOWLEDGE = [
   // --- CAPA DE ESPECIALIZACIÓN REGIONAL (CUE/SIEX Segmentado) ---
   {
     isTechnical: true,
-    keywords: ['andalucia', 'jaen', 'cordoba', 'sevilla', 'huelva', 'cadiz', 'malaga', 'almeria', 'granada'],
-    response: 'En Andalucía, el **CUE** es fundamental por la normativa de la Junta. Nuestra plataforma integra todos los requisitos andaluces. \n\n* [Mi CUE en Andalucía](/cuaderno)',
-    link: '/cuaderno'
+    keywords: ['andalucia', 'jaen', 'sevilla', 'cordoba', 'huelva', 'cadiz', 'malaga', 'almeria', 'granada'],
+    response: 'En Andalucía, el **CUE** es fundamental por la normativa de la Junta. Nuestra plataforma integra todos los requisitos andaluces para olivar y frutales. \n\n* [Mi CUE en Andalucía](/cuaderno/comunidades/andalucia)',
+    link: '/cuaderno/comunidades/andalucia'
   },
   {
     isTechnical: true,
     keywords: ['canarias', 'palma', 'tenerife', 'grancanaria', 'gomera', 'hierro', 'fuerteventura', 'lanzarote'],
-    response: 'El REA y el **CUE** en Canarias tienen particularidades por su régimen especial. Estamos preparados para gestionar tu explotación en las islas. \n\n* [Mi CUE en Canarias](/cuaderno)',
-    link: '/cuaderno'
+    response: 'El REA y el **CUE en Canarias** tienen particularidades por su régimen especial (Islas). Estamos preparados para gestionar tu explotación en las islas (plátano, aguacate, viñedo) cumpliendo con la normativa regional.\n\n* [Mi CUE en Canarias](/cuaderno/comunidades/canarias)',
+    link: '/cuaderno/comunidades/canarias'
   },
   {
     isTechnical: true,
     keywords: ['vasco', 'euskadi', 'vizcaya', 'guipuzcoa', 'alava'],
-    response: 'Adaptamos el registro al **CUE** de Euskadi, cumpliendo con la normativa foral y el SIEX nacional. \n\n* [Mi CUE en Euskadi](/cuaderno)',
-    link: '/cuaderno'
+    response: 'Adaptamos el registro al **CUE de Euskadi**, cumpliendo con la normativa foral (Araba, Bizkaia, Gipuzkoa). Ofrecemos tecnología de precisión adaptada al clima y necesidades del agro vasco.\n\n* [Mi CUE en País Vasco](/cuaderno/comunidades/pais-vasco)',
+    link: '/cuaderno/comunidades/pais-vasco'
   },
   {
     isTechnical: true,
     keywords: ['castilla', 'leon', 'mancha', 'toledo', 'valladolid', 'ciudadreal', 'albacete', 'cuenca', 'guadalajara'],
-    response: 'Gestionamos el **CUE** en ambas Castillas, optimizando los trámites para grandes explotaciones de secano y regadío. \n\n* [Mi CUE en Castilla](/cuaderno)',
-    link: '/cuaderno'
+    response: 'Gestionamos el **CUE** en ambas Castillas, optimizando los trámites para grandes explotaciones de secano y regadío. Somos expertos en digitalización de cereales y viñedo a gran escala.\n\n* [Mi CUE en Castilla](/cuaderno/comunidades/castilla-leon)',
+    link: '/cuaderno/comunidades/castilla-leon'
   },
   {
     isTechnical: true,
     keywords: ['aragon', 'zaragoza', 'huesca', 'teruel', 'ebro'],
-    response: 'El **CUE** en Aragón requiere precisión en los riegos del Ebro. Nuestra plataforma te cubre ante la DGA. \n\n* [Mi CUE en Aragón](/cuaderno)',
-    link: '/cuaderno'
+    response: 'El **CUE en Aragón** requiere precisión en los riegos del Ebro. Nuestra plataforma te cubre ante la DGA y te ayuda a ahorrar agua mediante sensores de humedad multicapa.\n\n* [Mi CUE en Aragón](/cuaderno/comunidades/aragon)',
+    link: '/cuaderno/comunidades/aragon'
   },
   {
     isTechnical: true,
     keywords: ['madrid', 'valencia', 'murcia', 'galicia', 'asturias', 'cantabria', 'navarra', 'rioja', 'cataluña', 'baleares'],
-    response: 'Damos soporte legal en tu comunidad, adaptando el **CUE/SIEX** a los plazos de tu administración regional. 📍 \n\n* [Ver trámites de mi zona](/cuaderno)',
-    link: '/cuaderno'
+    response: 'Damos soporte legal en tu comunidad, adaptando el **CUE/SIEX** a los plazos de tu administración regional. 📍 \n\n* [Ver trámites de mi zona](/cuaderno/informacion-comunidades)',
+    link: '/cuaderno/informacion-comunidades'
   },
   // --- CAPA DE ESPECIALIZACIÓN TÉCNICA (Venta Directa) ---
   {
@@ -647,6 +647,13 @@ const LOCAL_KNOWLEDGE = [
     keywords: ['clima', 'estacion', 'viento', 'helada'],
     response: 'La **Estación Meteorológica Smart Fénix** te avisa de heladas y mide la integral térmica de tu parcela en tiempo real. Máxima precisión climática en tu móvil. \n\n* [Ver Estación Clima](/sensores/clima)',
     link: '/sensores/clima'
+  },
+  // --- CAPA DE ESPECIALIZACIÓN COMERCIAL: CATÁLOGO TOTAL (El 'Dime todos') ---
+  {
+    isTechnical: true,
+    keywords: ['todos', 'lista', 'cuales son', 'catalogo', 'ofreceis', 'modelos', 'variedad', 'stock', 'gama', 'tipos'],
+    response: 'Tenemos la gama más completa de ingeniería agronómica para tu finca. Aquí tienes nuestro arsenal: \n\n1. **Sensores de Suelo:** Humedad multicapa (FDR), NPK 8 en 1, pH y Conductividad Salina. \n\n2. **Sensores de Planta:** Dendrómetros de tronco/fruto, Humectación foliar y Temperatura de hoja. \n\n3. **Sistemas de Clima:** Estaciones meteorológicas completas y sensores de Caudal/Agua. \n\n* [Ver Guía Técnica de Sensores](/guia-sensores)',
+    link: '/guia-sensores'
   }
 ];
 
@@ -669,7 +676,7 @@ export const POST: APIRoute = async ({ request }) => {
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "") // Quitar tildes
     .replace(/[.,?!¿¡]/g, '') // Quitar puntuación
-    .replace(/\b(como|donde|cuando|pero|porque|y|o|el|la|los|las|un|una|que|k|de|mis|mi|a|en|por|con|para|del|al|lo|su|sus|tu|tus|te|se|me|sin|sobre|desde|hasta|hacia|contra|ante|bajo|entre|pues|mira|oye|digamos|sabes)\b/g, '')
+    .replace(/\b(como|donde|cuando|pero|porque|y|o|el|la|los|las|un|una|que|k|de|mis|mi|a|en|por|con|para|del|al|lo|su|sus|tu|tus|te|se|me|sin|sobre|desde|hasta|hacia|contra|ante|bajo|entre|pues|mira|oye|digamos|sabes|quiero|saber|dime|ver|hay|son|claro|si|vale)\b/g, '')
     .trim()
     .replace(/\s+/g, ' ');
 
