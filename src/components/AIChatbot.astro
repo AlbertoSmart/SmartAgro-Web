@@ -58,11 +58,27 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    cursor: pointer;
+    cursor: grab;
     z-index: 1000;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 15px rgba(29, 185, 154, 0.3);
     border: 1px solid rgba(29, 185, 154, 0.5);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+    user-select: none;
+    touch-action: none;
+  }
+
+  .ai-chat-bubble:active {
+    cursor: grabbing;
+  }
+
+  .ai-chat-bubble.dragging {
+    transform: scale(1.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 30px rgba(29, 185, 154, 0.5);
+    transition: none;
+  }
+
+  .ai-chat-bubble.settling {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.5);
   }
 
   .ai-chat-bubble:hover {
@@ -84,6 +100,7 @@
   /* Chat Window */
   .ai-chat-window {
     position: fixed;
+    /* Posicionamiento dinámico vía JS */
     bottom: 100px;
     right: 30px;
     width: 380px;
@@ -100,12 +117,14 @@
     visibility: hidden;
     transform: translateY(20px) scale(0.95);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    pointer-events: none;
   }
 
   .ai-chat-window.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1);
+    pointer-events: all;
   }
 
   .chat-header {
@@ -193,6 +212,7 @@
     font-size: 0.95rem;
     line-height: 1.6;
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    white-space: pre-wrap;
   }
 
   .message-label {
@@ -209,6 +229,7 @@
     align-self: flex-start;
     border-radius: 20px 20px 20px 4px;
     border: 1px solid #e2e8f0;
+    white-space: pre-wrap;
   }
 
   .message.incoming .message-label {
@@ -337,14 +358,104 @@
     const chatMessages = document.getElementById('chatMessages') as HTMLElement | null;
     const suggestBtns = document.querySelectorAll('.suggest-btn');
 
-  const toggleChat = () => {
-    if (aiChatWindow) {
-      aiChatWindow.classList.toggle('active');
-    }
-  };
+    const toggleChat = () => {
+      if (aiChatWindow && aiBubble) {
+        const isActive = aiChatWindow.classList.contains('active');
+        
+        if (!isActive) {
+          // Posicionar la ventana sobre la burbuja
+          const rect = aiBubble.getBoundingClientRect();
+          const windowWidth = 380;
+          const windowHeight = 520;
+          
+          let left = rect.right - windowWidth;
+          let bottom = window.innerHeight - rect.top + 15;
+          
+          // Ajustes de límites
+          if (left < 20) left = 20;
+          if (left + windowWidth > window.innerWidth - 20) left = window.innerWidth - windowWidth - 20;
+          if (bottom + windowHeight > window.innerHeight - 20) {
+            bottom = window.innerHeight - windowHeight - 20;
+          }
 
-  aiBubble?.addEventListener('click', toggleChat);
-  closeChat?.addEventListener('click', toggleChat);
+          aiChatWindow.style.left = `${left}px`;
+          aiChatWindow.style.bottom = `${bottom}px`;
+          aiChatWindow.style.right = 'auto'; // Limpiar el style inicial
+        }
+        
+        aiChatWindow.classList.toggle('active');
+      }
+    };
+
+    // Lógica Draggable Nativa
+    let isDragging = false;
+    let startX: number, startY: number;
+    let initialX: number, initialY: number;
+    let dragHasMoved = false;
+
+    const onStart = (e: MouseEvent | TouchEvent) => {
+      if (!aiBubble) return;
+      isDragging = true;
+      dragHasMoved = false;
+      
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+      
+      const rect = aiBubble.getBoundingClientRect();
+      startX = clientX;
+      startY = clientY;
+      initialX = rect.left;
+      initialY = rect.top;
+      
+      aiBubble.classList.add('dragging');
+      aiBubble.classList.remove('settling');
+    };
+
+    const onMove = (e: MouseEvent | TouchEvent) => {
+      if (!isDragging || !aiBubble) return;
+      
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+      
+      const dx = clientX - startX;
+      const dy = clientY - startY;
+      
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) dragHasMoved = true;
+
+      let newX = initialX + dx;
+      let newY = initialY + dy;
+      
+      // Boundaries
+      const rect = aiBubble.getBoundingClientRect();
+      newX = Math.max(10, Math.min(window.innerWidth - rect.width - 10, newX));
+      newY = Math.max(10, Math.min(window.innerHeight - rect.height - 10, newY));
+      
+      aiBubble.style.left = `${newX}px`;
+      aiBubble.style.top = `${newY}px`;
+      aiBubble.style.right = 'auto';
+      aiBubble.style.bottom = 'auto';
+    };
+
+    const onEnd = () => {
+      if (!isDragging || !aiBubble) return;
+      isDragging = false;
+      aiBubble.classList.remove('dragging');
+      aiBubble.classList.add('settling');
+      
+      // Si el usuario solo hizo click, abrimos el chat
+      if (!dragHasMoved) {
+        toggleChat();
+      }
+    };
+
+    aiBubble?.addEventListener('mousedown', onStart);
+    aiBubble?.addEventListener('touchstart', onStart, { passive: true });
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('mouseup', onEnd);
+    window.addEventListener('touchend', onEnd);
+
+    closeChat?.addEventListener('click', toggleChat);
 
   const appendMessageHTML = (text: string, type: string = 'incoming', isHTML: boolean = false) => {
     if (!chatMessages) return null;

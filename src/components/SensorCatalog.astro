@@ -110,43 +110,47 @@ const categories = [
             </div>
         </div>
 
-        {categories.map((cat, idx) => (
-            <div class="fluid-category" data-category={cat.key}>
-                <div class="category-header-row">
-                    <div class="category-label">
-                        <span class="category-idx">0{idx + 1}</span>
-                        <h3>{cat.title}</h3>
+        {categories.map((cat, idx) => {
+            const filteredSensors = sensors.filter(s => s.category.includes(cat.key));
+            const duration = filteredSensors.length * 8; // 8 segundos por item para velocidad constante
+            return (
+                <div class="fluid-category" data-category={cat.key}>
+                    <div class="category-header-row">
+                        <div class="category-label">
+                            <span class="category-idx">0{idx + 1}</span>
+                            <h3>{cat.title}</h3>
+                        </div>
+                        <div class="slider-nav">
+                            <button class="nav-arrow prev" aria-label="Anterior">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+                            </button>
+                            <button class="nav-arrow next" aria-label="Siguiente">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m0 0l-7-7m7 7l-7 7"/></svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="slider-nav">
-                        <button class="nav-arrow prev" aria-label="Anterior">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
-                        </button>
-                        <button class="nav-arrow next" aria-label="Siguiente">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m0 0l-7-7m7 7l-7 7"/></svg>
-                        </button>
-                    </div>
-                </div>
 
-                <div class="slider-outer-fluid">
-                    <div class="slider-track-fluid" id={`track-${idx}`} style={`animation-duration: ${50 + (idx * 10)}s`}>
-                        {/* Triplicamos el contenido para el bucle infinito continuo e invisible */}
-                        {[...sensors.filter(s => s.category.includes(cat.key)), ...sensors.filter(s => s.category.includes(cat.key)), ...sensors.filter(s => s.category.includes(cat.key))].map((sensor) => (
-                            <div class="slider-item-balanced">
-                                <a href={sensor.href} class="balanced-card">
-                                    <div class="card-image-wrap">
-                                        <img src={sensor.image} alt={sensor.name} loading="lazy" />
-                                    </div>
-                                    <div class="card-info">
-                                        <h4>{sensor.name}</h4>
-                                        <p>{sensor.specs}</p>
-                                    </div>
-                                </a>
-                            </div>
-                        ))}
+                    <div class="slider-outer-fluid">
+                        <div class="slider-track-fluid" id={`track-${idx}`} style={`animation-duration: ${duration}s`}>
+                            {/* Triplicamos el contenido para el bucle infinito continuo e invisible */}
+                            {[...filteredSensors, ...filteredSensors, ...filteredSensors].map((sensor) => (
+                                <div class="slider-item-balanced">
+                                    <a href={sensor.href} class="balanced-card">
+                                        <div class="card-image-wrap">
+                                            <img src={sensor.image} alt={sensor.name} loading="lazy" />
+                                        </div>
+                                        <div class="card-info">
+                                            <h4>{sensor.name}</h4>
+                                            <p>{sensor.specs}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
-        ))}
+            );
+        })}
     </div>
 </section>
 
@@ -257,7 +261,7 @@ const categories = [
         display: flex;
         gap: 30px;
         width: max-content;
-        animation: scroll-fluid linear infinite;
+        animation: scroll-fluid 30s linear infinite;
         will-change: transform;
     }
 
@@ -348,13 +352,15 @@ const categories = [
             if (!track || !prevBtn || !nextBtn) return;
 
             let currentDelay = 0;
+            const duration = (track as any)._sensorsCount ? (track as any)._sensorsCount * 8 : 30; // Fallback or dynamic logic?
+            // Actually, best to get the actual computed duration
             const durationStyle = window.getComputedStyle(track).animationDuration;
-            const duration = parseFloat(durationStyle);
+            const durationVal = parseFloat(durationStyle) || 30;
 
             const shiftAnimation = (direction: number) => {
                 const stepPixels = 360 + 30; // Ancho + Gap
                 const trackWidth = track.scrollWidth / 3; 
-                const timeShift = (stepPixels / trackWidth) * duration;
+                const timeShift = (stepPixels / trackWidth) * durationVal;
                 
                 currentDelay += (direction * timeShift);
                 track.style.animationDelay = `${currentDelay}s`;

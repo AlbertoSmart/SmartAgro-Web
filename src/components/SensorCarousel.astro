@@ -29,7 +29,7 @@ const { sensors, title } = Astro.props;
       </div>
     </div>
     <div class="carousel-wrapper">
-      <div class="carousel-track">
+      <div class="carousel-track" style={`animation-duration: ${sensors.length * 8}s`}>
         {[...sensors, ...sensors].map((sensor) => (
           <a href={sensor.href} class="sensor-card-mini glass">
             <div class="sensor-card-mini__badge">{sensor.category}</div>
@@ -80,7 +80,7 @@ const { sensors, title } = Astro.props;
     display: flex;
     gap: 32px;
     width: max-content;
-    animation: scroll 70s linear infinite;
+    animation: scroll 30s linear infinite;
   }
 
   .carousel-track:hover {
@@ -222,7 +222,7 @@ const { sensors, title } = Astro.props;
       if (!track || !prevBtn || !nextBtn) return;
 
       let currentDelay = 0; // en segundos
-      const duration = 70; // Tu duración original de 70s en el CSS
+      const duration = sensors.length * 8; // Sincronizado: 8s por item
 
       const shiftAnimation = (direction: number) => {
         const trackWidth = track.scrollWidth / 2; // Puesto que está duplicado [...sensors, ...sensors]
