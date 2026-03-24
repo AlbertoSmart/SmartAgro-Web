@@ -274,6 +274,11 @@ const categories = [
         100% { transform: translateX(calc(-33.333% - 13.333px)); } /* 13.333px es el gap ajustado al triplicado */
     }
 
+    /* Cooldown interactivo */
+    .slider-track-fluid.is-paused-by-user {
+        animation-play-state: paused !important;
+    }
+
     .slider-item-balanced {
         flex: 0 0 360px;
     }
@@ -352,8 +357,8 @@ const categories = [
             if (!track || !prevBtn || !nextBtn) return;
 
             let currentDelay = 0;
-            const duration = (track as any)._sensorsCount ? (track as any)._sensorsCount * 8 : 30; // Fallback or dynamic logic?
-            // Actually, best to get the actual computed duration
+            let pauseTimeout: any = null;
+            // Obtenemos la duración calculada del atributo (o recalculamos)
             const durationStyle = window.getComputedStyle(track).animationDuration;
             const durationVal = parseFloat(durationStyle) || 30;
 
@@ -364,6 +369,13 @@ const categories = [
                 
                 currentDelay += (direction * timeShift);
                 track.style.animationDelay = `${currentDelay}s`;
+
+                // Cooldown de 1s
+                track.classList.add('is-paused-by-user');
+                if (pauseTimeout) clearTimeout(pauseTimeout);
+                pauseTimeout = setTimeout(() => {
+                    track.classList.remove('is-paused-by-user');
+                }, 1000);
             };
 
             nextBtn.addEventListener('click', () => shiftAnimation(-1));

@@ -1,6 +1,12 @@
 import type { APIRoute } from 'astro';
 
 const LOCAL_KNOWLEDGE = [
+  // BLOQUE: AFIRMACIÓN / CORTESÍA (Baja Prioridad)
+  {
+    keywords: ['perfecto', 'comprendo', 'me parece bien', 'entendido'],
+    response: '¡Recibido! 🚜 \n\nSi cambias de opinión o te surge cualquier duda mientras estás en la linde o en el almacén, aquí me tienes. ¡A por la jornada!',
+    link: '/'
+  },
   // BLOQUE SALUDO (Prioridad MÍNIMA, índice 0 - Se revisa de último en loop inverso)
   {
     keywords: ['hola', 'buenas', 'inicio'],
@@ -47,13 +53,6 @@ const LOCAL_KNOWLEDGE = [
     keywords: ['clima', 'estacion meteorologica', '8 parametros', 'lorawan', 'precipitacion', 'pluviometro', 'viento', 'radiacion', 'metereologia', 'tiempo'],
     response: 'La toma de decisiones agrarias arranca con datos microclimáticos precisos. Nuestra **estación meteorológica** registra temperatura, humedad, presión, radiación solar y viento.\n\nSe integra directamente en el Cuaderno Digital para calcular la evapotranspiración (ET0) y ajustar los coeficientes de riego del cultivo.\n\n[Míralo en Sensores de Clima](/sensores/clima)',
     link: '/sensores/clima'
-  },
-  // BLOQUE CUADERNO Y NORMATIVA
-  {
-    isTechnical: true,
-    keywords: ['siex', 'real decreto 1054/2022', 'cuaderno general', 'explotacion', 'cumplimiento', 'normativa', 'cuaderno', 'digital', 'registro', 'explotación', 'trámites', 'papeles', 'burocracia', 'ministerio', 'multas', 'sanción', 'inspección', 'junta', 'papel', 'sies', 'ciex', 'siez', 'sies'],
-    response: 'El **Cuaderno Digital Agrícola** responde a la exigencia del **SIEX** y el Real Decreto 1054/2022. Nuestro software está hiperoptimizado para evitar multas de condicionalidad.\n\nGenera el registro de tratamientos fitosanitarios y fertilizantes en los plazos legales, bloqueando automáticamente recolecciones si detecta que se vulnera el plazo de seguridad de la materia activa.\n\nEs el escudo legal de tu explotación.\n\n[Conócelo en nuestro Cuaderno Digital](/cuaderno)',
-    link: '/cuaderno'
   },
   {
     isTechnical: true,
@@ -340,12 +339,6 @@ const LOCAL_KNOWLEDGE = [
   },
   // BLOQUE DUDAS FRECUENTES
   {
-    isTechnical: true,
-    keywords: ['obligatorio', 'ley', 'tengo que', 'normativa', 'siex', 'obligatoriedad'],
-    response: 'El Cuaderno Digital (SIEX) es estrictamente obligatorio según el RD 1054/2022. No llevarlo al día implica sanciones de condicionalidad y el riesgo de perder los pagos de Ecorregímenes de la PAC. Smart Fénix actúa como tu escudo legal, automatizando el registro para que cumplas la ley sin carga administrativa. Info legal: [Cuaderno Digital](/cuaderno)',
-    link: '/cuaderno'
-  },
-  {
     keywords: ['ayuda', 'ayudame', 'necesito', 'ayudar', 'socorro', 'asistencia'],
     response: 'Si necesitas ayuda con tu explotación, nuestro equipo de Ingenieros Agrónomos puede asesorarte de forma personalizada. No somos un servicio genérico; analizamos tus datos de suelo, clima y planta para optimizar tu riego y nutrición. Para una consultoría técnica o dudas sobre el SIEX, lo mejor es que hablemos: +34 621 26 22 86 o escríbenos en [Contactar con un Ingeniero](/contacto).',
     link: '/contacto'
@@ -366,21 +359,16 @@ const LOCAL_KNOWLEDGE = [
     response: 'Nuestros sensores de precisión (**NPK**, humedad volumétrica multicapa, dendrómetros) miden exactamente lo que la planta necesita para que optimices costes de riego y fertilizante desde el primer día.\n\n[Catálogo de Sensores de Precisión](/sensores)',
     link: '/sensores/suelo'
   },
-  {
-    keywords: ['normativa', 'ley', 'obligatorio', 'siex', 'boe', 'regla'],
-    response: 'El **Cuaderno Digital (SIEX)** es estrictamente obligatorio según el RD 1054/2022. No llevarlo al día implica severas sanciones de condicionalidad. Actuamos como tu escudo legal automatizando el registro completo. Info legal: [Cuaderno Digital](/cuaderno)',
-    link: '/cuaderno'
-  },
   // BLOQUE: IDENTIDAD (¿Qué es esta página?)
   {
     keywords: ['trata', 'pagina', 'web', 'sitio', 'smart fenix', 'quienes sois', 'que es esto', 'empresa', 'agroai'],
     response: 'Smart Fénix es una herramienta de apoyo al agricultor. Digitalizamos los datos de tu campo (suelo, clima y planta) para que tengas toda la información en un solo lugar y cumplas con el Cuaderno SIEX de forma sencilla.\n\nEs tecnología hecha por ingenieros para facilitar el trabajo diario en el campo.\n\n[Conocer más sobre nosotros](/)',
     link: '/'
   },
-  // BLOQUE: ACCESO Y REGISTRO
+  // BLOQUE: ACCESO SMARTAGRO (Prioridad Técnica)
   {
-    keywords: ['accedo', 'entrar', 'login', 'registro', 'cuenta', 'conectar', 'plataforma', 'smart agro'],
-    response: 'Para acceder a la plataforma de gestión **Smart Agro** y visualizar los datos de tus sensores o completar tu **Cuaderno SIEX**, utiliza el botón de "Acceso Clientes" en el menú superior. Si aún no tienes credenciales, contacta con nuestro equipo técnico para la instalación de los dispositivos y el alta en el sistema: [Contactar con un Ingeniero](/contacto)',
+    keywords: ['smartagro', 'entro', 'entrar', 'accedo', 'acceder', 'login', 'acceso'],
+    response: 'Para entrar en la plataforma **SmartAgro**, usa el botón **Acceder a SmartAgro** arriba en el menú. Si no tienes claves, escríbenos al WhatsApp **+34 621 26 22 86**.',
     link: '/contacto'
   },
   // BLOQUE: AYUDAS Y SUBVENCIONES
@@ -389,10 +377,11 @@ const LOCAL_KNOWLEDGE = [
     response: 'Existen diversas líneas de apoyo para la digitalización agraria. Aunque nos centramos en la ingeniería técnica, asesoramos a nuestros clientes sobre cómo nuestras herramientas encajan en planes de mejora y modernización de regadíos. Si buscas financiación para instalar sensores o el cuaderno, hablemos para ver qué convocatorias actuales se adaptan a tu finca: +34 621 26 22 86 o en [Solicitar Información](/contacto).',
     link: '/contacto'
   },
+  // --- BLOQUE: BLOG Y FORMACIÓN (Hemeroteca) ---
   {
     isTechnical: true,
-    keywords: ['blog', 'noticias', 'actualidad', 'leer', 'articulos', 'novedades'],
-    response: 'En nuestra Hemeroteca Agro-Tech publicamos guías sobre la normativa **SIEX**, análisis de cultivos y comparativas de sensores. Es el sitio ideal para estar al día de las exigencias del MAPA y las nuevas tecnologías de riego. [Ver Hemeroteca Técnica](/blog)',
+    keywords: ['blog', 'leer', 'articulos', 'noticias', 'actualidad', 'informacion', 'aprender', 'novedades', 'hemeroteca'],
+    response: 'En nuestra **Hemeroteca Técnica** publicamos guías sobre la normativa SIEX, análisis de nuevas plagas y consejos de riego. Es el mejor sitio para estar al día de lo que exige el Ministerio y de las nuevas tecnologías. \n\n¿Quieres leer sobre algún cultivo en concreto? [Ver Hemeroteca Técnica](/blog)',
     link: '/blog'
   },
   {
@@ -403,7 +392,7 @@ const LOCAL_KNOWLEDGE = [
   },
   // BLOQUE: AFIRMACIÓN / ACUERDO
   {
-    keywords: ['me parece bien', 'vale', 'ok', 'de acuerdo', 'entendido', 'perfecto', 'comprendo'],
+    keywords: ['me parece bien', 'de acuerdo', 'entendido', 'perfecto', 'comprendo'],
     response: 'Me alegra que te sirva la información. 👍\n\n¿Quieres que profundicemos en algún detalle técnico de eso o prefieres que veamos otro tema de tu finca?\n\n* [Ver más sobre este tema](/soluciones/agricultores)\n\n* [Volver al inicio](/)',
     link: '/'
   },
@@ -428,13 +417,13 @@ const LOCAL_KNOWLEDGE = [
   // BLOQUE: REFRANERO Y TRABAJO (MAX PRIORIDAD)
   {
     keywords: [
-      'inutil', 'inútil', 'estupido', 'estúpido', 'cabron', 'cabrón', 'gilipollas', 'mierda', 'basura', 'joder', 'puto', 'tonto', 'imbecil', 'imbécil', 'capullo', 'idiota', 'payaso', 'estafa', 'timo', 'robo', 'chorizos', 'mamon', 'mamón', 'pringao', 'subnormal', 'pendejo', 'gonorrea', 'hdp', 'vendehumos', 'mentira', 'engaño', 'asco', 'pesado', 'callate', 'cállate', 'ijoputa', 'maricon', 'zorra', 'mongolo', 'atontao', 'paleto', 'cateto', 'ignorante', 'asqueroso', 'carajo', 'cojones', 'huevon',
+      'inutil', 'inútil', 'estupido', 'estúpido', 'cabron', 'cabrón', 'gilipollas', 'mierda', 'basura', 'joder', 'puto', 'tonto', 'imbecil', 'imbécil', 'capullo', 'idiota', 'payaso', 'estafa', 'timo', 'robo', 'chorizos', 'mamon', 'mamón', 'pringao', 'subnormal', 'pendejo', 'gonorrea', 'hdp', 'vendehumos', 'mentira', 'engaño', 'pesado', 'callate', 'cállate', 'ijoputa', 'maricon', 'zorra', 'mongolo', 'atontao', 'paleto', 'cateto', 'ignorante', 'asqueroso', 'carajo', 'cojones', 'huevon',
       'inutiles', 'inútiles', 'estupidos', 'cabrones', 'gilipollas', 'mierdas', 'basuras', 'jodete', 'putos', 'tontos', 'imbeciles', 'capullos', 'idiotas', 'payasos', 'estafadores', 'timadores', 'robos', 'rateros', 'chorizos', 'mamones', 'pringaos', 'subnormales', 'pendejos', 'gonorreas', 'vendehumos', 'mentiroso', 'mentirosos', 'engaños', 'asquerosos', 'pesados', 'callame', 'ijoputes', 'maricones', 'zorras', 'mongolos', 'atontados', 'paletos', 'catetos', 'ignorantes', 'carajos', 'cojonazos', 'huevones',
       'pajuelo', 'majadero', 'zote', 'panoli', 'bobon', 'bobalicon', 'lerdo', 'besugo', 'cenutrio', 'alcornoque', 'zopenco', 'tarugo', 'zoquete', 'zopencos', 'lerdos', 'panolis', 'bobones', 'cenutrios', 'tarugos', 'gaznapira', 'gaznapiro', 'cazurro', 'cazurros',
       'pelagatos', 'mequetrefe', 'mindundi', 'pocacosa', 'estulto', 'necio', 'baboso', 'ruin', 'mezquino', 'miserable', 'desgraciado', 'desgraciados', 'canalla', 'golfo', 'jeta', 'jetas', 'sinvergueza', 'sinvergueenzas', 'mangante', 'ratero', 'ladron', 'ladrones',
-      'caradura', 'perro', 'perros', 'cerdo', 'cerdos', 'marrano', 'marranos', 'puerco', 'puercos', 'desfachatado', 'deslenguado', 'bocachancla', 'bocazas', 'charlatan', 'embaucador', 'farsante', 'falsante', 'fariseo', 'hipocrita', 'basurero', 'asco de pagina', 'mierda de bot', 'puto bot', 'bot de mierda', 'bot inutil'
+      'caradura', 'perro', 'perros', 'cerdo', 'cerdos', 'marrano', 'marranos', 'puerco', 'puercos', 'desfachatado', 'deslenguado', 'bocachancla', 'bocazas', 'charlatan', 'embaucador', 'farsante', 'falsante', 'fariseo', 'hipocrita', 'basurero', 'asco de pagina', 'mierda de bot', 'puto bot', 'bot de mierda', 'bot inutil', ' asco '
     ],
-    response: 'Mucho ruido y pocas nueces. Insultar al bot no te va a quitar las multas del Ministerio ni te va a arreglar el riego. 🌾\n\nAquí venimos a trabajar. ¿En qué puedo ayudarte de verdad?\n\n* [Evitar Sanciones SIEX](/cuaderno)\n\n* [Asesoría Técnica](/contacto)',
+    response: 'Insultar al bot no te va a quitar las multas del Ministerio ni te va a arreglar el riego. 🌾\n\nAquí venimos a trabajar. ¿En qué puedo ayudarte de verdad?\n\n* [Evitar Sanciones SIEX](/cuaderno)\n\n* [Asesoría Técnica](/contacto)',
   },
   // NUEVOS MÓDULOS DE PRIORIDAD ALTA
   {
@@ -459,6 +448,205 @@ const LOCAL_KNOWLEDGE = [
     keywords: ['chino', 'amazon', 'barato', 'otra marca', 'comparar', 'mejor que', 'vendehumos'],
     response: 'Hay sensores que son juguetes. Los nuestros son ingeniería industrial calibrada para el suelo español. \n\nNo es lo mismo un sensor de 20€ que uno que te garantiza precisión para no recibir multas del SIEX. Lo barato sale caro en la cosecha.',
     link: '/sensores'
+  },
+  {
+    isTechnical: true,
+    keywords: ['plantar', 'instalar', 'clavar', 'meter', 'poner', 'montar', 'como se pone', 'como se instala', 'agujero', 'instalacion'],
+    response: 'La instalación es sencilla pero clave para que los datos sean reales. 🛠️ \n\nNuestros ingenieros se encargan de todo: desplazamos el equipo a tu finca, realizamos la perforación con barrena para no perturbar el perfil del suelo y dejamos el sensor calibrado y conectado a tu móvil en el acto. \n\n¿Quieres ver cómo queda instalado? [Ver proceso de Instalación](/servicios/instalacion) o [Solicitar visita técnica](/contacto)',
+    link: '/servicios/instalacion'
+  },
+  {
+    isTechnical: true,
+    keywords: ['solucion', 'soluciones', 'que me dais', 'que ofreceis', 'ayudar campo', 'mejorar finca'],
+    response: 'Nuestra solución no es solo un sensor; es un sistema de toma de decisiones. \n\nTe damos la tecnología para medir, el software para cumplir con la ley (SIEX) y el asesoramiento de ingenieros para que sepas qué hacer con esos datos. \n\n¿Qué solución necesitas hoy? \n\n* [Soluciones para Agricultores](/soluciones/agricultores)\n\n* [Asesoría Técnica Especializada](/contacto)',
+    link: '/soluciones/agricultores'
+  },
+  {
+    isTechnical: true,
+    keywords: ['roto', 'no funciona', 'fallo', 'averia', 'ayuda tecnica', 'soporte'],
+    response: 'Si tienes un problema técnico con un equipo instalado, no pierdas tiempo con el chat. 📞 \n\nLlámanos directamente al +34 621 26 22 86. Un ingeniero revisará la telemetría de tu nodo en remoto o se desplazará a tu finca si es necesario. El campo no espera y nosotros tampoco.',
+    link: '/contacto'
+  },
+  // --- BLOQUE TRANSVERSAL: INSTALACIÓN Y FÍSICA (El 'Pincho') ---
+  {
+    isTechnical: true,
+    keywords: ['pincho', 'clavar', 'meter', 'poner', 'tierra', 'agujero', 'hoyo', 'instalar', 'montar', 'hincar', 'clavo', 'estacion', 'barrena', 'perforar', 'profundidad', 'raices', 'suelo', 'piedra', 'duro'],
+    response: 'No te preocupes por la instalación; no tienes que tocar un cable. 🛠️ \n\nNosotros vamos a tu finca, hacemos el agujero con barrena técnica para no estropear el terreno y dejamos el pincho (sensor) midiendo en el acto. Si la tierra tiene piedra o está dura como el hormigón, llevamos maquinaria para dejarlo perfecto. \n\n* [Ver proceso de instalación](/servicios/instalacion)\n\n* [Solicitar visita a mi finca](/contacto)',
+    link: '/servicios/instalacion'
+  },
+  // --- BLOQUE TRANSVERSAL: SALUD Y PLAGAS (Hoja Fea y Mordidas) ---
+  {
+    isTechnical: true,
+    keywords: ['mordidas', 'comido', 'agujeros', 'gusano', 'pulgon', 'araña', 'bichitos', 'que plaga es', 'saber que es', 'identificar', 'hoja', 'fea', 'amarilla', 'seca', 'mancha', 'punto', 'plaga', 'enferma', 'hongo', 'mosca', 'lacia', 'triste', 'decaida', 'peste'],
+    response: 'Si ves mordidas o agujeros, tienes inquilinos no deseados en el cultivo. 🐛 \n\nNo podemos darte un diagnóstico 100% real por aquí, pero si nos envías una foto por WhatsApp o Formulario, nuestros ingenieros te ayudarán a identificar si es una plaga o una carencia nutricional antes de que se extienda. \n\n* [Identificar Plaga por Foto](/contacto)',
+    link: '/contacto'
+  },
+  // --- BLOQUE TRANSVERSAL: EFICIENCIA Y ESCALA (Grandes Fincas) ---
+  {
+    isTechnical: true,
+    keywords: ['hectareas', 'finca grande', 'latifundio', 'parcelas', 'eficiente', 'ahorrar mucho', 'explotacion', 'rentabilidad'],
+    response: 'Gestionar grandes extensiones (100, 500 o 1000 hectáreas) sin sensores es como ir a ciegas. 🚜💨 \n\nNuestra tecnología te permite ver el estado hídrico de cada sector de riego desde el móvil, evitando que desperdicies miles de euros en agua y abono por culpa de una mala decisión. Para fincas de este tamaño, lo mejor es un plan de Ingeniería a Medida. \n\n* [Ver Soluciones de Escala](/soluciones/agricultores)\n* [Pedir Estudio de Rentabilidad](/herramientas/calculadora-roi)',
+    link: '/soluciones/agricultores'
+  },
+  // --- BLOQUE TRANSVERSAL: DINERO Y RENTABILIDAD (El 'Timo') ---
+  {
+    isTechnical: true,
+    keywords: ['precio', 'caro', 'vale', 'coste', 'dinero', 'rentable', 'ahorro', 'timo', 'robo', 'estafa', 'vendehumos', 'engañar', 'cuanto', 'presupuesto', 'barato', 'inversion', 'pagar', 'gratis'],
+    response: 'Más caro es tirar el abono y el agua sin saber si la planta lo aprovecha. 💸 \n\nNuestros clientes ahorran un 30% en riego y un 20% en fertilizantes. El equipo se paga solo en una campaña al evitar desperdicios y multas del SIEX. \n\n* [¿Cuánto puedo ahorrar?](/herramientas/calculadora-roi)\n\n* [Hablar de números con un técnico](/contacto)',
+    link: '/herramientas/calculadora-roi'
+  },
+  // --- BLOQUE TRANSVERSAL: CONTACTO Y PERSONA (Llamame) ---
+  {
+    keywords: ['llamame', 'telefono', 'hablar', 'persona', 'humano', 'jefe', 'encargado', 'ayuda', 'duda', 'llamar', 'oficina', 'contacto', 'donde', 'sede', 'ingeniero', 'agronomo'],
+    response: 'Para hablar con una persona de carne y hueso, aquí tienes línea directa. 📞 \n\n* Teléfono: +34 621 26 22 86\n\n* Soporte: [Formulario de Contacto](/contacto)\n\nLlámanos y un ingeniero te atenderá sin rodeos ni máquinas.',
+    link: '/contacto'
+  },
+  // --- BLOQUE TRANSVERSAL: CULTIVOS ESPECÍFICOS ---
+  {
+    isTechnical: true,
+    keywords: ['olivo', 'aceituna', 'almendro', 'frutal', 'pistacho', 'viña', 'uva', 'tomate', 'invernadero', 'intensivo', 'superintensivo', 'secano', 'regadio'],
+    response: 'Cada cultivo es un mundo. No es lo mismo un olivar tradicional que un almendro superintensivo. 🌳 \n\nTenemos soluciones específicas para optimizar el riego deficitario en leñosos y el control de estrés hídrico para que el fruto sea de máxima calidad. \n\n* [Soluciones por Cultivo](/soluciones/agricultores)',
+    link: '/soluciones/agricultores'
+  },
+  // --- BLOQUE TRANSVERSAL: INFRAESTRUCTURA Y RIEGO (La Tubería) ---
+  {
+    isTechnical: true,
+    keywords: ['riego', 'goteo', 'goteros', 'agua', 'tuberia', 'bomba', 'presion', 'pozo', 'balsa', 'estanque', 'caudal', 'contador', 'valvula', 'electrovalvula', 'gotero', 'aspersor', 'regadio', 'deficitario'],
+    response: 'Optimizar el riego no es solo abrir la llave; es saber cuándo cerrar. 💧 \n\nNuestros sondas detectan si el agua llega a la raíz o si se está perdiendo por filtración profunda. Te ayudamos a ahorrar hasta un 30% de agua manteniendo la planta en su punto óptimo de sazón. \n\n* [Optimizar mi Riego](/sensores/suelo)\n\n* [Ver Sensores de Humedad](/sensores/suelo)',
+    link: '/sensores/suelo'
+  },
+  // --- BLOQUE TRANSVERSAL: NUTRICIÓN Y ABONADO (El NPK) ---
+  {
+    isTechnical: true,
+    keywords: ['abono', 'fertilizante', 'comida', 'nutriente', 'nitrato', 'fosforo', 'potasio', 'npk', 'urea', 'estiercol', 'quimica', 'echarle', 'abonado', 'fertirriego', 'conductividad', 'salinidad', 'sales'],
+    response: 'Tirar abono "a ojo" es tirar el dinero al suelo. 💸 \n\nCon nuestros Sensores NPK medimos la conductividad y los nutrientes reales en la zona radicular. Así solo echas lo que la planta puede comer, evitando bloqueos y sales innecesarias. \n\n* [Ver Sensores de Nutrientes](/sensores/suelo)\n\n* [Calcular Ahorro en Abono](/herramientas/calculadora-roi)',
+    link: '/sensores/suelo'
+  },
+  // --- BLOQUE TRANSVERSAL: CLIMA Y DESASTRES (El Tiempo) ---
+  {
+    isTechnical: true,
+    keywords: ['helada', 'frio', 'calor', 'calima', 'viento', 'granizo', 'pedrisco', 'lluvia', 'nieve', 'temperatura', 'humedad aire', 'vpx', 'evapotranspiracion', 'clima', 'estacion meteorologica'],
+    response: 'El tiempo está loco, pero que no te pille por sorpresa. ⛈️ \n\nNuestras estaciones miden la integral térmica y el riesgo de heladas en tiempo real, enviándote una alerta al móvil para que puedas actuar (activar riego anti-helada o mallas). \n\n* [Ver Estaciones Climatológicas](/sensores/clima)',
+    link: '/sensores/clima'
+  },
+  // --- BLOQUE TRANSVERSAL: SUBVENCIONES Y DINERO (Kit Digital) ---
+  {
+    keywords: ['subvencion', 'ayuda', 'kit digital', 'fondos', 'europa', 'gratis', 'financiacion', 'pagar', 'cuota', 'precio', 'barato', 'fondos europeos'],
+    response: 'La digitalización del campo está subvencionada. 🇪🇺 \n\nMuchos de nuestros equipos entran en el Kit Digital o planes de modernización de regadíos. Te asesoramos para que la inversión te salga lo más rentable posible. \n\n* [Consultar Ayudas Disponibles](/contacto)',
+    link: '/contacto'
+  },
+  // --- BLOQUE TRANSVERSAL: MAQUINARIA Y TRACTOR (Dureza) ---
+  {
+    keywords: ['tractor', 'aperos', 'atomizador', 'cosechadora', 'vibrador', 'paraguas', 'golpe', 'romper', 'pisar', 'maquina', 'hierro', 'acero'],
+    response: 'Nuestros equipos están hechos para el campo, no para una oficina. 💪 \n\nLas sondas van enterradas y los nodos protegidos para que no estorben al pasar con el tractor o el paraguas. Son "hierros" duros diseñados para aguantar sol, barro y vibraciones. \n\n* [Ver Robustez de los Equipos](/servicios/instalacion)',
+    link: '/servicios/instalacion'
+  },
+  // --- BLOQUE TRANSVERSAL: GEOGRAFÍA Y CERCANÍA (¿Venís?) ---
+  {
+    keywords: ['donde', 'sede', 'oficina', 'españa', 'mapa', 'ubicacion', 'central', 'instaladores', 'venis', 'venis a mi zona', 'teneis tecnico'],
+    response: 'Estamos donde tú estés. 📍 \n\nSomos una ingeniería española con técnicos en las principales zonas agrarias. Instalamos en toda la península y damos soporte presencial. No somos una empresa de internet que desaparece; estamos a pie de surco. \n\n* [Ver Red de Soporte](/contacto)',
+    link: '/contacto'
+  },
+  // --- BLOQUE: QUEJAS DEL TIEMPO (Empatía) ---
+  {
+    keywords: ['no llueve', 'sequia', 'vaya calor', 'hace calor', 'vaya frio', 'vaya tiempo', 'se seca todo', 'esta la cosa mal', 'no cae una gota', 'poca agua', 'mucho sol', 'que asco de tiempo'],
+    response: 'El tiempo no perdona y este año está apretando de lo lindo. ☀️🔥 \n\nPrecisamente porque el agua está escasa y el sol no da tregua, nuestras sondas son más necesarias que nunca: para que ni una gota de la que riegues se pierda y la planta aguante el tirón. \n\n¿Cómo está la tierra por tu zona? ¿Está muy apretada?',
+    link: '/sensores/clima'
+  },
+  // --- BLOQUE: POLÍTICA Y BUROCRACIA (El 'Harto') ---
+  {
+    keywords: ['politicos', 'gobierno', 'ministerio', 'nos tienen fritos', 'vaya tela', 'siempre igual', 'solo quieren dinero', 'vaya robo', 'estoy harto', 'hasta los cojones', 'vaya mierda de leyes'],
+    response: 'Te entiendo perfectamente. Entre papeles, leyes nuevas y exigencias del Ministerio, parece que el agricultor tiene que ser más administrativo que tractorista. 📋🚜 \n\nNosotros nacimos para eso: para que el Cuaderno SIEX se rellene casi solo y te dejen trabajar en paz, que es lo que sabes hacer. ¿Te ayudamos con el papeleo?',
+    link: '/cuaderno'
+  },
+  // --- BLOQUE: SALUDOS Y CORTESÍA RURAL ---
+  {
+    keywords: ['buenos dias', 'buenas tardes', 'hola buenas', 'que tal', 'como va eso', 'ey', 'buenas', 'que pasa', 'como estais', 'quien hay'],
+    response: '¡Buenas! Aquí estamos, al pie del surco digital. 👋 \n\n¿Cómo va la faena hoy? ¿En qué te puedo echar un cable para que la jornada sea más ligera? \n\n* [Ver soluciones técnicas](/soluciones/agricultores)\n\n* [Hablar con un ingeniero](/contacto)',
+    link: '/contacto'
+  },
+  // --- BLOQUE TRANSVERSAL: CUE Y GEOLOCALIZACIÓN (Normativa Regional) ---
+  {
+    isTechnical: true,
+    keywords: ['cue', 'cuaderno de explotacion', 'andalucia', 'extremadura', 'castilla', 'aragon', 'murcia', 'comunidad', 'mi zona', 'mi region', 'españa', 'comunidades'],
+    response: 'Cumplimos con la normativa de todas las Comunidades Autónomas, incluida la gestión del **CUE (Cuaderno de Explotación)** bajo el estándar SIEX nacional. 📋 \n\nDa igual si estás en Andalucía, Extremadura o cualquier otra zona; nuestra plataforma adapta los trámites a lo que te pide tu consejería de agricultura. \n\n* [Ver trámites por Comunidad](/cuaderno)',
+    link: '/cuaderno'
+  },
+  // --- BLOQUE TRANSVERSAL: CONSEJOS DE RIEGO (El 'Cómo regar') ---
+  {
+    isTechnical: true,
+    keywords: ['como regar', 'cuando regar', 'cuanta agua', 'tiempo de riego', 'necesidad hidrica', 'momento de riego'],
+    response: 'Para saber cómo regar de forma eficiente, lo primero es saber cuánta agua tiene tu suelo ahora mismo. 💧 \n\nCon nuestros sensores, dejas de regar por calendario y antes de que la planta tenga sed. Te avisamos al móvil cuando la humedad baje del punto crítico. \n\n* [Aprender a optimizar el riego](/sensores/suelo)',
+    link: '/sensores/suelo'
+  },
+  // --- BLOQUE: EL 'PREGUNTON' (Dudas de identidad) ---
+  {
+    keywords: ['eres un robot', 'eres persona', 'quien eres', 'con quien hablo', 'eres real', 'eres maquina', 'chatgpt'],
+    response: 'Soy el asistente inteligente de Smart Fénix. No como ni duermo, pero sé de sensores y de la normativa SIEX casi más que mis creadores (que son ingenieros agrónomos). 🤖🌾 \n\nSi te cansas de hablar conmigo y quieres a una persona de carne y hueso, solo tienes que pedirlo: [Hablar con un humano](/contacto).',
+    link: '/contacto'
+  },
+  // --- BLOQUE TRANSVERSAL: SIEX Y BUROCRACIA (Papeles - MAX PRIORIDAD) ---
+  {
+    isTechnical: true,
+    keywords: ['cuaderno', 'siex', 'sies', 'ciex', 'cue', 'normativa', 'ley', 'rd1054', 'registro', 'obligatorio'],
+    response: 'El **Cuaderno Digital (SIEX/CUE)** es obligatorio y el Ministerio no perdona. 📋 \n\nNuestra plataforma adapta los trámites a lo que te pide tu Comunidad Autónoma (Andalucía, Extremadura, etc.). Olvídate de los Excel; el sistema rellena los tratamientos automáticamente para que estés cubierto legalmente. \n\n* [Evitar multas SIEX](/cuaderno)\n\n* [Ver cómo funciona el Cuaderno](/cuaderno)',
+    link: '/cuaderno'
+  },
+  // --- CAPA DE ESPECIALIZACIÓN REGIONAL (CUE/SIEX Segmentado) ---
+  {
+    isTechnical: true,
+    keywords: ['andalucia', 'jaen', 'cordoba', 'sevilla', 'huelva', 'cadiz', 'malaga', 'almeria', 'granada'],
+    response: 'En Andalucía, el **CUE** es fundamental por la normativa de la Junta. Nuestra plataforma integra todos los requisitos andaluces. \n\n* [Mi CUE en Andalucía](/cuaderno)',
+    link: '/cuaderno'
+  },
+  {
+    isTechnical: true,
+    keywords: ['canarias', 'palma', 'tenerife', 'grancanaria', 'gomera', 'hierro', 'fuerteventura', 'lanzarote'],
+    response: 'El REA y el **CUE** en Canarias tienen particularidades por su régimen especial. Estamos preparados para gestionar tu explotación en las islas. \n\n* [Mi CUE en Canarias](/cuaderno)',
+    link: '/cuaderno'
+  },
+  {
+    isTechnical: true,
+    keywords: ['vasco', 'euskadi', 'vizcaya', 'guipuzcoa', 'alava'],
+    response: 'Adaptamos el registro al **CUE** de Euskadi, cumpliendo con la normativa foral y el SIEX nacional. \n\n* [Mi CUE en Euskadi](/cuaderno)',
+    link: '/cuaderno'
+  },
+  {
+    isTechnical: true,
+    keywords: ['castilla', 'leon', 'mancha', 'toledo', 'valladolid', 'ciudadreal', 'albacete', 'cuenca', 'guadalajara'],
+    response: 'Gestionamos el **CUE** en ambas Castillas, optimizando los trámites para grandes explotaciones de secano y regadío. \n\n* [Mi CUE en Castilla](/cuaderno)',
+    link: '/cuaderno'
+  },
+  {
+    isTechnical: true,
+    keywords: ['aragon', 'zaragoza', 'huesca', 'teruel', 'ebro'],
+    response: 'El **CUE** en Aragón requiere precisión en los riegos del Ebro. Nuestra plataforma te cubre ante la DGA. \n\n* [Mi CUE en Aragón](/cuaderno)',
+    link: '/cuaderno'
+  },
+  {
+    isTechnical: true,
+    keywords: ['madrid', 'valencia', 'murcia', 'galicia', 'asturias', 'cantabria', 'navarra', 'rioja', 'cataluña', 'baleares'],
+    response: 'Damos soporte legal en tu comunidad, adaptando el **CUE/SIEX** a los plazos de tu administración regional. 📍 \n\n* [Ver trámites de mi zona](/cuaderno)',
+    link: '/cuaderno'
+  },
+  // --- CAPA DE ESPECIALIZACIÓN TÉCNICA (Venta Directa) ---
+  {
+    isTechnical: true,
+    keywords: ['humedad', 'agua', 'riego'],
+    response: 'Para controlar el agua, necesitas nuestra **Sonda de Humedad Multicapa**. Mide a diferentes profundidades para que sepas dónde está la raíz bebiendo y ahorres hasta un 30% en riego. \n\n* [Ver Sonda de Humedad](/sensores/suelo)',
+    link: '/sensores/suelo'
+  },
+  {
+    isTechnical: true,
+    keywords: ['npk', 'abono', 'nutrientes', 'fertilizante'],
+    response: 'Nuestros **Sensores NPK** miden la concentración de nutrientes en tiempo real. Deja de abonar a ciegas y ajusta la nutrición a la demanda real de tu cultivo. \n\n* [Ver Sensor NPK](/sensores/suelo)',
+    link: '/sensores/suelo'
+  },
+  {
+    isTechnical: true,
+    keywords: ['clima', 'estacion', 'viento', 'helada'],
+    response: 'La **Estación Meteorológica Smart Fénix** te avisa de heladas y mide la integral térmica de tu parcela en tiempo real. Máxima precisión climática en tu móvil. \n\n* [Ver Estación Clima](/sensores/clima)',
+    link: '/sensores/clima'
   }
 ];
 
@@ -476,32 +664,38 @@ export const POST: APIRoute = async ({ request }) => {
 
   const rawMsg = (message || "").toLowerCase();
 
-  // Limpieza agresiva de signos de puntuación e interrogación
-  let cleanMsg = rawMsg.replace(/[.,!?¿¡]/g, '');
+  // LIMPIEZA AGRESIVA (Solicitada por Senior Developer)
+  const rawClean = rawMsg
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // Quitar tildes
+    .replace(/[.,?!¿¡]/g, '') // Quitar puntuación
+    .replace(/\b(como|donde|cuando|pero|porque|y|o|el|la|los|las|un|una|que|k|de|mis|mi|a|en|por|con|para|del|al|lo|su|sus|tu|tus|te|se|me|sin|sobre|desde|hasta|hacia|contra|ante|bajo|entre|pues|mira|oye|digamos|sabes)\b/g, '')
+    .trim()
+    .replace(/\s+/g, ' ');
 
-  // Limpieza de preposiciones, artículos y stopwords sueltas para flexibilizar la búsqueda
-  const stopWordsRegex = /\b(de|la|el|un|una|que|como|mis|mi|y|a|en|por|con|para|los|las|del|al|unos|unas|lo|su|sus|tu|tus|te|se|me|sin|sobre|desde|hasta|hacia|contra|ante|bajo|entre)\b/g;
-  cleanMsg = cleanMsg.replace(stopWordsRegex, ' ');
-
-  // Limpiar espacios múltiples generados y preparar los bordes
-  cleanMsg = ' ' + cleanMsg.replace(/\s+/g, ' ').trim() + ' ';
+  // Padding de seguridad para detección por palabras (evita sub-palabras como asco en vasco)
+  const cleanMsg = ' ' + rawClean + ' ';
 
   let foundMatch = null;
   let maxMatches = 0;
 
   // Lógica de Fuzzy Match Manual: quitar última letra de palabras largas (>5 chars)
-  const fuzzyMsg = ' ' + cleanMsg.trim().split(/\s+/).map(w => w.length > 5 ? w.slice(0, -1) : w).join(' ') + ' ';
+  const fuzzyMsg = ' ' + rawClean.split(/\s+/).map((w: any) => w.length > 5 ? w.slice(0, -1) : w).join(' ') + ' ';
 
   // Lógica de búsqueda INVERSA (Prioridad Alta a los últimos elementos del array técnico)
   for (let i = LOCAL_KNOWLEDGE.length - 1; i >= 0; i--) {
     const item = LOCAL_KNOWLEDGE[i] as any;
-    const matchCount = item.keywords.filter((kw: string) => cleanMsg.includes(kw) || fuzzyMsg.includes(kw)).length;
-    
+    // Normalizamos también las keywords para comparar peras con peras (sin tildes)
+    const matchCount = item.keywords.filter((kw: string) => {
+      const normalizedKw = kw.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      return cleanMsg.includes(normalizedKw) || fuzzyMsg.includes(normalizedKw);
+    }).length;
+
     // QA: Si el mensaje de usuario es muy corto (< 3 letras), ignoramos y vamos a Fallback/Saludo
     if (cleanMsg.trim().length < 3) continue;
 
-    // QA: Si el mensaje es corto (< 15) e impreciso (< 2 matches), evitamos tochos técnicos
-    if (cleanMsg.trim().length < 15 && matchCount < 2 && item.isTechnical) continue;
+    // QA: Si el mensaje es corto (< 15) e impreciso (< 2 matches), solo evitamos si es un bloque muy genérico
+    // Eliminado el filtro restrictivo de item.isTechnical que bloqueaba respuestas directas segmentadas
 
     if (matchCount > maxMatches) {
       maxMatches = matchCount;
@@ -514,8 +708,8 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ text: foundMatch.response }), { status: 200 });
   }
 
-  // PRIORIDAD 2: RESPALDO POR DEFECTO
+  // PRIORIDAD 2: RESPALDO POR DEFECTO (FALLBACK MEJORADO)
   return new Response(JSON.stringify({
-    text: "No he captado bien tu duda. ¿Te interesa saber sobre el **Cuaderno SIEX**, nuestros **Sensores**, o prefieres **Hablar con un responsable**?\n\n[Ir a Contacto](/contacto)"
+    text: "No te he pillado, pero seguro que quieres hablar de: \n\n1. El **Cuaderno SIEX**\n2. Los **Sensores** (pinchos)\n3. Hablar con un **Ingeniero**.\n\nSi tienes mucha prisa, llámanos al **+34 621 26 22 86**.\n\n[Ir a Contacto](/contacto)"
   }), { status: 200 });
 };

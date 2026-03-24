@@ -208,6 +208,11 @@ const { sensors, title } = Astro.props;
     animation: none !important;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
+
+  /* Cooldown interactivo */
+  .carousel-track.is-paused-by-user {
+    animation-play-state: paused !important;
+  }
 </style>
 
 <script>
@@ -221,20 +226,29 @@ const { sensors, title } = Astro.props;
       
       if (!track || !prevBtn || !nextBtn) return;
 
-      let currentDelay = 0; // en segundos
-      const duration = sensors.length * 8; // Sincronizado: 8s por item
+      const itemCount = track.children.length / 2; // Están duplicados
+      const duration = itemCount * 8; // Sincronizado: 8s por item
+      let currentDelay = 0; 
+      let pauseTimeout: any = null;
 
       const shiftAnimation = (direction: number) => {
-        const trackWidth = track.scrollWidth / 2; // Puesto que está duplicado [...sensors, ...sensors]
-        const stepPixels = 360 + 32; // Ancho de tarjeta + GAP original
+        const trackWidth = track.scrollWidth / 2;
+        const stepPixels = 360 + 32; 
         
-        // Calculamos cuánto tiempo de la animación de 70s representan esos píxeles
+        // Calculamos cuánto tiempo de la animación representan esos píxeles
         const timeShift = (stepPixels / trackWidth) * duration;
         
         // Ajustamos el delay para "adelantar" o "retrasar" la fase de la animación
         currentDelay += (direction * timeShift);
         
         track.style.animationDelay = `${currentDelay}s`;
+
+        // Lógica de Cooldown (1s de pausa)
+        track.classList.add('is-paused-by-user');
+        if (pauseTimeout) clearTimeout(pauseTimeout);
+        pauseTimeout = setTimeout(() => {
+          track.classList.remove('is-paused-by-user');
+        }, 1000);
       };
 
       nextBtn.addEventListener('click', () => shiftAnimation(-1));
