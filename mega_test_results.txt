@@ -1,0 +1,110 @@
+🚀 Iniciando MEGA TEST de AgroAI...
+Cargados 206 bloques con 1465 keywords.
+
+--- RESULTADOS ---
+Total pruebas ejecutadas: 7325
+Total errores/conflictos: 2473
+Precision: 66.24%
+
+--- DETALLE DE ERRORES (Top 100) ---
+⚠️ OVERLAP: "perfecto" (Esperado Bloque 1) -> Gana Bloque 69
+⚠️ OVERLAP: "necesito informacion sobre perfecto" (Esperado Bloque 1) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de perfecto por favor?" (Esperado Bloque 1) -> Gana Bloque 69
+⚠️ OVERLAP: "quiero saber mas de perfecto para mi finca" (Esperado Bloque 1) -> Gana Bloque 69
+⚠️ OVERLAP: "dime algo sobre perfecto" (Esperado Bloque 1) -> Gana Bloque 69
+⚠️ OVERLAP: "comprendo" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "necesito informacion sobre comprendo" (Esperado Bloque 1) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de comprendo por favor?" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "quiero saber mas de comprendo para mi finca" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "dime algo sobre comprendo" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "me parece bien" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "necesito informacion sobre me parece bien" (Esperado Bloque 1) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de me parece bien por favor?" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "quiero saber mas de me parece bien para mi finca" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "dime algo sobre me parece bien" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "entendido" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "necesito informacion sobre entendido" (Esperado Bloque 1) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de entendido por favor?" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "quiero saber mas de entendido para mi finca" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "dime algo sobre entendido" (Esperado Bloque 1) -> Gana Bloque 67
+⚠️ OVERLAP: "necesito informacion sobre hola" (Esperado Bloque 2) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de hola por favor?" (Esperado Bloque 2) -> Gana Bloque 58
+⚠️ OVERLAP: "quiero saber mas de hola para mi finca" (Esperado Bloque 2) -> Gana Bloque 59
+⚠️ OVERLAP: "buenas" (Esperado Bloque 2) -> Gana Bloque 93
+⚠️ OVERLAP: "necesito informacion sobre buenas" (Esperado Bloque 2) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de buenas por favor?" (Esperado Bloque 2) -> Gana Bloque 93
+⚠️ OVERLAP: "quiero saber mas de buenas para mi finca" (Esperado Bloque 2) -> Gana Bloque 93
+⚠️ OVERLAP: "dime algo sobre buenas" (Esperado Bloque 2) -> Gana Bloque 93
+⚠️ OVERLAP: "necesito informacion sobre inicio" (Esperado Bloque 2) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de inicio por favor?" (Esperado Bloque 2) -> Gana Bloque 58
+⚠️ OVERLAP: "npk" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "necesito informacion sobre npk" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de npk por favor?" (Esperado Bloque 3) -> Gana Bloque 58
+⚠️ OVERLAP: "quiero saber mas de npk para mi finca" (Esperado Bloque 3) -> Gana Bloque 59
+⚠️ OVERLAP: "dime algo sobre npk" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "necesito informacion sobre 8 en 1" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de 8 en 1 por favor?" (Esperado Bloque 3) -> Gana Bloque 58
+⚠️ OVERLAP: "quiero saber mas de 8 en 1 para mi finca" (Esperado Bloque 3) -> Gana Bloque 59
+⚠️ OVERLAP: "nutrientes" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "necesito informacion sobre nutrientes" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de nutrientes por favor?" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "quiero saber mas de nutrientes para mi finca" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "dime algo sobre nutrientes" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "nitrógeno" (Esperado Bloque 3) -> Gana Bloque 25
+⚠️ OVERLAP: "necesito informacion sobre nitrógeno" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de nitrógeno por favor?" (Esperado Bloque 3) -> Gana Bloque 25
+⚠️ OVERLAP: "quiero saber mas de nitrógeno para mi finca" (Esperado Bloque 3) -> Gana Bloque 25
+⚠️ OVERLAP: "dime algo sobre nitrógeno" (Esperado Bloque 3) -> Gana Bloque 25
+⚠️ OVERLAP: "fósforo" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "necesito informacion sobre fósforo" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de fósforo por favor?" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "quiero saber mas de fósforo para mi finca" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "dime algo sobre fósforo" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "potasio" (Esperado Bloque 3) -> Gana Bloque 116
+⚠️ OVERLAP: "necesito informacion sobre potasio" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de potasio por favor?" (Esperado Bloque 3) -> Gana Bloque 116
+⚠️ OVERLAP: "quiero saber mas de potasio para mi finca" (Esperado Bloque 3) -> Gana Bloque 116
+⚠️ OVERLAP: "dime algo sobre potasio" (Esperado Bloque 3) -> Gana Bloque 116
+⚠️ OVERLAP: "conductividad" (Esperado Bloque 3) -> Gana Bloque 121
+⚠️ OVERLAP: "necesito informacion sobre conductividad" (Esperado Bloque 3) -> Gana Bloque 121
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de conductividad por favor?" (Esperado Bloque 3) -> Gana Bloque 121
+⚠️ OVERLAP: "quiero saber mas de conductividad para mi finca" (Esperado Bloque 3) -> Gana Bloque 121
+⚠️ OVERLAP: "dime algo sobre conductividad" (Esperado Bloque 3) -> Gana Bloque 121
+⚠️ OVERLAP: "salinidad" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "necesito informacion sobre salinidad" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de salinidad por favor?" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "quiero saber mas de salinidad para mi finca" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "dime algo sobre salinidad" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "abono" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "necesito informacion sobre abono" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de abono por favor?" (Esperado Bloque 3) -> Gana Bloque 58
+⚠️ OVERLAP: "quiero saber mas de abono para mi finca" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "dime algo sobre abono" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "comida" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "necesito informacion sobre comida" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de comida por favor?" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "quiero saber mas de comida para mi finca" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "dime algo sobre comida" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "echarle" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "necesito informacion sobre echarle" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de echarle por favor?" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "quiero saber mas de echarle para mi finca" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "dime algo sobre echarle" (Esperado Bloque 3) -> Gana Bloque 86
+⚠️ OVERLAP: "necesito informacion sobre bolsa" (Esperado Bloque 3) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de bolsa por favor?" (Esperado Bloque 3) -> Gana Bloque 58
+⚠️ OVERLAP: "fertilizante" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "necesito informacion sobre fertilizante" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de fertilizante por favor?" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "quiero saber mas de fertilizante para mi finca" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "dime algo sobre fertilizante" (Esperado Bloque 3) -> Gana Bloque 105
+⚠️ OVERLAP: "necesito informacion sobre fdr" (Esperado Bloque 4) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de fdr por favor?" (Esperado Bloque 4) -> Gana Bloque 58
+⚠️ OVERLAP: "quiero saber mas de fdr para mi finca" (Esperado Bloque 4) -> Gana Bloque 59
+⚠️ OVERLAP: "necesito informacion sobre tdr" (Esperado Bloque 4) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de tdr por favor?" (Esperado Bloque 4) -> Gana Bloque 58
+⚠️ OVERLAP: "quiero saber mas de tdr para mi finca" (Esperado Bloque 4) -> Gana Bloque 59
+⚠️ OVERLAP: "tubular" (Esperado Bloque 4) -> Gana Bloque 49
+⚠️ OVERLAP: "necesito informacion sobre tubular" (Esperado Bloque 4) -> Gana Bloque 65
+⚠️ OVERLAP: "¿me puedes ayudar con el tema de tubular por favor?" (Esperado Bloque 4) -> Gana Bloque 49
+⚠️ OVERLAP: "quiero saber mas de tubular para mi finca" (Esperado Bloque 4) -> Gana Bloque 49
+... y 2373 errores más.

@@ -1,0 +1,7 @@
+🚀 Iniciando MEGA TEST de AgroAI...
+Cargados 207 bloques con 1155 keywords.
+
+--- RESULTADOS ---
+Total pruebas ejecutadas: 5775
+Total errores/conflictos: 0
+Precision: 100.00%
