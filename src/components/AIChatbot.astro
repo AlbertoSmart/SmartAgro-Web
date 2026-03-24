@@ -27,7 +27,7 @@
 
     <div class="chat-messages" id="chatMessages">
       <div class="message incoming">
-        <p>¡Hola! Soy AgroAI, tu asistente experto. ¿En qué puedo ayudarte con la PAC 2024 o el SIEX?</p>
+        <p>Buenas, ¿qué tal? Cuéntame qué necesitas y te echo una mano.</p>
       </div>
     </div>
 
@@ -311,6 +311,14 @@
         right: 20px;
     }
   }
+  .message a.chat-link {
+    color: #4da6ff !important;
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
+  .message a.chat-link:hover {
+    color: #80c1ff !important;
+  }
 </style>
 
 <script>
@@ -426,8 +434,11 @@
 
       if (response.ok) {
         const data = await response.json();
-        // Insertamos formateando line breaks
-        const formattedText = data.text.replace(/\n\n/g, '</p><p>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Formateamos: saltos de línea, negritas, y enlaces markdown
+        const formattedText = data.text
+          .replace(/\n\n/g, '</p><p>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="chat-link">$1</a>');
         appendMessageHTML(`<p>${formattedText}</p>`, 'incoming', true);
         
         // Añadir repuesta de la IA al historial
@@ -438,7 +449,7 @@
     } catch(err) {
       console.error("API error", err);
       loadingBubble?.remove();
-      appendMessageHTML("Hubo un fallo temporal de red. Intenta preguntar más tarde mientras soluciono mis servidores.", 'incoming');
+      appendMessageHTML("Perdona, no he podido conectar ahora mismo. ¿Puedes intentarlo otra vez en un momento? Si sigue fallando, <a href='/contacto' style='color: var(--color-turquoise); text-decoration: underline;'>escríbenos directamente</a> y te atendemos.", 'incoming');
     } finally {
       isAiWorking = false;
       chatInput?.removeAttribute('disabled');

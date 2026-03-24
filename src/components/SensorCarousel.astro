@@ -17,7 +17,17 @@ const { sensors, title } = Astro.props;
 
 <div class="carousel-container section-padding">
   <div class="container">
-    <h3 class="carousel-title">{title}</h3>
+    <div class="carousel-header">
+      <h3 class="carousel-title">{title}</h3>
+      <div class="carousel-arrows">
+        <button class="arrow-btn prev-btn" aria-label="Anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="arrow-btn next-btn" aria-label="Siguiente">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-9-6"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="carousel-wrapper">
       <div class="carousel-track">
         {[...sensors, ...sensors].map((sensor) => (
@@ -155,4 +165,82 @@ const { sensors, title } = Astro.props;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* NUEVOS ESTILOS PARA FLECHAS (SIN TOCAR LO ANTERIOR) */
+  .carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  .carousel-header .carousel-title {
+    margin-bottom: 0;
+  }
+
+  .carousel-arrows {
+    display: flex;
+    gap: 12px;
+  }
+
+  .arrow-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000000;
+  }
+
+  .arrow-btn:hover {
+    background: var(--color-turquoise);
+    color: #FFFFFF;
+    border-color: var(--color-turquoise);
+    transform: scale(1.1);
+  }
+
+  .carousel-track.manual-only {
+    animation: none !important;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
 </style>
+
+<script>
+  function initManualCarousel() {
+    const containers = document.querySelectorAll('.carousel-container');
+    
+    containers.forEach(container => {
+      const track = container.querySelector('.carousel-track') as HTMLElement;
+      const prevBtn = container.querySelector('.prev-btn');
+      const nextBtn = container.querySelector('.next-btn');
+      
+      if (!track || !prevBtn || !nextBtn) return;
+
+      let currentDelay = 0; // en segundos
+      const duration = 70; // Tu duración original de 70s en el CSS
+
+      const shiftAnimation = (direction: number) => {
+        const trackWidth = track.scrollWidth / 2; // Puesto que está duplicado [...sensors, ...sensors]
+        const stepPixels = 360 + 32; // Ancho de tarjeta + GAP original
+        
+        // Calculamos cuánto tiempo de la animación de 70s representan esos píxeles
+        const timeShift = (stepPixels / trackWidth) * duration;
+        
+        // Ajustamos el delay para "adelantar" o "retrasar" la fase de la animación
+        currentDelay += (direction * timeShift);
+        
+        track.style.animationDelay = `${currentDelay}s`;
+      };
+
+      nextBtn.addEventListener('click', () => shiftAnimation(-1));
+      prevBtn.addEventListener('click', () => shiftAnimation(1));
+    });
+  }
+
+  document.addEventListener('astro:page-load', initManualCarousel);
+</script>

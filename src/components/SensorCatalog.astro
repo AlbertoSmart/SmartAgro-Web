@@ -2,231 +2,368 @@
 const sensors = [
     {
         name: "Sensor Suelo Temp/Hum",
-        specs: "Monitorización precisa de la temperatura y humedad radicular.",
+        specs: "Monitorización de precisión radicular.",
         image: "/images/sensores/SensorTemperaturaHumedadSuelo.png",
         category: "Suelo",
         href: "/sensores/suelo-humedad-temp"
     },
     {
         name: "Sensor pH de Suelo",
-        specs: "Control electroquímico del potencial de hidrógeno edáfico.",
+        specs: "Control electroquímico edáfico.",
         image: "/images/sensores/SensorphTemperaturaSuelo.png",
         category: "Suelo",
         href: "/sensores/suelo-ph"
     },
     {
         name: "Sensor de pH Alta Precisión",
-        specs: "Medición ultra-precisa para aplicaciones críticas en suelo y agua.",
+        specs: "Medición crítica en suelo y agua.",
         image: "/images/sensores/SensorDePhAltaPrecision.png",
-        category: "Suelo/Agua",
+        category: "Suelo",
         href: "/sensores/suelo-ph-precision"
     },
     {
         name: "Sensor CO2 Suelo",
-        specs: "Monitoreo de la respiración del suelo y actividad microbiana.",
+        specs: "Respiración y actividad microbiana.",
         image: "/images/sensores/SensorCO2.png",
         category: "Suelo",
         href: "/sensores/suelo-co2"
     },
     {
         name: "Sensor Oxígeno Suelo",
-        specs: "Medición de permeabilidad y salud radicular.",
+        specs: "Permeabilidad y salud radicular.",
         image: "/images/sensores/SensorOxigenoSuelo.png",
         category: "Suelo",
         href: "/sensores/suelo-oxigeno"
     },
     {
         name: "Sensor Suelo 8 en 1",
-        specs: "NPK, Fósforo, PH, EC, Temp, Hum, Salinidad.",
+        specs: "Analítica completa de nutrientes.",
         image: "/images/sensores/SensorSuelo8en1.png",
         category: "Suelo",
         href: "/sensores/suelo-8en1"
     },
     {
         name: "Sensor Tubular Multicapa",
-        specs: "Perfil vertical de temperatura y humedad en múltiples profundidades.",
+        specs: "Perfil vertical multi-profundidad.",
         image: "/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png",
         category: "Suelo",
         href: "/sensores/suelo-tubular"
     },
     {
         name: "Dendrómetro de Tronco",
-        specs: "Medición de variaciones micro-métricas del diámetro del tronco.",
+        specs: "Variaciones micro-métricas de tronco.",
         image: "/images/sensores/DendometroTronco.png",
         category: "Planta",
         href: "/sensores/planta-dendrometro-tronco"
     },
     {
         name: "Dendrómetro de Fruto",
-        specs: "Crecimiento del fruto en tiempo real para optimización de cosecha.",
+        specs: "Crecimiento de fruto en tiempo real.",
         image: "/images/sensores/dendometroFruto2.png",
         category: "Planta",
         href: "/sensores/planta-dendrometro-fruto"
     },
     {
         name: "Sensor de Hoja Temp/Hum",
-        specs: "Gestión del estado hídrico foliar y evidencia de condiciones ambientales.",
+        specs: "Gestión del estado hídrico foliar.",
         image: "/images/sensores/SensorHojaChinosTemperaturayHumedad.png",
         category: "Planta",
         href: "/sensores/planta-hoja-humectacion"
     },
     {
         name: "Sensor Temperatura Hoja",
-        specs: "Medición directa del estrés térmico en el follaje.",
-        image: "/images/sensores/SensorHojaChinosTemperaturayHumedad.png", // Reuse image as specifically mentioned for Temp/Hum leaf
+        specs: "Estrés térmico directo en follaje.",
+        image: "/images/sensores/SensorHojaChinosTemperaturayHumedad.png",
         category: "Planta",
         href: "/sensores/planta-temp-hoja"
     },
     {
         name: "Estación Meteorológica",
-        specs: "Viento, lluvia, radiación UV y presión atmosférica.",
+        specs: "Viento, lluvia e índices climáticos.",
         image: "/images/sensores/EstacionMeteorologica.png",
         category: "Clima",
         href: "/sensores/clima-estacion"
     },
     {
         name: "Sensor Nivel de Agua",
-        specs: "Presión hidrostática para control de depósitos y canales.",
+        specs: "Control de depósitos y canales.",
         image: "/images/sensores/SensorNivelAgua.png",
-        category: "Riego",
+        category: "Clima",
         href: "/sensores/agua-nivel"
     }
+];
+
+const categories = [
+    { title: "Monitorización de Suelo", key: "Suelo" },
+    { title: "Fisiología Vegetal", key: "Planta" },
+    { title: "Clima e Hidrología", key: "Clima" }
 ];
 ---
 
 <section class="sensor-catalog section-padding" id="sensores">
-    <div class="container">
-        <div class="sensor-catalog__header text-center">
-            <span class="sensor-catalog__pretitle"
-                >Evidencia de Datos para el SIEX</span
-            >
-            <h2 class="section-title">Sensores de precisión para máxima eficiencia productiva</h2>
-            <p class="section-subtitle">
-                Hardware profesional que genera evidencia documental para tu
-                Cuaderno de Campo y optimiza cada recurso de tu explotación.
-            </p>
+    <div class="container overflow-visible">
+        <div class="sensor-catalog__header">
+            <div class="header-main">
+                <span class="catalog-badge">Precisión loRaWAN & 4G</span>
+                <h2 class="balanced-title">Hardware de Precisión</h2>
+                <p class="balanced-subtitle">Monitorización continua que transforma datos en decisiones rentables.</p>
+            </div>
         </div>
 
-        <div class="sensor-catalog__grid">
-            {
-                sensors.map((sensor) => (
-                    <a href={sensor.href} class="sensor-card glass">
-                        <div class="sensor-card__badge">{sensor.category}</div>
-                        <div class="sensor-card__image">
-                            <img src={sensor.image} alt={sensor.name} loading="lazy" />
-                        </div>
-                        <h3 class="sensor-card__name">{sensor.name}</h3>
-                        <p class="sensor-card__specs">{sensor.specs}</p>
-                    </a>
-                ))
-            }
-        </div>
+        {categories.map((cat, idx) => (
+            <div class="fluid-category" data-category={cat.key}>
+                <div class="category-header-row">
+                    <div class="category-label">
+                        <span class="category-idx">0{idx + 1}</span>
+                        <h3>{cat.title}</h3>
+                    </div>
+                    <div class="slider-nav">
+                        <button class="nav-arrow prev" aria-label="Anterior">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+                        </button>
+                        <button class="nav-arrow next" aria-label="Siguiente">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m0 0l-7-7m7 7l-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="slider-outer-fluid">
+                    <div class="slider-track-fluid" id={`track-${idx}`} style={`animation-duration: ${50 + (idx * 10)}s`}>
+                        {/* Triplicamos el contenido para el bucle infinito continuo e invisible */}
+                        {[...sensors.filter(s => s.category.includes(cat.key)), ...sensors.filter(s => s.category.includes(cat.key)), ...sensors.filter(s => s.category.includes(cat.key))].map((sensor) => (
+                            <div class="slider-item-balanced">
+                                <a href={sensor.href} class="balanced-card">
+                                    <div class="card-image-wrap">
+                                        <img src={sensor.image} alt={sensor.name} loading="lazy" />
+                                    </div>
+                                    <div class="card-info">
+                                        <h4>{sensor.name}</h4>
+                                        <p>{sensor.specs}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        ))}
     </div>
 </section>
 
 <style>
     .sensor-catalog {
-        background: var(--color-white);
-        color: var(--color-charcoal);
-        position: relative;
+        background: #FFFFFF;
+        padding: 100px 0;
         overflow: hidden;
     }
 
     .sensor-catalog__header {
-        margin-bottom: 60px;
+        margin-bottom: 70px;
     }
 
-    .sensor-catalog__header .section-title {
-        color: var(--color-charcoal);
-    }
-
-    .sensor-catalog__pretitle {
-        display: block;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 0.8rem;
-        letter-spacing: 0.12em;
-        color: var(--color-turquoise);
-        margin-bottom: 12px;
-    }
-
-    .sensor-catalog__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 24px;
-    }
-
-    .sensor-card {
-        padding: 28px;
-        border-radius: var(--border-radius-md);
-        background: var(--color-white);
-        border: 1px solid var(--color-gray-200);
-        transition: var(--transition);
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-    }
-
-    .sensor-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
-        border-color: var(--color-turquoise);
-    }
-
-    .sensor-card__badge {
-        position: absolute;
-        top: 16px;
-        right: 16px;
+    .catalog-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        background: rgba(11, 26, 20, 0.05);
+        color: #0B1A14;
+        border-radius: 4px;
         font-size: 0.7rem;
-        padding: 4px 10px;
-        background: var(--color-gray-100);
-        color: var(--color-charcoal);
-        border-radius: 20px;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
-        z-index: 2;
+        letter-spacing: 0.05em;
+        margin-bottom: 18px;
     }
 
-    .sensor-card__image {
-        width: 100%;
-        height: 160px;
-        margin-bottom: 20px;
-        border-radius: var(--border-radius-sm);
-        overflow: hidden;
-        background: var(--color-gray-50);
+    .balanced-title {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #0B1A14;
+        margin-bottom: 15px;
+        letter-spacing: -0.02em;
+    }
+
+    .balanced-subtitle {
+        font-size: 1.15rem;
+        color: #666;
+        line-height: 1.5;
+        max-width: 600px;
+    }
+
+    .fluid-category {
+        margin-bottom: 90px;
+    }
+
+    .category-header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #F0F0F0;
+    }
+
+    .category-label {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .category-idx {
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: var(--color-turquoise);
+        font-family: monospace;
+    }
+
+    .category-label h3 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #0B1A14;
+        letter-spacing: -0.01em;
+    }
+
+    .slider-nav {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid #EEE;
+        background: #FFF;
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #0B1A14;
     }
 
-    .sensor-card__image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-    .sensor-card:hover .sensor-card__image img {
+    .nav-arrow:hover {
+        background: #0B1A14;
+        border-color: #0B1A14;
+        color: #FFF;
         transform: scale(1.05);
     }
 
-    .sensor-card__name {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-        color: var(--color-charcoal);
-        font-weight: 700;
+    .slider-outer-fluid {
+        position: relative;
+        width: 100%;
     }
 
-    .sensor-card__specs {
-        font-size: 0.88rem;
-        color: var(--color-gray-500);
+    .slider-track-fluid {
+        display: flex;
+        gap: 30px;
+        width: max-content;
+        animation: scroll-fluid linear infinite;
+        will-change: transform;
+    }
+
+    .slider-track-fluid:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll-fluid {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-33.333% - 13.333px)); } /* 13.333px es el gap ajustado al triplicado */
+    }
+
+    .slider-item-balanced {
+        flex: 0 0 360px;
+    }
+
+    .balanced-card {
+        text-decoration: none;
+        display: block;
+        background: #FFF;
+        border: 1px solid #F0F0F0;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        height: 100%;
+    }
+
+    .balanced-card:hover {
+        border-color: var(--color-turquoise);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    .card-image-wrap {
+        width: 100%;
+        height: 180px;
+        background: #F9F9F9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .card-image-wrap img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: transform 0.6s ease;
+    }
+
+    .balanced-card:hover .card-image-wrap img {
+        transform: scale(1.1);
+    }
+
+    .card-info {
+        padding: 25px;
+    }
+
+    .card-info h4 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #0B1A14;
+        margin-bottom: 8px;
+    }
+
+    .card-info p {
+        font-size: 0.95rem;
+        color: #666;
         line-height: 1.5;
     }
 
     @media (max-width: 768px) {
-        .sensor-catalog__grid {
-            grid-template-columns: 1fr;
-        }
+        .slider-item-balanced { flex: 0 0 320px; }
+        .balanced-title { font-size: 2rem; }
+        .category-label h3 { font-size: 1.3rem; }
     }
 </style>
+
+<script>
+    function setupFluidSlider() {
+        const sections = document.querySelectorAll('.fluid-category');
+        
+        sections.forEach((section, idx) => {
+            const track = section.querySelector('.slider-track-fluid') as HTMLElement;
+            const prevBtn = section.querySelector('.nav-arrow.prev');
+            const nextBtn = section.querySelector('.nav-arrow.next');
+            
+            if (!track || !prevBtn || !nextBtn) return;
+
+            let currentDelay = 0;
+            const durationStyle = window.getComputedStyle(track).animationDuration;
+            const duration = parseFloat(durationStyle);
+
+            const shiftAnimation = (direction: number) => {
+                const stepPixels = 360 + 30; // Ancho + Gap
+                const trackWidth = track.scrollWidth / 3; 
+                const timeShift = (stepPixels / trackWidth) * duration;
+                
+                currentDelay += (direction * timeShift);
+                track.style.animationDelay = `${currentDelay}s`;
+            };
+
+            nextBtn.addEventListener('click', () => shiftAnimation(-1));
+            prevBtn.addEventListener('click', () => shiftAnimation(1));
+        });
+    }
+
+    document.addEventListener('astro:page-load', setupFluidSlider);
+</script>
