@@ -143,7 +143,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['cultivo', 'siembra', 'que hago', 'cultivos'],
+    keywords: ['siembra', 'que hago', 'cultivos'],
     response: 'Para optimizar tus cultivos (olivar, almendro, frutales, etc.), utilizamos tecnología de precisión que mide lo que la planta realmente necesita. Si tienes problemas de rendimiento o quieres lograr un masivo **ahorro de agua** y abono, consulta nuestras [Soluciones para Agricultores](/soluciones/agricultores) o solicita una demo técnica de nuestros sensores de suelo y planta.',
     link: '/soluciones/agricultores'
   },
@@ -508,7 +508,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['cultivo de maiz', 'pivote', 'cobertera', 'nitrogeno'],
+    keywords: ['pivote', 'cobertera', 'nitrogeno'],
     response: 'El cultivo del maíz demanda un control hídrico y nutricional milimétrico, especialmente bajo riego por pivote. Instalamos sensores de humedad de suelo a 30cm, 60cm y 90cm para calibrar el tiempo óptimo de rotación del pivote sin incurrir en lixiviación de nitratos por exceso de agua. Sincronizamos estos sensores con la evapotranspiración diaria (ETc) para que aportes exactamente el agua que el cultivo consumió ayer. Esta precisión salva el coste energético del bombeo y previene asfixias radiculares en las etapas iniciales críticas. Revisa los [Sensores de Suelo](/sensores/suelo).',
     link: '/sensores/suelo'
   },
@@ -706,7 +706,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['finca grande', 'latifundio', 'parcelas', 'eficiente', 'ahorrar mucho', 'explotacion', 'rentabilidad'],
+    keywords: ['finca grande', 'latifundio', 'parcelas', 'eficiente', 'ahorrar mucho', 'rentabilidad'],
     response: 'Gestionar grandes extensiones (100, 500 o 1000 hectáreas) sin sensores es como ir a ciegas. 🚜💨 \n\nNuestra tecnología te permite ver el estado hídrico de cada sector de riego desde el móvil, evitando que desperdicies miles de euros en agua y abono por culpa de una mala decisión. Para fincas de este tamaño, lo mejor es un plan de Ingeniería a Medida. \n\n* [Ver Soluciones de Escala](/soluciones/agricultores)\n* [Pedir Estudio de Rentabilidad](/herramientas/calculadora-roi)',
     link: '/soluciones/agricultores'
   },
@@ -742,7 +742,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['cuaderno de explotacion', 'extremadura', 'comunidad', 'mi zona', 'mi region', 'españa', 'comunidades'],
+    keywords: ['extremadura', 'comunidad', 'mi zona', 'mi region', 'españa', 'comunidades'],
     response: 'Cumplimos con la normativa de todas las Comunidades Autónomas, incluida la gestión del **CUE (Cuaderno de Explotación)** bajo el estándar SIEX nacional. 📋 \n\nDa igual si estás en Andalucía, Extremadura o cualquier otra zona; nuestra plataforma adapta los trámites a lo que te pide tu consejería de agricultura. \n\n* [Ver trámites por Comunidad](/cuaderno/informacion-comunidades)',
     link: '/cuaderno/informacion-comunidades'
   },
@@ -1240,7 +1240,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: false,
-    keywords: ['servicios', 'que haceis', 'que ofreceis', 'soluciones', 'asesoramiento', 'consultoria', 'ingenieria', 'proyectos'],
+    keywords: ['servicios', 'que haceis', 'asesoramiento', 'consultoria', 'ingenieria', 'proyectos'],
     response: 'En Smart Fénix ofrecemos soluciones integrales para la agricultura de precisión:\n\n- **Sensores:** Monitorización avanzada de suelo, clima y planta.\n- **Software:** Plataforma intuitiva para la toma de decisiones.\n- **Ingeniería Agronómica:** Asesoramiento experto y personalizado.\n- **Instalación y Mantenimiento:** Servicio técnico garantizado.\n\nNuestro objetivo es maximizar tu rentabilidad y sostenibilidad.\n\n[Ver todos los Servicios](/soluciones/agricultores)',
     link: '/soluciones/agricultores'
   }
@@ -1278,7 +1278,7 @@ export const POST: APIRoute = async ({ request }) => {
   // Lógica de Fuzzy Match Manual: quitar última letra de palabras largas (>5 chars)
   const fuzzyMsg = ' ' + rawClean.split(/\s+/).map((w: any) => w.length > 5 ? w.slice(0, -1) : w).join(' ') + ' ';
 
-  const NOISE_WORDS = ['de', 'la', 'el', 'en', 'por', 'con', 'para', 'mi', 'me', 'te', 'se', 'lo', 'los', 'las', 'un', 'una', 'unos', 'unas', 'que', 'si', 'y', 'o', 'u', 'a', 'al', 'del', 'su', 'sus', 'tu', 'tus', 'hola', 'buenas', 'tardes', 'dias', 'noches', 'adios', 'hasta', 'luego', 'ayuda', 'ayudar', 'informacion', 'necesito', 'necesitar', 'donde', 'duda', 'saber', 'quiero', 'ver', 'dime', 'sobre', 'mas', 'esta', 'cosa', 'mal', 'asco', 'tiempo', 'vaya', 'mierda', 'leyes', 'inicio', 'todos', 'lista', 'cuales', 'ofreceis', 'modelos', 'variedad', 'stock', 'gama', 'tipos', 'aprender', 'novedades', 'blog', 'leer', 'articulos', 'noticias', 'actualidad', 'finca', 'campo', 'agricola', 'fincas', 'problema', 'que hago', 'solucion', 'gracias', 'tema', 'favor', 'puedes', 'hacer', 'algo', 'tal', 'pasa', 'buen', 'buenos', 'mejor', 'tengo', 'tiene', 'hectareas', 'hectarea', 'cuantas', 'muchas', 'pocas', 'explotacion', 'cultivo', 'trabajas'];
+  const NOISE_WORDS = ['de', 'la', 'el', 'en', 'por', 'con', 'para', 'mi', 'me', 'te', 'se', 'lo', 'los', 'las', 'un', 'una', 'unos', 'unas', 'que', 'si', 'y', 'o', 'u', 'a', 'al', 'del', 'su', 'sus', 'tu', 'tus', 'hola', 'buenas', 'tardes', 'dias', 'noches', 'adios', 'hasta', 'luego', 'ayuda', 'ayudar', 'informacion', 'necesito', 'necesitar', 'donde', 'duda', 'saber', 'quiero', 'ver', 'dime', 'sobre', 'mas', 'esta', 'cosa', 'mal', 'asco', 'tiempo', 'vaya', 'mierda', 'leyes', 'inicio', 'todos', 'lista', 'cuales', 'ofreceis', 'modelos', 'variedad', 'stock', 'gama', 'tipos', 'aprender', 'novedades', 'blog', 'leer', 'articulos', 'noticias', 'actualidad', 'finca', 'campo', 'agricola', 'fincas', 'problema', 'que hago', 'solucion', 'gracias', 'tema', 'favor', 'puedes', 'hacer', 'algo', 'tal', 'pasa', 'buen', 'buenos', 'mejor', 'tengo', 'tiene', 'tienes', 'hectareas', 'hectarea', 'cuantas', 'muchas', 'pocas', 'explotacion', 'explotaciones', 'cultivo', 'trabajas', 'manzano', 'manzanos'];
 
   const normalize = (text: string) => {
     return text.normalize("NFD")
