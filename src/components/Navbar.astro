@@ -503,6 +503,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       visibility: hidden;
       pointer-events: none;
       transition: transform 0.3s ease, visibility 0.3s;
+      text-align: left !important; /* Force left alignment against global container rules */
     }
     .navbar__menu--open { 
       transform: translateX(0) !important;
@@ -634,8 +635,8 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     }
     .navbar__item--access .access-link {
       display: block !important;
-      text-align: center !important;
-      padding: 16px !important;
+      text-align: left !important;
+      padding: 16px 24px !important;
       font-size: 1rem !important;
       border: 1px solid var(--color-turquoise) !important;
       border-radius: 8px !important;
