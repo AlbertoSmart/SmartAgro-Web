@@ -354,6 +354,11 @@ ol {
    Desktop (>768px) is NOT affected.
    =============================================================== */
 @media (max-width: 768px) {
+  /* Prevent horizontal scrolling / sideways gliding on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
   /* === CENTERED TEXT + ICONS === */
   .section-title,
