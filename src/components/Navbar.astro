@@ -487,30 +487,44 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       z-index: 10000;
     }
     .navbar__brand {
-      padding-left: 0;
-      flex: 0 0 auto;
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 0;
     }
     .navbar__center-title {
-      display: none !important; /* Hide to prevent collision on mobile */
+      display: flex !important;
+      position: relative !important;
+      left: auto !important;
+      transform: none !important;
+      flex: 2;
+      justify-content: center;
+      align-items: center;
+    }
+    .navbar__center-title a {
+      font-size: 1.1rem !important;
+      white-space: nowrap;
+      text-align: center;
     }
     .navbar__right-actions {
+      flex: 1;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-left: auto;
-      flex: 0 0 auto;
+      justify-content: flex-end;
+      gap: 15px;
     }
     .admin-access-btn {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.8);
       display: flex;
       align-items: center;
-      margin-right: 4px;
+      margin-right: 0;
     }
     .admin-access-btn:hover {
       color: var(--color-turquoise);
     }
     .navbar__logo img {
-      height: 32px !important;
+      height: 38px !important;
+      width: auto !important;
     }
 
     /* === HAMBURGER TOGGLE === */
