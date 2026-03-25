@@ -422,13 +422,16 @@ ol {
     font-size: 1.15rem !important;
   }
 
-  /* === CARD GRIDS — 2 columns, compact === */
+  /* === CARD GRIDS — 2 columns for simple items === */
   .features-grid,
-  .cards-grid,
-  .tech-grid,
-  [class*="grid"]:not(.navbar__menu) {
+  .cards-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 12px !important;
+  }
+  
+  /* Make sure massive flow and faq grids stack as 1 column globally despite original definitions */
+  .flow-grid, .faq-grid, .intro-grid, .tech-grid {
+    grid-template-columns: 1fr !important;
   }
 
   .card, .feature-card {
@@ -474,19 +477,20 @@ ol {
   }
 
   /* === SUBPAGES / SERVICIOS overrides for left-aligned content === */
-  .flow-step, .faq-item, .value-item {
+  .flow-step, .faq-item, .value-item, .tech-item {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
   }
 
-  /* Fix absolute positioned numbers in flow-steps */
+  /* Fix absolute positioned numbers in flow-steps perfectly in the top center */
   .flow-step__number {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    margin: -50px auto 16px auto !important;
+    position: absolute !important;
+    top: -20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
   }
 
   /* Center the feature lists in cards */
