@@ -143,8 +143,8 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 
 <script>
   // Usar un flag para evitar duplicar listeners con transition:persist
-  if (!window.__navbarInitialized) {
-    window.__navbarInitialized = true;
+  if (!(window as any).__navbarInitialized) {
+    (window as any).__navbarInitialized = true;
 
     function closeMenu() {
       const menu = document.getElementById("navMenu");
