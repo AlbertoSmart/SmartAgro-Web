@@ -233,5 +233,12 @@ import TestPage from "../layouts/TestPage.astro";
       justify-content: center;
       width: fit-content;
     }
+
+    /* Force the large profile cards to stack vertically on mobile */
+    .profile-selector .cards-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 30px !important;
+    }
   }
 </style>
