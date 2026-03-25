@@ -70,7 +70,6 @@ import Layout from "../layouts/Layout.astro";
         <!-- COLUMN RIGHT: AUDIT FORM -->
         <section class="form-wrapper">
           <div class="form-card">
-            <div class="section-label">01. INICIAR AUDITORÍA</div>
             <h2>Solicitud de Información Técnica</h2>
             <p class="form-intro">Describa sus necesidades y un ingeniero asignado a su zona revisará su caso personalmente.</p>
 
@@ -98,13 +97,15 @@ import Layout from "../layouts/Layout.astro";
                   <option value="suelo">Sensores de Suelo y Raíz</option>
                   <option value="planta">Fisiología de Planta (Hoja y Fruto)</option>
                   <option value="clima">Monitorización Meteorológica</option>
-                  <option value="kit-digital">Kit Digital / Subvenciones</option>
-                  <option value="fieldbee">Autoguiado RTK y Maquinaria</option>
-                  <option value="prescripcion">Prescripción Digital Variable</option>
-                  <option value="estiercoles">Gestión de Estiércoles</option>
+                  <option value="kit-digital">Kit Digital y Subvenciones</option>
+                  <option value="fieldbee">Autoguiado RTK (FieldBee)</option>
+                  <option value="plagas">Alertas de Plagas y Hongos (IPMwise)</option>
+                  <option value="certificacion">Auditoría de Ingeniería y Certificación</option>
+                  <option value="prescripcion">Prescripción Digital de Tasa Variable</option>
+                  <option value="estiercoles">Gestión de Estiércoles y Purines</option>
                   <option value="trazabilidad">Trazabilidad GPS DARP</option>
-                  <option value="asesoramiento">Asesoramiento Estratégico</option>
-                  <option value="cooperativas">Soluciones para Cooperativas</option>
+                  <option value="asesoramiento">Asesoramiento Estratégico y Técnico</option>
+                  <option value="cooperativas">Cooperativas y Grupos de Técnicos</option>
                   <option value="soporte">Soporte Técnico / Incidencia</option>
                   <option value="otro">Consulta General / Otro</option>
                 </select>
@@ -131,7 +132,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="faq-grid-v3">
           <div class="faq-v3-item">
             <h4>¿Tienen delegaciones físicas?</h4>
-            <p>Nuestra base está en Granada, pero operamos de forma digital y presencial en toda España y Portugal.</p>
+            <p>Nuestra base está en Fuente Palmera (Córdoba), pero operamos de forma digital y presencial en toda España y Portugal.</p>
           </div>
           <div class="faq-v3-item">
             <h4>¿Atienden a pequeños agricultores?</h4>
@@ -307,7 +308,7 @@ import Layout from "../layouts/Layout.astro";
   /* FORM CARD DESIGN */
   .form-card {
     background: #FFFFFF !important;
-    padding: 70px !important;
+    padding: 50px 70px 70px !important;
     border-radius: 32px !important;
     border: 1px solid var(--color-gray-100) !important;
     box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.08) !important;

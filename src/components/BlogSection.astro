@@ -1,25 +1,28 @@
 ---
 const blogPosts = [
   {
-    image: "/images/blog-siex.png",
-    category: "SIEX",
-    title: "Plazos y obligaciones del SIEX para explotaciones agrícolas",
+    id: "ia-campo-asesoramiento",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+    category: "Inteligencia Artificial",
+    title: "IA aplicada al campo: El futuro del asesoramiento",
     excerpt:
-      "Analizamos los plazos clave y las obligaciones que establece el Sistema de Información de Explotaciones para los agricultores y técnicos agrícolas.",
+      "Cómo AgroAI está transformando la manera en que los agricultores interactúan con sus datos de telemetría de suelo y clima.",
   },
   {
-    image: "/images/blog-calendar.png",
+    id: "ecorregimenes-siex-2026",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
     category: "Normativa",
-    title: "Entrada en vigor de la nueva normativa del Cuaderno de Explotación",
+    title: "Ecorregímenes y SIEX: Guía de cumplimiento 2026",
     excerpt:
-      "Todo lo que necesitas saber sobre la entrada en vigor del Real Decreto que regula el Cuaderno Digital de Explotación Agrícola y sus implicaciones.",
+      "Analizamos las claves para certificar tus prácticas agrarias y asegurar la tramitación de las ayudas de la PAC sin errores.",
   },
   {
-    image: "/images/blog-documento.png",
-    category: "Documento Técnico",
-    title: "Guía de implementación del Cuaderno Digital de Explotación",
+    id: "dendrometria-latido-arboles",
+    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800",
+    category: "Tecnología",
+    title: "Dendrometría: Escuchando el latido de tus árboles",
     excerpt:
-      "Documento técnico con las pautas y recomendaciones para la correcta implementación del cuaderno digital en tu explotación agrícola.",
+      "La guía definitiva para entender el crecimiento del tronco y optimizar el riego deficitario controlado en leñosos.",
   },
 ];
 ---
@@ -45,7 +48,7 @@ const blogPosts = [
               <span class="blog-card__category">{post.category}</span>
               <h3 class="blog-card__title">{post.title}</h3>
               <p class="blog-card__excerpt">{post.excerpt}</p>
-              <a href="#" class="blog-card__link">
+              <a href={`/blog/${post.id}`} class="blog-card__link">
                 Leer más
                 <svg
                   width="14"

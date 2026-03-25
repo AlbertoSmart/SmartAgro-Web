@@ -3,163 +3,118 @@ import Layout from "../../layouts/Layout.astro";
 
 export function getStaticPaths() {
   return [
-    { params: { id: 'manual-inspecciones-siex-2026' } },
-    { params: { id: 'la-fisica-del-suelo-npk' } },
-    { params: { id: 'ecorregimen-p5-cubiertas-vegetales' } },
+    { params: { id: 'ia-campo-asesoramiento' } },
+    { params: { id: 'ecorregimenes-siex-2026' } },
+    { params: { id: 'dendrometria-latido-arboles' } },
   ];
 }
 
 const { id } = Astro.params;
 
 const postsContent = {
-  'manual-inspecciones-siex-2026': {
-    title: "Manual Defensivo ante Inspecciones SIEX 2026",
-    category: "Normativa SIEX y PAC",
-    date: "15 MAR 2024",
+  'ia-campo-asesoramiento': {
+    title: "IA aplicada al campo: El futuro del asesoramiento",
+    category: "Inteligencia Artificial",
+    date: "25 de Marzo, 2024",
     author: "Dirección Técnica Agronómica",
-    image: "https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+    intro: "Análisis pormenorizado sobre la implementación de modelos de inferencia agronómica y telemetría de precisión en explotaciones de alto rendimiento.",
     content: `
-      <h2>Introducción: La Era de la Transparencia Digital</h2>
-      <p>El Real Decreto 1054/2022 ha marcado un punto de inflexión en la gestión de las explotaciones agrarias en España. La transición del cuaderno de campo tradicional en papel al Sistema de Información de Explotaciones Agrarias (SIEX) no es un mero cambio de formato; es un nuevo paradigma de control basado en la inmediatez y la veracidad del dato. Para el año 2026, la administración habrá perfeccionado sus algoritmos de detección cruzada, haciendo que el error administrativo sea el principal disparador de inspecciones presenciales.</p>
+      <h2>1. El Motor de Inferencia y el Análisis de Datos</h2>
+      <p>La implementación de Inteligencia Artificial (IA) en la gestión agraria representa una evolución necesaria desde el monitoreo pasivo hacia el asesoramiento proactivo. Nuestros modelos se basan en el procesamiento de series temporales capturadas por sensores de campo, permitiendo una detección de anomalías hídricas con una precisión técnica superior al 95%.</p>
 
-      <h2>1. El Marco Legal: Real Decreto 1054/2022</h2>
-      <p>Este decreto establece la gobernanza del SIEX y el contenido mínimo del Cuaderno de Explotación Agrícola (CUE). La clave reside en la interoperabilidad de las bases de datos. El sistema cruza información del REA (Registro de Explotaciones), SIGPAC (Sistema de Identificación de Parcelas), y el Registro de Productos Fitosanitarios en tiempo real.</p>
+      <h2>2. Redes Neuronales Aplicadas a la Telemetría</h2>
+      <p>El sistema analiza el contenido volumétrico de agua y la conductividad eléctrica del suelo mediante algoritmos de aprendizaje profundo. Estos procesos permiten diferenciar entre la evaporación natural y la transpiración real del cultivo, ajustando las necesidades de riego a la fisiología específica de la planta.</p>
       
-      <div class="tech-card-white">
-        <h3>Requisitos Críticos del SIEX:</h3>
+      <div class="technical-table-container">
+        <h3>Capacidades Técnicas del Sistema:</h3>
         <ul>
-          <li><strong>Plazo de Registro:</strong> Los tratamientos fitosanitarios y la aplicación de fertilizantes deben quedar registrados en un plazo máximo de 30 días posteriores a la operación.</li>
-          <li><strong>Trazabilidad ROMA:</strong> Cualquier equipo de aplicación debe estar debidamente inscrito en el Registro Oficial de Maquinaria Agrícola.</li>
-          <li><strong>Evidencia Satelital:</strong> El sistema de monitorización de superficies (SMS) de la PAC detecta automáticamente el estado fenológico de los cultivos.</li>
+          <li><strong>Análisis de Histéresis:</strong> Evaluación de la capacidad de retención hídrica post-irrigación.</li>
+          <li><strong>Modelado Biológico de Plagas:</strong> Integración de grados-día y humedad relativa para predecir ciclos de insectos.</li>
+          <li><strong>Automatización del Asesoramiento:</strong> Generación de planes de fertilización basados en la extracción real de nutrientes.</li>
         </ul>
       </div>
 
-      <h2>2. Fotos Georreferenciadas: La Prueba de Oro</h2>
-      <p>En caso de discrepancia entre lo que el satélite Sentinel detecta y lo que el agricultor declara, la Administración ya no solicita una visita inmediata. En su lugar, el técnico inspector requerirá el envío de Fotos Georreferenciadas a través de las apps oficiales de cada comunidad autónoma (basadas en el estándar del FEGA).</p>
-      
-      <p>Una foto válida debe contener metadatos inviolables: coordenadas UTM, fecha, hora y rumbo de la toma. Estas fotos sirven para demostrar la existencia de un cultivo, el cumplimiento de una práctica de ecorrégimen (como el rastrojo de siembra directa) o la realización de un desbroce mecánico en cubiertas vegetales.</p>
+      <h2>3. Integración con el Mapa de la Explotación (GIS)</h2>
+      <p>La IA se integra con sistemas de información geográfica para ofrecer una visión espacial de la finca. Esto permite identificar sectores con bajo rendimiento y correlacionar los datos de los sensores con la ortofoto de vigor (NDVI), cerrando el ciclo de decisión del agricultor.</p>
 
-      <h2>3. Protocolo Ante una Inspección Presencial</h2>
-      <p>Si el sistema de alertas del SIEX dispara una inspección presencial, el agricultor debe estar preparado. El inspector solicitará:</p>
-      <table>
+      <p>Como ingenieros agrónomos, validamos cada algoritmo para asegurar que la digitalización cumpla con los estándares técnicos y normativos exigidos en el marco actual de la Agricultura 4.0.</p>
+    `
+  },
+  'ecorregimenes-siex-2026': {
+    title: "Ecorregímenes y SIEX: Guía de cumplimiento 2026",
+    category: "Normativa y Ayudas",
+    date: "20 de Marzo, 2024",
+    author: "Gabinete Técnico PAC",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200",
+    intro: "Revisión técnica de las obligaciones legales en materia de digitalización y registro de explotaciones agrarias según el marco normativo del SIEX.",
+    content: `
+      <h2>1. Marco Normativo y Evidencias Digitales</h2>
+      <p>Desde la entrada en vigor del registro SIEX, la transparencia en la gestión de insumos se ha convertido en el eje central de las inspecciones agrarias. La administración emplea ahora sistemas de monitorización satelital para verificar la veracidad de lo declarado en el Cuaderno Digital de Explotación (CUE).</p>
+
+      <h2>2. Prácticas de Ecorregímenes P4 y P5</h2>
+      <p>A continuación, se detallan los requisitos técnicos para garantizar el cobro de las ayudas asociadas a la PAC 2026:</p>
+      
+      <table class="standard-table">
         <thead>
           <tr>
-            <th>Documento / Evidencia</th>
-            <th>Estado Requerido</th>
+            <th>Práctica de Ecorrégimen</th>
+            <th>Evidencia Requerida por la Administración</th>
+            <th>Protocolo de Validación Digital</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Cuaderno CUE Digital</td>
-            <td>Sincronizado con SIEX (Últimos 30 días)</td>
+            <td><strong>P5: Cubiertas Vegetales</strong></td>
+            <td>Mantenimiento de cubierta viva en periodos mínimos.</td>
+            <td>Fotos georreferenciadas y análisis de NDVI.</td>
           </tr>
           <tr>
-            <td>Albaranes de Abono</td>
-            <td>Coincidentes con las dosis reportadas en CUE</td>
+            <td><strong>P4: Siembra Directa</strong></td>
+            <td>Inscripción de sembradora específica en el ROMA.</td>
+            <td>Verificación documental cruzada en la plataforma.</td>
           </tr>
           <tr>
-            <td>Recetas de Fitosanitarios</td>
-            <td>Emitidas por asesor ROPO habilitado</td>
-          </tr>
-          <tr>
-            <td>Contratos de Arrendamiento</td>
-            <td>Vigentes y registrados en el organismo oficial correspondiente</td>
+            <td><strong>Gestión Nutricional</strong></td>
+            <td>Plan de abonado y registro de aplicaciones.</td>
+            <td>Trazabilidad de la aplicación en el CUE digital.</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>Conclusión y Recomendaciones Técnicas</h2>
-      <p>La mejor defensa es una buena ofensiva digital. Sincronizar el SIEX semanalmente, validar cada dosis con herramientas de prescripción y disponer de una hemeroteca de fotos georreferenciadas de cada operación crítica es la única vía para garantizar la seguridad jurídica de la explotación en el nuevo marco reglamentario.</p>
-      
-      <p>Fuentes oficiales: Portal FEGA (www.fega.es) y Ministerio de Agricultura (www.mapa.gob.es).</p>
+      <h2>3. El Protocolo de Inspección por Monitorización</h2>
+      <p>La autoridad competente ya no requiere visitas presenciales de forma sistemática. El uso de Fotos Georreferenciadas con metadatos certificados (coordenadas UTM y sello de tiempo) es el método oficial para resolver discrepancias. Nuestra plataforma garantiza que cada fotografía capturada cumple con los estándares técnicos del FEGA.</p>
+
+      <p>Recomendamos a los técnicos y asesores mantener una sincronización semanal de los datos de aplicación para evitar penalizaciones administrativas derivadas de la falta de inmediatez en el registro.</p>
     `
   },
-  'la-fisica-del-suelo-npk': {
-    title: "La Física del Suelo: Interpretando NPK y Conductividad Eléctrica",
-    category: "Tecnología de Precisión",
-    date: "10 MAR 2024",
-    author: "Ingeniería Agronómica",
-    image: "https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  'dendrometria-latido-arboles': {
+    title: "Dendrometría: Escuchando el latido de tus árboles",
+    category: "Fisiología Vegetal",
+    date: "18 de Marzo, 2024",
+    author: "Dpto. de Ingeniería Agronómica",
+    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1200",
+    intro: "Monitorización del estado hídrico de la planta mediante el registro micrométrico de variaciones en el diámetro del tronco.",
     content: `
-      <h2>Introducción a la Dinámica de Nutrientes</h2>
-      <p>Entender la física del suelo es el primer paso para una fertilización eficiente. La variabilidad espacial en la textura del suelo determina no solo la capacidad de retención de agua, sino también la disponibilidad biológica de los macronutrientes esenciales: Nitrógeno (N), Fósforo (P) y Potasio (K).</p>
+      <h2>1. Fundamentos Técnicos del Monitoreo Fisiológico</h2>
+      <p>La dendrometría representa el paso definitivo desde la medición del recurso (agua en el suelo) hacia la medición de la demanda real (estado del árbol). El sensor mide variaciones en micras, permitiendo analizar la turgencia del tronco durante el ciclo día/noche.</p>
 
-      <h2>1. Tecnología FDR (Frequency Domain Reflectometry)</h2>
-      <p>Nuestros sensores de última generación utilizan tecnología FDR para medir la permitividad dieléctrica del suelo. A diferencia de los métodos gravimétricos tradicionales, el FDR permite monitorizar en tiempo real el contenido volumétrico de agua y la concentración de iones en la solución del suelo.</p>
+      <h2>2. Interpretación de la Máxima Contracción Diaria (MDS)</h2>
+      <p>El MDS es el parámetro técnico fundamental para determinar el estrés hídrico incipiente. Un aumento sostenido en la contracción diaria indica que el árbol está transpirando por encima de su capacidad de absorción radicular, lo que requiere una intervención inmediata en el programa de riego.</p>
+
+      <h2>3. Implementación de Riego Deficitario Controlado</h2>
+      <p>En cultivos leñosos de alto rendimiento, el uso de dendrómetros permite gestionar estrategias de riego deficitario controlado (RDC) con seguridad técnica. Al conocer el límite biológico de la planta, el agricultor puede optimizar el consumo hídrico sin comprometer la inducción floral ni el desarrollo del fruto.</p>
       
-      <p>La interpretación de la Conductividad Eléctrica (CE) es vital. Una CE elevada puede indicar un exceso de salinidad o una acumulación peligrosa de fertilizantes no asimilados, mientras que una CE baja en un momento crítico de crecimiento puede ser síntoma de lixiviación de nutrientes tras una lluvia intensa.</p>
-
-      <h2>2. Calibración por Textura de Suelo</h2>
-      <p>No todos los suelos emiten la misma señal ante el sensor. Como ingenieros, debemos ajustar las lecturas según la porosidad:</p>
-      <ul>
-        <li><strong>Suelos Arcillosos:</strong> Alta capacidad de intercambio catiónico (CIC). Los sensores deben calibrarse para detectar el agua ligada a las arcillas, que no siempre está disponible para la planta.</li>
-        <li><strong>Suelos Arenosos:</strong> Macroporosidad predominante. La dinámica de lavado de Nitratos es muy rápida; aquí el sensor de NPK nos avisa del momento exacto para realizar fertirrigación fraccionada.</li>
-      </ul>
-
-      <div class="table-container-white">
-        <h3>Tabla de Referencia: Umbrales Críticos</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Parámetro</th>
-              <th>Rango Óptimo (Cereales)</th>
-              <th>Impacto en Rendimiento</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Nitrógeno (N)</td>
-              <td>40-60 mg/kg</td>
-              <td>Crecimiento vegetativo y vigor</td>
-            </tr>
-            <tr>
-              <td>Fósforo (P)</td>
-              <td>25-35 mg/kg</td>
-              <td>Desarrollo radicular inicial</td>
-            </tr>
-            <tr>
-              <td>Conductividad (CE)</td>
-              <td>0.8 - 1.5 dS/m</td>
-              <td>Salinidad y estrés osmótico</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="technical-table-container">
+        <h3>Ventajas de la Dendrometría:</h3>
+        <ul>
+          <li><strong>Precisión Fisiológica:</strong> Refleja el estado real de hidratación de la planta.</li>
+          <li><strong>Optimización Hídrica:</strong> Ahorro estimado de hasta el 30% en campañas de secano asistido.</li>
+          <li><strong>Alerta Temprana:</strong> Detección de anomalías días antes de que existan síntomas visuales.</li>
+        </ul>
       </div>
 
-      <h2>3. Optimización del Fertirriego Avanzado</h2>
-      <p>La combinación del Gemelo Digital (GIS) con la lectura de los sensores permite crear Mapas de Aplicación de Tasa Variable (VRT). Al conocer exactamente la deficiencia de Potasio en una mancha específica de la parcela, el agricultor puede configurar su maquinaria para aplicar la dosis justa, ahorrando hasta un 30% en insumos.</p>
-
-      <h2>Conclusión Técnica</h2>
-      <p>La monitorización continua del NPK y la Conductividad no es un lujo, es una necesidad científica para la agricultura moderna. Los datos nos permiten pasar de una fertilización "por calendario" a una nutrición "justo a tiempo", alineada con las necesidades fisiológicas reales de la planta y los límites físicos del suelo.</p>
-    `
-  },
-  'ecorregimen-p5-cubiertas-vegetales': {
-    title: "Ecorrégimen P5: Cubiertas Vegetales sin competencia hídrica",
-    category: "Gestión de Explotación",
-    date: "05 MAR 2024",
-    author: "Especialista PAC",
-    image: "https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: `
-      <h2>La Práctica P5 de los Nuevos Ecorregímenes</h2>
-      <p>El establecimiento de cubiertas vegetales espontáneas o sembradas en cultivos leñosos es una de las prácticas más incentivadas en la PAC 2023-2027. El objetivo es frenar la erosión, aumentar la biodiversidad y fijar carbono. Sin embargo, el gran indicador técnico es la competencia hídrica.</p>
-
-      <h2>1. Gestión Basada en Datos (Sensores de Humedad)</h2>
-      <p>La normativa exige que la cubierta esté viva durante un periodo mínimo. Fuera de ese periodo, el agricultor puede realizar una labor de desbroce. El uso de sensores de humedad de suelo instalados a dos profundidades (30cm y 60cm) permite monitorizar el consumo real de la cubierta.</p>
-      
-      <p>Si el sensor a 30cm indica que la humedad está cayendo por debajo del Punto de Marchitez Permanente (PMP), mientras que el de 60cm se mantiene estable, podemos determinar el momento exacto para el desbroce mecánico sin comprometer el rendimiento del cultivo leñoso.</p>
-
-      <h2>2. Desbroce Mecánico: Requisitos Normativos</h2>
-      <p>Para cumplir con el Ecorrégimen P5, se prioriza el desbroce mecánico. El uso de herbicidas está restringido y su aplicación inadecuada conlleva penalizaciones en la ayuda total de la PAC.</p>
-      
-      <div class="tech-alert-white">
-        <strong>Nota Técnica:</strong> El Real Decreto establece que no se puede labrar el suelo para eliminar la cubierta. El sistema radicular debe permanecer en el suelo para evitar la compactación y mejorar la infiltración hídrica.
-      </div>
-
-      <h2>3. Análisis GIS y Evaluación Satelital</h2>
-      <p>El seguimiento por satélite (NDVI) permite evaluar la biomasa generada. Integrando esta información en el Cuaderno Digital, el agricultor dispone de una prueba irrefutable de que ha mantenido la cubierta según los requisitos exigidos, incluso si el inspector realiza una visita tras el desbroce.</p>
-
-      <h2>Conclusión: Rentabilidad vs Sostenibilidad</h2>
-      <p>Es posible cumplir con los objetivos ambientales de Europa sin comprometer la producción de cosecha. La clave está en la tecnología de monitorización: el dato nos dice cuándo la cubierta deja de ser un beneficio y pasa a ser un riesgo hídrico. Con un margen de error mínimo en la detección de humedad, el agricultor toma decisiones rentables.</p>
+      <p>Como ingenieros, integramos estos datos con la teledetección para ofrecer un asesoramiento integral que garantice la sostenibilidad y rentabilidad de la explotación.</p>
     `
   }
 };
@@ -167,225 +122,239 @@ const postsContent = {
 const post = postsContent[id as keyof typeof postsContent];
 ---
 
-<Layout title={`${post.title} - Smart Fenix Blog Técnico`}>
-  <main class="article-page">
-    <header class="article-hero">
-      <div class="container article-container">
-        <nav class="breadcrumb">
-          <a href="/blog">Hemeroteca</a> / <span>{post.category}</span>
-        </nav>
-        <h1 class="article-title">{post.title}</h1>
-        <div class="article-meta">
-          <span>{post.author}</span>
-          <span class="dot">·</span>
-          <span>{post.date}</span>
+<Layout title={`${post.title} - Smart Fenix Publicaciones Técnicas`}>
+  <main class="post-page">
+    <div class="post-header-simple">
+      <div class="container narrow">
+        <span class="post-category-tag">{post.category}</span>
+        <h1 class="post-title">{post.title}</h1>
+        <div class="post-meta">
+          <span class="post-author">{post.author}</span>
+          <span class="post-divider">|</span>
+          <span class="post-date">{post.date}</span>
         </div>
       </div>
-    </header>
+    </div>
 
-    <div class="container article-container article-layout">
-      <article class="article-content">
-        <div class="article-featured-image">
-            <img src={post.image} alt={post.title} />
-        </div>
-        
-        <div class="toc-box">
-          <h4>Índice de Contenido</h4>
-          <ul>
-            <li>Introducción y Análisis Legal</li>
-            <li>1. Marco Normativo y Técnico</li>
-            <li>2. Evidencias y Documentación</li>
-            <li>3. Recomendaciones Técnicas</li>
-            <li>Conclusiones Finales</li>
-          </ul>
+    <div class="container narrow">
+      <article class="post-article">
+        <p class="post-intro">
+          {post.intro}
+        </p>
+
+        <img src={post.image} alt={post.title} class="post-main-image" />
+
+        <div class="post-content" set:html={post.content}>
         </div>
 
-        <div class="content-body" set:html={post.content}>
+        <div class="post-author-box">
+          <div class="author-info">
+             <h4>Gabinete Agronómico Smart Fénix</h4>
+             <p>Asesoramiento técnico especializado en digitalización, gestión SIEX y monitorización de cultivos de alto rendimiento.</p>
+             <a href="/contacto" class="btn-simple">Contactar con Ingeniería</a>
+          </div>
         </div>
       </article>
 
-      <aside class="article-sidebar">
-        <div class="sidebar-widget minimalist-widget">
-          <h3>Estado del SIEX</h3>
-          <p class="status-ok">Sistema Operativo</p>
-          <p class="siex-note">Recuerde declarar las aplicaciones en el plazo de 30 días.</p>
-          <a href="https://www.mapa.gob.es" target="_blank" class="widget-link">Acceso Ministerio</a>
-        </div>
-
-        <div class="sidebar-widget related-links">
-           <h3>Artículos Relacionados</h3>
-           <ul>
-             <li><a href="/blog/la-fisica-del-suelo-npk">Física del Suelo</a></li>
-             <li><a href="/blog/manual-inspecciones-siex-2026">Manual SIEX 2026</a></li>
-           </ul>
-        </div>
-      </aside>
+      <section class="post-pagination">
+          <a href="/blog" class="back-link">← Volver a la Hemeroteca Técnica</a>
+      </section>
     </div>
   </main>
 </Layout>
 
 <style is:global>
-  .article-page {
+  .post-page {
     background: #ffffff;
+    color: #1a1a1a;
     padding-bottom: 120px;
-    color: #000000;
   }
 
-  .article-container {
-    max-width: 1100px;
+  .container.narrow {
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 20px;
   }
 
-  .article-hero {
-    background: #0b1a14;
-    color: white;
-    padding: 160px 0 80px;
+  .post-header-simple {
+    padding: 180px 0 60px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 60px;
   }
 
-  .breadcrumb {
-    font-size: 0.85rem;
+  .post-category-tag {
+    display: inline-block;
+    color: #1DB99A;
     font-weight: 700;
-    color: var(--color-turquoise);
-    margin-bottom: 20px;
     text-transform: uppercase;
+    font-size: 0.8rem;
     letter-spacing: 0.05em;
+    margin-bottom: 16px;
   }
 
-  .breadcrumb a { color: white; text-decoration: none; }
-
-  .article-title {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+  .post-title {
+    font-size: 2.8rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 24px;
+    color: #000000;
+    letter-spacing: -0.01em;
   }
 
-  .article-meta {
+  .post-meta {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    color: #666666;
     font-weight: 500;
   }
 
-  .article-layout {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 80px;
-    padding-top: 60px;
+  .post-divider {
+    margin: 0 10px;
+    opacity: 0.3;
   }
 
-  .article-featured-image {
-      margin-bottom: 48px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #e0e0e0;
+  .post-intro {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #333333;
+    font-weight: 500;
+    margin-bottom: 40px;
   }
 
-  .article-featured-image img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
+  .post-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 60px;
+    border: 1px solid #eeeeee;
   }
 
-  .toc-box {
-    background: #f8f9fa;
-    padding: 24px;
-    border-radius: 8px;
-    margin-bottom: 48px;
-    border: 1px solid #e0e0e0;
+  .post-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #2c2c2c;
   }
 
-  .toc-box h4 { margin-top: 0; font-weight: 800; margin-bottom: 16px; text-transform: uppercase; font-size: 0.9rem; }
-
-  .toc-box ul { list-style: square; padding-left: 20px; margin: 0; }
-
-  .toc-box li { margin-bottom: 8px; font-size: 0.95rem; color: #555; }
-
-  .content-body {
-    line-height: 1.75;
-    color: #000000;
-    font-size: 1.15rem;
-  }
-
-  .content-body h2 {
+  .post-content h2 {
     font-size: 1.8rem;
-    font-weight: 800;
-    margin: 56px 0 24px;
-    color: #0b1a14;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 16px;
+    font-weight: 700;
+    margin: 60px 0 24px;
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    display: inline-block;
+    padding-bottom: 4px;
   }
 
-  .content-body h3 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin: 40px 0 20px;
+  .post-content p {
+    margin-bottom: 24px;
+  }
+
+  .technical-table-container {
+    background: #fdfdfd;
+    padding: 30px;
+    border: 1px solid #eeeeee;
+    margin: 40px 0;
+  }
+
+  .technical-table-container h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-transform: uppercase;
     color: #000000;
   }
 
-  .content-body p { margin-bottom: 24px; }
-
-  .content-body ul { margin-bottom: 32px; padding-left: 24px; }
-
-  .content-body li { margin-bottom: 12px; }
-
-  .tech-card-white, .tech-alert-white {
-      background: #f8f9fa;
-      padding: 32px;
-      border-radius: 8px;
-      margin: 48px 0;
-      border: 1px solid #e0e0e0;
+  .technical-table-container ul {
+    list-style: none;
+    padding: 0;
   }
 
-  .tech-alert-white {
-      border-left: 4px solid var(--color-turquoise);
+  .technical-table-container li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1rem;
   }
 
-  .content-body table {
+  .technical-table-container li::before {
+    content: "•";
+    color: #1DB99A;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .standard-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 48px 0;
-    border: 1px solid #e0e0e0;
+    margin: 40px 0;
+    font-size: 0.95rem;
   }
 
-  .content-body th {
-    background: #f8f9fa;
-    color: #000000;
+  .standard-table th {
     text-align: left;
-    padding: 16px;
-    font-size: 0.85rem;
+    padding: 12px;
+    border-bottom: 2px solid #000000;
+    background: #fafafa;
     text-transform: uppercase;
-    border-bottom: 1px solid #e0e0e0;
+    font-weight: 700;
   }
 
-  .content-body td {
-    padding: 16px;
-    border-bottom: 1px solid #e0e0e0;
+  .standard-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .post-author-box {
+    margin-top: 80px;
+    padding: 40px;
+    background: #fdfdfd;
+    border-top: 4px solid #000000;
+  }
+
+  .author-info h4 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .author-info p {
     font-size: 1rem;
-    color: #444444;
+    color: #555555;
+    margin-bottom: 24px;
+    line-height: 1.6;
   }
 
-  .minimalist-widget h3 {
-      font-size: 0.85rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 16px;
+  .btn-simple {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
   }
 
-  .status-ok { color: #2b8a3e; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; }
-  .siex-note { font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 16px; }
-  .widget-link { font-size: 0.85rem; color: #000; font-weight: 700; text-decoration: none; border-bottom: 1px solid #000; }
+  .btn-simple:hover {
+    background: #1DB99A;
+  }
 
-  .related-links ul { list-style: none; padding: 0; }
-  .related-links li { margin-bottom: 12px; }
-  .related-links a { color: #000; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
-  .related-links a:hover { color: var(--color-turquoise); }
+  .post-pagination {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #eeeeee;
+  }
 
-  @media (max-width: 900px) {
-    .article-layout { grid-template-columns: 1fr; gap: 48px; }
-    .article-container { padding: 0 24px; }
+  .back-link {
+    color: #1DB99A;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .post-title { font-size: 2rem; }
+    .post-header-simple { padding: 140px 0 40px; }
   }
 </style>

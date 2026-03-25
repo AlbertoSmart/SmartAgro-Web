@@ -137,7 +137,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['asistencia'],
+    keywords: ['asistencia', 'ayuda', 'ayudar', 'ayudame', 'soporte'],
     response: 'Si necesitas ayuda con tu explotación, nuestro equipo de Ingenieros Agrónomos puede asesorarte de forma personalizada. No somos un servicio genérico; analizamos tus datos de suelo, clima y planta para optimizar tu riego y nutrición. Para una consultoría técnica o dudas sobre el SIEX, lo mejor es que hablemos: +34 621 26 22 86 o escríbenos en [Contactar con un Ingeniero](/contacto).',
     link: '/contacto'
   },
@@ -149,7 +149,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['que haces', 'para que sirves', 'funcionalidad', 'ayudame'],
+    keywords: ['que haces', 'para que sirves', 'funcionalidad'],
     response: 'Soy el experto virtual de **Smart Fénix**. Mi misión es ayudarte a digitalizar tu finca: gestiono tu **Cuaderno SIEX** para evitar multas y conecto tus cultivos con sensores de precisión para lograr un importante **ahorro de agua** y abono. ¿Qué te interesa más: la parte legal o la tecnología de campo?',
     link: '/'
   },
@@ -293,8 +293,8 @@ const LOCAL_KNOWLEDGE = [
   {
     isTechnical: true,
     keywords: ['kit digital para agricultura', 'subvencion sensores', 'bono kit digital'],
-    response: 'Somos **Agentes Digitalizadores** autorizados. Puedes canjear tu bono del **Kit Digital** para instalar nuestras estaciones de telemetría y el Cuaderno de Campo sin coste alguno. \n\nNos encargamos de toda la tramitación y justificación ante Red.es para que tú solo te preocupes de tu finca.\n\n[Solicitar Kit Digital](/ayudas/kit-digital)',
-    link: '/ayudas/kit-digital'
+    response: 'Somos **Agentes Digitalizadores** autorizados. Puedes canjear tu bono del **Kit Digital** para instalar nuestras estaciones de telemetría y el Cuaderno de Campo sin coste alguno. \n\nNos encargamos de toda la tramitación y justificación ante Red.es para que tú solo te preocupes de tu finca.\n\n[Solicitar Información](/contacto)',
+    link: '/contacto'
   },
   {
     isTechnical: true,
@@ -1301,7 +1301,11 @@ export const POST: APIRoute = async ({ request }) => {
       
       if (cleanMsg.includes(' ' + normalizedKw + ' ') || fuzzyMsg.includes(' ' + normalizedKw + ' ')) {
         // Usamos el máximo para asegurar que la palabra más específica gana, no la suma de pequeñas
-        const kwScore = Math.pow(normalizedKw.length, 2);
+        let kwScore = Math.pow(normalizedKw.length, 2);
+        // Penalizamos palabras auxiliares que podrían opacar términos técnicos específicos (ej: "ayúdame con mi cue")
+        if (['ayuda', 'ayudame', 'ayudar', 'asistencia', 'soporte', 'informacion', 'necesito'].includes(normalizedKw)) {
+          kwScore = 1; 
+        }
         if (kwScore > score) score = kwScore;
       }
     });

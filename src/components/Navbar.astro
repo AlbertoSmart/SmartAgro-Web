@@ -159,25 +159,6 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
         </ul>
       </li>
 
-      <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/ayudas") ? "active" : ""}`}>
-        <a href="/ayudas"
-          >Ayudas
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </a>
-        <ul class="navbar__dropdown">
-          <li><a href="/ayudas/kit-digital" class={isActive("/ayudas/kit-digital") ? "active-sub" : ""}>Kit Digital</a></li>
-          <li><a href="/ayudas/digitalizacion" class={isActive("/ayudas/digitalizacion") ? "active-sub" : ""}>Ayudas Digitalización</a></li>
-          <li><a href="/contacto" class={isActive("/contacto") ? "active-sub" : ""}>Soporte y Contacto</a></li>
-        </ul>
-      </li>
 
       <li class={`navbar__item ${isActive("/blog") ? "active" : ""}`}><a href="/blog">Blog</a></li>
       <li class={`navbar__item ${isActive("/contacto") ? "active" : ""}`}><a href="/contacto">Contacto</a></li>
