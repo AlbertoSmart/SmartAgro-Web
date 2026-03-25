@@ -530,10 +530,27 @@ import Layout from "../layouts/Layout.astro";
     .form-card {
       padding: 30px 20px !important;
       border-radius: 20px !important;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 14px 15px !important;
+      font-size: 0.9rem !important;
+      border-radius: 10px !important;
     }
     .form-row { 
       grid-template-columns: 1fr !important; 
-      gap: 24px !important; 
+      gap: 20px !important; 
     }
     .expert-hero-solid h1 { 
       font-size: 2.2rem !important; 
@@ -541,17 +558,19 @@ import Layout from "../layouts/Layout.astro";
     .form-card h2 { 
       font-size: 1.8rem !important; 
       margin-bottom: 16px;
+      text-align: center;
     }
     .form-intro {
       margin-bottom: 30px;
       font-size: 1rem;
+      text-align: center;
     }
     .editorial-form {
-      gap: 24px;
+      gap: 20px;
     }
     .btn-submit {
-      padding: 18px;
-      font-size: 0.9rem;
+      padding: 16px;
+      font-size: 0.85rem;
     }
     .support-brief {
       padding: 24px;
