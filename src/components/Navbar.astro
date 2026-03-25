@@ -33,18 +33,12 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 
     <ul class="navbar__menu" id="navMenu">
       <li class={`navbar__item navbar__item--has-dropdown ${isActive("/") ? "active" : ""}`}>
-        <a href="/"
-          >Tecnología
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </a>
+        <div class="navbar__item-row">
+            <a href="/">Tecnología</a>
+            <button class="dropdown-trigger" aria-label="Toggle submenu">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+        </div>
         <ul class="navbar__dropdown">
           <li>
             <a href="/#sensores">Ecosistema de Sensores</a>
@@ -59,18 +53,12 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       </li>
 
       <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/soluciones") ? "active" : ""}`}>
-        <a href="/soluciones"
-          >Soluciones
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </a>
+        <div class="navbar__item-row">
+            <a href="/soluciones">Soluciones</a>
+            <button class="dropdown-trigger" aria-label="Toggle submenu">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+        </div>
         <ul class="navbar__dropdown">
           <li>
             <a href="/soluciones/agricultores" class={isActive("/soluciones/agricultores") ? "active-sub" : ""}>Para Agricultores</a>
@@ -82,18 +70,12 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       </li>
 
       <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/sensores") || isActive("/guia-sensores") ? "active" : ""}`}>
-        <a href="/guia-sensores"
-          >Sensores
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </a>
+        <div class="navbar__item-row">
+            <a href="/guia-sensores">Sensores</a>
+            <button class="dropdown-trigger" aria-label="Toggle submenu">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+        </div>
         <ul class="navbar__dropdown">
           <li>
             <a href="/sensores/suelo" class={isActive("/sensores/suelo") ? "active-sub" : ""}>Sensores de Suelo y Raíz</a>
@@ -108,18 +90,12 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       </li>
 
       <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/herramientas") ? "active" : ""}`}>
-        <a href="/herramientas"
-          >Servicios
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </a>
+        <div class="navbar__item-row">
+            <a href="/herramientas">Servicios</a>
+            <button class="dropdown-trigger" aria-label="Toggle submenu">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+        </div>
         <ul class="navbar__dropdown">
           <li>
             <a href="/herramientas/prescripcion" class={isActive("/herramientas/prescripcion") ? "active-sub" : ""}>Prescripción Digital</a>
@@ -137,18 +113,12 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       </li>
 
       <li class={`navbar__item navbar__item--has-dropdown ${isParentActive("/cuaderno") ? "active" : ""}`}>
-        <a href="/cuaderno"
-          >Cuaderno
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            ><path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </a>
+        <div class="navbar__item-row">
+            <a href="/cuaderno">Cuaderno</a>
+            <button class="dropdown-trigger" aria-label="Toggle submenu">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+        </div>
         <ul class="navbar__dropdown">
           <li>
             <a href="/cuaderno/guia-pac-ecorregimenes" class={isActive("/cuaderno/guia-pac-ecorregimenes") ? "active-sub" : ""}>Guía Ecorregímenes 2024</a>
@@ -172,23 +142,110 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 </nav>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const toggle = document.getElementById("navToggle");
-    const menu = document.getElementById("navMenu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("navbar__menu--open");
-        toggle.classList.toggle("navbar__toggle--active");
+  // Usar un flag para evitar duplicar listeners con transition:persist
+  if (!window.__navbarInitialized) {
+    window.__navbarInitialized = true;
+
+    function closeMenu() {
+      const menu = document.getElementById("navMenu");
+      const toggle = document.getElementById("navToggle");
+      menu?.classList.remove("navbar__menu--open");
+      toggle?.classList.remove("navbar__toggle--active");
+      document.body.style.overflow = "";
+      // Limpiar TODOS los dropdowns abiertos
+      document.querySelectorAll('.dropdown--open').forEach(el => {
+        el.classList.remove('dropdown--open');
       });
     }
 
-    const nav = document.getElementById("navbar");
+    // Delegación de eventos para todo el menú
+    document.addEventListener('click', (e) => {
+      const t = e.target as HTMLElement;
+      if (!t) return;
+
+      // === HAMBURGER TOGGLE ===
+      const toggleBtn = t.closest('#navToggle');
+      if (toggleBtn) {
+        const menu = document.getElementById("navMenu");
+        const isOpen = menu?.classList.toggle("navbar__menu--open");
+        toggleBtn.classList.toggle("navbar__toggle--active");
+        document.body.style.overflow = isOpen ? "hidden" : "";
+        if (!isOpen) {
+          document.querySelectorAll('.dropdown--open').forEach(el => {
+            el.classList.remove('dropdown--open');
+          });
+        }
+        return;
+      }
+
+      // === MOBILE: Click en un ítem con dropdown ===
+      // Solo aplica en móvil (≤1024px)
+      if (window.innerWidth <= 1024) {
+        const parentItem = t.closest('.navbar__item--has-dropdown');
+        
+        if (parentItem) {
+          const clickedLink = t.closest('.navbar__item-row > a');
+          const isAlreadyOpen = parentItem.classList.contains('dropdown--open');
+          
+          // Si el dropdown NO está abierto → abrirlo (no navegar)
+          if (!isAlreadyOpen) {
+            e.preventDefault();
+            // Cerrar otros
+            document.querySelectorAll('.navbar__item--has-dropdown').forEach(item => {
+              if (item !== parentItem) item.classList.remove('dropdown--open');
+            });
+            parentItem.classList.add('dropdown--open');
+            return;
+          }
+          
+          // Si el dropdown YA está abierto:
+          if (clickedLink) {
+            // Click en el texto → navegar y cerrar menú
+            setTimeout(closeMenu, 100);
+            return;
+          } else {
+            // Click en flecha/fondo → cerrar dropdown
+            parentItem.classList.remove('dropdown--open');
+            return;
+          }
+        }
+
+        // Click en un sub-enlace del dropdown → navegar y cerrar
+        const subLink = t.closest('.navbar__dropdown a');
+        if (subLink) {
+          setTimeout(closeMenu, 100);
+          return;
+        }
+
+        // Click en Blog/Contacto (sin dropdown) → navegar y cerrar
+        const directLink = t.closest('#navMenu > .navbar__item:not(.navbar__item--has-dropdown) a');
+        if (directLink) {
+          setTimeout(closeMenu, 100);
+          return;
+        }
+      }
+    });
+
+    // Scroll: navbar shadow
     window.addEventListener("scroll", () => {
+      const nav = document.getElementById("navbar");
       if (window.scrollY > 40) {
         nav?.classList.add("navbar--scrolled");
       } else {
         nav?.classList.remove("navbar--scrolled");
       }
+    });
+  }
+
+  // Limpiar estado al cargar nueva página (View Transitions)
+  document.addEventListener("astro:page-load", () => {
+    const menu = document.getElementById("navMenu");
+    const toggle = document.getElementById("navToggle");
+    menu?.classList.remove("navbar__menu--open");
+    toggle?.classList.remove("navbar__toggle--active");
+    document.body.style.overflow = "";
+    document.querySelectorAll('.dropdown--open').forEach(el => {
+      el.classList.remove('dropdown--open');
     });
   });
 </script>
@@ -199,15 +256,12 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     top: 0;
     left: 0;
     width: 100%;
-    height: 90px !important;
-    background: #0B1A14 !important;
+    height: 80px;
+    background: #0B1A14;
     z-index: 1000;
     display: flex;
     align-items: center;
-    transition: none !important;
-    box-sizing: border-box;
-    border: none !important;
-    border-bottom: none !important;
+    transition: background 0.3s ease;
   }
 
   /* RESETS AGRESIVOS PARA ELIMINAR CUALQUIER SUBRAYADO */
@@ -255,7 +309,24 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     position: relative;
   }
 
-  .navbar__item > a {
+  .navbar__item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .dropdown-trigger {
+    display: none; /* Solo en móvil */
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar__item > .navbar__item-row a {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -264,19 +335,20 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     font-weight: 600;
     transition: var(--transition);
     color: #FFFFFF;
-    text-decoration: none !important;
-    border: none !important;
   }
 
-  /* Active/Hover States */
-  .navbar__item > a:hover {
-    color: var(--color-turquoise) !important;
-    text-decoration: none !important;
+  /* Blog, Contacto — enlaces directos sin dropdown */
+  .navbar__item:not(.navbar__item--has-dropdown):not(.navbar__item--access) > a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    transition: var(--transition);
   }
-
-  .navbar__item.active > a {
-    color: var(--color-turquoise) !important;
-    text-decoration: none !important;
+  .navbar__item:not(.navbar__item--has-dropdown):not(.navbar__item--access) > a:hover {
+    color: var(--color-turquoise);
   }
 
   .navbar__dropdown {
@@ -293,9 +365,12 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     margin-top: 0;
   }
 
-  .navbar__item--has-dropdown:hover .navbar__dropdown {
-    display: block;
-    animation: fadeIn 0.2s ease;
+  /* Solo en dispositivos con ratón real — NUNCA en móvil táctil */
+  @media (hover: hover) {
+    .navbar__item--has-dropdown:hover .navbar__dropdown {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
   }
 
   .navbar__dropdown li a {
@@ -335,37 +410,195 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
   }
 
   @media (max-width: 1024px) {
+    /* === NAVBAR BAR === */
     .navbar {
-      background: var(--color-white) !important;
-      height: auto !important;
-      padding: 12px 0;
-    }
-    .navbar__toggle { display: flex; }
-    .navbar__item > a { 
-      color: var(--color-gray-700) !important;
-      text-decoration: none !important;
-    }
-    .navbar__toggle span { background: var(--color-gray-700); }
-    .navbar__menu {
-      display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      background: var(--color-white);
-      padding: 24px;
-      box-shadow: var(--shadow-xl);
-      border-top: 1px solid var(--color-gray-100);
+      background: #0B1A14 !important;
+      height: 60px !important;
     }
-    .navbar__menu--open { display: flex; }
-    .navbar__dropdown {
-      position: static;
-      box-shadow: none;
-      border: none;
-      background: var(--color-gray-50);
-      margin-top: 10px;
+    .navbar__brand {
+      padding-left: 15px;
+    }
+    .navbar__logo img {
+      height: 32px !important;
+    }
+
+    /* === HAMBURGER TOGGLE === */
+    .navbar__toggle { 
+      display: flex;
+      padding-right: 15px;
+      gap: 5px;
+    }
+    .navbar__toggle span { 
+      width: 22px;
+      height: 2px;
       display: block;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .navbar__toggle--active span:first-child { 
+      transform: translateY(7px) rotate(45deg); 
+    }
+    .navbar__toggle--active span:nth-child(2) { 
+      opacity: 0; 
+    }
+    .navbar__toggle--active span:last-child { 
+      transform: translateY(-7px) rotate(-45deg); 
+    }
+
+    /* === FULL-SCREEN SLIDE-IN MENU === */
+    .navbar__menu {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      position: fixed !important;
+      top: 60px !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      background: #0B1A14 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      gap: 0 !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
+      z-index: 9999 !important;
+      list-style: none !important;
+      transform: translateX(100%);
+      visibility: hidden;
+      pointer-events: none;
+      transition: transform 0.3s ease, visibility 0.3s;
+    }
+    .navbar__menu--open { 
+      transform: translateX(0) !important;
+      visibility: visible !important;
+      pointer-events: all !important;
+    }
+
+    /* === EACH MENU ITEM (full width, stacked) === */
+    .navbar__item {
+      width: 100% !important;
+      display: block !important;
+      position: static !important;
+    }
+
+    /* === ITEM ROW (label + arrow) === */
+    .navbar__item-row {
+      display: flex !important;
+      width: 100% !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 0 24px !important;
+      border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    }
+    .navbar__item-row a { 
+      display: block !important;
+      font-size: 1.15rem !important;
+      font-weight: 600 !important;
+      padding: 18px 0 !important;
+      color: #FFFFFF !important;
+      /* NO flex:1 → deja espacio libre en la fila para abrir el dropdown al tocarlo */
+    }
+    /* Toda la fila es táctil para abrir dropdown */
+    .navbar__item-row {
+      cursor: pointer;
+    }
+
+    /* === DROPDOWN ARROW BUTTON === */
+    .dropdown-trigger {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 48px !important;
+      height: 48px !important;
+      padding: 0 !important;
+      background: none !important;
+      border: none !important;
+      color: rgba(255,255,255,0.5) !important;
+      cursor: pointer !important;
+    }
+    .dropdown-trigger svg {
+      transition: transform 0.3s ease !important;
+    }
+    .navbar__item--has-dropdown.dropdown--open .dropdown-trigger svg {
+      transform: rotate(180deg) !important;
+    }
+    .navbar__item--has-dropdown.dropdown--open .dropdown-trigger {
+      color: var(--color-turquoise) !important;
+    }
+
+    /* === DROPDOWN SUBMENU — RESET EVERY DESKTOP PROP === */
+    .navbar__dropdown {
+      display: none !important;
+      position: static !important;
+      top: auto !important;
+      left: auto !important;
+      min-width: 0 !important;
+      width: 100% !important;
+      background: rgba(255,255,255,0.04) !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      list-style: none !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+    .navbar__item--has-dropdown.dropdown--open .navbar__dropdown {
+      display: block !important;
+    }
+    /* Kill desktop hover behavior */
+    .navbar__item--has-dropdown:hover .navbar__dropdown {
+      display: none !important;
+    }
+    .navbar__item--has-dropdown.dropdown--open:hover .navbar__dropdown {
+      display: block !important;
+    }
+
+    /* === DROPDOWN LINKS === */
+    .navbar__dropdown li {
+      list-style: none !important;
+    }
+    .navbar__dropdown li a {
+      display: block !important;
+      padding: 14px 24px 14px 44px !important;
+      font-size: 1rem !important;
+      font-weight: 400 !important;
+      color: rgba(255,255,255,0.75) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+      border-radius: 0 !important;
+      background: none !important;
+    }
+
+    /* === ITEMS WITHOUT DROPDOWNS (Blog, Contacto) === */
+    .navbar__item:not(.navbar__item--has-dropdown):not(.navbar__item--access) > a {
+      display: block !important;
+      font-size: 1.15rem !important;
+      font-weight: 600 !important;
+      padding: 18px 24px !important;
+      color: #FFFFFF !important;
+      border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    }
+
+    /* === ACCEDER LINK === */
+    .navbar__item--access {
+      margin-top: 16px !important;
+      padding: 0 24px !important;
+    }
+    .navbar__item--access .access-link {
+      display: block !important;
+      text-align: center !important;
+      padding: 16px !important;
+      font-size: 1rem !important;
+      border: 1px solid var(--color-turquoise) !important;
+      border-radius: 8px !important;
+      text-decoration: none !important;
+      min-width: auto !important;
     }
   }
 

@@ -105,19 +105,21 @@
     right: 30px;
     width: 380px;
     height: 520px;
-    background: rgba(255, 255, 255, 0.95);
+    max-height: 80vh;
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    border-radius: 24px;
-    z-index: 1001;
+    border-radius: 12px;
+    z-index: 2000;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px) scale(0.95);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(10px) scale(0.98);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     pointer-events: none;
+    overflow: hidden;
   }
 
   .ai-chat-window.active {
@@ -131,7 +133,7 @@
     padding: 24px;
     background: linear-gradient(135deg, #0B1A14 0%, #17362B 100%);
     color: white;
-    border-radius: 24px 24px 0 0;
+    border-radius: 12px 12px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -322,15 +324,16 @@
   }
 
   @media (max-width: 500px) {
-    .ai-chat-window {
-      width: calc(100% - 40px);
-      right: 20px;
-      bottom: 90px;
-    }
     .ai-chat-bubble {
         bottom: 20px;
         right: 20px;
+        padding: 12px;
+        width: 56px;
+        height: 56px;
+        justify-content: center;
+        border-radius: 50%;
     }
+    .bubble-text { display: none; }
   }
   .message a.chat-link {
     color: #4da6ff !important;
@@ -364,23 +367,35 @@
         const nextState = typeof force === 'boolean' ? force : !isActive;
         
         if (nextState && !isActive) {
-          // Posicionar la ventana sobre la burbuja
-          const rect = aiBubble.getBoundingClientRect();
-          const windowWidth = 380;
-          const windowHeight = 520;
+          const isMobile = window.innerWidth <= 600;
           
-          let left = rect.right - windowWidth;
-          let bottom = window.innerHeight - rect.top + 15;
-          
-          if (left < 20) left = 20;
-          if (left + windowWidth > window.innerWidth - 20) left = window.innerWidth - windowWidth - 20;
-          if (bottom + windowHeight > window.innerHeight - 20) {
-            bottom = window.innerHeight - windowHeight - 20;
-          }
+          if (isMobile) {
+            aiChatWindow.style.left = '15px';
+            aiChatWindow.style.right = '15px';
+            aiChatWindow.style.width = 'calc(100% - 30px)';
+            aiChatWindow.style.bottom = '15px';
+            aiChatWindow.style.height = '70vh';
+          } else {
+            // Posicionar la ventana sobre la burbuja
+            const rect = aiBubble.getBoundingClientRect();
+            const windowWidth = 380;
+            const windowHeight = 520;
+            
+            let left = rect.right - windowWidth;
+            let bottom = window.innerHeight - rect.top + 15;
+            
+            if (left < 20) left = 20;
+            if (left + windowWidth > window.innerWidth - 20) left = window.innerWidth - windowWidth - 20;
+            if (bottom + windowHeight > window.innerHeight - 20) {
+              bottom = window.innerHeight - windowHeight - 20;
+            }
 
-          aiChatWindow.style.left = `${left}px`;
-          aiChatWindow.style.bottom = `${bottom}px`;
-          aiChatWindow.style.right = 'auto';
+            aiChatWindow.style.left = `${left}px`;
+            aiChatWindow.style.bottom = `${bottom}px`;
+            aiChatWindow.style.width = `${windowWidth}px`;
+            aiChatWindow.style.height = `${windowHeight}px`;
+            aiChatWindow.style.right = 'auto';
+          }
         }
         
         if (nextState) {
