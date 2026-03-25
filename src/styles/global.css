@@ -79,6 +79,7 @@ body {
   background-color: var(--color-white);
   overflow-x: hidden;
   position: relative;
+  touch-action: manipulation;
 }
 
 /* Base Grain Texture Overlay */
