@@ -218,8 +218,26 @@
 
     @media (max-width: 1024px) {
         .virtual-mgmt__grid {
-            grid-template-columns: 1fr;
-            gap: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        /* Flatten the content container to place the visual in between */
+        .virtual-mgmt__content {
+            display: contents;
+        }
+        
+        /* Give specific order to children so the image is inserted */
+        .virtual-mgmt__content > .intro__label { order: 1; }
+        .virtual-mgmt__content > .section-title { order: 2; }
+        .virtual-mgmt__content > .intro__text { order: 3; margin-bottom: 20px; }
+        .virtual-mgmt__visual { order: 4; width: 100%; margin: 10px 0; }
+        .virtual-mgmt__content > .mgmt-features { order: 5; margin-top: 10px; }
+        
+        /* Make sure the map scales correctly */
+        .map-mockup {
+            aspect-ratio: 16/9;
         }
     }
 </style>
