@@ -487,25 +487,31 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       z-index: 10000;
     }
     .navbar__content {
-      display: grid !important;
-      grid-template-columns: 1fr auto 1fr !important;
-      grid-template-areas: "brand title-area action-area" !important;
-      align-items: center !important;
+      display: block !important;
+      position: relative !important;
       height: 60px !important;
       width: 100% !important;
-      padding: 0 16px !important;
+      padding: 0 !important;
     }
     .navbar__brand {
-      grid-area: brand !important;
+      position: absolute !important;
+      left: 16px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      margin: 0 !important;
       display: flex !important;
-      justify-content: flex-start !important;
+      z-index: 2 !important;
     }
     .navbar__center-title {
-      grid-area: title-area !important;
+      position: absolute !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
       display: flex !important;
       justify-content: center !important;
-      text-align: center !important;
-      justify-self: center !important;
+      align-items: center !important;
+      z-index: 1 !important;
+      width: auto !important;
     }
     .navbar__center-title a {
       font-size: 1.15rem !important;
@@ -514,13 +520,16 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       color: #FFFFFF !important;
     }
     .navbar__right-actions {
-      grid-area: action-area !important;
+      position: absolute !important;
+      right: 16px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
       display: flex !important;
       flex-direction: row !important;
       justify-content: flex-end !important;
       align-items: center !important;
-      justify-self: end !important;
       gap: 12px !important;
+      z-index: 2 !important;
     }
     .admin-access-btn {
       color: rgba(255,255,255,0.85) !important;
