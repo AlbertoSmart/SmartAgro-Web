@@ -156,6 +156,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       menu?.classList.remove("navbar__menu--open");
       toggle?.classList.remove("navbar__toggle--active");
       document.body.style.overflow = "";
+      document.body.classList.remove("menu-is-open");
       // Limpiar TODOS los dropdowns abiertos
       document.querySelectorAll('.dropdown--open').forEach(el => {
         el.classList.remove('dropdown--open');
@@ -173,11 +174,16 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
         const menu = document.getElementById("navMenu");
         const isOpen = menu?.classList.toggle("navbar__menu--open");
         toggleBtn.classList.toggle("navbar__toggle--active");
-        document.body.style.overflow = isOpen ? "hidden" : "";
-        if (!isOpen) {
-          document.querySelectorAll('.dropdown--open').forEach(el => {
-            el.classList.remove('dropdown--open');
-          });
+        
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+            document.body.classList.add("menu-is-open");
+        } else {
+            document.body.style.overflow = "";
+            document.body.classList.remove("menu-is-open");
+            document.querySelectorAll('.dropdown--open').forEach(el => {
+                el.classList.remove('dropdown--open');
+            });
         }
         return;
       }
@@ -501,6 +507,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       gap: 0 !important;
       overflow-y: auto !important;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
       z-index: 9999 !important;
       list-style: none !important;
       transform: translateX(100%);
@@ -647,6 +654,14 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       text-decoration: none !important;
       min-width: auto !important;
     }
+  }
+
+  /* BLOQUEO DE SCROLL EN BODY CUANDO MENU ESTÁ ABIERTO */
+  :global(body.menu-is-open) {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100dvh !important;
   }
 
   /* ESTILO ÚNICO ACCEDER SMARTAGRO */
