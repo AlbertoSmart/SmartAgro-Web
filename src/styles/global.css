@@ -360,6 +360,21 @@ ol {
     width: 100%;
   }
 
+  /* EXHAUSTIVE FIX: Ensure strict white margins on both screen edges for all possible content wrappers */
+  .container, .container-strict, .container-guide, .container-wide, [class*="container"] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* EXHAUSTIVE FIX: Prevent ANY unbreaking word/link text from pushing the viewport outward */
+  p, h1, h2, h3, h4, h5, h6, span, a, li, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
   /* === CENTERED TEXT + ICONS === */
   .section-title,
   .section-subtitle,
