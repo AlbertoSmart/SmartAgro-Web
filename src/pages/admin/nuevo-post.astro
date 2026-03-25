@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { addPost, getCategories } from "../../lib/blog";
+import { addPost, getCategories, type Post } from "../../lib/blog";
 
 // Check authentication
 const auth = Astro.cookies.get("admin_auth");
@@ -26,7 +26,7 @@ if (Astro.request.method === "POST") {
     } else {
       const selectedCat = categoriesList.find(c => c.id === category);
 
-      const newPost = {
+      const newPost: Post = {
         id: title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-').replace(/[^\w-]/g, ''),
         title,
         category,
@@ -211,7 +211,15 @@ if (Astro.request.method === "POST") {
   }
 
   @media (max-width: 900px) {
-    .editor-grid { grid-template-columns: 1fr; }
-    .form-card-pro { padding: 30px; }
+    .post-editor-pro { padding: 90px 12px 40px; }
+    .editor-grid { grid-template-columns: 1fr; gap: 20px; }
+    .form-card-pro { padding: 28px 20px; border-radius: 24px; }
+    .form-header { margin-bottom: 25px; }
+    .form-header h1 { font-size: 1.5rem; line-height: 1.2; }
+    .field-row { grid-template-columns: 1fr; gap: 15px; }
+    .field label { font-size: 0.72rem; }
+    .field input, .field select, .field textarea { padding: 12px; font-size: 0.9rem; border-radius: 10px; }
+    .btn-primary-admin { width: 100%; padding: 16px; font-size: 0.95rem; }
+    .form-actions { padding-top: 20px; text-align: center; }
   }
 </style>
