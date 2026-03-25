@@ -74,10 +74,16 @@ import Layout from "../layouts/Layout.astro";
             <p class="form-intro">Describa sus necesidades y un ingeniero asignado a su zona revisará su caso personalmente.</p>
 
             <form 
+              id="contactForm"
               action="https://formspree.io/f/ceo@smartfenix.es" 
               method="POST"
               class="editorial-form"
             >
+              <!-- Honeypot field for bot protection -->
+              <input type="text" name="_gotcha" style="display:none" />
+              
+              <div id="formStatus" class="form-status" style="display:none; padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: 600;"></div>
+
               <div class="form-row">
                 <div class="input-group">
                   <label for="name">Nombre y Apellidos</label>
@@ -117,10 +123,70 @@ import Layout from "../layouts/Layout.astro";
               </div>
 
               <div class="form-actions">
-                <button type="submit" class="btn-submit">Enviar Solicitud de Información</button>
+                <button type="submit" id="submitBtn" class="btn-submit">Enviar Solicitud de Información</button>
                 <p class="disclaimer">Al enviar, confirma que ha leído y acepta nuestra Política de Privacidad.</p>
               </div>
             </form>
+
+            <script is:inline>
+              document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('contactForm');
+                const status = document.getElementById('formStatus');
+                const btn = document.getElementById('submitBtn');
+                
+                if (!form) return;
+
+                const MAX_SUBMISSIONS = 5;
+                const WINDOW_HOURS = 1;
+
+                const getSubmissions = () => {
+                  try {
+                    return JSON.parse(localStorage.getItem('sf_contact_subs') || '[]');
+                  } catch (e) {
+                    return [];
+                  }
+                };
+
+                const cleanOldSubmissions = () => {
+                  const now = Date.now();
+                  const oneHourAgo = now - (WINDOW_HOURS * 60 * 60 * 1000);
+                  const validSubs = getSubmissions().filter(ts => ts > oneHourAgo);
+                  localStorage.setItem('sf_contact_subs', JSON.stringify(validSubs));
+                  return validSubs.length;
+                };
+
+                const updateButtonState = () => {
+                  const subCount = cleanOldSubmissions();
+                  if (subCount >= MAX_SUBMISSIONS) {
+                    btn.disabled = true;
+                    btn.style.opacity = '0.5';
+                    btn.style.cursor = 'not-allowed';
+                    status.style.display = 'block';
+                    status.style.background = '#fee2e2';
+                    status.style.color = '#991b1b';
+                    status.style.border = '1px solid #fecaca';
+                    status.textContent = 'Has alcanzado el límite de 5 envíos por hora. Por favor, inténtalo de nuevo más tarde.';
+                  }
+                };
+
+                // Check on load
+                updateButtonState();
+
+                form.addEventListener('submit', async (e) => {
+                  const subCount = cleanOldSubmissions();
+                  if (subCount >= MAX_SUBMISSIONS) {
+                    e.preventDefault();
+                    return;
+                  }
+                  
+                  // If fetch is used, we track it here. 
+                  // If traditional POST, we'll track it before the page reloads.
+                  const subs = getSubmissions();
+                  subs.push(Date.now());
+                  localStorage.setItem('sf_contact_subs', JSON.stringify(subs));
+                });
+              });
+            </script>
           </div>
         </section>
       </div>

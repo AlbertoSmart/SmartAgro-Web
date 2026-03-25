@@ -49,7 +49,7 @@
 <style is:global>
   .ai-chat-bubble {
     position: fixed;
-    bottom: 30px;
+    bottom: 85px;
     right: 30px;
     background: #0B1A14;
     color: white;
@@ -358,11 +358,12 @@
     const chatMessages = document.getElementById('chatMessages') as HTMLElement | null;
     const suggestBtns = document.querySelectorAll('.suggest-btn');
 
-    const toggleChat = () => {
+    const toggleChat = (force?: any) => {
       if (aiChatWindow && aiBubble) {
         const isActive = aiChatWindow.classList.contains('active');
+        const nextState = typeof force === 'boolean' ? force : !isActive;
         
-        if (!isActive) {
+        if (nextState && !isActive) {
           // Posicionar la ventana sobre la burbuja
           const rect = aiBubble.getBoundingClientRect();
           const windowWidth = 380;
@@ -371,7 +372,6 @@
           let left = rect.right - windowWidth;
           let bottom = window.innerHeight - rect.top + 15;
           
-          // Ajustes de límites
           if (left < 20) left = 20;
           if (left + windowWidth > window.innerWidth - 20) left = window.innerWidth - windowWidth - 20;
           if (bottom + windowHeight > window.innerHeight - 20) {
@@ -380,12 +380,20 @@
 
           aiChatWindow.style.left = `${left}px`;
           aiChatWindow.style.bottom = `${bottom}px`;
-          aiChatWindow.style.right = 'auto'; // Limpiar el style inicial
+          aiChatWindow.style.right = 'auto';
         }
         
-        aiChatWindow.classList.toggle('active');
+        if (nextState) {
+          aiChatWindow.classList.add('active');
+          setTimeout(() => chatInput?.focus(), 100);
+        } else {
+          aiChatWindow.classList.remove('active');
+        }
       }
     };
+
+    // Escuchar evento personalizado para abrir desde otros componentes
+    document.addEventListener('open-agro-ai', () => toggleChat(true));
 
     // Lógica Draggable Nativa
     let isDragging = false;
@@ -455,7 +463,7 @@
     window.addEventListener('mouseup', onEnd);
     window.addEventListener('touchend', onEnd);
 
-    closeChat?.addEventListener('click', toggleChat);
+    closeChat?.addEventListener('click', () => toggleChat(false));
 
   const appendMessageHTML = (text: string, type: string = 'incoming', isHTML: boolean = false) => {
     if (!chatMessages) return null;

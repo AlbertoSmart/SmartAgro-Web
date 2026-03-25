@@ -21,23 +21,18 @@
 
                 <ul class="ai-features">
                     <li>
-                        <strong>Interpretación de Sensores:</strong> "¿Cómo están
-                        los niveles de NPK en el Sector 3?" → análisis inmediato.
+                        <strong>Validación SIEX:</strong> "¿Puedo aplicar Nitrato hoy en mi parcela de olivar?" → Consulta normativa de Fertilidad y Zonas Vulnerables.
                     </li>
                     <li>
-                        <strong>Optimización de Riego:</strong> Recomendaciones
-                        de dotaciones hídricas basadas en humedad de suelo
-                        y evapotranspiración en tiempo real.
+                        <strong>Gestión Hídrica:</strong> "Calcula el MDS de mis dendrómetros" → Interpretación de fisiología vegetal para optimizar el riego.
                     </li>
                     <li>
-                        <strong>Cumplimiento SIEX:</strong> Verifica que cada
-                        aplicación de insumos esté documentada y dentro de los
-                        límites normativos antes de registrarla.
+                        <strong>Ecorregímenes:</strong> "¿Qué requisitos de cubierta vegetal debo cumplir para el P5?" → Asesoramiento legal y técnico de la PAC.
                     </li>
                 </ul>
 
                 <div class="ai-assistant__cta">
-                    <button class="btn btn--turquoise" onclick="document.getElementById('aiBubble')?.click()" style="cursor: pointer;"
+                    <button class="btn btn--turquoise" onclick="document.dispatchEvent(new CustomEvent('open-agro-ai'))" style="cursor: pointer;"
                         >Probar AgroAI Gratis</button
                     >
                 </div>
@@ -47,19 +42,23 @@
                 <div class="chat-window glass">
                     <div class="chat-header">
                         <div class="status-dot"></div>
-                        <span>Asistente Agrario</span>
+                        <span>Asistente AgroAI v2.0</span>
                     </div>
                     <div class="chat-body">
                         <div class="chat-msg bot">
-                            ¿En qué puedo ayudarte hoy con tu finca?
+                            Buenas, soy AgroAI. ¿En qué puedo ayudarte con la gestión de tu explotación hoy?
                         </div>
                         <div class="chat-msg user">
-                            ¿Cuál es el nivel de NPK en la parcela Norte?
+                            Necesito encontrar el CUE para Andalucía y no lo encuentro, ayúdame con eso.
                         </div>
                         <div class="chat-msg bot">
-                            El nivel de Nitrógeno es óptimo (45mg/kg), pero el
-                            Fósforo ha bajado un 15%. Te recomiendo revisar el
-                            sector de riego 2.
+                            Claro. En Andalucía el CUE está integrado en el portal de la Junta (SIPA). He localizado el acceso directo y los requisitos específicos para el SIEX en tu zona. ¿Quieres que te envíe el enlace?
+                        </div>
+                        <div class="chat-msg user">
+                            Sí, por favor. ¿Qué documentos necesito para el registro?
+                        </div>
+                        <div class="chat-msg bot">
+                            Para Andalucía, necesitas tu certificado digital, el RIA completo y las fotos georreferenciadas de tus parcelas. ¿Los tienes preparados?
                         </div>
                         <div class="chat-msg bot typing">
                             <span></span><span></span><span></span>
