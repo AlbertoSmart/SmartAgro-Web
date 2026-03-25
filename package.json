@@ -15,5 +15,8 @@
     "@astrojs/node": "^10.0.3",
     "@google/generative-ai": "^0.24.1",
     "astro": "^6.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
   }
 }

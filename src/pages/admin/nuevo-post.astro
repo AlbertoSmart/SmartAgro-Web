@@ -1,0 +1,191 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { addPost } from "../../lib/blog";
+
+// Check authentication
+const auth = Astro.cookies.get("admin_auth");
+if (!auth || auth.value !== "true") {
+  return Astro.redirect("/admin/login");
+}
+
+let error = "";
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const title = data.get("title")?.toString();
+    const category = data.get("category")?.toString();
+    const excerpt = data.get("excerpt")?.toString();
+    const image = data.get("image")?.toString();
+
+    if (!title || !category || !excerpt || !image) {
+      error = "Todos los campos son obligatorios.";
+    } else {
+      const categoryNames: Record<string, string> = {
+        'normativa': 'Normativa SIEX y PAC',
+        'tecnologia': 'Tecnología de Precisión',
+        'gestion': 'Gestión de Explotación'
+      };
+
+      const newPost = {
+        id: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''),
+        title,
+        category,
+        categoryName: categoryNames[category] || category,
+        excerpt,
+        image,
+        date: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase()
+      };
+
+      await addPost(newPost);
+      return Astro.redirect("/admin/dashboard");
+    }
+  } catch (e) {
+    if (e instanceof Error) error = e.message;
+  }
+}
+---
+
+<Layout title="Nuevo Post – Admin" showNewsletter={false}>
+  <main class="post-editor">
+    <div class="container tiny-container">
+      <div class="form-card-admin">
+        <header class="form-header">
+          <a href="/admin/dashboard" class="back-link">← Volver al Panel</a>
+          <h1>Crear Publicación</h1>
+          <p>Introduce los detalles del nuevo artículo técnico.</p>
+        </header>
+
+        <form method="POST" class="admin-form">
+          {error && <div class="error-msg">{error}</div>}
+
+          <div class="field">
+            <label for="title">Título del Artículo</label>
+            <input type="text" id="title" name="title" required placeholder="Ej: Avances en teledetección..." />
+          </div>
+
+          <div class="field">
+            <label for="category">Categoría</label>
+            <select id="category" name="category" required>
+              <option value="normativa">Normativa SIEX y PAC</option>
+              <option value="tecnologia">Tecnología de Precisión</option>
+              <option value="gestion">Gestión de Explotación</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="image">URL de la Imagen (Unsplash o similar)</label>
+            <input type="url" id="image" name="image" required placeholder="https://images.unsplash.com/..." />
+          </div>
+
+          <div class="field">
+            <label for="excerpt">Resumen / Extracto</label>
+            <textarea id="excerpt" name="excerpt" rows="4" required placeholder="Breve descripción para el listado..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-publish">Publicar en el Blog</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .post-editor {
+    background: #f8fafc;
+    min-height: 100vh;
+    padding: 120px 0 80px;
+  }
+
+  .tiny-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-card-admin {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    border: 1px solid #eef2f1;
+  }
+
+  .form-header {
+    margin-bottom: 30px;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--color-turquoise);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .form-header h1 {
+    font-size: 2rem;
+    font-weight: 850;
+    color: #0b1a14;
+    margin-bottom: 8px;
+  }
+
+  .admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .field input, .field select, .field textarea {
+    padding: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    font-family: inherit;
+  }
+
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--color-turquoise);
+    box-shadow: 0 0 0 4px rgba(29, 185, 154, 0.1);
+  }
+
+  .btn-publish {
+    background: var(--color-turquoise);
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .btn-publish:hover {
+    background: var(--color-turquoise-dark);
+    transform: translateY(-2px);
+  }
+
+  .error-msg {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+</style>
