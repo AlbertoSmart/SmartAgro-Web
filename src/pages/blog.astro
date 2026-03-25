@@ -364,6 +364,17 @@ const posts = [
   }
 
   @media (max-width: 768px) {
+    .blog-hero {
+      padding: 120px 0 60px;
+    }
+    .blog-main-layout {
+      padding-top: 40px;
+      gap: 40px;
+    }
+    .posts-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
     .container.wide {
       padding: 0 24px;
     }
@@ -373,6 +384,7 @@ const posts = [
     .category-header {
       justify-content: center;
       text-align: center;
+      margin-bottom: 30px;
     }
     .category-line {
       display: none; /* Hide the decorative line on mobile to keep title clean and centered */
