@@ -596,3 +596,46 @@ ol {
   h2 { font-size: 1.3rem !important; }
   .container { padding: 0 16px !important; }
 }
+
+/* === UNIVERSAL NAVBAR MOBILE RECOVERY === */
+@media (max-width: 1024px) {
+  .navbar__content {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+    height: 60px !important;
+  }
+  .navbar__brand {
+    order: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 10 !important;
+  }
+  .navbar__center-title {
+    order: 2 !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    z-index: 1 !important;
+    width: auto !important;
+    visibility: visible !important;
+  }
+  .navbar__right-actions {
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    z-index: 10 !important;
+  }
+  .admin-access-btn {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+}

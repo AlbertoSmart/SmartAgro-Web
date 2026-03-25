@@ -560,7 +560,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 
     /* === FULL-SCREEN SLIDE-IN MENU === */
     .navbar__menu {
-      display: flex !important;
+      display: none !important;
       flex-direction: column !important;
       align-items: stretch !important;
       position: fixed !important;
@@ -587,6 +587,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       text-align: left !important; /* Force left alignment against global container rules */
     }
     .navbar__menu--open { 
+      display: flex !important;
       transform: translateX(0) !important;
       visibility: visible !important;
       pointer-events: all !important;
