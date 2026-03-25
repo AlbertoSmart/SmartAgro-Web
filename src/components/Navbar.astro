@@ -27,6 +27,10 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       </a>
     </div>
 
+    <div class="navbar__center-title">
+      <a href="/">Smart Agro</a>
+    </div>
+
     <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
@@ -307,6 +311,21 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     width: auto;
   }
 
+  .navbar__center-title {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar__center-title a {
+    color: white !important;
+    font-weight: 850;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    text-decoration: none !important;
+  }
+
   .navbar__menu {
     display: flex;
     align-items: center;
@@ -431,6 +450,10 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     }
     .navbar__logo img {
       height: 32px !important;
+    }
+
+    .navbar__center-title {
+      display: block;
     }
 
     /* === HAMBURGER TOGGLE === */
