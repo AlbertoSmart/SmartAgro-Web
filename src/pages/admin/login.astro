@@ -36,12 +36,12 @@ if (Astro.request.method === "POST") {
           
           <div class="field">
             <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" required placeholder="SmartFenix" />
+            <input type="text" id="username" name="username" required placeholder="Usuario" />
           </div>
 
           <div class="field">
             <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required placeholder="••••••••" />
+            <input type="password" id="password" name="password" required placeholder="Contraseña" />
           </div>
 
           <button type="submit" class="btn-login">Entrar al Panel</button>
@@ -57,105 +57,137 @@ if (Astro.request.method === "POST") {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 80px 20px;
+    justify-content: center;
+    padding: 20px;
   }
 
   .tiny-container {
+    width: 100%;
     max-width: 440px;
-    margin: 0 auto;
   }
 
   .login-card {
     background: white;
-    padding: 50px;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    padding: 60px;
+    border-radius: 36px;
+    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.08);
     border: 1px solid #eef2f1;
+    width: 100%;
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .login-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
   }
 
   .lock-icon {
-    font-size: 2rem;
+    font-size: 2.8rem;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   .login-header h1 {
-    font-size: 1.8rem;
-    font-weight: 850;
+    font-size: 2.2rem;
+    font-weight: 900;
     color: #0b1a14;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
   }
-
+  
   .login-header p {
-    color: #64748b;
-    font-size: 0.95rem;
+     color: #64748b;
+     font-size: 1rem;
+     opacity: 0.8;
   }
 
   .login-form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 28px;
   }
 
   .field {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
   }
 
   .field label {
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 0.72rem;
+    font-weight: 850;
     text-transform: uppercase;
-    color: #334155;
-    letter-spacing: 0.05em;
+    color: #475569;
+    letter-spacing: 0.08em;
   }
 
   .field input {
-    padding: 16px;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    padding: 20px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
     font-size: 1rem;
     outline: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fbfcfb;
   }
 
   .field input:focus {
+    background: white;
     border-color: var(--color-turquoise);
-    box-shadow: 0 0 0 4px rgba(29, 185, 154, 0.1);
+    box-shadow: 0 0 0 5px rgba(29, 185, 154, 0.08);
+    transform: translateY(-2px);
   }
 
   .btn-login {
     background: var(--color-turquoise);
     color: white;
-    padding: 18px;
+    padding: 22px;
     border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 700;
+    border-radius: 16px;
+    font-size: 1.05rem;
+    font-weight: 850;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 15px;
+    letter-spacing: 0.01em;
   }
 
   .btn-login:hover {
     background: var(--color-turquoise-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(29, 185, 154, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 25px 50px -12px rgba(29, 185, 154, 0.4);
   }
 
   .error-msg {
-    background: #fee2e2;
-    color: #b91c1c;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    background: #fff1f2;
+    color: #e11d48;
+    padding: 22px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 800;
     text-align: center;
+    border: 1.5px solid #fecdd3;
+    animation: shake 0.4s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  @media (max-width: 480px) {
+    .login-card {
+      padding: 40px 24px;
+      border-radius: 28px;
+    }
+    .login-header h1 {
+      font-size: 1.8rem;
+    }
   }
 </style>

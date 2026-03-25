@@ -17,11 +17,6 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 <nav class="navbar" id="navbar">
   <div class="navbar__content container">
     <div class="navbar__brand">
-      <a href="/admin/login" class="admin-access-btn" aria-label="Admin Panel">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-        </svg>
-      </a>
       <a href="/" class="navbar__logo">
         <Image
           src={logo}
@@ -36,9 +31,17 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       <a href="/">Smart Agro</a>
     </div>
 
-    <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="navbar__right-actions">
+      <a href="/admin/login" class="admin-access-btn" aria-label="Admin Panel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
     <ul class="navbar__menu" id="navMenu">
       <li class={`navbar__item navbar__item--has-dropdown navbar__item--tech ${isActive("/") ? "active" : ""}`}>
@@ -315,7 +318,25 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
   .navbar__brand {
     display: flex;
     align-items: center;
+    order: 1;
+  }
+
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    order: 2;
+    margin-left: auto;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0;
+  }
+
+  .navbar__right-actions {
+    display: flex;
+    align-items: center;
     gap: 15px;
+    order: 3;
+    margin-left: 25px;
   }
 
   .admin-access-btn {
@@ -348,14 +369,6 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     font-size: 1.25rem;
     letter-spacing: -0.02em;
     text-decoration: none !important;
-  }
-
-  .navbar__menu {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: nowrap !important;
-    flex-shrink: 0;
   }
 
   .navbar__item {
@@ -474,14 +487,21 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       z-index: 10000;
     }
     .navbar__brand {
-      padding-left: 10px;
-      gap: 12px;
+      padding-left: 0;
+      gap: 0;
     }
-    .admin-access-btn {
-      color: rgba(255,255,255,0.4);
+    .navbar__right-actions {
       display: flex;
       align-items: center;
-      transition: color 0.3s ease;
+      gap: 15px;
+      margin-left: auto;
+    }
+    .admin-access-btn {
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      margin-right: 0;
     }
     .admin-access-btn:hover {
       color: var(--color-turquoise);
