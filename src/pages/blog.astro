@@ -366,6 +366,12 @@ const posts = [
   @media (max-width: 768px) {
     .blog-hero {
       padding: 120px 0 60px;
+      width: 100% !important;
+      margin: 0 !important;
+    }
+    .blog-hero .container.wide {
+      padding: 0 24px !important; /* Keep text inside, but background is on hero */
+      max-width: 100% !important;
     }
     .blog-main-layout {
       padding-top: 40px;
