@@ -441,9 +441,13 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
   @media (max-width: 1024px) {
     /* === NAVBAR BAR === */
     .navbar {
-      position: absolute;
+      position: fixed !important;
       background: #0B1A14 !important;
       height: 60px !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10000;
     }
     .navbar__brand {
       padding-left: 15px;
@@ -489,7 +493,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       right: 0 !important;
       bottom: 0 !important;
       width: 100% !important;
-      height: calc(100vh - 60px) !important;
+      height: auto !important;
       min-height: calc(100dvh - 60px) !important;
       background: #0B1A14 !important;
       padding: 0 !important;
