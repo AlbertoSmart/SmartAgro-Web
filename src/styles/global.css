@@ -355,11 +355,32 @@ ol {
    =============================================================== */
 @media (max-width: 768px) {
 
-  /* === CENTERED TEXT === */
+  /* === CENTERED TEXT + ICONS === */
   .section-title,
   .section-subtitle,
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
     text-align: center !important;
+  }
+
+  /* Icons and SVGs centered */
+  .card svg, .feature-card svg,
+  [class*="card"] svg,
+  [class*="icon"],
+  .card img, .feature-card img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Flex containers inside cards/sections → center children */
+  .card, .feature-card, [class*="card"] {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* All section containers → center content */
+  .container {
+    text-align: center;
   }
 
   /* === HERO SECTIONS — stack vertically === */
