@@ -272,6 +272,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     menu?.classList.remove("navbar__menu--open");
     toggle?.classList.remove("navbar__toggle--active");
     document.body.style.overflow = "";
+    document.body.classList.remove("menu-is-open");
     document.querySelectorAll('.dropdown--open').forEach(el => {
       el.classList.remove('dropdown--open');
     });
@@ -474,6 +475,9 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  .navbar__center-title {
+    display: none;
+  }
 
   @media (max-width: 1024px) {
     /* === NAVBAR BAR === */
@@ -500,7 +504,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       transform: translateY(-50%) !important;
       margin: 0 !important;
       display: flex !important;
-      z-index: 2 !important;
+      z-index: 100 !important;
     }
     .navbar__center-title {
       position: absolute !important;
@@ -510,14 +514,24 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
-      z-index: 1 !important;
-      width: auto !important;
+      z-index: 2000 !important;
+      width: 220px !important;
+      height: 60px !important;
+      pointer-events: none !important;
     }
     .navbar__center-title a {
       font-size: 1.15rem !important;
       font-weight: 850 !important;
       white-space: nowrap !important;
       color: #FFFFFF !important;
+      padding: 0 !important;
+      pointer-events: auto !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      background: transparent !important;
     }
     .navbar__right-actions {
       position: absolute !important;
@@ -529,7 +543,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       justify-content: flex-end !important;
       align-items: center !important;
       gap: 12px !important;
-      z-index: 2 !important;
+      z-index: 100 !important;
     }
     .admin-access-btn {
       color: rgba(255,255,255,0.85) !important;
@@ -587,7 +601,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       overflow-y: auto !important;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
-      z-index: 9999 !important;
+      z-index: 50 !important;
       list-style: none !important;
       transform: translateX(100%);
       visibility: hidden;
@@ -810,7 +824,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       brand.style.setProperty('top', '50%', 'important');
       brand.style.setProperty('transform', 'translateY(-50%)', 'important');
       brand.style.setProperty('display', 'flex', 'important');
-      brand.style.setProperty('z-index', '20', 'important');
+      brand.style.setProperty('z-index', '100', 'important');
     }
     
     // 3. Lock Title (CENTER)
@@ -821,8 +835,19 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       title.style.setProperty('top', '50%', 'important');
       title.style.setProperty('transform', 'translate(-50%, -50%)', 'important');
       title.style.setProperty('display', 'flex', 'important');
-      title.style.setProperty('z-index', '1', 'important');
+      title.style.setProperty('z-index', '2000', 'important');
+      title.style.setProperty('width', '220px', 'important');
+      title.style.setProperty('pointer-events', 'none', 'important');
       title.style.setProperty('visibility', 'visible', 'important');
+      const titleLink = title.querySelector('a');
+      if (titleLink) {
+        titleLink.style.setProperty('pointer-events', 'auto', 'important');
+        titleLink.style.setProperty('width', '100%', 'important');
+        titleLink.style.setProperty('height', '100%', 'important');
+        titleLink.style.setProperty('display', 'flex', 'important');
+        titleLink.style.setProperty('justify-content', 'center', 'important');
+        titleLink.style.setProperty('align-items', 'center', 'important');
+      }
     }
     
     // 4. Lock Icons (RIGHT)
@@ -835,7 +860,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       actions.style.setProperty('display', 'flex', 'important');
       actions.style.setProperty('flex-direction', 'row', 'important');
       actions.style.setProperty('gap', '12px', 'important');
-      actions.style.setProperty('z-index', '20', 'important');
+      actions.style.setProperty('z-index', '100', 'important');
     }
   }
 

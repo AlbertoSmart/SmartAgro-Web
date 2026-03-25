@@ -597,46 +597,261 @@ ol {
   .container { padding: 0 16px !important; }
 }
 
-/* === UNIVERSAL NAVBAR MOBILE RECOVERY — ABSOLUTE ANCHOR LOCK === */
-@media (max-width: 1024px) {
-  .navbar__content {
-    display: block !important;
-    position: relative !important;
-    height: 60px !important;
-    width: 100% !important;
-    padding: 0 !important;
+/* ===============================================================
+   UNIVERSAL TYPOGRAPHY & TECHNICAL CONTENT SYSTEM
+   Ensures all new pages have the "premium tecnico" look by default.
+   ============================================================== */
+
+/* Common Content wrapper to be used in pages */
+.rich-content, 
+article:not(.no-format) {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--color-slate-700);
+}
+
+.rich-content h2, 
+article h2:not(.no-format) {
+  font-size: 2rem;
+  font-weight: 850;
+  color: var(--color-slate-900);
+  margin: 60px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-gray-100);
+  letter-spacing: -0.02em;
+}
+
+.rich-content h3, 
+article h3:not(.no-format) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-slate-900);
+  margin: 40px 0 16px;
+}
+
+.rich-content p, 
+article p:not(.no-format) {
+  margin-bottom: 24px;
+}
+
+.rich-content strong, 
+article strong:not(.no-format) {
+  color: var(--color-slate-900);
+  font-weight: 700;
+}
+
+/* Technical Lists */
+.rich-content ul, 
+article ul:not(.no-format) {
+  margin-bottom: 32px;
+  padding-left: 0;
+}
+
+.rich-content li, 
+article li:not(.no-format) {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.rich-content li::before, 
+article li:not(.no-format)::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-turquoise);
+  font-weight: 800;
+}
+
+/* Professional Tables */
+.rich-content table, 
+article table:not(.no-format) {
+  width: 100%;
+  margin: 48px 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+}
+
+.rich-content th, 
+article th:not(.no-format) {
+  background: var(--color-gray-50);
+  padding: 16px;
+  text-align: left;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-slate-900);
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.rich-content td, 
+article td:not(.no-format) {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-gray-100);
+  background: white;
+}
+
+.rich-content tr:last-child td, 
+article tr:last-child td {
+  border-bottom: none;
+}
+
+.rich-content tr:hover td, 
+article tr:hover td {
+  background: #fafafa;
+}
+
+/* Sidebar Widgets & Info Boxes (Technical look) */
+.info-box-technical {
+  background: #f8fafc;
+  padding: 32px;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-turquoise);
+  margin: 40px 0;
+}
+
+.info-box-technical h4 {
+  margin-top: 0;
+  color: var(--color-turquoise-dark);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px !important;
+}
+
+/* ===============================================================
+   ARTICLE FOOTER & CONTACT CARD (Universal/Default)
+   Ensures EVERY new page has the premium look for contact/share.
+   ============================================================== */
+
+/* Share Section - Always Row */
+article .share-section,
+.article-footer .share-section,
+.share-section {
+  display: flex !important;
+  flex-direction: row !important; /* Force row on ALL screens */
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin: 60px 0 !important;
+  background: #f8fafc !important;
+  padding: 30px 40px !important;
+  border-radius: 16px !important;
+  border: 1px solid #edf2f7 !important;
+}
+
+article .share-buttons,
+.share-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px !important;
+}
+
+article .share-btn,
+.share-btn {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  border: 1px solid #e2e8f0 !important;
+  background: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  color: #475569 !important;
+}
+
+.share-btn:hover {
+  color: #ffffff !important;
+  background: var(--color-turquoise) !important;
+  border-color: var(--color-turquoise) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 24px rgba(29, 185, 154, 0.25) !important;
+}
+
+/* Next Steps / Contact Card */
+article .next-steps-card,
+.next-steps-card {
+  background: linear-gradient(135deg, #0B1A14 0%, #050d0a 100%) !important;
+  padding: 60px 40px !important;
+  border-radius: 24px !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+
+article .next-steps-card h3,
+.next-steps-card h3 {
+  font-size: 2.25rem !important;
+  margin-bottom: 24px !important;
+  color: #ffffff !important;
+  font-weight: 850 !important;
+  border-bottom: none !important;
+  margin-top: 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+article .next-steps-card p,
+.next-steps-card p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  margin-bottom: 40px !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 1.15rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Luxury Button - Universal classes to catch all versions */
+article .btn--turquoise,
+.btn--turquoise,
+article .btn-premium,
+.btn-premium {
+  display: inline-block !important;
+  padding: 18px 48px !important;
+  background: var(--color-turquoise) !important;
+  color: #0B1A14 !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  border-radius: 9999px !important; /* TOTAL ROUNDED */
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 8px 20px rgba(29, 185, 154, 0.35) !important;
+  border: 2px solid var(--color-turquoise) !important;
+}
+
+.btn--turquoise:hover,
+.btn-premium:hover {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #0B1A14 !important;
+  transform: translateY(-4px) scale(1.03) !important;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Fix mobile spacing only */
+@media (max-width: 768px) {
+  .share-section {
+    padding: 30px 20px !important;
+    text-align: center !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
   }
-  .navbar__brand {
-    position: absolute !important;
-    left: 16px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    display: flex !important;
-    z-index: 10 !important;
+  
+  .next-steps-card {
+    padding: 40px 24px !important;
   }
-  .navbar__center-title {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    display: flex !important;
-    justify-content: center !important;
-    z-index: 1 !important;
-    width: auto !important;
-  }
-  .navbar__right-actions {
-    position: absolute !important;
-    right: 16px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 12px !important;
-    z-index: 10 !important;
-  }
-  .admin-access-btn {
-    display: flex !important;
-    align-items: center !important;
-    margin: 0 !important;
+  
+  .next-steps-card h3 {
+    font-size: 1.75rem !important;
   }
 }

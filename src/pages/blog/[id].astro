@@ -1,374 +1,266 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-export function getStaticPaths() {
-  return [
-    { params: { id: 'ia-campo-asesoramiento' } },
-    { params: { id: 'ecorregimenes-siex-2026' } },
-    { params: { id: 'dendrometria-latido-arboles' } },
-  ];
-}
+import { getPostById } from "../../lib/blog";
 
 const { id } = Astro.params;
 
-const postsContent = {
-  'ia-campo-asesoramiento': {
-    title: "IA aplicada al campo: El futuro del asesoramiento",
-    category: "Inteligencia Artificial",
-    date: "25 de Marzo, 2024",
-    author: "Dirección Técnica Agronómica",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
-    intro: "Análisis pormenorizado sobre la implementación de modelos de inferencia agronómica y telemetría de precisión en explotaciones de alto rendimiento.",
-    content: `
-      <h2>1. El Motor de Inferencia y el Análisis de Datos</h2>
-      <p>La implementación de Inteligencia Artificial (IA) en la gestión agraria representa una evolución necesaria desde el monitoreo pasivo hacia el asesoramiento proactivo. Nuestros modelos se basan en el procesamiento de series temporales capturadas por sensores de campo, permitiendo una detección de anomalías hídricas con una precisión técnica superior al 95%.</p>
+if (!id) {
+  return Astro.redirect('/404');
+}
 
-      <h2>2. Redes Neuronales Aplicadas a la Telemetría</h2>
-      <p>El sistema analiza el contenido volumétrico de agua y la conductividad eléctrica del suelo mediante algoritmos de aprendizaje profundo. Estos procesos permiten diferenciar entre la evaporación natural y la transpiración real del cultivo, ajustando las necesidades de riego a la fisiología específica de la planta.</p>
-      
-      <div class="technical-table-container">
-        <h3>Capacidades Técnicas del Sistema:</h3>
-        <ul>
-          <li><strong>Análisis de Histéresis:</strong> Evaluación de la capacidad de retención hídrica post-irrigación.</li>
-          <li><strong>Modelado Biológico de Plagas:</strong> Integración de grados-día y humedad relativa para predecir ciclos de insectos.</li>
-          <li><strong>Automatización del Asesoramiento:</strong> Generación de planes de fertilización basados en la extracción real de nutrientes.</li>
-        </ul>
-      </div>
+const post = await getPostById(id);
 
-      <h2>3. Integración con el Mapa de la Explotación (GIS)</h2>
-      <p>La IA se integra con sistemas de información geográfica para ofrecer una visión espacial de la finca. Esto permite identificar sectores con bajo rendimiento y correlacionar los datos de los sensores con la ortofoto de vigor (NDVI), cerrando el ciclo de decisión del agricultor.</p>
-
-      <p>Como ingenieros agrónomos, validamos cada algoritmo para asegurar que la digitalización cumpla con los estándares técnicos y normativos exigidos en el marco actual de la Agricultura 4.0.</p>
-    `
-  },
-  'ecorregimenes-siex-2026': {
-    title: "Ecorregímenes y SIEX: Guía de cumplimiento 2026",
-    category: "Normativa y Ayudas",
-    date: "20 de Marzo, 2024",
-    author: "Gabinete Técnico PAC",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200",
-    intro: "Revisión técnica de las obligaciones legales en materia de digitalización y registro de explotaciones agrarias según el marco normativo del SIEX.",
-    content: `
-      <h2>1. Marco Normativo y Evidencias Digitales</h2>
-      <p>Desde la entrada en vigor del registro SIEX, la transparencia en la gestión de insumos se ha convertido en el eje central de las inspecciones agrarias. La administración emplea ahora sistemas de monitorización satelital para verificar la veracidad de lo declarado en el Cuaderno Digital de Explotación (CUE).</p>
-
-      <h2>2. Prácticas de Ecorregímenes P4 y P5</h2>
-      <p>A continuación, se detallan los requisitos técnicos para garantizar el cobro de las ayudas asociadas a la PAC 2026:</p>
-      
-      <table class="standard-table">
-        <thead>
-          <tr>
-            <th>Práctica de Ecorrégimen</th>
-            <th>Evidencia Requerida por la Administración</th>
-            <th>Protocolo de Validación Digital</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>P5: Cubiertas Vegetales</strong></td>
-            <td>Mantenimiento de cubierta viva en periodos mínimos.</td>
-            <td>Fotos georreferenciadas y análisis de NDVI.</td>
-          </tr>
-          <tr>
-            <td><strong>P4: Siembra Directa</strong></td>
-            <td>Inscripción de sembradora específica en el ROMA.</td>
-            <td>Verificación documental cruzada en la plataforma.</td>
-          </tr>
-          <tr>
-            <td><strong>Gestión Nutricional</strong></td>
-            <td>Plan de abonado y registro de aplicaciones.</td>
-            <td>Trazabilidad de la aplicación en el CUE digital.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>3. El Protocolo de Inspección por Monitorización</h2>
-      <p>La autoridad competente ya no requiere visitas presenciales de forma sistemática. El uso de Fotos Georreferenciadas con metadatos certificados (coordenadas UTM y sello de tiempo) es el método oficial para resolver discrepancias. Nuestra plataforma garantiza que cada fotografía capturada cumple con los estándares técnicos del FEGA.</p>
-
-      <p>Recomendamos a los técnicos y asesores mantener una sincronización semanal de los datos de aplicación para evitar penalizaciones administrativas derivadas de la falta de inmediatez en el registro.</p>
-    `
-  },
-  'dendrometria-latido-arboles': {
-    title: "Dendrometría: Escuchando el latido de tus árboles",
-    category: "Fisiología Vegetal",
-    date: "18 de Marzo, 2024",
-    author: "Dpto. de Ingeniería Agronómica",
-    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1200",
-    intro: "Monitorización del estado hídrico de la planta mediante el registro micrométrico de variaciones en el diámetro del tronco.",
-    content: `
-      <h2>1. Fundamentos Técnicos del Monitoreo Fisiológico</h2>
-      <p>La dendrometría representa el paso definitivo desde la medición del recurso (agua en el suelo) hacia la medición de la demanda real (estado del árbol). El sensor mide variaciones en micras, permitiendo analizar la turgencia del tronco durante el ciclo día/noche.</p>
-
-      <h2>2. Interpretación de la Máxima Contracción Diaria (MDS)</h2>
-      <p>El MDS es el parámetro técnico fundamental para determinar el estrés hídrico incipiente. Un aumento sostenido en la contracción diaria indica que el árbol está transpirando por encima de su capacidad de absorción radicular, lo que requiere una intervención inmediata en el programa de riego.</p>
-
-      <h2>3. Implementación de Riego Deficitario Controlado</h2>
-      <p>En cultivos leñosos de alto rendimiento, el uso de dendrómetros permite gestionar estrategias de riego deficitario controlado (RDC) con seguridad técnica. Al conocer el límite biológico de la planta, el agricultor puede optimizar el consumo hídrico sin comprometer la inducción floral ni el desarrollo del fruto.</p>
-      
-      <div class="technical-table-container">
-        <h3>Ventajas de la Dendrometría:</h3>
-        <ul>
-          <li><strong>Precisión Fisiológica:</strong> Refleja el estado real de hidratación de la planta.</li>
-          <li><strong>Optimización Hídrica:</strong> Ahorro estimado de hasta el 30% en campañas de secano asistido.</li>
-          <li><strong>Alerta Temprana:</strong> Detección de anomalías días antes de que existan síntomas visuales.</li>
-        </ul>
-      </div>
-
-      <p>Como ingenieros, integramos estos datos con la teledetección para ofrecer un asesoramiento integral que garantice la sostenibilidad y rentabilidad de la explotación.</p>
-    `
-  }
-};
-
-const post = postsContent[id as keyof typeof postsContent];
+if (!post) {
+  return Astro.redirect('/404');
+}
 ---
 
-<Layout title={`${post.title} - Smart Fenix Publicaciones Técnicas`}>
-  <main class="post-page">
-    <div class="post-header-simple">
-      <div class="container narrow">
-        <span class="post-category-tag">{post.category}</span>
-        <h1 class="post-title">{post.title}</h1>
-        <div class="post-meta">
-          <span class="post-author">{post.author}</span>
-          <span class="post-divider">|</span>
-          <span class="post-date">{post.date}</span>
+<Layout title={`${post.title} - Smart Fenix Blog Técnico`}>
+  <main class="blog-article-page">
+    <div class="article-hero" style={`background-image: linear-gradient(to bottom, rgba(11, 26, 20, 0.8), #0B1A14), url(${post.image});`}>
+      <div class="container narrow hero-content">
+        <a href="/blog" class="back-to-blog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          Volver al Blog
+        </a>
+        <div class="article-header">
+          <span class="article-category">{post.categoryName || 'General'}</span>
+          <h1 class="article-title">{post.title}</h1>
+          <div class="article-meta">
+            <div class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>{post.author || 'Equipo Técnico Smart Fénix'}</span>
+            </div>
+            <div class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>{post.date}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="container narrow">
-      <article class="post-article">
-        <p class="post-intro">
-          {post.intro}
-        </p>
-
-        <img src={post.image} alt={post.title} class="post-main-image" />
-
-        <div class="post-content" set:html={post.content}>
+    <div class="container narrow article-layout">
+      <article class="main-content">
+        <div class="content-body" set:html={post.content}>
         </div>
 
-        <div class="post-author-box">
-          <div class="author-info">
-             <h4>Gabinete Agronómico Smart Fénix</h4>
-             <p>Asesoramiento técnico especializado en digitalización, gestión SIEX y monitorización de cultivos de alto rendimiento.</p>
-             <a href="/contacto" class="btn-simple">Contactar con Ingeniería</a>
+        <div class="article-footer">
+          <div class="share-section">
+            <p>¿Te ha servido este artículo? Compártelo:</p>
+            <div class="share-buttons">
+              <button class="share-btn" aria-label="Share on LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </button>
+              <button class="share-btn" aria-label="Share on Twitter">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="next-steps-card">
+              <h3>¿Necesitas asesoramiento técnico?</h3>
+              <p>Nuestros ingenieros expertos están a tu disposición para optimizar la rentabilidad de tu explotación.</p>
+              <a href="/contacto" class="btn--turquoise">Contactar con Ingeniería</a>
           </div>
         </div>
       </article>
 
-      <section class="post-pagination">
-          <a href="/blog" class="back-link">← Volver a la Hemeroteca Técnica</a>
-      </section>
+      <aside class="article-sidebar">
+        <div class="sidebar-info-box">
+          <h4>Ficha Técnica</h4>
+          <ul class="technical-stats">
+            <li>
+              <span class="stat-label">Ámbito:</span>
+              <span class="stat-value">{post.categoryName}</span>
+            </li>
+            <li>
+              <span class="stat-label">Referencia:</span>
+              <span class="stat-value">SF-{post.id.slice(0,4).toUpperCase()}</span>
+            </li>
+            <li>
+              <span class="stat-label">Soporte:</span>
+              <span class="stat-value">Digital</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </main>
 </Layout>
 
 <style is:global>
-  .post-page {
+  .blog-article-page {
     background: #ffffff;
-    color: #1a1a1a;
+    min-height: 100vh;
+  }
+
+  /* HERO SECTION */
+  .article-hero {
+    height: 70vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+  }
+
+  .article-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(11, 26, 20, 0.4), rgba(11, 26, 20, 0.95));
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .back-to-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-turquoise);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .back-to-blog:hover {
+    color: white;
+    transform: translateX(-5px);
+  }
+
+  .article-category {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--color-turquoise);
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(29, 185, 154, 0.1);
+    border: 1px solid rgba(29, 185, 154, 0.3);
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+  }
+
+  .article-title {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 850;
+    line-height: 1.05;
+    margin-bottom: 40px;
+    letter-spacing: -0.03em;
+    max-width: 1000px;
+    color: #ffffff !important;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .meta-item svg {
+    color: var(--color-turquoise);
+  }
+
+  /* MAIN LAYOUT */
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 100px;
+    padding-top: 100px;
     padding-bottom: 120px;
   }
 
-  .container.narrow {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+  /* SIDEBAR SPECIFICS */
+  .sidebar-info-box {
+    background: #f8fafc;
+    padding: 32px;
+    border-radius: 12px;
+    position: sticky;
+    top: 100px;
+    border: 1px solid #eeeeee;
   }
 
-  .post-header-simple {
-    padding: 180px 0 60px;
-    border-bottom: 1px solid #eeeeee;
-    margin-bottom: 60px;
-  }
-
-  .post-category-tag {
-    display: inline-block;
-    color: #1DB99A;
-    font-weight: 700;
+  .sidebar-info-box h4 {
+    font-size: 0.9rem;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 16px;
-  }
-
-  .post-title {
-    font-size: 2.8rem;
+    letter-spacing: 0.1em;
     font-weight: 800;
-    line-height: 1.2;
     margin-bottom: 24px;
-    color: #000000;
-    letter-spacing: -0.01em;
+    color: #0B1A14;
   }
 
-  .post-meta {
-    font-size: 0.95rem;
-    color: #666666;
-    font-weight: 500;
-  }
-
-  .post-divider {
-    margin: 0 10px;
-    opacity: 0.3;
-  }
-
-  .post-intro {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: #333333;
-    font-weight: 500;
-    margin-bottom: 40px;
-  }
-
-  .post-main-image {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 60px;
-    border: 1px solid #eeeeee;
-  }
-
-  .post-content {
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #2c2c2c;
-  }
-
-  .post-content h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 60px 0 24px;
-    color: #000000;
-    border-bottom: 2px solid #000000;
-    display: inline-block;
-    padding-bottom: 4px;
-  }
-
-  .post-content p {
-    margin-bottom: 24px;
-  }
-
-  .technical-table-container {
-    background: #fdfdfd;
-    padding: 30px;
-    border: 1px solid #eeeeee;
-    margin: 40px 0;
-  }
-
-  .technical-table-container h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    color: #000000;
-  }
-
-  .technical-table-container ul {
-    list-style: none;
+  .technical-stats {
     padding: 0;
+    list-style: none;
   }
 
-  .technical-table-container li {
-    margin-bottom: 12px;
-    padding-left: 20px;
-    position: relative;
-    font-size: 1rem;
+  .technical-stats li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .technical-stats li::before {
+    content: none !important; /* Override global arrow for sidebar stats */
   }
 
-  .technical-table-container li::before {
-    content: "•";
-    color: #1DB99A;
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+  .stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666666;
   }
 
-  .standard-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 40px 0;
-    font-size: 0.95rem;
-  }
-
-  .standard-table th {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 2px solid #000000;
-    background: #fafafa;
-    text-transform: uppercase;
+  .stat-value {
+    font-size: 0.85rem;
     font-weight: 700;
+    color: #0B1A14;
   }
 
-  .standard-table td {
-    padding: 12px;
-    border-bottom: 1px solid #eeeeee;
-  }
-
-  .post-author-box {
-    margin-top: 80px;
-    padding: 40px;
-    background: #fdfdfd;
-    border-top: 4px solid #000000;
-  }
-
-  .author-info h4 {
-    margin-top: 0;
-    font-size: 1.25rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-  }
-
-  .author-info p {
-    font-size: 1rem;
-    color: #555555;
-    margin-bottom: 24px;
-    line-height: 1.6;
-  }
-
-  .btn-simple {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-
-  .btn-simple:hover {
-    background: #1DB99A;
-  }
-
-  .post-pagination {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid #eeeeee;
-  }
-
-  .back-link {
-    color: #1DB99A;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 0.9rem;
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+    .article-sidebar { order: -1; }
+    .sidebar-info-box { position: static; }
   }
 
   @media (max-width: 768px) {
-    .post-title { font-size: 2.2rem; }
-    .post-header-simple { padding: 120px 0 40px; margin-bottom: 40px; }
-    .post-content { font-size: 1.05rem; }
-    .post-content h2 { font-size: 1.5rem; margin: 40px 0 20px; }
-    .technical-table-container { padding: 20px; }
-    
-    /* Responsive tables */
-    .standard-table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .post-author-box { padding: 24px; margin-top: 60px; }
+    .article-hero { height: 450px; padding-bottom: 40px; }
+    .article-title { font-size: 2.2rem; }
+    .article-meta { flex-direction: column; gap: 16px; }
+    /* REMOVED share-section stack override to keep them in row */
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 </style>
