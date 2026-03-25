@@ -522,8 +522,36 @@ ol {
   .section-title { margin-bottom: 16px !important; }
   .section-subtitle { margin-bottom: 28px !important; }
 
-  /* === FOOTER compact === */
-  footer .container { text-align: center !important; }
+  /* === FOOTER overrides === */
+  .footer { padding: 60px 0 40px !important; }
+  .footer__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    gap: 40px !important;
+  }
+  .footer__brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .footer__contact {
+    align-items: center !important;
+  }
+  .footer__social-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .footer__legal {
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+  .footer__legal-links {
+    justify-content: center !important;
+  }
 }
 
 /* === EXTRA SMALL (≤480px) === */
