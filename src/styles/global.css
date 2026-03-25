@@ -347,3 +347,120 @@ ol {
     display: flex;
   }
 }
+
+/* ===============================================================
+   MOBILE LAYOUT OVERHAUL — ONLY ≤768px
+   Centers content, stacks layouts, compacts cards.
+   Desktop (>768px) is NOT affected.
+   =============================================================== */
+@media (max-width: 768px) {
+
+  /* === CENTERED TEXT === */
+  .section-title,
+  .section-subtitle,
+  h1, h2, h3 {
+    text-align: center !important;
+  }
+
+  /* === HERO SECTIONS — stack vertically === */
+  .hero__content,
+  .hero-content,
+  [class*="hero"] .container {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .hero__image,
+  .hero-image,
+  [class*="hero"] img:not(.navbar__logo img) {
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 20px auto 0 !important;
+    order: 2 !important;
+  }
+
+  /* === HERO TITLE SIZES === */
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    padding: 0 8px !important;
+  }
+  h2 {
+    font-size: 1.45rem !important;
+    line-height: 1.25 !important;
+  }
+  h3 {
+    font-size: 1.15rem !important;
+  }
+
+  /* === CARD GRIDS — 2 columns, compact === */
+  .features-grid,
+  .cards-grid,
+  .tech-grid,
+  [class*="grid"]:not(.navbar__menu) {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .card, .feature-card {
+    padding: 16px !important;
+  }
+  .card h3, .feature-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 6px !important;
+  }
+  .card p, .feature-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* === BUTTONS === */
+  .btn {
+    font-size: 0.9rem !important;
+    padding: 14px 20px !important;
+  }
+  .hero__buttons, .cta-buttons,
+  [class*="buttons"], [class*="actions"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* === SECTIONS — less vertical padding === */
+  .section-padding {
+    padding: 50px 0 !important;
+  }
+
+  /* === PARAGRAPHS — centered on mobile === */
+  p { text-align: center; }
+  .card p, article p, .legal-content p, .blog-content p { text-align: left; }
+
+  /* === BADGES centered === */
+  .badge, [class*="badge"], [class*="tag"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    width: fit-content !important;
+  }
+
+  /* === SPACING reduced === */
+  .section-title { margin-bottom: 16px !important; }
+  .section-subtitle { margin-bottom: 28px !important; }
+
+  /* === FOOTER compact === */
+  footer .container { text-align: center !important; }
+}
+
+/* === EXTRA SMALL (≤480px) — single column === */
+@media (max-width: 480px) {
+  .features-grid, .cards-grid, .tech-grid,
+  [class*="grid"]:not(.navbar__menu) {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  h1 { font-size: 1.5rem !important; }
+  h2 { font-size: 1.3rem !important; }
+  .container { padding: 0 16px !important; }
+}

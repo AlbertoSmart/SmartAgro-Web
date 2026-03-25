@@ -32,7 +32,7 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     </button>
 
     <ul class="navbar__menu" id="navMenu">
-      <li class={`navbar__item navbar__item--has-dropdown ${isActive("/") ? "active" : ""}`}>
+      <li class={`navbar__item navbar__item--has-dropdown navbar__item--tech ${isActive("/") ? "active" : ""}`}>
         <div class="navbar__item-row">
             <a href="/">Tecnología</a>
             <button class="dropdown-trigger" aria-label="Toggle submenu">
@@ -183,6 +183,16 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       if (window.innerWidth <= 1024) {
         const parentItem = t.closest('.navbar__item--has-dropdown');
         
+        // Skip Tecnología — no tiene dropdown en móvil
+        if (parentItem && parentItem.classList.contains('navbar__item--tech')) {
+          // Dejar que el clic en el <a> navegue normalmente
+          const clickedLink = t.closest('.navbar__item-row > a');
+          if (clickedLink) {
+            setTimeout(closeMenu, 100);
+          }
+          return;
+        }
+
         if (parentItem) {
           const clickedLink = t.closest('.navbar__item-row > a');
           const isAlreadyOpen = parentItem.classList.contains('dropdown--open');
@@ -558,6 +568,15 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     }
     .navbar__item--has-dropdown.dropdown--open:hover .navbar__dropdown {
       display: block !important;
+    }
+
+    /* === TECNOLOGÍA: sin submenu en móvil === */
+    .navbar__item--tech .navbar__dropdown,
+    .navbar__item--tech .dropdown-trigger {
+      display: none !important;
+    }
+    .navbar__item--tech .navbar__item-row {
+      cursor: default !important;
     }
 
     /* === DROPDOWN LINKS === */
