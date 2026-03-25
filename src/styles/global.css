@@ -362,16 +362,21 @@ ol {
     text-align: center !important;
   }
 
-  /* Icons, SVGs, and Emojis centered */
-  .card svg, .feature-card svg,
-  [class*="card"] svg,
-  [class*="icon"],
-  .card img, .feature-card img {
-    display: block !important;
+  /* Emojis, images and wrappers centered horizontally */
+  .card img, .feature-card img,
+  [class*="icon-wrapper"],
+  .feature-card__icon-wrapper {
     margin-left: auto !important;
     margin-right: auto !important;
-    text-align: center !important;
+    display: flex !important;
     justify-content: center !important;
+  }
+
+  /* Just center the icons horizontally without breaking their internal display */
+  .card svg:not(.feature-card__icon svg), 
+  .feature-card svg:not(.feature-card__icon svg) {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Flex containers inside cards/sections → center children */
