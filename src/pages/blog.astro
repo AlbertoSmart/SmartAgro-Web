@@ -17,7 +17,7 @@ const posts = await getPosts();
 
     <div class="container wide blog-main-layout">
       <div class="blog-feed">
-        {categories.map(cat => (
+        {categories.filter(cat => posts.some(p => p.category === cat.id)).map(cat => (
           <section id={cat.id} class="category-group">
             <div class="category-header">
               <h2>{cat.name}</h2>
