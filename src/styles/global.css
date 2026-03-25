@@ -473,6 +473,51 @@ ol {
     width: fit-content !important;
   }
 
+  /* === SUBPAGES / SERVICIOS overrides for left-aligned content === */
+  .flow-step, .faq-item, .value-item {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Fix absolute positioned numbers in flow-steps */
+  .flow-step__number {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: -50px auto 16px auto !important;
+  }
+
+  /* Center the feature lists in cards */
+  .feature-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .feature-list li {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Fix intro grids globally (like in soluciones.astro) */
+  .intro-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  
+  .intro-grid > .feature-detail {
+    order: 1 !important;
+  }
+  
+  .intro-grid > .intro-image {
+    order: 2 !important;
+    margin-top: 20px !important;
+  }
+
   /* === SPACING reduced === */
   .section-title { margin-bottom: 16px !important; }
   .section-subtitle { margin-bottom: 28px !important; }

@@ -321,11 +321,65 @@ const showMinimalist = layoutType === "minimalist";
   }
 
   @media (max-width: 768px) {
-    .page-hero__content h1 {
-      font-size: 2rem;
+    .page-hero {
+      padding: 120px 0 40px;
     }
+
+    .page-hero__content h1,
+    .hero-suspended__content h1,
+    .hero-mosaic h1,
+    .hero-minimalist h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .hero-suspended__content p,
+    .hero-mosaic p {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Stack grid for Suspended (Servicios) */
+    .hero-suspended {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    /* Stack flex for Mosaic (Soluciones) */
+    .hero-mosaic {
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-suspended__image,
+    .hero-mosaic__images {
+      width: 100%;
+      margin: 0 auto;
+      order: 2; /* Put image/visuals below text */
+    }
+
+    .hero-suspended__content,
+    .hero-mosaic__content {
+      order: 1; /* Put text above image/visuals */
+    }
+
     .page-body {
       padding: 40px 0 60px;
+      text-align: center;
+    }
+
+    /* Center page body elements */
+    .page-body :global(p) {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .page-body :global(.cards-grid) {
+      grid-template-columns: 1fr;
     }
   }
 </style>

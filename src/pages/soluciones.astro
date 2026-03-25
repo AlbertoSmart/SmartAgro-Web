@@ -194,4 +194,44 @@ import TestPage from "../layouts/TestPage.astro";
     align-items: center;
     gap: 8px;
   }
+
+  @media (max-width: 768px) {
+    .intro-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .feature-detail {
+      order: 1; /* Title and text on top */
+      text-align: center;
+    }
+
+    .intro-image {
+      order: 2; /* Image on bottom */
+    }
+
+    .value-item {
+      text-align: center; /* Center these items */
+    }
+
+    .value-item__icon {
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-list li {
+      justify-content: center;
+      width: fit-content;
+    }
+  }
 </style>
