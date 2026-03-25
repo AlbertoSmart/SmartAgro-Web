@@ -1,0 +1,137 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getPostById, updatePost, getCategories } from "../../../lib/blog";
+
+// Check authentication
+const auth = Astro.cookies.get("admin_auth");
+if (!auth || auth.value !== "true") {
+  return Astro.redirect("/admin/login");
+}
+
+const { id } = Astro.params;
+const post = await getPostById(id as string);
+const categoriesList = await getCategories();
+
+if (!post) {
+  return Astro.redirect("/admin/dashboard");
+}
+
+let error = "";
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const title = data.get("title")?.toString();
+    const category = data.get("category")?.toString();
+    const excerpt = data.get("excerpt")?.toString();
+    const image = data.get("image")?.toString();
+    const content = data.get("content")?.toString();
+    const author = data.get("author")?.toString();
+
+    if (!title || !category || !excerpt || !image || !content) {
+      error = "Todos los campos principales son obligatorios.";
+    } else {
+      const selectedCat = categoriesList.find(c => c.id === category);
+      
+      await updatePost(id as string, {
+        title,
+        category,
+        categoryName: selectedCat?.name || category,
+        excerpt,
+        image,
+        content,
+        author: author || "SmartFenix Admin"
+      });
+      return Astro.redirect("/admin/dashboard");
+    }
+  } catch (e) {
+    if (e instanceof Error) error = e.message;
+  }
+}
+---
+
+<Layout title={`Editar Post: ${post.title}`} showNewsletter={false}>
+  <main class="post-editor-pro">
+    <div class="container medium-container">
+      <div class="form-card-pro">
+        <header class="form-header">
+          <a href="/admin/dashboard" class="back-link">← Volver al Panel</a>
+          <h1>Editar: {post.title}</h1>
+          <p>Los cambios se verán reflejados al instante en el blog.</p>
+        </header>
+
+        <form method="POST" class="admin-form-pro">
+          {error && <div class="error-msg">{error}</div>}
+
+          <div class="editor-grid">
+            <div class="left-col">
+              <div class="field">
+                <label for="title">Título del Artículo</label>
+                <input type="text" id="title" name="title" required value={post.title} />
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="category">Categoría</label>
+                  <select id="category" name="category" required>
+                    {categoriesList.map(cat => (
+                        <option value={cat.id} selected={cat.id === post.category}>{cat.name}</option>
+                    ))}
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="author">Autor</label>
+                  <input type="text" id="author" name="author" value={post.author} />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="image">URL de la Imagen de Cabecera</label>
+                <input type="url" id="image" name="image" required value={post.image} />
+              </div>
+
+              <div class="field">
+                <label for="excerpt">Resumen Corto (Listado)</label>
+                <textarea id="excerpt" name="excerpt" rows="2" required>{post.excerpt}</textarea>
+              </div>
+            </div>
+
+            <div class="right-col">
+              <div class="field">
+                <label for="content">Contenido del Artículo (Cuerpo completo)</label>
+                <textarea id="content" name="content" rows="18" required>{post.content}</textarea>
+                <p class="hint">Admite saltos de línea para nuevos párrafos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+             <button type="submit" class="btn-primary-admin">Guardar Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Same styles as new-post.astro for consistency */
+  .post-editor-pro { background: #f8fafc; min-height: 100vh; padding: 120px 0 80px; }
+  .medium-container { max-width: 1000px; margin: 0 auto; }
+  .form-card-pro { background: white; padding: 50px; border-radius: 32px; box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.08); border: 1px solid #eef2f1; }
+  .form-header { margin-bottom: 40px; }
+  .form-header h1 { font-size: 2.2rem; font-weight: 850; color: #0b1a14; margin-bottom: 8px; }
+  .back-link { display: inline-block; color: var(--color-turquoise); text-decoration: none; font-weight: 700; margin-bottom: 25px; }
+  .editor-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
+  .admin-form-pro { display: flex; flex-direction: column; gap: 30px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field label { font-size: 0.8rem; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.05em; }
+  .field input, .field select, .field textarea { padding: 14px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 0.95rem; outline: none; font-family: inherit; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--color-turquoise); box-shadow: 0 0 0 4px rgba(29, 185, 154, 0.1); }
+  .hint { font-size: 0.8rem; color: #94a3b8; margin-top: 8px; }
+  .form-actions { margin-top: 20px; border-top: 1px solid #f1f5f9; padding-top: 30px; text-align: right; }
+  .btn-primary-admin { background: var(--color-turquoise); color: white; padding: 18px 40px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; }
+  .btn-primary-admin:hover { background: var(--color-turquoise-dark); transform: translateY(-2px); box-shadow: 0 10px 25px rgba(29, 185, 154, 0.2); }
+  .error-msg { background: #fee2e2; color: #b91c1c; padding: 15px; border-radius: 12px; font-size: 0.95rem; margin-bottom: 20px; }
+  @media (max-width: 900px) { .editor-grid { grid-template-columns: 1fr; } .form-card-pro { padding: 30px; } }
+</style>

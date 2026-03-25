@@ -6,7 +6,8 @@
     "title": "IA aplicada al campo: El futuro del asesoramiento",
     "excerpt": "Cómo AgroAI está transformando la manera en que los agricultores interactúan con sus datos de telemetría de suelo y clima.",
     "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-    "date": "25 MAR 2024"
+    "date": "25 MAR 2024",
+    "content": "La Inteligencia Artificial no es el futuro, es el presente. En Smart Agro, hemos desarrollado algoritmos capaces de predecir necesidades hídricas con un 98% de precisión.\n\nEste sistema se conecta directamente con los sensores de humedad y temperatura del suelo, analizando en tiempo real la evapotranspiración y el estado hídrico de la planta. El resultado es un ahorro directo en la factura del agua y una mejora en la calidad del fruto."
   },
   {
     "id": "ecorregimenes-siex-2026",
@@ -15,7 +16,8 @@
     "title": "Ecorregímenes y SIEX: Guía de cumplimiento 2026",
     "excerpt": "Analizamos las claves para certificar tus prácticas agrarias y asegurar la tramitación de las ayudas de la PAC sin errores.",
     "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
-    "date": "20 MAR 2024"
+    "date": "20 MAR 2024",
+    "content": "El Cuaderno Digital de Explotación Agrícola (CUE) será obligatorio para todas las explotaciones a partir de 2026. Es vital empezar a digitalizar los registros ahora para evitar sanciones.\n\nEn este artículo técnico, revisamos los puntos críticos de la nueva normativa SIEX, cómo influye en el cobro de la PAC y por qué la automatización de datos es tu mejor aliada ante una inspección."
   },
   {
     "id": "dendrometria-latido-arboles",
@@ -24,6 +26,7 @@
     "title": "Dendrometría: Escuchando el latido de tus árboles",
     "excerpt": "La guía definitiva para entender el crecimiento del tronco y optimizar el riego deficitario controlado en leñosos.",
     "image": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800",
-    "date": "18 MAR 2024"
+    "date": "18 MAR 2024",
+    "content": "Un árbol que crece es un árbol sano. Los dendrómetros de precisión nos permiten medir micras de variación en el diámetro del tronco, detectando estrés hídrico incluso antes de que la planta muestre síntomas visuales.\n\nEsta técnica es fundamental en cultivos leñosos como el almendro o el olivar, donde optimizar cada litro de agua marca la diferencia entre una cosecha mediocre y una excepcional."
   }
 ]

@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { addPost } from "../../lib/blog";
+import { addPost, getCategories } from "../../lib/blog";
 
 // Check authentication
 const auth = Astro.cookies.get("admin_auth");
@@ -9,6 +9,8 @@ if (!auth || auth.value !== "true") {
 }
 
 let error = "";
+const categoriesList = await getCategories();
+
 if (Astro.request.method === "POST") {
   try {
     const data = await Astro.request.formData();
@@ -16,23 +18,23 @@ if (Astro.request.method === "POST") {
     const category = data.get("category")?.toString();
     const excerpt = data.get("excerpt")?.toString();
     const image = data.get("image")?.toString();
+    const content = data.get("content")?.toString();
+    const author = data.get("author")?.toString();
 
-    if (!title || !category || !excerpt || !image) {
-      error = "Todos los campos son obligatorios.";
+    if (!title || !category || !excerpt || !image || !content) {
+      error = "Todos los campos principales (Título, Categoría, Resumen, Imagen y Contenido) son obligatorios.";
     } else {
-      const categoryNames: Record<string, string> = {
-        'normativa': 'Normativa SIEX y PAC',
-        'tecnologia': 'Tecnología de Precisión',
-        'gestion': 'Gestión de Explotación'
-      };
+      const selectedCat = categoriesList.find(c => c.id === category);
 
       const newPost = {
-        id: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''),
+        id: title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-').replace(/[^\w-]/g, ''),
         title,
         category,
-        categoryName: categoryNames[category] || category,
+        categoryName: selectedCat?.name || category,
         excerpt,
         image,
+        content,
+        author: author || "SmartFenix Admin",
         date: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase()
       };
 
@@ -46,43 +48,63 @@ if (Astro.request.method === "POST") {
 ---
 
 <Layout title="Nuevo Post – Admin" showNewsletter={false}>
-  <main class="post-editor">
-    <div class="container tiny-container">
-      <div class="form-card-admin">
+  <main class="post-editor-pro">
+    <div class="container medium-container">
+      <div class="form-card-pro">
         <header class="form-header">
           <a href="/admin/dashboard" class="back-link">← Volver al Panel</a>
-          <h1>Crear Publicación</h1>
-          <p>Introduce los detalles del nuevo artículo técnico.</p>
+          <h1>Crear Publicación Completa</h1>
+          <p>Los campos de contenido se formatearán profesionalmente de forma automática.</p>
         </header>
 
-        <form method="POST" class="admin-form">
+        <form method="POST" class="admin-form-pro">
           {error && <div class="error-msg">{error}</div>}
 
-          <div class="field">
-            <label for="title">Título del Artículo</label>
-            <input type="text" id="title" name="title" required placeholder="Ej: Avances en teledetección..." />
+          <div class="editor-grid">
+            <div class="left-col">
+              <div class="field">
+                <label for="title">Título del Artículo</label>
+                <input type="text" id="title" name="title" required placeholder="Ej: Avances en teledetección..." />
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="category">Categoría</label>
+                  <select id="category" name="category" required>
+                    {categoriesList.map(cat => (
+                        <option value={cat.id}>{cat.name}</option>
+                    ))}
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="author">Autor</label>
+                  <input type="text" id="author" name="author" placeholder="Nombre del autor (opcional)" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="image">URL de la Imagen de Cabecera</label>
+                <input type="url" id="image" name="image" required placeholder="https://images.unsplash.com/..." />
+              </div>
+
+              <div class="field">
+                <label for="excerpt">Resumen Corto (Listado)</label>
+                <textarea id="excerpt" name="excerpt" rows="2" required placeholder="Breve enganche para el listado..."></textarea>
+              </div>
+            </div>
+
+            <div class="right-col">
+              <div class="field field-full">
+                <label for="content">Contenido del Artículo (Cuerpo completo)</label>
+                <textarea id="content" name="content" rows="16" required placeholder="Escribe aquí el resto de la noticia. Se formateará con párrafos automáticos."></textarea>
+                <p class="hint">Admite saltos de línea para nuevos párrafos. Úsalo para noticias, informes o guías técnicas completas.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="field">
-            <label for="category">Categoría</label>
-            <select id="category" name="category" required>
-              <option value="normativa">Normativa SIEX y PAC</option>
-              <option value="tecnologia">Tecnología de Precisión</option>
-              <option value="gestion">Gestión de Explotación</option>
-            </select>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary-admin">Publicar Artículo en el Blog</button>
           </div>
-
-          <div class="field">
-            <label for="image">URL de la Imagen (Unsplash o similar)</label>
-            <input type="url" id="image" name="image" required placeholder="https://images.unsplash.com/..." />
-          </div>
-
-          <div class="field">
-            <label for="excerpt">Resumen / Extracto</label>
-            <textarea id="excerpt" name="excerpt" rows="4" required placeholder="Breve descripción para el listado..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-publish">Publicar en el Blog</button>
         </form>
       </div>
     </div>
@@ -90,72 +112,61 @@ if (Astro.request.method === "POST") {
 </Layout>
 
 <style>
-  .post-editor {
+  .post-editor-pro {
     background: #f8fafc;
     min-height: 100vh;
     padding: 120px 0 80px;
   }
 
-  .tiny-container {
-    max-width: 600px;
+  .medium-container {
+    max-width: 1000px;
     margin: 0 auto;
   }
 
-  .form-card-admin {
+  .form-card-pro {
     background: white;
-    padding: 40px;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    padding: 50px;
+    border-radius: 32px;
+    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.08);
     border: 1px solid #eef2f1;
   }
 
-  .form-header {
-    margin-bottom: 30px;
-  }
+  .form-header { margin-bottom: 40px; }
+  .form-header h1 { font-size: 2.2rem; font-weight: 850; color: #0b1a14; margin-bottom: 8px; }
 
   .back-link {
     display: inline-block;
     color: var(--color-turquoise);
     text-decoration: none;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-  }
-
-  .form-header h1 {
-    font-size: 2rem;
-    font-weight: 850;
-    color: #0b1a14;
-    margin-bottom: 8px;
-  }
-
-  .admin-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .field label {
-    font-size: 0.8rem;
     font-weight: 700;
-    color: #334155;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-bottom: 25px;
   }
+
+  .editor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+  }
+
+  .admin-form-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field label { font-size: 0.8rem; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.05em; }
 
   .field input, .field select, .field textarea {
     padding: 14px;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     outline: none;
     font-family: inherit;
+    transition: all 0.3s ease;
   }
 
   .field input:focus, .field select:focus, .field textarea:focus {
@@ -163,29 +174,44 @@ if (Astro.request.method === "POST") {
     box-shadow: 0 0 0 4px rgba(29, 185, 154, 0.1);
   }
 
-  .btn-publish {
+  .hint { font-size: 0.8rem; color: #94a3b8; margin-top: 8px; }
+
+  .form-actions {
+    margin-top: 20px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 30px;
+    text-align: right;
+  }
+
+  .btn-primary-admin {
     background: var(--color-turquoise);
     color: white;
-    padding: 18px;
+    padding: 18px 40px;
     border: none;
     border-radius: 12px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
   }
 
-  .btn-publish:hover {
+  .btn-primary-admin:hover {
     background: var(--color-turquoise-dark);
     transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(29, 185, 154, 0.2);
   }
 
   .error-msg {
     background: #fee2e2;
     color: #b91c1c;
     padding: 15px;
-    border-radius: 10px;
-    font-size: 0.9rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .editor-grid { grid-template-columns: 1fr; }
+    .form-card-pro { padding: 30px; }
   }
 </style>

@@ -1,13 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getPosts } from "../lib/blog";
+import { getPosts, getCategories } from "../lib/blog";
 
-const categories = [
-  { id: 'normativa', name: 'Normativa SIEX y PAC' },
-  { id: 'tecnologia', name: 'Tecnología de Precisión' },
-  { id: 'gestion', name: 'Gestión de Explotación' }
-];
-
+const categories = await getCategories();
 const posts = await getPosts();
 ---
 

@@ -25,9 +25,12 @@ const posts = await getPosts();
       <header class="dashboard-header">
         <div>
           <h1>Panel de Control</h1>
-          <p>Bienvenido, SmartFenix. Gestiona las publicaciones del blog.</p>
+          <p>Bienvenido, SmartFenix. Gestiona las publicaciones y categorías.</p>
         </div>
-        <a href="/admin/nuevo-post" class="btn-new">Crear Nueva Publicación</a>
+        <div class="header-actions">
+          <a href="/admin/categorias" class="btn-secondary-admin">Gestionar Categorías</a>
+          <a href="/admin/nuevo-post" class="btn-new">Crear Nueva Publicación</a>
+        </div>
       </header>
 
       <section class="posts-list-section">
@@ -48,10 +51,13 @@ const posts = await getPosts();
                   <td class="title-cell"><strong>{post.title}</strong></td>
                   <td><span class="badge">{post.categoryName}</span></td>
                   <td class="text-right">
-                    <form method="POST" style="display:inline">
-                      <input type="hidden" name="delete-id" value={post.id} />
-                      <button type="submit" class="btn-delete" onclick="return confirm('¿Seguro que quieres borrar este post?')">Borrar</button>
-                    </form>
+                    <div class="actions-group">
+                      <a href={`/admin/editar-post/${post.id}`} class="btn-edit">Editar</a>
+                      <form method="POST" style="display:inline">
+                        <input type="hidden" name="delete-id" value={post.id} />
+                        <button type="submit" class="btn-delete" onclick="return confirm('¿Seguro que quieres borrar este post?')">Borrar</button>
+                      </form>
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -93,6 +99,11 @@ const posts = await getPosts();
     color: #64748b;
   }
 
+  .header-actions {
+    display: flex;
+    gap: 15px;
+  }
+
   .btn-new {
     background: var(--color-turquoise);
     color: white;
@@ -106,6 +117,45 @@ const posts = await getPosts();
   .btn-new:hover {
     background: var(--color-turquoise-dark);
     transform: translateY(-2px);
+  }
+
+  .btn-secondary-admin {
+    background: #FFFFFF;
+    color: #0b1a14;
+    border: 1px solid #e2e8f0;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary-admin:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+  }
+
+  .actions-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .btn-edit {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-edit:hover {
+    background: #e2e8f0;
+    color: #1e293b;
   }
 
   .admin-table {

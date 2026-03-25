@@ -1,0 +1,117 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCategories, saveCategories } from "../../lib/blog";
+
+// Check authentication
+const auth = Astro.cookies.get("admin_auth");
+if (!auth || auth.value !== "true") {
+  return Astro.redirect("/admin/login");
+}
+
+let categories = await getCategories();
+let message = "";
+
+if (Astro.request.method === "POST") {
+  const data = await Astro.request.formData();
+  const action = data.get("action")?.toString();
+
+  if (action === "add") {
+    const name = data.get("cat-name")?.toString();
+    if (name) {
+      const id = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-').replace(/[^\w-]/g, '');
+      if (!categories.find(c => c.id === id)) {
+        categories.push({ id, name });
+        await saveCategories(categories);
+        message = `Categoría "${name}" añadida.`;
+      }
+    }
+  } else if (action === "delete") {
+    const id = data.get("cat-id")?.toString();
+    if (id) {
+      categories = categories.filter(c => c.id !== id);
+      await saveCategories(categories);
+      message = "Categoría eliminada.";
+    }
+  }
+}
+---
+
+<Layout title="Gestionar Categorías – Admin" showNewsletter={false}>
+  <main class="admin-categories">
+    <div class="container small-container">
+      <header class="dashboard-header">
+        <div>
+          <a href="/admin/dashboard" class="back-link">← Volver al Panel</a>
+          <h1>Categorías del Blog</h1>
+          <p>Crea o elimina las categorías globales para tus artículos.</p>
+        </div>
+      </header>
+
+      {message && <div class="success-msg">{message}</div>}
+
+      <div class="cat-split">
+        <div class="cat-form card">
+          <h3>Nueva Categoría</h3>
+          <form method="POST">
+            <input type="hidden" name="action" value="add" />
+            <div class="field">
+              <label for="cat-name">Nombre de Categoría</label>
+              <input type="text" id="cat-name" name="cat-name" required placeholder="Ej: Casos de Éxito" />
+            </div>
+            <button type="submit" class="btn-add">Añadir Categoría</button>
+          </form>
+        </div>
+
+        <div class="cat-list card">
+          <h3>Existentes</h3>
+          <ul class="list">
+            {categories.map(cat => (
+              <li>
+                <span class="cat-name"><strong>{cat.name}</strong> <small>({cat.id})</small></span>
+                <form method="POST" style="margin:0">
+                  <input type="hidden" name="action" value="delete" />
+                  <input type="hidden" name="cat-id" value={cat.id} />
+                  <button type="submit" class="btn-icon-del" title="Eliminar" onclick={`return confirm('¿Borrar categoría "${cat.name}"?')`}>✕</button>
+                </form>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .admin-categories { background: #f8fafc; min-height: 100vh; padding: 120px 0 80px; }
+  .small-container { max-width: 800px; margin: 0 auto; }
+  .dashboard-header { margin-bottom: 40px; }
+  .dashboard-header h1 { font-size: 2.2rem; font-weight: 850; color: #0b1a14; }
+  .back-link { display: inline-block; color: var(--color-turquoise); text-decoration: none; font-weight: 700; margin-bottom: 20px; }
+  
+  .cat-split { display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; }
+  .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border: 1px solid #eef2f1; }
+  .card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 20px; color: #0b1a14; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; }
+
+  .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .field label { font-size: 0.8rem; font-weight: 700; color: #64748b; }
+  .field input { padding: 12px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
+
+  .btn-add { background: var(--color-turquoise); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 700; cursor: pointer; width: 100%; transition: all 0.3s ease; }
+  .btn-add:hover { background: var(--color-turquoise-dark); transform: translateY(-1px); }
+
+  .list { list-style: none; padding: 0; }
+  .list li { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f8fafc; }
+  .list li:last-child { border: none; }
+  
+  .cat-name small { color: #94a3b8; font-family: monospace; margin-left: 8px; }
+
+  .btn-icon-del { background: #fee2e2; color: #b91c1c; border: none; width: 28px; height: 28px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; }
+  .btn-icon-del:hover { background: #fecaca; }
+
+  .success-msg { background: #dcfce7; color: #15803d; padding: 15px; border-radius: 12px; margin-bottom: 30px; font-weight: 600; text-align: center; }
+
+  @media (max-width: 700px) {
+    .cat-split { grid-template-columns: 1fr; }
+  }
+</style>
