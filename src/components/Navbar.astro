@@ -487,8 +487,8 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       z-index: 10000;
     }
     .navbar__content {
-      display: flex !important;
-      justify-content: space-between !important;
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
       align-items: center !important;
       height: 60px !important;
       width: 100% !important;
@@ -496,18 +496,15 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       position: relative !important;
     }
     .navbar__brand {
+      grid-column: 1 !important;
       display: flex !important;
-      align-items: center !important;
-      z-index: 2 !important;
+      justify-content: flex-start !important;
     }
     .navbar__center-title {
-      position: absolute !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
+      grid-column: 2 !important;
       display: flex !important;
       justify-content: center !important;
-      z-index: 1 !important;
-      width: auto !important;
+      text-align: center !important;
     }
     .navbar__center-title a {
       font-size: 1.15rem !important;
@@ -516,11 +513,13 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       color: #FFFFFF !important;
     }
     .navbar__right-actions {
+      grid-column: 3 !important;
       display: flex !important;
       flex-direction: row !important;
+      justify-content: flex-end !important;
       align-items: center !important;
+      justify-self: end !important;
       gap: 12px !important;
-      z-index: 2 !important;
     }
     .admin-access-btn {
       color: rgba(255,255,255,0.85) !important;
