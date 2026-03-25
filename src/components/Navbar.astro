@@ -803,12 +803,51 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 
 <script is:inline>
   function nuclearNavbarFix() {
-    if (window.innerWidth > 1024) return;
-    
-    // Recovery Logic: Re-anchoring elements if the browser loses the layout
+    const isMobile = window.innerWidth <= 1024;
     const content = document.querySelector('.navbar__content');
     if (!content) return;
     
+    // Elements to manage
+    const brand = content.querySelector('.navbar__brand');
+    const title = content.querySelector('.navbar__center-title');
+    const actions = content.querySelector('.navbar__right-actions');
+
+    if (!isMobile) {
+      // CLEANUP PHASE (Desktop Mode)
+      // Remove all recovery styles to let CSS take over again
+      content.style.removeProperty('display');
+      content.style.removeProperty('position');
+      content.style.removeProperty('height');
+      content.style.removeProperty('width');
+      content.style.removeProperty('padding');
+
+      if (brand) {
+        brand.style.removeProperty('position');
+        brand.style.removeProperty('left');
+        brand.style.removeProperty('top');
+        brand.style.removeProperty('transform');
+        brand.style.removeProperty('display');
+        brand.style.removeProperty('z-index');
+      }
+
+      if (title) {
+        title.style.setProperty('display', 'none', 'important');
+      }
+
+      if (actions) {
+        actions.style.removeProperty('position');
+        actions.style.removeProperty('right');
+        actions.style.removeProperty('top');
+        actions.style.removeProperty('transform');
+        actions.style.removeProperty('display');
+        actions.style.removeProperty('flex-direction');
+        actions.style.removeProperty('gap');
+        actions.style.removeProperty('z-index');
+      }
+      return;
+    }
+    
+    // RECOVERY PHASE (Mobile Mode)
     // 1. Force container to be a relative box
     content.style.setProperty('display', 'block', 'important');
     content.style.setProperty('position', 'relative', 'important');
@@ -817,7 +856,6 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     content.style.setProperty('padding', '0', 'important');
     
     // 2. Lock Logo (LEFT)
-    const brand = content.querySelector('.navbar__brand');
     if (brand) {
       brand.style.setProperty('position', 'absolute', 'important');
       brand.style.setProperty('left', '16px', 'important');
@@ -828,7 +866,6 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     }
     
     // 3. Lock Title (CENTER)
-    const title = content.querySelector('.navbar__center-title');
     if (title) {
       title.style.setProperty('position', 'absolute', 'important');
       title.style.setProperty('left', '50%', 'important');
@@ -851,7 +888,6 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
     }
     
     // 4. Lock Icons (RIGHT)
-    const actions = content.querySelector('.navbar__right-actions');
     if (actions) {
       actions.style.setProperty('position', 'absolute', 'important');
       actions.style.setProperty('right', '16px', 'important');
