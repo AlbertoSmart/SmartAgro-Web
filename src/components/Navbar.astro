@@ -17,6 +17,11 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
 <nav class="navbar" id="navbar">
   <div class="navbar__content container">
     <div class="navbar__brand">
+      <a href="/admin/login" class="admin-access-btn" aria-label="Admin Panel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
       <a href="/" class="navbar__logo">
         <Image
           src={logo}
@@ -310,6 +315,19 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
   .navbar__brand {
     display: flex;
     align-items: center;
+    gap: 15px;
+  }
+
+  .admin-access-btn {
+    color: rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .admin-access-btn:hover {
+    color: var(--color-turquoise);
+    transform: scale(1.1);
   }
 
   .navbar__logo img {
@@ -456,7 +474,17 @@ const isParentActive = (parentPath: string) => pathname.startsWith(parentPath);
       z-index: 10000;
     }
     .navbar__brand {
-      padding-left: 15px;
+      padding-left: 10px;
+      gap: 12px;
+    }
+    .admin-access-btn {
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+    .admin-access-btn:hover {
+      color: var(--color-turquoise);
     }
     .navbar__logo img {
       height: 32px !important;
