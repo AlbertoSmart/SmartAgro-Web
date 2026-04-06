@@ -54,6 +54,12 @@ const posts = await getPosts();
             <input type="text" placeholder="Buscar normativa o tecnología..." />
             <button>Buscar</button>
           </div>
+          
+          <div class="inner-trazabilidad-card" style="margin-top: 24px; padding: 16px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e0e0e0;">
+            <h4 style="font-size: 0.85rem; font-weight: 800; margin-bottom: 8px; text-transform: uppercase;">Trazabilidad GPS DARP</h4>
+            <p class="siex-note" style="margin-bottom: 12px; font-size: 0.8rem; line-height: 1.5; color: #666666;">Certifica cada aplicación y transporte ante la administración. Informes automáticos de rutas y coberturas.</p>
+            <a href="/herramientas/trazabilidad" class="widget-link" style="font-size: 0.8rem; color: #000000; text-decoration: none; font-weight: 700; border-bottom: 1px solid #000000;">Explorar Servicio →</a>
+          </div>
         </div>
 
         <div class="sidebar-widget siex-status-widget">
@@ -111,21 +117,21 @@ const posts = await getPosts();
 
   .blog-main-layout {
     display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 80px;
-    padding-top: 80px;
-    padding-bottom: 120px;
+    grid-template-columns: 1fr 340px;
+    gap: 120px;
+    padding-top: 100px;
+    padding-bottom: 140px;
   }
 
   .category-group {
-    margin-bottom: 100px;
+    margin-bottom: 140px;
   }
 
   .category-header {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-bottom: 48px;
+    gap: 32px;
+    margin-bottom: 64px;
   }
 
   .category-header h2 {
@@ -146,7 +152,7 @@ const posts = await getPosts();
   .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 48px;
+    gap: 64px;
   }
 
   .blog-card-clean {
@@ -180,7 +186,7 @@ const posts = await getPosts();
   }
 
   .card-body {
-    padding: 24px;
+    padding: 32px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -244,10 +250,10 @@ const posts = await getPosts();
 
   .sidebar-widget {
     background: #ffffff;
-    padding: 24px;
+    padding: 32px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
   }
 
   .sidebar-widget h3 {

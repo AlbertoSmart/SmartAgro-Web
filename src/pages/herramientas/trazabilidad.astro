@@ -68,15 +68,15 @@ import TestPage from "../../layouts/TestPage.astro";
         <section class="faq-section">
             <h2 class="text-center">Consultas sobre Trazabilidad GPS</h2>
             <div class="faq-grid">
-                <div class="faq-item">
+                <div class="faq-item faq-card">
                     <h3>¿Es válido este sistema para la administración DARP?</h3>
                     <p>Sí, nuestro sistema cumple con los requisitos técnicos de envío telemático de datos de posición y caudal exigidos por el DARP para el transporte de deyecciones ganaderas.</p>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item faq-card">
                     <h3>¿Qué ocurre si el conductor se desvía de la ruta?</h3>
                     <p>El sistema detecta desviaciones significativas y puede enviar alertas automáticas al responsable de flota, permitiendo justificar el motivo ante posibles inspecciones.</p>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item faq-card">
                     <h3>¿Los datos son privados y seguros?</h3>
                     <p>Cumplimos estrictamente con la LOPD. Los datos de trazabilidad solo son accesibles por ti y por los técnicos que tú autorices, además del envío obligatorio a la administración si así lo solicitas.</p>
                 </div>
@@ -164,6 +164,48 @@ import TestPage from "../../layouts/TestPage.astro";
         color: rgba(255,255,255,0.8) !important;
         font-size: 0.95rem;
         line-height: 1.6;
+    }
+
+    .faq-section {
+        margin: 80px 0;
+    }
+
+    .faq-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 40px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .faq-card {
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        border-radius: 12px;
+        padding: 32px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faq-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .faq-card h3 {
+        color: var(--color-turquoise, #1DB99A);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .faq-card p {
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
     }
 
 </style>
