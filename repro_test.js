@@ -2,7 +2,7 @@
 import fs from 'fs';
 
 // Extract LOCAL_KNOWLEDGE from the file manually
-const content = fs.readFileSync('/Users/alejandrosierra/Desktop/Astro/agreeable-altitude/src/pages/api/chat.ts', 'utf8');
+const content = fs.readFileSync(new URL('./src/pages/api/chat.ts', import.meta.url), 'utf8');
 
 // Simple parser for LOCAL_KNOWLEDGE
 const blocks = [];

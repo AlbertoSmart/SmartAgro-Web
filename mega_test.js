@@ -1,7 +1,7 @@
 
 import fs from 'fs';
 
-const CHAT_PATH = '/Users/alejandrosierra/Desktop/Astro/agreeable-altitude/src/pages/api/chat.ts';
+const CHAT_PATH = new URL('./src/pages/api/chat.ts', import.meta.url);
 
 // --- HELPERS ---
 
