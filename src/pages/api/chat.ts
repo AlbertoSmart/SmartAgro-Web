@@ -53,7 +53,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['prescripcion digital', 'variable rate', 'mapa de aplicacion', 'ndvi', 'satelite'],
+    keywords: ['prescripcion digital', 'variable rate', 'mapa de aplicacion', 'ndvi', 'satelite', 'satélite'],
     response: 'A través de nuestro visor GIS, cargamos imágenes satelitales con resolución semanal de índices como el NDVI. Estas capas permiten identificar la variabilidad del vigor vegetativo intra-parcela y generar mapas de aplicación de tasa variable (Variable Rate). Esta receta se transfiere al procesador del tractor, permitiendo realizar prescriptiva digital, lo que supone aplicar el fitosanitario sólo donde hay masa foliar, logrando hasta un 40% de ahorro en insumos. [Más sobre prescriptiva](/herramientas/prescripcion).',
     link: '/herramientas/prescripcion'
   },
@@ -442,7 +442,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['climaticos', '8 parametros', 'lorawan', 'precipitacion', 'viento', 'radiacion', 'metereologia'],
+    keywords: ['climáticos', '8 parámetros', 'lorawan', 'precipitación', 'viento', 'radiación', 'meteorología'],
     response: 'La toma de decisiones agrarias arranca con datos microclimáticos precisos. Nuestra **estación meteorológica** registra temperatura, humedad, presión, radiación solar y viento.\n\nSe integra directamente en el Cuaderno Digital para calcular la evapotranspiración (ET0) y ajustar los coeficientes de riego del cultivo.\n\n[Míralo en Sensores de Clima](/sensores/clima)',
     link: '/sensores/clima'
   },
@@ -520,26 +520,26 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['tomate de industria', 'horticola intensivo', 'podredumbre apical', 'calcio', 'riego goteo'],
+    keywords: ['tomate de industria', 'hortícola intensivo', 'podredumbre apical', 'calcio', 'riego goteo'],
     response: 'En el **tomate de industria**, las principales pérdidas económicas provienen de desórdenes osmóticos como la podredumbre apical causada por fluctuaciones hídricas.\n\nDesplegamos tensiómetros digitales que garantizan que el bulbo húmedo se mantenga siempre en su punto óptimo, erradicando taras comerciales en cosecha.\n\n[Ver Sensores de Suelo](/sensores/suelo)',
     link: '/sensores/suelo'
   },
   {
     isTechnical: true,
-    keywords: ['brocoli', 'coliflor', 'brassicas', 'abono de fondo'],
+    keywords: ['brócoli', 'coliflor', 'brásicas', 'abono de fondo'],
     response: 'Las **brásicas** como el brócoli tienen una altísima sensibilidad al lavado de nitrógeno. Nuestro sistema combina sensores NPK para mapear la reserva real de nitratos post-abonado.\n\nValidamos que el fertilizante persista en el rango radicular y no se lixivie, evitando sanciones medioambientales en Zonas Vulnerables.\n\n[Consultar Sensores NPK](/sensores/suelo)',
     link: '/sensores/suelo'
   },
   {
     isTechnical: true,
-    keywords: ['lechuga', 'iceberg', 'horeca', 'estres termico'],
-    response: 'La lechuga, de sistema radicular superficial y extrema sensibilidad a sales, exige que el bulbo de riego se controle al centímetro en los primeros 20 centímetros de suelo. Con nuestras sondas FDR compactas, te aseguras de no aplicar agua que migrará por debajo de la zona útil, desperdiciando agua y fertilizante. Simultáneamente, utilizamos radiómetros y sensores de temperatura foliar para recomendar micro-aspersiones climáticas en episodios de ola de calor, mitigando el estrés térmico, frenando el espigado prematuro y salvaguardando la calidad comercial del cultivo. Informate en [Sensores de Planta](/sensores/planta).',
+    keywords: ['lechuga', 'iceberg', 'horeca', 'estrés térmico'],
+    response: 'La lechuga, de sistema radicular superficial y extrema sensibilidad a sales, exige que el bulbo de riego se controle al centímetro en los primeros 20 centímetros de suelo. Con nuestras sondas FDR compactas, te aseguras de no aplicar agua que migrará por debajo de la zona útil, desperdiciando agua y fertilizante. Simultáneamente, utilizamos radiómetros y sensores de temperatura foliar para recomendar micro-aspersiones climáticas en episodios de ola de calor, mitigando el estrés térmico, frenando el espigado prematuro y salvaguardando la calidad comercial del cultivo. Infórmate en [Sensores de Planta](/sensores/planta).',
     link: '/sensores/planta'
   },
   {
     isTechnical: true,
     keywords: ['floracion', 'cuajado mango', 'subtropicales'],
-    response: 'Para la rentabilidad del mango, orquestar una floración vigorosa y evitar la caída dramática de frutos en el cuajado son factores determinantes. Usamos estaciones metereológicas avanzadas en el corazón del huerto para registrar la integral térmica (grados acumulados) y modelizar el estrés térmico, complementado con sensores de potencial mátrico. Estas métricas instruyen sistemas de riego de ultra-precisión que mantienen el ecosistema en picos fenológicos óptimos, evitando la abortación masiva de panículas provocada por choques climáticos y garantizando un calibre premium europeo.',
+    response: 'Para la rentabilidad del mango, orquestar una floración vigorosa y evitar la caída dramática de frutos en el cuajado son factores determinantes. Usamos estaciones meteorológicas avanzadas en el corazón del huerto para registrar la integral térmica (grados acumulados) y modelizar el estrés térmico, complementado con sensores de potencial mátrico. Estas métricas instruyen sistemas de riego de ultra-precisión que mantienen el ecosistema en picos fenológicos óptimos, evitando la abortación masiva de panículas provocada por choques climáticos y garantizando un calibre premium europeo.',
     link: '/sensores/clima'
   },
   {
@@ -581,7 +581,7 @@ const LOCAL_KNOWLEDGE = [
   {
     isTechnical: true,
     keywords: ['aphididae', 'melaza', 'virus planta', 'hormigas'],
-    response: 'Las explosiones masivas de pulgón no sólo chupan savia menguando fuertemente el vigor vegetativo; son los grandes transmisores de los temibles virus botánicos y precursores absolutos del hongo negrilla (Fumagina) que bloquea drásticamente la radiación PAR foliar. Analizando con algoritmos predictivos las tasas de multiplicación del afídido versus las condiciones termo-pluviometrícas, nuestra matriz sugiere umbrales de tratamiento temprano focalizado en rebrotes jóvenes. Así logrando contener la colonización con dosis fitosanitarias reducidísimas y conservando el equilibrio trófico natural a lo largo de la campaña entera.',
+    response: 'Las explosiones masivas de pulgón no sólo chupan savia menguando fuertemente el vigor vegetativo; son los grandes transmisores de los temibles virus botánicos y precursores absolutos del hongo negrilla (Fumagina) que bloquea drásticamente la radiación PAR foliar. Analizando con algoritmos predictivos las tasas de multiplicación del afídido versus las condiciones termo-pluviométricas, nuestra matriz sugiere umbrales de tratamiento temprano focalizado en rebrotes jóvenes. Así logrando contener la colonización con dosis fitosanitarias reducidísimas y conservando el equilibrio trófico natural a lo largo de la campaña entera.',
     link: '/sinergias/ipmwise'
   },
   {
@@ -629,12 +629,12 @@ const LOCAL_KNOWLEDGE = [
   {
     isTechnical: true,
     keywords: ['par', 'luz planta', 'mallas de sombreo', 'lux'],
-    response: 'Asumir empíricamente el espectro solar es obsoleto, la energía del sol únicamente activa la bioenzimática en un rango medible asimilable de longitud lumínica. Distribuimos potentes Sensores de Radiación PAR (Radiación Fotosintéticamente Activa) compuestos con espectrómetros cuánticos ultra-frecuencia que revelan la incidencia fotónica real que acciona los meristemos. Dominando milimetricamente esta métrica logras decidir arquitectónicamente el cierre robótico automatizado de techos mallas en cultivo indoor e invernadero sofisticado controlando a antojo el letargo vegetativo para salvarte de quemaduras y abrasamiento oxidativos estivales crónicos en frutos primor.',
+    response: 'Asumir empíricamente el espectro solar es obsoleto, la energía del sol únicamente activa la bioenzimática en un rango medible asimilable de longitud lumínica. Distribuimos potentes Sensores de Radiación PAR (Radiación Fotosintéticamente Activa) compuestos con espectrómetros cuánticos ultra-frecuencia que revelan la incidencia fotónica real que acciona los meristemos. Dominando milimétricamente esta métrica logras decidir arquitectónicamente el cierre robótico automatizado de techos mallas en cultivo indoor e invernadero sofisticado controlando a antojo el letargo vegetativo para salvarte de quemaduras y abrasamiento oxidativos estivales crónicos en frutos primor.',
     link: '/sensores/clima-estacion'
   },
   {
     isTechnical: true,
-    keywords: ['pluviometro', 'precipitacion resolucion', 'milimetros', 'lluvia caida', 'cazoleta', 'balance hidrico'],
+    keywords: ['pluviometro', 'pluviómetro', 'precipitacion resolucion', 'precipitación resolución', 'milimetros', 'lluvia caida', 'lluvia caída', 'cazoleta', 'balance hidrico', 'balance hídrico'],
     response: 'Delegar en pronósticos interpolados a docenas de kilómetros desata la ruina de los cálculos de fertirrigación. Las fincas aisladas poseen un micro-clima intrínseco. Distribuimos eficientes Pluviómetros Aerodinámicos High-Resolution con un calibre magnético de cazoleta oscilante extrema (0.1 mm), que captan escrupulosamente los rocíos de condensación minúscula matutina y transfiere a nuestra red el balance final. Cada centímetro cúbico que es almacenado es sumado activamente en la matriz agronómica, cortando la electro-válvula y bloqueando automáticamente dispendios tarifarios imperdonables de caudales hidroeléctricos de reserva. Amortizable de por vida.',
     link: '/sensores/clima-estacion'
   },
@@ -868,7 +868,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['tomate', 'horticola', 'invernadero'],
+    keywords: ['tomate', 'hortícola', 'invernadero'],
     response: 'En **Invernaderos e Intensivos**, el control del clima es absoluto. Recomendamos:\n\n- **Sensores de Humectación Foliar:** Para tratar solo cuando hay riesgo real de hongos.\n- **Tensiómetros Digitales:** Para mantener el sustrato en el rango de saturación óptimo (cbars).\n\n[Control de Invernaderos](/sensores/planta)',
     link: '/sensores/planta'
   },
@@ -1066,13 +1066,13 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['co2 invernadero', 'enriquecimiento carbonico', 'partes por millon'],
+    keywords: ['co2 invernadero', 'enriquecimiento carbónico', 'partes por millón'],
     response: 'El **Enriquecimiento con CO2** en invernaderos cerrados puede aumentar el rendimiento hasta un 30%. \n\nMantenemos niveles de 800-1000 ppm de CO2 durante las horas de máxima radiación, siempre monitorizando que el VPD no sea excesivo, para asegurar que los estomas están abiertos y la planta puede asimilar el carbono inyectado.\n\n[Control Atmosférico](/sensores/clima)',
     link: '/sensores/clima'
   },
   {
     isTechnical: true,
-    keywords: ['caudalimetro', 'gestion de agua', 'telemetria riego'],
+    keywords: ['caudalímetro', 'gestión de agua', 'telemetría riego'],
     response: 'La instalación de **Caudalímetros de Pulsos** es vital para auditar tu sistema de riego. \n\nCruzamos el dato de litros reales inyectados con la humedad detectada por las sondas FDR. Si hay mucha agua aplicada pero poca humedad registrada, el sistema genera una alerta por rotura de tubería o filtración profunda fuera del bulbo radicular. \n\n[Auditoría Hídrica](/soluciones/agricultores)',
     link: '/soluciones/agricultores'
   },
@@ -1090,7 +1090,7 @@ const LOCAL_KNOWLEDGE = [
   },
   {
     isTechnical: true,
-    keywords: ['problema sensor', 'no envia datos', 'fallo lectura', 'error telemetria', 'lora no conecta', 'bateria baja'],
+    keywords: ['problema sensor', 'no envía datos', 'fallo lectura', 'error telemetría', 'lora no conecta', 'batería baja'],
     response: 'Si un sensor ha dejado de informar a SmartAgro, sigue este protocolo de ingeniería:\n\n1. **Verificación de Enlace:** Comprueba si el Gateway LoRaWAN está encendido y tiene conexión a internet. El 90% de los fallos se deben a microcortes de corriente en la finca.\n2. **Inspección Visual:** Verifica que el sensor no haya sido golpeado por maquinaria o que el cable de la sonda FDR no esté dañado.\n3. **Carga de Batería:** En periodos de niebla prolongada, el panel solar podría no cargar lo suficiente. Consulta el nivel de voltaje en tu panel de control.\n\n[Guía de Soporte Técnico](/contacto)',
     link: '/contacto'
   },
