@@ -19,6 +19,7 @@ interface Props {
   image?: string;
   mosaicImages?: string[];
   heroBackground?: string;
+  heroSectionClass?: string;
 }
 
 const {
@@ -30,6 +31,7 @@ const {
   mosaicImages = [],
   image,
   heroBackground,
+  heroSectionClass = "",
 } = Astro.props;
 
 // Specific data/visuals for different layouts
@@ -49,7 +51,7 @@ const pageHeroStyle =
     <section class={`page-hero page-hero--${variant} page-hero--${layoutType}`} style={pageHeroStyle}>
       <div class="container page-hero__container">
         {showSuspended && (
-          <div class="hero-suspended">
+          <div class={`hero-suspended ${heroSectionClass}`.trim()}>
             <div class="hero-suspended__content">
               <h1>{heading}</h1>
               <p>{description}</p>
@@ -199,6 +201,23 @@ const pageHeroStyle =
     display: block;
     aspect-ratio: 16/10;
     object-fit: cover;
+  }
+
+  .hero-suspended--trazabilidad {
+    grid-template-columns: 50% 42%;
+    gap: 8%;
+  }
+
+  .hero-suspended--trazabilidad .hero-suspended__content {
+    width: 100%;
+    margin-right: 2%;
+  }
+
+  .hero-suspended--trazabilidad .hero-suspended__image {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    transform: none;
   }
 
   /* 02. Mosaic Layout (Soluciones) */
@@ -415,6 +434,17 @@ const pageHeroStyle =
       grid-template-columns: 1fr;
       gap: 40px;
       text-align: center;
+    }
+
+    .hero-suspended--trazabilidad {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .hero-suspended--trazabilidad .hero-suspended__content,
+    .hero-suspended--trazabilidad .hero-suspended__image {
+      width: 100%;
+      margin: 0;
     }
 
     /* Stack flex for Mosaic (Soluciones) */
