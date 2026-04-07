@@ -17,23 +17,25 @@ import Layout from "../../layouts/Layout.astro";
     <section class="content-block">
       <div class="container narrow">
         <div class="section-label">01. EL PROBLEMA</div>
-        <h2>El estrés hídrico invisible: La parálisis metabólica silenciosa</h2>
-        <p>
-          Tradicionalmente, el agricultor espera a ver las hojas enrolladas o el fruto lacio para decidir el riego. 
-          Cuando estos síntomas son visibles, la planta ya ha sufrido una **parada metabólica**. 
-          El xilema ha perdido presión, la fotosíntesis se ha detenido para conservar agua y el potencial de producción se ha visto mermado de forma irreversible para esa fase fenológica.
-        </p>
+        <div class="manual-detail-box">
+          <h2>El estrés hídrico invisible: La parálisis metabólica silenciosa</h2>
+          <p>
+            Tradicionalmente, el agricultor espera a ver las hojas enrolladas o el fruto lacio para decidir el riego. 
+            Cuando estos síntomas son visibles, la planta ya ha sufrido una **parada metabólica**. 
+            El xilema ha perdido presión, la fotosíntesis se ha detenido para conservar agua y el potencial de producción se ha visto mermado de forma irreversible para esa fase fenológica.
+          </p>
 
-        <!-- IMAGE MOSAIC 1 -->
-        <div class="image-mosaic">
-          <img src="/images/sensores/DendometroTronco.png" alt="Dendrómetro Tronco" />
-          <img src="/images/sensores/dendometroFruto2.png" alt="Dendrómetro Fruto" />
+          <!-- IMAGE MOSAIC 1 -->
+          <div class="image-mosaic">
+            <img src="/images/sensores/DendometroTronco.png" alt="Dendrómetro Tronco" />
+            <img src="/images/sensores/dendometroFruto2.png" alt="Dendrómetro Fruto" />
+          </div>
+
+          <p>
+            Gestionar el riego basándose solo en el suelo es como intentar conducir un coche mirando solo el depósito de gasolina: sabemos que hay combustible, pero no sabemos si el motor está sobrecalentado. 
+            Ignorar el estado interno de la planta conlleva a una **ineficiencia productiva crítica**, especialmente en momentos de máxima demanda transpirativa o durante el cuajado y engorde del fruto.
+          </p>
         </div>
-
-        <p>
-          Gestionar el riego basándose solo en el suelo es como intentar conducir un coche mirando solo el depósito de gasolina: sabemos que hay combustible, pero no sabemos si el motor está sobrecalentado. 
-          Ignorar el estado interno de la planta conlleva a una **ineficiencia productiva crítica**, especialmente en momentos de máxima demanda transpirativa o durante el cuajado y engorde del fruto.
-        </p>
       </div>
     </section>
 
@@ -41,34 +43,36 @@ import Layout from "../../layouts/Layout.astro";
     <section class="content-block grey-bg">
       <div class="container narrow">
         <div class="section-label">02. LA SOLUCIÓN</div>
-        <h2>Dendrometría y Termometría - El "Electrocardiograma" del Cultivo</h2>
-        <p>
-          Nuestra tecnología de **Dendrometría** utiliza sensores de alta resolución capaces de medir variaciones micrométricas 
-          en el diámetro de troncos, tallos y frutos. Estas variaciones nos permiten calcular el **MDS (Maximum Daily Shrinkage)**, 
-          el indicador fisiológico más sensible del estrés hídrico.
-        </p>
+        <div class="manual-detail-box">
+          <h2>Dendrometría y Termometría - El "Electrocardiograma" del Cultivo</h2>
+          <p>
+            Nuestra tecnología de **Dendrometría** utiliza sensores de alta resolución capaces de medir variaciones micrométricas 
+            en el diámetro de troncos, tallos y frutos. Estas variaciones nos permiten calcular el **MDS (Maximum Daily Shrinkage)**, 
+            el indicador fisiológico más sensible del estrés hídrico.
+          </p>
 
-        <!-- IMAGE MOSAIC 2 -->
-        <div class="image-mosaic">
-          <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Hoja" />
-        </div>
+          <!-- IMAGE MOSAIC 2 -->
+          <div class="image-mosaic">
+            <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Hoja" />
+          </div>
 
-        <p>
-          Complementamos este análisis con **Termometría Infrarroja** foliar. Al medir la diferencia entre la temperatura de la canopia 
-          y la temperatura ambiente, calculamos el índice de estrés hídrico de la planta. Si los estomas se cierran, la temperatura foliar sube rápidamente al cesar la refrigeración por transpiración.
-        </p>
-        <div class="tech-grid">
-          <div class="tech-item">
-            <h3>Resolución Micrométrica</h3>
-            <p>Detección de cambios de 0.001mm en el tejido vegetal.</p>
-          </div>
-          <div class="tech-item">
-            <h3>Mojado Foliar</h3>
-            <p>Modelos de riesgo fitosanitario basados en humectación real.</p>
-          </div>
-          <div class="tech-item">
-            <h3>CWSI Index</h3>
-            <p>Indice de estrés hídrico basado en temperatura de canopia.</p>
+          <p>
+            Complementamos este análisis con **Termometría Infrarroja** foliar. Al medir la diferencia entre la temperatura de la canopia 
+            y la temperatura ambiente, calculamos el índice de estrés hídrico de la planta. Si los estomas se cierran, la temperatura foliar sube rápidamente al cesar la refrigeración por transpiración.
+          </p>
+          <div class="tech-grid">
+            <div class="tech-item feature-card">
+              <h3>Resolución Micrométrica</h3>
+              <p>Detección de cambios de 0.001mm en el tejido vegetal.</p>
+            </div>
+            <div class="tech-item feature-card">
+              <h3>Mojado Foliar</h3>
+              <p>Modelos de riesgo fitosanitario basados en humectación real.</p>
+            </div>
+            <div class="tech-item feature-card">
+              <h3>CWSI Index</h3>
+              <p>Indice de estrés hídrico basado en temperatura de canopia.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -77,21 +81,21 @@ import Layout from "../../layouts/Layout.astro";
     <!-- 3. ROI -->
     <section class="content-block">
       <div class="container">
-        <div class="roi-box">
+        <div class="roi-box manual-detail-box roi-box--featured">
           <div class="section-label">03. RETORNO DE INVERSIÓN (ROI)</div>
           <h2>Rentabilidad por Calidad y Sanidad</h2>
           <div class="stats-grid">
-            <div class="stat-card">
+            <div class="stat-card stat-card--featured">
               <span class="value">+18%</span>
               <span class="label">Calibres Comerciales</span>
               <p>Optimizando el engorde del fruto mediante gestión del potencial hídrico.</p>
             </div>
-            <div class="stat-card">
+            <div class="stat-card stat-card--featured">
               <span class="value">-30%</span>
               <span class="label">Tratamientos Fitosanitarios</span>
               <p>Aplicaciones preventivas solo cuando hay riesgo real de infección por humedad.</p>
             </div>
-            <div class="stat-card">
+            <div class="stat-card stat-card--featured stat-card--textual-value">
               <span class="value">Premium</span>
               <span class="label">Uniformidad de Cosecha</span>
               <p>Reducción de la variabilidad entre árboles y sectores de riego.</p>
@@ -104,43 +108,70 @@ import Layout from "../../layouts/Layout.astro";
     <!-- 4. INTERPRETACIÓN DE DATOS -->
     <section class="content-block grey-bg">
       <div class="container narrow">
-        <div class="section-label">04. INTELIGENCIA DE DATOS</div>
-        <h2>Control del Crecimiento en Tiempo Real</h2>
-        <p>
-          La dendrometría no solo sirve para regar; sirve para **producir mejor**. En nuestra plataforma puede observar:
-        </p>
-        <ul class="benefit-list">
-          <li><strong>Tasa de Crecimiento Neto:</strong> ¿Está el fruto ganando peso acumulado día tras día?</li>
-          <li><strong>Dinámica Hídrica Diaria:</strong> Identificación del momento exacto del día en que la planta empieza a sufrir estrés.</li>
-          <li><strong>Recuperación Nocturna:</strong> Medición de la capacidad del cultivo para rehidratarse tras el ocaso.</li>
-        </ul>
-        <p>
-          Esta información permite cambiar la estrategia de riego: de un volumen fijo a un riego por pulsos o nocturno 
-          si detectamos que la planta no es capaz de recuperarse adecuadamente del déficit transpirativo diario.
-        </p>
+        <div class="manual-detail-box manual-detail-box--compact">
+          <div class="section-label">04. INTELIGENCIA DE DATOS</div>
+          <h2>Control del Crecimiento en Tiempo Real</h2>
+          <p>
+            La dendrometría no solo sirve para regar; sirve para **producir mejor**. En nuestra plataforma puede observar:
+          </p>
+          <div class="insight-cards">
+            <div class="insight-card feature-card">
+              <h3>Tasa de Crecimiento Neto</h3>
+              <p>¿Está el fruto ganando peso acumulado día tras día?</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Dinámica Hídrica Diaria</h3>
+              <p>Identificación del momento exacto del día en que la planta empieza a sufrir estrés.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Recuperación Nocturna</h3>
+              <p>Medición de la capacidad del cultivo para rehidratarse tras el ocaso.</p>
+            </div>
+          </div>
+          <p>
+            Esta información permite cambiar la estrategia de riego: de un volumen fijo a un riego por pulsos o nocturno 
+            si detectamos que la planta no es capaz de recuperarse adecuadamente del déficit transpirativo diario.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- 5. GUÍA DE INSTALACIÓN -->
     <section class="content-block">
       <div class="container narrow">
-        <div class="section-label">05. IMPLEMENTACIÓN</div>
-        <h2>Instalación Quirúrgica en el Tejido Vivo</h2>
-        <ol class="step-list">
-          <li><strong>Selección del Árbol Centinela:</strong> Escogemos ejemplares con vigor medio que representen el estado general del sector.</li>
-          <li><strong>Anclaje Invariable:</strong> Uso de soportes de acero inoxidable compensados térmicamente para evitar errores por dilatación.</li>
-          <li><strong>Orientación Norte/Sombría:</strong> Protección del sensor de la radiación directa para asegurar lecturas de temperatura estables.</li>
-          <li><strong>Monitoreo de Crecimiento:</strong> Ajuste periódico del sensor para permitir la expansión natural del tallo sin estrangulamiento.</li>
-        </ol>
+        <div class="manual-detail-box manual-detail-box--compact">
+          <div class="section-label">05. IMPLEMENTACIÓN</div>
+          <h2>Instalación Quirúrgica en el Tejido Vivo</h2>
+          <div class="insight-cards">
+            <div class="insight-card feature-card">
+              <h3>Selección del Árbol Centinela</h3>
+              <p>Escogemos ejemplares con vigor medio que representen el estado general del sector.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Anclaje Invariable</h3>
+              <p>Uso de soportes de acero inoxidable compensados térmicamente para evitar errores por dilatación.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Orientación Norte/Sombría</h3>
+              <p>Protección del sensor de la radiación directa para asegurar lecturas de temperatura estables.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Monitoreo de Crecimiento</h3>
+              <p>Ajuste periódico del sensor para permitir la expansión natural del tallo sin estrangulamiento.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CTA FINAL -->
     <section class="cta-section">
       <div class="container">
-        <h2>¿Quiere saber qué necesitan sus plantas ahora mismo?</h2>
-        <p>Hablemos sobre cómo implementar monitorización fisiológica en su explotación.</p>
-        <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
+        <div class="manual-detail-box">
+          <h2>¿Quiere saber qué necesitan sus plantas ahora mismo?</h2>
+          <p>Hablemos sobre cómo implementar monitorización fisiológica en su explotación.</p>
+          <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
+        </div>
       </div>
     </section>
   </main>
@@ -250,6 +281,13 @@ import Layout from "../../layouts/Layout.astro";
     color: var(--color-slate-700);
   }
 
+  .manual-detail-box {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+  }
+
   /* TECH GRID */
   .tech-grid {
     display: grid;
@@ -271,6 +309,21 @@ import Layout from "../../layouts/Layout.astro";
     line-height: 1.6;
   }
 
+  .tech-item.feature-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .tech-item.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+    border-color: rgba(29, 185, 154, 0.35);
+  }
+
   /* ROI BOX */
   .roi-box {
     background: #FFFFFF;
@@ -279,6 +332,24 @@ import Layout from "../../layouts/Layout.astro";
     color: var(--color-charcoal);
     border: 1px solid var(--color-gray-100);
     box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.05);
+  }
+
+  .roi-box--featured {
+    background:
+      radial-gradient(circle at top right, rgba(125, 211, 252, 0.18), transparent 28%),
+      linear-gradient(135deg, rgba(29, 185, 154, 0.08), rgba(255, 255, 255, 0.96) 38%);
+    border: 1px solid rgba(29, 185, 154, 0.28);
+    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.10);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roi-box--featured::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+    background: linear-gradient(90deg, #1db99a 0%, #7dd3fc 100%);
   }
 
   .roi-box h2 { color: var(--color-slate-900); }
@@ -290,6 +361,24 @@ import Layout from "../../layouts/Layout.astro";
     margin-top: 80px;
   }
 
+  .stat-card--featured {
+    background: #ffffff;
+    border: 1px solid rgba(29, 185, 154, 0.24);
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card--featured::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 5px;
+    background: linear-gradient(180deg, #1db99a 0%, #7dd3fc 100%);
+  }
+
   .stat-card .value {
     font-size: 4rem;
     font-weight: 800;
@@ -298,6 +387,12 @@ import Layout from "../../layouts/Layout.astro";
     line-height: 1;
     margin-bottom: 16px;
     letter-spacing: -0.03em;
+  }
+
+  .stat-card--textual-value .value {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   .stat-card .label {
@@ -325,6 +420,72 @@ import Layout from "../../layouts/Layout.astro";
     padding: 24px 0;
     border-bottom: 1px solid var(--color-gray-100);
     color: var(--color-slate-700);
+  }
+
+  .manual-detail-box--compact {
+    padding: 32px;
+  }
+
+  .manual-detail-box--compact h2 {
+    margin-bottom: 20px;
+  }
+
+  .manual-detail-box--compact > p {
+    margin-bottom: 18px;
+  }
+
+  .manual-detail-box--compact > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .insight-cards {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0 20px;
+  }
+
+  .insight-card {
+    background: #ffffff;
+    border: 1px solid rgba(29, 185, 154, 0.18);
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+  }
+
+  .insight-card h3 {
+    margin: 0 0 14px;
+    padding-bottom: 16px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-slate-900);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid rgba(29, 185, 154, 0.16);
+  }
+
+  .insight-card h3::after {
+    content: "i";
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(29, 185, 154, 0.12);
+    color: var(--color-turquoise-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .insight-card p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-slate-700);
+    text-align: left;
   }
 
   /* CTA */

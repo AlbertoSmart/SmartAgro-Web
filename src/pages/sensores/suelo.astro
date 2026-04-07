@@ -172,7 +172,7 @@ import Layout from "../../layouts/Layout.astro";
     <!-- CTA FINAL -->
     <section class="cta-section">
       <div class="container">
-        <div class="manual-detail-box">
+        <div class="manual-detail-box manual-detail-box--cta">
           <h2>¿Listo para optimizar la rentabilidad de su suelo?</h2>
           <p>Obtenga una propuesta técnica personalizada para su explotación.</p>
           <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
@@ -295,6 +295,20 @@ import Layout from "../../layouts/Layout.astro";
     padding: 40px;
     border-radius: 12px;
     border: 1px solid #e9ecef;
+  }
+
+  .manual-detail-box--cta {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 32px;
+  }
+
+  .manual-detail-box--cta h2 {
+    margin-bottom: 18px;
+  }
+
+  .manual-detail-box--cta p {
+    margin-bottom: 20px;
   }
 
   /* TECH GRID */
