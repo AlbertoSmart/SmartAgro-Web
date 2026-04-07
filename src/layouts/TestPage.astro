@@ -59,6 +59,9 @@ const showMinimalist = layoutType === "minimalist";
             <div class="hero-mosaic__content">
               <h1>{heading}</h1>
               <p>{description}</p>
+              <a href="#newsletter" class="btn btn--turquoise hero-cta">
+                Suscríbete ahora
+              </a>
             </div>
             <div class="hero-mosaic__images">
               <div class="m-img m-img--1" style={mosaicImages[0] ? `background-image: url(${mosaicImages[0]})` : 'background: rgba(15, 181, 174, 0.1); border: 1px dashed rgba(255,255,255,0.2);'}></div>
@@ -84,6 +87,22 @@ const showMinimalist = layoutType === "minimalist";
     </section>
   </main>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const ctaBtn = document.querySelector('.hero-cta');
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector('#newsletter');
+        if (!target) return;
+        const offset = 80; // altura de la navbar fija
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
 
 <style>
   .page-hero {
@@ -197,13 +216,34 @@ const showMinimalist = layoutType === "minimalist";
     color: rgba(255, 255, 255, 0.9);
   }
 
+  /* CTA Button in Hero Mosaic */
+  .hero-cta {
+    margin-top: 32px;
+    display: inline-flex;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(29, 185, 154, 0.35);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-cta:hover {
+    background: var(--color-turquoise-dark) !important;
+    color: white !important;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 16px 36px rgba(29, 185, 154, 0.45);
+  }
+
   /* 03. Minimalist Layout */
   .hero-minimalist {
     padding-bottom: 40px;
   }
 
   .text-weight-heavy {
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-size: clamp(3rem, 4vw, 4rem);
     font-weight: 800;
     letter-spacing: -0.04em;
     margin: 0;
@@ -352,6 +392,11 @@ const showMinimalist = layoutType === "minimalist";
       flex-direction: column;
       gap: 40px;
       text-align: center;
+    }
+
+    .hero-cta {
+      margin: 24px auto 0;
+      width: fit-content;
     }
 
     .hero-suspended__image,
