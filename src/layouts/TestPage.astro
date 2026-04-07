@@ -58,10 +58,12 @@ const showMinimalist = layoutType === "minimalist";
           <div class="hero-mosaic">
             <div class="hero-mosaic__content">
               <h1>{heading}</h1>
-              <p>{description}</p>
-              <a href="#newsletter" class="btn btn--turquoise hero-cta">
-                Suscríbete ahora
-              </a>
+              <div class="hero-mosaic__desc-row">
+                <p>{description}</p>
+                <a href="#newsletter" class="btn btn--turquoise hero-cta">
+                  Suscríbete ahora
+                </a>
+              </div>
             </div>
             <div class="hero-mosaic__images">
               <div class="m-img m-img--1" style={mosaicImages[0] ? `background-image: url(${mosaicImages[0]})` : 'background: rgba(15, 181, 174, 0.1); border: 1px dashed rgba(255,255,255,0.2);'}></div>
@@ -217,9 +219,20 @@ const showMinimalist = layoutType === "minimalist";
   }
 
   /* CTA Button in Hero Mosaic */
+  .hero-mosaic__desc-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 0;
+  }
+
+  .hero-mosaic__desc-row p {
+    margin: 0;
+    flex: 1;
+  }
+
   .hero-cta {
-    margin-top: 32px;
-    display: inline-flex;
+    flex-shrink: 0;
     font-size: 1rem;
     font-weight: 700;
     padding: 16px 36px;
@@ -228,6 +241,7 @@ const showMinimalist = layoutType === "minimalist";
     text-transform: uppercase;
     box-shadow: 0 8px 24px rgba(29, 185, 154, 0.35);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
   }
 
   .hero-cta:hover {
@@ -394,9 +408,15 @@ const showMinimalist = layoutType === "minimalist";
       text-align: center;
     }
 
+    .hero-mosaic__desc-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
     .hero-cta {
-      margin: 24px auto 0;
       width: fit-content;
+      margin: 0 auto;
     }
 
     .hero-suspended__image,
