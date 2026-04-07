@@ -1,0 +1,181 @@
+---
+interface SidebarIndexItem {
+  id: string;
+  label: string;
+}
+
+const {
+  title = "Contenidos",
+  items = [],
+} = Astro.props as {
+  title?: string;
+  items: SidebarIndexItem[];
+};
+---
+
+<aside class="sensor-doc-sidebar" aria-label={title}>
+  <nav class="sidebar-index" data-sidebar-index>
+    <h3>{title}</h3>
+    <ul>
+      {items.map((item) => (
+        <li>
+          <a href={`#${item.id}`} data-sidebar-link>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  const setupSidebarIndex = (nav) => {
+    const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+    if (!links.length) return;
+
+    const sections = links
+      .map((link) => {
+        const href = link.getAttribute("href");
+        return href ? document.querySelector(href) : null;
+      })
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const setActive = (id) => {
+      links.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const updateActive = () => {
+      const offset = 180;
+      let currentId = sections[0].id;
+
+      sections.forEach((section) => {
+        if (window.scrollY + offset >= section.offsetTop) {
+          currentId = section.id;
+        }
+      });
+
+      setActive(currentId);
+    };
+
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+        const target = href ? document.querySelector(href) : null;
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", href);
+        setActive(target.id);
+      });
+    });
+
+    updateActive();
+    window.addEventListener("scroll", updateActive, { passive: true });
+    window.addEventListener("resize", updateActive);
+  };
+
+  document.querySelectorAll("[data-sidebar-index]").forEach(setupSidebarIndex);
+</script>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  [data-index-section] {
+    scroll-margin-top: 130px;
+  }
+
+  .sensor-doc-layout {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px 140px;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+
+  .sensor-doc-content {
+    min-width: 0;
+  }
+
+  .sensor-doc-sidebar {
+    position: relative;
+  }
+
+  .sidebar-index {
+    position: sticky;
+    top: 132px;
+    padding: 20px 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  }
+
+  .sidebar-index h3 {
+    margin: 0 0 18px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #94a3b8;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .sidebar-index ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .sidebar-index a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+
+  .sidebar-index a:hover {
+    color: #0f172a;
+    background: rgba(29, 185, 154, 0.10);
+    transform: translateX(3px);
+  }
+
+  .sidebar-index a.is-active {
+    color: #0f172a;
+    background: rgba(29, 185, 154, 0.14);
+    box-shadow: inset 2px 0 0 #1db99a;
+  }
+
+  @media (max-width: 1100px) {
+    .sensor-doc-layout {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding-bottom: 120px;
+    }
+
+    .sensor-doc-sidebar {
+      display: none;
+    }
+  }
+</style>

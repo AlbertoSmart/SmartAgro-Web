@@ -1,5 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import SidebarIndex from "../../components/SidebarIndex.astro";
+
+const sensorIndexItems = [
+  { id: "problema", label: "01. Riego a ciegas" },
+  { id: "solucion", label: "02. Tecnologia FDR" },
+  { id: "roi", label: "03. Impacto economico" },
+  { id: "inteligencia", label: "04. Lectura de graficas" },
+  { id: "implementacion", label: "05. Implementacion" },
+  { id: "contacto", label: "Contacto" },
+];
 ---
 
 <Layout title="Sensores de Suelo y Raíz | Monitorización Edáfica">
@@ -13,8 +23,12 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
+    <div class="sensor-doc-layout">
+      <SidebarIndex title="Contenidos" items={sensorIndexItems} />
+      <div class="sensor-doc-content">
+
     <!-- 1. ANÁLISIS DEL PROBLEMA -->
-    <section class="content-block">
+    <section id="problema" class="content-block" data-index-section>
       <div class="container narrow">
         <div class="section-label">01. EL PROBLEMA</div>
         <div class="manual-detail-box">
@@ -42,7 +56,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- 2. SOLUCIÓN TÉCNICA -->
-    <section class="content-block grey-bg">
+    <section id="solucion" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
         <div class="section-label">02. LA SOLUCIÓN</div>
         <div class="manual-detail-box">
@@ -84,7 +98,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- 3. ROI -->
-    <section class="content-block">
+    <section id="roi" class="content-block" data-index-section>
       <div class="container">
         <div class="roi-box manual-detail-box roi-box--featured">
           <div class="section-label">03. RETORNO DE INVERSIÓN (ROI)</div>
@@ -111,7 +125,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- 4. INTERPRETACIÓN DE DATOS -->
-    <section class="content-block grey-bg">
+    <section id="inteligencia" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
         <div class="manual-detail-box manual-detail-box--compact">
           <div class="section-label">04. INTELIGENCIA DE DATOS</div>
@@ -142,7 +156,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- 5. GUÍA DE INSTALACIÓN -->
-    <section class="content-block">
+    <section id="implementacion" class="content-block" data-index-section>
       <div class="container narrow">
         <div class="manual-detail-box manual-detail-box--compact">
           <div class="section-label">05. IMPLEMENTACIÓN</div>
@@ -170,7 +184,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- CTA FINAL -->
-    <section class="cta-section">
+    <section id="contacto" class="cta-section" data-index-section>
       <div class="container">
         <div class="manual-detail-box manual-detail-box--cta">
           <h2>¿Listo para optimizar la rentabilidad de su suelo?</h2>
@@ -179,6 +193,8 @@ import Layout from "../../layouts/Layout.astro";
         </div>
       </div>
     </section>
+      </div>
+    </div>
   </main>
 </Layout>
 
