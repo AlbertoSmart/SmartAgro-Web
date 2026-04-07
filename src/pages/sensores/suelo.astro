@@ -45,37 +45,39 @@ import Layout from "../../layouts/Layout.astro";
     <section class="content-block grey-bg">
       <div class="container narrow">
         <div class="section-label">02. LA SOLUCIÓN</div>
-        <h2>Física de Sensores - Tecnología FDR (Frequency Domain Reflectometry)</h2>
-        <p>
-          Nuestros sensores no estiman; miden la permitividad dieléctrica del suelo. Mediante la emisión de un campo electromagnético 
-          de alta frecuencia, detectamos la capacidad del medio para almacenar carga eléctrica, la cual está directamente relacionada 
-          con el contenido volumétrico de agua (**VWC**).
-        </p>
+        <div class="manual-detail-box">
+          <h2>Física de Sensores - Tecnología FDR (Frequency Domain Reflectometry)</h2>
+          <p>
+            Nuestros sensores no estiman; miden la permitividad dieléctrica del suelo. Mediante la emisión de un campo electromagnético 
+            de alta frecuencia, detectamos la capacidad del medio para almacenar carga eléctrica, la cual está directamente relacionada 
+            con el contenido volumétrico de agua (**VWC**).
+          </p>
 
-        <!-- IMAGE MOSAIC 2 -->
-        <div class="image-mosaic triple">
-          <img src="/images/sensores/SensorSuelo8en1.png" alt="Sensor 8 en 1" />
-          <img src="/images/sensores/SensorphTemperaturaSuelo.png" alt="Sensor pH" />
-          <img src="/images/sensores/SensorCO2.png" alt="Sensor CO2" />
-        </div>
+          <!-- IMAGE MOSAIC 2 -->
+          <div class="image-mosaic triple">
+            <img src="/images/sensores/SensorSuelo8en1.png" alt="Sensor 8 en 1" />
+            <img src="/images/sensores/SensorphTemperaturaSuelo.png" alt="Sensor pH" />
+            <img src="/images/sensores/SensorCO2.png" alt="Sensor CO2" />
+          </div>
 
-        <p>
-          Esta tecnología nos permite monitorizar no solo la humedad, sino también la **Conductividad Eléctrica (EC)**. 
-          Al medir la salinidad en el bulbo húmedo, podemos ajustar la fertirrigación para mantener la presión osmótica ideal, 
-          asegurando que la planta pueda absorber nutrientes sin gasto energético excesivo.
-        </p>
-        <div class="tech-grid">
-          <div class="tech-item">
-            <h3>Sondas Capacitivas</h3>
-            <p>Respuesta instantánea a cambios en el potencial hídrico.</p>
-          </div>
-          <div class="tech-item">
-            <h3>Analítica de pH</h3>
-            <p>Control electroquímico para evitar bloqueos de nutrientes.</p>
-          </div>
-          <div class="tech-item">
-            <h3>Respiración CO2</h3>
-            <p>Medición de la actividad microbiana y salud radicular.</p>
+          <p>
+            Esta tecnología nos permite monitorizar no solo la humedad, sino también la **Conductividad Eléctrica (EC)**. 
+            Al medir la salinidad en el bulbo húmedo, podemos ajustar la fertirrigación para mantener la presión osmótica ideal, 
+            asegurando que la planta pueda absorber nutrientes sin gasto energético excesivo.
+          </p>
+          <div class="tech-grid">
+            <div class="tech-item feature-card">
+              <h3>Sondas Capacitivas</h3>
+              <p>Respuesta instantánea a cambios en el potencial hídrico.</p>
+            </div>
+            <div class="tech-item feature-card">
+              <h3>Analítica de pH</h3>
+              <p>Control electroquímico para evitar bloqueos de nutrientes.</p>
+            </div>
+            <div class="tech-item feature-card">
+              <h3>Respiración CO2</h3>
+              <p>Medición de la actividad microbiana y salud radicular.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -287,6 +289,21 @@ import Layout from "../../layouts/Layout.astro";
   .tech-item p {
     font-size: 1.05rem;
     line-height: 1.6;
+  }
+
+  .tech-item.feature-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .tech-item.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+    border-color: rgba(29, 185, 154, 0.35);
   }
 
   /* ROI BOX */
