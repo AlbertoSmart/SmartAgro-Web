@@ -1,5 +1,21 @@
 ---
 import TestPage from "../../layouts/TestPage.astro";
+import FAQAccordion from "../../components/FAQAccordion.astro";
+
+const faqItems = [
+    {
+        question: "¿Cumple con el Decreto 153/2019 de Nitratos?",
+        answer: "Totalmente. El sistema ha sido diseñado siguiendo las directrices técnicas del decreto, facilitando la generación de los libros de gestión de deyecciones ganaderas exigidos."
+    },
+    {
+        question: "¿Qué pasa si mi cisterna no tiene GPS integrado?",
+        answer: "Ofrecemos dispositivos GPS externos \"Plug & Play\" con sensor de caudal que se instalan en minutos en cualquier cuba, enviando los datos a nuestra plataforma en tiempo real."
+    },
+    {
+        question: "¿Se puede integrar con la analítica de mi purín?",
+        answer: "Sí. Puedes cargar los resultados de laboratorio y el sistema recalculará automáticamente las dosis de nitrógeno permitidas para cada parcela receptora."
+    }
+];
 ---
 
 <TestPage
@@ -45,22 +61,9 @@ import TestPage from "../../layouts/TestPage.astro";
         </section>
 
         <!-- FAQ Section for Estiércoles -->
-        <section class="faq-section">
-            <h2 class="text-center">Dudas sobre Gestión de Deiecciones</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>¿Cumple con el Decreto 153/2019 de Nitratos?</h3>
-                    <p>Totalmente. El sistema ha sido diseñado siguiendo las directrices técnicas del decreto, facilitando la generación de los libros de gestión de deyecciones ganaderas exigidos.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Qué pasa si mi cisterna no tiene GPS integrado?</h3>
-                    <p>Ofrecemos dispositivos GPS externos "Plug & Play" con sensor de caudal que se instalan en minutos en cualquier cuba, enviando los datos a nuestra plataforma en tiempo real.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Se puede integrar con la analítica de mi purín?</h3>
-                    <p>Sí. Puedes cargar los resultados de laboratorio y el sistema recalculará automáticamente las dosis de nitrógeno permitidas para cada parcela receptora.</p>
-                </div>
-            </div>
+        <section class="faq-section" style="padding: 60px 0;">
+            <h2 class="text-center" style="margin-bottom: 40px;">Dudas sobre Gestión de Deiecciones</h2>
+            <FAQAccordion items={faqItems} />
         </section>
 
         <div class="highlight-box">

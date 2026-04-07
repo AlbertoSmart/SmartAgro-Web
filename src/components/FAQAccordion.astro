@@ -1,0 +1,148 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="faq-container">
+  {items.map((item) => (
+    <details class="faq-card" name="faq-accordion">
+      <summary class="faq-card__header">
+        <h3 class="faq-card__title">{item.question}</h3>
+        <span class="faq-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </summary>
+      <div class="faq-card__content">
+        <p>{item.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-card {
+    background: #ffffff;
+    border: 1px solid var(--color-gray-200, #e9ecef);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-card:hover {
+    border-color: var(--color-turquoise, #0fb5ae);
+    box-shadow: 0 8px 30px rgba(15, 181, 174, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .faq-card[open] {
+    border-color: var(--color-turquoise, #0fb5ae);
+  }
+
+  .faq-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    cursor: pointer;
+    user-select: none;
+    /* Removes the default native triangle in most browsers */
+    list-style: none; 
+  }
+  
+  /* Safari specific hide of default native triangle */
+  .faq-card__header::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-card__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-charcoal, #1a1a2e);
+    padding-right: 20px;
+  }
+
+  .faq-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: var(--color-gray-50, #f8f9fa);
+    border-radius: 50%;
+    color: var(--color-gray-600, #495057);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faq-card__icon svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-card[open] .faq-card__icon {
+    background: var(--color-turquoise, #0fb5ae);
+    color: #ffffff;
+  }
+
+  .faq-card[open] .faq-card__icon svg {
+    transform: rotate(180deg);
+  }
+
+  .faq-card__content {
+    padding: 0 24px 24px 24px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-gray-600, #495057);
+    /* For smooth animation when opening in modern browsers */
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .faq-card__content p {
+    margin: 0;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .faq-card__header {
+      padding: 20px;
+    }
+    .faq-card__content {
+      padding: 0 20px 20px 20px;
+    }
+    .faq-card__title {
+      font-size: 1.05rem;
+    }
+  }
+</style>

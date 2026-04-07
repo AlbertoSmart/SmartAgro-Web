@@ -1,5 +1,21 @@
 ---
 import TestPage from "../../layouts/TestPage.astro";
+import FAQAccordion from "../../components/FAQAccordion.astro";
+
+const faqItems = [
+    {
+        question: "¿Es compatible con mi maquinaria actual?",
+        answer: "Nuestros mapas de prescripción se exportan en formatos estándar (Shapefile, ISO-XML) compatibles con la gran mayoría de terminales del mercado (John Deere, Topcon, Trimble, Fendt, etc.)."
+    },
+    {
+        question: "¿Quién firma las prescripciones?",
+        answer: "Las órdenes de tratamiento pueden ser firmadas por tu asesor actual si utiliza nuestra plataforma, o por nuestro equipo de ingenieros agrónomos titulados."
+    },
+    {
+        question: "¿Cómo se envían los mapas al tractor?",
+        answer: "Puedes hacerlo mediante un pendrive USB tradicional o, si tu máquina dispone de telemetría activo, enviarlo directamente desde nuestra plataforma al terminal de la máquina."
+    }
+];
 ---
 
 <TestPage
@@ -68,23 +84,9 @@ import TestPage from "../../layouts/TestPage.astro";
             </div>
         </div>
 
-        <!-- FAQ Section for Prescription -->
-        <section class="faq-section">
-            <h2 class="text-center">Dudas sobre Prescripción</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>¿Es compatible con mi maquinaria actual?</h3>
-                    <p>Nuestros mapas de prescripción se exportan en formatos estándar (Shapefile, ISO-XML) compatibles con la gran mayoría de terminales del mercado (John Deere, Topcon, Trimble, Fendt, etc.).</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Quién firma las prescripciones?</h3>
-                    <p>Las órdenes de tratamiento pueden ser firmadas por tu asesor actual si utiliza nuestra plataforma, o por nuestro equipo de ingenieros agrónomos titulados.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Cómo se envían los mapas al tractor?</h3>
-                    <p>Puedes hacerlo mediante un pendrive USB tradicional o, si tu máquina dispone de telemetría activo, enviarlo directamente desde nuestra plataforma al terminal de la máquina.</p>
-                </div>
-            </div>
+        <section class="faq-section" style="padding: 60px 0;">
+            <h2 class="text-center" style="margin-bottom: 40px;">Dudas sobre Prescripción</h2>
+            <FAQAccordion items={faqItems} />
         </section>
 
         <div class="highlight-box">

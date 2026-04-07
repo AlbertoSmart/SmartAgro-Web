@@ -1,5 +1,7 @@
 ---
 import TestPage from "../../layouts/TestPage.astro";
+import FAQAccordion from "../../components/FAQAccordion.astro";
+import { faqData } from "../../data/faqs";
 ---
 
 <TestPage
@@ -72,22 +74,9 @@ import TestPage from "../../layouts/TestPage.astro";
         </section>
 
         <!-- FAQ Section for Techs -->
-        <section class="faq-section">
-            <h2 class="text-center">Consultas Técnicas</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>¿Puedo gestionar múltiples asesores bajo mi cuenta?</h3>
-                    <p>Sí, disponemos de roles de supervisor para cooperativas y despachos, permitiendo la gestión de equipos de técnicos con diferentes niveles de acceso.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿La firma digital es válida para la administración?</h3>
-                    <p>Absolutamente. Utilizamos sistemas de firma electrónica avanzada que cumplen con todos los requisitos de eIDAS y las normativas estatales del SIEX.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Ofrecéis formación para el equipo técnico?</h3>
-                    <p>Sí, incluimos sesiones de onboarding personalizado para que todo tu equipo domine la herramienta y las últimas actualizaciones normativas.</p>
-                </div>
-            </div>
+        <section class="faq-section" style="padding: 60px 0;">
+            <h2 class="text-center" style="margin-bottom: 40px;">Consultas Técnicas</h2>
+            <FAQAccordion items={faqData.tecnicos} />
         </section>
 
         <div class="highlight-box">

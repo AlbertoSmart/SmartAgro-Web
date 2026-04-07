@@ -1,6 +1,8 @@
 ---
 import TestPage from "../../layouts/TestPage.astro";
 import ROICalculator from "../../components/ROICalculator.astro";
+import FAQAccordion from "../../components/FAQAccordion.astro";
+import { faqData } from "../../data/faqs";
 ---
 
 <TestPage
@@ -100,22 +102,9 @@ import ROICalculator from "../../components/ROICalculator.astro";
         </div>
 
         <!-- FAQ Section -->
-        <section class="faq-section">
-            <h2 class="text-center">Preguntas Frecuentes</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>¿Es obligatorio el cuaderno digital en 2026?</h3>
-                    <p>Sí, la normativa europea y el SIEX exigen la digitalización de los registros de explotación. Nuestro sistema cumple al 100% con los requisitos legales actuales.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Necesito cobertura de internet en toda la finca?</h3>
-                    <p>No. Nuestra aplicación permite la toma de datos offline. Una vez que vuelvas a tener conexión (o llegues a casa), los datos se sincronizan automáticamente.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Cómo se integran los sensores con el cuaderno?</h3>
-                    <p>Los sensores envían datos directamente a la nube. Nuestra IA procesa esta información y propone asientos automáticos en tu cuaderno, que tú solo tienes que validar.</p>
-                </div>
-            </div>
+        <section class="faq-section" style="padding: 60px 0;">
+            <h2 class="text-center" style="margin-bottom: 40px;">Preguntas Frecuentes</h2>
+            <FAQAccordion items={faqData.agricultores} />
         </section>
 
         <div class="highlight-box">
