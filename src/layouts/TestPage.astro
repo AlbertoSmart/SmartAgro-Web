@@ -18,6 +18,7 @@ interface Props {
   layoutType?: "suspended" | "mosaic" | "minimalist";
   image?: string;
   mosaicImages?: string[];
+  heroBackground?: string;
 }
 
 const {
@@ -28,17 +29,24 @@ const {
   layoutType = "minimalist",
   mosaicImages = [],
   image,
+  heroBackground,
 } = Astro.props;
 
 // Specific data/visuals for different layouts
 const showMosaic = layoutType === "mosaic";
 const showSuspended = layoutType === "suspended";
 const showMinimalist = layoutType === "minimalist";
+const pageHeroStyle =
+  showMosaic && variant === "solutions" && heroBackground
+    ? `background:
+        linear-gradient(rgba(5,12,10,0.7), rgba(5,12,10,0.7)),
+        url('${heroBackground}') center / cover no-repeat;`
+    : undefined;
 ---
 
 <Layout title={`${title}`} showNewsletter={true}>
   <main>
-    <section class={`page-hero page-hero--${variant} page-hero--${layoutType}`}>
+    <section class={`page-hero page-hero--${variant} page-hero--${layoutType}`} style={pageHeroStyle}>
       <div class="container page-hero__container">
         {showSuspended && (
           <div class="hero-suspended">
@@ -135,12 +143,6 @@ const showMinimalist = layoutType === "minimalist";
   .page-hero--contact { background-color: #0B1A14; }
   .page-hero--ayudas { background-color: #0B1A14; }
   .page-hero--eventos { background-color: #0B1A14; }
-
-  .page-hero--solutions.page-hero--mosaic {
-    background:
-      linear-gradient(rgba(5, 12, 10, 0.7), rgba(5, 12, 10, 0.7)),
-      url('/images/Técnicos y Asesores.jpg') center / cover no-repeat;
-  }
 
   /* Breadcrumbs */
   .hero-breadcrumbs {
