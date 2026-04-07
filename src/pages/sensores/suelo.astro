@@ -17,25 +17,27 @@ import Layout from "../../layouts/Layout.astro";
     <section class="content-block">
       <div class="container narrow">
         <div class="section-label">01. EL PROBLEMA</div>
-        <h2>¿Por qué regar a ciegas es el mayor riesgo financiero de su finca?</h2>
-        <p>
-          En la agricultura profesional, el suelo es frecuentemente tratado como una "caja negra". Regar basándose en la observación 
-          de la superficie o en calendarios fijos ignora la realidad de la dinámica hídrica en el perfil radicular. 
-          El **estrés hídrico invisible** ocurre mucho antes de que la planta muestre síntomas visuales, 
-          traduciéndose en una pérdida de vigor y potencial productivo que no se recupera.
-        </p>
-        
-        <!-- IMAGE MOSAIC 1 -->
-        <div class="image-mosaic">
-          <img src="/images/sensores/SensorTemperaturaHumedadSuelo.png" alt="Sensor Suelo" />
-          <img src="/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png" alt="Sonda Tubular" />
-        </div>
+        <div class="manual-detail-box">
+          <h2>¿Por qué regar a ciegas es el mayor riesgo financiero de su finca?</h2>
+          <p>
+            En la agricultura profesional, el suelo es frecuentemente tratado como una "caja negra". Regar basándose en la observación 
+            de la superficie o en calendarios fijos ignora la realidad de la dinámica hídrica en el perfil radicular. 
+            El **estrés hídrico invisible** ocurre mucho antes de que la planta muestre síntomas visuales, 
+            traduciéndose en una pérdida de vigor y potencial productivo que no se recupera.
+          </p>
+          
+          <!-- IMAGE MOSAIC 1 -->
+          <div class="image-mosaic">
+            <img src="/images/sensores/SensorTemperaturaHumedadSuelo.png" alt="Sensor Suelo" />
+            <img src="/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png" alt="Sonda Tubular" />
+          </div>
 
-        <p>
-          Además, el riego excesivo no solo desperdicia un recurso escaso, sino que provoca la **lixiviación de fertilizantes**. 
-          Cuando el agua percola por debajo de la zona de raíces activa, arrastra consigo los nutrientes (especialmente nitratos), 
-          tirando literalmente su inversión por el desagüe y contaminando acuíferos.
-        </p>
+          <p>
+            Además, el riego excesivo no solo desperdicia un recurso escaso, sino que provoca la **lixiviación de fertilizantes**. 
+            Cuando el agua percola por debajo de la zona de raíces activa, arrastra consigo los nutrientes (especialmente nitratos), 
+            tirando literalmente su inversión por el desagüe y contaminando acuíferos.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -257,6 +259,13 @@ import Layout from "../../layouts/Layout.astro";
     line-height: 1.75;
     margin-bottom: 32px;
     color: var(--color-slate-700);
+  }
+
+  .manual-detail-box {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
   }
 
   /* TECH GRID */

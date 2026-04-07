@@ -161,6 +161,26 @@ const ecoRegimenes = [
           </div>
         </section>
 
+        <!-- NUEVA TARJETA -->
+        <section class="content-block">
+          <div class="feature-card">
+            <div class="card-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3>Consultoría Especializada</h3>
+            <p>Recibe asesoramiento personalizado de nuestros ingenieros agrónomos para implementar correctamente los ecorregímenes en tu explotación.</p>
+            <div class="card-actions">
+              <a href="/contacto" class="cta-btn">Solicitar Consultoría</a>
+            </div>
+          </div>
+        </section>
+
         <!-- FUENTES -->
         <footer id="fuentes" class="doc-footer">
           <h2 class="section-title">Fuentes y Documentación Oficial</h2>
@@ -260,6 +280,9 @@ const ecoRegimenes = [
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s ease-out;
+  }
+  .content-block[data-astro-cid-ylxwpykj] {
+    padding: 140px 0;
   }
   .content-block.visible {
     opacity: 1;
@@ -395,6 +418,55 @@ const ecoRegimenes = [
   .doc-links li { margin-bottom: 20px; }
   .doc-links a { color: #2563eb; font-weight: 700; text-decoration: none; font-size: 1.1rem; }
   .doc-links a:hover { text-decoration: underline; }
+
+  /* FEATURE CARD */
+  .feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eef2f1;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .card-icon {
+    color: #1DB99A;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  .feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #0f172a;
+  }
+  .feature-card p {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .card-actions {
+    margin-top: 24px;
+  }
+  .cta-btn {
+    background: #1DB99A;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  .cta-btn:hover {
+    background: #0d9b85;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(29, 185, 154, 0.2);
+  }
 
   @media (max-width: 900px) {
     .guide-layout { grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
