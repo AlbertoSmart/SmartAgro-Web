@@ -203,8 +203,8 @@ ol {
 .btn--turquoise {
   background: var(--color-turquoise);
   color: #000000;
-  margin-left: 150px;
-  margin-top: 60px;
+  margin-left: 20%;
+  margin-top: 10%;
 }
 
 .btn--red {
