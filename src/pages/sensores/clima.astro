@@ -105,40 +105,65 @@ import Layout from "../../layouts/Layout.astro";
     <!-- 4. INTERPRETACIÓN DE DATOS -->
     <section class="content-block grey-bg">
       <div class="container narrow">
-        <div class="section-label">04. INTELIGENCIA DE DATOS</div>
-        <h2>Anticipándose al Clima - Horas-Frío y Alertas</h2>
-        <p>
-          Su estación meteorológica se convierte en un sistema de alerta temprana. Desde su smartphone podrá visualizar:
-        </p>
-        <ul class="benefit-list">
-          <li><strong>Acumulación de Horas-Frío:</strong> Clave para determinar la salida de latencia en frutales.</li>
-          <li><strong>Alertas de Helada:</strong> Notificaciones inmediatas basadas en temperatura de bulbo húmedo.</li>
-          <li><strong>Riesgo de Plagas:</strong> Algoritmos que cruzan humedad foliar y temperatura para predecir brotes criptogámicos.</li>
-        </ul>
-        <p>
-          Esta "inteligencia climática" le permite pasar de una agricultura reactiva a una **agricultura proactiva**, 
-          tomando decisiones de protección de cultivo o fertilización en el momento de máxima eficacia técnica.
-        </p>
+        <div class="manual-detail-box manual-detail-box--compact">
+          <div class="section-label">04. INTELIGENCIA DE DATOS</div>
+          <h2>Anticipándose al Clima - Horas-Frío y Alertas</h2>
+          <p>
+            Su estación meteorológica se convierte en un sistema de alerta temprana. Desde su smartphone podrá visualizar:
+          </p>
+          <div class="insight-cards">
+            <div class="insight-card feature-card">
+              <h3>Acumulación de Horas-Frío</h3>
+              <p>Clave para determinar la salida de latencia en frutales.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Alertas de Helada</h3>
+              <p>Notificaciones inmediatas basadas en temperatura de bulbo húmedo.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Riesgo de Plagas</h3>
+              <p>Algoritmos que cruzan humedad foliar y temperatura para predecir brotes criptogámicos.</p>
+            </div>
+          </div>
+          <p>
+            Esta "inteligencia climática" le permite pasar de una agricultura reactiva a una **agricultura proactiva**, 
+            tomando decisiones de protección de cultivo o fertilización en el momento de máxima eficacia técnica.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- 5. IMPLEMENTACIÓN -->
     <section class="content-block grey-bg">
       <div class="container narrow">
-        <div class="section-label">05. IMPLEMENTACIÓN</div>
-        <h2>Configuración Estándar para Calidad de Datos</h2>
-        <p>
-          Una instalación profesional es crítica para garantizar la precisión de mediciones en el largo plazo. Nuestro protocolo sigue estándares meteorológicos internacionales:
-        </p>
-        <ul class="benefit-list">
-          <li><strong>Ubicación sobre Suelo Natural:</strong> Instalación sobre cubierta vegetal para evitar el calor radiado por hormigón o asfalto.</li>
-          <li><strong>Nivelación del Piranómetro:</strong> Asegurar que el sensor de radiación esté perfectamente horizontal para evitar errores en el balance hídrico.</li>
-          <li><strong>Altura Normativa:</strong> Sensores de temp/hum a 2 metros de altura para seguir estándares meteorológicos internacionales.</li>
-          <li><strong>Orientación del Anemómetro:</strong> Alineación con el Norte geográfico para una correcta lectura de la dirección del viento dominante.</li>
-        </ul>
-        <p>
-          Con estas verificaciones, los datos son comparables con otras estaciones y validables frente a auditorías técnicas.
-        </p>
+        <div class="manual-detail-box manual-detail-box--compact">
+          <div class="section-label">05. IMPLEMENTACIÓN</div>
+          <h2>Configuración Estándar para Calidad de Datos</h2>
+          <p>
+            Una instalación profesional es crítica para garantizar la precisión de mediciones en el largo plazo. Nuestro protocolo sigue estándares meteorológicos internacionales:
+          </p>
+          <div class="insight-cards">
+            <div class="insight-card feature-card">
+              <h3>Ubicación sobre Suelo Natural</h3>
+              <p>Instalación sobre cubierta vegetal para evitar el calor radiado por hormigón o asfalto.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Nivelación del Piranómetro</h3>
+              <p>Asegurar que el sensor de radiación esté perfectamente horizontal para evitar errores en el balance hídrico.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Altura Normativa</h3>
+              <p>Sensores de temp/hum a 2 metros de altura para seguir estándares meteorológicos internacionales.</p>
+            </div>
+            <div class="insight-card feature-card">
+              <h3>Orientación del Anemómetro</h3>
+              <p>Alineación con el Norte geográfico para una correcta lectura de la dirección del viento dominante.</p>
+            </div>
+          </div>
+          <p>
+            Con estas verificaciones, los datos son comparables con otras estaciones y validables frente a auditorías técnicas.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -234,7 +259,7 @@ import Layout from "../../layouts/Layout.astro";
     padding: 140px 0;
   }
 
-  .grey-bg { background: var(--color-gray-50); }
+  .grey-bg { background: #FFFFFF; }
 
   .section-label {
     font-size: 0.75rem;
@@ -416,6 +441,76 @@ import Layout from "../../layouts/Layout.astro";
     padding: 24px 0;
     border-bottom: 1px solid var(--color-gray-100);
     color: var(--color-slate-700);
+  }
+
+  .manual-detail-box--compact {
+    padding: 32px;
+  }
+
+  .manual-detail-box--compact h2 {
+    margin-bottom: 20px;
+  }
+
+  .manual-detail-box--compact > p {
+    margin-bottom: 18px;
+  }
+
+  .manual-detail-box--compact > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .insight-cards {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0 20px;
+  }
+
+  .insight-card {
+    background: #ffffff;
+    border: 1px solid rgba(29, 185, 154, 0.18);
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+  }
+
+  .insight-card h3 {
+    margin: 0 0 14px;
+    padding-bottom: 16px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-slate-900);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid rgba(29, 185, 154, 0.16);
+  }
+
+  .insight-card h3::after {
+    content: "i";
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: rgba(29, 185, 154, 0.12);
+    color: var(--color-turquoise-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .insight-card p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-slate-700);
+    text-align: left;
+  }
+
+  .content-block + .content-block {
+    padding-top: 60px;
   }
 
   /* CTA */
