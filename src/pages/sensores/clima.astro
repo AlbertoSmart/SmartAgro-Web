@@ -17,21 +17,23 @@ import Layout from "../../layouts/Layout.astro";
     <section class="content-block">
       <div class="container narrow">
         <div class="section-label">01. EL PROBLEMA</div>
-        <h2>La incertidumbre climática: El coste de no conocer su microclima</h2>
-        <p>
-          En la agricultura moderna, depender de estaciones meteorológicas públicas situadas a varios kilómetros de su finca es un error estratégico. 
-          La orografía, la vegetación cercana y la altitud generan **microclimas específicos** donde las variables de temperatura, humedad y radiación pueden diferir significativamente de las redes estatales.
-        </p>
+        <div class="manual-detail-box manual-detail-box--cuaderno">
+          <h2>La incertidumbre climática: El coste de no conocer su microclima</h2>
+          <p>
+            En la agricultura moderna, depender de estaciones meteorológicas públicas situadas a varios kilómetros de su finca es un error estratégico. 
+            La orografía, la vegetación cercana y la altitud generan **microclimas específicos** donde las variables de temperatura, humedad y radiación pueden diferir significativamente de las redes estatales.
+          </p>
 
-        <!-- IMAGE MOSAIC 1 -->
-        <div class="image-mosaic">
-          <img src="/images/sensores/EstacionMeteorologica.png" alt="Estación Meteorológica" />
+          <!-- IMAGE MOSAIC 1 -->
+          <div class="image-mosaic">
+            <img src="/images/sensores/EstacionMeteorologica.png" alt="Estación Meteorológica" />
+          </div>
+
+          <p>
+            No parametrizar la **Evapotranspiración (ET)** real de su parcela le obliga a regar según "sensaciones", lo que a menudo resulta en un déficit hídrico en momentos críticos de calor extremo o un exceso de riego que dispara el gasto energético. 
+            Además, la falta de control sobre los **niveles de depósitos y balsas** genera riesgos operativos de rotura de stock hídrico, comprometiendo la seguridad de su sistema de riego automatizado.
+          </p>
         </div>
-
-        <p>
-          No parametrizar la **Evapotranspiración (ET)** real de su parcela le obliga a regar según "sensaciones", lo que a menudo resulta en un déficit hídrico en momentos críticos de calor extremo o un exceso de riego que dispara el gasto energético. 
-          Además, la falta de control sobre los **niveles de depósitos y balsas** genera riesgos operativos de rotura de stock hídrico, comprometiendo la seguridad de su sistema de riego automatizado.
-        </p>
       </div>
     </section>
 
@@ -39,33 +41,35 @@ import Layout from "../../layouts/Layout.astro";
     <section class="content-block grey-bg">
       <div class="container narrow">
         <div class="section-label">02. LA SOLUCIÓN</div>
-        <h2>Modelado de Balance Hídrico - Penman-Monteith IoT</h2>
-        <p>
-          Nuestras estaciones meteorológicas IoT no solo recolectan datos; ejecutan modelos matemáticos avanzados. 
-          Al integrar lecturas de velocidad del viento, radiación solar neta, temperatura y humedad relativa, calculamos la **ETp (Evapotranspiración de referencia)** siguiendo el estándar FAO-56 Penman-Monteith.
-        </p>
+        <div class="manual-detail-box">
+          <h2>Modelado de Balance Hídrico - Penman-Monteith IoT</h2>
+          <p>
+            Nuestras estaciones meteorológicas IoT no solo recolectan datos; ejecutan modelos matemáticos avanzados. 
+            Al integrar lecturas de velocidad del viento, radiación solar neta, temperatura y humedad relativa, calculamos la **ETp (Evapotranspiración de referencia)** siguiendo el estándar FAO-56 Penman-Monteith.
+          </p>
 
-        <!-- IMAGE MOSAIC 2 -->
-        <div class="image-mosaic">
-          <img src="/images/sensores/SensorNivelAgua.png" alt="Sensor Nivel Agua" />
-        </div>
+          <!-- IMAGE MOSAIC 2 -->
+          <div class="image-mosaic">
+            <img src="/images/sensores/SensorNivelAgua.png" alt="Sensor Nivel Agua" />
+          </div>
 
-        <p>
-          Este dato es el "gasto" de su banco hídrico. Al restarlo de las aportaciones del suelo, obtenemos el **Balance Hídrico Real**, permitiendo reponer exactamente lo que el sistema suelo-planta-atmósfera ha perdido. 
-          Complementamos esto con sensores de **nivel hidrostático** de alta precisión para balsas y pozos, asegurando un control total del inventario de agua de la finca.
-        </p>
-        <div class="tech-grid">
-          <div class="tech-item">
-            <h3>Piranómetro Integrado</h3>
-            <p>Medición de radiación solar para el cálculo de demanda hídrica.</p>
-          </div>
-          <div class="tech-item">
-            <h3>Integrales Térmicas (GDD)</h3>
-            <p>Cálculo automático de grados-día para fenología.</p>
-          </div>
-          <div class="tech-item">
-            <h3>Conectividad LoRaWAN</h3>
-            <p>Datos en tiempo real sin cables ni dependencias de Wi-Fi.</p>
+          <p>
+            Este dato es el "gasto" de su banco hídrico. Al restarlo de las aportaciones del suelo, obtenemos el **Balance Hídrico Real**, permitiendo reponer exactamente lo que el sistema suelo-planta-atmósfera ha perdido. 
+            Complementamos esto con sensores de **nivel hidrostático** de alta precisión para balsas y pozos, asegurando un control total del inventario de agua de la finca.
+          </p>
+          <div class="tech-grid">
+            <div class="tech-item feature-card">
+              <h3>Piranómetro Integrado</h3>
+              <p>Medición de radiación solar para el cálculo de demanda hídrica.</p>
+            </div>
+            <div class="tech-item feature-card">
+              <h3>Integrales Térmicas (GDD)</h3>
+              <p>Cálculo automático de grados-día para fenología.</p>
+            </div>
+            <div class="tech-item feature-card">
+              <h3>Conectividad LoRaWAN</h3>
+              <p>Datos en tiempo real sin cables ni dependencias de Wi-Fi.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -118,26 +122,34 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <!-- 5. GUÍA DE INSTALACIÓN -->
-    <section class="content-block">
+    <!-- 5. IMPLEMENTACIÓN -->
+    <section class="content-block grey-bg">
       <div class="container narrow">
         <div class="section-label">05. IMPLEMENTACIÓN</div>
         <h2>Configuración Estándar para Calidad de Datos</h2>
-        <ol class="step-list">
+        <p>
+          Una instalación profesional es crítica para garantizar la precisión de mediciones en el largo plazo. Nuestro protocolo sigue estándares meteorológicos internacionales:
+        </p>
+        <ul class="benefit-list">
           <li><strong>Ubicación sobre Suelo Natural:</strong> Instalación sobre cubierta vegetal para evitar el calor radiado por hormigón o asfalto.</li>
           <li><strong>Nivelación del Piranómetro:</strong> Asegurar que el sensor de radiación esté perfectamente horizontal para evitar errores en el balance hídrico.</li>
           <li><strong>Altura Normativa:</strong> Sensores de temp/hum a 2 metros de altura para seguir estándares meteorológicos internacionales.</li>
           <li><strong>Orientación del Anemómetro:</strong> Alineación con el Norte geográfico para una correcta lectura de la dirección del viento dominante.</li>
-        </ol>
+        </ul>
+        <p>
+          Con estas verificaciones, los datos son comparables con otras estaciones y validables frente a auditorías técnicas.
+        </p>
       </div>
     </section>
 
     <!-- CTA FINAL -->
     <section class="cta-section">
       <div class="container">
-        <h2>¿Quiere dominar el microclima de su parcela?</h2>
-        <p>Hablemos sobre cómo instalar una red meteorológica inteligente en su explotación.</p>
-        <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
+        <div class="manual-detail-box">
+          <h2>¿Quiere dominar el microclima de su parcela?</h2>
+          <p>Hablemos sobre cómo instalar una red meteorológica inteligente en su explotación.</p>
+          <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
+        </div>
       </div>
     </section>
   </main>
@@ -197,21 +209,23 @@ import Layout from "../../layouts/Layout.astro";
   /* IMAGE MOSAICS */
   .image-mosaic {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
     margin: 60px 0;
   }
 
+  .image-mosaic.triple {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .image-mosaic img {
     width: 100%;
-    max-width: 600px;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     object-fit: contain;
     background: var(--color-gray-50);
     border-radius: 20px;
     border: 1px solid var(--color-gray-100);
-    padding: 32px;
-    margin: 0 auto;
+    padding: 24px;
     transition: transform 0.3s ease;
   }
 
@@ -249,6 +263,21 @@ import Layout from "../../layouts/Layout.astro";
     color: var(--color-slate-700);
   }
 
+  .manual-detail-box {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+  }
+
+  .manual-detail-box--cuaderno {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
+      #f3f4f6;
+    border-color: #dfe5ea;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
   /* TECH GRID */
   .tech-grid {
     display: grid;
@@ -268,6 +297,21 @@ import Layout from "../../layouts/Layout.astro";
   .tech-item p {
     font-size: 1.05rem;
     line-height: 1.6;
+  }
+
+  .tech-item.feature-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .tech-item.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+    border-color: rgba(29, 185, 154, 0.35);
   }
 
   /* ROI BOX */
@@ -357,9 +401,24 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   @media (max-width: 900px) {
+    .image-mosaic { grid-template-columns: 1fr; }
+    .image-mosaic.triple { grid-template-columns: 1fr; }
     .roi-box { padding: 60px 40px; }
     h2 { font-size: 2.1rem; }
     .expert-hero-solid h1 { font-size: 2.5rem; }
     .content-block { padding: 100px 0; }
+  }
+
+  @media (max-width: 768px) {
+    .image-mosaic { grid-template-columns: 1fr; gap: 24px; }
+    .image-mosaic img { aspect-ratio: 16 / 9; }
+    .manual-detail-box {
+      padding: 24px;
+      border-radius: 8px;
+    }
+    .tech-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
   }
 </style>
