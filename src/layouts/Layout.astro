@@ -44,8 +44,32 @@ const {
 
     <title>{title}</title>
     <ClientRouter />
+    <style is:global>
+      :root {
+        --navbar-height: 80px;
+        --navbar-offset: calc(var(--navbar-height) + 16px);
+      }
+
+      html {
+        scroll-padding-top: var(--navbar-offset);
+      }
+
+      body.has-fixed-navbar {
+        padding-top: var(--navbar-height);
+      }
+
+      body.has-fixed-navbar [id] {
+        scroll-margin-top: var(--navbar-offset);
+      }
+
+      @media (max-width: 1024px) {
+        :root {
+          --navbar-height: 60px;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="has-fixed-navbar">
     <Navbar />
     <slot />
     {showNewsletter && <Newsletter />}
