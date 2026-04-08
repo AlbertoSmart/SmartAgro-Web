@@ -31,11 +31,21 @@ const otherSensors = [
     <section class="editorial-hero">
       <div class="container">
         <div class="breadcrumb-flat">TECNOLOGÍA / AUDITORÍA HARDWARE / RENTABILIDAD</div>
-        <h1>Análisis de Hardware y <br/>Retorno de Inversión Agronómico</h1>
-        <p class="summary-block">
-          Este documento técnico analiza las ventajas operativas y el impacto económico de la digitalización de precisión. 
-          Nuestra auditoría se centra en tres pilares fundamentales: dinámica edáfica, fisiología vegetal y parametrización climática.
-        </p>
+        <div class="hero-intro-card">
+          <h1>Análisis de Hardware y <br/>Retorno de Inversión Agronómico</h1>
+          <details class="hero-info-card">
+            <summary>
+              <span>Ver información</span>
+              <span class="hero-info-card__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="hero-info-card__content">
+              <p class="summary-block">
+                Este documento técnico analiza las ventajas operativas y el impacto económico de la digitalización de precisión. 
+                Nuestra auditoría se centra en tres pilares fundamentales: dinámica edáfica, fisiología vegetal y parametrización climática.
+              </p>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -43,7 +53,7 @@ const otherSensors = [
     <section class="editorial-section white-section">
       <div class="container">
         <div class="zig-zag-row">
-          <div class="text-content">
+          <div class="text-content manual-detail-box manual-detail-box--animated">
             <h2>Ecosistema Edáfico: Dinámica del Agua y Nutrición</h2>
             <div class="copy-pills">
               <p>
@@ -93,7 +103,7 @@ const otherSensors = [
     <section class="editorial-section grey-section">
       <div class="container">
         <div class="zig-zag-row zig-zag-row--reverse">
-          <div class="text-content">
+          <div class="text-content manual-detail-box manual-detail-box--animated">
             <h2>Fisiología Vegetal: Análisis Metabólico Directo</h2>
             <div class="copy-pills">
               <p>
@@ -142,7 +152,7 @@ const otherSensors = [
     <section class="editorial-section white-section">
       <div class="container">
         <div class="zig-zag-row">
-          <div class="text-content">
+          <div class="text-content manual-detail-box manual-detail-box--animated">
             <h2>Gestión Atmosférica y Control Hidrostático</h2>
             <div class="copy-pills">
               <p>
@@ -215,6 +225,16 @@ const otherSensors = [
     text-align: center;
   }
 
+  .hero-intro-card {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 52px 36px;
+    background: linear-gradient(135deg, #ffffff 0%, #f6fbf9 100%);
+    border: 1px solid rgba(11, 26, 20, 0.08);
+    border-radius: 32px;
+    box-shadow: 0 28px 70px rgba(11, 26, 20, 0.1);
+  }
+
   .breadcrumb-flat {
     font-size: 0.85rem;
     font-weight: 800;
@@ -239,6 +259,61 @@ const otherSensors = [
     margin: 0 auto;
     color: #444444;
     font-weight: 400;
+  }
+
+  .hero-info-card {
+    max-width: 820px;
+    margin: 40px auto 0;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(11, 26, 20, 0.08);
+    border-radius: 24px;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .hero-info-card summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 28px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: #0B1A14;
+  }
+
+  .hero-info-card summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .hero-info-card__icon {
+    width: 14px;
+    height: 14px;
+    border-right: 2px solid var(--color-turquoise);
+    border-bottom: 2px solid var(--color-turquoise);
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    margin-top: -6px;
+  }
+
+  .hero-info-card[open] .hero-info-card__icon {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+  }
+
+  .hero-info-card__content {
+    padding: 0 28px 28px;
+    border-top: 1px solid rgba(11, 26, 20, 0.08);
+  }
+
+  .hero-info-card__content p {
+    margin: 22px 0 0;
+    max-width: none;
+    color: #3f4c45;
   }
 
   /* ZIG-ZAG GRID */
@@ -316,6 +391,71 @@ const otherSensors = [
     margin-right: 12px;
     color: var(--color-turquoise);
     font-weight: 900;
+  }
+
+  .manual-detail-box {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+  }
+
+  .manual-detail-box--animated {
+    position: relative;
+    overflow: hidden;
+    animation: manualBoxEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .manual-detail-box--animated:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(15, 23, 42, 0.1);
+    border-color: rgba(29, 185, 154, 0.28);
+  }
+
+  .manual-detail-box--animated::before {
+    content: '';
+    position: absolute;
+    inset: -20% auto -20% -35%;
+    width: 42%;
+    background: linear-gradient(90deg, transparent 0%, rgba(29, 185, 154, 0.08) 45%, rgba(29, 185, 154, 0.2) 50%, rgba(29, 185, 154, 0.08) 55%, transparent 100%);
+    transform: rotate(12deg);
+    animation: manualBoxSheen 4.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .manual-detail-box--animated > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes manualBoxEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(28px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes manualBoxSheen {
+    0% {
+      left: -38%;
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    40% {
+      left: 118%;
+      opacity: 0.9;
+    }
+    100% {
+      left: 118%;
+      opacity: 0;
+    }
   }
 
   /* EDITORIAL IMAGES */
@@ -411,5 +551,18 @@ const otherSensors = [
   @media (max-width: 768px) {
     .editorial-hero h1 { font-size: 2.8rem; }
     .editorial-section { padding: 80px 0; }
+    .summary-block { font-size: 1.1rem; }
+    .hero-intro-card {
+      padding: 36px 20px 24px;
+      border-radius: 24px;
+    }
+    .hero-info-card summary,
+    .hero-info-card__content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .manual-detail-box {
+      padding: 28px 24px;
+    }
   }
 </style>
