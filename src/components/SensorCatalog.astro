@@ -103,7 +103,7 @@ const categories = [
 <section class="sensor-catalog section-padding" id="sensores">
     <div class="container overflow-visible">
         <div class="sensor-catalog__header">
-            <div class="header-main">
+            <div class="header-main feature-card animated">
                 <span class="catalog-badge">Precisión loRaWAN & 4G</span>
                 <h2 class="balanced-title">Hardware de Precisión</h2>
                 <p class="balanced-subtitle">Monitorización continua que transforma datos en decisiones rentables.</p>
@@ -161,8 +161,29 @@ const categories = [
         overflow: hidden;
     }
 
-    .sensor-catalog__header {
-        margin-bottom: 70px;
+    
+
+    .header-main.feature-card {
+        background: #FFFFFF;
+        border: 1px solid #E9EEF2;
+        border-radius: 20px;
+        padding: 32px 28px;
+        box-shadow: 0 14px 32px rgba(11, 26, 20, 0.07);
+    }
+
+    .header-main.animated {
+        animation: fade-up 0.7s ease both;
+    }
+
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .catalog-badge {
@@ -396,3 +417,4 @@ const categories = [
 
     document.addEventListener('astro:page-load', setupFluidSlider);
 </script>
+
