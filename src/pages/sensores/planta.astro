@@ -263,6 +263,12 @@ const sensorIndexItems = [
     transition: transform 0.3s ease;
   }
 
+  .image-mosaic > img:only-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 620px);
+  }
+
   /* BLOCKS */
   .content-block {
     padding: 140px 0;
