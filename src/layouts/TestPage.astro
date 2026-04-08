@@ -85,8 +85,13 @@ const pageHeroStyle =
         )}
 
         {showMinimalist && (
-          <div class="hero-minimalist">
+          <div class={`hero-minimalist ${image ? "hero-minimalist--with-image" : ""}`.trim()}>
              <h1 class="text-weight-heavy">{heading}</h1>
+             {image && (
+              <div class="hero-minimalist__image">
+                <img src={image} alt={heading} />
+              </div>
+             )}
           </div>
         )}
       </div>
@@ -291,6 +296,26 @@ const pageHeroStyle =
     padding-bottom: 40px;
   }
 
+  .hero-minimalist--with-image {
+    display: grid;
+    grid-template-columns: 50% 42%;
+    gap: 8%;
+    align-items: center;
+  }
+
+  .hero-minimalist__image {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .hero-minimalist__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
   .text-weight-heavy {
     font-size: clamp(3rem, 4vw, 4rem);
     font-weight: 800;
@@ -427,6 +452,17 @@ const pageHeroStyle =
       text-align: center;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .hero-minimalist--with-image {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .hero-minimalist__image {
+      justify-self: center;
+      width: min(100%, 240px);
     }
 
     /* Stack grid for Suspended (Servicios) */
