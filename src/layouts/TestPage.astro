@@ -48,7 +48,7 @@ const pageHeroStyle =
 
 <Layout title={`${title}`} showNewsletter={true}>
   <main>
-    <section class={`page-hero page-hero--${variant} page-hero--${layoutType}`} style={pageHeroStyle}>
+    <section class={`page-hero page-hero--${variant} page-hero--${layoutType} ${heroSectionClass}`.trim()} style={pageHeroStyle}>
       <div class="container page-hero__container">
         {showSuspended && (
           <div class={`hero-suspended ${heroSectionClass}`.trim()}>

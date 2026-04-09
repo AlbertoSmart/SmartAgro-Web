@@ -8,6 +8,7 @@ import TestPage from "../layouts/TestPage.astro";
   description="Nuestra tecnología se adapta a tu perfil para ofrecerte las herramientas exactas que necesitas en tu día a día."
   variant="solutions"
   layoutType="mosaic"
+  heroSectionClass="hero-soluciones-offset"
   mosaicImages={["/images/soluciones/mobile_app_field.png", "/images/soluciones/olivar_extenso_real.png"]}
 >
   <div class="subpage-content">
@@ -93,6 +94,36 @@ import TestPage from "../layouts/TestPage.astro";
 </TestPage>
 
 <style>
+  :global(.hero-soluciones-offset) {
+    padding-bottom: 0 !important;
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic__content) {
+    padding-top: 28px;
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic) {
+    gap: 36px;
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic h1) {
+    margin-bottom: 12px;
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic__desc-row) {
+    gap: 14px;
+    align-items: flex-start;
+    margin-top: -10px !important;
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic__desc-row p) {
+    margin-top: -10px;
+  }
+
+  :global(.hero-soluciones-offset .hero-cta) {
+    padding: 12px 24px;
+    margin-top: 4px;
+  }
   .solutions-intro {
     margin-bottom: 60px;
   }
@@ -247,3 +278,4 @@ import TestPage from "../layouts/TestPage.astro";
     }
   }
 </style>
+

@@ -9,8 +9,9 @@ import { faqData } from "../../data/faqs";
     heading="Panel de Control para Técnicos y Asesores"
     description="Control total sobre múltiples explotaciones. Supervisión avanzada, validación de registros y reportes automáticos para ingenieros y asesores."
     variant="solutions"
-  layoutType="mosaic"
-  heroBackground="/images/Técnicos y Asesores.jpg"
+    layoutType="mosaic"
+    heroSectionClass="hero-tecnicos-offset"
+    heroBackground="/images/Técnicos y Asesores.jpg"
   mosaicImages={["/images/soluciones/data_dashboard_agri.png", "/images/soluciones/engineer_soil_sensors.png"]}
 >
     <div class="subpage-content">
@@ -89,6 +90,36 @@ import { faqData } from "../../data/faqs";
 </TestPage>
 
 <style>
+    :global(.hero-tecnicos-offset .hero-mosaic__content) {
+        padding-top: 42px;
+    }
+
+    :global(.hero-tecnicos-offset) {
+        padding-bottom: 0 !important;
+    }
+
+    :global(.hero-tecnicos-offset .hero-mosaic) {
+        gap: 32px;
+    }
+
+    :global(.hero-tecnicos-offset .hero-mosaic h1) {
+        margin-bottom: 10px;
+    }
+
+    :global(.hero-tecnicos-offset .hero-mosaic__desc-row) {
+        gap: 12px;
+        align-items: flex-start;
+        margin-top: -14px !important;
+    }
+
+    :global(.hero-tecnicos-offset .hero-mosaic__desc-row p) {
+        margin-top: -18px;
+    }
+
+    :global(.hero-tecnicos-offset .hero-cta) {
+        padding: 12px 24px;
+        margin-top: -2px;
+    }
     .tech-features {
         margin: 60px 0 100px;
     }

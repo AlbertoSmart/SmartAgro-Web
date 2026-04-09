@@ -10,8 +10,9 @@ import { faqData } from "../../data/faqs";
     heading="Cuaderno de Campo para Agricultores"
     description="La herramienta definitiva para la gestión diaria de tu explotación. Digitaliza tus registros, controla tus insumos y cumple con la normativa SIEX de forma sencilla."
     variant="solutions"
-  layoutType="mosaic"
-  heroBackground="/images/cuaderno de Campo para Agricultores.jpg"
+    layoutType="mosaic"
+    heroSectionClass="hero-agricultores-offset"
+    heroBackground="/images/cuaderno de Campo para Agricultores.jpg"
   mosaicImages={["/images/soluciones/farmer_tablet_orchard.png", "/images/soluciones/agricultor_tech_fix.png"]}
 >
     <div class="subpage-content">
@@ -117,6 +118,36 @@ import { faqData } from "../../data/faqs";
 </TestPage>
 
 <style>
+    :global(.hero-agricultores-offset .hero-mosaic__content) {
+        padding-top: 42px;
+    }
+
+    :global(.hero-agricultores-offset) {
+        padding-bottom: 0 !important;
+    }
+
+    :global(.hero-agricultores-offset .hero-mosaic) {
+        gap: 32px;
+    }
+
+    :global(.hero-agricultores-offset .hero-mosaic h1) {
+        margin-bottom: 10px;
+    }
+
+    :global(.hero-agricultores-offset .hero-mosaic__desc-row) {
+        gap: 12px;
+        align-items: flex-start;
+        margin-top: -14px !important;
+    }
+
+    :global(.hero-agricultores-offset .hero-mosaic__desc-row p) {
+        margin-top: -18px;
+    }
+
+    :global(.hero-agricultores-offset .hero-cta) {
+        padding: 12px 24px;
+        margin-top: 6px;
+    }
     .daily-flow {
         padding: 60px 0 100px; /* More breathing room */
     }
