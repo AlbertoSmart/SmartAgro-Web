@@ -138,8 +138,8 @@ ol {
 .blog-hero,
 .guide-hero,
 .expert-hero-solid {
-  padding-top: 56px !important;
-  padding-bottom: 40px !important;
+  padding-top: 20px !important;
+  padding-bottom: 12px !important;
 }
 
 .glass {
@@ -374,8 +374,8 @@ ol {
   .blog-hero,
   .guide-hero,
   .expert-hero-solid {
-    padding-top: 40px !important;
-    padding-bottom: 28px !important;
+    padding-top: 16px !important;
+    padding-bottom: 10px !important;
   }
 
   /* EXHAUSTIVE FIX: Ensure strict white margins on both screen edges for all possible content wrappers */
