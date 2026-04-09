@@ -58,7 +58,7 @@ const posts = await getPosts();
           <div class="inner-trazabilidad-card" style="margin-top: 24px; padding: 16px; background: #f8f9fa; border-radius: 6px; border: 1px solid #e0e0e0;">
             <h4 style="font-size: 0.85rem; font-weight: 800; margin-bottom: 8px; text-transform: uppercase;">Trazabilidad GPS DARP</h4>
             <p class="siex-note" style="margin-bottom: 12px; font-size: 0.8rem; line-height: 1.5; color: #666666;">Certifica cada aplicación y transporte ante la administración. Informes automáticos de rutas y coberturas.</p>
-            <a href="/herramientas/trazabilidad" class="widget-link" style="font-size: 0.8rem; color: #000000; text-decoration: none; font-weight: 700; border-bottom: 1px solid #000000;">Explorar Servicio →</a>
+            <a href="/herramientas/trazabilidad" class="widget-link">Explorar Servicio →</a>
           </div>
         </div>
 
@@ -307,6 +307,14 @@ const posts = await getPosts();
     border-left: 4px solid #b0b0b0 !important;
   }
 
+  .inner-trazabilidad-card a.widget-link {
+    font-size: 0.8rem;
+    color: #0b8bf5 !important;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid #0b8bf5;
+  }
+
   .pulse-green {
     width: 8px;
     height: 8px;
@@ -383,3 +391,4 @@ const posts = await getPosts();
     }
   }
 </style>
+
