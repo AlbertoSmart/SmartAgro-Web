@@ -142,6 +142,12 @@ ol {
   padding-bottom: 12px !important;
 }
 
+.cue-directory .search-bar-wrap {
+  margin: 16px auto 80px !important;
+  position: relative;
+  z-index: 10;
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -376,6 +382,11 @@ ol {
   .expert-hero-solid {
     padding-top: 16px !important;
     padding-bottom: 10px !important;
+  }
+
+  .cue-directory .search-bar-wrap {
+    margin: 20px auto 50px !important;
+    padding: 0 !important;
   }
 
   /* EXHAUSTIVE FIX: Ensure strict white margins on both screen edges for all possible content wrappers */
