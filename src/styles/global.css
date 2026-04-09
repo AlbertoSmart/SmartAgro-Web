@@ -134,6 +134,14 @@ ol {
   padding: 100px 0;
 }
 
+/* Shared hero spacing to avoid oversized gaps after client-side navigation. */
+.blog-hero,
+.guide-hero,
+.expert-hero-solid {
+  padding-top: 56px !important;
+  padding-bottom: 40px !important;
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -361,6 +369,13 @@ ol {
   html, body {
     overflow-x: hidden;
     width: 100%;
+  }
+
+  .blog-hero,
+  .guide-hero,
+  .expert-hero-solid {
+    padding-top: 40px !important;
+    padding-bottom: 28px !important;
   }
 
   /* EXHAUSTIVE FIX: Ensure strict white margins on both screen edges for all possible content wrappers */
