@@ -153,13 +153,15 @@ const posts = await getPosts();
 
   .posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 420px));
+    justify-content: center;
     gap: 64px;
   }
 
   .blog-card-clean {
     display: flex;
     flex-direction: column;
+    width: 100%;
     background: #ffffff;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
@@ -267,6 +269,10 @@ const posts = await getPosts();
     letter-spacing: 0.05em;
   }
 
+  .blog-sidebar > .sidebar-widget:first-child {
+    border-left: 4px solid var(--color-turquoise);
+  }
+
   .search-box {
     display: flex;
     background: #f8f9fa;
@@ -296,6 +302,10 @@ const posts = await getPosts();
 
   .siex-status-widget {
     border-left: 4px solid var(--color-turquoise);
+  }
+
+  .inner-trazabilidad-card {
+    border-left: 4px solid #b0b0b0 !important;
   }
 
   .pulse-green {
