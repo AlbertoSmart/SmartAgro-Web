@@ -3,9 +3,14 @@
 
 <section class="hero" id="hero" transition:persist="home-hero">
   <div
-    class="hero__bg hero-bg"
+    class="hero__bg hero__bg--primary hero-bg"
     aria-hidden="true"
-    transition:persist="home-hero-bg"
+    transition:persist="home-hero-bg-primary"
+  ></div>
+  <div
+    class="hero__bg hero__bg--secondary hero-bg"
+    aria-hidden="true"
+    transition:persist="home-hero-bg-secondary"
   ></div>
   <div
     class="hero__overlay hero-overlay"
@@ -58,8 +63,26 @@
 
   .hero__bg {
     z-index: 0;
-    background: url("/images/imagenportada.jpg") center 46% / cover no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
     transform: scale(1);
+    will-change: opacity;
+  }
+
+  .hero__bg--primary {
+    background-image: url("/images/imagenportada.jpg");
+    background-position: center 46%;
+  }
+
+  .hero__bg--secondary {
+    background-image: url("/images/imagenportadaprado.jpg");
+    background-position: center 46%;
+    opacity: 0;
+    transition: opacity 2.4s ease-in-out;
+  }
+
+  .hero__bg--secondary.is-visible {
+    opacity: 1;
   }
 
   .hero__overlay {
@@ -175,4 +198,29 @@
       max-width: 100%;
     }
   }
+
 </style>
+
+<script>
+  function initHeroBackgroundFade() {
+    const hero = document.querySelector('#hero');
+    const secondaryBg = hero?.querySelector('.hero__bg--secondary');
+
+    if (!hero || !secondaryBg) {
+      return;
+    }
+
+    if (window.__heroFadeInterval) {
+      window.clearInterval(window.__heroFadeInterval);
+    }
+
+    secondaryBg.classList.remove('is-visible');
+
+    window.__heroFadeInterval = window.setInterval(() => {
+      secondaryBg.classList.toggle('is-visible');
+    }, 6000);
+  }
+
+  document.addEventListener('DOMContentLoaded', initHeroBackgroundFade);
+  document.addEventListener('astro:page-load', initHeroBackgroundFade);
+</script>
