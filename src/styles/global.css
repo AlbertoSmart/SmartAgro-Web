@@ -134,6 +134,96 @@ ol {
   padding: 100px 0;
 }
 
+/* Home Technology spacing tighten-up */
+#hero {
+  padding-bottom: 72px !important;
+}
+
+#intro.section-padding,
+#sensores.section-padding,
+#gestion.section-padding,
+#asistente.section-padding,
+#features.section-padding,
+#tech.section-padding {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+
+#intro .intro__grid {
+  gap: 56px !important;
+}
+
+#intro .intro__card {
+  padding: 40px !important;
+}
+
+#sensores {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+
+#sensores .fluid-category {
+  margin-bottom: 56px !important;
+}
+
+#sensores .fluid-category:last-child {
+  margin-bottom: 0 !important;
+}
+
+#sensores .category-header-row {
+  margin-bottom: 22px !important;
+  padding-bottom: 12px !important;
+}
+
+#gestion .mgmt-features {
+  margin-top: 28px !important;
+  gap: 24px !important;
+}
+
+#asistente .ai-assistant__panel {
+  padding: 56px !important;
+  gap: 40px !important;
+}
+
+#asistente .ai-badge {
+  margin-bottom: 18px !important;
+}
+
+#asistente .ai-assistant__description {
+  margin-bottom: 24px !important;
+}
+
+#asistente .ai-features {
+  margin-bottom: 28px !important;
+  gap: 14px !important;
+}
+
+#features .features__header {
+  margin-bottom: 48px !important;
+}
+
+#tech .tech__cards {
+  gap: 24px !important;
+  margin-bottom: 40px !important;
+}
+
+#tech .tech__intro-text {
+  margin-top: 18px !important;
+}
+
+#technicians {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+#technicians .technicians__title {
+  margin-bottom: 20px !important;
+}
+
+#technicians .technicians__text {
+  margin-bottom: 24px !important;
+}
+
 /* Shared hero spacing to avoid oversized gaps after client-side navigation. */
 .blog-hero,
 .guide-hero,
@@ -355,6 +445,34 @@ ol {
 
   .section-padding {
     padding: 80px 0;
+  }
+
+  #hero {
+    padding-bottom: 56px !important;
+  }
+
+  #intro.section-padding,
+  #sensores.section-padding,
+  #gestion.section-padding,
+  #asistente.section-padding,
+  #features.section-padding,
+  #tech.section-padding,
+  #technicians {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  #intro .intro__grid {
+    gap: 36px !important;
+  }
+
+  #asistente .ai-assistant__panel {
+    padding: 40px !important;
+    gap: 32px !important;
+  }
+
+  #sensores .fluid-category {
+    margin-bottom: 44px !important;
   }
 }
 

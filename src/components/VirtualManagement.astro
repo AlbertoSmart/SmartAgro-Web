@@ -75,13 +75,15 @@
 
     .virtual-mgmt__grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: clamp(32px, 4vw, 56px);
         align-items: center;
     }
 
     .virtual-mgmt__visual {
         position: relative;
+        display: flex;
+        align-self: stretch;
     }
 
     .map-mockup__image {
@@ -92,7 +94,8 @@
     }
 
     .map-mockup {
-        aspect-ratio: 4/3;
+        width: 100%;
+        min-height: 560px;
         background: #1a1a2e;
         border-radius: var(--border-radius-lg);
         overflow: hidden;
@@ -221,6 +224,7 @@
         /* Make sure the map scales correctly */
         .map-mockup {
             aspect-ratio: 16/9;
+            min-height: 0;
         }
     }
 </style>
