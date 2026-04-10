@@ -85,8 +85,12 @@ const otherSensors = [
               <li>Prevención de patógenos por exceso de humedad radicular.</li>
             </ul>
           </div>
-          <div class="media-content">
-            <img src="/images/sensores/field_sensor_hero.jpg" alt="Visualización Dinámica Edáfica" class="editorial-image" />
+          <div class="media-content media-content--soil">
+            <div class="editorial-image-stack">
+              <img src="/images/sensores/field_sensor_hero.jpg" alt="Visualización Dinámica Edáfica" class="editorial-image editorial-image-stack__primary" />
+              <img src="/images/pexels-tomfisk-36030322%20(1).jpg" alt="Instalación técnica de sensores en campo" class="editorial-image editorial-image-stack__secondary" />
+              <img src="/images/sensores/pexels-panditwiguna-13043993.jpg" alt="Detalle de sensorización y entorno de cultivo" class="editorial-image editorial-image-stack__tertiary" />
+            </div>
           </div>
         </div>
       </div>
@@ -458,6 +462,20 @@ const otherSensors = [
     height: 100%;
   }
 
+  .media-content--soil {
+    align-items: center;
+  }
+
+  .editorial-image-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
   .editorial-image {
     width: 100%;
     max-width: 600px; /* Constrain horizontal width */
@@ -467,6 +485,12 @@ const otherSensors = [
     box-shadow: 0 40px 100px rgba(0,0,0,0.08);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     background: #f8f9fa;
+  }
+
+  .media-content--soil .editorial-image-stack .editorial-image {
+    max-width: none;
+    height: 300px;
+    object-position: center;
   }
 
   .editorial-image:hover {
@@ -557,6 +581,14 @@ const otherSensors = [
     }
     .manual-detail-box {
       padding: 28px 24px;
+    }
+
+    .editorial-image-stack {
+      gap: 12px;
+    }
+
+    .media-content--soil .editorial-image-stack .editorial-image {
+      height: 250px;
     }
   }
 </style>
