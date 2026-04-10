@@ -149,8 +149,19 @@ import { faqData } from "../../data/faqs";
         padding: 12px 24px;
         margin-top: 6px;
     }
+
+    :global(.page-body) {
+        padding-top: 24px !important;
+        padding-bottom: 28px !important;
+    }
+
+    .subpage-content {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
     .daily-flow {
-        padding: 60px 0 100px; /* More breathing room */
+        padding: 8px 0 64px;
     }
 
     .rounded-img {
@@ -164,7 +175,7 @@ import { faqData } from "../../data/faqs";
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 30px;
-        margin-top: 40px;
+        margin-top: 28px;
     }
 
     .flow-step {
@@ -208,7 +219,7 @@ import { faqData } from "../../data/faqs";
     .benefits-section {
         padding: 80px 40px;
         border-radius: 32px;
-        margin: 80px 0;
+        margin: 56px 0;
         position: relative;
         overflow: hidden;
     }
@@ -269,11 +280,45 @@ import { faqData } from "../../data/faqs";
         box-shadow: 0 0 20px rgba(29, 185, 154, 0.3);
     }
 
+    .tools-overview {
+        margin: 56px 0 0;
+    }
+
+    .tools-overview .cards-grid {
+        margin-bottom: 0 !important;
+    }
+
+    .faq-section {
+        padding: 40px 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .faq-section h2 {
+        margin-bottom: 24px !important;
+    }
+
+    :global(.highlight-box) {
+        margin: 56px 0 0 !important;
+    }
+
+    .subpage-content > :last-child {
+        margin-bottom: 0 !important;
+    }
+
     @media (max-width: 768px) {
+        :global(.page-body) {
+            padding-top: 16px !important;
+            padding-bottom: 20px !important;
+        }
+
+        .daily-flow {
+            padding-top: 8px;
+        }
+
         .flow-grid { grid-template-columns: 1fr; }
         .benefits-section {
             padding: 40px 20px;
-            margin: 40px 0;
+            margin: 36px 0;
         }
         .cards-grid {
             grid-template-columns: 1fr !important;
@@ -295,5 +340,27 @@ import { faqData } from "../../data/faqs";
             margin-bottom: 30px !important;
             font-size: 1.5rem;
         }
+
+        .tools-overview {
+            margin-top: 36px;
+        }
+
+        .faq-section {
+            padding: 28px 0 !important;
+        }
     }
 </style>
+
+<script>
+    function enforceAgricultoresSpacing() {
+        const pageBody = document.querySelector('.page-body');
+        if (!pageBody) return;
+
+        pageBody.style.setProperty('padding-top', window.innerWidth <= 768 ? '16px' : '24px', 'important');
+        pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '28px', 'important');
+    }
+
+    document.addEventListener('DOMContentLoaded', enforceAgricultoresSpacing);
+    document.addEventListener('astro:page-load', enforceAgricultoresSpacing);
+    window.addEventListener('resize', enforceAgricultoresSpacing);
+</script>
