@@ -121,6 +121,12 @@ import { faqData } from "../../data/faqs";
         padding: 12px 24px;
         margin-top: -2px;
     }
+
+    :global(.page-body) {
+        padding-top: 24px !important;
+        padding-bottom: 28px !important;
+    }
+
     .tech-features {
         margin: 60px 0 100px;
     }
@@ -234,6 +240,11 @@ import { faqData } from "../../data/faqs";
     .status.yellow { background: #fef9c3; color: #854d0e; }
 
     @media (max-width: 768px) {
+        :global(.page-body) {
+            padding-top: 16px !important;
+            padding-bottom: 20px !important;
+        }
+
         .service-row { grid-template-columns: 1fr; gap: 40px; }
         .tech-grid { grid-template-columns: 1fr; }
         .tech-item {
@@ -247,3 +258,17 @@ import { faqData } from "../../data/faqs";
         }
     }
 </style>
+
+<script>
+    function enforceTecnicosSpacing() {
+        const pageBody = document.querySelector('.page-body');
+        if (!pageBody) return;
+
+        pageBody.style.setProperty('padding-top', window.innerWidth <= 768 ? '16px' : '24px', 'important');
+        pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '28px', 'important');
+    }
+
+    document.addEventListener('DOMContentLoaded', enforceTecnicosSpacing);
+    document.addEventListener('astro:page-load', enforceTecnicosSpacing);
+    window.addEventListener('resize', enforceTecnicosSpacing);
+</script>
