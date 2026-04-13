@@ -785,9 +785,9 @@ const sensorIndexItems = [
     50% { opacity: 0.4; transform: scale(1.006); }
   }
 
-  /* Animación para Orientación del Anemómetro - Efecto rotación */
+  /* Animación para Orientación del Anemómetro - Efecto estático pulso */
   .insight-cards:nth-of-type(2) .insight-card:nth-child(4) {
-    animation: anemometroRotation 6s linear infinite;
+    animation: anemometroPulse 3s ease-in-out infinite alternate;
     position: relative;
   }
 
@@ -801,35 +801,23 @@ const sensorIndexItems = [
     background: linear-gradient(45deg, rgba(147, 51, 234, 0.25), rgba(124, 58, 237, 0.15), rgba(147, 51, 234, 0.25));
     border-radius: 19px;
     z-index: -1;
-    animation: anemometroBorderSpin 8s linear infinite;
+    animation: anemometroBorderPulse 4s ease-in-out infinite alternate;
   }
 
-  @keyframes anemometroRotation {
+  @keyframes anemometroPulse {
     0% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 6px rgba(147, 51, 234, 0.03);
-      transform: scale(1) rotate(0deg);
-    }
-    25% {
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 10px rgba(147, 51, 234, 0.05);
-      transform: scale(1.003) rotate(1deg);
-    }
-    50% {
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 12px rgba(147, 51, 234, 0.07);
-      transform: scale(1.006) rotate(0deg);
-    }
-    75% {
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 10px rgba(147, 51, 234, 0.05);
-      transform: scale(1.003) rotate(-1deg);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 12px rgba(147, 51, 234, 0.06);
+      transform: scale(1);
     }
     100% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 6px rgba(147, 51, 234, 0.03);
-      transform: scale(1) rotate(0deg);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08), 0 0 18px rgba(147, 51, 234, 0.1);
+      transform: scale(1.005);
     }
   }
 
-  @keyframes anemometroBorderSpin {
-    0%, 100% { opacity: 0.15; transform: scale(1) rotate(0deg); }
-    50% { opacity: 0.3; transform: scale(1.004) rotate(180deg); }
+  @keyframes anemometroBorderPulse {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.002); }
   }
 
   .content-block + .content-block {
