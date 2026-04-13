@@ -285,6 +285,10 @@ const sensorIndexItems = [
     padding-bottom: 72px;
   }
 
+  #inteligencia.content-block {
+    padding-bottom: 72px;
+  }
+
   #problema .section-label {
     margin-bottom: 16px;
   }
@@ -365,6 +369,19 @@ const sensorIndexItems = [
       transform: translateY(0) scale(1);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 24px rgba(29, 185, 154, 0.08);
     }
+  }
+
+  #solucion .manual-detail-box {
+    opacity: 0;
+    transform: translateX(-50px) translateY(0);
+    box-shadow: inset -60px 0 40px rgba(29, 185, 154, 0), 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #solucion .manual-detail-box.animate-in {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 32px rgba(29, 185, 154, 0.06);
   }
 
   /* TECH GRID */
@@ -573,6 +590,248 @@ const sensorIndexItems = [
     text-align: left;
   }
 
+  /* Animación especial para la tarjeta de Horas-Frío */
+  .insight-card:first-child {
+    animation: horasFrioGlow 2s ease-in-out infinite alternate;
+    position: relative;
+  }
+
+  .insight-card:first-child::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(29, 185, 154, 0.3), rgba(29, 185, 154, 0.1), rgba(29, 185, 154, 0.3));
+    border-radius: 20px;
+    z-index: -1;
+    animation: horasFrioBorderGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes horasFrioGlow {
+    0% {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 20px rgba(29, 185, 154, 0.1);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 30px rgba(29, 185, 154, 0.15);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes horasFrioBorderGlow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.01);
+    }
+  }
+
+  .insight-card:first-child:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.1), 0 0 40px rgba(29, 185, 154, 0.2);
+    animation-play-state: paused;
+  }
+
+  /* Animación para Alertas de Helada - Efecto congelación */
+  .insight-card:nth-child(2) {
+    animation: heladaFrost 3s ease-in-out infinite alternate;
+    position: relative;
+  }
+
+  .insight-card:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(135deg, rgba(135, 206, 235, 0.4), rgba(70, 130, 180, 0.2), rgba(135, 206, 235, 0.4));
+    border-radius: 19px;
+    z-index: -1;
+    animation: heladaBorderPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes heladaFrost {
+    0% {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 15px rgba(135, 206, 235, 0.08);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08), 0 0 25px rgba(135, 206, 235, 0.12);
+      transform: scale(1.01);
+    }
+  }
+
+  @keyframes heladaBorderPulse {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.005); }
+  }
+
+  /* Animación para Riesgo de Plagas - Efecto advertencia */
+  .insight-card:nth-child(3) {
+    animation: plagasWarning 2.5s ease-in-out infinite alternate;
+    position: relative;
+  }
+
+  .insight-card:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, rgba(255, 140, 0, 0.3), rgba(255, 69, 0, 0.15), rgba(255, 140, 0, 0.3));
+    border-radius: 19px;
+    z-index: -1;
+    animation: plagasBorderAlert 3.5s ease-in-out infinite;
+  }
+
+  @keyframes plagasWarning {
+    0% {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 12px rgba(255, 140, 0, 0.06);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 20px rgba(255, 140, 0, 0.1);
+      transform: scale(1.015);
+    }
+  }
+
+  @keyframes plagasBorderAlert {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.008); }
+  }
+
+  /* Animación para Nivelación del Piranómetro - Efecto balance */
+  .insight-cards:nth-of-type(2) .insight-card:nth-child(2) {
+    animation: piranometroBalance 4s ease-in-out infinite;
+    position: relative;
+  }
+
+  .insight-cards:nth-of-type(2) .insight-card:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.25), rgba(218, 165, 32, 0.15), rgba(255, 215, 0, 0.25));
+    border-radius: 19px;
+    z-index: -1;
+    animation: piranometroBorderBalance 5s ease-in-out infinite;
+  }
+
+  @keyframes piranometroBalance {
+    0%, 100% {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 10px rgba(255, 215, 0, 0.05);
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 15px rgba(255, 215, 0, 0.08);
+      transform: scale(1.005) rotate(0.5deg);
+    }
+    50% {
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 18px rgba(255, 215, 0, 0.1);
+      transform: scale(1.01) rotate(0deg);
+    }
+    75% {
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 15px rgba(255, 215, 0, 0.08);
+      transform: scale(1.005) rotate(-0.5deg);
+    }
+  }
+
+  @keyframes piranometroBorderBalance {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(1.003); }
+  }
+
+  /* Animación para Altura Normativa - Efecto elevación */
+  .insight-cards:nth-of-type(2) .insight-card:nth-child(3) {
+    animation: alturaElevation 3.5s ease-in-out infinite alternate;
+    position: relative;
+  }
+
+  .insight-cards:nth-of-type(2) .insight-card:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.3), rgba(22, 163, 74, 0.15), rgba(34, 197, 94, 0.3));
+    border-radius: 19px;
+    z-index: -1;
+    animation: alturaBorderRise 4.5s ease-in-out infinite;
+  }
+
+  @keyframes alturaElevation {
+    0% {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 8px rgba(34, 197, 94, 0.04);
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      box-shadow: 0 22px 44px rgba(15, 23, 42, 0.08), 0 0 16px rgba(34, 197, 94, 0.08);
+      transform: scale(1.008) translateY(-1px);
+    }
+  }
+
+  @keyframes alturaBorderRise {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.006); }
+  }
+
+  /* Animación para Orientación del Anemómetro - Efecto rotación */
+  .insight-cards:nth-of-type(2) .insight-card:nth-child(4) {
+    animation: anemometroRotation 6s linear infinite;
+    position: relative;
+  }
+
+  .insight-cards:nth-of-type(2) .insight-card:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, rgba(147, 51, 234, 0.25), rgba(124, 58, 237, 0.15), rgba(147, 51, 234, 0.25));
+    border-radius: 19px;
+    z-index: -1;
+    animation: anemometroBorderSpin 8s linear infinite;
+  }
+
+  @keyframes anemometroRotation {
+    0% {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 6px rgba(147, 51, 234, 0.03);
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 10px rgba(147, 51, 234, 0.05);
+      transform: scale(1.003) rotate(1deg);
+    }
+    50% {
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 12px rgba(147, 51, 234, 0.07);
+      transform: scale(1.006) rotate(0deg);
+    }
+    75% {
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 10px rgba(147, 51, 234, 0.05);
+      transform: scale(1.003) rotate(-1deg);
+    }
+    100% {
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 6px rgba(147, 51, 234, 0.03);
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  @keyframes anemometroBorderSpin {
+    0%, 100% { opacity: 0.15; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.3; transform: scale(1.004) rotate(180deg); }
+  }
+
   .content-block + .content-block {
     padding-top: 60px;
   }
@@ -630,4 +889,26 @@ const sensorIndexItems = [
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const solutionBox = document.querySelector('#solucion .manual-detail-box');
+    
+    if (solutionBox) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      observer.observe(solutionBox);
+    }
+  });
+</script>
 
