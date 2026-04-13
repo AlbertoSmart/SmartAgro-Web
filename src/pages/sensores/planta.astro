@@ -55,8 +55,8 @@ const sensorIndexItems = [
     <!-- 2. SOLUCIÓN TÉCNICA -->
     <section id="solucion" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
-        <div class="section-label">02. LA SOLUCIÓN</div>
-        <div class="manual-detail-box">
+        <div class="manual-detail-box manual-detail-box--compact">
+          <div class="section-label">02. LA SOLUCIÓN</div>
           <h2>Dendrometría y Termometría - El "Electrocardiograma" del Cultivo</h2>
           <p>
             Nuestra tecnología de **Dendrometría** utiliza sensores de alta resolución capaces de medir variaciones micrométricas 
@@ -275,6 +275,21 @@ const sensorIndexItems = [
 
   #problema.content-block {
     padding-top: 32px;
+    padding-bottom: 72px;
+  }
+
+  #solucion.content-block {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  #implementacion.content-block {
+    padding-top: 32px;
+    padding-bottom: 0;
+  }
+
+  #inteligencia.content-block {
+    padding-top: 0;
     padding-bottom: 72px;
   }
 
@@ -537,7 +552,7 @@ const sensorIndexItems = [
 
   /* CTA */
   .cta-section {
-    padding: 40px 0 0;
+    padding: 60px 0;
     text-align: center;
     background: #FFF;
     border-top: 1px solid var(--color-gray-100);
