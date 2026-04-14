@@ -138,9 +138,7 @@ const otherSensors = [
               <li>Reducción de coste en insumos fitosanitarios.</li>
             </ul>
           </div>
-          <div class="media-content media-content--plant">
-            <div class="editorial-image-stack editorial-image-stack--plant">
-              <img src="/images/gregmontani-field-852242.jpg" alt="Cultivo monitorizado en campo" class="editorial-image" />
+          <div class="media-content">
             <img src="/images/sensores/plant_sensor_hero.jpg" alt="Análisis Fisiológico" class="editorial-image" />
           </div>
         </div>
@@ -462,10 +460,6 @@ const otherSensors = [
     align-items: center;
   }
 
-  .media-content--plant {
-    align-items: stretch;
-  }
-
   .editorial-image-stack {
     display: flex;
     flex-direction: column;
@@ -491,33 +485,6 @@ const otherSensors = [
     max-width: none;
     height: 500px;
     object-position: center;
-  }
-
-  .media-content--plant .editorial-image-stack {
-    justify-content: space-between;
-    gap: 16px;
-    min-height: 100%;
-  }
-
-  .media-content--plant .editorial-image-stack .editorial-image {
-    max-width: none;
-    width: 100%;
-  }
-
-  .media-content--plant .editorial-image-stack .editorial-image:first-child {
-    order: 2;
-    min-height: 220px;
-    flex: 1;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .media-content--plant .editorial-image-stack .editorial-image:last-child {
-    order: 1;
-    height: 320px;
-    object-fit: contain;
-    object-position: center;
-    padding: 10px;
   }
 
   .editorial-image:hover {
@@ -617,18 +584,6 @@ const otherSensors = [
       height: 280px;
     }
 
-    .media-content--plant .editorial-image-stack {
-      gap: 12px;
-    }
-
-    .media-content--plant .editorial-image-stack .editorial-image:first-child {
-      min-height: 180px;
-    }
-
-    .media-content--plant .editorial-image-stack .editorial-image:last-child {
-      height: 220px;
-      padding: 8px;
-    }
   }
 </style>
 
