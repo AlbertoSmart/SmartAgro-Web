@@ -49,7 +49,7 @@ const otherSensors = [
     </section>
 
     <!-- SECTION 1: SOIL (ZIG-ZAG) -->
-    <section class="editorial-section white-section">
+    <section class="editorial-section white-section" style="padding-bottom: 0;">
       <div class="container">
         <div class="zig-zag-row">
           <div class="text-content manual-detail-box manual-detail-box--animated">
@@ -95,7 +95,7 @@ const otherSensors = [
         </div>
       </div>
       
-      <div class="carousel-section">
+      <div class="carousel-section" style="padding-bottom: 20px;">
         <div class="container">
           <SensorCarousel sensors={soilSensors} title="Hardware de Monitorización de Suelo" />
         </div>
@@ -103,7 +103,7 @@ const otherSensors = [
     </section>
 
     <!-- SECTION 2: PLANT (ZIG-ZAG REVERSE) -->
-    <section class="editorial-section grey-section">
+    <section class="editorial-section grey-section" style="padding-top: 100px;">
       <div class="container">
         <div class="zig-zag-row zig-zag-row--reverse">
           <div class="text-content manual-detail-box manual-detail-box--animated">
@@ -651,6 +651,14 @@ const otherSensors = [
     background: #FAFAFA;
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
+  }
+
+  .carousel-section :global(.carousel-container.section-padding) {
+    padding: 0;
+  }
+
+  .carousel-section :global(.carousel-wrapper) {
+    padding: 20px 0 8px;
   }
 
   /* BUTTONS */
