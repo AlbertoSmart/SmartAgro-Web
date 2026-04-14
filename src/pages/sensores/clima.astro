@@ -54,7 +54,7 @@ const sensorIndexItems = [
     <section id="solucion" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
         <div class="section-label">02. LA SOLUCIÓN</div>
-        <div class="manual-detail-box">
+        <div class="manual-detail-box manual-detail-box--scroll-reveal">
           <h2>Modelado de Balance Hídrico - Penman-Monteith IoT</h2>
           <p>
             Nuestras estaciones meteorológicas IoT no solo recolectan datos; ejecutan modelos matemáticos avanzados. 
@@ -371,17 +371,68 @@ const sensorIndexItems = [
     }
   }
 
-  #solucion .manual-detail-box {
-    opacity: 0;
-    transform: translateX(-50px) translateY(0);
-    box-shadow: inset -60px 0 40px rgba(29, 185, 154, 0), 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  @keyframes solucionBoxReveal {
+    0% {
+      opacity: 0;
+      transform: perspective(1200px) rotateX(8deg) translateY(34px) scale(0.965);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 10px rgba(15, 23, 42, 0.03);
+      filter: blur(6px);
+    }
+    58% {
+      opacity: 1;
+      transform: perspective(1200px) rotateX(-1deg) translateY(-3px) scale(1.008);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 18px 38px rgba(29, 185, 154, 0.08);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 32px rgba(29, 185, 154, 0.06);
+      filter: blur(0);
+    }
   }
 
-  #solucion .manual-detail-box.animate-in {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
+  @keyframes solucionBoxSheen {
+    0% {
+      left: -24%;
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.9;
+    }
+    100% {
+      left: 118%;
+      opacity: 0;
+    }
+  }
+
+  #solucion .manual-detail-box--scroll-reveal {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(8deg) translateY(34px) scale(0.965);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 32px rgba(29, 185, 154, 0.06);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    will-change: transform, opacity, filter;
+  }
+
+  #solucion .manual-detail-box--scroll-reveal::before {
+    content: '';
+    position: absolute;
+    inset: -20% auto -20% -24%;
+    width: 32%;
+    background: linear-gradient(90deg, transparent 0%, rgba(29, 185, 154, 0.06) 35%, rgba(255, 255, 255, 0.7) 50%, rgba(29, 185, 154, 0.08) 65%, transparent 100%);
+    transform: rotate(10deg);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  #solucion .manual-detail-box--scroll-reveal.is-visible {
+    animation: solucionBoxReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  #solucion .manual-detail-box--scroll-reveal.is-visible::before {
+    animation: solucionBoxSheen 1.8s ease-out 0.45s both;
   }
 
   /* TECH GRID */
@@ -879,24 +930,32 @@ const sensorIndexItems = [
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const solutionBox = document.querySelector('#solucion .manual-detail-box');
-    
-    if (solutionBox) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+  const initSolutionReveal = () => {
+    const solutionBox = document.querySelector('#solucion .manual-detail-box--scroll-reveal');
+    if (!solutionBox || solutionBox.classList.contains('is-visible')) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
       });
-      
-      observer.observe(solutionBox);
-    }
-  });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -10% 0px'
+    });
+
+    observer.observe(solutionBox);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSolutionReveal, { once: true });
+  } else {
+    initSolutionReveal();
+  }
+
+  document.addEventListener('astro:page-load', initSolutionReveal);
 </script>
+
 

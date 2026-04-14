@@ -138,8 +138,9 @@ const otherSensors = [
               <li>Reducción de coste en insumos fitosanitarios.</li>
             </ul>
           </div>
-          <div class="media-content">
-            <img src="/images/sensores/plant_sensor_hero.jpg" alt="Análisis Fisiológico" class="editorial-image" />
+          <div class="media-content media-content--plant">
+            <img src="/images/gregmontani-field-852242.jpg" alt="Cultivo monitorizado en campo" class="editorial-image editorial-image--plant-main" />
+              <img src="/images/sensores/plant_sensor_hero.jpg" alt="Análisis Fisiológico" class="editorial-image editorial-image--plant-secondary" />
           </div>
         </div>
       </div>
@@ -232,10 +233,59 @@ const otherSensors = [
     max-width: 980px;
     margin: 0 auto;
     padding: 40px 52px 36px;
-    background: linear-gradient(135deg, #ffffff 0%, #f6fbf9 100%);
-    border: 1px solid rgba(11, 26, 20, 0.08);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(29, 185, 154, 0.2), transparent 28%),
+      radial-gradient(circle at 86% 20%, rgba(125, 211, 252, 0.2), transparent 24%),
+      linear-gradient(140deg, #ffffff 0%, #f4fbf7 45%, #eef8ff 100%);
+    border: 1px solid rgba(11, 26, 20, 0.1);
     border-radius: 32px;
-    box-shadow: 0 28px 70px rgba(11, 26, 20, 0.1);
+    box-shadow:
+      0 30px 80px rgba(11, 26, 20, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+    animation: heroCardReveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+  }
+
+  .hero-intro-card::before {
+    content: "";
+    position: absolute;
+    inset: -30% auto auto -10%;
+    width: 46%;
+    height: 160%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 32%, rgba(255, 255, 255, 0.72) 50%, rgba(255, 255, 255, 0.14) 68%, transparent 100%);
+    transform: rotate(14deg);
+    opacity: 0.9;
+    pointer-events: none;
+    animation: heroCardSheen 6.5s ease-in-out infinite;
+  }
+
+  .hero-intro-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -8% -22% auto;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(29, 185, 154, 0.22) 0%, rgba(29, 185, 154, 0.08) 42%, transparent 72%);
+    filter: blur(6px);
+    pointer-events: none;
+    animation: heroCardPulse 7s ease-in-out infinite;
+  }
+
+  .hero-intro-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: rgba(29, 185, 154, 0.24);
+    box-shadow:
+      0 42px 100px rgba(11, 26, 20, 0.16),
+      0 0 0 1px rgba(255, 255, 255, 0.76) inset;
+  }
+
+  .hero-intro-card > * {
+    position: relative;
+    z-index: 1;
   }
 
   .editorial-hero h1 {
@@ -264,6 +314,15 @@ const otherSensors = [
     border-radius: 24px;
     overflow: hidden;
     text-align: left;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 18px 40px rgba(11, 26, 20, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .hero-info-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(29, 185, 154, 0.2);
+    box-shadow: 0 22px 44px rgba(11, 26, 20, 0.11);
   }
 
   .hero-info-card summary {
@@ -309,6 +368,53 @@ const otherSensors = [
     margin: 22px 0 0;
     max-width: none;
     color: #3f4c45;
+  }
+
+  @keyframes heroCardReveal {
+    0% {
+      opacity: 0;
+      transform: perspective(1200px) rotateX(10deg) translateY(42px) scale(0.96);
+      filter: blur(10px);
+    }
+    60% {
+      opacity: 1;
+      transform: perspective(1200px) rotateX(-1deg) translateY(-4px) scale(1.01);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes heroCardSheen {
+    0% {
+      left: -28%;
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.95;
+    }
+    38% {
+      left: 108%;
+      opacity: 0.85;
+    }
+    100% {
+      left: 108%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes heroCardPulse {
+    0%, 100% {
+      transform: scale(0.92);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.08);
+      opacity: 0.95;
+    }
   }
 
   /* ZIG-ZAG GRID */
@@ -460,6 +566,12 @@ const otherSensors = [
     align-items: center;
   }
 
+  .media-content--plant {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
   .editorial-image-stack {
     display: flex;
     flex-direction: column;
@@ -484,6 +596,25 @@ const otherSensors = [
   .media-content--soil .editorial-image-stack .editorial-image {
     max-width: none;
     height: 500px;
+    object-position: center;
+  }
+
+  .media-content--plant .editorial-image {
+    width: 100%;
+    max-width: none;
+    flex: 1 1 0;
+    min-height: 0;
+  }
+
+  .editorial-image--plant-main {
+    min-height: 280px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .editorial-image--plant-secondary {
+    min-height: 280px;
+    object-fit: cover;
     object-position: center;
   }
 
@@ -566,6 +697,11 @@ const otherSensors = [
       padding: 36px 20px 24px;
       border-radius: 24px;
     }
+    .hero-intro-card::after {
+      width: 180px;
+      height: 180px;
+      inset: auto -14% -16% auto;
+    }
     .hero-info-card summary,
     .hero-info-card__content {
       padding-left: 20px;
@@ -584,6 +720,33 @@ const otherSensors = [
       height: 280px;
     }
 
+    .media-content--plant {
+      gap: 12px;
+    }
+
+    .editorial-image--plant-main {
+      min-height: 190px;
+    }
+
+    .editorial-image--plant-secondary {
+      min-height: 190px;
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-intro-card,
+    .hero-intro-card::before,
+    .hero-intro-card::after,
+    .hero-info-card {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .hero-intro-card:hover,
+    .hero-info-card:hover {
+      transform: none;
+    }
   }
 </style>
 
