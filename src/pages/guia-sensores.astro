@@ -138,7 +138,9 @@ const otherSensors = [
               <li>Reducción de coste en insumos fitosanitarios.</li>
             </ul>
           </div>
-          <div class="media-content">
+          <div class="media-content media-content--plant">
+            <div class="editorial-image-stack editorial-image-stack--plant">
+              <img src="/images/gregmontani-field-852242.jpg" alt="Cultivo monitorizado en campo" class="editorial-image" />
             <img src="/images/sensores/plant_sensor_hero.jpg" alt="Análisis Fisiológico" class="editorial-image" />
           </div>
         </div>
@@ -318,24 +320,18 @@ const otherSensors = [
   }
 
   .zig-zag-row {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    display: flex;
     gap: 80px;
-    align-items: center;
+    align-items: stretch;
     margin-bottom: 120px;
   }
 
   .zig-zag-row--reverse {
-    grid-template-columns: 1fr 1.2fr;
+    flex-direction: row-reverse;
   }
 
-  .zig-zag-row--reverse .text-content {
-    grid-column: 2;
-  }
-
-  .zig-zag-row--reverse .media-content {
-    grid-column: 1;
-    grid-row: 1;
+  .text-content {
+    flex: 1;
   }
 
   .text-content h2 {
@@ -393,6 +389,10 @@ const otherSensors = [
     padding: 40px;
     border-radius: 12px;
     border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
   }
 
   .manual-detail-box--animated {
@@ -453,17 +453,17 @@ const otherSensors = [
     }
   }
 
-  /* EDITORIAL IMAGES */
   .media-content {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
   }
 
   .media-content--soil {
     align-items: center;
+  }
+
+  .media-content--plant {
+    align-items: stretch;
   }
 
   .editorial-image-stack {
@@ -478,10 +478,10 @@ const otherSensors = [
 
   .editorial-image {
     width: 100%;
-    max-width: 760px; /* Constrain horizontal width */
-    height: 600px;    /* Fixed height for specific "sitio" */
+    height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    display: block;
+    border-radius: 12px;
     box-shadow: 0 40px 100px rgba(0,0,0,0.08);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     background: #f8f9fa;
@@ -491,6 +491,33 @@ const otherSensors = [
     max-width: none;
     height: 500px;
     object-position: center;
+  }
+
+  .media-content--plant .editorial-image-stack {
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 100%;
+  }
+
+  .media-content--plant .editorial-image-stack .editorial-image {
+    max-width: none;
+    width: 100%;
+  }
+
+  .media-content--plant .editorial-image-stack .editorial-image:first-child {
+    order: 2;
+    min-height: 220px;
+    flex: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .media-content--plant .editorial-image-stack .editorial-image:last-child {
+    order: 1;
+    height: 320px;
+    object-fit: contain;
+    object-position: center;
+    padding: 10px;
   }
 
   .editorial-image:hover {
@@ -556,11 +583,9 @@ const otherSensors = [
   @media (max-width: 1100px) {
     .editorial-hero h1 { font-size: 3.5rem; }
     .zig-zag-row, .zig-zag-row--reverse { 
-      grid-template-columns: 1fr; 
+      flex-direction: column;
       gap: 60px;
     }
-    .zig-zag-row--reverse .text-content { grid-column: 1; }
-    .zig-zag-row--reverse .media-content { grid-column: 1; grid-row: 2; }
   }
 
   @media (max-width: 768px) {
@@ -590,6 +615,19 @@ const otherSensors = [
 
     .media-content--soil .editorial-image-stack .editorial-image {
       height: 280px;
+    }
+
+    .media-content--plant .editorial-image-stack {
+      gap: 12px;
+    }
+
+    .media-content--plant .editorial-image-stack .editorial-image:first-child {
+      min-height: 180px;
+    }
+
+    .media-content--plant .editorial-image-stack .editorial-image:last-child {
+      height: 220px;
+      padding: 8px;
     }
   }
 </style>
