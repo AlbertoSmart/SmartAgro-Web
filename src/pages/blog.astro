@@ -238,11 +238,11 @@ const posts = await getPosts();
   #tecnologia .posts-grid {
     width: min(100%, 1120px);
     grid-template-columns: repeat(2, minmax(420px, 1fr));
-    margin: 60px auto 0;
+    margin: 120px auto 80px;
     justify-content: center;
     justify-items: stretch;
-    align-items: start;
-    gap: 24px;
+    align-items: stretch;
+    gap: 40px;
   }
 
   #tecnologia .blog-card-clean {
@@ -299,7 +299,14 @@ const posts = await getPosts();
   }
 
   #tecnologia .card-body {
-    padding: 24px;
+    padding: 40px 32px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #tecnologia .card-image {
+    height: 280px;
   }
 
   .card-category {
