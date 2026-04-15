@@ -30,7 +30,7 @@ const sensorIndexItems = [
     <section id="problema" class="content-block" data-index-section>
       <div class="container narrow">
         <div class="section-label">01. EL PROBLEMA</div>
-        <div class="manual-detail-box">
+        <div class="manual-detail-box animated-panel panel-problema">
           <h2>¿Por qué regar a ciegas es el mayor riesgo financiero de su finca?</h2>
           <p>
             En la agricultura profesional, el suelo es frecuentemente tratado como una "caja negra". Regar basándose en la observación 
@@ -41,8 +41,8 @@ const sensorIndexItems = [
           
           <!-- IMAGE MOSAIC 1 -->
           <div class="image-mosaic">
-            <img src="/images/sensores/SensorTemperaturaHumedadSuelo.png" alt="Sensor Suelo" />
-            <img src="/images/sensores/SensorTubularHumeadytemperaturaEnDistintasCapas.png" alt="Sonda Tubular" />
+            <img src="/images/SensorTemperaturaHumedadSuelo1.png" alt="Sensor Suelo" />
+            <img src="/images/SensorTubularHumeadytemperaturaEnDistintasCapas1.png" alt="Sonda Tubular" />
           </div>
 
           <p>
@@ -58,7 +58,7 @@ const sensorIndexItems = [
     <section id="solucion" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
         <div class="section-label">02. LA SOLUCIÓN</div>
-        <div class="manual-detail-box">
+        <div class="manual-detail-box animated-panel panel-solucion">
           <h2>Física de Sensores - Tecnología FDR (Frequency Domain Reflectometry)</h2>
           <p>
             Nuestros sensores no estiman; miden la permitividad dieléctrica del suelo. Mediante la emisión de un campo electromagnético 
@@ -99,7 +99,7 @@ const sensorIndexItems = [
     <!-- 3. ROI -->
     <section id="roi" class="content-block" data-index-section>
       <div class="container">
-        <div class="roi-box manual-detail-box roi-box--featured">
+        <div class="roi-box manual-detail-box roi-box--featured animated-panel panel-roi">
           <div class="section-label">03. RETORNO DE INVERSIÓN (ROI)</div>
           <h2>Impacto Económico Directo</h2>
           <div class="stats-grid">
@@ -126,7 +126,7 @@ const sensorIndexItems = [
     <!-- 4. INTERPRETACIÓN DE DATOS -->
     <section id="inteligencia" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact">
+        <div class="manual-detail-box manual-detail-box--compact animated-panel panel-inteligencia">
           <div class="section-label">04. INTELIGENCIA DE DATOS</div>
           <h2>Cómo convertir gráficas en decisiones de riego</h2>
           <p>
@@ -157,7 +157,7 @@ const sensorIndexItems = [
     <!-- 5. GUÍA DE INSTALACIÓN -->
     <section id="implementacion" class="content-block" data-index-section>
       <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact">
+        <div class="manual-detail-box manual-detail-box--compact animated-panel panel-implementacion">
           <div class="section-label">05. IMPLEMENTACIÓN</div>
           <h2>Protocolo de Instalación de Alta Precisión</h2>
           <div class="insight-cards">
@@ -185,7 +185,7 @@ const sensorIndexItems = [
     <!-- CTA FINAL -->
     <section id="contacto" class="cta-section" data-index-section>
       <div class="container">
-        <div class="manual-detail-box manual-detail-box--cta">
+        <div class="manual-detail-box manual-detail-box--cta animated-panel panel-contacto">
           <h2>¿Listo para optimizar la rentabilidad de su suelo?</h2>
           <p>Obtenga una propuesta técnica personalizada para su explotación.</p>
           <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
@@ -368,6 +368,124 @@ const sensorIndexItems = [
     border: 1px solid #e9ecef;
   }
 
+  .animated-panel {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease, opacity 0.7s ease;
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    will-change: transform, opacity;
+  }
+
+  .animated-panel.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .panel-problema {
+    transform: translateY(34px) scale(0.97) rotate(-0.45deg);
+    transform-origin: 50% 100%;
+  }
+
+  .panel-problema.is-visible {
+    animation: panelProblemaReveal 0.95s cubic-bezier(0.18, 0.9, 0.22, 1) both;
+  }
+
+  .panel-solucion {
+    transform: translateX(-42px) scale(0.96);
+    border-color: rgba(29, 185, 154, 0.12);
+  }
+
+  .panel-solucion.is-visible {
+    animation: panelSolucionReveal 1s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  .panel-roi {
+    transform: translateY(38px) scale(0.94);
+  }
+
+  .panel-roi.is-visible {
+    animation: panelRoiReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .panel-inteligencia {
+    transform: translateX(34px) scale(0.98);
+  }
+
+  .panel-inteligencia.is-visible {
+    animation: panelInteligenciaReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .panel-implementacion {
+    transform: translateY(24px) scale(0.965);
+  }
+
+  .panel-implementacion.is-visible {
+    animation: panelImplementacionReveal 0.95s cubic-bezier(0.2, 0.95, 0.24, 1) both;
+  }
+
+  .panel-contacto {
+    transform: translateY(30px) scale(0.97);
+    border-color: rgba(29, 185, 154, 0.18);
+  }
+
+  .panel-contacto.is-visible {
+    animation: panelContactoReveal 1s cubic-bezier(0.19, 1, 0.22, 1) both;
+  }
+
+  .animated-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.45) 48%, transparent 100%);
+    transform: translateX(-140%);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .animated-panel.is-visible::before {
+    animation: panelShine 5.4s ease-in-out infinite;
+  }
+
+  .panel-solucion::after,
+  .panel-inteligencia::after,
+  .panel-contacto::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -40% auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  .panel-solucion::after {
+    background: radial-gradient(circle, rgba(29, 185, 154, 0.18) 0%, rgba(125, 211, 252, 0.08) 45%, transparent 72%);
+  }
+
+  .panel-inteligencia::after {
+    background: radial-gradient(circle, rgba(125, 211, 252, 0.18) 0%, rgba(29, 185, 154, 0.08) 48%, transparent 72%);
+  }
+
+  .panel-contacto::after {
+    background: radial-gradient(circle, rgba(29, 185, 154, 0.22) 0%, rgba(255, 255, 255, 0) 72%);
+  }
+
+  .panel-solucion.is-visible::after,
+  .panel-inteligencia.is-visible::after,
+  .panel-contacto.is-visible::after {
+    animation: panelAura 3.8s ease-in-out infinite;
+  }
+
+  .animated-panel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 56px rgba(15, 23, 42, 0.12);
+    border-color: rgba(29, 185, 154, 0.24);
+  }
+
   .manual-detail-box--cta {
     max-width: 760px;
     margin: 0 auto;
@@ -526,6 +644,134 @@ const sensorIndexItems = [
     50% {
       opacity: 0.48;
       transform: scale(1.01);
+    }
+  }
+
+  @keyframes panelShine {
+    0%, 100% {
+      transform: translateX(-140%);
+      opacity: 0;
+    }
+    12% {
+      opacity: 0.4;
+    }
+    32% {
+      transform: translateX(140%);
+      opacity: 0.18;
+    }
+    45% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes panelProblemaReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(34px) scale(0.97) rotate(-0.45deg);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.02);
+    }
+    68% {
+      opacity: 1;
+      transform: translateY(-4px) scale(1.01) rotate(0.2deg);
+      box-shadow: 0 26px 56px rgba(15, 23, 42, 0.09);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+    }
+  }
+
+  @keyframes panelSolucionReveal {
+    0% {
+      opacity: 0;
+      transform: translateX(-42px) scale(0.96);
+      filter: saturate(0.92);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(8px) scale(1.01);
+      filter: saturate(1.04);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      filter: saturate(1);
+    }
+  }
+
+  @keyframes panelRoiReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(38px) scale(0.94);
+    }
+    55% {
+      opacity: 1;
+      transform: translateY(-10px) scale(1.025);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes panelInteligenciaReveal {
+    0% {
+      opacity: 0;
+      transform: translateX(34px) scale(0.98);
+      clip-path: inset(0 0 0 10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes panelImplementacionReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(24px) scale(0.965);
+      clip-path: inset(12% 0 0 0 round 12px);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(-3px) scale(1.01);
+      clip-path: inset(0 0 0 0 round 12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      clip-path: inset(0 0 0 0 round 12px);
+    }
+  }
+
+  @keyframes panelContactoReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.97);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.03);
+    }
+    62% {
+      opacity: 1;
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 30px 64px rgba(15, 23, 42, 0.12);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+    }
+  }
+
+  @keyframes panelAura {
+    0%, 100% {
+      opacity: 0.08;
+      transform: scale(0.92);
+    }
+    50% {
+      opacity: 0.2;
+      transform: scale(1.06);
     }
   }
 
@@ -729,5 +975,40 @@ const sensorIndexItems = [
   @media (max-width: 768px) {
     .expert-hero-solid { padding: 16px 0 10px !important; }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animated-panel,
+    .animated-panel::before,
+    .animated-panel::after {
+      animation: none;
+      transition: none;
+    }
+
+    .animated-panel:hover {
+      transform: none;
+    }
+  }
 </style>
+
+<script>
+  const animatedPanels = document.querySelectorAll('.animated-panel');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px',
+    });
+
+    animatedPanels.forEach((panel) => observer.observe(panel));
+  } else {
+    animatedPanels.forEach((panel) => panel.classList.add('is-visible'));
+  }
+</script>
 
