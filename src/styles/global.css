@@ -312,7 +312,7 @@ ol {
 }
 
 .page-hero.hero-tecnicos-offset .hero-mosaic__content {
-  padding-top: 0 !important;
+  padding-top: 30px !important;
 }
 
 .page-hero.hero-agricultores-offset .hero-mosaic__content {
@@ -561,13 +561,15 @@ ol {
   visibility: hidden;
   transform: translateY(10px);
   transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .scroll-top-btn.visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
 @media (max-width: 1024px) {
   .scroll-top-btn {
     display: flex;
@@ -580,8 +582,10 @@ ol {
    Desktop (>768px) is NOT affected.
    =============================================================== */
 @media (max-width: 768px) {
+
   /* Prevent horizontal scrolling / sideways gliding on mobile */
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     width: 100%;
   }
@@ -599,7 +603,10 @@ ol {
   }
 
   /* EXHAUSTIVE FIX: Ensure strict white margins on both screen edges for all possible content wrappers */
-  .container, .container-strict, .container-guide, .container-wide {
+  .container,
+  .container-strict,
+  .container-guide,
+  .container-wide {
     padding-left: 24px !important;
     padding-right: 24px !important;
     box-sizing: border-box !important;
@@ -608,13 +615,24 @@ ol {
   }
 
   /* Reset for full-width layout wrappers */
-  .blog-container, .main-wrapper {
+  .blog-container,
+  .main-wrapper {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
   /* EXHAUSTIVE FIX: Prevent ANY unbreaking word/link text from pushing the viewport outward */
-  p, h1, h2, h3, h4, h5, h6, span, a, li, div {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  a,
+  li,
+  div {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -622,12 +640,18 @@ ol {
   /* === CENTERED TEXT + ICONS === */
   .section-title,
   .section-subtitle,
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     text-align: center !important;
   }
 
   /* Emojis, images and wrappers centered horizontally */
-  .card img, .feature-card img,
+  .card img,
+  .feature-card img,
   [class*="icon-wrapper"],
   .feature-card__icon-wrapper {
     margin-left: auto !important;
@@ -637,14 +661,16 @@ ol {
   }
 
   /* Just center the icons horizontally without breaking their internal display */
-  .card svg:not(.feature-card__icon svg), 
+  .card svg:not(.feature-card__icon svg),
   .feature-card svg:not(.feature-card__icon svg) {
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
   /* Flex containers inside cards/sections → center children */
-  .card, .feature-card, [class*="card"] {
+  .card,
+  .feature-card,
+  [class*="card"] {
     text-align: center !important;
     align-items: center !important;
   }
@@ -678,10 +704,12 @@ ol {
     line-height: 1.2 !important;
     padding: 0 8px !important;
   }
+
   h2 {
     font-size: 1.45rem !important;
     line-height: 1.25 !important;
   }
+
   h3 {
     font-size: 1.15rem !important;
   }
@@ -692,20 +720,28 @@ ol {
     grid-template-columns: 1fr 1fr !important;
     gap: 12px !important;
   }
-  
+
   /* Make sure massive flow and faq grids stack as 1 column globally despite original definitions */
-  .flow-grid, .faq-grid, .intro-grid, .tech-grid {
+  .flow-grid,
+  .faq-grid,
+  .intro-grid,
+  .tech-grid {
     grid-template-columns: 1fr !important;
   }
 
-  .card, .feature-card {
+  .card,
+  .feature-card {
     padding: 16px !important;
   }
-  .card h3, .feature-card h3 {
+
+  .card h3,
+  .feature-card h3 {
     font-size: 1rem !important;
     margin-bottom: 6px !important;
   }
-  .card p, .feature-card p {
+
+  .card p,
+  .feature-card p {
     font-size: 0.85rem !important;
     line-height: 1.5 !important;
   }
@@ -715,8 +751,11 @@ ol {
     font-size: 0.9rem !important;
     padding: 14px 20px !important;
   }
-  .hero__buttons, .cta-buttons,
-  [class*="buttons"], [class*="actions"] {
+
+  .hero__buttons,
+  .cta-buttons,
+  [class*="buttons"],
+  [class*="actions"] {
     flex-direction: column !important;
     align-items: center !important;
     gap: 12px !important;
@@ -729,11 +768,21 @@ ol {
   }
 
   /* === PARAGRAPHS — centered on mobile === */
-  p { text-align: center; }
-  .card p, article p, .legal-content p, .blog-content p { text-align: left; }
+  p {
+    text-align: center;
+  }
+
+  .card p,
+  article p,
+  .legal-content p,
+  .blog-content p {
+    text-align: left;
+  }
 
   /* === BADGES centered === */
-  .badge, [class*="badge"], [class*="tag"] {
+  .badge,
+  [class*="badge"],
+  [class*="tag"] {
     margin-left: auto !important;
     margin-right: auto !important;
     display: block !important;
@@ -741,7 +790,10 @@ ol {
   }
 
   /* === SUBPAGES / SERVICIOS overrides for left-aligned content === */
-  .flow-step, .faq-item, .value-item, .tech-item {
+  .flow-step,
+  .faq-item,
+  .value-item,
+  .tech-item {
     text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
@@ -764,7 +816,7 @@ ol {
     align-items: center !important;
     text-align: center !important;
   }
-  
+
   .feature-list li {
     justify-content: center !important;
     text-align: center !important;
@@ -776,22 +828,30 @@ ol {
     flex-direction: column !important;
     text-align: center !important;
   }
-  
-  .intro-grid > .feature-detail {
+
+  .intro-grid>.feature-detail {
     order: 1 !important;
   }
-  
-  .intro-grid > .intro-image {
+
+  .intro-grid>.intro-image {
     order: 2 !important;
     margin-top: 20px !important;
   }
 
   /* === SPACING reduced === */
-  .section-title { margin-bottom: 16px !important; }
-  .section-subtitle { margin-bottom: 28px !important; }
+  .section-title {
+    margin-bottom: 16px !important;
+  }
+
+  .section-subtitle {
+    margin-bottom: 28px !important;
+  }
 
   /* === FOOTER overrides === */
-  .footer { padding: 60px 0 40px !important; }
+  .footer {
+    padding: 60px 0 40px !important;
+  }
+
   .footer__grid {
     display: flex !important;
     flex-direction: column !important;
@@ -799,24 +859,29 @@ ol {
     align-items: center !important;
     gap: 40px !important;
   }
+
   .footer__brand {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
   }
+
   .footer__contact {
     align-items: center !important;
   }
+
   .footer__social-section {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
   }
+
   .footer__legal {
     flex-direction: column !important;
     justify-content: center !important;
     gap: 16px !important;
   }
+
   .footer__legal-links {
     justify-content: center !important;
   }
@@ -824,14 +889,26 @@ ol {
 
 /* === EXTRA SMALL (≤480px) === */
 @media (max-width: 480px) {
+
   /* Keep cards side by side (2 cols) to prevent very long pages */
-  .features-grid, .cards-grid, .tech-grid,
+  .features-grid,
+  .cards-grid,
+  .tech-grid,
   [class*="grid"]:not(.navbar__menu) {
     gap: 8px !important;
   }
-  h1 { font-size: 1.5rem !important; }
-  h2 { font-size: 1.3rem !important; }
-  .container { padding: 0 16px !important; }
+
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .container {
+    padding: 0 16px !important;
+  }
 }
 
 /* ===============================================================
@@ -840,14 +917,14 @@ ol {
    ============================================================== */
 
 /* Common Content wrapper to be used in pages */
-.rich-content, 
+.rich-content,
 article:not(.no-format) {
   font-size: 1.15rem;
   line-height: 1.85;
   color: var(--color-slate-700);
 }
 
-.rich-content h2, 
+.rich-content h2,
 article h2:not(.no-format) {
   font-size: 2rem;
   font-weight: 850;
@@ -858,7 +935,7 @@ article h2:not(.no-format) {
   letter-spacing: -0.02em;
 }
 
-.rich-content h3, 
+.rich-content h3,
 article h3:not(.no-format) {
   font-size: 1.5rem;
   font-weight: 700;
@@ -866,32 +943,32 @@ article h3:not(.no-format) {
   margin: 40px 0 16px;
 }
 
-.rich-content p, 
+.rich-content p,
 article p:not(.no-format) {
   margin-bottom: 24px;
 }
 
-.rich-content strong, 
+.rich-content strong,
 article strong:not(.no-format) {
   color: var(--color-slate-900);
   font-weight: 700;
 }
 
 /* Technical Lists */
-.rich-content ul, 
+.rich-content ul,
 article ul:not(.no-format) {
   margin-bottom: 32px;
   padding-left: 0;
 }
 
-.rich-content li, 
+.rich-content li,
 article li:not(.no-format) {
   margin-bottom: 12px;
   position: relative;
   padding-left: 28px;
 }
 
-.rich-content li::before, 
+.rich-content li::before,
 article li:not(.no-format)::before {
   content: "→";
   position: absolute;
@@ -901,7 +978,7 @@ article li:not(.no-format)::before {
 }
 
 /* Professional Tables */
-.rich-content table, 
+.rich-content table,
 article table:not(.no-format) {
   width: 100%;
   margin: 48px 0;
@@ -912,7 +989,7 @@ article table:not(.no-format) {
   border: 1px solid var(--color-gray-200);
 }
 
-.rich-content th, 
+.rich-content th,
 article th:not(.no-format) {
   background: var(--color-gray-50);
   padding: 16px;
@@ -925,19 +1002,19 @@ article th:not(.no-format) {
   border-bottom: 2px solid var(--color-gray-200);
 }
 
-.rich-content td, 
+.rich-content td,
 article td:not(.no-format) {
   padding: 16px;
   border-bottom: 1px solid var(--color-gray-100);
   background: white;
 }
 
-.rich-content tr:last-child td, 
+.rich-content tr:last-child td,
 article tr:last-child td {
   border-bottom: none;
 }
 
-.rich-content tr:hover td, 
+.rich-content tr:hover td,
 article tr:hover td {
   background: #fafafa;
 }
@@ -970,7 +1047,8 @@ article .share-section,
 .article-footer .share-section,
 .share-section {
   display: flex !important;
-  flex-direction: row !important; /* Force row on ALL screens */
+  flex-direction: row !important;
+  /* Force row on ALL screens */
   align-items: center !important;
   justify-content: space-between !important;
   margin: 60px 0 !important;
@@ -1020,8 +1098,8 @@ article .next-steps-card,
   text-align: center !important;
   position: relative !important;
   overflow: hidden !important;
-  border: 1px solid rgba(255,255,255,0.08) !important;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
 }
 
 article .next-steps-card h3,
@@ -1058,7 +1136,8 @@ article .btn-premium,
   text-decoration: none !important;
   font-weight: 800 !important;
   font-size: 1.05rem !important;
-  border-radius: 9999px !important; /* TOTAL ROUNDED */
+  border-radius: 9999px !important;
+  /* TOTAL ROUNDED */
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -1094,11 +1173,11 @@ article .btn-premium,
     flex-wrap: wrap !important;
     gap: 20px !important;
   }
-  
+
   .next-steps-card {
     padding: 40px 24px !important;
   }
-  
+
   .next-steps-card h3 {
     font-size: 1.75rem !important;
   }
