@@ -19,7 +19,6 @@ const posts = await getPosts();
       <div class="blog-feed">
         {categories.filter(cat => posts.some(p => p.category === cat.id)).map(cat => (
           <section id={cat.id} class="category-group" style={cat.id === 'normativa' ? 'width:auto;max-width:none;margin-bottom:140px;' : undefined}>
-            <h2 class="category-title">{cat.name}</h2>
             <div
               class="posts-grid"
               style={cat.id === 'normativa'
@@ -30,7 +29,7 @@ const posts = await getPosts();
                 <article
                   class="blog-card-clean"
                   style={cat.id === 'normativa'
-                    ? 'width:100%;max-width:420px;align-items:stretch;text-align:left;margin:0;'
+                    ? 'width:100%;max-width:100%;align-items:stretch;text-align:left;margin:0;margin-top:40px;'
                     : undefined}
                 >
                   <div class="card-image">
@@ -59,7 +58,7 @@ const posts = await getPosts();
       </div>
 
       <aside class="blog-sidebar" style="justify-self:start;margin-left:-72px;align-self:start;text-align:left;">
-        <div class="sidebar-widget" style="margin-left:-40px;margin-right:0;text-align:left;align-self:start;position:relative;left:-40px;">
+        <div class="sidebar-widget" style="margin-left:0;margin-right:0;text-align:left;align-self:start;position:relative;left:0;">
           <h3>Buscador Técnico</h3>
           <div class="search-box">
             <input type="text" placeholder="Buscar normativa o tecnología..." />
@@ -73,7 +72,7 @@ const posts = await getPosts();
           </div>
         </div>
 
-        <div class="sidebar-widget siex-status-widget" style="margin-left:-40px;margin-right:0;text-align:left;align-self:start;position:relative;left:-40px;">
+        <div class="sidebar-widget siex-status-widget" style="margin-left:0;margin-right:0;text-align:left;align-self:start;position:relative;left:0;">
           <h3>Estado del SIEX <span class="pulse-green"></span></h3>
           <div class="siex-info">
             <p class="status-ok">Sistema Operativo</p>
@@ -202,7 +201,7 @@ const posts = await getPosts();
 
   #normativa .posts-grid {
     width: auto;
-    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 420px));
+    grid-template-columns: 1fr;
     margin: 0;
     justify-content: start;
     justify-items: stretch;
@@ -239,7 +238,7 @@ const posts = await getPosts();
   #tecnologia .posts-grid {
     width: min(100%, 1120px);
     grid-template-columns: repeat(2, minmax(420px, 1fr));
-    margin: 0 auto;
+    margin: 60px auto 0;
     justify-content: center;
     justify-items: stretch;
     align-items: start;
