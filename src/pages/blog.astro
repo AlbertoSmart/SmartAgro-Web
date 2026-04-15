@@ -18,16 +18,27 @@ const posts = await getPosts();
     <div class="container wide blog-main-layout">
       <div class="blog-feed">
         {categories.filter(cat => posts.some(p => p.category === cat.id)).map(cat => (
-          <section id={cat.id} class="category-group">
-            <div class="category-header">
-              <h2>{cat.name}</h2>
-              <div class="category-line"></div>
-            </div>
-            <div class="posts-grid">
+          <section id={cat.id} class="category-group" style={cat.id === 'normativa' ? 'width:auto;max-width:none;margin-bottom:140px;' : undefined}>
+            <h2 class="category-title">{cat.name}</h2>
+            <div
+              class="posts-grid"
+              style={cat.id === 'normativa'
+                ? 'justify-content:start;justify-items:stretch;margin:0;'
+                : undefined}
+            >
               {posts.filter(p => p.category === cat.id).map(post => (
-                <article class="blog-card-clean">
+                <article
+                  class="blog-card-clean"
+                  style={cat.id === 'normativa'
+                    ? 'width:100%;max-width:420px;align-items:stretch;text-align:left;margin:0;'
+                    : undefined}
+                >
                   <div class="card-image">
-                    <img src={post.image} alt={post.title} />
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      style={cat.id === 'normativa' ? 'display:block;margin:0;' : undefined}
+                    />
                   </div>
                   <div class="card-body">
                     <span class="card-category">{post.categoryName}</span>
@@ -47,8 +58,8 @@ const posts = await getPosts();
         ))}
       </div>
 
-      <aside class="blog-sidebar">
-        <div class="sidebar-widget">
+      <aside class="blog-sidebar" style="justify-self:start;margin-left:-72px;align-self:start;text-align:left;">
+        <div class="sidebar-widget" style="margin-left:-40px;margin-right:0;text-align:left;align-self:start;position:relative;left:-40px;">
           <h3>Buscador Técnico</h3>
           <div class="search-box">
             <input type="text" placeholder="Buscar normativa o tecnología..." />
@@ -62,7 +73,7 @@ const posts = await getPosts();
           </div>
         </div>
 
-        <div class="sidebar-widget siex-status-widget">
+        <div class="sidebar-widget siex-status-widget" style="margin-left:-40px;margin-right:0;text-align:left;align-self:start;position:relative;left:-40px;">
           <h3>Estado del SIEX <span class="pulse-green"></span></h3>
           <div class="siex-info">
             <p class="status-ok">Sistema Operativo</p>
@@ -116,24 +127,62 @@ const posts = await getPosts();
   }
 
   .blog-main-layout {
-    display: grid;
-    grid-template-columns: 1fr 340px;
+    display: flex;
+    align-items: flex-start;
     gap: 120px;
     padding: 60px;
+    text-align: initial !important;
+  }
+
+  .blog-feed {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .blog-sidebar {
+    flex: 0 0 340px;
+    margin-left: -72px !important;
+    align-self: flex-start !important;
+    text-align: left !important;
+  }
+
+  .blog-feed,
+  .blog-feed section,
+  .blog-feed .posts-grid,
+  .blog-feed .blog-card-clean,
+  .blog-feed .card-body,
+  .blog-feed .card-footer,
+  .blog-sidebar,
+  .blog-sidebar .sidebar-widget {
+    text-align: left !important;
+  }
+
+  .blog-feed .blog-card-clean {
+    align-items: stretch !important;
+    justify-self: stretch !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .blog-feed .card-image,
+  .blog-feed .card-image img {
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    justify-content: initial !important;
+  }
+
+  .blog-sidebar .sidebar-widget,
+  .blog-sidebar .inner-trazabilidad-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .category-group {
     margin-bottom: 140px;
   }
 
-  .category-header {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    margin-bottom: 8px;
-  }
-
-  .category-header h2 {
+  .category-title {
     font-size: 1.4rem;
     font-weight: 800;
     color: #000000;
@@ -144,17 +193,68 @@ const posts = await getPosts();
     margin: 15px;
   }
 
-  .category-line {
-    height: 1px;
-    background: #e0e0e0;
-    width: 100%;
-  }
-
   .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 420px));
     justify-content: center;
     gap: 64px;
+  }
+
+  #normativa .posts-grid {
+    width: auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 420px));
+    margin: 0;
+    justify-content: start;
+    justify-items: stretch;
+    gap: 24px;
+  }
+
+  #normativa .blog-card-clean {
+    width: 100%;
+    max-width: none;
+  }
+
+  #normativa .category-header {
+    margin-bottom: 0;
+  }
+
+  #normativa .card-body {
+    padding: 24px;
+  }
+
+  #normativa .card-excerpt {
+    margin-bottom: 16px;
+  }
+
+  #normativa .card-footer {
+    padding-top: 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  #tecnologia .posts-grid {
+    width: min(100%, 1120px);
+    grid-template-columns: repeat(2, minmax(420px, 1fr));
+    margin: 0 auto;
+    justify-content: center;
+    justify-items: stretch;
+    align-items: start;
+    gap: 24px;
+  }
+
+  #tecnologia .blog-card-clean {
+    width: 100%;
+    max-width: none;
+  }
+
+  #tecnologia {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto 140px;
+  }
+
+  #tecnologia .category-title {
+    margin-bottom: 0;
   }
 
   .blog-card-clean {
@@ -195,6 +295,10 @@ const posts = await getPosts();
     flex-direction: column;
   }
 
+  #tecnologia .card-body {
+    padding: 24px;
+  }
+
   .card-category {
     font-size: 0.7rem;
     color: var(--color-turquoise);
@@ -229,12 +333,22 @@ const posts = await getPosts();
     flex: 1;
   }
 
+  #tecnologia .card-excerpt {
+    margin-bottom: 16px;
+  }
+
   .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 16px;
     border-top: 1px solid #f1f3f5;
+  }
+
+  #tecnologia .card-footer {
+    padding-top: 12px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .card-date {
@@ -348,7 +462,15 @@ const posts = await getPosts();
 
   @media (max-width: 1100px) {
     .blog-main-layout {
+      display: grid;
       grid-template-columns: 1fr;
+    }
+    .blog-sidebar {
+      flex: initial;
+      margin-left: 0 !important;
+    }
+    #tecnologia .posts-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .blog-sidebar {
         display: grid;
@@ -375,19 +497,19 @@ const posts = await getPosts();
       grid-template-columns: 1fr;
       gap: 30px;
     }
+    #tecnologia .posts-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
     .container.wide {
       padding: 0 24px;
     }
     .blog-sidebar {
         grid-template-columns: 1fr;
     }
-    .category-header {
-      justify-content: center;
+    .category-title {
       text-align: center;
       margin-bottom: 30px;
-    }
-    .category-line {
-      display: none; /* Hide the decorative line on mobile to keep title clean and centered */
     }
   }
 </style>
