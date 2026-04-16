@@ -1092,7 +1092,7 @@ article .share-btn,
 article .next-steps-card,
 .next-steps-card {
   background: linear-gradient(135deg, #0B1A14 0%, #050d0a 100%) !important;
-  padding: 60px 40px !important;
+  padding: 20px 40px !important;
   border-radius: 24px !important;
   color: #ffffff !important;
   text-align: center !important;
@@ -1129,8 +1129,9 @@ article .btn--turquoise,
 .btn--turquoise,
 article .btn-premium,
 .btn-premium {
+  margin-top: 20px;
   display: inline-block !important;
-  padding: 18px 48px !important;
+  padding: 20px 48px !important;
   background: var(--color-turquoise) !important;
   color: #0B1A14 !important;
   text-decoration: none !important;
