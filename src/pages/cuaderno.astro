@@ -123,13 +123,8 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <div class="gis-layout-manual">
-             <div class="gis-map-container">
-                <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mapa GIS Técnico" />
-                <div class="gis-marker-overlay">
-                  <div class="gis-marker" style="top: 10%; left: 15%;">SECTOR A: FLUJO NOMINAL 25m3/h</div>
-                  <div class="gis-marker" style="top: 60%; left: 45%;">SENSOR S-04: HUMEDAD 18%</div>
-                </div>
-             </div>
+             
+                
              <div class="gis-info-manual">
                 <h3 class="subtitle-manual">Capacidades de Edición y Teledetección</h3>
                 <p class="paragraph-manual">
@@ -140,7 +135,14 @@ import Layout from "../layouts/Layout.astro";
                    <p class="paragraph-manual">Trabajamos con resoluciones satelitales que permiten un seguimiento semanal del vigor vegetativo (Índice NDVI). Esto permite detectar anomalías nutricionales o ataques de plagas de forma temprana en sectores específicos, permitiendo aplicaciones localizadas ("Variable Rate Application") que ahorran hasta un 40% en insumos al tratar solo la zona afectada.</p>
                 </div>
              </div>
-          </div>
+             <div class="gis-map-container">
+                <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mapa GIS Técnico" />
+                <div class="gis-marker-overlay">
+                  <div class="gis-marker" style="top: 10%; left: 15%;">SECTOR A: FLUJO NOMINAL 25m3/h</div>
+                  <div class="gis-marker" style="top: 60%; left: 45%;">SENSOR S-04: HUMEDAD 18%</div>
+                </div>
+             </div>
+            </div>
         </section>
 
         <!-- MÓDULO 5: MAPEÓ DE ACTIVOS -->
@@ -301,7 +303,7 @@ import Layout from "../layouts/Layout.astro";
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 80px;
-    padding: 100px 0; /* Increased for better breathing room */
+    padding: 1px 0 !important; /* Increased for better breathing room */
   }
 
   /* SIDE NAV MANUAL */
@@ -425,7 +427,7 @@ import Layout from "../layouts/Layout.astro";
   /* GIS MANUAL */
   .gis-layout-manual {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1.fr;
     gap: 60px;
     margin-top: 40px;
     align-items: center;

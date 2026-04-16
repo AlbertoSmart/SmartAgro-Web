@@ -145,8 +145,8 @@ ol {
 #asistente.section-padding,
 #features.section-padding,
 #tech.section-padding {
-  padding-top: 72px !important;
-  padding-bottom: 72px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 
 #intro .intro__grid {
