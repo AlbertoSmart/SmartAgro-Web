@@ -29,7 +29,7 @@ const sensorIndexItems = [
     <!-- 1. ANÁLISIS DEL PROBLEMA -->
     <section id="problema" class="content-block" data-index-section>
       <div class="container narrow">
-        <div class="section-label">01. EL PROBLEMA</div>
+        <div class="section-label"><span class="section-label__number">01.</span> EL PROBLEMA</div>
         <div class="manual-detail-box">
           <h2>El estrés hídrico invisible: La parálisis metabólica silenciosa</h2>
           <p>
@@ -55,8 +55,8 @@ const sensorIndexItems = [
     <!-- 2. SOLUCIÓN TÉCNICA -->
     <section id="solucion" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact">
-          <div class="section-label">02. LA SOLUCIÓN</div>
+        <div class="manual-detail-box">
+          <div class="section-label"><span class="section-label__number">02.</span> LA SOLUCIÓN</div>
           <h2>Dendrometría y Termometría - El "Electrocardiograma" del Cultivo</h2>
           <p>
             Nuestra tecnología de **Dendrometría** utiliza sensores de alta resolución capaces de medir variaciones micrométricas 
@@ -73,20 +73,6 @@ const sensorIndexItems = [
             Complementamos este análisis con **Termometría Infrarroja** foliar. Al medir la diferencia entre la temperatura de la canopia 
             y la temperatura ambiente, calculamos el índice de estrés hídrico de la planta. Si los estomas se cierran, la temperatura foliar sube rápidamente al cesar la refrigeración por transpiración.
           </p>
-          <div class="tech-grid">
-            <div class="tech-item feature-card">
-              <h3>Resolución Micrométrica</h3>
-              <p>Detección de cambios de 0.001mm en el tejido vegetal.</p>
-            </div>
-            <div class="tech-item feature-card">
-              <h3>Mojado Foliar</h3>
-              <p>Modelos de riesgo fitosanitario basados en humectación real.</p>
-            </div>
-            <div class="tech-item feature-card">
-              <h3>CWSI Index</h3>
-              <p>Indice de estrés hídrico basado en temperatura de canopia.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -95,7 +81,7 @@ const sensorIndexItems = [
     <section id="roi" class="content-block" data-index-section>
       <div class="container">
         <div class="roi-box manual-detail-box roi-box--featured">
-          <div class="section-label">03. RETORNO DE INVERSIÓN (ROI)</div>
+          <div class="section-label"><span class="section-label__number">03.</span> RETORNO DE INVERSIÓN (ROI)</div>
           <h2>Rentabilidad por Calidad y Sanidad</h2>
           <div class="stats-grid">
             <div class="stat-card stat-card--featured">
@@ -121,8 +107,8 @@ const sensorIndexItems = [
     <!-- 4. INTERPRETACIÓN DE DATOS -->
     <section id="inteligencia" class="content-block grey-bg" data-index-section>
       <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact">
-          <div class="section-label">04. INTELIGENCIA DE DATOS</div>
+        <div class="manual-detail-box">
+          <div class="section-label"><span class="section-label__number">04.</span> INTELIGENCIA DE DATOS</div>
           <h2>Control del Crecimiento en Tiempo Real</h2>
           <p>
             La dendrometría no solo sirve para regar; sirve para **producir mejor**. En nuestra plataforma puede observar:
@@ -153,7 +139,7 @@ const sensorIndexItems = [
     <section id="implementacion" class="content-block" data-index-section>
       <div class="container narrow">
         <div class="manual-detail-box manual-detail-box--compact">
-          <div class="section-label">05. IMPLEMENTACIÓN</div>
+          <div class="section-label"><span class="section-label__number">05.</span> IMPLEMENTACIÓN</div>
           <h2>Instalación Quirúrgica en el Tejido Vivo</h2>
           <div class="insight-cards">
             <div class="insight-card feature-card">
@@ -283,6 +269,25 @@ const sensorIndexItems = [
     padding-bottom: 0;
   }
 
+  #solucion .manual-detail-box {
+    padding: 28px;
+  }
+
+  #solucion h2,
+  #inteligencia h2 {
+    margin-bottom: 20px;
+  }
+
+  #solucion p,
+  #inteligencia p {
+    margin-bottom: 20px;
+  }
+
+  #solucion .image-mosaic {
+    gap: 24px;
+    margin: 28px 0;
+  }
+
   #implementacion.content-block {
     padding-top: 32px;
     padding-bottom: 0;
@@ -314,6 +319,10 @@ const sensorIndexItems = [
     padding: 28px;
   }
 
+  #inteligencia .manual-detail-box {
+    padding: 28px;
+  }
+
   .grey-bg { background: var(--color-gray-50); }
 
   .section-label {
@@ -325,6 +334,11 @@ const sensorIndexItems = [
     margin-bottom: 32px;
     display: block;
     text-transform: uppercase;
+  }
+
+  .section-label__number {
+    letter-spacing: 0;
+    margin-right: 6px;
   }
 
   h2 {
@@ -348,42 +362,6 @@ const sensorIndexItems = [
     padding: 40px;
     border-radius: 12px;
     border: 1px solid #e9ecef;
-  }
-
-  /* TECH GRID */
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 48px;
-    margin-top: 80px;
-  }
-
-  .tech-item h3 {
-    font-weight: 700;
-    margin-bottom: 16px;
-    font-size: 1.3rem;
-    color: var(--color-slate-900);
-    letter-spacing: -0.01em;
-  }
-
-  .tech-item p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  .tech-item.feature-card {
-    background: #ffffff;
-    border: 1px solid #e9ecef;
-    border-radius: 20px;
-    padding: 32px 28px;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  }
-
-  .tech-item.feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
-    border-color: rgba(29, 185, 154, 0.35);
   }
 
   /* ROI BOX */
@@ -602,6 +580,11 @@ const sensorIndexItems = [
 
   @media (max-width: 768px) {
     .expert-hero-solid { padding: 16px 0 10px !important; }
+
+    #solucion .container.narrow {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 </style>
 
