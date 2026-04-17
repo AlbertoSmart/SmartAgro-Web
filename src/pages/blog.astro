@@ -71,7 +71,7 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
           </div>
 
           {latestPost && (
-            <a href={`/blog/${latestPost.id}`} class="hero-featured">
+            <a href={`/blog/${latestPost.id}`} class="hero-featured" data-astro-reload>
               <span class="hero-featured__label">Ultima lectura incorporada</span>
               <h2>{latestPost.title}</h2>
               <p>{latestPost.excerpt}</p>
@@ -101,7 +101,7 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
         <section class="posts-grid" aria-label="Articulos del blog">
           {sortedPosts.map((post, index) => (
             <article class="blog-card-clean">
-              <a href={`/blog/${post.id}`} class="card-image">
+              <a href={`/blog/${post.id}`} class="card-image" data-astro-reload>
                 <img src={post.image} alt={post.title} />
               </a>
 
@@ -112,14 +112,14 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
                 </div>
 
                 <h3 class="card-title">
-                  <a href={`/blog/${post.id}`}>{post.title}</a>
+                  <a href={`/blog/${post.id}`} data-astro-reload>{post.title}</a>
                 </h3>
 
                 <p class="card-excerpt">{post.excerpt}</p>
 
                 <div class="card-footer">
                   <span class="card-date">{post.date}</span>
-                  <a href={`/blog/${post.id}`} class="read-more">Leer analisis</a>
+                  <a href={`/blog/${post.id}`} class="read-more" data-astro-reload>Leer analisis</a>
                 </div>
               </div>
             </article>
