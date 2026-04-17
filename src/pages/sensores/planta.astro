@@ -30,7 +30,7 @@ const sensorIndexItems = [
     <section id="problema" class="content-block" data-index-section>
       <div class="container narrow">
         <div class="section-label"><span class="section-label__number">01.</span> EL PROBLEMA</div>
-        <div class="manual-detail-box">
+        <div class="manual-detail-box manual-detail-box--problem-hover">
           <h2>El estrés hídrico invisible: La parálisis metabólica silenciosa</h2>
           <p>
             Tradicionalmente, el agricultor espera a ver las hojas enrolladas o el fruto lacio para decidir el riego. 
@@ -39,7 +39,7 @@ const sensorIndexItems = [
           </p>
 
           <!-- IMAGE MOSAIC 1 -->
-          <div class="image-mosaic">
+          <div class="image-mosaic image-mosaic--solution">
             <img src="/images/sensores/DendometroTronco.png" alt="Dendrómetro Tronco" />
             <img src="/images/sensores/dendometroFruto2.png" alt="Dendrómetro Fruto" />
           </div>
@@ -54,8 +54,8 @@ const sensorIndexItems = [
 
     <!-- 2. SOLUCIÓN TÉCNICA -->
     <section id="solucion" class="content-block grey-bg" data-index-section>
-      <div class="container narrow">
-        <div class="manual-detail-box">
+      <div class="container">
+        <div class="manual-detail-box manual-detail-box--pulse-reveal">
           <div class="section-label"><span class="section-label__number">02.</span> LA SOLUCIÓN</div>
           <h2>Dendrometría y Termometría - El "Electrocardiograma" del Cultivo</h2>
           <p>
@@ -65,7 +65,7 @@ const sensorIndexItems = [
           </p>
 
           <!-- IMAGE MOSAIC 2 -->
-          <div class="image-mosaic">
+          <div class="image-mosaic image-mosaic--solution">
             <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Hoja" />
           </div>
 
@@ -106,8 +106,8 @@ const sensorIndexItems = [
 
     <!-- 4. INTERPRETACIÓN DE DATOS -->
     <section id="inteligencia" class="content-block grey-bg" data-index-section>
-      <div class="container narrow">
-        <div class="manual-detail-box">
+      <div class="container">
+        <div class="manual-detail-box manual-detail-box--pulse-reveal">
           <div class="section-label"><span class="section-label__number">04.</span> INTELIGENCIA DE DATOS</div>
           <h2>Control del Crecimiento en Tiempo Real</h2>
           <p>
@@ -138,7 +138,7 @@ const sensorIndexItems = [
     <!-- 5. GUÍA DE INSTALACIÓN -->
     <section id="implementacion" class="content-block" data-index-section>
       <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact">
+        <div class="manual-detail-box manual-detail-box--compact manual-detail-box--radar-sweep">
           <div class="section-label"><span class="section-label__number">05.</span> IMPLEMENTACIÓN</div>
           <h2>Instalación Quirúrgica en el Tejido Vivo</h2>
           <div class="insight-cards">
@@ -269,6 +269,11 @@ const sensorIndexItems = [
     padding-bottom: 0;
   }
 
+  #solucion > .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   #solucion .manual-detail-box {
     padding: 28px;
   }
@@ -296,6 +301,11 @@ const sensorIndexItems = [
   #inteligencia.content-block {
     padding-top: 0;
     padding-bottom: 72px;
+  }
+
+  #inteligencia > .container {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   #problema .section-label {
@@ -362,6 +372,268 @@ const sensorIndexItems = [
     padding: 40px;
     border-radius: 12px;
     border: 1px solid #e9ecef;
+  }
+
+  .manual-detail-box--problem-hover {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .manual-detail-box--problem-hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(125, 211, 252, 0.16), transparent 30%),
+      linear-gradient(135deg, rgba(29, 185, 154, 0.08), transparent 56%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  .manual-detail-box--problem-hover:hover {
+    transform: translateY(-10px) scale(1.015);
+    border-color: rgba(29, 185, 154, 0.42);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.18);
+    background: #fbfcfc;
+  }
+
+  .manual-detail-box--problem-hover:hover::before {
+    opacity: 1;
+  }
+
+  .manual-detail-box--problem-hover > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .manual-detail-box--pulse-reveal {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .manual-detail-box--pulse-reveal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 154, 0.12), transparent 34%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.68), transparent 55%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  .manual-detail-box--pulse-reveal:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(29, 185, 154, 0.4);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.14);
+    background: #fcfdfd;
+  }
+
+  .manual-detail-box--pulse-reveal:hover::before {
+    opacity: 1;
+  }
+
+  .manual-detail-box--radar-sweep {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s ease,
+      border-color 0.4s ease,
+      background-color 0.4s ease;
+  }
+
+  .manual-detail-box--radar-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(29, 185, 154, 0.14) 48%,
+      rgba(255, 255, 255, 0.45) 52%,
+      rgba(29, 185, 154, 0.12) 56%,
+      transparent 72%,
+      transparent 100%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+    transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .manual-detail-box--radar-sweep::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 82%, rgba(29, 185, 154, 0.1), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 38%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  .manual-detail-box--radar-sweep:hover {
+    transform: translateY(-10px) scale(1.01);
+    border-color: rgba(29, 185, 154, 0.4);
+    box-shadow: 0 30px 64px rgba(15, 23, 42, 0.18);
+    background: #fbfcfc;
+  }
+
+  .manual-detail-box--radar-sweep:hover::before {
+    opacity: 1;
+    transform: translateX(120%);
+  }
+
+  .manual-detail-box--radar-sweep:hover::after {
+    opacity: 1;
+  }
+
+  .manual-detail-box--data-wave {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .manual-detail-box--data-wave::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 0;
+    background: linear-gradient(180deg, rgba(29, 185, 154, 0), rgba(29, 185, 154, 0.12));
+    pointer-events: none;
+    transition: height 0.35s ease, opacity 0.35s ease;
+    opacity: 0.9;
+  }
+
+  .manual-detail-box--data-wave::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: 22px;
+    height: 14px;
+    background: radial-gradient(circle at 50% 50%, rgba(29, 185, 154, 0.28), transparent 65%);
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(8px) scaleX(0.9);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+  }
+
+  .manual-detail-box--pulse-reveal > *,
+  .manual-detail-box--radar-sweep > *,
+  .manual-detail-box--data-wave > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .manual-detail-box--radar-sweep .insight-card {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .manual-detail-box--radar-sweep:hover .insight-card {
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
+    border-color: rgba(29, 185, 154, 0.28);
+    background: #ffffff;
+  }
+
+  .manual-detail-box--radar-sweep:hover .insight-card:nth-child(odd) {
+    transform: translateX(10px);
+  }
+
+  .manual-detail-box--radar-sweep:hover .insight-card:nth-child(even) {
+    transform: translateX(-10px);
+  }
+
+  .manual-detail-box--data-wave:hover {
+    transform: translateY(-8px);
+    border-color: rgba(29, 185, 154, 0.42);
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.14);
+    background: #fcfdfd;
+  }
+
+  .manual-detail-box--data-wave:hover::before {
+    height: 52%;
+  }
+
+  .manual-detail-box--data-wave:hover::after {
+    opacity: 1;
+    transform: translateY(0) scaleX(1);
+  }
+
+  .image-mosaic--solution {
+    margin: 18px 0 16px;
+  }
+
+  .image-mosaic--solution > img:only-child {
+    width: min(100%, 360px);
+    aspect-ratio: 1 / 1;
+    padding: 14px;
+  }
+
+  #solucion .manual-detail-box--pulse-reveal {
+    padding: 28px;
+  }
+
+  #solucion .manual-detail-box--pulse-reveal h2 {
+    margin-bottom: 18px;
+  }
+
+  #solucion .manual-detail-box--pulse-reveal p {
+    margin-bottom: 16px;
+  }
+
+  @keyframes plantaPulseReveal {
+    0% {
+      opacity: 0;
+      transform: scale(0.965);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.012);
+      box-shadow: 0 18px 40px rgba(29, 185, 154, 0.12);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+    }
+  }
+
+  @keyframes plantaPulseGlow {
+    0% {
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.65;
+    }
   }
 
   /* ROI BOX */
@@ -581,7 +853,12 @@ const sensorIndexItems = [
   @media (max-width: 768px) {
     .expert-hero-solid { padding: 16px 0 10px !important; }
 
-    #solucion .container.narrow {
+    #solucion > .container {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    #inteligencia > .container {
       padding-left: 24px;
       padding-right: 24px;
     }
