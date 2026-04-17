@@ -38,11 +38,16 @@ const totalPosts = sortedPosts.length;
 const earliestPost = sortedPosts[0];
 const latestPost = sortedPosts.at(-1);
 const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))];
+const heroImage = "/images/soluciones/pexels-rodrigo-armendariz-160126099-33881124.jpg";
 ---
 
 <Layout title="Blog Tecnico Agronomico - Smart Fenix">
+  <Fragment slot="head">
+    <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
+  </Fragment>
+
   <main class="blog-container">
-    <header class="blog-hero">
+    <header class="blog-hero" style={`--blog-hero-image: url('${heroImage}')`}>
       <div class="container wide">
         <div class="hero-shell">
           <div class="hero-copy">
@@ -71,7 +76,7 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
           </div>
 
           {latestPost && (
-            <a href={`/blog/${latestPost.id}`} class="hero-featured" data-astro-reload>
+            <a href={`/blog/${latestPost.id}`} class="hero-featured">
               <span class="hero-featured__label">Ultima lectura incorporada</span>
               <h2>{latestPost.title}</h2>
               <p>{latestPost.excerpt}</p>
@@ -101,7 +106,7 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
         <section class="posts-grid" aria-label="Articulos del blog">
           {sortedPosts.map((post, index) => (
             <article class="blog-card-clean">
-              <a href={`/blog/${post.id}`} class="card-image" data-astro-reload>
+              <a href={`/blog/${post.id}`} class="card-image">
                 <img src={post.image} alt={post.title} />
               </a>
 
@@ -112,14 +117,14 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
                 </div>
 
                 <h3 class="card-title">
-                  <a href={`/blog/${post.id}`} data-astro-reload>{post.title}</a>
+                  <a href={`/blog/${post.id}`}>{post.title}</a>
                 </h3>
 
                 <p class="card-excerpt">{post.excerpt}</p>
 
                 <div class="card-footer">
                   <span class="card-date">{post.date}</span>
-                  <a href={`/blog/${post.id}`} class="read-more" data-astro-reload>Leer analisis</a>
+                  <a href={`/blog/${post.id}`} class="read-more">Leer analisis</a>
                 </div>
               </div>
             </article>
@@ -214,10 +219,19 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
     position: relative;
     overflow: hidden;
     padding: 44px 0 28px !important;
-    background:
-      radial-gradient(circle at top right, rgba(29, 185, 154, 0.2), transparent 28%),
-      linear-gradient(135deg, #08130f 0%, #0b1a14 58%, #153126 100%);
+    background: linear-gradient(135deg, #08130f 0%, #0b1a14 58%, #153126 100%);
     color: #ffffff !important;
+  }
+
+  .blog-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(5, 12, 10, 0.84) 0%, rgba(8, 19, 15, 0.76) 42%, rgba(12, 30, 23, 0.8) 100%),
+      radial-gradient(circle at top right, rgba(29, 185, 154, 0.16), transparent 30%),
+      var(--blog-hero-image) center center / cover no-repeat;
+    z-index: 0;
   }
 
   .blog-hero::after {
@@ -226,6 +240,12 @@ const categoryNames = [...new Set(sortedPosts.map((post) => post.categoryName))]
     inset: auto 0 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    z-index: 1;
+  }
+
+  .blog-hero .container.wide {
+    position: relative;
+    z-index: 2;
   }
 
   .hero-shell {
