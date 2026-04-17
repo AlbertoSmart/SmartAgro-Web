@@ -46,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
 
-          <div class="manual-detail-box">
+          <div class="manual-detail-box manual-detail-box--live manual-detail-box--live-1">
              <h3 class="subtitle-manual">Registro de Tratamientos Fitosanitarios y Nutrición</h3>
              <p class="paragraph-manual">
                La gestión de fitosanitarios es el punto más sensible de la inspección técnica. Nuestra base de datos está permanentemente actualizada con el Registro Oficial de Productos Fitosanitarios (MAPA). Cada vez que se registra un tratamiento, el sistema exige y valida los siguientes parámetros críticos para asegurar el cumplimiento legal:
@@ -87,7 +87,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <div class="docs-manual-grid">
-             <div class="doc-item-card">
+             <div class="doc-item-card doc-item-card--scroll-reveal doc-item-card--orbit-in" data-scroll-reveal>
                 <h3 class="subtitle-manual">Catálogo de Trámites Obligatorios</h3>
                 <div class="premium-entry">
                   <h4 class="tiny-title-manual">DAT (Documento de Acompañamiento al Transporte)</h4>
@@ -98,7 +98,7 @@ import Layout from "../layouts/Layout.astro";
                   <p class="paragraph-manual">Crucial para la compra y aplicación de fitosanitarios profesional. El software integra el validador de carnés ROPO, bloqueando cualquier registro de aplicación si la cualificación del operario ha expirado, evitando así responsabilidades legales graves para el titular de la explotación.</p>
                 </div>
              </div>
-             <div class="doc-item-card">
+             <div class="doc-item-card doc-item-card--scroll-reveal doc-item-card--fold-in" data-scroll-reveal>
                 <h3 class="subtitle-manual">Estructura de Propiedad y Seguros</h3>
                 <div class="premium-entry">
                   <h4 class="tiny-title-manual">Gestión de Herencias y Sucesiones Agrarias</h4>
@@ -130,7 +130,7 @@ import Layout from "../layouts/Layout.astro";
                 <p class="paragraph-manual">
                   La capacidad de 'dibujar' sobre el mapa permite una geolocalización exacta de infraestructuras invisibles. El agricultor puede trazar la trayectoria exacta de tuberías maestras y ramales de riego, ubicar pozos con sus coordenadas UTM y situar arquetas de control. Cada elemento dibujado tiene propiedades editables: diámetro de tubería, profundidad de soterramiento y fecha de última revisión.
                 </p>
-                <div class="gis-sub-box">
+                <div class="gis-sub-box gis-sub-box--interactive">
                    <h4 class="tiny-title-manual">Resolución y Análisis NDVI</h4>
                    <p class="paragraph-manual">Trabajamos con resoluciones satelitales que permiten un seguimiento semanal del vigor vegetativo (Índice NDVI). Esto permite detectar anomalías nutricionales o ataques de plagas de forma temprana en sectores específicos, permitiendo aplicaciones localizadas ("Variable Rate Application") que ahorran hasta un 40% en insumos al tratar solo la zona afectada.</p>
                 </div>
@@ -169,7 +169,7 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- MÓDULO 6: SEGURIDAD CRÍTICA -->
         <section id="seguridad-perimetral" class="dashboard-section section-unified">
-          <div class="security-manual-box">
+          <div class="security-manual-box security-manual-box--interactive">
              <h2 class="title-manual">Seguridad Perimetral y Geo-fencing</h2>
              <div class="security-manual-grid">
                 <div class="security-manual-item">
@@ -374,6 +374,45 @@ import Layout from "../layouts/Layout.astro";
     border: 1px solid #e9ecef;
   }
 
+  .manual-detail-box--live {
+    position: relative;
+    overflow: hidden;
+    animation: cuadernoLiveFloat 5.8s ease-in-out infinite;
+    will-change: transform, box-shadow;
+  }
+
+  .manual-detail-box--live::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 -28%;
+    width: 28%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(29, 185, 154, 0.08) 36%,
+      rgba(255, 255, 255, 0.78) 50%,
+      rgba(29, 185, 154, 0.08) 64%,
+      transparent 100%
+    );
+    pointer-events: none;
+    transform: skewX(-16deg);
+    animation: cuadernoLiveSweep 4.6s ease-in-out infinite;
+  }
+
+  .manual-detail-box--live::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(29, 185, 154, 0.1), transparent 34%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .manual-detail-box--live > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .manual-list {
     list-style: none;
     padding: 0;
@@ -412,6 +451,74 @@ import Layout from "../layouts/Layout.astro";
     border-radius: 16px;
     border: 1px solid #e9ecef;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  .doc-item-card--scroll-reveal {
+    opacity: 0;
+    transition:
+      opacity 0.24s linear,
+      transform 0.24s linear,
+      filter 0.24s linear;
+    will-change: transform, opacity, filter;
+  }
+
+  .doc-item-card--scroll-reveal.is-visible {
+    opacity: 1;
+  }
+
+  .doc-item-card--orbit-in {
+    transform-origin: 18% 50%;
+  }
+
+  .doc-item-card--orbit-in::after {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    border-radius: 24px;
+    border: 1px solid rgba(29, 185, 154, 0.16);
+    opacity: 0;
+    transform: scale(0.92);
+    pointer-events: none;
+  }
+
+  .doc-item-card--fold-in {
+    transform-origin: top center;
+  }
+
+  .doc-item-card--fold-in .premium-entry {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .doc-item-card--fold-in.is-visible .premium-entry,
+  .doc-item-card--orbit-in.is-visible .premium-entry {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .doc-item-card--fold-in.is-visible .premium-entry:first-of-type,
+  .doc-item-card--orbit-in.is-visible .premium-entry:first-of-type {
+    transition-delay: 0.26s;
+  }
+
+  .doc-item-card--fold-in.is-visible .premium-entry:last-of-type,
+  .doc-item-card--orbit-in.is-visible .premium-entry:last-of-type {
+    transition-delay: 0.4s;
+  }
+
+  .doc-item-card--orbit-in.is-visible {
+    animation:
+      cuadernoOrbitIn 1.05s cubic-bezier(0.18, 1, 0.32, 1) both,
+      cuadernoAuraPulse 1.15s ease-out 0.58s 1;
+  }
+
+  .doc-item-card--orbit-in.is-visible::after {
+    animation: cuadernoOrbitRing 1s ease-out 0.36s both;
+  }
+
+  .doc-item-card--fold-in.is-visible {
+    animation: cuadernoFoldIn 0.95s cubic-bezier(0.2, 0.9, 0.25, 1) both;
   }
 
   .premium-entry {
@@ -465,6 +572,44 @@ import Layout from "../layouts/Layout.astro";
     border: 1px solid #e9ecef;
   }
 
+  .gis-sub-box--interactive {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gis-sub-box--interactive::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(29, 185, 154, 0.14), transparent 36%),
+      linear-gradient(135deg, rgba(29, 185, 154, 0.08), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  .gis-sub-box--interactive:hover {
+    transform: translateY(-8px);
+    border-color: rgba(29, 185, 154, 0.45);
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+    background: #ffffff;
+  }
+
+  .gis-sub-box--interactive:hover::before {
+    opacity: 1;
+  }
+
+  .gis-sub-box--interactive > * {
+    position: relative;
+    z-index: 1;
+  }
+
   /* INFRA MANUAL */
   .infra-manual-grid {
     display: grid;
@@ -486,6 +631,148 @@ import Layout from "../layouts/Layout.astro";
     padding: 70px;
     border-radius: 32px;
     border: 1px solid #e9ecef;
+  }
+
+  .security-manual-box--interactive {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s ease,
+      border-color 0.4s ease,
+      background-color 0.4s ease;
+  }
+
+  .security-manual-box--interactive::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 154, 0.14), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.05), transparent 26%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .security-manual-box--interactive:hover {
+    transform: translateY(-10px);
+    border-color: rgba(29, 185, 154, 0.42);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+    background: #fbfcfc;
+  }
+
+  .security-manual-box--interactive:hover::before {
+    opacity: 1;
+  }
+
+  .security-manual-box--interactive > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes cuadernoLiveFloat {
+    0% {
+      transform: translateY(0);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+    }
+    50% {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 42px rgba(29, 185, 154, 0.12);
+    }
+    100% {
+      transform: translateY(0);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+    }
+  }
+
+  @keyframes cuadernoLiveSweep {
+    0% {
+      left: -28%;
+      opacity: 0;
+    }
+    16% {
+      opacity: 0.92;
+    }
+    56% {
+      left: 122%;
+      opacity: 0;
+    }
+    100% {
+      left: 122%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes cuadernoOrbitIn {
+    0% {
+      opacity: 0;
+      transform: perspective(1200px) rotateY(-18deg) translateX(-42px) scale(0.92);
+      filter: saturate(0.85);
+    }
+    55% {
+      opacity: 1;
+      transform: perspective(1200px) rotateY(4deg) translateX(8px) scale(1.015);
+      filter: saturate(1);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(1200px) rotateY(0deg) translateX(0) scale(1);
+      filter: saturate(1);
+    }
+  }
+
+  @keyframes cuadernoOrbitRing {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    35% {
+      opacity: 0.55;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.06);
+    }
+  }
+
+  @keyframes cuadernoAuraPulse {
+    0%,
+    100% {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+    50% {
+      box-shadow: 0 20px 44px rgba(29, 185, 154, 0.14);
+    }
+  }
+
+  @keyframes cuadernoFoldIn {
+    0% {
+      opacity: 0;
+      transform: perspective(1200px) rotateX(-16deg) translateY(34px) scaleY(0.88);
+      filter: blur(4px);
+    }
+    60% {
+      opacity: 1;
+      transform: perspective(1200px) rotateX(4deg) translateY(-4px) scaleY(1.02);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(1200px) rotateX(0deg) translateY(0) scaleY(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes cuadernoLinesRise {
+    0% {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .security-manual-grid {
     display: grid;
@@ -563,4 +850,40 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 </style>
+
+<script>
+  function initCuadernoScrollReveal() {
+    const cards = document.querySelectorAll('[data-scroll-reveal]');
+    if (!cards.length) return;
+
+    if (window.__cuadernoScrollRevealObserver) {
+      window.__cuadernoScrollRevealObserver.disconnect();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const target = entry.target as HTMLElement;
+
+        if (entry.isIntersecting) {
+          target.classList.add('is-visible');
+          observer.unobserve(target);
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '0px 0px -12% 0px'
+    });
+
+    window.__cuadernoScrollRevealObserver = observer;
+
+    cards.forEach((card) => {
+      card.classList.remove('is-visible');
+      observer.observe(card);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initCuadernoScrollReveal);
+  document.addEventListener('astro:page-load', initCuadernoScrollReveal);
+  document.addEventListener('astro:before-swap', () => window.__cuadernoScrollRevealObserver?.disconnect());
+</script>
 
