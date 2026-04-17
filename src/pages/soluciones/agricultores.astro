@@ -6,120 +6,162 @@ import { faqData } from "../../data/faqs";
 ---
 
 <TestPage
-    title="Cuaderno de Campo para Agricultores – Ecosistema Digital Agrario"
+    title="Cuaderno de Campo para Agricultores - Ecosistema Digital Agrario"
     heading="Cuaderno de Campo para Agricultores"
-    description="La herramienta definitiva para la gestión diaria de tu explotación. Digitaliza tus registros, controla tus insumos y cumple con la normativa SIEX de forma sencilla."
+    description="La herramienta definitiva para la gestion diaria de tu explotacion. Digitaliza tus registros, controla tus insumos y cumple con la normativa SIEX de forma sencilla."
     variant="solutions"
     layoutType="mosaic"
     heroSectionClass="hero-agricultores-offset"
     heroBackground="/images/cuaderno de Campo para Agricultores.jpg"
-  mosaicImages={["/images/soluciones/farmer_tablet_orchard.png", "/images/soluciones/agricultor_tech_fix.png"]}
+    mosaicImages={["/images/soluciones/farmer_tablet_orchard.png", "/images/soluciones/agricultor_tech_fix.png"]}
 >
     <div class="subpage-content">
+        <section class="overview-panel">
+            <div class="overview-panel__lead">
+                <span class="section-kicker">Gestion diaria con criterio</span>
+                <h2>Todo lo importante de la explotacion, concentrado en una sola capa de trabajo.</h2>
+                <p>Menos papeleo, menos errores y mas visibilidad sobre lo que ocurre en campo, almacen y normativa.</p>
+            </div>
 
-        <!-- Section: Your Day to Day -->
-        <section class="daily-flow">
-            <h2>Tu día a día con Cuaderno Digital</h2>
-            <div class="flow-grid">
-                <div class="flow-step">
-                    <div class="flow-step__number">1</div>
-                    <h3>Toma de Datos Rápida</h3>
-                    <p>Desde el tractor o a pie de campo, registra siembras y cosechas en segundos con nuestra interfaz adaptada a manos trabajadoras.</p>
+            <div class="overview-panel__stats">
+                <div class="overview-stat">
+                    <strong>1</strong>
+                    <span>Registro centralizado para labores, insumos y movimientos</span>
                 </div>
-                <div class="flow-step">
-                    <div class="flow-step__number">2</div>
-                    <h3>Monitorización IA</h3>
-                    <p>Nuestros sensores inteligentes detectan plagas y carencias de agua antes de que sean visibles al ojo, enviándote una alerta al móvil.</p>
+                <div class="overview-stat">
+                    <strong>24/7</strong>
+                    <span>Consulta desde movil, nave o tractor con sincronizacion continua</span>
                 </div>
-                <div class="flow-step">
-                    <div class="flow-step__number">3</div>
-                    <h3>Validación Instantánea</h3>
-                    <p>El sistema verifica que los productos fitosanitarios aplicados están autorizados para ese cultivo, evitando errores fatales.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step__number">4</div>
-                    <h3>Reporte SIEX</h3>
-                    <p>Al final del mes, pulsa un botón y exporta toda tu actividad lista para ser presentada ante la administración oficial.</p>
+                <div class="overview-stat">
+                    <strong>SIEX</strong>
+                    <span>Preparado para cumplimiento y revision documental sin improvisar</span>
                 </div>
             </div>
         </section>
 
-        <!-- ROI Calculator -->
+        <section class="daily-flow section-shell">
+            <div class="section-heading">
+                <span class="section-kicker">Flujo de trabajo</span>
+                <h2>Tu dia a dia con Cuaderno Digital</h2>
+                <p>Una secuencia pensada para que registrar, validar y reportar deje de ser una carga al final de la jornada.</p>
+            </div>
+
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <div class="flow-step__number">1</div>
+                    <span class="flow-step__eyebrow">Entrada en campo</span>
+                    <h3>Toma de datos rapida</h3>
+                    <p>Desde el tractor o a pie de campo, registra siembras y cosechas en segundos con una interfaz pensada para uso real.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step__number">2</div>
+                    <span class="flow-step__eyebrow">Lectura automatizada</span>
+                    <h3>Monitorizacion IA</h3>
+                    <p>Los sensores detectan plagas y carencias de agua antes de que sean visibles, enviando alertas utiles al movil.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step__number">3</div>
+                    <span class="flow-step__eyebrow">Control tecnico</span>
+                    <h3>Validacion instantanea</h3>
+                    <p>El sistema comprueba que los productos fitosanitarios aplicados son correctos para el cultivo y el momento.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step__number">4</div>
+                    <span class="flow-step__eyebrow">Salida administrativa</span>
+                    <h3>Reporte SIEX</h3>
+                    <p>Al final del mes exportas toda tu actividad lista para presentar ante la administracion, sin reconstruir nada a mano.</p>
+                </div>
+            </div>
+        </section>
+
         <ROICalculator />
 
-        <!-- Section: Tangible Benefits -->
-        <section class="benefits-section premium-benefits-box">
-            <h2 class="text-white">Beneficios Reales para tu Bolsillo</h2>
+        <section class="benefits-section premium-benefits-box section-shell">
+            <div class="section-heading section-heading--light">
+                <span class="section-kicker">Impacto economico</span>
+                <h2 class="text-white">Beneficios reales para tu bolsillo</h2>
+                <p>La digitalizacion no se queda en la pantalla: se traduce en ahorro, control y capacidad de anticipacion.</p>
+            </div>
+
             <div class="cards-grid">
                 <div class="beneficio-card">
                     <span class="icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
                     </span>
-                    <h3>Ahorro de Agua</h3>
-                    <p class="beneficio-card__highlight">Aplica riego solo cuando la planta lo necesita, optimizando hasta un 30% el consumo hídrico.</p>
+                    <span class="beneficio-card__tag">Riego eficiente</span>
+                    <h3>Ahorro de agua</h3>
+                    <p class="beneficio-card__highlight">Aplica riego solo cuando la planta lo necesita, optimizando hasta un 30% el consumo hidrico.</p>
                 </div>
                 <div class="beneficio-card">
                     <span class="icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
                     </span>
-                    <h3>Menos Insumos</h3>
-                    <p class="beneficio-card__highlight">Precisión en las dosis de fertilizante que reduce costes y mejora la salud del suelo.</p>
+                    <span class="beneficio-card__tag">Menor coste variable</span>
+                    <h3>Menos insumos</h3>
+                    <p class="beneficio-card__highlight">Precision en las dosis de fertilizante que reduce costes y mejora la salud del suelo.</p>
                 </div>
                 <div class="beneficio-card">
                     <span class="icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </span>
-                    <h3>Paz Mental</h3>
-                    <p class="beneficio-card__highlight">Olvídate del papeleo de última hora. Ten toda tu documentación siempre lista para una inspección.</p>
+                    <span class="beneficio-card__tag">Cumplimiento continuo</span>
+                    <h3>Paz mental</h3>
+                    <p class="beneficio-card__highlight">Olvidate del papeleo de ultima hora. Ten toda tu documentacion siempre lista para una inspeccion.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Feature List Re-styled -->
-        <div class="tools-overview">
-            <h2 class="text-center">Herramientas Incluidas</h2>
+        <div class="tools-overview section-shell">
+            <div class="section-heading section-heading--center">
+                <span class="section-kicker">Capas del sistema</span>
+                <h2 class="text-center">Herramientas incluidas</h2>
+                <p>Un entorno unico para registrar, decidir y justificar cada accion con menos friccion operativa.</p>
+            </div>
+
             <div class="cards-grid">
                 <div class="feature-card">
                     <div class="feature-card__icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                     </div>
-                    <h3>Stock Inteligente</h3>
-                    <p>Inventario actualizado de productos con avisos de caducidad y stock mínimo.</p>
+                    <h3>Stock inteligente</h3>
+                    <p>Inventario actualizado de productos con avisos de caducidad, stock minimo y trazabilidad interna.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
                     </div>
                     <h3>Trazabilidad</h3>
-                    <p>Histórico completo desde la semilla hasta la carga del camión, accesible en un clic.</p>
+                    <p>Historico completo desde la semilla hasta la carga del camion, accesible en un clic cuando toca revisar.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-card__icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     </div>
-                    <h3>Mapas Satélite</h3>
-                    <p>Visualización NDVI para detectar manchas de vigor y problemas de crecimiento antes de ir a la parcela.</p>
+                    <h3>Mapas satelite</h3>
+                    <p>Visualizacion NDVI para detectar manchas de vigor y problemas de crecimiento antes de ir a la parcela.</p>
                 </div>
             </div>
         </div>
 
-        <!-- FAQ Section -->
-        <section class="faq-section" style="padding: 60px 0;">
-            <h2 class="text-center" style="margin-bottom: 40px;">Preguntas Frecuentes</h2>
+        <section class="faq-section section-shell" style="padding: 60px 0;">
+            <div class="section-heading section-heading--center">
+                <span class="section-kicker">Dudas habituales</span>
+                <h2 class="text-center" style="margin-bottom: 40px;">Preguntas frecuentes</h2>
+            </div>
             <FAQAccordion items={faqData.agricultores} />
         </section>
 
         <div class="highlight-box">
-            <h3>¿Hablamos sobre tu finca?</h3>
-            <p>Cada explotación es un mundo. Cuéntanos tu caso y te enseñaremos cómo adaptamos nuestra tecnología a tus cultivos.</p>
-            <a href="/contacto" class="cta-btn">Agendar Consultoría Gratuita</a>
+            <h3>Hablemos sobre tu finca</h3>
+            <p>Cada explotacion es un mundo. Cuentanos tu caso y te ensenaremos como adaptamos nuestra tecnologia a tus cultivos.</p>
+            <a href="/contacto" class="cta-btn">Agendar consultoria gratuita</a>
         </div>
     </div>
 </TestPage>
 
 <style>
     :global(.hero-agricultores-offset .hero-mosaic__content) {
-        padding-top: 12px;
+        padding-top: 6px;
     }
 
     :global(.hero-agricultores-offset) {
@@ -127,32 +169,36 @@ import { faqData } from "../../data/faqs";
     }
 
     :global(.hero-agricultores-offset .hero-mosaic) {
-        gap: 32px;
+        gap: 40px;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic h1) {
-        margin-top: -8px;
-        margin-bottom: 14px;
+        margin-top: -4px;
+        margin-bottom: 18px;
+        max-width: 11ch;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic__desc-row) {
-        gap: 12px;
+        gap: 18px;
         align-items: flex-start;
-        margin-top: -14px !important;
+        margin-top: -4px !important;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic__desc-row p) {
-        margin-top: -18px;
+        margin-top: 0;
     }
 
     :global(.hero-agricultores-offset .hero-cta) {
-        padding: 12px 24px;
-        margin-top: 6px;
+        padding: 14px 26px;
+        margin-top: 0;
     }
 
     :global(.page-body) {
-        padding-top: 24px !important;
-        padding-bottom: 2px !important;
+        padding-top: 28px !important;
+        padding-bottom: 6px !important;
+        background:
+            radial-gradient(circle at top left, rgba(29, 185, 154, 0.08), transparent 25%),
+            linear-gradient(180deg, #f7faf9 0%, #ffffff 26%, #f6faf8 100%);
     }
 
     .subpage-content {
@@ -160,64 +206,167 @@ import { faqData } from "../../data/faqs";
         margin-bottom: 0 !important;
     }
 
-    .daily-flow {
-        padding: 8px 0 64px;
+    .section-shell {
+        position: relative;
     }
 
-    .rounded-img {
-        border-radius: 24px;
-        width: 100%;
-        height: auto;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    .section-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 760px;
+        margin-bottom: 30px;
+    }
+
+    .section-heading--center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .section-heading--light p {
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+    .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--color-turquoise-dark);
+    }
+
+    .section-kicker::before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.8;
+    }
+
+    .overview-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.95fr);
+        gap: 28px;
+        margin-bottom: 48px;
+        padding: 30px;
+        border-radius: 28px;
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 250, 248, 0.95) 100%);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        box-shadow: 0 24px 50px -30px rgba(15, 23, 42, 0.18);
+    }
+
+    .overview-panel__lead h2 {
+        margin: 0 0 14px !important;
+        font-size: clamp(1.9rem, 4vw, 2.7rem) !important;
+        line-height: 1.05;
+    }
+
+    .overview-panel__lead p {
+        margin: 0 !important;
+        max-width: 58ch;
+    }
+
+    .overview-panel__stats {
+        display: grid;
+        gap: 14px;
+    }
+
+    .overview-stat {
+        padding: 18px 20px;
+        border-radius: 22px;
+        background: #ffffff;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        box-shadow: 0 12px 30px -26px rgba(15, 23, 42, 0.22);
+    }
+
+    .overview-stat strong {
+        display: block;
+        margin-bottom: 6px;
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        color: var(--color-turquoise-dark);
+    }
+
+    .overview-stat span {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: var(--color-slate-700);
+    }
+
+    .daily-flow {
+        padding: 8px 0 56px;
     }
 
     .flow-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 30px;
-        margin-top: 28px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 8px;
     }
 
     .flow-step {
         position: relative;
-        padding: 40px 30px;
-        background: white;
-        border-radius: 20px;
+        padding: 42px 28px 28px;
+        background: rgba(255, 255, 255, 0.94);
+        border-radius: 24px;
         text-align: left;
-        border: 1px solid rgba(0,0,0,0.05);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        transition: transform 0.3s ease;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        box-shadow: 0 18px 40px -28px rgba(15, 23, 42, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
     .flow-step:hover {
-        transform: translateY(-5px);
-        border-color: var(--color-turquoise);
+        transform: translateY(-6px);
+        border-color: rgba(29, 185, 154, 0.35);
+        box-shadow: 0 26px 50px -30px rgba(15, 23, 42, 0.24);
     }
 
     .flow-step__number {
         position: absolute;
-        top: -15px;
-        left: 20px;
-        width: 40px;
-        height: 40px;
-        background: var(--color-turquoise);
+        top: -16px;
+        left: 22px;
+        width: 42px;
+        height: 42px;
+        background: #0b1a14;
         color: white;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 800;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(11, 26, 20, 0.18);
+    }
+
+    .flow-step__eyebrow {
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-turquoise-dark);
     }
 
     .flow-step h3 {
-        margin-top: 10px;
-        font-size: 1.15rem;
-        margin-bottom: 12px;
+        margin-top: 0;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .flow-step p {
+        margin-bottom: 0;
+        font-size: 1rem;
+        line-height: 1.65;
     }
 
     .benefits-section {
-        padding: 80px 40px;
+        padding: 74px 36px;
         border-radius: 32px;
         margin: 56px 0;
         position: relative;
@@ -225,23 +374,25 @@ import { faqData } from "../../data/faqs";
     }
 
     .premium-benefits-box {
-        background: linear-gradient(145deg, #0B1A14 0%, #163127 100%);
+        background:
+            radial-gradient(circle at top right, rgba(29, 185, 154, 0.14), transparent 30%),
+            linear-gradient(145deg, #0B1A14 0%, #163127 100%);
         border: 1px solid rgba(29, 185, 154, 0.3);
         box-shadow: 0 40px 100px rgba(0,0,0,0.25);
     }
 
-    .text-white { 
-        color: white !important; 
+    .text-white {
+        color: white !important;
         font-weight: 850;
         letter-spacing: -0.02em;
-        margin-bottom: 48px !important;
+        margin-bottom: 0 !important;
         text-align: center;
     }
 
     .beneficio-card {
-        padding: 40px 30px;
+        padding: 34px 28px;
         text-align: center;
-        background: rgba(255,255,255,0.04);
+        background: rgba(255,255,255,0.05);
         border-radius: 24px;
         border: 1px solid rgba(255,255,255,0.08);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -253,12 +404,25 @@ import { faqData } from "../../data/faqs";
         color: white;
     }
 
+    .beneficio-card__tag {
+        display: inline-block;
+        margin-bottom: 14px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.82);
+    }
+
     .beneficio-card__highlight {
         color: #e6f3ff !important;
     }
 
     .beneficio-card:hover {
-        background: rgba(255,255,255,0.07);
+        background: rgba(255,255,255,0.08);
         transform: translateY(-10px);
         border-color: rgba(29, 185, 154, 0.5);
         box-shadow: 0 20px 40px rgba(0,0,0,0.2);
@@ -266,16 +430,16 @@ import { faqData } from "../../data/faqs";
 
     .beneficio-card .icon {
         color: var(--color-turquoise);
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         display: inline-flex;
         padding: 15px;
-        background: rgba(29, 185, 154, 0.1);
+        background: rgba(29, 185, 154, 0.12);
         border-radius: 16px;
         transition: all 0.3s ease;
     }
 
     .beneficio-card:hover .icon {
-        transform: scale(1.1) rotate(5deg);
+        transform: scale(1.08) rotate(5deg);
         background: rgba(29, 185, 154, 0.2);
         box-shadow: 0 0 20px rgba(29, 185, 154, 0.3);
     }
@@ -288,13 +452,40 @@ import { faqData } from "../../data/faqs";
         margin-bottom: 0 !important;
     }
 
+    :global(.feature-card) {
+        position: relative;
+        overflow: hidden;
+    }
+
+    :global(.feature-card::before) {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-turquoise), rgba(29, 185, 154, 0.1));
+        opacity: 0.9;
+    }
+
+    :global(.feature-card__icon) {
+        width: 56px;
+        height: 56px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        border-radius: 18px;
+        background: rgba(29, 185, 154, 0.12);
+        color: var(--color-turquoise-dark);
+    }
+
     .faq-section {
         padding: 40px 0 !important;
         margin-bottom: 0 !important;
     }
 
     .faq-section h2 {
-        margin-bottom: 24px !important;
+        margin-bottom: 0 !important;
     }
 
     :global(.highlight-box) {
@@ -305,25 +496,54 @@ import { faqData } from "../../data/faqs";
         margin-bottom: 0 !important;
     }
 
+    @media (max-width: 1024px) {
+        .overview-panel {
+            grid-template-columns: 1fr;
+        }
+
+        .flow-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
     @media (max-width: 768px) {
         :global(.page-body) {
-            padding-top: 16px !important;
+            padding-top: 18px !important;
             padding-bottom: 20px !important;
+        }
+
+        .overview-panel {
+            padding: 24px 20px;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+
+        .overview-panel__lead,
+        .section-heading {
+            align-items: center;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .daily-flow {
             padding-top: 8px;
         }
 
-        .flow-grid { grid-template-columns: 1fr; }
+        .flow-grid {
+            grid-template-columns: 1fr;
+        }
+
         .benefits-section {
             padding: 40px 20px;
             margin: 36px 0;
         }
+
         .cards-grid {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
         }
+
         .beneficio-card {
             padding: 30px 20px;
             text-align: center;
@@ -331,13 +551,14 @@ import { faqData } from "../../data/faqs";
             flex-direction: column;
             align-items: center;
         }
+
         .beneficio-card .icon {
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20px;
         }
+
         .text-white {
-            margin-bottom: 30px !important;
             font-size: 1.5rem;
         }
 
@@ -356,8 +577,8 @@ import { faqData } from "../../data/faqs";
         const pageBody = document.querySelector('.page-body');
         if (!pageBody) return;
 
-        pageBody.style.setProperty('padding-top', window.innerWidth <= 768 ? '16px' : '24px', 'important');
-        pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '28px', 'important');
+        pageBody.style.setProperty('padding-top', window.innerWidth <= 768 ? '18px' : '28px', 'important');
+        pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '24px', 'important');
     }
 
     if (!window.__agricultoresSpacingBound) {
