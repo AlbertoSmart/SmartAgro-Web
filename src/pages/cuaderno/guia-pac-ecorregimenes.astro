@@ -159,36 +159,13 @@ const ecoRegimenes = [
             </a>
           </div>
         </section>
-<div class="value-proposition grid-3">
-      <div class="value-item feature-card">
-        <div class="feature-card__badge">Beneficios Clave</div>
-        <div class="value-item__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-        </div>
-        <h3>Toma de Decisiones</h3>
-        <p>Datos reales para decidir cuándo regar, abonar o cosechar con precisión quirúrgica.</p>
-      </div>
-      <div class="value-item feature-card">
-        <div class="feature-card__badge">Beneficios Clave</div>
-        <div class="value-item__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg>
-        </div>
-        <h3>Seguridad Legal</h3>
-        <p>Garantizamos que todos tus registros cumplen al 100% con la normativa SIEX vigente.</p>
-      </div>
-      <div class="value-item feature-card">
-        <div class="feature-card__badge">Beneficios Clave</div>
-        <div class="value-item__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C10 14.5 10.5 13 12 13s2 1.5 2 2.75"></path></svg>
-        </div>
-        <h3>Sostenibilidad</h3>
-        <p>Optimiza el uso de recursos y reduce el impacto ambiental de tu explotación.</p>
-      </div>
-    </div>
+
         <!-- NUEVA TARJETA -->
         <section class="content-block">
-          <div class="feature-card">
-            
+          <div class="feature-card feature-card--premium">
+            <div class="feature-card__badge">
+            CONTACTA CON NOSOTROS
+  </div>
             <div class="card-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -202,6 +179,7 @@ const ecoRegimenes = [
             <p>Recibe asesoramiento personalizado de nuestros ingenieros agrónomos para implementar correctamente los ecorregímenes en tu explotación.</p>
             <div class="card-actions">
               <a href="/contacto" class="cta-btn">Solicitar Consultoría</a>
+              
             </div>
           </div>
         </section>
@@ -228,6 +206,22 @@ const ecoRegimenes = [
     font-family: 'Inter', sans-serif;
     color: #1e293b;
   }
+  .feature-card--premium {
+  position: relative;
+  border: 1px solid rgba(29, 185, 154, 0.25);
+}
+
+.feature-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: #1DB99A;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
 
   /* HERO */
   .guide-hero {
@@ -454,7 +448,9 @@ const ecoRegimenes = [
     text-align: center;
     max-width: 500px;
     margin: 0 auto;
+    margin-top: 25px;
   }
+
   .card-icon {
     color: #1DB99A;
     margin-bottom: 24px;
@@ -510,6 +506,13 @@ const ecoRegimenes = [
     .guide-hero p {
       font-size: 1.1rem;
     }
+
+    .feature-card-premium {
+    position:relative;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
     .content-block {
       margin-bottom: 60px;
     }
@@ -558,46 +561,6 @@ const ecoRegimenes = [
       padding-right: 12px;
     }
   }
-
-  
-  .feature-card--premium {
-    position: relative;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-  }
-
-  .feature-card--premium:hover {
-    border-color: var(--color-turquoise);
-  }
-
-  .feature-card__badge {
-    position: absolute;
-    top: -12px;
-    right: 20px;
-    background: var(--color-green);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  .feature-list {
-    margin: 20px 0;
-    padding: 0;
-    list-style: none;
-    text-align: left;
-  }
-
-  .feature-list li {
-    font-size: 0.9rem;
-    color: var(--color-gray-600);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  } 
 </style>
 
 <script>
