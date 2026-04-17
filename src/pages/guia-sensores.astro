@@ -104,10 +104,11 @@ const otherSensors = [
     <section class="editorial-hero">
       <div class="container">
         <div class="hero-intro-card">
+          <span class="hero-kicker">Guia tecnica de sensorización</span>
           <h1>Sensores<br />Agronómicos</h1>
           <details class="hero-info-card">
             <summary>
-              <span>Ver información</span>
+              <span>Resumen técnico</span>
               <span class="hero-info-card__icon" aria-hidden="true"></span>
             </summary>
             <div class="hero-info-card__content">
@@ -130,6 +131,7 @@ const otherSensors = [
           <div
             class="text-content manual-detail-box manual-detail-box--animated"
           >
+            <span class="content-kicker">Suelo y raiz</span>
             <h2>Sensores de inserción usados para el Control Total del Agua, Nutrientes y Raíz</h2>
             <div class="copy-pills">
               <p>
@@ -161,21 +163,30 @@ const otherSensors = [
             </ul>
           </div>
           <div class="media-content media-content--soil">
-            <div class="editorial-image-stack">
+            <div class="editorial-image-stack editorial-image-stack--duo">
               <img
-                src="/images/sensores/field_sensor_hero.jpg"
+                src="/images/sensores/pexels-panditwiguna-13043993.jpg"
                 alt="Visualización Dinámica Edáfica"
                 class="editorial-image editorial-image-stack__primary"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
               />
               <img
                 src="/images/pexels-tomfisk-36030322%20(1).jpg"
                 alt="Instalación técnica de sensores en campo"
                 class="editorial-image editorial-image-stack__secondary"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
               />
               <img
                 src="/images/sensores/pexels-panditwiguna-13043993.jpg"
                 alt="Detalle de sensorización y entorno de cultivo"
                 class="editorial-image editorial-image-stack__tertiary"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
               />
             </div>
           </div>
@@ -202,6 +213,7 @@ const otherSensors = [
           <div
             class="text-content manual-detail-box manual-detail-box--animated"
           >
+            <span class="content-kicker">Fisiologia vegetal</span>
             <h2>Importancia del estado fisiológico de la planta</h2>
             <div class="copy-pills">
               <p>
@@ -241,11 +253,16 @@ const otherSensors = [
               src="/images/gregmontani-field-852242.jpg"
               alt="Cultivo monitorizado en campo"
               class="editorial-image editorial-image--plant-main"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
             <img
               src="/images/sensores/plant_sensor_hero.jpg"
               alt="Análisis Fisiológico"
               class="editorial-image editorial-image--plant-secondary"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -268,6 +285,7 @@ const otherSensors = [
           <div
             class="text-content manual-detail-box manual-detail-box--animated"
           >
+            <span class="content-kicker">Clima y riego</span>
             <h2>Control Inteligente del Agua y el Clima en la Finca</h2>
             <div class="copy-pills">
               <p>
@@ -330,6 +348,9 @@ const otherSensors = [
         </div>
 
         <div class="navigation-btn-container">
+          <p class="navigation-caption">
+            Accede al catalogo completo para comparar sensores, formatos de instalacion y casos de uso en finca.
+          </p>
           <a href="/sensores" class="btn-catalog">Explorar Catálogo Completo</a>
         </div>
       </div>
@@ -339,7 +360,9 @@ const otherSensors = [
 
 <style>
   .editorial-guide {
-    background: #ffffff;
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 154, 0.08), transparent 24%),
+      linear-gradient(180deg, #ffffff 0%, #f7fbf9 44%, #ffffff 100%);
     color: #000000;
     padding-top: 80px;
     font-family:
@@ -358,15 +381,15 @@ const otherSensors = [
 
   /* HERO */
   .editorial-hero {
-    padding: 56px 0 40px;
-    background: #ffffff;
+    padding: 52px 0 28px;
+    background: transparent;
     text-align: center;
   }
 
   .hero-intro-card {
     max-width: 980px;
     margin: 0 auto;
-    padding: 40px 52px 36px;
+    padding: 42px 52px 38px;
     position: relative;
     overflow: hidden;
     isolation: isolate;
@@ -392,6 +415,22 @@ const otherSensors = [
       transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
       box-shadow 0.5s ease,
       border-color 0.5s ease;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: rgba(29, 185, 154, 0.15);
+    color: var(--color-turquoise-dark);
+    border: 1px solid rgba(29, 185, 154, 0.22);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
   .hero-intro-card::before {
@@ -450,16 +489,16 @@ const otherSensors = [
     font-weight: 900;
     line-height: 1.1;
     max-width: 1100px;
-    margin: 0 auto 40px;
+    margin: 0 auto 28px;
     letter-spacing: -0.05em;
   }
 
   .summary-block {
-    font-size: 1.4rem;
-    line-height: 1.7;
-    max-width: 800px;
+    font-size: 1.25rem;
+    line-height: 1.78;
+    max-width: 720px;
     margin: 0 auto;
-    color: #444444;
+    color: #42534b;
     font-weight: 400;
   }
 
@@ -494,9 +533,10 @@ const otherSensors = [
     gap: 20px;
     padding: 24px 28px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 800;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: #0b1a14;
   }
 
@@ -581,7 +621,7 @@ const otherSensors = [
 
   /* ZIG-ZAG GRID */
   .editorial-section {
-    padding: 160px 0;
+    padding: 132px 0;
     overflow: hidden;
   }
 
@@ -597,17 +637,35 @@ const otherSensors = [
   }
 
   .text-content {
-    flex: 1;
+    flex: 1.1 1 0;
+    min-width: 0;
+  }
+
+  .content-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(29, 185, 154, 0.12);
+    border: 1px solid rgba(29, 185, 154, 0.2);
+    color: var(--color-turquoise-dark);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   .text-content h2 {
-    font-size: 2.8rem;
+    font-size: 2.55rem;
     font-weight: 900;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     letter-spacing: -0.03em;
-    line-height: 1.1;
+    line-height: 1.08;
     position: relative;
-    padding-bottom: 24px;
+    padding-bottom: 22px;
   }
 
   .text-content h2::after {
@@ -620,27 +678,44 @@ const otherSensors = [
     background: var(--color-turquoise);
   }
 
+  .copy-pills {
+    display: grid;
+    gap: 14px;
+  }
+
   .copy-pills p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-bottom: 24px;
-    color: #333333;
-    max-width: 600px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 0;
+    color: #334155;
+    text-align: left;
+    max-width: none;
+    padding: 18px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 16px 32px -28px rgba(15, 23, 42, 0.4);
   }
 
   .tech-specs {
-    margin-top: 40px;
+    margin-top: 28px;
     padding-left: 0;
     list-style: none;
+    display: grid;
+    gap: 12px;
   }
 
   .tech-specs li {
-    font-size: 1.1rem;
-    padding: 12px 0;
-    border-bottom: 1px solid #f0f0f0;
-    color: #555555;
+    font-size: 1rem;
+    padding: 14px 18px;
+    border: 1px solid rgba(29, 185, 154, 0.14);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(29, 185, 154, 0.08), rgba(255, 255, 255, 0.95));
+    color: #31433c;
+    text-align: left;
     display: flex;
     align-items: center;
+    box-shadow: 0 10px 24px -22px rgba(15, 23, 42, 0.45);
   }
 
   .tech-specs li::before {
@@ -651,14 +726,16 @@ const otherSensors = [
   }
 
   .manual-detail-box {
-    background: #f8f9fa;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #e9ecef;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 251, 248, 0.98));
+    padding: 42px;
+    border-radius: 28px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
+    box-shadow: 0 26px 52px -34px rgba(15, 23, 42, 0.28);
   }
 
   .manual-detail-box--animated {
@@ -730,12 +807,13 @@ const otherSensors = [
   }
 
   .media-content {
-    flex: 1;
+    flex: 0.95 1 0;
     display: flex;
+    min-width: 0;
   }
 
   .media-content--soil {
-    align-items: center;
+    align-items: stretch;
   }
 
   .media-content--plant {
@@ -744,14 +822,58 @@ const otherSensors = [
     align-items: stretch;
   }
 
-  .editorial-image-stack {
+  .media-content--soil .editorial-image-stack,
+  .media-content--soil .editorial-image-stack--duo {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .media-content--soil .editorial-image-stack__primary,
+  .media-content--soil .editorial-image-stack__secondary,
+  .media-content--soil .editorial-image-stack__tertiary {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 230px;
+  }
+
+  .editorial-image-stack {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+    grid-template-rows: minmax(220px, 1fr) minmax(180px, 1fr);
     gap: 18px;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 760px;
+    margin: 0;
+  }
+
+  .editorial-image-stack__primary {
+    grid-row: 1 / span 2;
+    height: 100%;
+  }
+
+  .editorial-image-stack__secondary,
+  .editorial-image-stack__tertiary {
+    height: 100%;
+  }
+
+  .editorial-image-stack--duo {
+    grid-template-columns: minmax(0, 1.22fr) minmax(280px, 0.78fr);
+    grid-template-rows: minmax(420px, 1fr);
+    align-items: stretch;
+  }
+
+  .editorial-image-stack--duo .editorial-image-stack__primary,
+  .editorial-image-stack--duo .editorial-image-stack__secondary {
+    grid-row: auto;
+    min-height: 420px;
+  }
+
+  .editorial-image-stack--duo .editorial-image-stack__tertiary {
+    display: none;
   }
 
   .editorial-image {
@@ -759,16 +881,31 @@ const otherSensors = [
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    border-radius: 22px;
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+      opacity 0.45s ease,
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     background: #f8f9fa;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  .editorial-image.is-loaded {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 
   .media-content--soil .editorial-image-stack .editorial-image {
     max-width: none;
-    height: 500px;
+    height: 100%;
     object-position: center;
+  }
+
+  .media-content--soil .editorial-image-stack .editorial-image:first-child {
+    min-height: 340px;
   }
 
   .media-content--plant .editorial-image {
@@ -778,14 +915,18 @@ const otherSensors = [
     min-height: 0;
   }
 
+  .zig-zag-row .media-content {
+    justify-content: center;
+  }
+
   .editorial-image--plant-main {
-    min-height: 280px;
+    min-height: 360px;
     object-fit: cover;
     object-position: center;
   }
 
   .editorial-image--plant-secondary {
-    min-height: 280px;
+    min-height: 240px;
     object-fit: cover;
     object-position: center;
   }
@@ -819,47 +960,79 @@ const otherSensors = [
 
   /* CAROUSEL CONTAINER */
   .carousel-section {
-    padding: 100px 0;
-    background: #fafafa;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    margin-top: 72px;
+    padding: 64px 0;
+    background:
+      radial-gradient(circle at top right, rgba(29, 185, 154, 0.08), transparent 28%),
+      linear-gradient(180deg, #f8fbfa 0%, #ffffff 100%);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 36px;
+    box-shadow: 0 30px 70px -48px rgba(15, 23, 42, 0.22);
   }
 
   .carousel-section :global(.carousel-container.section-padding) {
     padding: 0;
   }
 
+  .carousel-section :global(.container) {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
   .carousel-section :global(.carousel-wrapper) {
     padding: 20px 0 8px;
   }
 
+  .carousel-section :global(.carousel-header) {
+    margin-bottom: 34px;
+  }
+
+  .carousel-section :global(.carousel-title) {
+    font-size: 2rem;
+  }
+
+  .carousel-section :global(.arrow-btn) {
+    border-color: rgba(15, 23, 42, 0.08);
+    box-shadow: 0 12px 24px -18px rgba(15, 23, 42, 0.35);
+  }
+
   /* BUTTONS */
   .navigation-btn-container {
-    padding-top: 46px;
+    padding-top: 54px;
     text-align: center;
+  }
+
+  .navigation-caption {
+    max-width: 640px;
+    margin: 0 auto 22px;
+    color: #52635b;
+    font-size: 1.02rem;
+    line-height: 1.75;
   }
 
   .btn-catalog {
     display: inline-block;
-    margin-top: -6px;
-    padding: 24px 56px;
-    background: #000000;
+    margin-top: 0;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #0b1a14 0%, #163127 100%);
     color: #ffffff;
     text-decoration: none;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    border-radius: 4px;
+    border-radius: 999px;
+    border: 1px solid rgba(29, 185, 154, 0.32);
+    box-shadow: 0 18px 40px -18px rgba(11, 26, 20, 0.46);
     transition: all 0.3s;
   }
 
   .btn-catalog:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 24px 48px -20px rgba(11, 26, 20, 0.5);
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 960px) {
     .editorial-hero h1 {
       font-size: 3.5rem;
     }
@@ -867,6 +1040,32 @@ const otherSensors = [
     .zig-zag-row--reverse {
       flex-direction: column;
       gap: 60px;
+    }
+
+    .editorial-image-stack {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto;
+    }
+
+    .editorial-image-stack__primary {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      min-height: 360px;
+    }
+
+    .editorial-image-stack--duo {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+      grid-template-rows: minmax(340px, 1fr);
+    }
+
+    .editorial-image-stack--duo .editorial-image-stack__primary,
+    .editorial-image-stack--duo .editorial-image-stack__secondary {
+      grid-column: auto;
+      min-height: 340px;
+    }
+
+    .media-content--soil .editorial-image-stack .editorial-image:first-child {
+      min-height: 300px;
     }
   }
 
@@ -901,13 +1100,29 @@ const otherSensors = [
       padding: 28px 24px;
     }
 
+    .content-kicker {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .editorial-image-stack {
+      grid-template-columns: 1fr;
       gap: 12px;
       max-width: 100%;
     }
 
+    .editorial-image-stack__primary {
+      min-height: 280px;
+    }
+
     .media-content--soil .editorial-image-stack .editorial-image {
-      height: 280px;
+      height: 220px;
+      min-height: 220px;
+    }
+
+    .media-content--soil .editorial-image-stack .editorial-image:first-child {
+      height: 240px;
+      min-height: 240px;
     }
 
     .media-content--plant {
@@ -920,6 +1135,21 @@ const otherSensors = [
 
     .editorial-image--plant-secondary {
       min-height: 190px;
+    }
+
+    .carousel-section {
+      margin-top: 44px;
+      padding: 40px 0;
+      border-radius: 28px;
+    }
+
+    .carousel-section :global(.container) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .navigation-caption {
+      font-size: 0.96rem;
     }
   }
 
@@ -936,5 +1166,34 @@ const otherSensors = [
     .hero-info-card:hover {
       transform: none;
     }
+
+    .editorial-image,
+    .editorial-image.is-loaded,
+    .editorial-image:hover {
+      opacity: 1;
+      transform: none;
+      transition: none !important;
+    }
   }
 </style>
+
+<script>
+  function enhanceEditorialImages() {
+    const images = document.querySelectorAll(".editorial-image");
+
+    images.forEach((image) => {
+      const markLoaded = () => image.classList.add("is-loaded");
+
+      if (image.complete) {
+        markLoaded();
+        return;
+      }
+
+      image.addEventListener("load", markLoaded, { once: true });
+      image.addEventListener("error", markLoaded, { once: true });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", enhanceEditorialImages);
+  document.addEventListener("astro:page-load", enhanceEditorialImages);
+</script>
