@@ -78,7 +78,12 @@ import { faqData } from "../../data/faqs";
 
         <section class="benefits-section premium-benefits-box section-shell">
             <div class="section-heading section-heading--light">
-                <span class="section-kicker">Impacto economico</span>
+                <span
+                    class="section-kicker section-kicker--boxed"
+                    style="display:inline-block;padding:6px 14px;background:rgba(29, 185, 154, 0.15);color:var(--color-turquoise);border:1px solid rgba(29, 185, 154, 0.3);border-radius:30px;"
+                >
+                    Impacto economico
+                </span>
                 <h2 class="text-white">Beneficios reales para tu bolsillo</h2>
                 <p>La digitalizacion no se queda en la pantalla: se traduce en ahorro, control y capacidad de anticipacion.</p>
             </div>
@@ -161,7 +166,7 @@ import { faqData } from "../../data/faqs";
 
 <style>
     :global(.hero-agricultores-offset .hero-mosaic__content) {
-        padding-top: 6px;
+        padding-top: 2px;
     }
 
     :global(.hero-agricultores-offset) {
@@ -173,9 +178,9 @@ import { faqData } from "../../data/faqs";
     }
 
     :global(.hero-agricultores-offset .hero-mosaic h1) {
-        margin-top: -4px;
+        margin-top: 0;
         margin-bottom: 18px;
-        max-width: 11ch;
+        max-width: 14ch;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic__desc-row) {
@@ -229,6 +234,39 @@ import { faqData } from "../../data/faqs";
         color: rgba(255, 255, 255, 0.82);
     }
 
+    .premium-benefits-box .section-heading--light {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 38px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .premium-benefits-box .section-heading--light p {
+        max-width: 62ch;
+        margin: 0 auto;
+    }
+
+    .premium-benefits-box .section-kicker {
+        justify-content: center;
+    }
+
+    :global(.premium-benefits-box .section-kicker.section-kicker--boxed) {
+        display: inline-block;
+        padding: 6px 14px;
+        background: rgba(29, 185, 154, 0.15);
+        color: var(--color-turquoise);
+        border: 1px solid rgba(29, 185, 154, 0.3);
+        border-radius: 30px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+    }
+
+    :global(.premium-benefits-box .section-kicker.section-kicker--boxed)::before {
+        content: none;
+    }
+
     .section-kicker {
         display: inline-flex;
         align-items: center;
@@ -278,6 +316,10 @@ import { faqData } from "../../data/faqs";
     }
 
     .overview-stat {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100%;
         padding: 18px 20px;
         border-radius: 22px;
         background: #ffffff;
@@ -390,6 +432,10 @@ import { faqData } from "../../data/faqs";
     }
 
     .beneficio-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
         padding: 34px 28px;
         text-align: center;
         background: rgba(255,255,255,0.05);
@@ -455,6 +501,9 @@ import { faqData } from "../../data/faqs";
     :global(.feature-card) {
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     :global(.feature-card::before) {
@@ -539,6 +588,10 @@ import { faqData } from "../../data/faqs";
             margin: 36px 0;
         }
 
+        .premium-benefits-box .section-heading--light {
+            margin-bottom: 28px;
+        }
+
         .cards-grid {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
@@ -572,20 +625,22 @@ import { faqData } from "../../data/faqs";
     }
 </style>
 
-<script>
-    function enforceAgricultoresSpacing() {
-        const pageBody = document.querySelector('.page-body');
-        if (!pageBody) return;
+<script is:inline data-astro-rerun>
+    (() => {
+        function enforceAgricultoresSpacing() {
+            const pageBody = document.querySelector('.page-body');
+            if (!pageBody) return;
 
-        pageBody.style.setProperty('padding-top', window.innerWidth <= 768 ? '18px' : '28px', 'important');
-        pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '24px', 'important');
-    }
+            pageBody.style.setProperty('padding-top', window.innerWidth <= 768 ? '18px' : '28px', 'important');
+            pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '24px', 'important');
+        }
 
-    if (!window.__agricultoresSpacingBound) {
-        window.__agricultoresSpacingBound = true;
-        window.addEventListener('resize', enforceAgricultoresSpacing);
-    }
+        if (!window.__agricultoresSpacingBound) {
+            window.__agricultoresSpacingBound = true;
+            window.addEventListener('resize', enforceAgricultoresSpacing);
+        }
 
-    document.addEventListener('DOMContentLoaded', enforceAgricultoresSpacing);
-    document.addEventListener('astro:page-load', enforceAgricultoresSpacing);
+        enforceAgricultoresSpacing();
+        requestAnimationFrame(enforceAgricultoresSpacing);
+    })();
 </script>
