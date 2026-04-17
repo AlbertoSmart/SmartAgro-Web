@@ -564,10 +564,14 @@ const ecoRegimenes = [
 </style>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  function initPacGuideObserver() {
     const observerOptions = {
       threshold: 0.1
     };
+
+    if (window.__pacGuideObserver) {
+      window.__pacGuideObserver.disconnect();
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -576,10 +580,15 @@ const ecoRegimenes = [
         }
       });
     }, observerOptions);
+    window.__pacGuideObserver = observer;
 
     document.querySelectorAll('.content-block').forEach(block => {
       observer.observe(block);
     });
-  });
+  }
+
+  document.addEventListener("DOMContentLoaded", initPacGuideObserver);
+  document.addEventListener("astro:page-load", initPacGuideObserver);
+  document.addEventListener("astro:before-swap", () => window.__pacGuideObserver?.disconnect());
 </script>
 

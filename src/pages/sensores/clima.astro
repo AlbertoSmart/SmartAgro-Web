@@ -932,12 +932,14 @@ const sensorIndexItems = [
 <script>
   const initSolutionReveal = () => {
     const solutionBox = document.querySelector('#solucion .manual-detail-box--scroll-reveal');
-    if (!solutionBox || solutionBox.classList.contains('is-visible')) return;
+    if (!solutionBox || solutionBox.classList.contains('is-visible') || solutionBox.dataset.revealReady === 'true') return;
+    solutionBox.dataset.revealReady = 'true';
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          entry.target.dataset.revealReady = 'done';
           observer.unobserve(entry.target);
         }
       });

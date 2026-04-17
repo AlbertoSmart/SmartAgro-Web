@@ -220,11 +220,14 @@ const { sensors, title } = Astro.props;
     const containers = document.querySelectorAll('.carousel-container');
     
     containers.forEach(container => {
+      if ((container as HTMLElement).dataset.manualCarouselReady === 'true') return;
+
       const track = container.querySelector('.carousel-track') as HTMLElement;
       const prevBtn = container.querySelector('.prev-btn');
       const nextBtn = container.querySelector('.next-btn');
       
       if (!track || !prevBtn || !nextBtn) return;
+      (container as HTMLElement).dataset.manualCarouselReady = 'true';
 
       const itemCount = track.children.length / 2; // Están duplicados
       const duration = itemCount * 8; // Sincronizado: 8s por item
@@ -256,5 +259,6 @@ const { sensors, title } = Astro.props;
     });
   }
 
+  document.addEventListener('DOMContentLoaded', initManualCarousel);
   document.addEventListener('astro:page-load', initManualCarousel);
 </script>

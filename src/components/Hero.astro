@@ -1,22 +1,10 @@
 ---
 ---
 
-<section class="hero" id="hero" transition:persist="home-hero">
-  <div
-    class="hero__bg hero__bg--primary hero-bg"
-    aria-hidden="true"
-    transition:persist="home-hero-bg-primary"
-  ></div>
-  <div
-    class="hero__bg hero__bg--secondary hero-bg"
-    aria-hidden="true"
-    transition:persist="home-hero-bg-secondary"
-  ></div>
-  <div
-    class="hero__overlay hero-overlay"
-    aria-hidden="true"
-    transition:persist="home-hero-overlay"
-  ></div>
+<section class="hero" id="hero">
+  <div class="hero__bg hero__bg--primary hero-bg" aria-hidden="true"></div>
+  <div class="hero__bg hero__bg--secondary hero-bg" aria-hidden="true"></div>
+  <div class="hero__overlay hero-overlay" aria-hidden="true"></div>
   <div class="hero__content container">
     <div class="hero__text">
       <h1 class="hero__title">
@@ -202,17 +190,23 @@
 </style>
 
 <script>
+  function clearHeroBackgroundFade() {
+    if (window.__heroFadeInterval) {
+      window.clearInterval(window.__heroFadeInterval);
+      window.__heroFadeInterval = undefined;
+    }
+  }
+
   function initHeroBackgroundFade() {
     const hero = document.querySelector('#hero');
     const secondaryBg = hero?.querySelector('.hero__bg--secondary');
 
     if (!hero || !secondaryBg) {
+      clearHeroBackgroundFade();
       return;
     }
 
-    if (window.__heroFadeInterval) {
-      window.clearInterval(window.__heroFadeInterval);
-    }
+    clearHeroBackgroundFade();
 
     secondaryBg.classList.remove('is-visible');
 
@@ -223,4 +217,5 @@
 
   document.addEventListener('DOMContentLoaded', initHeroBackgroundFade);
   document.addEventListener('astro:page-load', initHeroBackgroundFade);
+  document.addEventListener('astro:before-swap', clearHeroBackgroundFade);
 </script>

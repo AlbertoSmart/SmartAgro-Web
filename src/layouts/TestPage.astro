@@ -106,9 +106,12 @@ const pageHeroStyle =
 </Layout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initTestPageHeroCta() {
     const ctaBtn = document.querySelector('.hero-cta');
     if (ctaBtn) {
+      if (ctaBtn.dataset.heroCtaReady === 'true') return;
+      ctaBtn.dataset.heroCtaReady = 'true';
+
       ctaBtn.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector('#newsletter');
@@ -118,7 +121,10 @@ const pageHeroStyle =
         window.scrollTo({ top, behavior: 'smooth' });
       });
     }
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', initTestPageHeroCta);
+  document.addEventListener('astro:page-load', initTestPageHeroCta);
 </script>
 
 <style>

@@ -128,12 +128,14 @@ import Layout from "../layouts/Layout.astro";
             </form>
 
             <script is:inline>
-              document.addEventListener('DOMContentLoaded', () => {
+              const initContactFormGuards = () => {
                 const form = document.getElementById('contactForm');
                 const status = document.getElementById('formStatus');
                 const btn = document.getElementById('submitBtn');
                 
                 if (!form) return;
+                if (form.dataset.contactGuardReady === 'true') return;
+                form.dataset.contactGuardReady = 'true';
 
                 const MAX_SUBMISSIONS = 5;
                 const WINDOW_HOURS = 1;
@@ -184,7 +186,10 @@ import Layout from "../layouts/Layout.astro";
                   subs.push(Date.now());
                   localStorage.setItem('sf_contact_subs', JSON.stringify(subs));
                 });
-              });
+              };
+
+              document.addEventListener('DOMContentLoaded', initContactFormGuards);
+              document.addEventListener('astro:page-load', initContactFormGuards);
             </script>
           </div>
         </section>

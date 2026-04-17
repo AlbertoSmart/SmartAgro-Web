@@ -338,10 +338,16 @@
       ahorroTotalEl!.innerHTML = formatCurrency(ahorroTotal) + ' <span>€/año</span>';
     }
 
+    if (hectareasInput.dataset.roiReady === 'true') {
+      calculate();
+      return;
+    }
+
     // Attach events
     hectareasInput.addEventListener('input', calculate);
     cultivoSelect.addEventListener('change', calculate);
     gastoInput.addEventListener('input', calculate);
+    hectareasInput.dataset.roiReady = 'true';
 
     // Initial calculation
     calculate();

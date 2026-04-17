@@ -195,10 +195,13 @@ const features = [
 
 <script>
   // Motor magnético para el resplandor de las tarjetas
-  document.addEventListener('astro:page-load', () => {
+  function initFeatureCardsGlow() {
     const cards = document.querySelectorAll('.feature-card');
     
     cards.forEach(card => {
+      if ((card as HTMLElement).dataset.featureGlowReady === 'true') return;
+      (card as HTMLElement).dataset.featureGlowReady = 'true';
+
       card.addEventListener('mousemove', (e: any) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -208,5 +211,8 @@ const features = [
         (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
       });
     });
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', initFeatureCardsGlow);
+  document.addEventListener('astro:page-load', initFeatureCardsGlow);
 </script>

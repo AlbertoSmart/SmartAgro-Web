@@ -30,6 +30,8 @@ const {
 
 <script>
   const setupSidebarIndex = (nav) => {
+    if (nav.dataset.sidebarIndexReady === "true") return;
+
     const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
     if (!links.length) return;
 
@@ -83,9 +85,15 @@ const {
     updateActive();
     window.addEventListener("scroll", updateActive, { passive: true });
     window.addEventListener("resize", updateActive);
+    nav.dataset.sidebarIndexReady = "true";
   };
 
-  document.querySelectorAll("[data-sidebar-index]").forEach(setupSidebarIndex);
+  const initSidebarIndexes = () => {
+    document.querySelectorAll("[data-sidebar-index]").forEach(setupSidebarIndex);
+  };
+
+  initSidebarIndexes();
+  document.addEventListener("astro:page-load", initSidebarIndexes);
 </script>
 
 <style is:global>

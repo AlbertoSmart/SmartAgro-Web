@@ -384,7 +384,11 @@ import { faqData } from "../../data/faqs";
         );
     }
 
+    if (!window.__tecnicosSpacingBound) {
+        window.__tecnicosSpacingBound = true;
+        window.addEventListener("resize", enforceTecnicosSpacing);
+    }
+
     document.addEventListener("DOMContentLoaded", enforceTecnicosSpacing);
     document.addEventListener("astro:page-load", enforceTecnicosSpacing);
-    window.addEventListener("resize", enforceTecnicosSpacing);
 </script>

@@ -117,11 +117,16 @@ const events = [
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  function initEventsCarousel() {
     const track = document.querySelector(".events__track");
     const prev = document.getElementById("eventsPrev");
     const next = document.getElementById("eventsNext");
     if (!track || !prev || !next) return;
+    if (track instanceof HTMLElement && track.dataset.eventsCarouselReady === "true") return;
+
+    if (track instanceof HTMLElement) {
+      track.dataset.eventsCarouselReady = "true";
+    }
 
     let pos = 0;
     const cards = track.querySelectorAll(".event-card");
@@ -147,7 +152,10 @@ const events = [
         update();
       }
     });
-  });
+  }
+
+  document.addEventListener("DOMContentLoaded", initEventsCarousel);
+  document.addEventListener("astro:page-load", initEventsCarousel);
 </script>
 
 <style>

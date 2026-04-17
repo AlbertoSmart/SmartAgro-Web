@@ -360,7 +360,11 @@ import { faqData } from "../../data/faqs";
         pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '28px', 'important');
     }
 
+    if (!window.__agricultoresSpacingBound) {
+        window.__agricultoresSpacingBound = true;
+        window.addEventListener('resize', enforceAgricultoresSpacing);
+    }
+
     document.addEventListener('DOMContentLoaded', enforceAgricultoresSpacing);
     document.addEventListener('astro:page-load', enforceAgricultoresSpacing);
-    window.addEventListener('resize', enforceAgricultoresSpacing);
 </script>

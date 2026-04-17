@@ -386,6 +386,8 @@ const categories = [
         const sections = document.querySelectorAll('.fluid-category');
         
         sections.forEach((section, idx) => {
+            if ((section as HTMLElement).dataset.fluidSliderReady === 'true') return;
+
             const track = section.querySelector('.slider-track-fluid') as HTMLElement;
             const prevBtn = section.querySelector('.nav-arrow.prev');
             const nextBtn = section.querySelector('.nav-arrow.next');
@@ -393,6 +395,7 @@ const categories = [
             if (!track || !prevBtn || !nextBtn) return;
             const card = track.querySelector('.slider-item-balanced') as HTMLElement;
             if (!card) return;
+            (section as HTMLElement).dataset.fluidSliderReady = 'true';
 
             let currentDelay = 0;
             let pauseTimeout: any = null;
@@ -422,6 +425,7 @@ const categories = [
         });
     }
 
+    document.addEventListener('DOMContentLoaded', setupFluidSlider);
     document.addEventListener('astro:page-load', setupFluidSlider);
 </script>
 

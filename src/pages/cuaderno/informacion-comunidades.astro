@@ -382,11 +382,14 @@ const communities = [
 </Layout>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  function initCommunitiesSearch() {
     const search = document.getElementById("commSearch") as HTMLInputElement;
     const entries = document.querySelectorAll(".editorial-row");
 
     if (search) {
+      if (search.dataset.searchReady === "true") return;
+      search.dataset.searchReady = "true";
+
       search.addEventListener("input", (e) => {
         const query = (e.target as HTMLInputElement).value.toLowerCase();
         entries.forEach((el) => {
@@ -399,7 +402,10 @@ const communities = [
         });
       });
     }
-  });
+  }
+
+  document.addEventListener("DOMContentLoaded", initCommunitiesSearch);
+  document.addEventListener("astro:page-load", initCommunitiesSearch);
 </script>
 
 <style>
