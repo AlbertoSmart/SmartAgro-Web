@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Footer from "../components/Footer.astro";
@@ -41,6 +42,7 @@ const {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <ClientRouter fallback="swap" />
     <slot name="head" />
 
     <title>{title}</title>
@@ -67,6 +69,16 @@ const {
         :root {
           --navbar-height: 60px;
         }
+      }
+
+      /* Evita que se vea la página anterior un instante durante el swap. */
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation: none;
+      }
+
+      ::view-transition-group(root) {
+        animation-duration: 0s;
       }
     </style>
   </head>
