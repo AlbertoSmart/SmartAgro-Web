@@ -12,167 +12,247 @@ const sensorIndexItems = [
 ];
 ---
 
-<Layout title="Fisiología de Planta | Dendrometría y Salud Foliar">
+<Layout title="Fisiologia de Planta | Dendrometria y Salud Foliar">
   <main class="landing-expert">
-    <!-- PROFESSIONAL SOLID HERO -->
     <section class="expert-hero-solid">
       <div class="container">
-        <h1>Fisiología de Planta <br/>Escuchando el Metabolismo Cultivado</h1>
-        <p>Análisis de variaciones micrométricas (MDS) y termometría infrarroja para una gestión de precisión.</p>
+        <span class="pre-title">Sensores de planta</span>
+        <h1>Fisiologia de Planta <br />Escuchando el Metabolismo Cultivado</h1>
+        <p>
+          Analisis de variaciones micrometricas (MDS) y termometria infrarroja
+          para una gestion de precision.
+        </p>
+
+        <div class="hero-signal-grid">
+          <div class="hero-signal-card">
+            <strong>Estres hidrico</strong>
+            <span>Detecta el problema antes de que la hoja o el fruto lo hagan visible.</span>
+          </div>
+          <div class="hero-signal-card">
+            <strong>Dendrometria</strong>
+            <span>Mide el pulso fisiologico real del cultivo con precision micrometrica.</span>
+          </div>
+          <div class="hero-signal-card">
+            <strong>Decision agronomica</strong>
+            <span>Convierte la lectura de planta en riego, calidad y uniformidad productiva.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-intro-strip">
+      <div class="container">
+        <div class="page-intro-strip__panel">
+          <div class="page-intro-strip__copy">
+            <span class="page-kicker">De que va esta pagina</span>
+            <h2>Una guia clara para entender como la planta comunica su estado real.</h2>
+            <p>
+              Aqui se explica primero el problema agronomico, despues la tecnologia
+              que lo detecta, el impacto economico que puede generar y por ultimo
+              como implantarla en campo de forma correcta.
+            </p>
+          </div>
+
+          <div class="page-intro-strip__steps">
+            <span>01. Estres invisible</span>
+            <span>02. Sensorizacion fisiologica</span>
+            <span>03. ROI en calidad y sanidad</span>
+            <span>04. Interpretacion del dato</span>
+            <span>05. Implementacion en campo</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <div class="sensor-doc-layout">
       <SidebarIndex title="Contenidos" items={sensorIndexItems} />
+
       <div class="sensor-doc-content">
-
-    <!-- 1. ANÁLISIS DEL PROBLEMA -->
-    <section id="problema" class="content-block" data-index-section>
-      <div class="container narrow">
-        <div class="section-label"><span class="section-label__number">01.</span> EL PROBLEMA</div>
-        <div class="manual-detail-box manual-detail-box--problem-hover">
-          <h2>El estrés hídrico invisible: La parálisis metabólica silenciosa</h2>
-          <p>
-            Tradicionalmente, el agricultor espera a ver las hojas enrolladas o el fruto lacio para decidir el riego. 
-            Cuando estos síntomas son visibles, la planta ya ha sufrido una **parada metabólica**. 
-            El xilema ha perdido presión, la fotosíntesis se ha detenido para conservar agua y el potencial de producción se ha visto mermado de forma irreversible para esa fase fenológica.
-          </p>
-
-          <!-- IMAGE MOSAIC 1 -->
-          <div class="image-mosaic image-mosaic--solution">
-            <img src="/images/sensores/DendometroTronco.png" alt="Dendrómetro Tronco" />
-            <img src="/images/sensores/dendometroFruto2.png" alt="Dendrómetro Fruto" />
-          </div>
-
-          <p>
-            Gestionar el riego basándose solo en el suelo es como intentar conducir un coche mirando solo el depósito de gasolina: sabemos que hay combustible, pero no sabemos si el motor está sobrecalentado. 
-            Ignorar el estado interno de la planta conlleva a una **ineficiencia productiva crítica**, especialmente en momentos de máxima demanda transpirativa o durante el cuajado y engorde del fruto.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. SOLUCIÓN TÉCNICA -->
-    <section id="solucion" class="content-block grey-bg" data-index-section>
-      <div class="container">
-        <div class="manual-detail-box manual-detail-box--pulse-reveal">
-          <div class="section-label"><span class="section-label__number">02.</span> LA SOLUCIÓN</div>
-          <h2>Dendrometría y Termometría - El "Electrocardiograma" del Cultivo</h2>
-          <p>
-            Nuestra tecnología de **Dendrometría** utiliza sensores de alta resolución capaces de medir variaciones micrométricas 
-            en el diámetro de troncos, tallos y frutos. Estas variaciones nos permiten calcular el **MDS (Maximum Daily Shrinkage)**, 
-            el indicador fisiológico más sensible del estrés hídrico.
-          </p>
-
-          <!-- IMAGE MOSAIC 2 -->
-          <div class="image-mosaic image-mosaic--solution">
-            <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Hoja" />
-          </div>
-
-          <p>
-            Complementamos este análisis con **Termometría Infrarroja** foliar. Al medir la diferencia entre la temperatura de la canopia 
-            y la temperatura ambiente, calculamos el índice de estrés hídrico de la planta. Si los estomas se cierran, la temperatura foliar sube rápidamente al cesar la refrigeración por transpiración.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. ROI -->
-    <section id="roi" class="content-block" data-index-section>
-      <div class="container">
-        <div class="roi-box manual-detail-box roi-box--featured">
-          <div class="section-label"><span class="section-label__number">03.</span> RETORNO DE INVERSIÓN (ROI)</div>
-          <h2>Rentabilidad por Calidad y Sanidad</h2>
-          <div class="stats-grid">
-            <div class="stat-card stat-card--featured">
-              <span class="value">+18%</span>
-              <span class="label">Calibres Comerciales</span>
-              <p>Optimizando el engorde del fruto mediante gestión del potencial hídrico.</p>
+        <section id="problema" class="content-block" data-index-section>
+          <div class="container narrow">
+            <div class="section-label">
+              <span class="section-label__number">01.</span>
+              El problema
             </div>
-            <div class="stat-card stat-card--featured">
-              <span class="value">-30%</span>
-              <span class="label">Tratamientos Fitosanitarios</span>
-              <p>Aplicaciones preventivas solo cuando hay riesgo real de infección por humedad.</p>
-            </div>
-            <div class="stat-card stat-card--featured stat-card--textual-value">
-              <span class="value">Premium</span>
-              <span class="label">Uniformidad de Cosecha</span>
-              <p>Reducción de la variabilidad entre árboles y sectores de riego.</p>
+
+            <div class="manual-detail-box manual-detail-box--problem-hover">
+              <h2>El estres hidrico invisible: la paralisis metabolica silenciosa</h2>
+              <p>
+                Tradicionalmente, el agricultor espera a ver las hojas enrolladas
+                o el fruto lacio para decidir el riego. Cuando estos sintomas son
+                visibles, la planta ya ha sufrido una parada metabolica. El xilema
+                ha perdido presion, la fotosintesis se ha detenido para conservar
+                agua y el potencial de produccion se ha visto mermado de forma
+                irreversible para esa fase fenologica.
+              </p>
+
+              <div class="image-mosaic image-mosaic--solution">
+                <img src="/images/sensores/DendometroTronco.png" alt="Dendrometro Tronco" />
+                <img src="/images/sensores/dendometroFruto2.png" alt="Dendrometro Fruto" />
+              </div>
+
+              <p>
+                Gestionar el riego basandose solo en el suelo es como intentar
+                conducir un coche mirando solo el deposito de gasolina: sabemos
+                que hay combustible, pero no sabemos si el motor esta
+                sobrecalentado. Ignorar el estado interno de la planta conlleva a
+                una ineficiencia productiva critica, especialmente en momentos de
+                maxima demanda transpirativa o durante el cuajado y engorde del
+                fruto.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- 4. INTERPRETACIÓN DE DATOS -->
-    <section id="inteligencia" class="content-block grey-bg" data-index-section>
-      <div class="container">
-        <div class="manual-detail-box manual-detail-box--pulse-reveal">
-          <div class="section-label"><span class="section-label__number">04.</span> INTELIGENCIA DE DATOS</div>
-          <h2>Control del Crecimiento en Tiempo Real</h2>
-          <p>
-            La dendrometría no solo sirve para regar; sirve para **producir mejor**. En nuestra plataforma puede observar:
-          </p>
-          <div class="insight-cards">
-            <div class="insight-card feature-card">
-              <h3>Tasa de Crecimiento Neto</h3>
-              <p>¿Está el fruto ganando peso acumulado día tras día?</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Dinámica Hídrica Diaria</h3>
-              <p>Identificación del momento exacto del día en que la planta empieza a sufrir estrés.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Recuperación Nocturna</h3>
-              <p>Medición de la capacidad del cultivo para rehidratarse tras el ocaso.</p>
+        <section id="solucion" class="content-block grey-bg" data-index-section>
+          <div class="container">
+            <div class="manual-detail-box manual-detail-box--pulse-reveal">
+              <div class="section-label">
+                <span class="section-label__number">02.</span>
+                La solucion
+              </div>
+
+              <h2>Dendrometria y Termometria: el electrocardiograma del cultivo</h2>
+              <p>
+                Nuestra tecnologia de Dendrometria utiliza sensores de alta
+                resolucion capaces de medir variaciones micrometricas en el
+                diametro de troncos, tallos y frutos. Estas variaciones nos
+                permiten calcular el MDS (Maximum Daily Shrinkage), el indicador
+                fisiologico mas sensible del estres hidrico.
+              </p>
+
+              <div class="image-mosaic image-mosaic--solution">
+                <img src="/images/sensores/SensorHojaChinosTemperaturayHumedad.png" alt="Sensor Hoja" />
+              </div>
+
+              <p>
+                Complementamos este analisis con Termometria Infrarroja foliar. Al
+                medir la diferencia entre la temperatura de la canopia y la
+                temperatura ambiente, calculamos el indice de estres hidrico de la
+                planta. Si los estomas se cierran, la temperatura foliar sube
+                rapidamente al cesar la refrigeracion por transpiracion.
+              </p>
             </div>
           </div>
-          <p>
-            Esta información permite cambiar la estrategia de riego: de un volumen fijo a un riego por pulsos o nocturno 
-            si detectamos que la planta no es capaz de recuperarse adecuadamente del déficit transpirativo diario.
-          </p>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- 5. GUÍA DE INSTALACIÓN -->
-    <section id="implementacion" class="content-block" data-index-section>
-      <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact manual-detail-box--radar-sweep">
-          <div class="section-label"><span class="section-label__number">05.</span> IMPLEMENTACIÓN</div>
-          <h2>Instalación Quirúrgica en el Tejido Vivo</h2>
-          <div class="insight-cards">
-            <div class="insight-card feature-card">
-              <h3>Selección del Árbol Centinela</h3>
-              <p>Escogemos ejemplares con vigor medio que representen el estado general del sector.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Anclaje Invariable</h3>
-              <p>Uso de soportes de acero inoxidable compensados térmicamente para evitar errores por dilatación.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Orientación Norte/Sombría</h3>
-              <p>Protección del sensor de la radiación directa para asegurar lecturas de temperatura estables.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Monitoreo de Crecimiento</h3>
-              <p>Ajuste periódico del sensor para permitir la expansión natural del tallo sin estrangulamiento.</p>
+        <section id="roi" class="content-block" data-index-section>
+          <div class="container">
+            <div class="roi-box manual-detail-box roi-box--featured">
+              <div class="section-label">
+                <span class="section-label__number">03.</span>
+                Retorno de inversion
+              </div>
+
+              <h2>Rentabilidad por calidad y sanidad</h2>
+
+              <div class="stats-grid">
+                <div class="stat-card stat-card--featured">
+                  <span class="value">+18%</span>
+                  <span class="label">Calibres Comerciales</span>
+                  <p>Optimizando el engorde del fruto mediante gestion del potencial hidrico.</p>
+                </div>
+
+                <div class="stat-card stat-card--featured">
+                  <span class="value">-30%</span>
+                  <span class="label">Tratamientos Fitosanitarios</span>
+                  <p>Aplicaciones preventivas solo cuando hay riesgo real de infeccion por humedad.</p>
+                </div>
+
+                <div class="stat-card stat-card--featured stat-card--textual-value">
+                  <span class="value">Premium</span>
+                  <span class="label">Uniformidad de Cosecha</span>
+                  <p>Reduccion de la variabilidad entre arboles y sectores de riego.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- CTA FINAL -->
-    <section id="contacto" class="cta-section" data-index-section>
-      <div class="container">
-        <div class="manual-detail-box">
-          <h2>¿Quiere saber qué necesitan sus plantas ahora mismo?</h2>
-          <p>Hablemos sobre cómo implementar monitorización fisiológica en su explotación.</p>
-          <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
-        </div>
-      </div>
-    </section>
+        <section id="inteligencia" class="content-block grey-bg" data-index-section>
+          <div class="container">
+            <div class="manual-detail-box manual-detail-box--pulse-reveal">
+              <div class="section-label">
+                <span class="section-label__number">04.</span>
+                Inteligencia de datos
+              </div>
+
+              <h2>Control del crecimiento en tiempo real</h2>
+              <p>
+                La dendrometria no solo sirve para regar; sirve para producir
+                mejor. En nuestra plataforma puede observar:
+              </p>
+
+              <div class="insight-cards">
+                <div class="insight-card feature-card">
+                  <h3>Tasa de Crecimiento Neto</h3>
+                  <p>Esta el fruto ganando peso acumulado dia tras dia?</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Dinamica Hidrica Diaria</h3>
+                  <p>Identificacion del momento exacto del dia en que la planta empieza a sufrir estres.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Recuperacion Nocturna</h3>
+                  <p>Medicion de la capacidad del cultivo para rehidratarse tras el ocaso.</p>
+                </div>
+              </div>
+
+              <p>
+                Esta informacion permite cambiar la estrategia de riego: de un
+                volumen fijo a un riego por pulsos o nocturno si detectamos que la
+                planta no es capaz de recuperarse adecuadamente del deficit
+                transpirativo diario.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="implementacion" class="content-block" data-index-section>
+          <div class="container narrow">
+            <div class="manual-detail-box manual-detail-box--compact manual-detail-box--radar-sweep">
+              <div class="section-label">
+                <span class="section-label__number">05.</span>
+                Implementacion
+              </div>
+
+              <h2>Instalacion quirurgica en el tejido vivo</h2>
+
+              <div class="insight-cards">
+                <div class="insight-card feature-card">
+                  <h3>Seleccion del Arbol Centinela</h3>
+                  <p>Escogemos ejemplares con vigor medio que representen el estado general del sector.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Anclaje Invariable</h3>
+                  <p>Uso de soportes de acero inoxidable compensados termicamente para evitar errores por dilatacion.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Orientacion Norte/Sombria</h3>
+                  <p>Proteccion del sensor de la radiacion directa para asegurar lecturas de temperatura estables.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Monitoreo de Crecimiento</h3>
+                  <p>Ajuste periodico del sensor para permitir la expansion natural del tallo sin estrangulamiento.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contacto" class="cta-section" data-index-section>
+          <div class="container">
+            <div class="manual-detail-box cta-box">
+              <div class="section-label">
+                <span class="section-label__number">Contacto</span>
+                Siguiente paso
+              </div>
+              <h2>Quiere saber que necesitan sus plantas ahora mismo?</h2>
+              <p>Hablemos sobre como implementar monitorizacion fisiologica en su explotacion.</p>
+              <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </main>
@@ -180,7 +260,9 @@ const sensorIndexItems = [
 
 <style>
   .landing-expert {
-    background: #FFFFFF;
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 154, 0.06), transparent 18%),
+      linear-gradient(180deg, #f8fbfa 0%, #ffffff 16%, #ffffff 100%);
     color: var(--color-charcoal);
   }
 
@@ -190,51 +272,285 @@ const sensorIndexItems = [
   }
 
   .container.narrow {
-    max-width: 800px;
+    max-width: 860px;
   }
 
-  /* NEW SOLID HERO */
   .expert-hero-solid {
-    padding: 20px 0 12px !important;
-    background: #0B1A14 !important;
-    color: #FFFFFF !important;
+    padding: 26px 0 28px !important;
+    background:
+      radial-gradient(circle at 16% 20%, rgba(29, 185, 154, 0.18), transparent 18%),
+      radial-gradient(circle at 82% 18%, rgba(125, 211, 252, 0.12), transparent 16%),
+      linear-gradient(180deg, #0b1a14 0%, #10241c 100%) !important;
+    color: #ffffff !important;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .pre-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.4em;
-    color: rgba(255,255,255,0.7);
-    display: block;
-    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
     text-transform: uppercase;
   }
 
   .expert-hero-solid h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.7rem, 6vw, 4.4rem);
     font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
+    line-height: 1.02;
+    margin-bottom: 18px;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    max-width: 11ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .expert-hero-solid p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto;
-    color: rgba(255,255,255,0.9);
+    font-size: 1.08rem;
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .hero-signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+  }
+
+  .hero-signal-card {
+    padding: 18px 20px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(10px);
+    text-align: left;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
+  }
+
+  .hero-signal-card strong {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    color: #ffffff;
+  }
+
+  .hero-signal-card span {
+    display: block;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.95rem;
     line-height: 1.6;
   }
 
-  /* IMAGE MOSAICS */
+  .page-intro-strip {
+    padding: 24px 0 10px;
+  }
+
+  .page-intro-strip__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 28px;
+    padding: 30px 32px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 24px 54px -36px rgba(15, 23, 42, 0.18);
+  }
+
+  .page-kicker {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(29, 185, 154, 0.1);
+    color: var(--color-turquoise-dark);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .page-intro-strip__copy h2 {
+    margin: 14px 0 16px;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    line-height: 1.04;
+  }
+
+  .page-intro-strip__copy p {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .page-intro-strip__steps {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+
+  .page-intro-strip__steps span {
+    display: block;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: #f8fbfa;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    color: var(--color-slate-800);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .grey-bg {
+    background: transparent;
+  }
+
+  .content-block {
+    padding: 58px 0;
+  }
+
+  #problema.content-block {
+    padding-top: 28px;
+    padding-bottom: 44px;
+  }
+
+  #solucion.content-block,
+  #inteligencia.content-block {
+    padding-top: 12px;
+    padding-bottom: 44px;
+  }
+
+  #implementacion.content-block {
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--color-slate-700);
+    background: rgba(15, 23, 42, 0.05);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .section-label__number {
+    letter-spacing: 0;
+    margin-right: 2px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    color: var(--color-slate-900);
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.78;
+    margin-bottom: 20px;
+    color: var(--color-slate-700);
+  }
+
+  .manual-detail-box {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%);
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 24px 56px -40px rgba(15, 23, 42, 0.16);
+  }
+
+  .manual-detail-box--problem-hover,
+  .manual-detail-box--pulse-reveal,
+  .manual-detail-box--radar-sweep {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .manual-detail-box--problem-hover::before,
+  .manual-detail-box--pulse-reveal::before,
+  .manual-detail-box--radar-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  .manual-detail-box--problem-hover::before {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(125, 211, 252, 0.16), transparent 30%),
+      linear-gradient(135deg, rgba(29, 185, 154, 0.08), transparent 56%);
+  }
+
+  .manual-detail-box--pulse-reveal::before {
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 154, 0.12), transparent 34%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.68), transparent 55%);
+  }
+
+  .manual-detail-box--radar-sweep::before {
+    background:
+      radial-gradient(circle at top right, rgba(29, 185, 154, 0.12), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 34%);
+  }
+
+  .manual-detail-box--problem-hover:hover,
+  .manual-detail-box--pulse-reveal:hover,
+  .manual-detail-box--radar-sweep:hover {
+    transform: translateY(-8px);
+    border-color: rgba(29, 185, 154, 0.32);
+    box-shadow: 0 28px 62px -36px rgba(15, 23, 42, 0.22);
+    background: #fcfdfd;
+  }
+
+  .manual-detail-box--problem-hover:hover::before,
+  .manual-detail-box--pulse-reveal:hover::before,
+  .manual-detail-box--radar-sweep:hover::before {
+    opacity: 1;
+  }
+
+  .manual-detail-box > *,
+  .manual-detail-box--problem-hover > *,
+  .manual-detail-box--pulse-reveal > *,
+  .manual-detail-box--radar-sweep > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .image-mosaic {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin: 60px 0;
+    gap: 24px;
+    margin: 24px 0 20px;
   }
 
   .image-mosaic img {
@@ -244,401 +560,25 @@ const sensorIndexItems = [
     background: var(--color-gray-50);
     border-radius: 20px;
     border: 1px solid var(--color-gray-100);
-    padding: 24px;
+    padding: 20px;
     transition: transform 0.3s ease;
+  }
+
+  .image-mosaic img:hover {
+    transform: translateY(-4px);
   }
 
   .image-mosaic > img:only-child {
     grid-column: 1 / -1;
     justify-self: center;
-    width: min(100%, 620px);
-  }
-
-  /* BLOCKS */
-  .content-block {
-    padding: 140px 0;
-  }
-
-  #problema.content-block {
-    padding-top: 32px;
-    padding-bottom: 72px;
-  }
-
-  #solucion.content-block {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  #solucion > .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  #solucion .manual-detail-box {
-    padding: 28px;
-  }
-
-  #solucion h2,
-  #inteligencia h2 {
-    margin-bottom: 20px;
-  }
-
-  #solucion p,
-  #inteligencia p {
-    margin-bottom: 20px;
-  }
-
-  #solucion .image-mosaic {
-    gap: 24px;
-    margin: 28px 0;
-  }
-
-  #implementacion.content-block {
-    padding-top: 32px;
-    padding-bottom: 0;
-  }
-
-  #inteligencia.content-block {
-    padding-top: 0;
-    padding-bottom: 72px;
-  }
-
-  #problema .section-label {
-    margin-bottom: 16px;
-  }
-
-  #problema h2 {
-    margin-bottom: 20px;
-  }
-
-  #problema p {
-    margin-bottom: 20px;
-  }
-
-  #problema .image-mosaic {
-    gap: 24px;
-    margin: 28px 0;
-  }
-
-  #problema .manual-detail-box {
-    padding: 28px;
-  }
-
-  #inteligencia .manual-detail-box {
-    padding: 28px;
-  }
-
-  .grey-bg { background: var(--color-gray-50); }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: var(--color-slate-700);
-    opacity: 0.6;
-    margin-bottom: 32px;
-    display: block;
-    text-transform: uppercase;
-  }
-
-  .section-label__number {
-    letter-spacing: 0;
-    margin-right: 6px;
-  }
-
-  h2 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 40px;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    color: var(--color-slate-900);
-  }
-
-  p {
-    font-size: 1.15rem;
-    line-height: 1.75;
-    margin-bottom: 32px;
-    color: var(--color-slate-700);
-  }
-
-  .manual-detail-box {
-    background: #f8f9fa;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #e9ecef;
-  }
-
-  .manual-detail-box--problem-hover {
-    position: relative;
-    overflow: hidden;
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s ease,
-      border-color 0.35s ease,
-      background-color 0.35s ease;
-  }
-
-  .manual-detail-box--problem-hover::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 12% 18%, rgba(125, 211, 252, 0.16), transparent 30%),
-      linear-gradient(135deg, rgba(29, 185, 154, 0.08), transparent 56%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-  }
-
-  .manual-detail-box--problem-hover:hover {
-    transform: translateY(-10px) scale(1.015);
-    border-color: rgba(29, 185, 154, 0.42);
-    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.18);
-    background: #fbfcfc;
-  }
-
-  .manual-detail-box--problem-hover:hover::before {
-    opacity: 1;
-  }
-
-  .manual-detail-box--problem-hover > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .manual-detail-box--pulse-reveal {
-    position: relative;
-    overflow: hidden;
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s ease,
-      border-color 0.35s ease,
-      background-color 0.35s ease;
-  }
-
-  .manual-detail-box--pulse-reveal::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at top left, rgba(29, 185, 154, 0.12), transparent 34%),
-      linear-gradient(135deg, rgba(255, 255, 255, 0.68), transparent 55%);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.35s ease;
-  }
-
-  .manual-detail-box--pulse-reveal:hover {
-    transform: translateY(-8px) scale(1.01);
-    border-color: rgba(29, 185, 154, 0.4);
-    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.14);
-    background: #fcfdfd;
-  }
-
-  .manual-detail-box--pulse-reveal:hover::before {
-    opacity: 1;
-  }
-
-  .manual-detail-box--radar-sweep {
-    position: relative;
-    overflow: hidden;
-    transition:
-      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.4s ease,
-      border-color 0.4s ease,
-      background-color 0.4s ease;
-  }
-
-  .manual-detail-box--radar-sweep::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      120deg,
-      transparent 0%,
-      transparent 35%,
-      rgba(29, 185, 154, 0.14) 48%,
-      rgba(255, 255, 255, 0.45) 52%,
-      rgba(29, 185, 154, 0.12) 56%,
-      transparent 72%,
-      transparent 100%
-    );
-    transform: translateX(-120%);
-    opacity: 0;
-    transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-    pointer-events: none;
-  }
-
-  .manual-detail-box--radar-sweep::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 18% 82%, rgba(29, 185, 154, 0.1), transparent 24%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 38%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-  }
-
-  .manual-detail-box--radar-sweep:hover {
-    transform: translateY(-10px) scale(1.01);
-    border-color: rgba(29, 185, 154, 0.4);
-    box-shadow: 0 30px 64px rgba(15, 23, 42, 0.18);
-    background: #fbfcfc;
-  }
-
-  .manual-detail-box--radar-sweep:hover::before {
-    opacity: 1;
-    transform: translateX(120%);
-  }
-
-  .manual-detail-box--radar-sweep:hover::after {
-    opacity: 1;
-  }
-
-  .manual-detail-box--data-wave {
-    position: relative;
-    overflow: hidden;
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s ease,
-      border-color 0.35s ease,
-      background-color 0.35s ease;
-  }
-
-  .manual-detail-box--data-wave::before {
-    content: "";
-    position: absolute;
-    inset: auto 0 0 0;
-    height: 0;
-    background: linear-gradient(180deg, rgba(29, 185, 154, 0), rgba(29, 185, 154, 0.12));
-    pointer-events: none;
-    transition: height 0.35s ease, opacity 0.35s ease;
-    opacity: 0.9;
-  }
-
-  .manual-detail-box--data-wave::after {
-    content: "";
-    position: absolute;
-    left: -10%;
-    right: -10%;
-    bottom: 22px;
-    height: 14px;
-    background: radial-gradient(circle at 50% 50%, rgba(29, 185, 154, 0.28), transparent 65%);
-    filter: blur(10px);
-    opacity: 0;
-    transform: translateY(8px) scaleX(0.9);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    pointer-events: none;
-  }
-
-  .manual-detail-box--pulse-reveal > *,
-  .manual-detail-box--radar-sweep > *,
-  .manual-detail-box--data-wave > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .manual-detail-box--radar-sweep .insight-card {
-    transition:
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s ease,
-      border-color 0.35s ease,
-      background-color 0.35s ease;
-  }
-
-  .manual-detail-box--radar-sweep:hover .insight-card {
-    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
-    border-color: rgba(29, 185, 154, 0.28);
-    background: #ffffff;
-  }
-
-  .manual-detail-box--radar-sweep:hover .insight-card:nth-child(odd) {
-    transform: translateX(10px);
-  }
-
-  .manual-detail-box--radar-sweep:hover .insight-card:nth-child(even) {
-    transform: translateX(-10px);
-  }
-
-  .manual-detail-box--data-wave:hover {
-    transform: translateY(-8px);
-    border-color: rgba(29, 185, 154, 0.42);
-    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.14);
-    background: #fcfdfd;
-  }
-
-  .manual-detail-box--data-wave:hover::before {
-    height: 52%;
-  }
-
-  .manual-detail-box--data-wave:hover::after {
-    opacity: 1;
-    transform: translateY(0) scaleX(1);
-  }
-
-  .image-mosaic--solution {
-    margin: 18px 0 16px;
-  }
-
-  .image-mosaic--solution > img:only-child {
-    width: min(100%, 360px);
+    width: min(100%, 380px);
     aspect-ratio: 1 / 1;
     padding: 14px;
   }
 
-  #solucion .manual-detail-box--pulse-reveal {
-    padding: 28px;
-  }
-
-  #solucion .manual-detail-box--pulse-reveal h2 {
-    margin-bottom: 18px;
-  }
-
-  #solucion .manual-detail-box--pulse-reveal p {
-    margin-bottom: 16px;
-  }
-
-  @keyframes plantaPulseReveal {
-    0% {
-      opacity: 0;
-      transform: scale(0.965);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
-    }
-    60% {
-      opacity: 1;
-      transform: scale(1.012);
-      box-shadow: 0 18px 40px rgba(29, 185, 154, 0.12);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
-    }
-  }
-
-  @keyframes plantaPulseGlow {
-    0% {
-      opacity: 0;
-    }
-    35% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0.65;
-    }
-  }
-
-  /* ROI BOX */
   .roi-box {
-    background: #FFFFFF;
-    padding: 40px 20px;
-    border-radius: 40px;
-    color: var(--color-charcoal);
-    border: 1px solid var(--color-gray-100);
-    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.05);
+    padding: 34px 30px;
+    border-radius: 30px;
   }
 
   .roi-box--featured {
@@ -646,35 +586,36 @@ const sensorIndexItems = [
       radial-gradient(circle at top right, rgba(125, 211, 252, 0.18), transparent 28%),
       linear-gradient(135deg, rgba(29, 185, 154, 0.08), rgba(255, 255, 255, 0.96) 38%);
     border: 1px solid rgba(29, 185, 154, 0.28);
-    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.10);
+    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.1);
     position: relative;
     overflow: hidden;
   }
 
-  .roi-box--featured::before {
+  .roi-box--featured::after {
     content: "";
     position: absolute;
     inset: 0 0 auto 0;
-    height: 6px;
+    height: 5px;
     background: linear-gradient(90deg, #1db99a 0%, #7dd3fc 100%);
   }
 
-  .roi-box h2 { color: var(--color-slate-900); }
-
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 64px;
-    margin-top: 80px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    margin-top: 28px;
+  }
+
+  .stat-card {
+    position: relative;
   }
 
   .stat-card--featured {
     background: #ffffff;
     border: 1px solid rgba(29, 185, 154, 0.24);
     border-radius: 24px;
-    padding: 32px 28px;
+    padding: 28px 24px;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-    position: relative;
     overflow: hidden;
   }
 
@@ -682,73 +623,44 @@ const sensorIndexItems = [
     content: "";
     position: absolute;
     inset: 0 auto 0 0;
-    width: 5px;
+    width: 4px;
     background: linear-gradient(180deg, #1db99a 0%, #7dd3fc 100%);
   }
 
   .stat-card .value {
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 800;
     color: var(--color-slate-900);
     display: block;
     line-height: 1;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     letter-spacing: -0.03em;
   }
 
   .stat-card--textual-value .value {
     font-size: 2rem;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.05;
   }
 
   .stat-card .label {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     display: block;
     color: var(--color-slate-800);
   }
 
   .stat-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  /* LISTS */
-  .benefit-list, .step-list {
-    margin: 64px 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .benefit-list li, .step-list li {
-    font-size: 1.15rem;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--color-gray-100);
-    color: var(--color-slate-700);
-  }
-
-  .manual-detail-box--compact {
-    padding: 32px;
-  }
-
-  .manual-detail-box--compact h2 {
-    margin-bottom: 20px;
-  }
-
-  .manual-detail-box--compact > p {
-    margin-bottom: 18px;
-  }
-
-  .manual-detail-box--compact > p:last-child {
+    font-size: 0.98rem;
+    line-height: 1.65;
     margin-bottom: 0;
   }
 
   .insight-cards {
     display: grid;
     gap: 16px;
-    margin: 24px 0 20px;
+    margin: 18px 0 14px;
   }
 
   .insight-card {
@@ -760,9 +672,9 @@ const sensorIndexItems = [
   }
 
   .insight-card h3 {
-    margin: 0 0 14px;
-    padding-bottom: 16px;
-    font-size: 1.05rem;
+    margin: 0 0 12px;
+    padding-bottom: 14px;
+    font-size: 1.02rem;
     font-weight: 700;
     color: var(--color-slate-900);
     display: flex;
@@ -789,70 +701,116 @@ const sensorIndexItems = [
 
   .insight-card p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.98rem;
     line-height: 1.65;
     color: var(--color-slate-700);
     text-align: left;
   }
 
-  /* CTA */
+  .manual-detail-box--compact {
+    padding: 30px;
+  }
+
   .cta-section {
-    padding: 60px 0;
+    padding: 26px 0 50px;
     text-align: center;
-    background: #FFF;
-    border-top: 1px solid var(--color-gray-100);
-    margin-top: 30px;
+    background: transparent;
+    margin-top: 8px;
   }
 
-  #contacto .manual-detail-box {
-    padding: 28px;
-  }
-
-  #contacto h2 {
-    margin-bottom: 18px;
-  }
-
-  #contacto p {
-    margin-bottom: 20px;
+  .cta-box {
+    padding: 34px 28px;
+    background:
+      radial-gradient(circle at top right, rgba(29, 185, 154, 0.12), transparent 24%),
+      linear-gradient(180deg, #ffffff 0%, #f7fbfa 100%);
   }
 
   .btn-giant {
     display: inline-block;
     background: var(--color-turquoise);
-    color: #FFF;
-    padding: 18px 40px;
-    font-size: 1rem;
+    color: #ffffff;
+    padding: 18px 36px;
+    font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.14em;
     border-radius: 14px;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
     box-shadow: 0 10px 25px -5px rgba(15, 181, 174, 0.3);
   }
 
   a.btn-giant:hover {
-    color: #FFF !important;
+    color: #ffffff !important;
     transform: translateY(-3px);
     background: var(--color-turquoise-dark);
     box-shadow: 0 20px 40px -10px rgba(15, 181, 174, 0.4);
   }
 
+  @media (max-width: 1100px) {
+    .page-intro-strip__panel {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 900px) {
-    .roi-box { padding: 60px 40px; }
-    h2 { font-size: 2.1rem; }
-    .expert-hero-solid h1 { font-size: 2.5rem; }
-    .image-mosaic { grid-template-columns: 1fr; gap: 24px; }
-    .content-block { padding: 100px 0; }
+    .hero-signal-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .expert-hero-solid h1 {
+      font-size: 2.7rem;
+      max-width: none;
+    }
+
+    .image-mosaic {
+      grid-template-columns: 1fr;
+    }
+
+    .content-block {
+      padding: 48px 0;
+    }
   }
 
   @media (max-width: 768px) {
-    .expert-hero-solid { padding: 16px 0 10px !important; }
+    .expert-hero-solid {
+      padding: 18px 0 22px !important;
+    }
 
-    #solucion > .container {
-      padding-left: 24px;
-      padding-right: 24px;
+    .expert-hero-solid p {
+      margin-bottom: 22px;
+    }
+
+    .hero-signal-card {
+      text-align: center;
+    }
+
+    .page-intro-strip {
+      padding-top: 18px;
+    }
+
+    .page-intro-strip__panel {
+      padding: 24px 20px;
+    }
+
+    .page-intro-strip__copy h2 {
+      font-size: 1.8rem;
+    }
+
+    .manual-detail-box,
+    .manual-detail-box--compact,
+    .cta-box,
+    .roi-box {
+      padding: 24px 20px;
+    }
+
+    .stat-card--featured {
+      padding: 24px 20px;
+    }
+
+    .btn-giant {
+      width: 100%;
+      text-align: center;
     }
   }
 </style>
-
