@@ -9,7 +9,7 @@ import TestPage from "../layouts/TestPage.astro";
   variant="solutions"
   layoutType="mosaic"
   heroSectionClass="hero-soluciones-offset"
-  mosaicImages={["/images/soluciones/mobile_app_field.png", "/images/soluciones/olivar_extenso_real.png"]}
+  mosaicImages={["/images/soluciones/mobile_app_field.png", "/images/soluciones/campo_olivos_real.png"]}
 >
   <div class="subpage-content">
     <section class="solutions-intro">
@@ -94,35 +94,123 @@ import TestPage from "../layouts/TestPage.astro";
 </TestPage>
 
 <style>
-  :global(.hero-soluciones-offset) {
-    padding-bottom: 0 !important;
+  :global(.page-hero.hero-soluciones-offset) {
+    min-height: 400px;
+    padding-top: 10px !important;
+    padding-bottom: 22px !important;
   }
 
-  :global(.hero-soluciones-offset .hero-mosaic__content) {
-    padding-top: 5px;
+  :global(.page-hero.hero-soluciones-offset::before) {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(29, 185, 154, 0.12), transparent 24%),
+      linear-gradient(90deg, rgba(7, 16, 13, 0.28) 0%, rgba(7, 16, 13, 0.08) 45%, rgba(7, 16, 13, 0.32) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  :global(.hero-soluciones-offset .page-hero__container) {
+    z-index: 2;
   }
 
   :global(.hero-soluciones-offset .hero-mosaic) {
-    gap: 36px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 42px;
+    align-items: center;
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic__content) {
+    padding: 26px 28px 24px;
+    border-radius: 30px;
+    background: rgba(7, 16, 13, 0.34);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 28px 76px -40px rgba(0, 0, 0, 0.34);
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic__content::before) {
+    content: "SOLUCIONES";
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(29, 185, 154, 0.14);
+    border: 1px solid rgba(29, 185, 154, 0.24);
+    color: #bff3e8;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
   }
 
   :global(.hero-soluciones-offset .hero-mosaic h1) {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    max-width: 11ch;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    color: #ffffff !important;
   }
 
   :global(.hero-soluciones-offset .hero-mosaic__desc-row) {
-    gap: 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
     align-items: flex-start;
-    margin-top: -10px !important;
+    margin-top: 0 !important;
   }
 
   :global(.hero-soluciones-offset .hero-mosaic__desc-row p) {
-    margin-top: -10px;
+    margin: 0 !important;
+    max-width: 54ch;
+    font-size: 1.06rem;
+    line-height: 1.76;
+    color: rgba(255, 255, 255, 0.88);
   }
 
   :global(.hero-soluciones-offset .hero-cta) {
-    padding: 12px 24px;
-    margin-top: 4px;
+    justify-self: start;
+    margin: 0 !important;
+    padding: 13px 24px;
+    border-radius: 16px;
+  }
+
+  :global(.hero-soluciones-offset .hero-mosaic__images) {
+    display: grid;
+    grid-template-columns: 1fr 0.92fr;
+    gap: 18px;
+    align-items: stretch;
+    min-height: 320px;
+  }
+
+  :global(.hero-soluciones-offset .m-img) {
+    position: relative;
+    min-height: 320px;
+    border-radius: 28px;
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: center !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 28px 68px -38px rgba(0, 0, 0, 0.38);
+  }
+
+  :global(.hero-soluciones-offset .m-img::after) {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 16, 13, 0.02), rgba(7, 16, 13, 0.28));
+  }
+
+  :global(.hero-soluciones-offset .m-img--1) {
+    transform: translateY(18px);
+  }
+
+  :global(.hero-soluciones-offset .m-img--2) {
+    min-height: 270px;
+    transform: translateY(-14px);
   }
 
   :global(.page-body) {
@@ -257,6 +345,50 @@ import TestPage from "../layouts/TestPage.astro";
   }
 
   @media (max-width: 768px) {
+    :global(.page-hero.hero-soluciones-offset) {
+      min-height: auto;
+      padding-top: 0 !important;
+      padding-bottom: 28px !important;
+    }
+
+    :global(.hero-soluciones-offset .hero-mosaic) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    :global(.hero-soluciones-offset .hero-mosaic__content) {
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    :global(.hero-soluciones-offset .hero-mosaic__content::before) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    :global(.hero-soluciones-offset .hero-mosaic h1) {
+      max-width: none;
+    }
+
+    :global(.hero-soluciones-offset .hero-mosaic__desc-row p) {
+      max-width: none;
+    }
+
+    :global(.hero-soluciones-offset .hero-cta) {
+      justify-self: center;
+    }
+
+    :global(.hero-soluciones-offset .hero-mosaic__images) {
+      grid-template-columns: 1fr 1fr;
+      min-height: auto;
+    }
+
+    :global(.hero-soluciones-offset .m-img),
+    :global(.hero-soluciones-offset .m-img--2) {
+      min-height: 200px;
+      transform: none;
+    }
+
     :global(.page-body) {
       padding-bottom: 20px !important;
     }

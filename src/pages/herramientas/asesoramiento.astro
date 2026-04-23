@@ -3,45 +3,216 @@ import TestPage from "../../layouts/TestPage.astro";
 ---
 
 <TestPage
-    title="Asesoramiento a Explotaciones – Cuaderno de Campo Digital"
-    heading="Asesoramiento Estratégico"
+    title="Asesoramiento a Explotaciones - Cuaderno de Campo Digital"
+    heading="Asesoramiento Estrategico"
     description="Optimiza la rentabilidad de tu finca con asesoramiento experto basado en datos reales recopilados por IA y sensores."
     variant="tools"
-    image="/images/asesoramiento estrateico.jpg"
+    heroSectionClass="hero-asesoramiento-cover"
 >
     <div class="subpage-content">
-        <div class="feature-detail glass">
-            <h2>Decisiones Basadas en Datos</h2>
-            <p>
-                El asesor agronómico moderno utiliza nuestra plataforma para
-                pasar de la intuición al dato. Analizamos patrones históricos y
-                predicciones climáticas para recomendar las mejores estrategias
-                de cultivo.
-            </p>
-        </div>
+        <section class="asesoramiento-intro">
+            <div class="asesoramiento-intro__box glass">
+                <h2>Decisiones Basadas en Datos</h2>
+                <p>
+                    El asesor agronomico moderno utiliza nuestra plataforma para
+                    pasar de la intuicion al dato. Analizamos patrones historicos y
+                    predicciones climaticas para recomendar las mejores estrategias
+                    de cultivo.
+                </p>
+            </div>
+        </section>
 
-        <div class="cards-grid cards-grid--asesoramiento">
-            <div class="feature-card">
-                <h3>Planes de Abonado</h3>
-                <p>
-                    Cálculo preciso de necesidades nutricionales cumpliendo con
-                    normativas de zonas vulnerables.
-                </p>
+        <section class="asesoramiento-servicios">
+            <div class="cards-grid cards-grid--asesoramiento">
+                <div class="feature-card">
+                    <span class="service-index">01</span>
+                    <h3>Planes de Abonado</h3>
+                    <p>
+                        Calculo preciso de necesidades nutricionales cumpliendo con
+                        normativas de zonas vulnerables.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="service-index">02</span>
+                    <h3>Asesoramiento en Riego</h3>
+                    <p>
+                        Optimizacion del consumo hidrico basada en sensores de
+                        humedad de suelo y evapotranspiracion.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="service-index">03</span>
+                    <h3>Certificaciones</h3>
+                    <p>
+                        Facilitamos el cumplimiento de estandares como GlobalGAP o
+                        Produccion Integrada.
+                    </p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Asesoramiento en Riego</h3>
-                <p>
-                    Optimización del consumo hídrico basada en sensores de
-                    humedad de suelo y evapotranspiración.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3>Certificaciones</h3>
-                <p>
-                    Facilitamos el cumplimiento de estándares como GlobalGAP o
-                    Producción Integrada.
-                </p>
-            </div>
-        </div>
+        </section>
     </div>
 </TestPage>
+
+<style>
+    :global(.page-hero.hero-asesoramiento-cover) {
+        min-height: 340px;
+        padding: 8px 0 28px !important;
+        background:
+            linear-gradient(rgba(5, 12, 10, 0.76), rgba(5, 12, 10, 0.8)),
+            url("/images/asesoramiento estrateico.jpg") center 35% / cover no-repeat !important;
+    }
+
+    :global(.page-hero.hero-asesoramiento-cover::before) {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(circle at 18% 22%, rgba(29, 185, 154, 0.14), transparent 24%),
+            linear-gradient(180deg, rgba(11, 26, 20, 0.08), rgba(11, 26, 20, 0.26));
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    :global(.hero-asesoramiento-cover .page-hero__container) {
+        z-index: 2;
+    }
+
+    :global(.hero-asesoramiento-cover .hero-minimalist) {
+        padding: 4px 0 8px;
+    }
+
+    :global(.hero-asesoramiento-cover .hero-minimalist__image) {
+        display: none !important;
+    }
+
+    :global(.hero-asesoramiento-cover .text-weight-heavy) {
+        max-width: 10ch;
+        color: #ffffff !important;
+        font-size: clamp(3rem, 6vw, 4.8rem);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+        text-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    :global(.page-body) {
+        padding-top: 32px !important;
+        padding-bottom: 8px !important;
+        background:
+            radial-gradient(circle at top left, rgba(29, 185, 154, 0.08), transparent 24%),
+            linear-gradient(180deg, #f7faf9 0%, #ffffff 28%, #f5faf8 100%);
+    }
+
+    .subpage-content {
+        padding-bottom: 0 !important;
+    }
+
+    .asesoramiento-intro {
+        margin-bottom: 34px;
+    }
+
+    .asesoramiento-intro__box {
+        padding: 34px 32px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        box-shadow: 0 24px 56px -42px rgba(15, 23, 42, 0.26);
+    }
+
+    .asesoramiento-intro__box h2 {
+        margin-bottom: 18px !important;
+        margin-top: 0 !important;
+        font-size: clamp(2.1rem, 4vw, 3rem) !important;
+        line-height: 1.02;
+    }
+
+    .asesoramiento-intro__box p {
+        margin-bottom: 0 !important;
+        max-width: 64ch;
+        font-size: 1.08rem !important;
+    }
+
+    .asesoramiento-servicios {
+        margin-bottom: 0;
+    }
+
+    .cards-grid--asesoramiento {
+        margin: 0 !important;
+        gap: 26px !important;
+    }
+
+    .cards-grid--asesoramiento .feature-card {
+        position: relative;
+        padding: 34px 30px !important;
+        border-radius: 26px !important;
+        background: linear-gradient(180deg, #ffffff 0%, #f7fbfa 100%) !important;
+        border: 1px solid rgba(15, 23, 42, 0.06) !important;
+        border-left: none !important;
+        box-shadow: 0 24px 54px -42px rgba(15, 23, 42, 0.28) !important;
+        overflow: hidden;
+    }
+
+    .cards-grid--asesoramiento .feature-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-turquoise), rgba(29, 185, 154, 0.1));
+    }
+
+    .service-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 18px;
+        border-radius: 14px;
+        background: rgba(29, 185, 154, 0.1);
+        color: var(--color-turquoise-dark);
+        font-size: 0.84rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+    }
+
+    .cards-grid--asesoramiento .feature-card h3 {
+        margin-bottom: 12px !important;
+    }
+
+    .cards-grid--asesoramiento .feature-card p {
+        margin-bottom: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+        :global(.page-hero.hero-asesoramiento-cover) {
+            min-height: 280px;
+            padding: 0 0 26px !important;
+            background-position: center center !important;
+        }
+
+        :global(.hero-asesoramiento-cover .text-weight-heavy) {
+            max-width: 100%;
+            font-size: clamp(2.35rem, 9vw, 3.3rem);
+        }
+
+        :global(.page-body) {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+
+        .asesoramiento-intro__box {
+            padding: 26px 20px;
+            text-align: center;
+        }
+
+        .cards-grid--asesoramiento {
+            grid-template-columns: 1fr !important;
+        }
+
+        .cards-grid--asesoramiento .feature-card {
+            text-align: center !important;
+        }
+    }
+</style>

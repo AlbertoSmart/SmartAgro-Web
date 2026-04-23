@@ -165,37 +165,125 @@ import { faqData } from "../../data/faqs";
 </TestPage>
 
 <style>
-    :global(.hero-agricultores-offset .hero-mosaic__content) {
-        padding-top: 2px;
+    :global(.page-hero.hero-agricultores-offset) {
+        min-height: 420px;
+        padding-top: 12px !important;
+        padding-bottom: 24px !important;
+        overflow: hidden;
     }
 
-    :global(.hero-agricultores-offset) {
-        padding-bottom: 0 !important;
+    :global(.page-hero.hero-agricultores-offset::before) {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(circle at 18% 22%, rgba(29, 185, 154, 0.16), transparent 24%),
+            linear-gradient(90deg, rgba(8, 18, 14, 0.38) 0%, rgba(8, 18, 14, 0.14) 48%, rgba(8, 18, 14, 0.42) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    :global(.hero-agricultores-offset .page-hero__container) {
+        z-index: 2;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic) {
-        gap: 40px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        gap: 44px;
+        align-items: center;
+    }
+
+    :global(.hero-agricultores-offset .hero-mosaic__content) {
+        padding: 28px 30px 26px;
+        border-radius: 30px;
+        background: rgba(7, 16, 13, 0.42);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 28px 80px -44px rgba(0, 0, 0, 0.42);
+    }
+
+    :global(.hero-agricultores-offset .hero-mosaic__content::before) {
+        content: "AGRICULTORES";
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 18px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(29, 185, 154, 0.14);
+        border: 1px solid rgba(29, 185, 154, 0.24);
+        color: #bff3e8;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic h1) {
         margin-top: 0;
-        margin-bottom: 18px;
-        max-width: 14ch;
+        margin-bottom: 16px;
+        max-width: 11ch;
+        font-size: clamp(2.6rem, 5vw, 4.5rem);
+        line-height: 0.96;
+        letter-spacing: -0.06em;
+        color: #ffffff !important;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic__desc-row) {
-        gap: 18px;
-        align-items: flex-start;
-        margin-top: -4px !important;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        align-items: start;
+        margin-top: 0 !important;
     }
 
     :global(.hero-agricultores-offset .hero-mosaic__desc-row p) {
-        margin-top: 0;
+        margin: 0 !important;
+        max-width: 56ch;
+        font-size: 1.08rem;
+        line-height: 1.78;
+        color: rgba(255, 255, 255, 0.88);
     }
 
     :global(.hero-agricultores-offset .hero-cta) {
+        justify-self: start;
+        margin: 0 !important;
         padding: 14px 26px;
-        margin-top: 0;
+        border-radius: 16px;
+    }
+
+    :global(.hero-agricultores-offset .hero-mosaic__images) {
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 18px;
+        align-items: stretch;
+        min-height: 340px;
+    }
+
+    :global(.hero-agricultores-offset .m-img) {
+        position: relative;
+        min-height: 340px;
+        border-radius: 28px;
+        overflow: hidden;
+        background-size: cover !important;
+        background-position: center !important;
+        box-shadow: 0 30px 70px -38px rgba(0, 0, 0, 0.44);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    :global(.hero-agricultores-offset .m-img::after) {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(7, 16, 13, 0.04), rgba(7, 16, 13, 0.34));
+    }
+
+    :global(.hero-agricultores-offset .m-img--1) {
+        transform: translateY(26px);
+    }
+
+    :global(.hero-agricultores-offset .m-img--2) {
+        min-height: 280px;
+        transform: translateY(-18px);
     }
 
     :global(.page-body) {
@@ -556,6 +644,50 @@ import { faqData } from "../../data/faqs";
     }
 
     @media (max-width: 768px) {
+        :global(.page-hero.hero-agricultores-offset) {
+            min-height: auto;
+            padding-top: 0 !important;
+            padding-bottom: 30px !important;
+        }
+
+        :global(.hero-agricultores-offset .hero-mosaic) {
+            grid-template-columns: 1fr;
+            gap: 26px;
+        }
+
+        :global(.hero-agricultores-offset .hero-mosaic__content) {
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        :global(.hero-agricultores-offset .hero-mosaic__content::before) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        :global(.hero-agricultores-offset .hero-mosaic h1) {
+            max-width: none;
+        }
+
+        :global(.hero-agricultores-offset .hero-mosaic__desc-row p) {
+            max-width: none;
+        }
+
+        :global(.hero-agricultores-offset .hero-cta) {
+            justify-self: center;
+        }
+
+        :global(.hero-agricultores-offset .hero-mosaic__images) {
+            grid-template-columns: 1fr 1fr;
+            min-height: auto;
+        }
+
+        :global(.hero-agricultores-offset .m-img),
+        :global(.hero-agricultores-offset .m-img--2) {
+            min-height: 210px;
+            transform: none;
+        }
+
         :global(.page-body) {
             padding-top: 18px !important;
             padding-bottom: 20px !important;
@@ -624,23 +756,3 @@ import { faqData } from "../../data/faqs";
         }
     }
 </style>
-
-<script is:inline data-astro-rerun>
-    (() => {
-        function enforceAgricultoresSpacing() {
-            const pageBody = document.querySelector('.page-body');
-            if (!pageBody) return;
-
-            pageBody.style.setProperty('padding-top', window.innerWidth <= 768 ? '18px' : '28px', 'important');
-            pageBody.style.setProperty('padding-bottom', window.innerWidth <= 768 ? '20px' : '24px', 'important');
-        }
-
-        if (!window.__agricultoresSpacingBound) {
-            window.__agricultoresSpacingBound = true;
-            window.addEventListener('resize', enforceAgricultoresSpacing);
-        }
-
-        enforceAgricultoresSpacing();
-        requestAnimationFrame(enforceAgricultoresSpacing);
-    })();
-</script>
