@@ -20,6 +20,7 @@ interface Props {
   mosaicImages?: string[];
   heroBackground?: string;
   heroSectionClass?: string;
+  bodySectionClass?: string;
 }
 
 const {
@@ -32,6 +33,7 @@ const {
   image,
   heroBackground,
   heroSectionClass = "",
+  bodySectionClass = "",
 } = Astro.props;
 
 // Specific data/visuals for different layouts
@@ -97,7 +99,7 @@ const pageHeroStyle =
       </div>
     </section>
     
-    <section class="page-body">
+    <section class={`page-body ${bodySectionClass}`.trim()}>
       <div class="container">
         <slot />
       </div>

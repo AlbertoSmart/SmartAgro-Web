@@ -8,6 +8,7 @@ import TestPage from "../../layouts/TestPage.astro";
     description="Optimiza la rentabilidad de tu finca con asesoramiento experto basado en datos reales recopilados por IA y sensores."
     variant="tools"
     heroSectionClass="hero-asesoramiento-cover"
+    bodySectionClass="page-body--asesoramiento"
 >
     <div class="subpage-content">
         <section class="asesoramiento-intro">
@@ -96,7 +97,7 @@ import TestPage from "../../layouts/TestPage.astro";
         text-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
     }
 
-    :global(.page-body) {
+    :global(.page-body.page-body--asesoramiento) {
         padding-top: 32px !important;
         padding-bottom: 8px !important;
         background:
@@ -197,7 +198,7 @@ import TestPage from "../../layouts/TestPage.astro";
             font-size: clamp(2.35rem, 9vw, 3.3rem);
         }
 
-        :global(.page-body) {
+        :global(.page-body.page-body--asesoramiento) {
             padding-top: 20px !important;
             padding-bottom: 20px !important;
         }

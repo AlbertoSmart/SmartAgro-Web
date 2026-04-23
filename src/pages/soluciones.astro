@@ -9,6 +9,7 @@ import TestPage from "../layouts/TestPage.astro";
   variant="solutions"
   layoutType="mosaic"
   heroSectionClass="hero-soluciones-offset"
+  bodySectionClass="page-body--soluciones"
   mosaicImages={["/images/soluciones/mobile_app_field.png", "/images/soluciones/campo_olivos_real.png"]}
 >
   <div class="subpage-content">
@@ -216,7 +217,7 @@ import TestPage from "../layouts/TestPage.astro";
     transform: translateY(-14px);
   }
 
-  :global(.page-body) {
+  :global(.page-body.page-body--soluciones) {
     padding-bottom: 2px !important;
   }
 
@@ -397,7 +398,7 @@ import TestPage from "../layouts/TestPage.astro";
       background-size: 112% auto !important;
     }
 
-    :global(.page-body) {
+    :global(.page-body.page-body--soluciones) {
       padding-bottom: 20px !important;
     }
 

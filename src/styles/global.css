@@ -268,109 +268,6 @@ ol {
   padding: 28px !important;
 }
 
-.page-hero.hero-soluciones-offset,
-.page-hero.hero-agricultores-offset,
-.page-hero.hero-tecnicos-offset {
-  padding-bottom: 0 !important;
-}
-
-.hero-soluciones-offset .hero-mosaic__content {
-  padding-top: 5px !important;
-}
-
-.hero-agricultores-offset .hero-mosaic__content,
-.hero-tecnicos-offset .hero-mosaic__content {
-  padding-top: 12px !important;
-}
-
-.hero-soluciones-offset .hero-mosaic {
-  gap: 36px !important;
-}
-
-.hero-agricultores-offset .hero-mosaic,
-.hero-tecnicos-offset .hero-mosaic {
-  gap: 32px !important;
-}
-
-.hero-soluciones-offset .hero-mosaic h1 {
-  margin-bottom: 30px !important;
-}
-
-.hero-agricultores-offset .hero-mosaic h1,
-.hero-tecnicos-offset .hero-mosaic h1 {
-  margin-bottom: 40px !important;
-  margin-top: -8px !important;
-}
-
-.hero-soluciones-offset .hero-mosaic__desc-row {
-  gap: 14px !important;
-  align-items: flex-start !important;
-  margin-top: -10px !important;
-}
-
-.hero-agricultores-offset .hero-mosaic__desc-row,
-.hero-tecnicos-offset .hero-mosaic__desc-row {
-  gap: 12px !important;
-  align-items: flex-start !important;
-  margin-top: -14px !important;
-}
-
-.hero-soluciones-offset .hero-mosaic__desc-row p {
-  margin-top: -10px !important;
-}
-
-.hero-agricultores-offset .hero-mosaic__desc-row p,
-.hero-tecnicos-offset .hero-mosaic__desc-row p {
-  margin-top: -18px !important;
-}
-
-.hero-soluciones-offset .hero-cta {
-  padding: 12px 24px !important;
-  margin-top: 4px !important;
-}
-
-.hero-agricultores-offset .hero-cta {
-  padding: 12px 24px !important;
-  margin-top: 6px !important;
-}
-
-.hero-tecnicos-offset .hero-cta {
-  padding: 12px 24px !important;
-  margin-top: -2px !important;
-}
-
-.page-hero.hero-tecnicos-offset .hero-mosaic__content {
-  padding-top: 0 !important;
-}
-
-.page-hero.hero-agricultores-offset .hero-mosaic__content {
-  padding-top: 2px !important;
-}
-
-.page-hero.hero-soluciones-offset + .page-body {
-  padding-bottom: 2px !important;
-}
-
-.page-hero.hero-agricultores-offset + .page-body {
-  padding-top: 28px !important;
-  padding-bottom: 24px !important;
-}
-
-.page-hero.hero-tecnicos-offset + .page-body {
-  padding-top: 24px !important;
-  padding-bottom: 28px !important;
-}
-
-.page-hero.hero-agricultores-offset .hero-mosaic h1 {
-  margin-top: 0 !important;
-  transform: none !important;
-}
-
-.page-hero.hero-tecnicos-offset .hero-mosaic h1 {
-  margin-top: -18px !important;
-  transform: none !important;
-}
-
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -642,17 +539,6 @@ ol {
   .cue-directory .search-bar-wrap {
     margin: 20px auto 50px !important;
     padding: 0 !important;
-  }
-
-  .page-hero.hero-agricultores-offset + .page-body {
-    padding-top: 18px !important;
-    padding-bottom: 20px !important;
-  }
-
-  .page-hero.hero-tecnicos-offset + .page-body,
-  .page-hero.hero-soluciones-offset + .page-body {
-    padding-top: 16px !important;
-    padding-bottom: 20px !important;
   }
 
   /* EXHAUSTIVE FIX: Ensure strict white margins on both screen edges for all possible content wrappers */

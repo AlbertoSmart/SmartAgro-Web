@@ -12,6 +12,7 @@ import { faqData } from "../../data/faqs";
     variant="solutions"
     layoutType="mosaic"
     heroSectionClass="hero-agricultores-offset"
+    bodySectionClass="page-body--agricultores"
     heroBackground="/images/cuaderno de Campo para Agricultores.jpg"
     mosaicImages={["/images/soluciones/farmer_tablet_orchard.png", "/images/soluciones/tama66-market-3466906.webp"]}
 >
@@ -289,7 +290,7 @@ import { faqData } from "../../data/faqs";
         background-position: 62% center !important;
     }
 
-    :global(.page-body) {
+    :global(.page-body.page-body--agricultores) {
         padding-top: 28px !important;
         padding-bottom: 6px !important;
         background:
@@ -589,7 +590,7 @@ import { faqData } from "../../data/faqs";
         margin-bottom: 0 !important;
     }
 
-    :global(.feature-card) {
+    :global(.page-body.page-body--agricultores .feature-card) {
         position: relative;
         overflow: hidden;
         display: flex;
@@ -597,7 +598,7 @@ import { faqData } from "../../data/faqs";
         height: 100%;
     }
 
-    :global(.feature-card::before) {
+    :global(.page-body.page-body--agricultores .feature-card::before) {
         content: "";
         position: absolute;
         inset: 0 auto auto 0;
@@ -607,7 +608,7 @@ import { faqData } from "../../data/faqs";
         opacity: 0.9;
     }
 
-    :global(.feature-card__icon) {
+    :global(.page-body.page-body--agricultores .feature-card__icon) {
         width: 56px;
         height: 56px;
         display: inline-flex;
@@ -628,7 +629,7 @@ import { faqData } from "../../data/faqs";
         margin-bottom: 0 !important;
     }
 
-    :global(.highlight-box) {
+    :global(.page-body.page-body--agricultores .highlight-box) {
         margin: 56px 0 0 !important;
     }
 
@@ -699,7 +700,7 @@ import { faqData } from "../../data/faqs";
             background-position: 58% center !important;
         }
 
-        :global(.page-body) {
+        :global(.page-body.page-body--agricultores) {
             padding-top: 18px !important;
             padding-bottom: 20px !important;
         }
