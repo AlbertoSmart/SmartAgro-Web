@@ -12,185 +12,275 @@ const sensorIndexItems = [
 ];
 ---
 
-<Layout title="Memoria Técnica: Monitorización Climática y Microclima">
+<Layout title="Memoria Tecnica: Monitorizacion Climatica y Microclima">
   <main class="landing-expert">
-    <!-- PROFESSIONAL SOLID HERO -->
     <section class="expert-hero-solid">
       <div class="container">
-        <h1>Meteorología Precisa <br/>El Balance Hídrico Definitivo</h1>
-        <p>Monitorización atmosférica IoT para el cálculo de Evapotranspiración (ETp) y gestión de inventario hídrico.</p>
+        <span class="pre-title">Sensores climaticos</span>
+        <h1>Meteorologia Precisa <br />El Balance Hidrico Definitivo</h1>
+        <p>
+          Monitorizacion atmosferica IoT para el calculo de Evapotranspiracion
+          (ETp) y la gestion inteligente del inventario hidrico de la finca.
+        </p>
+
+        <div class="hero-signal-grid">
+          <div class="hero-signal-card">
+            <strong>Microclima real</strong>
+            <span>Deja de decidir con datos lejanos y mide lo que ocurre en su propia parcela.</span>
+          </div>
+          <div class="hero-signal-card">
+            <strong>Balance hidrico</strong>
+            <span>Convierte radiacion, viento, humedad y temperatura en riego bien afinado.</span>
+          </div>
+          <div class="hero-signal-card">
+            <strong>Operacion segura</strong>
+            <span>Controla depositos, alertas y logistica antes de que el problema llegue al campo.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-intro-strip">
+      <div class="container">
+        <div class="page-intro-strip__panel">
+          <div class="page-intro-strip__copy">
+            <span class="page-kicker">De que va esta pagina</span>
+            <h2>Una hoja de ruta clara para entender como el clima impacta el riego, la energia y la toma de decisiones.</h2>
+            <p>
+              Primero se explica por que el microclima de la parcela cambia el
+              resultado agronomico. Despues se presenta la solucion, el retorno
+              operativo que aporta, las alertas que habilita y la forma correcta
+              de implantarla para que el dato sea fiable.
+            </p>
+          </div>
+
+          <div class="page-intro-strip__steps">
+            <span>01. Riesgo de decidir a ciegas</span>
+            <span>02. Modelado del balance hidrico</span>
+            <span>03. Ahorro y control logistico</span>
+            <span>04. Alertas climaticas utiles</span>
+            <span>05. Instalacion con calidad de dato</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <div class="sensor-doc-layout">
       <SidebarIndex title="Contenidos" items={sensorIndexItems} />
+
       <div class="sensor-doc-content">
-
-    <!-- 1. ANÁLISIS DEL PROBLEMA -->
-    <section id="problema" class="content-block" data-index-section>
-      <div class="container narrow">
-        <div class="section-label">01. EL PROBLEMA</div>
-        <div class="manual-detail-box manual-detail-box--cuaderno">
-          <h2>La incertidumbre climática: El coste de no conocer su microclima</h2>
-          <p>
-            En la agricultura moderna, depender de estaciones meteorológicas públicas situadas a varios kilómetros de su finca es un error estratégico. 
-            La orografía, la vegetación cercana y la altitud generan **microclimas específicos** donde las variables de temperatura, humedad y radiación pueden diferir significativamente de las redes estatales.
-          </p>
-
-          <!-- IMAGE MOSAIC 1 -->
-          <div class="image-mosaic image-mosaic--clima-pair">
-            <img src="/images/sensores/EstacionMeteorologica.png" alt="Estación Meteorológica" />
-            <img src="/images/sensores/ritae-anemometer-3977718.jpg" alt="Anemometro RITAE" />
-          </div>
-
-          <p>
-            No parametrizar la **Evapotranspiración (ET)** real de su parcela le obliga a regar según "sensaciones", lo que a menudo resulta en un déficit hídrico en momentos críticos de calor extremo o un exceso de riego que dispara el gasto energético. 
-            Además, la falta de control sobre los **niveles de depósitos y balsas** genera riesgos operativos de rotura de stock hídrico, comprometiendo la seguridad de su sistema de riego automatizado.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. SOLUCIÓN TÉCNICA -->
-    <section id="solucion" class="content-block grey-bg" data-index-section>
-      <div class="container narrow">
-        <div class="section-label">02. LA SOLUCIÓN</div>
-        <div class="manual-detail-box manual-detail-box--scroll-reveal">
-          <h2>Modelado de Balance Hídrico - Penman-Monteith IoT</h2>
-          <p>
-            Nuestras estaciones meteorológicas IoT no solo recolectan datos; ejecutan modelos matemáticos avanzados. 
-            Al integrar lecturas de velocidad del viento, radiación solar neta, temperatura y humedad relativa, calculamos la **ETp (Evapotranspiración de referencia)** siguiendo el estándar FAO-56 Penman-Monteith.
-          </p>
-
-          <!-- IMAGE MOSAIC 2 -->
-          <div class="image-mosaic">
-            <img src="/images/sensores/SensorNivelAgua.png" alt="Sensor Nivel Agua" />
-          </div>
-
-          <p>
-            Este dato es el "gasto" de su banco hídrico. Al restarlo de las aportaciones del suelo, obtenemos el **Balance Hídrico Real**, permitiendo reponer exactamente lo que el sistema suelo-planta-atmósfera ha perdido. 
-            Complementamos esto con sensores de **nivel hidrostático** de alta precisión para balsas y pozos, asegurando un control total del inventario de agua de la finca.
-          </p>
-          <div class="tech-grid">
-            <div class="tech-item feature-card">
-              <h3>Piranómetro Integrado</h3>
-              <p>Medición de radiación solar para el cálculo de demanda hídrica.</p>
+        <section id="problema" class="content-block" data-index-section>
+          <div class="container narrow">
+            <div class="section-label">
+              <span class="section-label__number">01.</span>
+              El problema
             </div>
-            <div class="tech-item feature-card">
-              <h3>Integrales Térmicas (GDD)</h3>
-              <p>Cálculo automático de grados-día para fenología.</p>
-            </div>
-            <div class="tech-item feature-card">
-              <h3>Conectividad LoRaWAN</h3>
-              <p>Datos en tiempo real sin cables ni dependencias de Wi-Fi.</p>
+
+            <div class="manual-detail-box manual-detail-box--problem-hover">
+              <h2>La incertidumbre climatica: el coste de no conocer su microclima</h2>
+              <p>
+                En la agricultura moderna, depender de estaciones meteorologicas
+                publicas situadas a varios kilometros de su finca es un error
+                estrategico. La orografia, la vegetacion cercana y la altitud
+                generan microclimas especificos donde las variables de
+                temperatura, humedad y radiacion pueden diferir
+                significativamente de las redes estatales.
+              </p>
+
+              <div class="image-mosaic image-mosaic--clima-pair">
+                <img src="/images/sensores/EstacionMeteorologica.png" alt="Estacion Meteorologica" />
+                <img src="/images/sensores/ritae-anemometer-3977718.jpg" alt="Anemometro RITAE" />
+              </div>
+
+              <p>
+                No parametrizar la Evapotranspiracion (ET) real de su parcela le
+                obliga a regar segun sensaciones, lo que a menudo resulta en un
+                deficit hidrico en momentos criticos de calor extremo o un exceso
+                de riego que dispara el gasto energetico. Ademas, la falta de
+                control sobre los niveles de depositos y balsas genera riesgos
+                operativos de rotura de stock hidrico, comprometiendo la
+                seguridad del sistema de riego automatizado.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- 3. ROI -->
-    <section id="roi" class="content-block" data-index-section>
-      <div class="container">
-        <div class="roi-box manual-detail-box roi-box--featured">
-          <div class="section-label">03. RETORNO DE INVERSIÓN (ROI)</div>
-          <h2>Optimización de Recursos y Logística</h2>
-          <div class="stats-grid">
-            <div class="stat-card stat-card--featured">
-              <span class="value">-20%</span>
-              <span class="label">Coste Energético</span>
-              <p>Reducción de bombeos innecesarios mediante ajuste por ETp.</p>
-            </div>
-            <div class="stat-card stat-card--featured stat-card--compact-value">
-              <span class="value">Precisión</span>
-              <span class="label">Previsión de Cosecha</span>
-              <p>Uso de integrales térmicas para organizar logística de personal.</p>
-            </div>
-            <div class="stat-card stat-card--featured stat-card--textual-value">
-              <span class="value">Seguridad</span>
-              <span class="label">Control Hidrostático</span>
-              <p>Prevención de daños en bombas por entrada de aire o niveles bajos.</p>
+        <section id="solucion" class="content-block grey-bg" data-index-section>
+          <div class="container">
+            <div class="manual-detail-box manual-detail-box--pulse-reveal">
+              <div class="section-label">
+                <span class="section-label__number">02.</span>
+                La solucion
+              </div>
+
+              <h2>Modelado de Balance Hidrico con criterio agronomico y dato continuo</h2>
+              <p>
+                Nuestras estaciones meteorologicas IoT no solo recolectan datos;
+                ejecutan modelos matematicos avanzados. Al integrar lecturas de
+                velocidad del viento, radiacion solar neta, temperatura y humedad
+                relativa, calculamos la ETp siguiendo el estandar FAO-56
+                Penman-Monteith.
+              </p>
+
+              <div class="image-mosaic image-mosaic--solution">
+                <img src="/images/sensores/SensorNivelAgua.png" alt="Sensor Nivel Agua" />
+              </div>
+
+              <p>
+                Este dato funciona como el gasto de su banco hidrico. Al restarlo
+                de las aportaciones del suelo, obtenemos el Balance Hidrico Real,
+                permitiendo reponer exactamente lo que el sistema
+                suelo-planta-atmosfera ha perdido. Complementamos este analisis
+                con sensores de nivel hidrostatico de alta precision para balsas
+                y pozos, asegurando un control total del inventario de agua de la
+                finca.
+              </p>
+
+              <div class="tech-grid">
+                <div class="tech-item feature-card">
+                  <h3>Piranometro Integrado</h3>
+                  <p>Medicion de radiacion solar para calcular la demanda hidrica real.</p>
+                </div>
+                <div class="tech-item feature-card">
+                  <h3>Integrales Termicas (GDD)</h3>
+                  <p>Calculo automatico de grados-dia para seguir fenologia y maduracion.</p>
+                </div>
+                <div class="tech-item feature-card">
+                  <h3>Conectividad LoRaWAN</h3>
+                  <p>Dato continuo en tiempo real sin cables ni dependencias de Wi-Fi.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- 4. INTERPRETACIÓN DE DATOS -->
-    <section id="inteligencia" class="content-block grey-bg" data-index-section>
-      <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact">
-          <div class="section-label">04. INTELIGENCIA DE DATOS</div>
-          <h2>Anticipándose al Clima - Horas-Frío y Alertas</h2>
-          <p>
-            Su estación meteorológica se convierte en un sistema de alerta temprana. Desde su smartphone podrá visualizar:
-          </p>
-          <div class="insight-cards">
-            <div class="insight-card feature-card">
-              <h3>Acumulación de Horas-Frío</h3>
-              <p>Clave para determinar la salida de latencia en frutales.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Alertas de Helada</h3>
-              <p>Notificaciones inmediatas basadas en temperatura de bulbo húmedo.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Riesgo de Plagas</h3>
-              <p>Algoritmos que cruzan humedad foliar y temperatura para predecir brotes criptogámicos.</p>
+        <section id="roi" class="content-block" data-index-section>
+          <div class="container">
+            <div class="roi-box manual-detail-box roi-box--featured">
+              <div class="section-label">
+                <span class="section-label__number">03.</span>
+                Retorno de inversion
+              </div>
+
+              <h2>Optimizacion de recursos y control logistico</h2>
+
+              <div class="stats-grid">
+                <div class="stat-card stat-card--featured">
+                  <span class="value">-20%</span>
+                  <span class="label">Coste Energetico</span>
+                  <p>Reduccion de bombeos innecesarios mediante ajuste fino por ETp.</p>
+                </div>
+
+                <div class="stat-card stat-card--featured stat-card--compact-value">
+                  <span class="value">Precision</span>
+                  <span class="label">Prevision de Cosecha</span>
+                  <p>Uso de integrales termicas para anticipar personal, recoleccion y ventanas de trabajo.</p>
+                </div>
+
+                <div class="stat-card stat-card--featured stat-card--textual-value">
+                  <span class="value">Seguridad</span>
+                  <span class="label">Control Hidrostatico</span>
+                  <p>Prevencion de danos en bombas por niveles bajos o entradas de aire en el sistema.</p>
+                </div>
+              </div>
             </div>
           </div>
-          <p>
-            Esta "inteligencia climática" le permite pasar de una agricultura reactiva a una **agricultura proactiva**, 
-            tomando decisiones de protección de cultivo o fertilización en el momento de máxima eficacia técnica.
-          </p>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- 5. IMPLEMENTACIÓN -->
-    <section id="implementacion" class="content-block grey-bg" data-index-section style="padding-bottom: 80px; padding-top: 70px;">
-      <div class="container narrow">
-        <div class="manual-detail-box manual-detail-box--compact">
-          <div class="section-label">05. IMPLEMENTACIÓN</div>
-          <h2>Configuración Estándar para Calidad de Datos</h2>
-          <p>
-            Una instalación profesional es crítica para garantizar la precisión de mediciones en el largo plazo. Nuestro protocolo sigue estándares meteorológicos internacionales:
-          </p>
-          <div class="insight-cards">
-            <div class="insight-card feature-card">
-              <h3>Ubicación sobre Suelo Natural</h3>
-              <p>Instalación sobre cubierta vegetal para evitar el calor radiado por hormigón o asfalto.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Nivelación del Piranómetro</h3>
-              <p>Asegurar que el sensor de radiación esté perfectamente horizontal para evitar errores en el balance hídrico.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Altura Normativa</h3>
-              <p>Sensores de temp/hum a 2 metros de altura para seguir estándares meteorológicos internacionales.</p>
-            </div>
-            <div class="insight-card feature-card">
-              <h3>Orientación del Anemómetro</h3>
-              <p>Alineación con el Norte geográfico para una correcta lectura de la dirección del viento dominante.</p>
+        <section id="inteligencia" class="content-block grey-bg" data-index-section>
+          <div class="container">
+            <div class="manual-detail-box manual-detail-box--pulse-reveal">
+              <div class="section-label">
+                <span class="section-label__number">04.</span>
+                Inteligencia de datos
+              </div>
+
+              <h2>Anticipandose al clima: horas-frio, heladas y riesgo biologico</h2>
+              <p>
+                Su estacion meteorologica se convierte en un sistema de alerta
+                temprana. Desde su smartphone podra visualizar:
+              </p>
+
+              <div class="insight-cards">
+                <div class="insight-card feature-card">
+                  <h3>Acumulacion de Horas-Frio</h3>
+                  <p>Clave para determinar la salida de latencia en frutales y ajustar decisiones fenologicas.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Alertas de Helada</h3>
+                  <p>Notificaciones inmediatas basadas en temperatura de bulbo humedo y riesgo real en parcela.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Riesgo de Plagas</h3>
+                  <p>Algoritmos que cruzan humedad foliar y temperatura para anticipar brotes criptogamicos.</p>
+                </div>
+              </div>
+
+              <p>
+                Esta inteligencia climatica le permite pasar de una agricultura
+                reactiva a una agricultura proactiva, tomando decisiones de
+                proteccion del cultivo o fertilizacion en el momento de maxima
+                eficacia tecnica.
+              </p>
             </div>
           </div>
-          <p>
-            Con estas verificaciones, los datos son comparables con otras estaciones y validables frente a auditorías técnicas.
-          </p>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- CTA FINAL -->
-    <section id="contacto" class="cta-section" data-index-section style="padding-top: 40px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="manual-detail-box">
-          <h2>¿Quiere dominar el microclima de su parcela?</h2>
-          <p>Hablemos sobre cómo instalar una red meteorológica inteligente en su explotación.</p>
-          <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
-        </div>
-      </div>
-    </section>
+        <section id="implementacion" class="content-block" data-index-section>
+          <div class="container narrow">
+            <div class="manual-detail-box manual-detail-box--compact manual-detail-box--radar-sweep">
+              <div class="section-label">
+                <span class="section-label__number">05.</span>
+                Implementacion
+              </div>
+
+              <h2>Configuracion estandar para que el dato sea fiable de verdad</h2>
+              <p>
+                Una instalacion profesional es critica para garantizar la
+                precision de las mediciones en el largo plazo. Nuestro protocolo
+                sigue estandares meteorologicos internacionales:
+              </p>
+
+              <div class="insight-cards">
+                <div class="insight-card feature-card">
+                  <h3>Ubicacion sobre Suelo Natural</h3>
+                  <p>Instalacion sobre cubierta vegetal para evitar el calor radiado por hormigon o asfalto.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Nivelacion del Piranometro</h3>
+                  <p>Asegura lecturas horizontales correctas y evita errores en el balance hidrico.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Altura Normativa</h3>
+                  <p>Sensores de temperatura y humedad a 2 metros para seguir estandares internacionales.</p>
+                </div>
+                <div class="insight-card feature-card">
+                  <h3>Orientacion del Anemometro</h3>
+                  <p>Alineacion con el Norte geografico para leer bien la direccion del viento dominante.</p>
+                </div>
+              </div>
+
+              <p>
+                Con estas verificaciones, los datos son comparables con otras
+                estaciones y validables frente a auditorias tecnicas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contacto" class="cta-section" data-index-section>
+          <div class="container">
+            <div class="manual-detail-box cta-box">
+              <div class="section-label">
+                <span class="section-label__number">Contacto</span>
+                Siguiente paso
+              </div>
+              <h2>Quiere dominar el microclima de su parcela?</h2>
+              <p>Hablemos sobre como instalar una red meteorologica inteligente en su explotacion.</p>
+              <a href="/contacto" class="btn-giant">Solicitar Presupuesto Personalizado</a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </main>
@@ -198,7 +288,9 @@ const sensorIndexItems = [
 
 <style>
   .landing-expert {
-    background: #FFFFFF;
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 154, 0.06), transparent 18%),
+      linear-gradient(180deg, #f5faf8 0%, #ffffff 16%, #ffffff 100%);
     color: var(--color-charcoal);
   }
 
@@ -208,371 +300,361 @@ const sensorIndexItems = [
   }
 
   .container.narrow {
-    max-width: 800px;
+    max-width: 860px;
   }
 
-  /* NEW SOLID HERO */
   .expert-hero-solid {
-    padding: 20px 0 12px !important;
-    background: #0B1A14 !important;
-    color: #FFFFFF !important;
+    padding: 26px 0 28px !important;
+    background:
+      radial-gradient(circle at 16% 20%, rgba(29, 185, 154, 0.18), transparent 18%),
+      radial-gradient(circle at 82% 18%, rgba(125, 211, 252, 0.12), transparent 16%),
+      linear-gradient(180deg, #0b1a14 0%, #10241c 100%) !important;
+    color: #ffffff !important;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .pre-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.4em;
-    color: rgba(255,255,255,0.7);
-    display: block;
-    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
     text-transform: uppercase;
   }
 
   .expert-hero-solid h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.7rem, 6vw, 4.4rem);
     font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
+    line-height: 1.02;
+    margin-bottom: 18px;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    max-width: 11ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .expert-hero-solid p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto;
-    color: rgba(255,255,255,0.9);
+    font-size: 1.08rem;
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .hero-signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+  }
+
+  .hero-signal-card {
+    padding: 18px 20px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(10px);
+    text-align: left;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
+  }
+
+  .hero-signal-card strong {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    color: #ffffff;
+  }
+
+  .hero-signal-card span {
+    display: block;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.95rem;
     line-height: 1.6;
   }
 
-  /* IMAGE MOSAICS */
-  .image-mosaic {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin: 60px 0;
+  .page-intro-strip {
+    padding: 24px 0 10px;
   }
 
-  .image-mosaic.triple {
-    grid-template-columns: 1fr 1fr 1fr;
+  .page-intro-strip__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 28px;
+    padding: 30px 32px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 24px 54px -36px rgba(15, 23, 42, 0.18);
+  }
+
+  .page-kicker {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(29, 185, 154, 0.1);
+    color: var(--color-turquoise-dark);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .page-intro-strip__copy h2 {
+    margin: 14px 0 16px;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    line-height: 1.04;
+  }
+
+  .page-intro-strip__copy p {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .page-intro-strip__steps {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+
+  .page-intro-strip__steps span {
+    display: block;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: #f8fbfa;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    color: var(--color-slate-800);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .grey-bg {
+    background: transparent;
+  }
+
+  .content-block {
+    padding: 58px 0;
+  }
+
+  #problema.content-block {
+    padding-top: 28px;
+    padding-bottom: 44px;
+  }
+
+  #solucion.content-block,
+  #inteligencia.content-block {
+    padding-top: 12px;
+    padding-bottom: 44px;
+  }
+
+  #implementacion.content-block {
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--color-slate-700);
+    background: rgba(15, 23, 42, 0.05);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .section-label__number {
+    letter-spacing: 0;
+    margin-right: 2px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    color: var(--color-slate-900);
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.78;
+    margin-bottom: 20px;
+    color: var(--color-slate-700);
+  }
+
+  .manual-detail-box {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fbfa 100%);
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 24px 56px -40px rgba(15, 23, 42, 0.16);
+  }
+
+  .manual-detail-box--problem-hover,
+  .manual-detail-box--pulse-reveal,
+  .manual-detail-box--radar-sweep {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .manual-detail-box--problem-hover::before,
+  .manual-detail-box--pulse-reveal::before,
+  .manual-detail-box--radar-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  .manual-detail-box--problem-hover::before {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(125, 211, 252, 0.16), transparent 30%),
+      linear-gradient(135deg, rgba(29, 185, 154, 0.08), transparent 56%);
+  }
+
+  .manual-detail-box--pulse-reveal::before {
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 154, 0.12), transparent 34%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.68), transparent 55%);
+  }
+
+  .manual-detail-box--radar-sweep::before {
+    background:
+      linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 35%,
+        rgba(29, 185, 154, 0.14) 48%,
+        rgba(255, 255, 255, 0.45) 52%,
+        rgba(29, 185, 154, 0.12) 56%,
+        transparent 72%,
+        transparent 100%
+      );
+    transform: translateX(-120%);
+    transition:
+      opacity 0.45s ease,
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .manual-detail-box--problem-hover:hover,
+  .manual-detail-box--pulse-reveal:hover,
+  .manual-detail-box--radar-sweep:hover {
+    transform: translateY(-8px);
+    border-color: rgba(29, 185, 154, 0.28);
+    box-shadow: 0 32px 70px -42px rgba(15, 23, 42, 0.24);
+  }
+
+  .manual-detail-box--problem-hover:hover::before,
+  .manual-detail-box--pulse-reveal:hover::before {
+    opacity: 1;
+  }
+
+  .manual-detail-box--radar-sweep:hover::before {
+    opacity: 1;
+    transform: translateX(120%);
+  }
+
+  .image-mosaic {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 24px 0 18px;
   }
 
   .image-mosaic img {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
-    background: var(--color-gray-50);
-    border-radius: 20px;
-    border: 1px solid var(--color-gray-100);
-    padding: 24px;
-    transition: transform 0.3s ease;
+    background: #f7faf9;
+    border-radius: 22px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    padding: 20px;
   }
 
-  .image-mosaic > img:only-child {
+  .image-mosaic--clima-pair {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .image-mosaic--solution > img:only-child {
     grid-column: 1 / -1;
     justify-self: center;
-    width: min(100%, 620px);
-  }
-
-  /* BLOCKS */
-  .content-block {
-    padding: 140px 0;
-  }
-
-  #problema.content-block {
-    padding-top: 32px;
-    padding-bottom: 72px;
-  }
-
-  #inteligencia.content-block {
-    padding-bottom: 72px;
-  }
-
-  #problema .section-label {
-    margin-bottom: 16px;
-  }
-
-  #problema h2 {
-    margin-bottom: 20px;
-  }
-
-  #problema p {
-    margin-bottom: 20px;
-  }
-
-  #problema .image-mosaic {
-    gap: 24px;
-    margin: 28px 0;
-  }
-
-  #problema .image-mosaic--clima-pair {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    align-items: stretch;
-  }
-
-  #problema .manual-detail-box {
-    padding: 28px;
-  }
-
-  #problema .image-mosaic > img:only-child,
-  #solucion .image-mosaic > img:only-child {
-    width: min(100%, 420px);
+    width: min(100%, 360px);
     aspect-ratio: 1 / 1;
-    padding: 16px;
+    padding: 14px;
   }
 
-  #problema .image-mosaic > img:only-child {
-    width: min(100%, 340px);
-    padding: 12px;
-  }
-
-  #solucion .manual-detail-box--scroll-reveal {
-    padding: 28px;
-  }
-
-  #solucion .manual-detail-box--scroll-reveal h2,
-  #roi .roi-box h2 {
-    margin-bottom: 20px;
-  }
-
-  #solucion .manual-detail-box--scroll-reveal > p,
-  #roi .roi-box > p {
-    margin-bottom: 18px;
-  }
-
-  #solucion .image-mosaic {
-    gap: 24px;
-    margin: 24px 0 18px;
-  }
-
-  .grey-bg { background: #FFFFFF; }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    color: var(--color-slate-700);
-    opacity: 0.6;
-    margin-bottom: 32px;
-    display: block;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 40px;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    color: var(--color-slate-900);
-  }
-
-  p {
-    font-size: 1.15rem;
-    line-height: 1.75;
-    margin-bottom: 32px;
-    color: var(--color-slate-700);
-  }
-
-  .manual-detail-box {
-    background: #f8f9fa;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #e9ecef;
-  }
-
-  .manual-detail-box--cuaderno {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
-      #f3f4f6;
-    border-color: #dfe5ea;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-    animation: cuadernoReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
-  }
-
-  @keyframes cuadernoReveal {
-    0% {
-      opacity: 0;
-      transform: translateY(40px) scale(0.95);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 0 0 rgba(29, 185, 154, 0);
-    }
-    50% {
-      opacity: 0.85;
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 24px rgba(29, 185, 154, 0.08);
-    }
-  }
-
-  @keyframes solucionBoxReveal {
-    0% {
-      opacity: 0;
-      transform: perspective(1200px) rotateX(8deg) translateY(34px) scale(0.965);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 10px rgba(15, 23, 42, 0.03);
-      filter: blur(6px);
-    }
-    58% {
-      opacity: 1;
-      transform: perspective(1200px) rotateX(-1deg) translateY(-3px) scale(1.008);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 18px 38px rgba(29, 185, 154, 0.08);
-      filter: blur(0);
-    }
-    100% {
-      opacity: 1;
-      transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 32px rgba(29, 185, 154, 0.06);
-      filter: blur(0);
-    }
-  }
-
-  @keyframes solucionBoxSheen {
-    0% {
-      left: -24%;
-      opacity: 0;
-    }
-    25% {
-      opacity: 0.9;
-    }
-    100% {
-      left: 118%;
-      opacity: 0;
-    }
-  }
-
-  #solucion .manual-detail-box--scroll-reveal {
-    opacity: 0;
-    transform: perspective(1200px) rotateX(8deg) translateY(34px) scale(0.965);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 12px 32px rgba(29, 185, 154, 0.06);
-    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-    will-change: transform, opacity, filter;
-  }
-
-  #solucion .manual-detail-box--scroll-reveal::before {
-    content: '';
-    position: absolute;
-    inset: -20% auto -20% -24%;
-    width: 32%;
-    background: linear-gradient(90deg, transparent 0%, rgba(29, 185, 154, 0.06) 35%, rgba(255, 255, 255, 0.7) 50%, rgba(29, 185, 154, 0.08) 65%, transparent 100%);
-    transform: rotate(10deg);
-    pointer-events: none;
-    opacity: 0;
-  }
-
-  #solucion .manual-detail-box--scroll-reveal.is-visible {
-    animation: solucionBoxReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  #solucion .manual-detail-box--scroll-reveal.is-visible::before {
-    animation: solucionBoxSheen 1.8s ease-out 0.45s both;
-  }
-
-  /* TECH GRID */
   .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 48px;
-    margin-top: 80px;
-  }
-
-  #solucion .tech-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
     margin-top: 24px;
   }
 
-  .tech-item h3 {
-    font-weight: 700;
-    margin-bottom: 16px;
-    font-size: 1.3rem;
-    color: var(--color-slate-900);
-    letter-spacing: -0.01em;
-  }
-
-  .tech-item p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  .tech-item.feature-card {
+  .tech-item.feature-card,
+  .insight-card {
     background: #ffffff;
-    border: 1px solid #e9ecef;
+    border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 20px;
-    padding: 32px 28px;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    padding: 22px 22px 20px;
+    box-shadow: 0 18px 42px -34px rgba(15, 23, 42, 0.18);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
   }
 
-  #solucion .tech-item.feature-card {
-    padding: 20px 18px;
-    border-radius: 18px;
-    background:
-      radial-gradient(circle at top right, rgba(191, 145, 87, 0.18), transparent 42%),
-      linear-gradient(180deg, rgba(255, 250, 245, 0.98), rgba(247, 241, 234, 0.98));
-    border: 1px solid rgba(168, 118, 64, 0.24);
-    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
-    position: relative;
-    overflow: hidden;
+  .tech-item.feature-card:hover,
+  .insight-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(29, 185, 154, 0.24);
+    box-shadow: 0 26px 48px -34px rgba(15, 23, 42, 0.2);
   }
 
-  #solucion .tech-item.feature-card::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 4px;
-    background: linear-gradient(180deg, #a87640 0%, #d1a06a 100%);
-  }
-
-  #solucion .tech-item.feature-card::after {
-    content: "";
-    position: absolute;
-    inset: auto -10% -35% auto;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, rgba(168, 118, 64, 0.14), transparent 68%);
-    pointer-events: none;
-  }
-
-  .tech-item.feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
-    border-color: rgba(29, 185, 154, 0.35);
-  }
-
-  #solucion .tech-item.feature-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.1);
-    border-color: rgba(168, 118, 64, 0.38);
-  }
-
-  #solucion .tech-item h3 {
-    margin-bottom: 10px;
-    padding-left: 12px;
+  .tech-item h3,
+  .insight-card h3 {
+    margin: 0 0 10px;
     font-size: 1.08rem;
     line-height: 1.3;
-    color: #5f3d1f;
+    color: var(--color-slate-900);
   }
 
-  #solucion .tech-item p {
+  .tech-item p,
+  .insight-card p {
     margin: 0;
-    padding-left: 12px;
-    font-size: 0.95rem;
-    line-height: 1.55;
-    color: #6f5a46;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: var(--color-slate-700);
   }
 
-  /* ROI BOX */
   .roi-box {
-    background: #FFFFFF;
-    padding: 100px 80px;
-    border-radius: 40px;
-    color: var(--color-charcoal);
-    border: 1px solid var(--color-gray-100);
-    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.05);
+    padding: 38px 30px;
   }
 
   .roi-box--featured {
@@ -580,13 +662,9 @@ const sensorIndexItems = [
       radial-gradient(circle at top right, rgba(125, 211, 252, 0.18), transparent 28%),
       linear-gradient(135deg, rgba(29, 185, 154, 0.08), rgba(255, 255, 255, 0.96) 38%);
     border: 1px solid rgba(29, 185, 154, 0.28);
-    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.10);
+    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.1);
     position: relative;
     overflow: hidden;
-  }
-
-  #roi .roi-box {
-    padding: 40px 28px;
   }
 
   .roi-box--featured::before {
@@ -597,32 +675,21 @@ const sensorIndexItems = [
     background: linear-gradient(90deg, #1db99a 0%, #7dd3fc 100%);
   }
 
-  .roi-box h2 { color: var(--color-slate-900); }
-
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 64px;
-    margin-top: 80px;
-  }
-
-  #roi .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     margin-top: 28px;
   }
 
   .stat-card--featured {
     background: #ffffff;
-    border: 1px solid rgba(29, 185, 154, 0.24);
+    border: 1px solid rgba(29, 185, 154, 0.22);
     border-radius: 24px;
-    padding: 32px 28px;
+    padding: 24px 22px;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
     position: relative;
     overflow: hidden;
-  }
-
-  #roi .stat-card--featured {
-    padding: 24px 22px;
   }
 
   .stat-card--featured::before {
@@ -634,76 +701,34 @@ const sensorIndexItems = [
   }
 
   .stat-card .value {
-    font-size: 4rem;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 3.1rem;
+    line-height: 1;
     font-weight: 800;
     color: var(--color-slate-900);
-    display: block;
-    line-height: 1;
-    margin-bottom: 16px;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
   }
 
-  #roi .stat-card .value {
-    margin-bottom: 10px;
-  }
-
-  .stat-card--compact-value .value {
-    font-size: 1.7rem;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-
+  .stat-card--compact-value .value,
   .stat-card--textual-value .value {
-    font-size: 2rem;
+    font-size: 1.9rem;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.08;
   }
 
   .stat-card .label {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 24px;
     display: block;
+    margin-bottom: 14px;
+    font-size: 1.02rem;
+    font-weight: 700;
     color: var(--color-slate-800);
   }
 
-  #roi .stat-card .label {
-    margin-bottom: 14px;
-  }
-
   .stat-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  /* LISTS */
-  .benefit-list, .step-list {
-    margin: 64px 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .benefit-list li, .step-list li {
-    font-size: 1.15rem;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--color-gray-100);
-    color: var(--color-slate-700);
-  }
-
-  .manual-detail-box--compact {
-    padding: 32px;
-  }
-
-  .manual-detail-box--compact h2 {
-    margin-bottom: 20px;
-  }
-
-  .manual-detail-box--compact > p {
-    margin-bottom: 18px;
-  }
-
-  .manual-detail-box--compact > p:last-child {
-    margin-bottom: 0;
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.65;
   }
 
   .insight-cards {
@@ -712,379 +737,107 @@ const sensorIndexItems = [
     margin: 24px 0 20px;
   }
 
-  .insight-card {
-    background: #ffffff;
-    border: 1px solid rgba(29, 185, 154, 0.18);
-    border-radius: 18px;
-    padding: 22px 24px;
-    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
-  }
-
-  .insight-card h3 {
-    margin: 0 0 14px;
-    padding-bottom: 16px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--color-slate-900);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    border-bottom: 1px solid rgba(29, 185, 154, 0.16);
-  }
-
-  .insight-card h3::after {
-    content: "i";
-    width: 28px;
-    height: 28px;
-    border-radius: 999px;
-    background: rgba(29, 185, 154, 0.12);
-    color: var(--color-turquoise-dark);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    font-weight: 800;
-    flex-shrink: 0;
-  }
-
-  .insight-card p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--color-slate-700);
-    text-align: left;
-  }
-
-  /* Animación especial para la tarjeta de Horas-Frío */
-  .insight-card:first-child {
-    animation: horasFrioGlow 2s ease-in-out infinite alternate;
-    position: relative;
-  }
-
-  .insight-card:first-child::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(29, 185, 154, 0.3), rgba(29, 185, 154, 0.1), rgba(29, 185, 154, 0.3));
-    border-radius: 20px;
-    z-index: -1;
-    animation: horasFrioBorderGlow 3s ease-in-out infinite;
-  }
-
-  @keyframes horasFrioGlow {
-    0% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 20px rgba(29, 185, 154, 0.1);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 30px rgba(29, 185, 154, 0.15);
-      transform: scale(1.02);
-    }
-  }
-
-  @keyframes horasFrioBorderGlow {
-    0%, 100% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.6;
-      transform: scale(1.01);
-    }
-  }
-
-  .insight-card:first-child:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.1), 0 0 40px rgba(29, 185, 154, 0.2);
-    animation-play-state: paused;
-  }
-
-  /* Animación para Alertas de Helada - Efecto congelación */
-  .insight-card:nth-child(2) {
-    animation: heladaFrost 3s ease-in-out infinite alternate;
-    position: relative;
-  }
-
-  .insight-card:nth-child(2)::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background: linear-gradient(135deg, rgba(135, 206, 235, 0.4), rgba(70, 130, 180, 0.2), rgba(135, 206, 235, 0.4));
-    border-radius: 19px;
-    z-index: -1;
-    animation: heladaBorderPulse 4s ease-in-out infinite;
-  }
-
-  @keyframes heladaFrost {
-    0% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 15px rgba(135, 206, 235, 0.08);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08), 0 0 25px rgba(135, 206, 235, 0.12);
-      transform: scale(1.01);
-    }
-  }
-
-  @keyframes heladaBorderPulse {
-    0%, 100% { opacity: 0.2; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.005); }
-  }
-
-  /* Animación para Riesgo de Plagas - Efecto advertencia */
-  .insight-card:nth-child(3) {
-    animation: plagasWarning 2.5s ease-in-out infinite alternate;
-    position: relative;
-  }
-
-  .insight-card:nth-child(3)::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background: linear-gradient(45deg, rgba(255, 140, 0, 0.3), rgba(255, 69, 0, 0.15), rgba(255, 140, 0, 0.3));
-    border-radius: 19px;
-    z-index: -1;
-    animation: plagasBorderAlert 3.5s ease-in-out infinite;
-  }
-
-  @keyframes plagasWarning {
-    0% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 12px rgba(255, 140, 0, 0.06);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 20px rgba(255, 140, 0, 0.1);
-      transform: scale(1.015);
-    }
-  }
-
-  @keyframes plagasBorderAlert {
-    0%, 100% { opacity: 0.15; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.008); }
-  }
-
-  /* Animación para Nivelación del Piranómetro - Efecto balance */
-  .insight-cards:nth-of-type(2) .insight-card:nth-child(2) {
-    animation: piranometroBalance 4s ease-in-out infinite;
-    position: relative;
-  }
-
-  .insight-cards:nth-of-type(2) .insight-card:nth-child(2)::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background: linear-gradient(90deg, rgba(255, 215, 0, 0.25), rgba(218, 165, 32, 0.15), rgba(255, 215, 0, 0.25));
-    border-radius: 19px;
-    z-index: -1;
-    animation: piranometroBorderBalance 5s ease-in-out infinite;
-  }
-
-  @keyframes piranometroBalance {
-    0%, 100% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 10px rgba(255, 215, 0, 0.05);
-      transform: scale(1) rotate(0deg);
-    }
-    25% {
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 15px rgba(255, 215, 0, 0.08);
-      transform: scale(1.005) rotate(0.5deg);
-    }
-    50% {
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 18px rgba(255, 215, 0, 0.1);
-      transform: scale(1.01) rotate(0deg);
-    }
-    75% {
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.07), 0 0 15px rgba(255, 215, 0, 0.08);
-      transform: scale(1.005) rotate(-0.5deg);
-    }
-  }
-
-  @keyframes piranometroBorderBalance {
-    0%, 100% { opacity: 0.15; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(1.003); }
-  }
-
-  /* Animación para Altura Normativa - Efecto elevación */
-  .insight-cards:nth-of-type(2) .insight-card:nth-child(3) {
-    animation: alturaElevation 3.5s ease-in-out infinite alternate;
-    position: relative;
-  }
-
-  .insight-cards:nth-of-type(2) .insight-card:nth-child(3)::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background: linear-gradient(180deg, rgba(34, 197, 94, 0.3), rgba(22, 163, 74, 0.15), rgba(34, 197, 94, 0.3));
-    border-radius: 19px;
-    z-index: -1;
-    animation: alturaBorderRise 4.5s ease-in-out infinite;
-  }
-
-  @keyframes alturaElevation {
-    0% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 8px rgba(34, 197, 94, 0.04);
-      transform: scale(1) translateY(0);
-    }
-    100% {
-      box-shadow: 0 22px 44px rgba(15, 23, 42, 0.08), 0 0 16px rgba(34, 197, 94, 0.08);
-      transform: scale(1.008) translateY(-1px);
-    }
-  }
-
-  @keyframes alturaBorderRise {
-    0%, 100% { opacity: 0.15; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.006); }
-  }
-
-  /* Animación para Orientación del Anemómetro - Efecto estático pulso */
-  .insight-cards:nth-of-type(2) .insight-card:nth-child(4) {
-    animation: anemometroPulse 3s ease-in-out infinite alternate;
-    position: relative;
-  }
-
-  .insight-cards:nth-of-type(2) .insight-card:nth-child(4)::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background: linear-gradient(45deg, rgba(147, 51, 234, 0.25), rgba(124, 58, 237, 0.15), rgba(147, 51, 234, 0.25));
-    border-radius: 19px;
-    z-index: -1;
-    animation: anemometroBorderPulse 4s ease-in-out infinite alternate;
-  }
-
-  @keyframes anemometroPulse {
-    0% {
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06), 0 0 12px rgba(147, 51, 234, 0.06);
-      transform: scale(1);
-    }
-    100% {
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08), 0 0 18px rgba(147, 51, 234, 0.1);
-      transform: scale(1.005);
-    }
-  }
-
-  @keyframes anemometroBorderPulse {
-    0%, 100% { opacity: 0.15; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(1.002); }
-  }
-
-  .content-block + .content-block {
-    padding-top: 60px;
-  }
-
-  /* CTA */
   .cta-section {
-    padding: 180px 0;
+    padding: 24px 0 72px;
+  }
+
+  .cta-box {
     text-align: center;
-    background: #FFF;
-    border-top: 1px solid var(--color-gray-100);
+    background:
+      radial-gradient(circle at top center, rgba(29, 185, 154, 0.14), transparent 26%),
+      linear-gradient(180deg, #ffffff 0%, #f8fbfa 100%);
+  }
+
+  .cta-box h2 {
+    max-width: 12ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-box p {
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .btn-giant {
     display: inline-block;
     background: var(--color-turquoise);
-    color: #FFF;
-    padding: 24px 56px;
-    font-size: 1rem;
-    font-weight: 700;
+    color: #0b1a14;
+    padding: 18px 36px;
+    font-size: 0.98rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    border-radius: 14px;
+    letter-spacing: 0.12em;
+    border-radius: 999px;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 10px 25px -5px rgba(15, 181, 174, 0.3);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 14px 28px rgba(29, 185, 154, 0.24);
+    border: 2px solid transparent;
   }
 
   a.btn-giant:hover {
-    color: #FFF !important;
+    color: #0b1a14 !important;
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.08);
     transform: translateY(-3px);
-    background: var(--color-turquoise-dark);
-    box-shadow: 0 20px 40px -10px rgba(15, 181, 174, 0.4);
+    box-shadow: 0 22px 40px rgba(15, 23, 42, 0.14);
+  }
+
+  @media (max-width: 1100px) {
+    .hero-signal-grid,
+    .tech-grid,
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-intro-strip__panel {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 900px) {
-    .image-mosaic { grid-template-columns: 1fr; }
-    .image-mosaic.triple { grid-template-columns: 1fr; }
-    .roi-box { padding: 60px 40px; }
-    h2 { font-size: 2.1rem; }
-    .expert-hero-solid h1 { font-size: 2.5rem; }
-    .content-block { padding: 100px 0; }
-
-    #problema .image-mosaic > img:only-child,
-    #solucion .image-mosaic > img:only-child {
-      width: min(100%, 320px);
-      padding: 12px;
+    .image-mosaic,
+    .image-mosaic--clima-pair {
+      grid-template-columns: 1fr;
     }
 
-    #problema .image-mosaic > img:only-child {
-      width: min(100%, 260px);
-      padding: 10px;
+    .content-block {
+      padding: 48px 0;
     }
   }
 
   @media (max-width: 768px) {
-    .expert-hero-solid { padding: 16px 0 10px !important; }
-    .image-mosaic { grid-template-columns: 1fr; gap: 24px; }
-    .image-mosaic img { aspect-ratio: 16 / 9; }
-    .manual-detail-box {
-      padding: 24px;
-      border-radius: 8px;
+    .expert-hero-solid {
+      padding: 20px 0 24px !important;
     }
-    .tech-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
+
+    .expert-hero-solid h1 {
+      max-width: none;
+    }
+
+    .page-intro-strip {
+      padding-top: 18px;
+    }
+
+    .page-intro-strip__panel,
+    .manual-detail-box,
+    .roi-box {
+      padding: 24px;
+      border-radius: 22px;
+    }
+
+    .hero-signal-card,
+    .tech-item.feature-card,
+    .insight-card,
+    .stat-card--featured {
+      text-align: left !important;
+      align-items: flex-start !important;
+    }
+
+    .btn-giant {
+      width: 100%;
+      text-align: center;
     }
   }
 </style>
-
-<script>
-  const initSolutionReveal = () => {
-    const solutionBox = document.querySelector('#solucion .manual-detail-box--scroll-reveal');
-    if (!solutionBox || solutionBox.classList.contains('is-visible') || solutionBox.dataset.revealReady === 'true') return;
-    solutionBox.dataset.revealReady = 'true';
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          entry.target.dataset.revealReady = 'done';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.2,
-      rootMargin: '0px 0px -10% 0px'
-    });
-
-    observer.observe(solutionBox);
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSolutionReveal, { once: true });
-  } else {
-    initSolutionReveal();
-  }
-
-  document.addEventListener('astro:page-load', initSolutionReveal);
-</script>
-
-
-
