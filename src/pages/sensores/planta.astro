@@ -13,28 +13,27 @@ const sensorIndexItems = [
 ---
 
 <Layout title="Fisiologia de Planta | Dendrometria y Salud Foliar">
-  <main class="landing-expert">
-    <section class="expert-hero-solid">
-      <div class="container">
-        <span class="pre-title">Sensores de planta</span>
-        <h1>Fisiologia de Planta <br />Escuchando el Metabolismo Cultivado</h1>
-        <p>
-          Analisis de variaciones micrometricas (MDS) y termometria infrarroja
-          para una gestion de precision.
-        </p>
+  <main class="landing-expert" data-sensor-page="planta">
+    <section class="page-hero page-hero--solutions page-hero--mosaic hero-sensores-offset">
+      <div class="container page-hero__container">
+        <div class="hero-mosaic">
+          <div class="hero-mosaic__content">
+            <span class="hero-mosaic__eyebrow">Sensores de planta</span>
+            <h1>Fisiologia de Planta <br />Escuchando el Metabolismo Cultivado</h1>
+            <div class="hero-mosaic__desc-row">
+              <p>
+                Analisis de variaciones micrometricas (MDS) y termometria infrarroja
+                para una gestion de precision.
+              </p>
+              <a href="#contacto" class="btn btn--turquoise hero-cta">
+                Solicitar Presupuesto Personalizado
+              </a>
+            </div>
+          </div>
 
-        <div class="hero-signal-grid">
-          <div class="hero-signal-card">
-            <strong>Estres hidrico</strong>
-            <span>Detecta el problema antes de que la hoja o el fruto lo hagan visible.</span>
-          </div>
-          <div class="hero-signal-card">
-            <strong>Dendrometria</strong>
-            <span>Mide el pulso fisiologico real del cultivo con precision micrometrica.</span>
-          </div>
-          <div class="hero-signal-card">
-            <strong>Decision agronomica</strong>
-            <span>Convierte la lectura de planta en riego, calidad y uniformidad productiva.</span>
+          <div class="hero-mosaic__images">
+            <div class="m-img m-img--1" style="background-image: url('/images/sensores/DendometroTronco.png')"></div>
+            <div class="m-img m-img--2" style="background-image: url('/images/sensores/dendometroFruto2.png')"></div>
           </div>
         </div>
       </div>
@@ -275,85 +274,128 @@ const sensorIndexItems = [
     max-width: 860px;
   }
 
-  .expert-hero-solid {
-    padding: 26px 0 28px !important;
+  .page-hero.hero-sensores-offset {
+    position: relative;
+    min-height: 400px;
+    padding-top: 10px !important;
+    padding-bottom: 22px !important;
+    overflow: hidden;
     background:
       radial-gradient(circle at 16% 20%, rgba(29, 185, 154, 0.18), transparent 18%),
       radial-gradient(circle at 82% 18%, rgba(125, 211, 252, 0.12), transparent 16%),
-      linear-gradient(180deg, #0b1a14 0%, #10241c 100%) !important;
-    color: #ffffff !important;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+      linear-gradient(180deg, #0b1a14 0%, #10241c 100%);
   }
 
-  .pre-title {
+  .page-hero.hero-sensores-offset::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 24%, rgba(29, 185, 154, 0.12), transparent 24%),
+      linear-gradient(90deg, rgba(7, 16, 13, 0.28) 0%, rgba(7, 16, 13, 0.08) 45%, rgba(7, 16, 13, 0.32) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-sensores-offset .page-hero__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-sensores-offset .hero-mosaic {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 42px;
+    align-items: center;
+  }
+
+  .hero-sensores-offset .hero-mosaic__content {
+    padding: 26px 28px 24px;
+    border-radius: 30px;
+    background: rgba(7, 16, 13, 0.34);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 28px 76px -40px rgba(0, 0, 0, 0.34);
+  }
+
+  .hero-mosaic__eyebrow {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 8px 14px;
+    margin-bottom: 18px;
+    padding: 7px 12px;
     border-radius: 999px;
+    background: rgba(29, 185, 154, 0.14);
+    border: 1px solid rgba(29, 185, 154, 0.24);
+    color: #bff3e8;
     font-size: 0.74rem;
     font-weight: 800;
-    letter-spacing: 0.18em;
-    color: rgba(255, 255, 255, 0.86);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 20px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 
-  .expert-hero-solid h1 {
-    font-size: clamp(2.7rem, 6vw, 4.4rem);
-    font-weight: 800;
-    line-height: 1.02;
-    margin-bottom: 18px;
-    letter-spacing: -0.05em;
-    color: #ffffff;
+  .hero-sensores-offset .hero-mosaic h1 {
+    margin-bottom: 14px;
     max-width: 11ch;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    color: #ffffff !important;
   }
 
-  .expert-hero-solid p {
-    font-size: 1.08rem;
-    max-width: 760px;
-    margin: 0 auto 28px;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 400;
-    line-height: 1.8;
-  }
-
-  .hero-signal-grid {
+  .hero-sensores-offset .hero-mosaic__desc-row {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .hero-sensores-offset .hero-mosaic__desc-row p {
+    margin: 0 !important;
+    max-width: 54ch;
+    font-size: 1.06rem;
+    line-height: 1.76;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .hero-sensores-offset .hero-cta {
+    justify-self: start;
+    margin: 0 !important;
+    padding: 13px 24px;
+    border-radius: 16px;
+  }
+
+  .hero-sensores-offset .hero-mosaic__images {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
     gap: 18px;
-    margin-top: 10px;
+    min-height: 320px;
   }
 
-  .hero-signal-card {
-    padding: 18px 20px;
-    border-radius: 22px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(10px);
-    text-align: left;
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
+  .hero-sensores-offset .m-img {
+    min-height: 320px;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 70px -40px rgba(0, 0, 0, 0.45);
+    position: relative;
   }
 
-  .hero-signal-card strong {
-    display: block;
-    margin-bottom: 8px;
-    font-family: var(--font-display);
-    font-size: 1.02rem;
-    color: #ffffff;
+  .hero-sensores-offset .m-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(11, 26, 20, 0.02) 0%, rgba(11, 26, 20, 0.26) 100%);
   }
 
-  .hero-signal-card span {
-    display: block;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 0.95rem;
-    line-height: 1.6;
+  .hero-sensores-offset .m-img--1 {
+    transform: translateY(16px);
+  }
+
+  .hero-sensores-offset .m-img--2 {
+    transform: translateY(44px);
+    min-height: 260px;
   }
 
   .page-intro-strip {
@@ -748,17 +790,28 @@ const sensorIndexItems = [
   }
 
   @media (max-width: 1100px) {
+    .hero-sensores-offset .hero-mosaic {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-sensores-offset .hero-mosaic__images {
+      grid-template-columns: 1fr 1fr;
+      min-height: auto;
+    }
+
+    .hero-sensores-offset .m-img,
+    .hero-sensores-offset .m-img--2 {
+      min-height: 240px;
+      transform: none;
+    }
+
     .page-intro-strip__panel {
       grid-template-columns: 1fr;
     }
   }
 
   @media (max-width: 900px) {
-    .hero-signal-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .expert-hero-solid h1 {
+    .hero-sensores-offset .hero-mosaic h1 {
       font-size: 2.7rem;
       max-width: none;
     }
@@ -773,20 +826,22 @@ const sensorIndexItems = [
   }
 
   @media (max-width: 768px) {
-    .expert-hero-solid {
-      padding: 18px 0 22px !important;
-    }
-
-    .expert-hero-solid p {
-      margin-bottom: 22px;
-    }
-
-    .hero-signal-card {
-      text-align: center;
+    .page-hero.hero-sensores-offset {
+      padding-top: 8px !important;
+      padding-bottom: 16px !important;
     }
 
     .page-intro-strip {
       padding-top: 18px;
+    }
+
+    .hero-sensores-offset .hero-mosaic__content {
+      padding: 22px 20px;
+      border-radius: 22px;
+    }
+
+    .hero-sensores-offset .hero-mosaic__images {
+      grid-template-columns: 1fr;
     }
 
     .page-intro-strip__panel {
@@ -814,3 +869,14 @@ const sensorIndexItems = [
     }
   }
 </style>
+
+<script>
+  const initPlantSensorPage = () => {
+    const page = document.querySelector('[data-sensor-page="planta"]');
+    if (!page) return;
+    page.setAttribute("data-page-ready", "true");
+  };
+
+  initPlantSensorPage();
+  document.addEventListener("astro:page-load", initPlantSensorPage);
+</script>
