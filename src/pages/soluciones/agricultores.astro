@@ -13,7 +13,7 @@ import { faqData } from "../../data/faqs";
     layoutType="mosaic"
     heroSectionClass="hero-agricultores-offset"
     heroBackground="/images/cuaderno de Campo para Agricultores.jpg"
-    mosaicImages={["/images/soluciones/farmer_tablet_orchard.png", "/images/soluciones/agricultor_tech_fix.png"]}
+    mosaicImages={["/images/soluciones/farmer_tablet_orchard.png", "/images/soluciones/tama66-market-3466906.webp"]}
 >
     <div class="subpage-content">
         <section class="overview-panel">
@@ -264,10 +264,11 @@ import { faqData } from "../../data/faqs";
         min-height: 340px;
         border-radius: 28px;
         overflow: hidden;
+        background-color: #0b1a14;
         background-size: cover !important;
         background-position: center !important;
         box-shadow: 0 30px 70px -38px rgba(0, 0, 0, 0.44);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: none;
     }
 
     :global(.hero-agricultores-offset .m-img::after) {
@@ -279,11 +280,13 @@ import { faqData } from "../../data/faqs";
 
     :global(.hero-agricultores-offset .m-img--1) {
         transform: translateY(26px);
+        background-position: 52% 58% !important;
     }
 
     :global(.hero-agricultores-offset .m-img--2) {
         min-height: 280px;
         transform: translateY(-18px);
+        background-position: 62% center !important;
     }
 
     :global(.page-body) {
@@ -686,6 +689,14 @@ import { faqData } from "../../data/faqs";
         :global(.hero-agricultores-offset .m-img--2) {
             min-height: 210px;
             transform: none;
+        }
+
+        :global(.hero-agricultores-offset .m-img--1) {
+            background-position: center 56% !important;
+        }
+
+        :global(.hero-agricultores-offset .m-img--2) {
+            background-position: 58% center !important;
         }
 
         :global(.page-body) {
