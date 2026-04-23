@@ -191,9 +191,10 @@ import TestPage from "../layouts/TestPage.astro";
     min-height: 320px;
     border-radius: 28px;
     overflow: hidden;
+    background-color: #0b1a14;
     background-size: cover !important;
     background-position: center !important;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: none;
     box-shadow: 0 28px 68px -38px rgba(0, 0, 0, 0.38);
   }
 
@@ -206,6 +207,8 @@ import TestPage from "../layouts/TestPage.astro";
 
   :global(.hero-soluciones-offset .m-img--1) {
     transform: translateY(18px);
+    background-position: center 68% !important;
+    background-size: 108% auto !important;
   }
 
   :global(.hero-soluciones-offset .m-img--2) {
@@ -387,6 +390,11 @@ import TestPage from "../layouts/TestPage.astro";
     :global(.hero-soluciones-offset .m-img--2) {
       min-height: 200px;
       transform: none;
+    }
+
+    :global(.hero-soluciones-offset .m-img--1) {
+      background-position: center 66% !important;
+      background-size: 112% auto !important;
     }
 
     :global(.page-body) {
