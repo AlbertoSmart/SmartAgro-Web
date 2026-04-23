@@ -111,5 +111,34 @@ const {
         });
       }
     </script>
+
+    <script is:inline>
+      (() => {
+        if (window.__routeVisualSyncInit) return;
+        window.__routeVisualSyncInit = true;
+
+        const syncRouteVisualState = () => {
+          const routeClasses = Array.from(document.body.classList).filter((className) =>
+            className.startsWith("route--"),
+          );
+
+          routeClasses.forEach((className) => document.body.classList.remove(className));
+
+          const normalizedPath =
+            window.location.pathname.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9/_-]+/gi, "-").replace(/\//g, "--").toLowerCase() ||
+            "home";
+
+          document.body.classList.add(`route--${normalizedPath}`);
+
+          // Fuerza recÃ¡lculo visual tras ClientRouter para que los estilos especÃ­ficos
+          // de la ruta se apliquen tambiÃ©n al volver sin recarga manual.
+          void document.body.offsetHeight;
+        };
+
+        document.addEventListener("astro:page-load", syncRouteVisualState);
+        document.addEventListener("DOMContentLoaded", syncRouteVisualState, { once: true });
+        syncRouteVisualState();
+      })();
+    </script>
   </body>
 </html>
