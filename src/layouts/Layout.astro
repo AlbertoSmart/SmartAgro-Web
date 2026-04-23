@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Footer from "../components/Footer.astro";
 import AIChatbot from "../components/AIChatbot.astro";
-import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -13,8 +12,8 @@ interface Props {
 }
 
 const {
-  title = "Cuaderno de Campo – Ecosistema Digital Agrario",
-  description = "Ecosistema Digital Agrario: herramientas informáticas para la Agricultura 4.0. Plataforma web con aplicaciones de gestión para Técnicos y Asesores.",
+  title = "Cuaderno de Campo - Ecosistema Digital Agrario",
+  description = "Ecosistema Digital Agrario: herramientas informaticas para la Agricultura 4.0. Plataforma web con aplicaciones de gestion para Tecnicos y Asesores.",
   showNewsletter = true,
 } = Astro.props;
 ---
@@ -27,7 +26,6 @@ const {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -35,12 +33,7 @@ const {
 
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
-    <link
-      rel="preload"
-      as="image"
-      href="/images/imagenportada.jpg"
-      fetchpriority="high"
-    />
+    <link rel="preload" as="image" href="/images/imagenportada.jpg" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/imagenportadaprado.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,7 +44,7 @@ const {
     <slot name="head" />
 
     <title>{title}</title>
-    <ClientRouter />
+
     <style is:global>
       :root {
         --navbar-height: 80px;
@@ -83,62 +76,32 @@ const {
     {showNewsletter && <Newsletter />}
     <Footer />
 
-    <!-- Botón Volver Arriba (solo móvil) -->
     <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Volver arriba">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
     </button>
 
-    <AIChatbot transition:persist />
+    <AIChatbot />
 
     <script>
-      // Scroll to top button
       if (!window.__scrollTopInit) {
         window.__scrollTopInit = true;
-        document.addEventListener('click', (e) => {
-          if (e.target && (e.target as HTMLElement).closest('#scrollTopBtn')) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.addEventListener("click", (e) => {
+          if (e.target && (e.target as HTMLElement).closest("#scrollTopBtn")) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }
         });
-        window.addEventListener('scroll', () => {
-          const btn = document.getElementById('scrollTopBtn');
-          if (btn) {
-            if (window.scrollY > 400) {
-              btn.classList.add('visible');
-            } else {
-              btn.classList.remove('visible');
-            }
+
+        window.addEventListener("scroll", () => {
+          const btn = document.getElementById("scrollTopBtn");
+          if (!btn) return;
+
+          if (window.scrollY > 400) {
+            btn.classList.add("visible");
+          } else {
+            btn.classList.remove("visible");
           }
         });
       }
-    </script>
-
-    <script is:inline>
-      (() => {
-        if (window.__routeVisualSyncInit) return;
-        window.__routeVisualSyncInit = true;
-
-        const syncRouteVisualState = () => {
-          const routeClasses = Array.from(document.body.classList).filter((className) =>
-            className.startsWith("route--"),
-          );
-
-          routeClasses.forEach((className) => document.body.classList.remove(className));
-
-          const normalizedPath =
-            window.location.pathname.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9/_-]+/gi, "-").replace(/\//g, "--").toLowerCase() ||
-            "home";
-
-          document.body.classList.add(`route--${normalizedPath}`);
-
-          // Fuerza recÃ¡lculo visual tras ClientRouter para que los estilos especÃ­ficos
-          // de la ruta se apliquen tambiÃ©n al volver sin recarga manual.
-          void document.body.offsetHeight;
-        };
-
-        document.addEventListener("astro:page-load", syncRouteVisualState);
-        document.addEventListener("DOMContentLoaded", syncRouteVisualState, { once: true });
-        syncRouteVisualState();
-      })();
     </script>
   </body>
 </html>
